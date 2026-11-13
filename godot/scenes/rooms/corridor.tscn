@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3]
+[gd_scene load_steps=21 format=3]
 
 [ext_resource type="Script" path="res://scripts/hotspot.gd" id="hotspot"]
 [ext_resource type="Texture2D" path="res://assets/graphics/original/corridor_background.png" id="background"]
@@ -17,7 +17,14 @@
 [ext_resource type="Texture2D" path="res://assets/graphics/original/stair.png" id="stair"]
 [ext_resource type="Texture2D" path="res://assets/graphics/original/manHole.png" id="manhole"]
 
+[ext_resource type="Script" path="res://scripts/world/room.gd" id="room_script"]
+[ext_resource type="Resource" path="res://assets/data/rooms/corridor.tres" id="room_definition"]
+[ext_resource type="Script" path="res://scripts/world/character.gd" id="character_script"]
+[ext_resource type="Script" path="res://scripts/hotspots/character_hotspot.gd" id="character_hotspot"]
+
 [node name="CORRIDOR" type="Node2D"]
+script = ExtResource("room_script")
+definition = ExtResource("room_definition")
 
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("background")
@@ -33,7 +40,7 @@ approach_x = 94.0
 examine_response = "corridor.cabin_sign.examine"
 interaction_response = "cabin.door.return"
 destination_room = "cabin"
-entry_x = 550.0
+destination_entry = "from_corridor"
 interaction_kind = "exit"
 
 [node name="Visual" type="Sprite2D" parent="door_cabina"]
@@ -96,9 +103,20 @@ centered = false
 texture = ExtResource("door_camerata")
 flip_h = true
 
-[node name="smoker" type="Node2D" parent="."]
+[node name="smoker" type="AnimatedSprite2D" parent="."]
 position = Vector2(420, 92)
-script = ExtResource("hotspot")
+script = ExtResource("character_script")
+character_id = "smoker"
+half_width = 20.0
+height = 108.0
+idle_animation = "default"
+walk_animation = "default"
+centered = false
+sprite_frames = ExtResource("smoker")
+autoplay = "default"
+
+[node name="Interaction" type="Node2D" parent="smoker"]
+script = ExtResource("character_hotspot")
 hotspot_id = "smoker"
 display_name = "Marinaio"
 hit_size = Vector2(40, 108)
@@ -106,11 +124,6 @@ approach_x = 440.0
 examine_response = "corridor.smoker.examine"
 interaction_response = "corridor.smoker.conversation"
 interaction_kind = "mouth"
-
-[node name="Visual" type="AnimatedSprite2D" parent="smoker"]
-centered = false
-sprite_frames = ExtResource("smoker")
-autoplay = "default"
 
 [node name="door_kelvin" type="Node2D" parent="."]
 position = Vector2(542, 84)
@@ -198,5 +211,3 @@ interaction_kind = "exit"
 [node name="Visual" type="Sprite2D" parent="manhole"]
 centered = false
 texture = ExtResource("manhole")
-
-

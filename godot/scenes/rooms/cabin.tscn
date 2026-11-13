@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bv0mdqt03s5y4"]
+[gd_scene load_steps=20 format=3 uid="uid://bv0mdqt03s5y4"]
 
 [ext_resource type="Texture2D" uid="uid://37p3ga46irwy" path="res://assets/graphics/original/cabin_background.png" id="background"]
 [ext_resource type="Texture2D" uid="uid://dpqfforgflm8g" path="res://assets/graphics/original/bed.png" id="bed"]
@@ -17,7 +17,13 @@
 [ext_resource type="SpriteFrames" path="res://assets/graphics/original/oblo.tres" id="oblo2"]
 [ext_resource type="Texture2D" uid="uid://orqb8c3bfh0l" path="res://assets/graphics/original/sink.png" id="sinkNormal"]
 
+[ext_resource type="Script" path="res://scripts/world/room.gd" id="room_script"]
+[ext_resource type="Resource" path="res://assets/data/rooms/cabin.tres" id="room_definition"]
+[ext_resource type="Resource" path="res://assets/data/sequences/interphone.tres" id="interphone_sequence"]
+
 [node name="CABIN" type="Node2D" unique_id=124935942]
+script = ExtResource("room_script")
+definition = ExtResource("room_definition")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1915065628]
 texture = ExtResource("background")
@@ -116,6 +122,7 @@ approach_x = 490.0
 interaction_kind = "mouth"
 examine_response = "cabin.interphone.examine"
 interaction_response = "cabin.interphone.conversation"
+conversation = ExtResource("interphone_sequence")
 
 [node name="Visual" type="Sprite2D" parent="interphone" unique_id=671531340]
 texture = ExtResource("interphone")
@@ -132,7 +139,7 @@ centered = false
 position = Vector2(544, 84)
 script = ExtResource("behavior_cabin_door")
 destination_room = "corridor"
-entry_x = 94.0
+destination_entry = "from_cabin"
 hotspot_id = "door"
 display_name = "Porta della cabina"
 hit_size = Vector2(76, 116)

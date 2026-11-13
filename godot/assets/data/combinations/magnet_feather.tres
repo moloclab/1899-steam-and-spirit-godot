@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/combination_definition.gd" id="recipe"]
+
+[resource]
+script = ExtResource("recipe")
+ingredients = Array[String](["feather", "magnet"])
+consumed = Array[String](["feather", "magnet"])
+results = Array[String](["magnetFeather"])
+response_key = "inventory.magnet_feather.combine"

@@ -3,6 +3,8 @@ class_name Hotspot
 ## Dati e area selezionabile, modificabili nell'Inspector della stanza.
 ## Lo stato viene passato esplicitamente: nessun oggetto dipende da singleton o dalla UI.
 const State = preload("res://scripts/game_state.gd")
+const Step = preload("res://scripts/actions/action_step.gd")
+const Sequence = preload("res://scripts/actions/action_sequence.gd")
 ## ID stabile, usato dal coordinatore per ritrovare il bersaglio all'arrivo del personaggio.
 @export var hotspot_id := ""
 ## Nome mostrato quando l'oggetto viene evidenziato.
@@ -17,11 +19,27 @@ const State = preload("res://scripts/game_state.gd")
 ## Gli ID vengono tradotti in testo dal coordinatore; qui non si costruiscono dialoghi UI.
 @export var examine_response := "common.prototype_boundary"
 @export var interaction_response := "common.prototype_boundary"
+## Una conversazione configurata sostituisce la sola risposta a mani libere.
+## Esame e uso di oggetti continuano a passare dalle regole specifiche dell'hotspot.
+@export var conversation: Sequence
 var highlighted := false:
 	set(value):
+		if highlighted == value:
+			return
 		highlighted = value
 		# Il disegno personalizzato viene invalidato solo quando il coordinatore assegna il valore.
 		queue_redraw()
+
+## Crea una sequenza senza applicare effetti durante la pianificazione.
+## Le sottoclassi possono comporre passi diversi leggendo lo stato corrente.
+func actions(state: State, item_id: String = "", examining: bool = false) -> Array[Step]:
+	if not examining and item_id.is_empty() and conversation != null and not conversation.steps.is_empty():
+		return conversation.steps.duplicate()
+	return [Step.effect(execute.bind(state, item_id, examining))]
+
+## Gli oggetti fissi usano la coordinata dell'Inspector; quelli mobili possono calcolarla dal proprio attore.
+func approach_position() -> float:
+	return approach_x
 
 ## Punto d'ingresso comune alle azioni: la lente ha precedenza sull'oggetto selezionato.
 ## Validare il possesso qui impedisce di usare una selezione consumata durante l'avvicinamento.
@@ -55,7 +73,7 @@ func sync_from_state(_state: State) -> void:
 ## Verifica un punto globale dopo averlo convertito nelle coordinate locali dell'hotspot.
 ## Il margine di quattro pixel rende più agevoli i clic sugli oggetti piccoli.
 func contains(point: Vector2) -> bool:
-	return visible and Rect2(Vector2.ZERO, hit_size).grow(4).has_point(to_local(point))
+	return is_visible_in_tree() and Rect2(Vector2.ZERO, hit_size).grow(4).has_point(to_local(point))
 
 ## Disegna soltanto la cornice di selezione; l'immagine dell'oggetto è nel figlio Visual.
 func _draw() -> void:

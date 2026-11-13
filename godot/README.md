@@ -1,15 +1,13 @@
-# 1899 — Steam & Spirit · Prototipo EP01
+# 1899 — Steam & Spirit · Base EP01
 
 Progetto per **Godot 4.7.2 standard / GDScript**, renderer Compatibility.
-Non richiede .NET, Docker o un server web. L'originale in `../EP01` resta invariato.
+Non richiede .NET, Docker o un server web. L'originale in `../EP01` resta il riferimento.
 
 ## Avvio
 
 1. Avvia `C:\Tools\Godot\Godot_v4.7.2-stable_win64.exe`.
-2. Nel gestore progetti scegli **Importa** e seleziona `project.godot` in questa cartella.
-3. Apri il progetto e premi **F5** per giocare. Il primo avvio importa le immagini.
-
-In alternativa, da PowerShell:
+2. Importa `project.godot` in questa cartella.
+3. Premi **F5 nell'editor** per avviare il gioco.
 
 ```powershell
 & 'C:\Tools\Godot\Godot_v4.7.2-stable_win64.exe' --editor --path 'C:\htdocs\_OLD\_GAMES\1899\godot'
@@ -17,19 +15,18 @@ In alternativa, da PowerShell:
 
 ## Cosa è giocabile
 
-- Cabina ricostruita dalle coordinate degli oggetti originali.
-- Churchill cammina con l'animazione originale; oblò e marinaio sono animati.
-- Esame degli oggetti, raccolta di Bourbon, penna e calamita.
-- Combinazione penna/calamita, enigma del lavandino, recupero della chiave.
-- Apertura della porta, corridoio con scorrimento e ritorno alla cabina.
-- Inventario e oggetti raccolti persistenti tra le stanze.
-- Un salvataggio manuale locale, con versione del formato e gestione dei file illeggibili.
-- Comandi mouse, tastiera e controller; menu con istruzioni, salva, carica e ricomincia.
-- Giocabile con il solo tasto sinistro: menu a due scelte con le immagini originali.
+- Cabina con grafica e animazioni originali.
+- Esame, raccolta di Bourbon, penna e calamita, combinazione della penna magnetica.
+- Enigma del lavandino, recupero della chiave e apertura della porta.
+- Corridoio con scorrimento e ritorno alla cabina, conservando i progressi.
+- Conversazione dell'interfono in battute successive, con Churchill e Kelvin distinti.
+- Inventario scorrevole, accessibile anche col focus di tastiera e controller.
+- Un salvataggio manuale locale e menu con istruzioni, caricamento e nuova partita.
 
-Il corridoio è un primo ambiente di collegamento: gli altri accessi sono segnaposto.
-L'interfono e il marinaio hanno una battuta semplificata. Per ora si gioca in italiano,
-senza musica ed effetti sonori. Il restyling grafico e le altre stanze non sono inclusi.
+Gli altri accessi del corridoio sono segnaposto; la battuta del marinaio resta semplificata.
+Musica, effetti, conversazioni a scelta e altre stanze di EP01 devono ancora essere portati.
+La lingua visualizzata è l'italiano; il catalogo conserva anche le traduzioni inglesi.
+Le stanze vengono caricate in modo **sincrono**.
 
 ## Comandi
 
@@ -39,120 +36,136 @@ senza musica ed effetti sonori. Il restyling grafico e le altre stanze non sono 
 | Scegliere un bersaglio | Tab / Maiusc+Tab | RB / LB |
 | Stanza ↔ inventario | I | Y |
 | Aprire le due scelte | Clic sinistro su oggetto, persona, uscita o inventario | — |
-| Agire / selezionare | Clic sulla mano, bocca o uscita; Invio o Spazio | A |
-| Esaminare | Clic sulla lente; scorciatoie: destro o E | X |
-| Annullare | Clic sul pavimento o Esc | B |
-| Menu comandi | ? / F1 / pulsante ? | Start |
-| Salva / carica | F5 / F9 durante il gioco | Dal menu |
+| Agire / selezionare | Mano, bocca o uscita; Invio o Spazio | A |
+| Esaminare | Lente; destro o E | X |
+| Annullare una selezione | Pavimento o Esc | B |
+| Menu comandi / pausa | ? / F1 | Start |
+| Avanzare una conversazione | Clic sinistro, Invio o Spazio | A |
+| Salva / carica | Pulsanti in alto o nel menu | Dal menu |
 
-Un clic sinistro su un oggetto apre il pannello originale: **lente** per esaminare,
-**mano** per usare/raccogliere, **bocca** per parlare, **uscita** per attraversare una porta.
-Il personaggio agisce solo dopo la scelta. Un clic su un altro oggetto cambia bersaglio;
-un clic sul pavimento chiude il pannello e cammina.
+Il tasto sinistro apre il pannello originale con **lente** e **mano/bocca/uscita**.
+L'azione parte dopo la scelta e dopo l'avvicinamento di Churchill.
 
-Per usare un oggetto: clic nell'inventario, poi sulla mano, quindi sul bersaglio nella stanza.
-L'uso dell'oggetto selezionato è diretto, come nell'originale.
-Per combinare due oggetti: scegli il primo con la mano, poi clic sul secondo nell'inventario.
-Anche gli oggetti dell'inventario si possono esaminare con la lente.
-Per annullare clicca di nuovo l'oggetto selezionato o clicca sul pavimento.
-Il cursore diventa una lente sopra gli hotspot e torna una freccia fuori dagli oggetti.
-Il testo in basso indica il bersaglio; la cornice dorata resta per tastiera e controller.
-Nel menu usa croce direzionale e A, oppure mouse e tastiera.
+Per usare un oggetto: clic nell'inventario, poi sulla mano, quindi sul bersaglio.
+Per combinare: seleziona il primo con la mano e clicca il secondo nell'inventario.
+Con tastiera e controller, conferma seleziona direttamente l'oggetto o esegue l'azione.
+La cornice dorata identifica il focus da tastiera/controller; il mouse usa il cursore a lente.
 
-**F5 nell'editor avvia il gioco; F5 nella finestra del gioco salva.**
+Durante una sequenza, movimento e interazioni sono sospesi. Le battute che attendono
+una conferma mostrano il suggerimento **Clic / Invio / A per continuare**.
+Il menu mette in pausa anche attese e animazioni. Salva, Carica e Ricomincia sono
+disabilitati fino alla fine della sequenza, per evitare salvataggi a metà di un effetto.
 
-Il file è `user://cabin_save.json`, normalmente sotto
-`%APPDATA%\Godot\app_userdata\1899 — Steam & Spirit\` su Windows.
-Non viene caricato automaticamente: premi Carica o F9.
-Ricomincia azzera soltanto la partita corrente, lasciando disponibile il file salvato.
+**F5 avvia dall'editor; F5/F9 non sono scorciatoie del gioco.**
 
 ## Struttura
 
-- `scenes/main.tscn`: scena iniziale del prototipo.
-- `scenes/rooms/cabin.tscn`, `corridor.tscn`: stanze native Godot; oggetti e coordinate sono modificabili nell'editor.
-- `scripts/main.gd`: interfaccia, movimento, input e transizioni; invia l'azione all'hotspot dopo l'avvicinamento.
-- `scripts/hotspot.gd`: classe base `Hotspot extends Node2D`, con dati dell'Inspector, selezione e risposte degli oggetti semplici.
-- `scripts/hotspots/`: sottoclassi per raccoglibili, mappa, lavandino, uscita semplice e porta della cabina.
-- `scripts/action_menu.gd`: pannello a due scelte con `panel_hand`, `panel_mouth`, `panel_exit`.
-- `scripts/game_state.gd`: dati persistenti, raccolta, combinazioni dell'inventario e salvataggio; non contiene più un dispatcher delle azioni della stanza.
-- `assets/graphics/original/`: immagini PNG e animazioni SpriteFrames convertite da EP01.
-- `assets/data/dialogue.json`: unico catalogo modificabile dei dialoghi, con chiavi descrittive e lingue `it`/`en`.
-- `assets/audio/`: cartella predisposta per musica, effetti e voci future.
-- `assets/PROVENIENZA.md`: origine delle risorse grafiche e dei testi.
-- `tools/import_original_assets.ps1`: conversione riproducibile dei GIF con System.Drawing di Windows.
+| Componente | Responsabilità |
+| --- | --- |
+| `scripts/main.gd` | Collega i componenti, inoltra input e conserva la selezione temporanea |
+| `scripts/game_ui.gd` | Controlli, inventario scorrevole, speaker, dialoghi e menu; emette segnali |
+| `scripts/game_state.gd` | Inventario, raccolte definitive e progressi per ambito; nessun accesso al disco |
+| `scripts/save_store.gd` | Salvataggi versione 2, validazione e migrazione dalla versione 1 |
+| `scripts/world/room_manager.gd` | Sostituzione delle stanze, personaggi, centratura/scorrimento e pausa delle animazioni |
+| `scripts/world/room.gd` | Cache degli hotspot, anche annidati, con invalidazione dopo aggiunte e rimozioni |
+| `scripts/world/character.gd` | Movimento e animazioni riutilizzabili per Churchill e altri personaggi |
+| `scripts/actions/interaction_controller.gd` | Richiesta di avvicinamento e rivalutazione del bersaglio all'arrivo |
+| `scripts/actions/sequence_runner.gd` | Esecuzione ordinata dei passi e attese di conferma/completamento |
+| `scripts/hotspot.gd`, `scripts/hotspots/` | Area interattiva e regole dei singoli oggetti/enigmi |
+| `scripts/data/` | Tipi di risorsa, cataloghi e schema dei progressi |
+| `assets/data/` | Oggetti, ricette, metadati delle stanze, sequenze e testi IT/EN |
+| `scenes/characters/churchill.tscn` | Personaggio giocante riutilizzabile con animazioni già configurate |
 
-L'importatore rigenera anche le due scene: usarlo deliberatamente perché sovrascrive
-eventuali modifiche manuali a quelle scene. Non serve eseguirlo per giocare.
-Il catalogo dei dialoghi è gestito manualmente e non viene rigenerato dall'importatore.
+I componenti ricevono stato e dipendenze esplicitamente, senza singleton.
+Le risorse descrivono i contenuti e restano condivise; le mutazioni della partita
+appartengono a `GameState`. Nessun nodo della stanza viene scritto nel salvataggio.
 
-### Catalogo dei dialoghi
+## Aggiungere contenuti
 
-Le risposte usano chiavi `stanza.oggetto.situazione`, per esempio `cabin.bottle.pickup`.
-Le risposte condivise usano `common.*`; descrizioni e combinazioni dell'inventario usano
-`inventory.*`. Ogni voce contiene le traduzioni esplicite:
+### Oggetti e combinazioni
 
-```json
-"cabin.bottle.pickup": {
-  "it": "Meglio eliminare le prove.",
-  "en": "Better hide the evidence."
-}
-```
+1. Crea un `.tres` con lo script `data/item_definition.gd` in `assets/data/items/`.
+2. Configura ID, icona, chiavi di nome e descrizione; abilita `collectible` per le raccolte dalla stanza.
+3. Registra la definizione in `ItemCatalog.ITEMS` e aggiungi i testi IT/EN in `dialogue.json`.
+4. Per una ricetta crea una `combination_definition.gd` in `assets/data/combinations/`
+   e registrala in `ItemCatalog.RECIPES`: ingredienti, consumi, risultati e risposta.
 
-Il prototipo visualizza `it` e, quando il testo contiene alternative separate da `|`,
-mostra la prima. `_text(id)` risolve la chiave; una chiave mancante produce un avviso
-nel log e una risposta generica. Anche le conversazioni semplificate e le sequenze
-composte sono nel catalogo. Non è conservata una copia del dizionario numerico.
-Per aggiungere una risposta, inserisci la voce nel JSON e usa la stessa chiave negli
-hotspot o negli script. Se l'oggetto è generato dall'importatore, aggiorna anche lì
-la chiave. Il formato dei salvataggi resta invariato.
+Le combinazioni comuni sono simmetriche. Una regola narrativa particolare può
+specializzare `apply(state)`, senza ampliare un elenco di condizioni in `GameState`.
 
-### Comportamenti degli oggetti
+### Stanze e progressi
 
-Ogni oggetto cliccabile è un `Hotspot` oppure una sua sottoclasse. L'interfaccia comune è
-`examine(state)`, `interact(state)`, `use_item(state, item_id)` e `sync_from_state(state)`.
-Le prime tre restituiscono l'ID della risposta; la sincronizzazione aggiorna la grafica leggendo lo stato.
-`execute(state, item_id, examining)` sceglie l'azione e verifica il possesso dell'oggetto usato.
+1. Crea una scena con radice `Node2D` e script `world/room.gd`.
+2. Crea una definizione `data/room_definition.gd` in `assets/data/rooms/` e assegnala alla radice.
+3. Imposta ID, percorso della scena, larghezza, margine percorribile, quota dei piedi,
+   scala e ingressi nominati. Registra la definizione in `RoomCatalog.ROOMS`.
+4. Le uscite indicano stanza e **nome dell'ingresso**; le coordinate appartengono alla destinazione.
+5. Dichiara valori iniziali e intervalli dei progressi in `ProgressSchema.SCOPES`.
+   Lo schema attuale gestisce flag booleani e stadi interi.
+6. Leggi/scrivi con `get_progress(ambito, chiave)` e `set_progress(ambito, chiave, valore)`.
 
-Letto, comodino, oblò, interfono, marinaio e segnaposto usano le risposte esportate della classe base.
-Bottiglia e penna condividono `collectible.gd`, con ID dell'oggetto e battuta di raccolta configurabili.
-La mappa conserva il proprio nodo dopo la raccolta della calamita; il lavandino gestisce l'enigma;
-la porta estende l'uscita semplice aggiungendo il requisito della chiave.
+Gli hotspot hanno ID univoci nella propria stanza e possono essere annidati in contenitori.
+`sync_from_state()` aggiorna immagini e visibilità anche dei nodi nascosti.
+Per un oggetto semplice bastano le risposte nell'Inspector; per un enigma estendi `Hotspot`.
+Le richieste verso nodi rimossi, in eliminazione o nascosti da un antenato vengono scartate.
 
-Gli script ricevono lo stato esplicitamente, senza singleton: inventario e progressi non risiedono
-nei nodi che vengono distrutti al cambio stanza. Il coordinatore sincronizza anche gli hotspot
-nascosti, così un caricamento può ripristinare immagini e visibilità. Se il bersaglio scompare
-durante l'avvicinamento, la richiesta viene annullata.
+### Personaggi e sequenze
 
-Per un nuovo oggetto semplice configura le risposte nell'Inspector; per una regola specifica
-estendi `Hotspot` e ridefinisci i metodi necessari. Non serve ampliare un `match` centrale.
-Se l'oggetto deve essere ricreato dall'HTML originale, aggiorna anche la configurazione dell'importatore.
-Il refactoring mantiene il JSON versione 1: i salvataggi precedenti restano caricabili.
+Il componente `world/character.gd` gestisce centro orizzontale, altezza, velocità,
+animazioni e destinazione. Il marinaio nel corridoio usa lo stesso componente del giocatore,
+con la sua animazione originale e un hotspot figlio `character_hotspot.gd` che lo segue.
+Ogni personaggio ha un `character_id` usato dai passi della sequenza.
+
+Una risorsa `action_sequence.gd` contiene una lista di `ActionStep`:
+
+- `SAY`: chiave del testo, speaker e attesa facoltativa di conferma.
+- `WALK`: personaggio e coordinata di destinazione nella stanza, con attesa dell'arrivo.
+- `ANIMATE`: personaggio, animazione e attesa facoltativa della sua conclusione.
+- `WAIT`: durata in secondi.
+- `EFFECT`: Callable creato dallo script, per applicare una regola al momento corretto.
+- `CHANGE_ROOM`: stanza e ingresso nominato.
+
+Le animazioni cicliche devono partire senza attenderne il completamento.
+Le conferme avanzano solo le battute, senza saltare movimento, animazioni o attese.
+`cancel()` elimina i passi futuri, preservando gli effetti già applicati.
+
+Assegna una sequenza al campo `conversation` di un hotspot per il dialogo a mani libere;
+`assets/data/sequences/interphone.tres` è un esempio giocabile.
+Per sequenze dipendenti dal progresso ridefinisci `actions(state, item_id, examining)`.
+Le regole semplici continuano a usare `examine`, `interact` e `use_item`: l'adattatore
+le esegue come effetti e visualizza la risposta restituita.
+
+## Salvataggi
+
+Il percorso resta `user://cabin_save.json`, normalmente sotto
+`%APPDATA%\Godot\app_userdata\1899 — Steam & Spirit\` su Windows.
+Il gioco non carica automaticamente. Ricomincia azzera la partita corrente e conserva il file.
+
+Il formato versione 2 contiene inventario, raccolte, progressi per ambito, stanza e posizione.
+I file versione 1 vengono migrati in memoria; la successiva scrittura usa la versione 2.
+Prima di applicare i dati vengono controllati ID, tipi, duplicati, ambiti e intervalli.
+I progressi assenti ricevono i valori iniziali, permettendo l'aggiunta di nuovi enigmi.
+Il servizio scrive un temporaneo e sostituisce il file solo dopo la scrittura riuscita.
 
 ## Verifiche
 
-Test automatico delle regole e del percorso attraverso la scena reale, con eventi sintetici
-di mouse, tastiera e controller, inventario, uscita/ritorno, salvataggio intermedio e nel
-corridoio, più rifiuto di un file corrotto senza alterare la partita corrente:
+Regressione automatica con la scena reale e input sintetici:
 
 ```powershell
 & 'C:\Tools\Godot\Godot_v4.7.2-stable_win64_console.exe' --headless --path 'C:\htdocs\_OLD\_GAMES\1899\godot' --script res://tests/prototype_test.gd
 ```
 
-Catture di cabina, inventario, corridoio e menu usando il renderer reale:
+Copre cataloghi, ricette, percorso della cabina col solo sinistro, transizioni,
+ripresa intermedia, migrazione versione 1, file corrotti senza mutazioni parziali,
+conversazione con mouse/tastiera/controller, pausa, passi temporizzati, animazioni,
+movimento di altri personaggi, hotspot annidati/nascosti/rimossi e inventario scorrevole.
+Il file di test è distinto dal salvataggio del giocatore e viene rimosso al termine.
+
+Catture con il renderer reale, da eseguire senza `--headless`:
 
 ```powershell
 & 'C:\Tools\Godot\Godot_v4.7.2-stable_win64_console.exe' --path 'C:\htdocs\_OLD\_GAMES\1899\godot' --script res://tests/visual_check.gd --resolution 1152x720
 ```
 
-Il test include anche una partita completa dell'enigma usando **soltanto eventi del
-tasto sinistro**, con lente, raccolta, esame nell'inventario, annullamento, combinazione,
-recupero della chiave, uscita e ritorno. Controlla le icone distinte per oggetti, persone e uscite.
-Controlla inoltre l'ereditarietà degli hotspot, la sincronizzazione di nodi nascosti, l'annullamento
-di bersagli nascosti o rimossi e il caricamento di una fixture nel formato versione 1 precedente.
-
-Le catture finiscono in `test-output/`, esclusa dal progetto e da Git.
-I test usano un file separato dal salvataggio del giocatore.
-I test automatici e il controllo visivo sono stati eseguiti con Godot 4.7.2 su Windows.
-La prova con un controller fisico e la valutazione della giocabilità restano da fare.
-
-Riferimento per i comandi: [documentazione ufficiale Godot](https://docs.godotengine.org/en/stable/tutorials/editor/command_line_tutorial.html).
+Le immagini finiscono in `test-output/`, esclusa da Git e dall'importazione Godot.
+I test non sostituiscono una prova con controller fisico o una partita completa di EP01.

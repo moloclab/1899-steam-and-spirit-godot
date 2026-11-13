@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/item_definition.gd" id="definition"]
+[ext_resource type="Texture2D" path="res://assets/graphics/original/O_magnetFeather.png" id="icon"]
+
+[resource]
+script = ExtResource("definition")
+item_id = "magnetFeather"
+name_key = "inventory.magnet_feather.name"
+description_key = "inventory.magnet_feather.examine"
+icon = ExtResource("icon")
+collectible = false

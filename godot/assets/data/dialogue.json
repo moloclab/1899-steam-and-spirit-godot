@@ -1,4 +1,9 @@
 {
+  "inventory.bottle.name": {"it": "Bourbon", "en": "Bourbon"},
+  "inventory.feather.name": {"it": "Penna d'oca", "en": "Quill pen"},
+  "inventory.magnet.name": {"it": "Calamita", "en": "Magnet"},
+  "inventory.magnet_feather.name": {"it": "Penna magnetica", "en": "Magnetic quill"},
+  "inventory.key.name": {"it": "Chiave", "en": "Key"},
   "cabin.bed.examine": {
 	"it": "Il mio letto, o almeno credo.",
 	"en": "My bed, or at least I think it is."

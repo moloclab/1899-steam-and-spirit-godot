@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/character.gd" id="character"]
+[ext_resource type="SpriteFrames" path="res://assets/graphics/characters/churchill.tres" id="frames"]
+
+[node name="Churchill" type="AnimatedSprite2D"]
+script = ExtResource("character")
+centered = false
+z_index = 1
+sprite_frames = ExtResource("frames")
+animation = &"idle"

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/room_definition.gd" id="definition"]
+
+[resource]
+script = ExtResource("definition")
+room_id = "cabin"
+scene_path = "res://scenes/rooms/cabin.tscn"
+width = 648.0
+entries = Dictionary[String, float]({"default": 180.0, "from_corridor": 550.0})
