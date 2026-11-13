@@ -18,6 +18,7 @@ var rooms = Rooms.new()
 var interactions = Interactions.new()
 var sequences = Sequences.new()
 var ui: UI
+var music := AudioStreamPlayer.new()
 ## Selezioni temporanee: non appartengono al salvataggio e vengono scartate al cambio partita.
 var selected_item := ""
 var focus_index := 0
@@ -36,6 +37,14 @@ func _ready() -> void:
 	add_child(ui)
 	ui.save_requested.connect(_save)
 	ui.load_requested.connect(_load)
+	# Un solo player mantiene il brano in loop anche tra stanze, caricamenti e nuove partite.
+	var soundtrack: AudioStreamMP3 = preload("res://assets/audio/song1.mp3").duplicate()
+	soundtrack.loop = true
+	music.stream = soundtrack
+	add_child(music)
+	music.play()
+	# La pausa conserva la posizione del brano quando si riabilita la musica.
+	ui.music_toggled.connect(func(enabled: bool): music.stream_paused = not enabled)
 	ui.new_game_requested.connect(_new_game)
 	ui.world_input.connect(_world_input)
 	ui.action_chosen.connect(_choose_action)
@@ -51,6 +60,9 @@ func _ready() -> void:
 
 ## I cursori appartengono a Input: rilasciarli alla chiusura evita texture trattenute oltre il renderer.
 func _exit_tree() -> void:
+	# Rilascia il decoder del sottofondo prima della chiusura del server audio.
+	music.stop()
+	music.stream = null
 	for cursor in [Input.CURSOR_ARROW, Input.CURSOR_POINTING_HAND, Input.CURSOR_CROSS]:
 		Input.set_custom_mouse_cursor(null, cursor)
 
@@ -303,7 +315,8 @@ func _confirm_focus(examine: bool = false) -> void:
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		keyboard_focus = false
-	if sequences.busy and not ui.help_panel.visible and event is InputEventMouseButton and event.pressed:
+	# Il pulsante musicale resta utilizzabile anche durante le battute e le sequenze.
+	if sequences.busy and not ui.help_panel.visible and event is InputEventMouseButton and event.pressed and not ui.music_button.get_global_rect().has_point(event.position):
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			sequences.advance_dialogue()
 		get_viewport().set_input_as_handled()

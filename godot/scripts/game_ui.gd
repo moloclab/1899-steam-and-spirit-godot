@@ -3,6 +3,7 @@ extends Control
 ## Non esegue enigmi, transizioni o scritture dei salvataggi.
 signal save_requested
 signal load_requested
+signal music_toggled(enabled: bool)
 signal new_game_requested
 signal world_input(event: InputEvent)
 signal action_chosen(examine: bool)
@@ -24,6 +25,7 @@ var help_panel: Panel
 var help_close: Button
 var reset_button: Button
 var save_buttons: Array[Button] = []
+var music_button: Button
 var _inventory_ids: Array[String] = []
 var _inventory_buttons: Array[Button] = []
 
@@ -71,8 +73,12 @@ func _ready() -> void:
 	# Occupa il viewport del coordinatore senza intercettare i clic destinati ai controlli figli.
 	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
-	save_buttons.append(_button("Salva", Rect2(856, 20, 110, 38), save_requested.emit))
-	save_buttons.append(_button("Carica", Rect2(976, 20, 110, 38), load_requested.emit))
+	save_buttons.append(_button("Salva", Rect2(696, 20, 110, 38), save_requested.emit))
+	save_buttons.append(_button("Carica", Rect2(816, 20, 110, 38), load_requested.emit))
+	# Il controllo musicale resta accanto a Carica e mostra lo stato corrente del sottofondo.
+	music_button = _button("Musica: ON", Rect2(936, 20, 150, 38), _toggle_music)
+	music_button.toggle_mode = true
+	music_button.button_pressed = true
 	# Il ritaglio nasconde le parti del corridoio fuori dalla finestra di gioco.
 	# I clic sono gestiti dal contenitore: le immagini della stanza sono nodi 2D, non pulsanti.
 	world_panel = Control.new()
@@ -104,6 +110,11 @@ func _ready() -> void:
 	add_child(action_menu)
 	action_menu.chosen.connect(func(examine: bool): action_chosen.emit(examine))
 	_build_help()
+
+## Disattiva o riattiva il sottofondo senza modificare lo stato della partita.
+func _toggle_music() -> void:
+	music_button.text = "Musica: ON" if music_button.button_pressed else "Musica: OFF"
+	music_toggled.emit(music_button.button_pressed)
 
 ## Prepara il menu dei comandi, inizialmente nascosto, e i suoi pulsanti.
 ## Lo sfondo copre la finestra per intercettare i clic che altrimenti raggiungerebbero il gioco.
