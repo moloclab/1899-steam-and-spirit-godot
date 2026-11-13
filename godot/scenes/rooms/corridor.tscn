@@ -1,0 +1,202 @@
+[gd_scene load_steps=17 format=3]
+
+[ext_resource type="Script" path="res://scripts/hotspot.gd" id="hotspot"]
+[ext_resource type="Texture2D" path="res://assets/graphics/original/corridor_background.png" id="background"]
+[ext_resource type="Texture2D" path="res://assets/graphics/original/doorSub.png" id="door_cabina"]
+[ext_resource type="Script" path="res://scripts/hotspots/room_exit.gd" id="behavior_room_exit"]
+[ext_resource type="Texture2D" path="res://assets/graphics/original/label.png" id="label_cabina"]
+[ext_resource type="Texture2D" path="res://assets/graphics/original/axBox.png" id="axBoxClose"]
+[ext_resource type="Texture2D" path="res://assets/graphics/original/label.png" id="label_ax"]
+[ext_resource type="Texture2D" path="res://assets/graphics/original/doorSub.png" id="door_camerata"]
+[ext_resource type="SpriteFrames" path="res://assets/graphics/original/smoker.tres" id="smoker"]
+[ext_resource type="Texture2D" path="res://assets/graphics/original/doorSub.png" id="door_kelvin"]
+[ext_resource type="Texture2D" path="res://assets/graphics/original/label.png" id="label_kelvin"]
+[ext_resource type="Texture2D" path="res://assets/graphics/original/r2_wireH.png" id="wireH"]
+[ext_resource type="Texture2D" path="res://assets/graphics/original/wireV.png" id="wireVNormal"]
+[ext_resource type="SpriteFrames" path="res://assets/graphics/original/lamp.tres" id="lampBlink"]
+[ext_resource type="Texture2D" path="res://assets/graphics/original/stair.png" id="stair"]
+[ext_resource type="Texture2D" path="res://assets/graphics/original/manHole.png" id="manhole"]
+
+[node name="CORRIDOR" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("background")
+centered = false
+
+[node name="door_cabina" type="Node2D" parent="."]
+position = Vector2(56, 84)
+script = ExtResource("behavior_room_exit")
+hotspot_id = "return"
+display_name = "Torna alla cabina"
+hit_size = Vector2(76, 116)
+approach_x = 94.0
+examine_response = "corridor.cabin_sign.examine"
+interaction_response = "cabin.door.return"
+destination_room = "cabin"
+entry_x = 550.0
+interaction_kind = "exit"
+
+[node name="Visual" type="Sprite2D" parent="door_cabina"]
+centered = false
+texture = ExtResource("door_cabina")
+flip_h = true
+
+[node name="label_cabina" type="Node2D" parent="."]
+position = Vector2(84, 72)
+script = ExtResource("hotspot")
+hotspot_id = "label_cabina"
+display_name = "Targa Churchill"
+hit_size = Vector2(20, 12)
+approach_x = 94.0
+interaction_kind = "hand"
+
+[node name="Visual" type="Sprite2D" parent="label_cabina"]
+centered = false
+texture = ExtResource("label_cabina")
+
+[node name="axBoxClose" type="Node2D" parent="."]
+position = Vector2(200, 108)
+script = ExtResource("hotspot")
+hotspot_id = "axe"
+display_name = "Scure di emergenza"
+hit_size = Vector2(36, 44)
+approach_x = 218.0
+examine_response = "corridor.axe.examine"
+interaction_response = "corridor.axe.case_closed"
+interaction_kind = "hand"
+
+[node name="Visual" type="Sprite2D" parent="axBoxClose"]
+centered = false
+texture = ExtResource("axBoxClose")
+
+[node name="label_ax" type="Node2D" parent="."]
+position = Vector2(244, 116)
+script = ExtResource("hotspot")
+hotspot_id = "label_ax"
+display_name = "Targa antincendio"
+hit_size = Vector2(20, 12)
+approach_x = 254.0
+interaction_kind = "hand"
+
+[node name="Visual" type="Sprite2D" parent="label_ax"]
+centered = false
+texture = ExtResource("label_ax")
+
+[node name="door_camerata" type="Node2D" parent="."]
+position = Vector2(326, 84)
+script = ExtResource("hotspot")
+hotspot_id = "door_camerata"
+display_name = "Camerata"
+hit_size = Vector2(76, 116)
+approach_x = 364.0
+interaction_kind = "exit"
+
+[node name="Visual" type="Sprite2D" parent="door_camerata"]
+centered = false
+texture = ExtResource("door_camerata")
+flip_h = true
+
+[node name="smoker" type="Node2D" parent="."]
+position = Vector2(420, 92)
+script = ExtResource("hotspot")
+hotspot_id = "smoker"
+display_name = "Marinaio"
+hit_size = Vector2(40, 108)
+approach_x = 440.0
+examine_response = "corridor.smoker.examine"
+interaction_response = "corridor.smoker.conversation"
+interaction_kind = "mouth"
+
+[node name="Visual" type="AnimatedSprite2D" parent="smoker"]
+centered = false
+sprite_frames = ExtResource("smoker")
+autoplay = "default"
+
+[node name="door_kelvin" type="Node2D" parent="."]
+position = Vector2(542, 84)
+script = ExtResource("hotspot")
+hotspot_id = "door_kelvin"
+display_name = "Cabina di Kelvin"
+hit_size = Vector2(76, 116)
+approach_x = 580.0
+interaction_kind = "exit"
+
+[node name="Visual" type="Sprite2D" parent="door_kelvin"]
+centered = false
+texture = ExtResource("door_kelvin")
+flip_h = true
+
+[node name="label_kelvin" type="Node2D" parent="."]
+position = Vector2(570, 72)
+script = ExtResource("hotspot")
+hotspot_id = "label_kelvin"
+display_name = "Targa Kelvin"
+hit_size = Vector2(20, 12)
+approach_x = 580.0
+interaction_kind = "hand"
+
+[node name="Visual" type="Sprite2D" parent="label_kelvin"]
+centered = false
+texture = ExtResource("label_kelvin")
+
+[node name="wireH" type="Node2D" parent="."]
+position = Vector2(-4, 22)
+
+[node name="Visual" type="Sprite2D" parent="wireH"]
+centered = false
+texture = ExtResource("wireH")
+
+[node name="wireVNormal" type="Node2D" parent="."]
+position = Vector2(616, 28)
+script = ExtResource("hotspot")
+hotspot_id = "wireVNormal"
+display_name = "Filo elettrico"
+hit_size = Vector2(88, 100)
+approach_x = 660.0
+interaction_kind = "hand"
+
+[node name="Visual" type="Sprite2D" parent="wireVNormal"]
+centered = false
+texture = ExtResource("wireVNormal")
+
+[node name="lampBlink" type="Node2D" parent="."]
+position = Vector2(676, 52)
+script = ExtResource("hotspot")
+hotspot_id = "lampBlink"
+display_name = "Lampada"
+hit_size = Vector2(52, 64)
+approach_x = 702.0
+interaction_kind = "hand"
+
+[node name="Visual" type="AnimatedSprite2D" parent="lampBlink"]
+centered = false
+sprite_frames = ExtResource("lampBlink")
+autoplay = "default"
+
+[node name="stair" type="Node2D" parent="."]
+position = Vector2(756, 0)
+script = ExtResource("hotspot")
+hotspot_id = "stair"
+display_name = "Ponte superiore"
+hit_size = Vector2(36, 196)
+approach_x = 774.0
+interaction_kind = "exit"
+
+[node name="Visual" type="Sprite2D" parent="stair"]
+centered = false
+texture = ExtResource("stair")
+
+[node name="manhole" type="Node2D" parent="."]
+position = Vector2(814, 184)
+script = ExtResource("hotspot")
+hotspot_id = "manhole"
+display_name = "Ponte inferiore"
+hit_size = Vector2(48, 16)
+approach_x = 838.0
+interaction_kind = "exit"
+
+[node name="Visual" type="Sprite2D" parent="manhole"]
+centered = false
+texture = ExtResource("manhole")
+
+
