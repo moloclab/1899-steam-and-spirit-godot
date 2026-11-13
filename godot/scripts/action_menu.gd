@@ -34,13 +34,11 @@ func _choice(at: Vector2, caption: String, examine: bool) -> Button:
 	button.tooltip_text = caption
 	button.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 	button.add_theme_stylebox_override("normal", StyleBoxEmpty.new())
-	# A riposo si vede solo la grafica originale. Hover, pressione e focus aggiungono una cornice leggera.
-	var highlight := StyleBoxFlat.new()
-	highlight.bg_color = Color(0.9, 0.75, 0.45, 0.22)
-	highlight.border_color = Color("e5bf73")
-	highlight.set_border_width_all(1)
-	for style in ["hover", "pressed", "focus"]:
-		button.add_theme_stylebox_override(style, highlight)
+	# Il passaggio del cursore lascia visibile solo la grafica originale delle scelte.
+	button.add_theme_stylebox_override("hover", StyleBoxEmpty.new())
+	# Pressione e focus lascia visibile solo la grafica originale delle scelte.
+	for style in ["pressed", "focus"]:
+		button.add_theme_stylebox_override(style, StyleBoxEmpty.new())
 	button.pressed.connect(func(): chosen.emit(examine))
 	add_child(button)
 	return button

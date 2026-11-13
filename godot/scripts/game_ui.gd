@@ -166,10 +166,10 @@ func refresh_inventory(inventory: Array[String], selected: String, texts) -> voi
 	for item in inventory:
 		var definition: Resource = Items.ITEMS[item]
 		var button := Button.new()
-		button.text = texts.text(definition.name_key)
+		# Nell'inventario l'oggetto viene mostrato solo tramite la sua icona.
 		button.icon = definition.icon
 		button.add_theme_font_size_override("font_size", 16)
-		button.custom_minimum_size = Vector2(190, 52)
+		button.custom_minimum_size = Vector2(52, 52)
 		button.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 		button.pressed.connect(func(): inventory_pressed.emit(item, button))
 		button.gui_input.connect(func(event: InputEvent):
