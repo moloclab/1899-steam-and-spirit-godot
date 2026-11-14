@@ -8,7 +8,6 @@ script = ExtResource("object_script")
 hotspot_id = "como"
 display_name = "Comodino"
 hit_size = Vector2(40, 36)
-approach_offset_x = 20.0
 examine_response = "ep01.cabin.nightstand.examine"
 interaction_response = "ep01.cabin.nightstand.interact"
 

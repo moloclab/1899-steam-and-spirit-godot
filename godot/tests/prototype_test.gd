@@ -407,19 +407,10 @@ func _test_sequence_steps() -> void:
 	var transitions: Array[Step] = [transition]
 	runner.start(transitions, game.state, game.rooms)
 	check(game.rooms.current_room.definition.room_id == "ep01_corridor" and game.state.player_x == 94, "Transizione come passo di sequenza")
-	# Il marinaio usa lo stesso componente del giocatore e porta con sé l'area cliccabile.
-	var sailor = game.rooms.character("smoker")
-	check(sailor != null and sailor.current_x == 440, "Personaggio della stanza registrato per ID")
-	walk = Step.new()
-	walk.kind = Step.Kind.WALK
-	walk.character_id = "smoker"
-	walk.target_x = 480
-	var npc_steps: Array[Step] = [walk]
-	runner.start(npc_steps, game.state, game.rooms)
-	for i in 120:
-		runner.tick(1.0 / 60.0)
-	check(sailor.current_x == 480 and game.rooms.find_hotspot("smoker").approach_position() == 480,
-		"Movimento del personaggio e bersaglio di avvicinamento aggiornati insieme")
+	# Il marinaio è un hotspot statico con grafica animata, come gli altri oggetti.
+	var sailor = game.rooms.find_hotspot("smoker")
+	check(sailor != null and sailor.approach_position(100, 22) == 398, "Marinaio: avvicinamento al bordo sinistro")
+	check(sailor.approach_position(700, 22) == 482, "Marinaio: avvicinamento al bordo destro")
 	# Il menu sospende anche un'animazione non ciclica in corso, senza anticipare il passo successivo.
 	var once: SpriteFrames = game.rooms.actor.sprite_frames.duplicate()
 	once.add_animation("pause_test")
@@ -529,10 +520,33 @@ func _test_object_scenes() -> void:
 		object.free()
 	var sink: Hotspot = game.rooms.find_hotspot("sink")
 	var original_x := sink.position.x
-	check(sink.approach_position() == 292, "Avvicinamento originale preservato")
+	check(sink.approach_position(180, 22) == 250, "Da sinistra il bordo destro di Churchill raggiunge il bordo sinistro dell'oggetto")
+	check(sink.approach_position(500, 22) == 334, "Da destra il bordo sinistro di Churchill raggiunge il bordo destro dell'oggetto")
+	check(sink.approach_position(290, 22) == 250 and sink.approach_position(300, 22) == 334,
+		"Dentro l'oggetto viene scelto il bordo più vicino")
+	check(sink.approach_position(292, 22) == 250, "Al centro dell'oggetto viene scelto il bordo sinistro")
 	sink.position.x += 30
-	check(sink.approach_position() == 322, "Avvicinamento segue lo spostamento dell'oggetto")
+	check(sink.approach_position(180, 22) == 280, "Avvicinamento segue lo spostamento dell'oggetto")
 	sink.position.x = original_x
+	sink.scale.x = 2
+	check(sink.approach_position(500, 22) == 374, "Avvicinamento tiene conto della scala dell'oggetto e della stanza")
+	sink.scale.x = 1
+	var actor = game.rooms.actor
+	var original_player_x: float = actor.current_x
+	for x in [180.0, 500.0]:
+		actor.place(x, game.rooms.current_room.definition.floor_y)
+		game.interactions.request(sink, "", true, game.rooms)
+		check(actor.target_x == (250 if x == 180 else 334), "La richiesta sceglie il bordo dal lato di arrivo")
+		_step()
+		check(actor.has_arrived(), "Churchill raggiunge il bordo e completa l'avvicinamento")
+	actor.place(24, game.rooms.current_room.definition.floor_y)
+	sink.position.x = 20
+	game.interactions.request(sink, "", true, game.rooms)
+	check(actor.target_x == 24, "La destinazione rispetta i limiti percorribili della stanza")
+	game.interactions.cancel(game.rooms)
+	sink.position.x = original_x
+	actor.place(original_player_x, game.rooms.current_room.definition.floor_y)
+	game.state.player_x = original_player_x
 	var first: Hotspot = game.rooms.find_hotspot("oblo1")
 	var second: Hotspot = game.rooms.find_hotspot("oblo2")
 	check(first != second and first.scene_file_path == second.scene_file_path,

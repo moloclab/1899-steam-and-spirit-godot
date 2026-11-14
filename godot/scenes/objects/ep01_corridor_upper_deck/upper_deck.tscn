@@ -8,7 +8,6 @@ script = ExtResource("object_script")
 hotspot_id = "stair"
 display_name = "Ponte superiore"
 hit_size = Vector2(36, 196)
-approach_offset_x = 18.0
 interaction_kind = "exit"
 
 [node name="Visual" type="Sprite2D" parent="."]

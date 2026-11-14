@@ -8,7 +8,6 @@ script = ExtResource("object_script")
 hotspot_id = "return"
 display_name = "Torna alla cabina"
 hit_size = Vector2(76, 116)
-approach_offset_x = 38.0
 examine_response = "ep01.corridor.cabin_sign.examine"
 interaction_response = "ep01.cabin.door.return"
 destination_room = "ep01_cabin"

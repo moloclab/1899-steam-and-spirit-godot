@@ -33,7 +33,6 @@ script = ExtResource("object_script")
 hotspot_id = "interphone"
 display_name = "Interfono"
 hit_size = Vector2(24, 20)
-approach_offset_x = 12.0
 interaction_kind = "mouth"
 examine_response = "ep01.cabin.interphone.examine"
 interaction_response = "ep01.cabin.interphone.conversation"

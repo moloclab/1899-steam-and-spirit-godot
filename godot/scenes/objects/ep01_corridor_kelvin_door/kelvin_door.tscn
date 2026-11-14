@@ -8,7 +8,6 @@ script = ExtResource("object_script")
 hotspot_id = "door_kelvin"
 display_name = "Cabina di Kelvin"
 hit_size = Vector2(76, 116)
-approach_offset_x = 38.0
 interaction_kind = "exit"
 
 [node name="Visual" type="Sprite2D" parent="."]

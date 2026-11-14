@@ -20,7 +20,6 @@ pickup_response = "ep01.cabin.feather.pickup"
 hotspot_id = "feather"
 display_name = "Penna d'oca"
 hit_size = Vector2(16, 28)
-approach_offset_x = 8.0
 examine_response = "ep01.cabin.feather.examine"
 
 [node name="Visual" type="Sprite2D" parent="."]

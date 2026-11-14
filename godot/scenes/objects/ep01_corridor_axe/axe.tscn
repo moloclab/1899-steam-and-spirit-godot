@@ -8,7 +8,6 @@ script = ExtResource("object_script")
 hotspot_id = "axe"
 display_name = "Scure di emergenza"
 hit_size = Vector2(36, 44)
-approach_offset_x = 18.0
 examine_response = "ep01.corridor.axe.examine"
 interaction_response = "ep01.corridor.axe.case_closed"
 interaction_kind = "hand"

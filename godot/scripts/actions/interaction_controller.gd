@@ -6,7 +6,8 @@ var _pending: Dictionary = {}
 ## Il bersaglio viene identificato per ID nella stanza corrente, mai conservato come nodo differito.
 func request(hotspot: Hotspot, item_id: String, examining: bool, rooms) -> void:
 	_pending = {"target": hotspot.hotspot_id, "item": item_id, "examining": examining}
-	rooms.actor.target_x = rooms.current_room.definition.clamp_x(hotspot.approach_position())
+	rooms.actor.target_x = rooms.current_room.definition.clamp_x(
+		hotspot.approach_position(rooms.actor.current_x, rooms.actor.half_width))
 
 ## Cancella la richiesta e ferma il movimento senza alterare inventario e progressi.
 func cancel(rooms) -> void:

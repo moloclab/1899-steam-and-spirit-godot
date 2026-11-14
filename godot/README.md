@@ -138,7 +138,9 @@ Le due istanze dell'oblò condividono `porthole.tscn` e hanno ID distinti nella 
 1. Crea la scena dell'oggetto con uno script che estende `Hotspot`, oppure uno dei
    comportamenti comuni in `scripts/hotspots/`.
 2. Configura ID, nome, area e risposte nell'Inspector della scena dell'oggetto.
-   `approach_offset_x` è relativo all'oggetto: il punto di avvicinamento lo segue quando lo sposti.
+   L'avvicinamento usa i bordi di `hit_size`: Churchill si ferma a sinistra o a destra in base alla propria posizione,
+   con il suo bordo a contatto con quello dell'oggetto. Se è già dentro l'area, sceglie il bordo più vicino.
+   La destinazione rimane entro i limiti percorribili della stanza.
 3. Se compare nell'inventario, crea una risorsa interna `ItemDefinition` nel campo
    `inventory_definition`, con ID, icona e chiavi dei testi. Abilita `collectible`
    per gli oggetti raccoglibili; registra il percorso della scena in `ItemCatalog.SCENES`.
@@ -174,8 +176,8 @@ Le richieste verso nodi rimossi, in eliminazione o nascosti da un antenato vengo
 ### Personaggi e sequenze
 
 Il componente `world/character.gd` gestisce centro orizzontale, altezza, velocità,
-animazioni e destinazione. Il marinaio nel corridoio usa lo stesso componente del giocatore,
-con la sua animazione originale e un hotspot figlio `character_hotspot.gd` che lo segue.
+animazioni e destinazione. Il marinaio nel corridoio è invece un normale hotspot statico,
+con un figlio animato `Visual` e lo stesso avvicinamento ai bordi usato per gli oggetti.
 Ogni personaggio ha un `character_id` usato dai passi della sequenza.
 
 Una risorsa `action_sequence.gd` contiene una lista di `ActionStep`:

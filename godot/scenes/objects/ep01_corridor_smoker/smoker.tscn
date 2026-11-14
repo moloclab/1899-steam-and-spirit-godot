@@ -1,7 +1,6 @@
-[gd_scene load_steps=11 format=3]
+[gd_scene load_steps=10 format=3]
 
 [ext_resource type="Script" path="res://scenes/objects/ep01_corridor_smoker/smoker.gd" id="object_script"]
-[ext_resource type="Script" path="res://scripts/hotspots/character_hotspot.gd" id="character_hotspot"]
 [ext_resource type="Texture2D" path="res://assets/graphics/ep01_corridor/smoker.png" id="sheet"]
 
 [sub_resource type="AtlasTexture" id="frame_0"]
@@ -31,23 +30,16 @@ region = Rect2(200, 0, 40, 108)
 [sub_resource type="SpriteFrames" id="frames"]
 animations = [{"frames": [{"duration": 1.0, "texture": SubResource("frame_0")}, {"duration": 1.0, "texture": SubResource("frame_1")}, {"duration": 1.0, "texture": SubResource("frame_2")}, {"duration": 1.0, "texture": SubResource("frame_3")}, {"duration": 1.0, "texture": SubResource("frame_4")}, {"duration": 1.0, "texture": SubResource("frame_5")}], "loop": true, "name": &"default", "speed": 3.3333333333333335}]
 
-[node name="smoker" type="AnimatedSprite2D"]
+[node name="smoker" type="Node2D"]
 script = ExtResource("object_script")
-character_id = "smoker"
-half_width = 20.0
-height = 108.0
-idle_animation = "default"
-walk_animation = "default"
-centered = false
-sprite_frames = SubResource("frames")
-autoplay = "default"
-
-[node name="Interaction" type="Node2D" parent="."]
-script = ExtResource("character_hotspot")
 hotspot_id = "smoker"
 display_name = "Marinaio"
 hit_size = Vector2(40, 108)
-approach_offset_x = 20.0
 examine_response = "ep01.corridor.smoker.examine"
 interaction_response = "ep01.corridor.smoker.conversation"
 interaction_kind = "mouth"
+
+[node name="Visual" type="AnimatedSprite2D" parent="."]
+centered = false
+sprite_frames = SubResource("frames")
+autoplay = "default"

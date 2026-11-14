@@ -10,7 +10,6 @@ destination_entry = "from_cabin"
 hotspot_id = "door"
 display_name = "Porta della cabina"
 hit_size = Vector2(76, 116)
-approach_offset_x = 38.0
 interaction_kind = "exit"
 examine_response = "ep01.cabin.door.examine"
 interaction_response = "ep01.cabin.door.exit"

@@ -8,7 +8,6 @@ script = ExtResource("object_script")
 hotspot_id = "sink"
 display_name = "Lavandino"
 hit_size = Vector2(40, 56)
-approach_offset_x = 20.0
 
 [node name="Visual" type="Sprite2D" parent="."]
 texture = ExtResource("sinkNormal")

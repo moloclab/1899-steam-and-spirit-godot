@@ -16,8 +16,6 @@ const CombinationDefinition = preload("res://scripts/data/combination_definition
 @export var display_name := ""
 ## Rettangolo selezionabile nelle coordinate originali; parte dall'origine del nodo.
 @export var hit_size := Vector2(40, 40)
-## Punto di avvicinamento relativo all'oggetto: spostandolo nella stanza segue la sua posizione.
-@export var approach_offset_x := 20.0
 ## Sceglie il pannello dell'originale: mano per oggetti, bocca per persone, uscita per passaggi.
 @export_enum("hand", "mouth", "exit") var interaction_kind := "hand"
 ## Risposte dei semplici oggetti statici, modificabili senza creare una sottoclasse.
@@ -42,13 +40,20 @@ func actions(state: State, item_id: String = "", examining: bool = false) -> Arr
 		return conversation.steps.duplicate()
 	return [Step.effect(execute.bind(state, item_id, examining))]
 
-## Converte il punto locale nelle coordinate della stanza, anche dentro contenitori.
-func approach_position() -> float:
+## Si ferma all'esterno del bordo dal lato del giocatore, usando l'area interattiva.
+## Se il giocatore è già sopra l'oggetto, sceglie il bordo più vicino (sinistro a parità).
+func approach_position(player_x: float, player_half_width: float) -> float:
 	var room := get_parent()
 	while room != null and not room.has_method("hotspots"):
 		room = room.get_parent()
-	var point := to_global(Vector2(approach_offset_x, 0))
-	return room.to_local(point).x if room != null else point.x
+	var left := INF
+	var right := -INF
+	for corner in [Vector2.ZERO, Vector2(hit_size.x, 0), hit_size, Vector2(0, hit_size.y)]:
+		var point := to_global(corner)
+		var x: float = room.to_local(point).x if room != null else point.x
+		left = minf(left, x)
+		right = maxf(right, x)
+	return left - player_half_width if player_x <= (left + right) / 2.0 else right + player_half_width
 
 ## Punto d'ingresso comune alle azioni: la lente ha precedenza sull'oggetto selezionato.
 ## Validare il possesso qui impedisce di usare una selezione consumata durante l'avvicinamento.
