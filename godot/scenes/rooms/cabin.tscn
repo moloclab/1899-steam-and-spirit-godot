@@ -1,183 +1,65 @@
-[gd_scene load_steps=20 format=3 uid="uid://bv0mdqt03s5y4"]
-
-[ext_resource type="Texture2D" uid="uid://37p3ga46irwy" path="res://assets/graphics/original/cabin_background.png" id="background"]
-[ext_resource type="Texture2D" uid="uid://dpqfforgflm8g" path="res://assets/graphics/original/bed.png" id="bed"]
-[ext_resource type="Script" uid="uid://cat2i7ji154qk" path="res://scripts/hotspots/cabin_door.gd" id="behavior_cabin_door"]
-[ext_resource type="Script" uid="uid://hfmhgvkejcrl" path="res://scripts/hotspots/cabin_map.gd" id="behavior_cabin_map"]
-[ext_resource type="Script" uid="uid://jsoq8op1flrt" path="res://scripts/hotspots/cabin_sink.gd" id="behavior_cabin_sink"]
-[ext_resource type="Script" uid="uid://c3isph10vv4u8" path="res://scripts/hotspots/collectible.gd" id="behavior_collectible"]
-[ext_resource type="Texture2D" uid="uid://dbv1yvgispe0d" path="res://assets/graphics/original/bottle.png" id="bottle"]
-[ext_resource type="Texture2D" uid="uid://d35smtoxv8hnr" path="res://assets/graphics/original/como.png" id="como"]
-[ext_resource type="Texture2D" uid="uid://o0hoblhat1ws" path="res://assets/graphics/original/doorSub.png" id="door"]
-[ext_resource type="Texture2D" uid="uid://dk5y3dholseyc" path="res://assets/graphics/original/feather.png" id="feather"]
-[ext_resource type="Script" uid="uid://w7eiw2cnacww" path="res://scripts/hotspot.gd" id="hotspot"]
-[ext_resource type="Texture2D" uid="uid://bnosilemb58xx" path="res://assets/graphics/original/interphone.png" id="interphone"]
-[ext_resource type="Texture2D" uid="uid://b3v4ql43gbt4e" path="res://assets/graphics/original/interphoneTube.png" id="interphoneTube"]
-[ext_resource type="Texture2D" uid="uid://chcu3c3j411jo" path="res://assets/graphics/original/mapMagnet.png" id="mapMagnet"]
-[ext_resource type="SpriteFrames" path="res://assets/graphics/original/oblo.tres" id="oblo2"]
-[ext_resource type="Texture2D" uid="uid://orqb8c3bfh0l" path="res://assets/graphics/original/sink.png" id="sinkNormal"]
+[gd_scene load_steps=16 format=3]
 
 [ext_resource type="Script" path="res://scripts/world/room.gd" id="room_script"]
-[ext_resource type="Resource" path="res://assets/data/rooms/cabin.tres" id="room_definition"]
-[ext_resource type="Resource" path="res://assets/data/sequences/interphone.tres" id="interphone_sequence"]
+[ext_resource type="Texture2D" uid="uid://37p3ga46irwy" path="res://assets/graphics/original/cabin_background.png" id="background"]
+[ext_resource type="Script" path="res://scripts/data/room_definition.gd" id="room_definition_definition"]
+[ext_resource type="PackedScene" path="res://scenes/objects/map/map.tscn" id="object_mapMagnet"]
+[ext_resource type="PackedScene" path="res://scenes/objects/nightstand/nightstand.tscn" id="object_como"]
+[ext_resource type="PackedScene" path="res://scenes/objects/sink/sink.tscn" id="object_sinkNormal"]
+[ext_resource type="PackedScene" path="res://scenes/objects/feather/feather.tscn" id="object_feather"]
+[ext_resource type="PackedScene" path="res://scenes/objects/porthole/porthole.tscn" id="object_oblo1"]
+[ext_resource type="PackedScene" path="res://scenes/objects/porthole/porthole.tscn" id="object_oblo2"]
+[ext_resource type="PackedScene" path="res://scenes/objects/interphone/interphone.tscn" id="object_interphone"]
+[ext_resource type="PackedScene" path="res://scenes/objects/interphone_tube/interphone_tube.tscn" id="object_interphoneTube"]
+[ext_resource type="PackedScene" path="res://scenes/objects/cabin_door/cabin_door.tscn" id="object_door"]
+[ext_resource type="PackedScene" path="res://scenes/objects/bed/bed.tscn" id="object_bed"]
+[ext_resource type="PackedScene" path="res://scenes/objects/bottle/bottle.tscn" id="object_bottle"]
+
+[sub_resource type="Resource" id="room_definition"]
+script = ExtResource("room_definition_definition")
+room_id = "cabin"
+scene_path = "res://scenes/rooms/cabin.tscn"
+width = 648.0
+entries = Dictionary[String, float]({"default": 180.0, "from_corridor": 550.0})
 
 [node name="CABIN" type="Node2D" unique_id=124935942]
 script = ExtResource("room_script")
-definition = ExtResource("room_definition")
+definition = SubResource("room_definition")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1915065628]
 texture = ExtResource("background")
 centered = false
 
-[node name="mapMagnet" type="Node2D" parent="." unique_id=2036349523]
+[node name="mapMagnet" parent="." instance=ExtResource("object_mapMagnet")]
 position = Vector2(68, 64)
-script = ExtResource("behavior_cabin_map")
-hotspot_id = "map"
-display_name = "Mappa e calamita"
-hit_size = Vector2(60, 72)
-approach_x = 98.0
 
-[node name="Visual" type="Sprite2D" parent="mapMagnet" unique_id=611327341]
-texture = ExtResource("mapMagnet")
-centered = false
-
-[node name="como" type="Node2D" parent="." unique_id=1303930996]
+[node name="como" parent="." instance=ExtResource("object_como")]
 position = Vector2(224, 164)
-script = ExtResource("hotspot")
-hotspot_id = "como"
-display_name = "Comodino"
-hit_size = Vector2(40, 36)
-approach_x = 244.0
-examine_response = "cabin.nightstand.examine"
-interaction_response = "cabin.nightstand.interact"
 
-[node name="Visual" type="Sprite2D" parent="como" unique_id=805392434]
-texture = ExtResource("como")
-centered = false
-
-[node name="sinkNormal" type="Node2D" parent="." unique_id=834131318]
+[node name="sinkNormal" parent="." instance=ExtResource("object_sinkNormal")]
 position = Vector2(272, 144)
-script = ExtResource("behavior_cabin_sink")
-hotspot_id = "sink"
-display_name = "Lavandino"
-hit_size = Vector2(40, 56)
-approach_x = 292.0
 
-[node name="Visual" type="Sprite2D" parent="sinkNormal" unique_id=747767209]
-texture = ExtResource("sinkNormal")
-centered = false
-
-[node name="feather" type="Node2D" parent="." unique_id=1142424661]
+[node name="feather" parent="." instance=ExtResource("object_feather")]
 position = Vector2(232, 136)
-script = ExtResource("behavior_collectible")
-item_id = "feather"
-pickup_response = "cabin.feather.pickup"
-hotspot_id = "feather"
-display_name = "Penna d'oca"
-hit_size = Vector2(16, 28)
-approach_x = 240.0
-examine_response = "cabin.feather.examine"
 
-[node name="Visual" type="Sprite2D" parent="feather" unique_id=914818981]
-texture = ExtResource("feather")
-centered = false
-
-[node name="oblo1" type="Node2D" parent="." unique_id=554125229]
+[node name="oblo1" parent="." instance=ExtResource("object_oblo1")]
 position = Vector2(336, 75)
-script = ExtResource("hotspot")
-hotspot_id = "oblo1"
-display_name = "Oblò"
-hit_size = Vector2(48, 48)
-approach_x = 360.0
-examine_response = "cabin.porthole.examine"
-interaction_response = "cabin.porthole.interact"
 
-[node name="Visual" type="AnimatedSprite2D" parent="oblo1" unique_id=16762899]
-sprite_frames = ExtResource("oblo2")
-autoplay = "default"
-centered = false
-
-[node name="oblo2" type="Node2D" parent="." unique_id=1062584711]
+[node name="oblo2" parent="." instance=ExtResource("object_oblo2")]
 position = Vector2(400, 75)
-script = ExtResource("hotspot")
 hotspot_id = "oblo2"
-display_name = "Oblò"
-hit_size = Vector2(48, 48)
-approach_x = 424.0
-examine_response = "cabin.porthole.examine"
-interaction_response = "cabin.porthole.interact"
 
-[node name="Visual" type="AnimatedSprite2D" parent="oblo2" unique_id=1375892349]
-sprite_frames = ExtResource("oblo2")
-autoplay = "default"
-centered = false
-
-[node name="interphone" type="Node2D" parent="." unique_id=286863347]
+[node name="interphone" parent="." instance=ExtResource("object_interphone")]
 position = Vector2(478, 100)
-script = ExtResource("hotspot")
-hotspot_id = "interphone"
-display_name = "Interfono"
-hit_size = Vector2(24, 20)
-approach_x = 490.0
-interaction_kind = "mouth"
-examine_response = "cabin.interphone.examine"
-interaction_response = "cabin.interphone.conversation"
-conversation = ExtResource("interphone_sequence")
 
-[node name="Visual" type="Sprite2D" parent="interphone" unique_id=671531340]
-texture = ExtResource("interphone")
-centered = false
-
-[node name="interphoneTube" type="Node2D" parent="." unique_id=636086225]
+[node name="interphoneTube" parent="." instance=ExtResource("object_interphoneTube")]
 position = Vector2(478, 0)
 
-[node name="Visual" type="Sprite2D" parent="interphoneTube" unique_id=1103193018]
-texture = ExtResource("interphoneTube")
-centered = false
-
-[node name="door" type="Node2D" parent="." unique_id=1789057684]
+[node name="door" parent="." instance=ExtResource("object_door")]
 position = Vector2(544, 84)
-script = ExtResource("behavior_cabin_door")
-destination_room = "corridor"
-destination_entry = "from_cabin"
-hotspot_id = "door"
-display_name = "Porta della cabina"
-hit_size = Vector2(76, 116)
-approach_x = 582.0
-interaction_kind = "exit"
-examine_response = "cabin.door.examine"
-interaction_response = "cabin.door.exit"
 
-[node name="Visual" type="Sprite2D" parent="door" unique_id=128129555]
-texture = ExtResource("door")
-centered = false
-
-[node name="bed" type="Node2D" parent="." unique_id=1954075733]
-z_index = 2
+[node name="bed" parent="." instance=ExtResource("object_bed")]
 position = Vector2(18, 152)
-script = ExtResource("hotspot")
-hotspot_id = "bed"
-display_name = "Letto"
-hit_size = Vector2(140, 48)
-approach_x = 88.0
-examine_response = "cabin.bed.examine"
-interaction_response = "cabin.bed.interact"
 
-[node name="Visual" type="Sprite2D" parent="bed" unique_id=1690567674]
-texture = ExtResource("bed")
-centered = false
-
-[node name="bottle" type="Node2D" parent="." unique_id=1875053966]
+[node name="bottle" parent="." instance=ExtResource("object_bottle")]
 position = Vector2(364, 188)
-script = ExtResource("behavior_collectible")
-item_id = "bottle"
-pickup_response = "cabin.bottle.pickup"
-hotspot_id = "bottle"
-display_name = "Bourbon"
-hit_size = Vector2(28, 12)
-approach_x = 378.0
-examine_response = "cabin.bottle.examine"
-
-[node name="Visual" type="Sprite2D" parent="bottle" unique_id=1844847609]
-texture = ExtResource("bottle")
-centered = false

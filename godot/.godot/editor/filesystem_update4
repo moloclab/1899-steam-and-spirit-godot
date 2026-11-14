@@ -1,6 +1,0 @@
-res://scripts/main.gd
-res://scripts/world/character.gd
-res://tests/prototype_test.gd
-res://tests/visual_check.gd
-res://scripts/action_menu.gd
-res://scripts/game_ui.gd

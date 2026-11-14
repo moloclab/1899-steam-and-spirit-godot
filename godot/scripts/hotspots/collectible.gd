@@ -1,6 +1,8 @@
 extends "res://scripts/hotspot.gd"
-## Comportamento condiviso da bottiglia e penna, configurato dai dati della scena.
-@export var item_id := ""
+## Comportamento condiviso: l'ID deriva dalla definizione incorporata nella scena.
+var item_id: String:
+	get:
+		return inventory_definition.item_id if inventory_definition != null else ""
 @export var pickup_response := "common.nothing_interesting"
 
 ## La raccolta è registrata nello stato prima di nascondere l'oggetto nella successiva sincronizzazione.

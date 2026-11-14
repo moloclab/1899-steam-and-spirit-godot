@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scenes/objects/magnet/magnet.gd" id="object_script"]
+[ext_resource type="Script" path="res://scripts/data/item_definition.gd" id="inventory_definition"]
+[ext_resource type="Texture2D" path="res://assets/graphics/original/O_magnet.png" id="inventory_icon"]
+
+[sub_resource type="Resource" id="inventory"]
+script = ExtResource("inventory_definition")
+item_id = "magnet"
+name_key = "inventory.magnet.name"
+description_key = "inventory.magnet.examine"
+icon = ExtResource("inventory_icon")
+collectible = true
+
+[node name="magnet" type="Node2D"]
+script = ExtResource("object_script")
+hotspot_id = "magnet"
+display_name = "Calamita"
+examine_response = "inventory.magnet.examine"
+pickup_response = "cabin.magnet.pickup"
+inventory_definition = SubResource("inventory")
+
+[node name="Visual" type="Sprite2D" parent="."]
+texture = ExtResource("inventory_icon")
+centered = false

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scenes/objects/map/map.gd" id="object_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/original/mapMagnet.png" id="mapMagnet"]
+
+[ext_resource type="Texture2D" path="res://assets/graphics/original/map.png" id="collected_texture"]
+
+[node name="mapMagnet" type="Node2D"]
+script = ExtResource("object_script")
+complete_texture = ExtResource("mapMagnet")
+collected_texture = ExtResource("collected_texture")
+hotspot_id = "map"
+display_name = "Mappa e calamita"
+hit_size = Vector2(60, 72)
+approach_offset_x = 30.0
+
+[node name="Visual" type="Sprite2D" parent="."]
+texture = ExtResource("mapMagnet")
+centered = false

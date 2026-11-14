@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/objects/cabin_door/cabin_door.gd" id="object_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/original/doorSub.png" id="door"]
+
+[node name="door" type="Node2D"]
+script = ExtResource("object_script")
+destination_room = "corridor"
+destination_entry = "from_cabin"
+hotspot_id = "door"
+display_name = "Porta della cabina"
+hit_size = Vector2(76, 116)
+approach_offset_x = 38.0
+interaction_kind = "exit"
+examine_response = "cabin.door.examine"
+interaction_response = "cabin.door.exit"
+
+[node name="Visual" type="Sprite2D" parent="."]
+texture = ExtResource("door")
+centered = false

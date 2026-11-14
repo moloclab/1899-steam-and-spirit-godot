@@ -71,9 +71,11 @@ disabilitati fino alla fine della sequenza, per evitare salvataggi a metà di un
 | `scripts/world/character.gd` | Movimento e animazioni riutilizzabili per Churchill e altri personaggi |
 | `scripts/actions/interaction_controller.gd` | Richiesta di avvicinamento e rivalutazione del bersaglio all'arrivo |
 | `scripts/actions/sequence_runner.gd` | Esecuzione ordinata dei passi e attese di conferma/completamento |
-| `scripts/hotspot.gd`, `scripts/hotspots/` | Area interattiva e regole dei singoli oggetti/enigmi |
+| `scripts/hotspot.gd`, `scripts/hotspots/` | Interfaccia comune e comportamenti condivisi: raccolta, uscita e interazione con personaggi |
+| `scenes/objects/<oggetto>/` | Scena e script di ciascun oggetto, con grafica, configurazione e risorse incorporate |
+| `scenes/rooms/` | Sfondo, metadati della stanza e posizionamento delle istanze degli oggetti |
 | `scripts/data/` | Tipi di risorsa, cataloghi e schema dei progressi |
-| `assets/data/` | Oggetti, ricette, metadati delle stanze, sequenze e testi IT/EN |
+| `assets/data/` | Catalogo dei testi IT/EN |
 | `scenes/characters/churchill.tscn` | Personaggio giocante riutilizzabile con animazioni già configurate |
 
 I componenti ricevono stato e dipendenze esplicitamente, senza singleton.
@@ -84,11 +86,33 @@ appartengono a `GameState`. Nessun nodo della stanza viene scritto nel salvatagg
 
 ### Oggetti e combinazioni
 
-1. Crea un `.tres` con lo script `data/item_definition.gd` in `assets/data/items/`.
-2. Configura ID, icona, chiavi di nome e descrizione; abilita `collectible` per le raccolte dalla stanza.
-3. Registra la definizione in `ItemCatalog.ITEMS` e aggiungi i testi IT/EN in `dialogue.json`.
-4. Per una ricetta crea una `combination_definition.gd` in `assets/data/combinations/`
-   e registrala in `ItemCatalog.RECIPES`: ingredienti, consumi, risultati e risposta.
+Ogni oggetto ha una cartella in `scenes/objects/<oggetto>/`, con due file:
+
+- **`<oggetto>.tscn`**: grafica, area cliccabile, nome e configurazione. Le risorse
+  specifiche (dati inventario, conversazioni, fotogrammi, ricette) sono incorporate.
+- **`<oggetto>.gd`**: comportamento. Gli oggetti semplici ereditano quello comune;
+  gli enigmi ridefiniscono `examine`, `interact`, `use_item` o `actions`.
+
+Per modificare un oggetto, apri la sua scena. Per collocarlo, trascina quella scena
+nella stanza e imposta posizione e ordine di disegno. Non occorre rendere modificabili
+i figli dell'istanza: modifica grafica e configurazione nella scena originale.
+Le due istanze dell'oblò condividono `porthole.tscn` e hanno ID distinti nella stanza.
+
+1. Crea la scena dell'oggetto con uno script che estende `Hotspot`, oppure uno dei
+   comportamenti comuni in `scripts/hotspots/`.
+2. Configura ID, nome, area e risposte nell'Inspector della scena dell'oggetto.
+   `approach_offset_x` è relativo all'oggetto: il punto di avvicinamento lo segue quando lo sposti.
+3. Se compare nell'inventario, crea una risorsa interna `ItemDefinition` nel campo
+   `inventory_definition`, con ID, icona e chiavi dei testi. Abilita `collectible`
+   per gli oggetti raccoglibili; registra il percorso della scena in `ItemCatalog.SCENES`.
+4. Per una combinazione, configura `combination_definition` nella scena dell'oggetto
+   risultante e registrala nel getter `ItemCatalog.RECIPES`. Vedi `magnet_feather.tscn`.
+5. Aggiungi i testi IT/EN in `assets/data/dialogue.json`.
+
+Il catalogo legge i dati incorporati senza istanziare l'oggetto e senza caricare la
+stanza: inventario e salvataggi restano disponibili anche dopo averla lasciata.
+Calamita, chiave e penna magnetica hanno una propria scena anche se vengono ottenute
+da un altro hotspot o da una combinazione; la mappa rimane un oggetto distinto.
 
 Le combinazioni comuni sono simmetriche. Una regola narrativa particolare può
 specializzare `apply(state)`, senza ampliare un elenco di condizioni in `GameState`.
@@ -96,9 +120,9 @@ specializzare `apply(state)`, senza ampliare un elenco di condizioni in `GameSta
 ### Stanze e progressi
 
 1. Crea una scena con radice `Node2D` e script `world/room.gd`.
-2. Crea una definizione `data/room_definition.gd` in `assets/data/rooms/` e assegnala alla radice.
+2. Crea una risorsa interna `data/room_definition.gd` nel campo `definition` della radice.
 3. Imposta ID, percorso della scena, larghezza, margine percorribile, quota dei piedi,
-   scala e ingressi nominati. Registra la definizione in `RoomCatalog.ROOMS`.
+   scala e ingressi nominati. Registra il percorso della scena in `RoomCatalog.SCENES`.
 4. Le uscite indicano stanza e **nome dell'ingresso**; le coordinate appartengono alla destinazione.
 5. Dichiara valori iniziali e intervalli dei progressi in `ProgressSchema.SCOPES`.
    Lo schema attuale gestisce flag booleani e stadi interi.
@@ -106,7 +130,8 @@ specializzare `apply(state)`, senza ampliare un elenco di condizioni in `GameSta
 
 Gli hotspot hanno ID univoci nella propria stanza e possono essere annidati in contenitori.
 `sync_from_state()` aggiorna immagini e visibilità anche dei nodi nascosti.
-Per un oggetto semplice bastano le risposte nell'Inspector; per un enigma estendi `Hotspot`.
+Per un oggetto semplice bastano le risposte nell'Inspector della sua scena; per un enigma
+modifica il suo script, mantenendo l’interfaccia comune di `Hotspot`.
 Le richieste verso nodi rimossi, in eliminazione o nascosti da un antenato vengono scartate.
 
 ### Personaggi e sequenze
@@ -130,7 +155,7 @@ Le conferme avanzano solo le battute, senza saltare movimento, animazioni o atte
 `cancel()` elimina i passi futuri, preservando gli effetti già applicati.
 
 Assegna una sequenza al campo `conversation` di un hotspot per il dialogo a mani libere;
-`assets/data/sequences/interphone.tres` è un esempio giocabile.
+`scenes/objects/interphone/interphone.tscn` contiene un esempio giocabile, come risorsa interna.
 Per sequenze dipendenti dal progresso ridefinisci `actions(state, item_id, examining)`.
 Le regole semplici continuano a usare `examine`, `interact` e `use_item`: l'adattatore
 le esegue come effetti e visualizza la risposta restituita.

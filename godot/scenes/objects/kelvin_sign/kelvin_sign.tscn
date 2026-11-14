@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/objects/kelvin_sign/kelvin_sign.gd" id="object_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/original/label.png" id="label_kelvin"]
+
+[node name="label_kelvin" type="Node2D"]
+script = ExtResource("object_script")
+hotspot_id = "label_kelvin"
+display_name = "Targa Kelvin"
+hit_size = Vector2(20, 12)
+approach_offset_x = 10.0
+interaction_kind = "hand"
+
+[node name="Visual" type="Sprite2D" parent="."]
+centered = false
+texture = ExtResource("label_kelvin")

@@ -1,18 +1,23 @@
 extends Node2D
 class_name Hotspot
-## Dati e area selezionabile, modificabili nell'Inspector della stanza.
+## Interfaccia comune degli oggetti, configurati nella propria scena autonoma.
 ## Lo stato viene passato esplicitamente: nessun oggetto dipende da singleton o dalla UI.
 const State = preload("res://scripts/game_state.gd")
 const Step = preload("res://scripts/actions/action_step.gd")
 const Sequence = preload("res://scripts/actions/action_sequence.gd")
+const ItemDefinition = preload("res://scripts/data/item_definition.gd")
+const CombinationDefinition = preload("res://scripts/data/combination_definition.gd")
+## Dati condivisi con l'inventario, incorporati nella scena dell'oggetto.
+@export var inventory_definition: ItemDefinition
+@export var combination_definition: CombinationDefinition
 ## ID stabile, usato dal coordinatore per ritrovare il bersaglio all'arrivo del personaggio.
 @export var hotspot_id := ""
 ## Nome mostrato quando l'oggetto viene evidenziato.
 @export var display_name := ""
 ## Rettangolo selezionabile nelle coordinate originali; parte dall'origine del nodo.
 @export var hit_size := Vector2(40, 40)
-## Coordinata orizzontale del centro del personaggio quando esegue l'azione.
-@export var approach_x := 100.0
+## Punto di avvicinamento relativo all'oggetto: spostandolo nella stanza segue la sua posizione.
+@export var approach_offset_x := 20.0
 ## Sceglie il pannello dell'originale: mano per oggetti, bocca per persone, uscita per passaggi.
 @export_enum("hand", "mouth", "exit") var interaction_kind := "hand"
 ## Risposte dei semplici oggetti statici, modificabili senza creare una sottoclasse.
@@ -37,9 +42,13 @@ func actions(state: State, item_id: String = "", examining: bool = false) -> Arr
 		return conversation.steps.duplicate()
 	return [Step.effect(execute.bind(state, item_id, examining))]
 
-## Gli oggetti fissi usano la coordinata dell'Inspector; quelli mobili possono calcolarla dal proprio attore.
+## Converte il punto locale nelle coordinate della stanza, anche dentro contenitori.
 func approach_position() -> float:
-	return approach_x
+	var room := get_parent()
+	while room != null and not room.has_method("hotspots"):
+		room = room.get_parent()
+	var point := to_global(Vector2(approach_offset_x, 0))
+	return room.to_local(point).x if room != null else point.x
 
 ## Punto d'ingresso comune alle azioni: la lente ha precedenza sull'oggetto selezionato.
 ## Validare il possesso qui impedisce di usare una selezione consumata durante l'avvicinamento.

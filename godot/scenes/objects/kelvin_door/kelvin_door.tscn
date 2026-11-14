@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/objects/kelvin_door/kelvin_door.gd" id="object_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/original/doorSub.png" id="door_kelvin"]
+
+[node name="door_kelvin" type="Node2D"]
+script = ExtResource("object_script")
+hotspot_id = "door_kelvin"
+display_name = "Cabina di Kelvin"
+hit_size = Vector2(76, 116)
+approach_offset_x = 38.0
+interaction_kind = "exit"
+
+[node name="Visual" type="Sprite2D" parent="."]
+centered = false
+texture = ExtResource("door_kelvin")
+flip_h = true

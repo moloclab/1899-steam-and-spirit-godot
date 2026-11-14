@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://scenes/objects/bottle/bottle.gd" id="object_script"]
+[ext_resource type="Script" path="res://scripts/data/item_definition.gd" id="inventory_definition"]
+[ext_resource type="Texture2D" path="res://assets/graphics/original/O_bottle.png" id="inventory_icon"]
+[ext_resource type="Texture2D" path="res://assets/graphics/original/bottle.png" id="bottle"]
+
+[sub_resource type="Resource" id="inventory"]
+script = ExtResource("inventory_definition")
+item_id = "bottle"
+name_key = "inventory.bottle.name"
+description_key = "inventory.bottle.examine"
+icon = ExtResource("inventory_icon")
+collectible = true
+
+[node name="bottle" type="Node2D"]
+script = ExtResource("object_script")
+inventory_definition = SubResource("inventory")
+pickup_response = "cabin.bottle.pickup"
+hotspot_id = "bottle"
+display_name = "Bourbon"
+hit_size = Vector2(28, 12)
+approach_offset_x = 14.0
+examine_response = "cabin.bottle.examine"
+
+[node name="Visual" type="Sprite2D" parent="."]
+texture = ExtResource("bottle")
+centered = false

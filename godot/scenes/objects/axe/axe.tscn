@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/objects/axe/axe.gd" id="object_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/original/axBox.png" id="axBoxClose"]
+
+[node name="axBoxClose" type="Node2D"]
+script = ExtResource("object_script")
+hotspot_id = "axe"
+display_name = "Scure di emergenza"
+hit_size = Vector2(36, 44)
+approach_offset_x = 18.0
+examine_response = "corridor.axe.examine"
+interaction_response = "corridor.axe.case_closed"
+interaction_kind = "hand"
+
+[node name="Visual" type="Sprite2D" parent="."]
+centered = false
+texture = ExtResource("axBoxClose")
