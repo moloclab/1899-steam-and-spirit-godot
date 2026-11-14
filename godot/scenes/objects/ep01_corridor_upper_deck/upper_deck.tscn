@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/objects/ep01_corridor_upper_deck/upper_deck.gd" id="object_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/original/stair.png" id="stair"]
+
+[node name="stair" type="Node2D"]
+script = ExtResource("object_script")
+hotspot_id = "stair"
+display_name = "Ponte superiore"
+hit_size = Vector2(36, 196)
+approach_offset_x = 18.0
+interaction_kind = "exit"
+
+[node name="Visual" type="Sprite2D" parent="."]
+centered = false
+texture = ExtResource("stair")

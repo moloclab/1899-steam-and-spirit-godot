@@ -1,0 +1,23 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="Script" path="res://scenes/objects/ep01_corridor_lamp/lamp.gd" id="object_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/original/lamp_0.png" id="frames_1"]
+[ext_resource type="Texture2D" path="res://assets/graphics/original/lamp_1.png" id="frames_2"]
+[ext_resource type="Texture2D" path="res://assets/graphics/original/lamp_2.png" id="frames_3"]
+[ext_resource type="Texture2D" path="res://assets/graphics/original/lamp_3.png" id="frames_4"]
+
+[sub_resource type="SpriteFrames" id="frames"]
+animations = [{"frames": [{"duration": 1.0, "texture": ExtResource("frames_1")}, {"duration": 1.0, "texture": ExtResource("frames_2")}, {"duration": 1.0, "texture": ExtResource("frames_3")}, {"duration": 1.0, "texture": ExtResource("frames_4")}], "loop": true, "name": &"default", "speed": 0.1}]
+
+[node name="lampBlink" type="Node2D"]
+script = ExtResource("object_script")
+hotspot_id = "lampBlink"
+display_name = "Lampada"
+hit_size = Vector2(52, 64)
+approach_offset_x = 26.0
+interaction_kind = "hand"
+
+[node name="Visual" type="AnimatedSprite2D" parent="."]
+centered = false
+sprite_frames = SubResource("frames")
+autoplay = "default"

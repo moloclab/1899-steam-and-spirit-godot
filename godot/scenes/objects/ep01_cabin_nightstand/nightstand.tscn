@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/objects/ep01_cabin_nightstand/nightstand.gd" id="object_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/original/como.png" id="como"]
+
+[node name="como" type="Node2D"]
+script = ExtResource("object_script")
+hotspot_id = "como"
+display_name = "Comodino"
+hit_size = Vector2(40, 36)
+approach_offset_x = 20.0
+examine_response = "cabin.nightstand.examine"
+interaction_response = "cabin.nightstand.interact"
+
+[node name="Visual" type="Sprite2D" parent="."]
+texture = ExtResource("como")
+centered = false

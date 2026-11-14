@@ -72,7 +72,7 @@ disabilitati fino alla fine della sequenza, per evitare salvataggi a metà di un
 | `scripts/actions/interaction_controller.gd` | Richiesta di avvicinamento e rivalutazione del bersaglio all'arrivo |
 | `scripts/actions/sequence_runner.gd` | Esecuzione ordinata dei passi e attese di conferma/completamento |
 | `scripts/hotspot.gd`, `scripts/hotspots/` | Interfaccia comune e comportamenti condivisi: raccolta, uscita e interazione con personaggi |
-| `scenes/objects/<oggetto>/` | Scena e script di ciascun oggetto, con grafica, configurazione e risorse incorporate |
+| `scenes/objects/epNN_<stanza_origine>_<oggetto>/` | Scena e script di ciascun oggetto, con grafica, configurazione e risorse incorporate |
 | `scenes/rooms/` | Sfondo, metadati della stanza e posizionamento delle istanze degli oggetti |
 | `scripts/data/` | Tipi di risorsa, cataloghi e schema dei progressi |
 | `assets/data/` | Catalogo dei testi IT/EN |
@@ -86,12 +86,15 @@ appartengono a `GameState`. Nessun nodo della stanza viene scritto nel salvatagg
 
 ### Oggetti e combinazioni
 
-Ogni oggetto ha una cartella in `scenes/objects/<oggetto>/`, con due file:
+Ogni oggetto ha una cartella in `scenes/objects/epNN_<stanza_origine>_<oggetto>/`, con due file:
 
 - **`<oggetto>.tscn`**: grafica, area cliccabile, nome e configurazione. Le risorse
   specifiche (dati inventario, conversazioni, fotogrammi, ricette) sono incorporate.
 - **`<oggetto>.gd`**: comportamento. Gli oggetti semplici ereditano quello comune;
   gli enigmi ridefiniscono `examine`, `interact`, `use_item` o `actions`.
+
+Esempio: `ep01_cabin_bed/bed.tscn`. Gli oggetti riutilizzati conservano episodio e
+stanza di origine. Le scene delle stanze seguono `scenes/rooms/epNN_<stanza>.tscn`.
 
 Per modificare un oggetto, apri la sua scena. Per collocarlo, trascina quella scena
 nella stanza e imposta posizione e ordine di disegno. Non occorre rendere modificabili
@@ -155,7 +158,7 @@ Le conferme avanzano solo le battute, senza saltare movimento, animazioni o atte
 `cancel()` elimina i passi futuri, preservando gli effetti già applicati.
 
 Assegna una sequenza al campo `conversation` di un hotspot per il dialogo a mani libere;
-`scenes/objects/interphone/interphone.tscn` contiene un esempio giocabile, come risorsa interna.
+`scenes/objects/ep01_cabin_interphone/interphone.tscn` contiene un esempio giocabile, come risorsa interna.
 Per sequenze dipendenti dal progresso ridefinisci `actions(state, item_id, examining)`.
 Le regole semplici continuano a usare `examine`, `interact` e `use_item`: l'adattatore
 le esegue come effetti e visualizza la risposta restituita.

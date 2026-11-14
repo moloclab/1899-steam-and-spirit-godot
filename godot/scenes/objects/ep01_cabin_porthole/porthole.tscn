@@ -1,0 +1,26 @@
+[gd_scene load_steps=9 format=3]
+
+[ext_resource type="Script" path="res://scenes/objects/ep01_cabin_porthole/porthole.gd" id="object_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/original/oblo_0.png" id="frames_1"]
+[ext_resource type="Texture2D" path="res://assets/graphics/original/oblo_1.png" id="frames_2"]
+[ext_resource type="Texture2D" path="res://assets/graphics/original/oblo_2.png" id="frames_3"]
+[ext_resource type="Texture2D" path="res://assets/graphics/original/oblo_3.png" id="frames_4"]
+[ext_resource type="Texture2D" path="res://assets/graphics/original/oblo_4.png" id="frames_5"]
+[ext_resource type="Texture2D" path="res://assets/graphics/original/oblo_5.png" id="frames_6"]
+
+[sub_resource type="SpriteFrames" id="frames"]
+animations = [{"frames": [{"duration": 1.0, "texture": ExtResource("frames_1")}, {"duration": 1.0, "texture": ExtResource("frames_2")}, {"duration": 1.0, "texture": ExtResource("frames_3")}, {"duration": 1.0, "texture": ExtResource("frames_4")}, {"duration": 1.0, "texture": ExtResource("frames_5")}, {"duration": 1.0, "texture": ExtResource("frames_6")}], "loop": true, "name": &"default", "speed": 2.5}]
+
+[node name="oblo1" type="Node2D"]
+script = ExtResource("object_script")
+hotspot_id = "oblo1"
+display_name = "Oblò"
+hit_size = Vector2(48, 48)
+approach_offset_x = 24.0
+examine_response = "cabin.porthole.examine"
+interaction_response = "cabin.porthole.interact"
+
+[node name="Visual" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("frames")
+autoplay = "default"
+centered = false

@@ -1,0 +1,72 @@
+[gd_scene load_steps=18 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/room.gd" id="room_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/original/corridor_background.png" id="background"]
+[ext_resource type="Script" path="res://scripts/data/room_definition.gd" id="room_definition_definition"]
+[ext_resource type="PackedScene" path="res://scenes/objects/ep01_corridor_cabin_exit/cabin_exit.tscn" id="object_door_cabina"]
+[ext_resource type="PackedScene" path="res://scenes/objects/ep01_corridor_churchill_sign/churchill_sign.tscn" id="object_label_cabina"]
+[ext_resource type="PackedScene" path="res://scenes/objects/ep01_corridor_axe/axe.tscn" id="object_axBoxClose"]
+[ext_resource type="PackedScene" path="res://scenes/objects/ep01_corridor_fire_sign/fire_sign.tscn" id="object_label_ax"]
+[ext_resource type="PackedScene" path="res://scenes/objects/ep01_corridor_dormitory_door/dormitory_door.tscn" id="object_door_camerata"]
+[ext_resource type="PackedScene" path="res://scenes/objects/ep01_corridor_smoker/smoker.tscn" id="object_smoker"]
+[ext_resource type="PackedScene" path="res://scenes/objects/ep01_corridor_kelvin_door/kelvin_door.tscn" id="object_door_kelvin"]
+[ext_resource type="PackedScene" path="res://scenes/objects/ep01_corridor_kelvin_sign/kelvin_sign.tscn" id="object_label_kelvin"]
+[ext_resource type="PackedScene" path="res://scenes/objects/ep01_corridor_horizontal_wire/horizontal_wire.tscn" id="object_wireH"]
+[ext_resource type="PackedScene" path="res://scenes/objects/ep01_corridor_vertical_wire/vertical_wire.tscn" id="object_wireVNormal"]
+[ext_resource type="PackedScene" path="res://scenes/objects/ep01_corridor_lamp/lamp.tscn" id="object_lampBlink"]
+[ext_resource type="PackedScene" path="res://scenes/objects/ep01_corridor_upper_deck/upper_deck.tscn" id="object_stair"]
+[ext_resource type="PackedScene" path="res://scenes/objects/ep01_corridor_lower_deck/lower_deck.tscn" id="object_manhole"]
+
+[sub_resource type="Resource" id="room_definition"]
+script = ExtResource("room_definition_definition")
+room_id = "corridor"
+scene_path = "res://scenes/rooms/ep01_corridor.tscn"
+width = 892.0
+entries = Dictionary[String, float]({"default": 94.0, "from_cabin": 94.0})
+
+[node name="CORRIDOR" type="Node2D"]
+script = ExtResource("room_script")
+definition = SubResource("room_definition")
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("background")
+centered = false
+
+[node name="door_cabina" parent="." instance=ExtResource("object_door_cabina")]
+position = Vector2(56, 84)
+
+[node name="label_cabina" parent="." instance=ExtResource("object_label_cabina")]
+position = Vector2(84, 72)
+
+[node name="axBoxClose" parent="." instance=ExtResource("object_axBoxClose")]
+position = Vector2(200, 108)
+
+[node name="label_ax" parent="." instance=ExtResource("object_label_ax")]
+position = Vector2(244, 116)
+
+[node name="door_camerata" parent="." instance=ExtResource("object_door_camerata")]
+position = Vector2(326, 84)
+
+[node name="smoker" parent="." instance=ExtResource("object_smoker")]
+position = Vector2(420, 92)
+
+[node name="door_kelvin" parent="." instance=ExtResource("object_door_kelvin")]
+position = Vector2(542, 84)
+
+[node name="label_kelvin" parent="." instance=ExtResource("object_label_kelvin")]
+position = Vector2(570, 72)
+
+[node name="wireH" parent="." instance=ExtResource("object_wireH")]
+position = Vector2(-4, 22)
+
+[node name="wireVNormal" parent="." instance=ExtResource("object_wireVNormal")]
+position = Vector2(616, 28)
+
+[node name="lampBlink" parent="." instance=ExtResource("object_lampBlink")]
+position = Vector2(676, 52)
+
+[node name="stair" parent="." instance=ExtResource("object_stair")]
+position = Vector2(756, 0)
+
+[node name="manhole" parent="." instance=ExtResource("object_manhole")]
+position = Vector2(814, 184)

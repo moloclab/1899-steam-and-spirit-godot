@@ -1,0 +1,34 @@
+[gd_scene load_steps=10 format=3]
+
+[ext_resource type="Script" path="res://scenes/objects/ep01_corridor_smoker/smoker.gd" id="object_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/original/smoker_0.png" id="frames_1"]
+[ext_resource type="Texture2D" path="res://assets/graphics/original/smoker_1.png" id="frames_2"]
+[ext_resource type="Texture2D" path="res://assets/graphics/original/smoker_2.png" id="frames_3"]
+[ext_resource type="Texture2D" path="res://assets/graphics/original/smoker_3.png" id="frames_4"]
+[ext_resource type="Texture2D" path="res://assets/graphics/original/smoker_4.png" id="frames_5"]
+[ext_resource type="Texture2D" path="res://assets/graphics/original/smoker_5.png" id="frames_6"]
+[ext_resource type="Script" path="res://scripts/hotspots/character_hotspot.gd" id="character_hotspot"]
+
+[sub_resource type="SpriteFrames" id="frames"]
+animations = [{"frames": [{"duration": 1.0, "texture": ExtResource("frames_1")}, {"duration": 1.0, "texture": ExtResource("frames_2")}, {"duration": 1.0, "texture": ExtResource("frames_3")}, {"duration": 1.0, "texture": ExtResource("frames_4")}, {"duration": 1.0, "texture": ExtResource("frames_5")}, {"duration": 1.0, "texture": ExtResource("frames_6")}], "loop": true, "name": &"default", "speed": 3.3333333333333335}]
+
+[node name="smoker" type="AnimatedSprite2D"]
+script = ExtResource("object_script")
+character_id = "smoker"
+half_width = 20.0
+height = 108.0
+idle_animation = "default"
+walk_animation = "default"
+centered = false
+sprite_frames = SubResource("frames")
+autoplay = "default"
+
+[node name="Interaction" type="Node2D" parent="."]
+script = ExtResource("character_hotspot")
+hotspot_id = "smoker"
+display_name = "Marinaio"
+hit_size = Vector2(40, 108)
+approach_offset_x = 20.0
+examine_response = "corridor.smoker.examine"
+interaction_response = "corridor.smoker.conversation"
+interaction_kind = "mouth"

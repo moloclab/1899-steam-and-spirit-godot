@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/objects/ep01_corridor_vertical_wire/vertical_wire.gd" id="object_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/original/wireV.png" id="wireVNormal"]
+
+[node name="wireVNormal" type="Node2D"]
+script = ExtResource("object_script")
+hotspot_id = "wireVNormal"
+display_name = "Filo elettrico"
+hit_size = Vector2(88, 100)
+approach_offset_x = 44.0
+interaction_kind = "hand"
+
+[node name="Visual" type="Sprite2D" parent="."]
+centered = false
+texture = ExtResource("wireVNormal")

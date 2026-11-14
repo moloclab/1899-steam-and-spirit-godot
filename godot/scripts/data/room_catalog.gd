@@ -2,8 +2,8 @@ extends RefCounted
 ## Le definizioni appartengono alle scene delle stanze, senza file dati paralleli.
 const Definitions = preload("res://scripts/data/scene_definitions.gd")
 const SCENES := {
-	"cabin": "res://scenes/rooms/cabin.tscn",
-	"corridor": "res://scenes/rooms/corridor.tscn"
+	"cabin": "res://scenes/rooms/ep01_cabin.tscn",
+	"corridor": "res://scenes/rooms/ep01_corridor.tscn"
 }
 static var _rooms: Dictionary = {}
 static var ROOMS: Dictionary:
