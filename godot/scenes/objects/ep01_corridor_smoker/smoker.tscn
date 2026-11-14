@@ -1,16 +1,35 @@
-[gd_scene load_steps=10 format=3]
+[gd_scene load_steps=11 format=3]
 
 [ext_resource type="Script" path="res://scenes/objects/ep01_corridor_smoker/smoker.gd" id="object_script"]
-[ext_resource type="Texture2D" path="res://assets/graphics/ep01_corridor/smoker_0.png" id="frames_1"]
-[ext_resource type="Texture2D" path="res://assets/graphics/ep01_corridor/smoker_1.png" id="frames_2"]
-[ext_resource type="Texture2D" path="res://assets/graphics/ep01_corridor/smoker_2.png" id="frames_3"]
-[ext_resource type="Texture2D" path="res://assets/graphics/ep01_corridor/smoker_3.png" id="frames_4"]
-[ext_resource type="Texture2D" path="res://assets/graphics/ep01_corridor/smoker_4.png" id="frames_5"]
-[ext_resource type="Texture2D" path="res://assets/graphics/ep01_corridor/smoker_5.png" id="frames_6"]
 [ext_resource type="Script" path="res://scripts/hotspots/character_hotspot.gd" id="character_hotspot"]
+[ext_resource type="Texture2D" path="res://assets/graphics/ep01_corridor/smoker.png" id="sheet"]
+
+[sub_resource type="AtlasTexture" id="frame_0"]
+atlas = ExtResource("sheet")
+region = Rect2(0, 0, 40, 108)
+
+[sub_resource type="AtlasTexture" id="frame_1"]
+atlas = ExtResource("sheet")
+region = Rect2(40, 0, 40, 108)
+
+[sub_resource type="AtlasTexture" id="frame_2"]
+atlas = ExtResource("sheet")
+region = Rect2(80, 0, 40, 108)
+
+[sub_resource type="AtlasTexture" id="frame_3"]
+atlas = ExtResource("sheet")
+region = Rect2(120, 0, 40, 108)
+
+[sub_resource type="AtlasTexture" id="frame_4"]
+atlas = ExtResource("sheet")
+region = Rect2(160, 0, 40, 108)
+
+[sub_resource type="AtlasTexture" id="frame_5"]
+atlas = ExtResource("sheet")
+region = Rect2(200, 0, 40, 108)
 
 [sub_resource type="SpriteFrames" id="frames"]
-animations = [{"frames": [{"duration": 1.0, "texture": ExtResource("frames_1")}, {"duration": 1.0, "texture": ExtResource("frames_2")}, {"duration": 1.0, "texture": ExtResource("frames_3")}, {"duration": 1.0, "texture": ExtResource("frames_4")}, {"duration": 1.0, "texture": ExtResource("frames_5")}, {"duration": 1.0, "texture": ExtResource("frames_6")}], "loop": true, "name": &"default", "speed": 3.3333333333333335}]
+animations = [{"frames": [{"duration": 1.0, "texture": SubResource("frame_0")}, {"duration": 1.0, "texture": SubResource("frame_1")}, {"duration": 1.0, "texture": SubResource("frame_2")}, {"duration": 1.0, "texture": SubResource("frame_3")}, {"duration": 1.0, "texture": SubResource("frame_4")}, {"duration": 1.0, "texture": SubResource("frame_5")}], "loop": true, "name": &"default", "speed": 3.3333333333333335}]
 
 [node name="smoker" type="AnimatedSprite2D"]
 script = ExtResource("object_script")

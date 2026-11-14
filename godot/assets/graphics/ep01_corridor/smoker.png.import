@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bf1p7w3q60ehy"
-path="res://.godot/imported/lamp_1.png-61d30274213a476a97dfa21172ff294f.ctex"
+uid="uid://elaiqdqcvlp8"
+path="res://.godot/imported/smoker.png-ce8621ae44576f4dbec651252d99a3ce.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/graphics/ep01_corridor/lamp_1.png"
-dest_files=["res://.godot/imported/lamp_1.png-61d30274213a476a97dfa21172ff294f.ctex"]
+source_file="res://assets/graphics/ep01_corridor/smoker.png"
+dest_files=["res://.godot/imported/smoker.png-ce8621ae44576f4dbec651252d99a3ce.ctex"]
 
 [params]
 

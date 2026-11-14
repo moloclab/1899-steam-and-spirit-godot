@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0jk0d6ty7y1t"
-path="res://.godot/imported/lamp_3.png-f498b1e5760cbe7841dee94fffba9ba5.ctex"
+uid="uid://dv31t15mgho30"
+path="res://.godot/imported/oblo.png-63e8c9da3ce385ad7d9bdb56968c9020.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/graphics/ep01_corridor/lamp_3.png"
-dest_files=["res://.godot/imported/lamp_3.png-f498b1e5760cbe7841dee94fffba9ba5.ctex"]
+source_file="res://assets/graphics/ep01_cabin/oblo.png"
+dest_files=["res://.godot/imported/oblo.png-63e8c9da3ce385ad7d9bdb56968c9020.ctex"]
 
 [params]
 
