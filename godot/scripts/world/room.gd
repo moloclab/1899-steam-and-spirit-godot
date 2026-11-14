@@ -5,9 +5,15 @@ const Definition = preload("res://scripts/data/room_definition.gd")
 var _cached_hotspots: Array[Node2D] = []
 var _dirty := true
 
-## L'invalidazione leggera copre aggiunte e rimozioni dinamiche senza scansioni a ogni frame.
+## Le modifiche alla UI o ad altre stanze non invalidano gli hotspot di questa stanza.
 func _ready() -> void:
-	get_tree().tree_changed.connect(_invalidate)
+	get_tree().node_added.connect(_hotspot_tree_changed)
+	get_tree().node_removed.connect(_hotspot_tree_changed)
+
+## node_removed copre anche gli hotspot rimossi insieme a un contenitore annidato.
+func _hotspot_tree_changed(node: Node) -> void:
+	if node is Hotspot and (is_ancestor_of(node) or node in _cached_hotspots):
+		_invalidate()
 
 ## Ricostruisce la lista solo quando cambia l'albero; la visibilità viene verificata alla lettura.
 func _invalidate() -> void:

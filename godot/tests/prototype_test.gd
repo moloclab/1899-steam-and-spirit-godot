@@ -322,6 +322,13 @@ func _test_interphone() -> void:
 
 ## Un hotspot annidato funziona; nascondere un antenato o rimuoverlo annulla l'azione differita.
 func _test_nested_hotspots() -> void:
+	var room = game.rooms.current_room
+	room.hotspots()
+	var decoration := Control.new()
+	game.ui.add_child(decoration)
+	check(not room._dirty, "Aggiungere UI non invalida la cache della stanza")
+	decoration.free()
+	check(not room._dirty, "Rimuovere UI non invalida la cache della stanza")
 	var container := Node2D.new()
 	game.rooms.current_room.add_child(container)
 	var collectible := Collectible.new()
@@ -338,6 +345,12 @@ func _test_nested_hotspots() -> void:
 	container.remove_child(collectible)
 	_step()
 	check(game.rooms.find_hotspot("nested") == null, "Rimozione del nodo annulla la richiesta")
+	container.add_child(collectible)
+	check(game.rooms.find_hotspot("nested") == collectible, "Hotspot reinserito dopo la ricostruzione della cache")
+	room.remove_child(container)
+	check(game.rooms.find_hotspot("nested") == null, "Rimozione di un contenitore invalida gli hotspot annidati")
+	room.add_child(container)
+	check(game.rooms.find_hotspot("nested") == collectible, "Inserimento di un contenitore registra gli hotspot annidati")
 	collectible.free()
 	container.queue_free()
 	await process_frame
@@ -428,6 +441,29 @@ func _test_sequence_steps() -> void:
 	game._process(0)
 	check(not game.sequences.busy, "Completamento dell'animazione dopo la ripresa")
 
+## Gli aggiornamenti senza variazioni conservano i controlli e l'eventuale focus UI.
+func _test_inventory_reuse() -> void:
+	var empty: Array[String] = []
+	game.ui.refresh_inventory(empty, "", game.texts)
+	var placeholder = game.ui.inventory_row.get_child(0)
+	game.ui.refresh_inventory(empty, "", game.texts)
+	check(game.ui.inventory_row.get_child(0) == placeholder, "Inventario vuoto mantiene il messaggio senza ricrearlo")
+	var items: Array[String] = ["ep01_cabin_bottle", "ep01_cabin_feather"]
+	game.ui.refresh_inventory(items, "", game.texts)
+	var button = game.ui._inventory_buttons[0]
+	button.grab_focus()
+	game.ui.refresh_inventory(items.duplicate(), items[0], game.texts)
+	check(game.ui._inventory_buttons[0] == button and button.has_focus(), "Selezione conserva pulsanti e focus dell'inventario")
+	game.ui.lock_interactions(true)
+	game.ui.refresh_inventory(items, "", game.texts)
+	check(button.disabled, "Aggiornamento invariato conserva il blocco delle interazioni")
+	game.ui.lock_interactions(false)
+	items.reverse()
+	game.ui.refresh_inventory(items, "", game.texts)
+	check(game.ui._inventory_ids == items and game.ui._inventory_buttons[0] != button, "Cambio ordine ricostruisce l'inventario")
+	game._refresh()
+	await process_frame
+
 ## La barra permette di raggiungere un oggetto oltre la larghezza visibile anche col focus del controller.
 func _test_inventory_scroll() -> void:
 	var many: Array[String] = []
@@ -438,6 +474,12 @@ func _test_inventory_scroll() -> void:
 	await process_frame
 	game.ui.highlight_inventory("", many.size() - 1, true)
 	check(game.ui.inventory_scroll.scroll_horizontal > 0, "Scorrimento automatico dell'inventario")
+	game.ui.inventory_scroll.scroll_horizontal = 0
+	game.ui.highlight_inventory("", many.size() - 1, true)
+	check(game.ui.inventory_scroll.scroll_horizontal == 0, "Focus invariato non forza nuovamente lo scorrimento")
+	game.ui.highlight_inventory("", 0, true)
+	game.ui.highlight_inventory("", many.size() - 1, true)
+	check(game.ui.inventory_scroll.scroll_horizontal > 0, "Cambio focus riattiva lo scorrimento automatico")
 	game._refresh()
 	await process_frame
 
@@ -511,6 +553,7 @@ func _run() -> void:
 	await _test_interphone()
 	await _test_nested_hotspots()
 	await _test_sequence_steps()
+	await _test_inventory_reuse()
 	await _test_inventory_scroll()
 	await _test_keyboard_controller()
 	await _test_episode_configuration()

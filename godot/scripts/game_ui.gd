@@ -28,6 +28,10 @@ var save_buttons: Array[Button] = []
 var music_button: Button
 var _inventory_ids: Array[String] = []
 var _inventory_buttons: Array[Button] = []
+var _inventory_built := false
+var _highlight_valid := false
+var _highlight_selected := ""
+var _highlight_index := -1
 
 ## Crea un pannello con posizione e dimensioni espresse nelle coordinate del suo genitore.
 ## Il genitore predefinito è questa scena; i pannelli del menu usano invece un contenitore.
@@ -167,8 +171,13 @@ func say(value: String, speaker: String = "Winston Churchill") -> void:
 	speech_label.text = value
 	speaker_label.text = speaker.to_upper()
 
-## Crea i pulsanti da un catalogo unico; le icone sono risorse già condivise da Godot.
+## Ricrea i pulsanti solo se cambiano gli ID o il loro ordine; conserva focus e scorrimento altrimenti.
 func refresh_inventory(inventory: Array[String], selected: String, texts) -> void:
+	if _inventory_built and _inventory_ids == inventory:
+		update_selection(selected, texts)
+		return
+	_inventory_built = true
+	_highlight_valid = false
 	_inventory_ids = inventory.duplicate()
 	_inventory_buttons.clear()
 	for child in inventory_row.get_children():
@@ -196,11 +205,17 @@ func refresh_inventory(inventory: Array[String], selected: String, texts) -> voi
 func update_selection(selected: String, texts) -> void:
 	selection_label.text = "INVENTARIO" if selected.is_empty() else "USA %s CON…" % texts.text(Items.ITEMS[selected].name_key)
 
-## Evidenzia il focus del controller e porta in vista l'oggetto nella barra scorrevole.
+## Aggiorna colori e scorrimento solo quando cambiano selezione, focus o pulsanti.
 func highlight_inventory(selected: String, focus_index: int, focused: bool) -> void:
+	var active_index := posmod(focus_index, _inventory_ids.size()) if focused and not _inventory_ids.is_empty() else -1
+	if _highlight_valid and _highlight_selected == selected and _highlight_index == active_index:
+		return
+	_highlight_valid = true
+	_highlight_selected = selected
+	_highlight_index = active_index
 	for i in _inventory_buttons.size():
 		var button := _inventory_buttons[i]
-		var is_focused := focused and i == posmod(focus_index, _inventory_ids.size())
+		var is_focused := i == active_index
 		button.modulate = GOLD if is_focused or _inventory_ids[i] == selected else Color.WHITE
 		if is_focused:
 			inventory_scroll.ensure_control_visible(button)

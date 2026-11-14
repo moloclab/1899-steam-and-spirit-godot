@@ -281,9 +281,13 @@ func _at_mouse() -> Node2D:
 ## Cerca un oggetto cliccabile a partire da un punto in coordinate globali del canvas.
 ## In caso di sovrapposizione viene provato prima l'ultimo hotspot nell'ordine dei figli.
 func _at_point(point: Vector2) -> Node2D:
-	var hotspots := _hotspots()
-	hotspots.reverse() # Oggetti in primo piano prima del fondale.
-	for hotspot in hotspots:
+	return _find_at_point(point, _hotspots())
+
+## Riusa la lista del frame anche per individuare il bersaglio del mouse.
+func _find_at_point(point: Vector2, hotspots: Array[Node2D]) -> Node2D:
+	# Visita a ritroso senza invertire o copiare la lista condivisa dal chiamante.
+	for index in range(hotspots.size() - 1, -1, -1):
+		var hotspot := hotspots[index]
 		if hotspot.contains(point):
 			return hotspot
 	return null
@@ -392,7 +396,7 @@ func _update_highlight() -> void:
 	var hotspots := _hotspots()
 	var mouse_target: Node2D = null
 	if not ui.help_panel.visible and ui.world_panel.get_global_rect().has_point(get_global_mouse_position()):
-		mouse_target = _at_mouse()
+		mouse_target = _find_at_point(get_global_mouse_position(), hotspots)
 	ui.world_panel.mouse_default_cursor_shape = Control.CURSOR_CROSS if mouse_target != null else Control.CURSOR_ARROW
 	var focused: Node2D = null
 	if not ui.help_panel.visible:
