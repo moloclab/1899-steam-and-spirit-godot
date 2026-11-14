@@ -1,18 +1,43 @@
-[gd_scene load_steps=12 format=3]
+[gd_scene load_steps=13 format=3]
 
+[ext_resource type="Texture2D" path="res://assets/graphics/characters/churchill/churchill_walk.png" id="walk_sheet"]
 [ext_resource type="Script" path="res://scripts/world/character.gd" id="character"]
-[ext_resource type="Texture2D" path="res://assets/graphics/characters/churchill/churchill_walk_0.png" id="1"]
-[ext_resource type="Texture2D" path="res://assets/graphics/characters/churchill/churchill_walk_1.png" id="2"]
-[ext_resource type="Texture2D" path="res://assets/graphics/characters/churchill/churchill_walk_2.png" id="3"]
-[ext_resource type="Texture2D" path="res://assets/graphics/characters/churchill/churchill_walk_3.png" id="4"]
-[ext_resource type="Texture2D" path="res://assets/graphics/characters/churchill/churchill_walk_4.png" id="5"]
-[ext_resource type="Texture2D" path="res://assets/graphics/characters/churchill/churchill_walk_5.png" id="6"]
-[ext_resource type="Texture2D" path="res://assets/graphics/characters/churchill/churchill_walk_6.png" id="7"]
-[ext_resource type="Texture2D" path="res://assets/graphics/characters/churchill/churchill_walk_7.png" id="8"]
 [ext_resource type="Texture2D" path="res://assets/graphics/characters/churchill/churchill_stand.png" id="idle"]
 
+[sub_resource type="AtlasTexture" id="walk_0"]
+atlas = ExtResource("walk_sheet")
+region = Rect2(0, 0, 44, 100)
+
+[sub_resource type="AtlasTexture" id="walk_1"]
+atlas = ExtResource("walk_sheet")
+region = Rect2(44, 0, 44, 100)
+
+[sub_resource type="AtlasTexture" id="walk_2"]
+atlas = ExtResource("walk_sheet")
+region = Rect2(88, 0, 44, 100)
+
+[sub_resource type="AtlasTexture" id="walk_3"]
+atlas = ExtResource("walk_sheet")
+region = Rect2(132, 0, 44, 100)
+
+[sub_resource type="AtlasTexture" id="walk_4"]
+atlas = ExtResource("walk_sheet")
+region = Rect2(176, 0, 44, 100)
+
+[sub_resource type="AtlasTexture" id="walk_5"]
+atlas = ExtResource("walk_sheet")
+region = Rect2(220, 0, 44, 100)
+
+[sub_resource type="AtlasTexture" id="walk_6"]
+atlas = ExtResource("walk_sheet")
+region = Rect2(264, 0, 44, 100)
+
+[sub_resource type="AtlasTexture" id="walk_7"]
+atlas = ExtResource("walk_sheet")
+region = Rect2(308, 0, 44, 100)
+
 [sub_resource type="SpriteFrames" id="frames"]
-animations = [{"frames": [{"duration": 1.0, "texture": ExtResource("1")}, {"duration": 1.0, "texture": ExtResource("2")}, {"duration": 1.0, "texture": ExtResource("3")}, {"duration": 1.0, "texture": ExtResource("4")}, {"duration": 1.0, "texture": ExtResource("5")}, {"duration": 1.0, "texture": ExtResource("6")}, {"duration": 1.0, "texture": ExtResource("7")}, {"duration": 1.0, "texture": ExtResource("8")}], "loop": true, "name": &"walk", "speed": 10}, {"frames": [{"duration": 1.0, "texture": ExtResource("idle")}], "loop": true, "name": &"idle", "speed": 1.0}]
+animations = [{"frames": [{"duration": 1.0, "texture": SubResource("walk_0")}, {"duration": 1.0, "texture": SubResource("walk_1")}, {"duration": 1.0, "texture": SubResource("walk_2")}, {"duration": 1.0, "texture": SubResource("walk_3")}, {"duration": 1.0, "texture": SubResource("walk_4")}, {"duration": 1.0, "texture": SubResource("walk_5")}, {"duration": 1.0, "texture": SubResource("walk_6")}, {"duration": 1.0, "texture": SubResource("walk_7")}], "loop": true, "name": &"walk", "speed": 10}, {"frames": [{"duration": 1.0, "texture": ExtResource("idle")}], "loop": true, "name": &"idle", "speed": 1.0}]
 
 [node name="Churchill" type="AnimatedSprite2D"]
 script = ExtResource("character")

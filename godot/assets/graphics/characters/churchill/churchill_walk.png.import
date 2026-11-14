@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://da8788ym0l6p4"
-path="res://.godot/imported/churchill_walk_6.png-9f5841a80d7b2b3281a11c11c2d1b5cf.ctex"
+uid="uid://doiorvfaxhi2"
+path="res://.godot/imported/churchill_walk.png-2cb79831313bd6f3edd9ad4980e4bcec.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/graphics/characters/churchill/churchill_walk_6.png"
-dest_files=["res://.godot/imported/churchill_walk_6.png-9f5841a80d7b2b3281a11c11c2d1b5cf.ctex"]
+source_file="res://assets/graphics/characters/churchill/churchill_walk.png"
+dest_files=["res://.godot/imported/churchill_walk.png-2cb79831313bd6f3edd9ad4980e4bcec.ctex"]
 
 [params]
 
