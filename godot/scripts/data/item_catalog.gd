@@ -2,11 +2,11 @@ extends RefCounted
 ## Indice delle scene: i dati sono definiti una sola volta, nella scena di ciascun oggetto.
 const Definitions = preload("res://scripts/data/scene_definitions.gd")
 const SCENES := {
-	"bottle": "res://scenes/objects/ep01_cabin_bottle/bottle.tscn",
-	"feather": "res://scenes/objects/ep01_cabin_feather/feather.tscn",
-	"magnet": "res://scenes/objects/ep01_cabin_magnet/magnet.tscn",
-	"magnetFeather": "res://scenes/objects/ep01_cabin_magnet_feather/magnet_feather.tscn",
-	"key": "res://scenes/objects/ep01_cabin_key/key.tscn"
+	"ep01_cabin_bottle": "res://scenes/objects/ep01_cabin_bottle/bottle.tscn",
+	"ep01_cabin_feather": "res://scenes/objects/ep01_cabin_feather/feather.tscn",
+	"ep01_cabin_magnet": "res://scenes/objects/ep01_cabin_magnet/magnet.tscn",
+	"ep01_cabin_magnet_feather": "res://scenes/objects/ep01_cabin_magnet_feather/magnet_feather.tscn",
+	"ep01_cabin_key": "res://scenes/objects/ep01_cabin_key/key.tscn"
 }
 static var _items: Dictionary = {}
 static var _recipes: Array = []
@@ -19,7 +19,7 @@ static var ITEMS: Dictionary:
 static var RECIPES: Array:
 	get:
 		if _recipes.is_empty():
-			_recipes.append(Definitions.property(SCENES.magnetFeather, "combination_definition"))
+			_recipes.append(Definitions.property(SCENES.ep01_cabin_magnet_feather, "combination_definition"))
 		return _recipes
 
 ## Anche la validazione dei salvataggi usa questo registro, evitando elenchi paralleli di ID.

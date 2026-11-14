@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3]
 
 [ext_resource type="Script" path="res://scenes/objects/ep01_corridor_lamp/lamp.gd" id="object_script"]
-[ext_resource type="Texture2D" path="res://assets/graphics/original/lamp_0.png" id="frames_1"]
-[ext_resource type="Texture2D" path="res://assets/graphics/original/lamp_1.png" id="frames_2"]
-[ext_resource type="Texture2D" path="res://assets/graphics/original/lamp_2.png" id="frames_3"]
-[ext_resource type="Texture2D" path="res://assets/graphics/original/lamp_3.png" id="frames_4"]
+[ext_resource type="Texture2D" path="res://assets/graphics/ep01_corridor/lamp_0.png" id="frames_1"]
+[ext_resource type="Texture2D" path="res://assets/graphics/ep01_corridor/lamp_1.png" id="frames_2"]
+[ext_resource type="Texture2D" path="res://assets/graphics/ep01_corridor/lamp_2.png" id="frames_3"]
+[ext_resource type="Texture2D" path="res://assets/graphics/ep01_corridor/lamp_3.png" id="frames_4"]
 
 [sub_resource type="SpriteFrames" id="frames"]
 animations = [{"frames": [{"duration": 1.0, "texture": ExtResource("frames_1")}, {"duration": 1.0, "texture": ExtResource("frames_2")}, {"duration": 1.0, "texture": ExtResource("frames_3")}, {"duration": 1.0, "texture": ExtResource("frames_4")}], "loop": true, "name": &"default", "speed": 0.1}]

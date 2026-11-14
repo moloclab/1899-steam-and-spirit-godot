@@ -2,7 +2,7 @@ extends RefCounted
 ## Ogni enigma dichiara qui valori iniziali e tipi accettati nei salvataggi.
 ## Le chiavi stabili appartengono a un ambito, evitando una lista di variabili globali per tutto EP01.
 const SCOPES := {
-	"cabin": {
+	"ep01_cabin": {
 		"sink_stage": {"default": 0, "min": 0, "max": 2},
 		"door_unlocked": {"default": false}
 	}

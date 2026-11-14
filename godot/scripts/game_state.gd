@@ -3,13 +3,30 @@ extends RefCounted
 const Items = preload("res://scripts/data/item_catalog.gd")
 const Rooms = preload("res://scripts/data/room_catalog.gd")
 const Progress = preload("res://scripts/data/progress_schema.gd")
+const Episodes = preload("res://scripts/data/episode_catalog.gd")
 
 ## collected registra la raccolta definitiva; un oggetto consumato non riappare nella stanza.
 var inventory: Array[String] = []
 var collected: Array[String] = []
 var progress: Dictionary = Progress.defaults()
-var room := "cabin"
-var player_x := 180.0
+var room := ""
+var player_x := 0.0
+var episode_id: String:
+	get:
+		var definition = Rooms.get_room(room)
+		return definition.episode_id if definition != null else ""
+
+## La posizione iniziale appartiene all'ingresso della stanza configurata nell'episodio.
+func _init(starting_episode: String = Episodes.DEFAULT_EPISODE) -> void:
+	var episode = Episodes.get_episode(starting_episode)
+	if episode == null:
+		push_error("Episodio iniziale sconosciuto: " + starting_episode)
+		return
+	var definition = Rooms.get_room(episode.initial_room)
+	if definition == null or definition.episode_id != starting_episode:
+		push_error("Stanza iniziale non valida per l'episodio: " + starting_episode)
+		return
+	enter_room(episode.initial_room, episode.initial_entry)
 
 ## L'accesso ai progressi è circoscritto all'enigma, con i valori iniziali dello schema.
 func get_progress(scope: String, key: String) -> Variant:

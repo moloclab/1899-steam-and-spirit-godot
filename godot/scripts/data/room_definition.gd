@@ -2,6 +2,7 @@ extends Resource
 ## Metadati di una stanza condivisi da movimento, ingressi e validazione dei salvataggi.
 ## Il percorso mantiene il caricamento sincrono e non introduce dipendenze circolari fra script e scene.
 @export var room_id := ""
+@export var episode_id := ""
 @export_file("*.tscn") var scene_path := ""
 @export var width := 648.0
 @export var walk_margin := 24.0

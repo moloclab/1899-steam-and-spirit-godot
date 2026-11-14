@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scenes/episodes/ep01/ep01.gd" id="episode_script"]
+[ext_resource type="Script" path="res://scripts/data/episode_definition.gd" id="episode_definition"]
+[ext_resource type="AudioStream" path="res://assets/audio/music/ep01/song1.mp3" id="music"]
+
+[sub_resource type="Resource" id="definition"]
+script = ExtResource("episode_definition")
+episode_id = "ep01"
+initial_room = "ep01_cabin"
+initial_entry = "default"
+music = ExtResource("music")
+intro_keys = Array[String](["ep01.cabin.intro.headache", "ep01.cabin.intro.whiskey"])
+dialogue_path = "res://assets/dialogue/ep01/dialogue.json"
+
+[node name="EP01" type="Node"]
+script = ExtResource("episode_script")
+definition = SubResource("definition")

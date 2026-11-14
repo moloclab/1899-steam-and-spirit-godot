@@ -24,7 +24,7 @@ Non richiede .NET, Docker o un server web. L'originale in `../EP01` resta il rif
 - Un salvataggio manuale locale e menu con istruzioni, caricamento e nuova partita.
 
 Gli altri accessi del corridoio sono segnaposto; la battuta del marinaio resta semplificata.
-Musica, effetti, conversazioni a scelta e altre stanze di EP01 devono ancora essere portati.
+Effetti, conversazioni a scelta e altre stanze di EP01 devono ancora essere portati.
 La lingua visualizzata è l'italiano; il catalogo conserva anche le traduzioni inglesi.
 Le stanze vengono caricate in modo **sincrono**.
 
@@ -65,7 +65,7 @@ disabilitati fino alla fine della sequenza, per evitare salvataggi a metà di un
 | `scripts/main.gd` | Collega i componenti, inoltra input e conserva la selezione temporanea |
 | `scripts/game_ui.gd` | Controlli, inventario scorrevole, speaker, dialoghi e menu; emette segnali |
 | `scripts/game_state.gd` | Inventario, raccolte definitive e progressi per ambito; nessun accesso al disco |
-| `scripts/save_store.gd` | Salvataggi versione 2, validazione e migrazione dalla versione 1 |
+| `scripts/save_store.gd` | Salvataggi versione 3, con episodio, ID univoci e validazione |
 | `scripts/world/room_manager.gd` | Sostituzione delle stanze, personaggi, centratura/scorrimento e pausa delle animazioni |
 | `scripts/world/room.gd` | Cache degli hotspot, anche annidati, con invalidazione dopo aggiunte e rimozioni |
 | `scripts/world/character.gd` | Movimento e animazioni riutilizzabili per Churchill e altri personaggi |
@@ -74,8 +74,10 @@ disabilitati fino alla fine della sequenza, per evitare salvataggi a metà di un
 | `scripts/hotspot.gd`, `scripts/hotspots/` | Interfaccia comune e comportamenti condivisi: raccolta, uscita e interazione con personaggi |
 | `scenes/objects/epNN_<stanza_origine>_<oggetto>/` | Scena e script di ciascun oggetto, con grafica, configurazione e risorse incorporate |
 | `scenes/rooms/` | Sfondo, metadati della stanza e posizionamento delle istanze degli oggetti |
+| `scenes/episodes/epNN/` | Scena e script dell'episodio, con configurazione incorporata |
 | `scripts/data/` | Tipi di risorsa, cataloghi e schema dei progressi |
-| `assets/data/` | Catalogo dei testi IT/EN |
+| `assets/dialogue/common/`, `assets/dialogue/epNN/` | Testi comuni e testi IT/EN degli episodi |
+| `scripts/data/episode_catalog.gd` | Registro degli episodi disponibili |
 | `scenes/characters/churchill.tscn` | Personaggio giocante riutilizzabile con animazioni già configurate |
 
 I componenti ricevono stato e dipendenze esplicitamente, senza singleton.
@@ -83,6 +85,38 @@ Le risorse descrivono i contenuti e restano condivise; le mutazioni della partit
 appartengono a `GameState`. Nessun nodo della stanza viene scritto nel salvataggio.
 
 ## Aggiungere contenuti
+
+### Episodi, ID e asset
+
+Ogni episodio ha una cartella `scenes/episodes/epNN/`, con scena `epNN.tscn` e script
+`epNN.gd`, come gli oggetti. Apri la scena, seleziona la radice ed espandi `definition`
+nell'Inspector: la risorsa incorporata, basata su `scripts/data/episode_definition.gd`,
+contiene ID, stanza e ingresso iniziali, sottofondo, chiavi dell'introduzione e percorso
+dei dialoghi. Registra il percorso della scena in `EpisodeCatalog.EPISODES`.
+Il catalogo legge la definizione senza istanziare la scena dell'episodio; le stanze
+restano indipendenti e vengono istanziate una alla volta dal gestore delle stanze.
+La proprietà `starting_episode` di `main.tscn` sceglie l'episodio per avvio e nuova partita.
+L'ingresso della stanza definisce anche la posizione iniziale; musica e testi si aggiornano
+quando una transizione o un caricamento porta a un altro episodio.
+
+Convenzioni per i contenuti persistenti:
+
+- Stanze e ambiti dei progressi: `epNN_<stanza>`, per esempio `ep01_cabin`.
+- Oggetti dell'inventario: `epNN_<stanza_origine>_<oggetto>`, per esempio `ep01_cabin_bottle`.
+- Testi dell'episodio: `epNN.<ambito>.<testo>`; risposte condivise: `common.<testo>`.
+- Hotspot, nodi e ingressi: ID locali alla stanza, senza prefissi obbligatori.
+
+Gli oggetti riutilizzati mantengono gli ID di origine anche negli episodi successivi.
+Il servizio dei testi carica `assets/dialogue/common/dialogue.json` e il catalogo dell'episodio;
+i cataloghi già caricati restano disponibili. Per un oggetto proveniente da un altro episodio,
+la sua chiave carica su richiesta anche il catalogo di origine, senza cambiare episodio attivo.
+
+Gli asset grafici sono organizzati in `assets/graphics/epNN_<stanza_origine>/`,
+`assets/graphics/characters/<personaggio>/` e `assets/graphics/ui/` (inclusi i cursori).
+Musica e futuri effetti vanno in `assets/audio/music/epNN/` e `assets/audio/sfx/`.
+La ripetizione del sottofondo si imposta nelle proprietà di importazione dell'audio.
+I file `.import` e `.gd.uid` si conservano in Git; la cache `.godot/` è esclusa.
+Anche `tests/` è versionata, mentre `test-output/` contiene solo catture locali escluse.
 
 ### Oggetti e combinazioni
 
@@ -110,7 +144,7 @@ Le due istanze dell'oblò condividono `porthole.tscn` e hanno ID distinti nella 
    per gli oggetti raccoglibili; registra il percorso della scena in `ItemCatalog.SCENES`.
 4. Per una combinazione, configura `combination_definition` nella scena dell'oggetto
    risultante e registrala nel getter `ItemCatalog.RECIPES`. Vedi `magnet_feather.tscn`.
-5. Aggiungi i testi IT/EN in `assets/data/dialogue.json`.
+5. Aggiungi i testi IT/EN in `assets/dialogue/epNN/dialogue.json`, con chiavi `epNN.<ambito>.<testo>`.
 
 Il catalogo legge i dati incorporati senza istanziare l'oggetto e senza caricare la
 stanza: inventario e salvataggi restano disponibili anche dopo averla lasciata.
@@ -124,7 +158,7 @@ specializzare `apply(state)`, senza ampliare un elenco di condizioni in `GameSta
 
 1. Crea una scena con radice `Node2D` e script `world/room.gd`.
 2. Crea una risorsa interna `data/room_definition.gd` nel campo `definition` della radice.
-3. Imposta ID, percorso della scena, larghezza, margine percorribile, quota dei piedi,
+3. Imposta ID univoco (`ep01_cabin`), episodio (`ep01`), percorso della scena, larghezza, margine percorribile, quota dei piedi,
    scala e ingressi nominati. Registra il percorso della scena in `RoomCatalog.SCENES`.
 4. Le uscite indicano stanza e **nome dell'ingresso**; le coordinate appartengono alla destinazione.
 5. Dichiara valori iniziali e intervalli dei progressi in `ProgressSchema.SCOPES`.
@@ -165,12 +199,12 @@ le esegue come effetti e visualizza la risposta restituita.
 
 ## Salvataggi
 
-Il percorso resta `user://cabin_save.json`, normalmente sotto
+Il percorso è `user://game_save.json`, normalmente sotto
 `%APPDATA%\Godot\app_userdata\1899 — Steam & Spirit\` su Windows.
 Il gioco non carica automaticamente. Ricomincia azzera la partita corrente e conserva il file.
 
-Il formato versione 2 contiene inventario, raccolte, progressi per ambito, stanza e posizione.
-I file versione 1 vengono migrati in memoria; la successiva scrittura usa la versione 2.
+Il formato versione 3 contiene episodio, inventario, raccolte, progressi per ambito, stanza e posizione.
+I precedenti formati 1 e 2 non sono supportati: avvia una nuova partita.
 Prima di applicare i dati vengono controllati ID, tipi, duplicati, ambiti e intervalli.
 I progressi assenti ricevono i valori iniziali, permettendo l'aggiunta di nuovi enigmi.
 Il servizio scrive un temporaneo e sostituisce il file solo dopo la scrittura riuscita.
@@ -184,7 +218,7 @@ Regressione automatica con la scena reale e input sintetici:
 ```
 
 Copre cataloghi, ricette, percorso della cabina col solo sinistro, transizioni,
-ripresa intermedia, migrazione versione 1, file corrotti senza mutazioni parziali,
+ripresa intermedia, rifiuto dei vecchi formati, file corrotti senza mutazioni parziali,
 conversazione con mouse/tastiera/controller, pausa, passi temporizzati, animazioni,
 movimento di altri personaggi, hotspot annidati/nascosti/rimossi e inventario scorrevole.
 Il file di test è distinto dal salvataggio del giocatore e viene rimosso al termine.

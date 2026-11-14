@@ -1,9 +1,9 @@
 [gd_scene load_steps=4 format=3]
 
 [ext_resource type="Script" path="res://scenes/objects/ep01_cabin_map/map.gd" id="object_script"]
-[ext_resource type="Texture2D" path="res://assets/graphics/original/mapMagnet.png" id="mapMagnet"]
+[ext_resource type="Texture2D" path="res://assets/graphics/ep01_cabin/map_magnet.png" id="mapMagnet"]
 
-[ext_resource type="Texture2D" path="res://assets/graphics/original/map.png" id="collected_texture"]
+[ext_resource type="Texture2D" path="res://assets/graphics/ep01_cabin/map.png" id="collected_texture"]
 
 [node name="mapMagnet" type="Node2D"]
 script = ExtResource("object_script")

@@ -10,15 +10,18 @@ const Interactions = preload("res://scripts/actions/interaction_controller.gd")
 const Sequences = preload("res://scripts/actions/sequence_runner.gd")
 const Step = preload("res://scripts/actions/action_step.gd")
 const Saves = preload("res://scripts/save_store.gd")
-const CURSOR_NORMAL = preload("res://assets/graphics/cursors/cursor_normal.png")
-const CURSOR_MAGNIFIER = preload("res://assets/graphics/cursors/cursor_magnifier.png")
-var state = State.new()
-var texts = Texts.new()
+const Episodes = preload("res://scripts/data/episode_catalog.gd")
+const CURSOR_NORMAL = preload("res://assets/graphics/ui/cursors/cursor_normal.png")
+const CURSOR_MAGNIFIER = preload("res://assets/graphics/ui/cursors/cursor_magnifier.png")
+var state: State
+var texts: Texts
 var rooms = Rooms.new()
 var interactions = Interactions.new()
 var sequences = Sequences.new()
 var ui: UI
 var music := AudioStreamPlayer.new()
+@export var starting_episode := Episodes.DEFAULT_EPISODE
+var _active_episode := ""
 ## Selezioni temporanee: non appartengono al salvataggio e vengono scartate al cambio partita.
 var selected_item := ""
 var focus_index := 0
@@ -29,6 +32,8 @@ var menu_item := ""
 
 ## Prepara i componenti e collega le intenzioni della UI ai servizi del gioco.
 func _ready() -> void:
+	state = State.new(starting_episode)
+	texts = Texts.new(starting_episode)
 	Input.set_custom_mouse_cursor(CURSOR_NORMAL, Input.CURSOR_ARROW, Vector2(1, 1))
 	Input.set_custom_mouse_cursor(CURSOR_NORMAL, Input.CURSOR_POINTING_HAND, Vector2(1, 1))
 	Input.set_custom_mouse_cursor(CURSOR_MAGNIFIER, Input.CURSOR_CROSS, Vector2(12, 12))
@@ -37,12 +42,8 @@ func _ready() -> void:
 	add_child(ui)
 	ui.save_requested.connect(_save)
 	ui.load_requested.connect(_load)
-	# Un solo player mantiene il brano in loop anche tra stanze, caricamenti e nuove partite.
-	var soundtrack: AudioStreamMP3 = preload("res://assets/audio/song1.mp3").duplicate()
-	soundtrack.loop = true
-	music.stream = soundtrack
+	# Un solo player mantiene il brano tra stanze dello stesso episodio.
 	add_child(music)
-	music.play()
 	# La pausa conserva la posizione del brano quando si riabilita la musica.
 	ui.music_toggled.connect(func(enabled: bool): music.stream_paused = not enabled)
 	ui.new_game_requested.connect(_new_game)
@@ -56,7 +57,7 @@ func _ready() -> void:
 	sequences.waiting_changed.connect(func(waiting: bool): ui.continue_label.visible = waiting)
 	sequences.finished.connect(func(_cancelled: bool): ui.lock_interactions(false))
 	_load_room()
-	_say(_text("cabin.intro.headache") + "  " + _text("cabin.intro.whiskey"))
+	_show_intro()
 
 ## I cursori appartengono a Input: rilasciarli alla chiusura evita texture trattenute oltre il renderer.
 func _exit_tree() -> void:
@@ -69,13 +70,38 @@ func _exit_tree() -> void:
 ## Nuova partita e caricamento eliminano ogni richiesta legata ai nodi della stanza precedente.
 func _new_game() -> void:
 	sequences.cancel()
-	state = State.new()
+	state = State.new(starting_episode)
 	selected_item = ""
 	inventory_focus = false
 	focus_index = 0
 	ui.help_panel.hide()
 	_load_room()
-	_say(_text("cabin.intro.headache") + "  " + _text("cabin.intro.whiskey"))
+	_show_intro()
+
+## Introduzione e musica provengono dalla definizione dell'episodio corrente.
+func _show_intro() -> void:
+	var episode = Episodes.get_episode(state.episode_id)
+	if episode == null:
+		return
+	var lines: Array[String] = []
+	for key in episode.intro_keys:
+		lines.append(_text(key))
+	_say("  ".join(lines))
+
+## I cambi stanza nello stesso episodio conservano posizione del brano e preferenza musicale.
+func _sync_episode() -> void:
+	if _active_episode == state.episode_id:
+		return
+	var episode = Episodes.get_episode(state.episode_id)
+	if episode == null or not texts.load_episode(state.episode_id):
+		return
+	music.stop()
+	# Il decoder usato dal player non modifica la risorsa condivisa della configurazione.
+	music.stream = episode.music.duplicate() if episode.music != null else null
+	if music.stream != null:
+		music.play()
+	music.stream_paused = not ui.music_button.button_pressed
+	_active_episode = state.episode_id
 
 ## Il gestore delle stanze mantiene tutto il codice di creazione e posizionamento del personaggio.
 func _load_room() -> void:
@@ -85,6 +111,7 @@ func _load_room() -> void:
 		push_error("Impossibile caricare la stanza: " + state.room)
 		return
 	focus_index = 0
+	_sync_episode()
 	_refresh()
 	rooms.pause_animations(ui.help_panel.visible)
 

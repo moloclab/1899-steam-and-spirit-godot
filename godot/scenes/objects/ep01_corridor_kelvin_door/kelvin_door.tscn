@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3]
 
 [ext_resource type="Script" path="res://scenes/objects/ep01_corridor_kelvin_door/kelvin_door.gd" id="object_script"]
-[ext_resource type="Texture2D" path="res://assets/graphics/original/doorSub.png" id="door_kelvin"]
+[ext_resource type="Texture2D" path="res://assets/graphics/ep01_cabin/door_sub.png" id="door_kelvin"]
 
 [node name="door_kelvin" type="Node2D"]
 script = ExtResource("object_script")

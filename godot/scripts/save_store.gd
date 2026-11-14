@@ -1,17 +1,18 @@
 extends RefCounted
-## Serializzazione e migrazioni separate dallo stato e dalle regole narrative.
+## Serializzazione e validazione separate dallo stato e dalle regole narrative.
 const State = preload("res://scripts/game_state.gd")
 const Items = preload("res://scripts/data/item_catalog.gd")
 const Rooms = preload("res://scripts/data/room_catalog.gd")
 const Progress = preload("res://scripts/data/progress_schema.gd")
-const SAVE_PATH := "user://cabin_save.json"
-const VERSION := 2
+const Episodes = preload("res://scripts/data/episode_catalog.gd")
+const SAVE_PATH := "user://game_save.json"
+const VERSION := 3
 
 ## Salva esclusivamente dati persistenti; le sequenze in corso appartengono al runtime.
 static func snapshot(state: State) -> Dictionary:
 	return {"version": VERSION, "inventory": state.inventory.duplicate(),
 		"collected": state.collected.duplicate(), "progress": state.progress.duplicate(true),
-		"room": state.room, "player_x": state.player_x}
+		"episode": state.episode_id, "room": state.room, "player_x": state.player_x}
 
 ## Scrive prima un temporaneo: un errore di scrittura non tronca il salvataggio precedente.
 static func save_game(state: State, path: String = SAVE_PATH) -> Error:
@@ -29,16 +30,6 @@ static func save_game(state: State, path: String = SAVE_PATH) -> Error:
 		DirAccess.remove_absolute(ProjectSettings.globalize_path(temporary))
 	return error
 
-## Converte i salvataggi del prototipo prima della validazione della versione corrente.
-static func _migrate(data: Dictionary) -> Dictionary:
-	if data.get("version") == 1:
-		var migrated := data.duplicate(true)
-		migrated["progress"] = {"cabin": {"sink_stage": data.get("sink_stage"),
-			"door_unlocked": data.get("door_unlocked")}}
-		migrated["version"] = VERSION
-		return migrated
-	return data
-
 ## Applica i campi solo dopo la validazione completa: un file corrotto lascia intatta la partita.
 ## I controlli garantiscono formato e tipi, senza ricostruire ogni possibile vincolo narrativo.
 static func load_game(state: State, path: String = SAVE_PATH) -> Error:
@@ -53,10 +44,13 @@ static func load_game(state: State, path: String = SAVE_PATH) -> Error:
 	file.close()
 	if parse_error != OK or not parser.data is Dictionary:
 		return ERR_FILE_CORRUPT
-	var data := _migrate(parser.data)
+	var data: Dictionary = parser.data
 	if data.get("version") != VERSION or not data.get("inventory") is Array or not data.get("collected") is Array:
 		return ERR_FILE_CORRUPT
 	if not data.get("room") is String or Rooms.get_room(data.room) == null:
+		return ERR_FILE_CORRUPT
+	if not data.get("episode") is String or Episodes.get_episode(data.episode) == null \
+		or Rooms.get_room(data.room).episode_id != data.episode:
 		return ERR_FILE_CORRUPT
 	if not (data.get("player_x") is float or data.get("player_x") is int) or not is_finite(float(data.player_x)):
 		return ERR_FILE_CORRUPT

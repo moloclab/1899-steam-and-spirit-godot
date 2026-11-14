@@ -46,7 +46,7 @@ func _choice(at: Vector2, caption: String, examine: bool) -> Button:
 ## Mostra il menu accanto al punto at, espresso nelle coordinate del genitore.
 ## kind seleziona il PNG hand/mouth/exit; interaction è il suggerimento testuale della seconda scelta.
 func open(at: Vector2, kind: String, interaction: String) -> void:
-	picture.texture = load("res://assets/graphics/original/panel_%s.png" % kind)
+	picture.texture = load("res://assets/graphics/ui/panel_%s.png" % kind)
 	interact_button.tooltip_text = interaction
 	# Il menu resta interamente dentro la finestra, anche vicino ai bordi e all'inventario.
 	# L'offset colloca il piccolo cerchio inferiore in prossimità del bersaglio selezionato.

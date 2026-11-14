@@ -1,3 +1,4 @@
 # Catture locali generate dalle verifiche grafiche.
 test-output/
-tests/
+# Cache e dati locali rigenerati da Godot.
+.godot/

@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3]
 
 [ext_resource type="Script" path="res://scripts/world/room.gd" id="room_script"]
-[ext_resource type="Texture2D" uid="uid://37p3ga46irwy" path="res://assets/graphics/original/cabin_background.png" id="background"]
+[ext_resource type="Texture2D" uid="uid://37p3ga46irwy" path="res://assets/graphics/ep01_cabin/cabin_background.png" id="background"]
 [ext_resource type="Script" path="res://scripts/data/room_definition.gd" id="room_definition_definition"]
 [ext_resource type="PackedScene" path="res://scenes/objects/ep01_cabin_map/map.tscn" id="object_mapMagnet"]
 [ext_resource type="PackedScene" path="res://scenes/objects/ep01_cabin_nightstand/nightstand.tscn" id="object_como"]
@@ -17,7 +17,8 @@
 
 [sub_resource type="Resource" id="room_definition"]
 script = ExtResource("room_definition_definition")
-room_id = "cabin"
+room_id = "ep01_cabin"
+episode_id = "ep01"
 scene_path = "res://scenes/rooms/ep01_cabin.tscn"
 width = 648.0
 entries = Dictionary[String, float]({"default": 180.0, "from_corridor": 550.0})

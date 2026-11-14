@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" path="res://scenes/objects/ep01_cabin_magnet/magnet.gd" id="object_script"]
 [ext_resource type="Script" path="res://scripts/data/item_definition.gd" id="inventory_definition"]
-[ext_resource type="Texture2D" path="res://assets/graphics/original/O_magnet.png" id="inventory_icon"]
+[ext_resource type="Texture2D" path="res://assets/graphics/ep01_cabin/inventory_magnet.png" id="inventory_icon"]
 
 [sub_resource type="Resource" id="inventory"]
 script = ExtResource("inventory_definition")
-item_id = "magnet"
-name_key = "inventory.magnet.name"
-description_key = "inventory.magnet.examine"
+item_id = "ep01_cabin_magnet"
+name_key = "ep01.inventory.magnet.name"
+description_key = "ep01.inventory.magnet.examine"
 icon = ExtResource("inventory_icon")
 collectible = true
 
@@ -16,8 +16,8 @@ collectible = true
 script = ExtResource("object_script")
 hotspot_id = "magnet"
 display_name = "Calamita"
-examine_response = "inventory.magnet.examine"
-pickup_response = "cabin.magnet.pickup"
+examine_response = "ep01.inventory.magnet.examine"
+pickup_response = "ep01.cabin.magnet.pickup"
 inventory_definition = SubResource("inventory")
 
 [node name="Visual" type="Sprite2D" parent="."]

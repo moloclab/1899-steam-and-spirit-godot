@@ -2,26 +2,26 @@
 
 [ext_resource type="Script" path="res://scenes/objects/ep01_cabin_feather/feather.gd" id="object_script"]
 [ext_resource type="Script" path="res://scripts/data/item_definition.gd" id="inventory_definition"]
-[ext_resource type="Texture2D" path="res://assets/graphics/original/O_feather.png" id="inventory_icon"]
-[ext_resource type="Texture2D" path="res://assets/graphics/original/feather.png" id="feather"]
+[ext_resource type="Texture2D" path="res://assets/graphics/ep01_cabin/inventory_feather.png" id="inventory_icon"]
+[ext_resource type="Texture2D" path="res://assets/graphics/ep01_cabin/feather.png" id="feather"]
 
 [sub_resource type="Resource" id="inventory"]
 script = ExtResource("inventory_definition")
-item_id = "feather"
-name_key = "inventory.feather.name"
-description_key = "inventory.feather.examine"
+item_id = "ep01_cabin_feather"
+name_key = "ep01.inventory.feather.name"
+description_key = "ep01.inventory.feather.examine"
 icon = ExtResource("inventory_icon")
 collectible = true
 
 [node name="feather" type="Node2D"]
 script = ExtResource("object_script")
 inventory_definition = SubResource("inventory")
-pickup_response = "cabin.feather.pickup"
+pickup_response = "ep01.cabin.feather.pickup"
 hotspot_id = "feather"
 display_name = "Penna d'oca"
 hit_size = Vector2(16, 28)
 approach_offset_x = 8.0
-examine_response = "cabin.feather.examine"
+examine_response = "ep01.cabin.feather.examine"
 
 [node name="Visual" type="Sprite2D" parent="."]
 texture = ExtResource("feather")

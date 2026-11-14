@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=3]
 
 [ext_resource type="Script" path="res://scripts/world/room.gd" id="room_script"]
-[ext_resource type="Texture2D" path="res://assets/graphics/original/corridor_background.png" id="background"]
+[ext_resource type="Texture2D" path="res://assets/graphics/ep01_corridor/corridor_background.png" id="background"]
 [ext_resource type="Script" path="res://scripts/data/room_definition.gd" id="room_definition_definition"]
 [ext_resource type="PackedScene" path="res://scenes/objects/ep01_corridor_cabin_exit/cabin_exit.tscn" id="object_door_cabina"]
 [ext_resource type="PackedScene" path="res://scenes/objects/ep01_corridor_churchill_sign/churchill_sign.tscn" id="object_label_cabina"]
@@ -19,7 +19,8 @@
 
 [sub_resource type="Resource" id="room_definition"]
 script = ExtResource("room_definition_definition")
-room_id = "corridor"
+room_id = "ep01_corridor"
+episode_id = "ep01"
 scene_path = "res://scenes/rooms/ep01_corridor.tscn"
 width = 892.0
 entries = Dictionary[String, float]({"default": 94.0, "from_cabin": 94.0})

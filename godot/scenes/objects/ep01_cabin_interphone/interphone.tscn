@@ -3,25 +3,25 @@
 [ext_resource type="Script" path="res://scenes/objects/ep01_cabin_interphone/interphone.gd" id="object_script"]
 [ext_resource type="Script" path="res://scripts/actions/action_sequence.gd" id="conversation_sequence"]
 [ext_resource type="Script" path="res://scripts/actions/action_step.gd" id="conversation_step"]
-[ext_resource type="Texture2D" path="res://assets/graphics/original/interphone.png" id="interphone"]
+[ext_resource type="Texture2D" path="res://assets/graphics/ep01_cabin/interphone.png" id="interphone"]
 
 [sub_resource type="Resource" id="conversation_greeting"]
 script = ExtResource("conversation_step")
-text_key = "cabin.interphone.greeting"
+text_key = "ep01.cabin.interphone.greeting"
 
 [sub_resource type="Resource" id="conversation_summons"]
 script = ExtResource("conversation_step")
-text_key = "cabin.interphone.summons"
+text_key = "ep01.cabin.interphone.summons"
 speaker = "Kelvin"
 
 [sub_resource type="Resource" id="conversation_urgency"]
 script = ExtResource("conversation_step")
-text_key = "cabin.interphone.urgency"
+text_key = "ep01.cabin.interphone.urgency"
 speaker = "Kelvin"
 
 [sub_resource type="Resource" id="conversation_reply"]
 script = ExtResource("conversation_step")
-text_key = "cabin.interphone.reply"
+text_key = "ep01.cabin.interphone.reply"
 wait_for_completion = false
 
 [sub_resource type="Resource" id="conversation"]
@@ -35,8 +35,8 @@ display_name = "Interfono"
 hit_size = Vector2(24, 20)
 approach_offset_x = 12.0
 interaction_kind = "mouth"
-examine_response = "cabin.interphone.examine"
-interaction_response = "cabin.interphone.conversation"
+examine_response = "ep01.cabin.interphone.examine"
+interaction_response = "ep01.cabin.interphone.conversation"
 conversation = SubResource("conversation")
 
 [node name="Visual" type="Sprite2D" parent="."]

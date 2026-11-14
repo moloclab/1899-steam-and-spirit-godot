@@ -2,23 +2,23 @@
 
 [ext_resource type="Script" path="res://scenes/objects/ep01_cabin_magnet_feather/magnet_feather.gd" id="object_script"]
 [ext_resource type="Script" path="res://scripts/data/item_definition.gd" id="inventory_definition"]
-[ext_resource type="Texture2D" path="res://assets/graphics/original/O_magnetFeather.png" id="inventory_icon"]
+[ext_resource type="Texture2D" path="res://assets/graphics/ep01_cabin/inventory_magnet_feather.png" id="inventory_icon"]
 [ext_resource type="Script" path="res://scripts/data/combination_definition.gd" id="combination_recipe"]
 
 [sub_resource type="Resource" id="inventory"]
 script = ExtResource("inventory_definition")
-item_id = "magnetFeather"
-name_key = "inventory.magnet_feather.name"
-description_key = "inventory.magnet_feather.examine"
+item_id = "ep01_cabin_magnet_feather"
+name_key = "ep01.inventory.magnet_feather.name"
+description_key = "ep01.inventory.magnet_feather.examine"
 icon = ExtResource("inventory_icon")
 collectible = false
 
 [sub_resource type="Resource" id="combination"]
 script = ExtResource("combination_recipe")
-ingredients = Array[String](["feather", "magnet"])
-consumed = Array[String](["feather", "magnet"])
-results = Array[String](["magnetFeather"])
-response_key = "inventory.magnet_feather.combine"
+ingredients = Array[String](["ep01_cabin_feather","ep01_cabin_magnet"])
+consumed = Array[String](["ep01_cabin_feather","ep01_cabin_magnet"])
+results = Array[String](["ep01_cabin_magnet_feather"])
+response_key = "ep01.inventory.magnet_feather.combine"
 
 [node name="magnet_feather" type="Node2D"]
 script = ExtResource("object_script")

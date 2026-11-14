@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3]
 
 [ext_resource type="Script" path="res://scenes/objects/ep01_corridor_horizontal_wire/horizontal_wire.gd" id="object_script"]
-[ext_resource type="Texture2D" path="res://assets/graphics/original/r2_wireH.png" id="wireH"]
+[ext_resource type="Texture2D" path="res://assets/graphics/ep01_corridor/r2_wire_h.png" id="wireH"]
 
 [node name="wireH" type="Node2D"]
 script = ExtResource("object_script")

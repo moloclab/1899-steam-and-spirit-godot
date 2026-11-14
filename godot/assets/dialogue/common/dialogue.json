@@ -1,0 +1,30 @@
+{
+  "common.cannot_combine": {
+    "it": "Non saprei come combinarli.|E' un'idea stupida.|Uhm, no.|Perchè dovrei farlo?|Non credo funzionerebbe.",
+    "en": "I don't know how to combine them.|That's a stupid idea.|Um, no.|Why would I do that?|I don't think that would work."
+  },
+  "common.cannot_use": {
+    "it": "Potrei, certo. Ma perché?",
+    "en": "I could, of course. But why?"
+  },
+  "common.game_loaded": {
+    "it": "Partita caricata.",
+    "en": "Game loaded."
+  },
+  "common.game_saved": {
+    "it": "Partita salvata.",
+    "en": "Game saved."
+  },
+  "common.missing_response": {
+    "it": "Non saprei cosa farci.",
+    "en": "I don't know what to do with it."
+  },
+  "common.nothing_interesting": {
+    "it": "Niente di interessante.",
+    "en": "Nothing interesting."
+  },
+  "common.prototype_boundary": {
+    "it": "Questa parte del Leviathan arriverà dopo. Per ora posso tornare nella mia cabina.",
+    "en": "This part of the Leviathan will come later. For now I can return to my cabin."
+  }
+}
