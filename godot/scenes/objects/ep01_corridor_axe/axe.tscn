@@ -6,7 +6,6 @@
 [node name="axBoxClose" type="Node2D"]
 script = ExtResource("object_script")
 hotspot_id = "axe"
-display_name = "Scure di emergenza"
 hit_size = Vector2(36, 44)
 examine_response = "ep01.corridor.axe.examine"
 interaction_response = "ep01.corridor.axe.case_closed"

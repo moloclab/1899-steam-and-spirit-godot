@@ -6,7 +6,6 @@
 [node name="wireVNormal" type="Node2D"]
 script = ExtResource("object_script")
 hotspot_id = "wireVNormal"
-display_name = "Filo elettrico"
 hit_size = Vector2(88, 100)
 interaction_kind = "hand"
 

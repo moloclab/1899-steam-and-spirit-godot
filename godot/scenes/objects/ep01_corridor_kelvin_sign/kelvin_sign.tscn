@@ -6,7 +6,6 @@
 [node name="label_kelvin" type="Node2D"]
 script = ExtResource("object_script")
 hotspot_id = "label_kelvin"
-display_name = "Targa Kelvin"
 hit_size = Vector2(20, 12)
 interaction_kind = "hand"
 

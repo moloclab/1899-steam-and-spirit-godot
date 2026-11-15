@@ -15,7 +15,6 @@ collectible = false
 [node name="key" type="Node2D"]
 script = ExtResource("object_script")
 hotspot_id = "key"
-display_name = "Chiave"
 inventory_definition = SubResource("inventory")
 
 [node name="Visual" type="Sprite2D" parent="."]

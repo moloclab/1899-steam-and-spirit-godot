@@ -10,7 +10,6 @@ script = ExtResource("object_script")
 complete_texture = ExtResource("mapMagnet")
 collected_texture = ExtResource("collected_texture")
 hotspot_id = "map"
-display_name = "Mappa e calamita"
 hit_size = Vector2(60, 72)
 
 [node name="Visual" type="Sprite2D" parent="."]

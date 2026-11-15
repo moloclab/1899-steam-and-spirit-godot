@@ -31,7 +31,6 @@ steps = Array[ExtResource("conversation_step")]([SubResource("conversation_greet
 [node name="interphone" type="Node2D"]
 script = ExtResource("object_script")
 hotspot_id = "interphone"
-display_name = "Interfono"
 hit_size = Vector2(24, 20)
 interaction_kind = "mouth"
 examine_response = "ep01.cabin.interphone.examine"

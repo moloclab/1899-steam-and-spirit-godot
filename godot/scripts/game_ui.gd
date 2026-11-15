@@ -202,8 +202,8 @@ func refresh_inventory(inventory: Array[String], selected: String, texts) -> voi
 	update_selection(selected, texts)
 
 ## La selezione non è parte dello stato persistente e viene aggiornata senza ricreare i controlli.
-func update_selection(selected: String, texts) -> void:
-	selection_label.text = "INVENTARIO" if selected.is_empty() else "USA %s CON…" % texts.text(Items.ITEMS[selected].name_key)
+func update_selection(_selected: String, _texts) -> void:
+	selection_label.text = "INVENTARIO"
 
 ## Aggiorna colori e scorrimento solo quando cambiano selezione, focus o pulsanti.
 func highlight_inventory(selected: String, focus_index: int, focused: bool) -> void:

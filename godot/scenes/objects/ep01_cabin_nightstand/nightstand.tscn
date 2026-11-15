@@ -6,7 +6,6 @@
 [node name="como" type="Node2D"]
 script = ExtResource("object_script")
 hotspot_id = "como"
-display_name = "Comodino"
 hit_size = Vector2(40, 36)
 examine_response = "ep01.cabin.nightstand.examine"
 interaction_response = "ep01.cabin.nightstand.interact"

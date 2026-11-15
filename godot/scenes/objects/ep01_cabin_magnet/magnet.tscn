@@ -15,7 +15,6 @@ collectible = true
 [node name="magnet" type="Node2D"]
 script = ExtResource("object_script")
 hotspot_id = "magnet"
-display_name = "Calamita"
 examine_response = "ep01.inventory.magnet.examine"
 pickup_response = "ep01.cabin.magnet.pickup"
 inventory_definition = SubResource("inventory")

@@ -6,7 +6,6 @@
 [node name="label_cabina" type="Node2D"]
 script = ExtResource("object_script")
 hotspot_id = "label_cabina"
-display_name = "Targa Churchill"
 hit_size = Vector2(20, 12)
 interaction_kind = "hand"
 

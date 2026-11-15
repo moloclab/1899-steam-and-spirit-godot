@@ -23,7 +23,6 @@ response_key = "ep01.inventory.magnet_feather.combine"
 [node name="magnet_feather" type="Node2D"]
 script = ExtResource("object_script")
 hotspot_id = "magnetFeather"
-display_name = "Penna magnetica"
 inventory_definition = SubResource("inventory")
 combination_definition = SubResource("combination")
 

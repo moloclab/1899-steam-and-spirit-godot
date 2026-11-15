@@ -6,7 +6,6 @@
 [node name="door_camerata" type="Node2D"]
 script = ExtResource("object_script")
 hotspot_id = "door_camerata"
-display_name = "Camerata"
 hit_size = Vector2(76, 116)
 interaction_kind = "exit"
 

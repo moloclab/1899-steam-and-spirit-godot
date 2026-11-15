@@ -6,7 +6,6 @@
 [node name="manhole" type="Node2D"]
 script = ExtResource("object_script")
 hotspot_id = "manhole"
-display_name = "Ponte inferiore"
 hit_size = Vector2(48, 16)
 interaction_kind = "exit"
 

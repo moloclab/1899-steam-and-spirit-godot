@@ -6,7 +6,6 @@
 [node name="door_kelvin" type="Node2D"]
 script = ExtResource("object_script")
 hotspot_id = "door_kelvin"
-display_name = "Cabina di Kelvin"
 hit_size = Vector2(76, 116)
 interaction_kind = "exit"
 

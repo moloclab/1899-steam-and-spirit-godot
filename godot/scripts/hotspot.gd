@@ -12,8 +12,6 @@ const CombinationDefinition = preload("res://scripts/data/combination_definition
 @export var combination_definition: CombinationDefinition
 ## ID stabile, usato dal coordinatore per ritrovare il bersaglio all'arrivo del personaggio.
 @export var hotspot_id := ""
-## Nome mostrato quando l'oggetto viene evidenziato.
-@export var display_name := ""
 ## Rettangolo selezionabile nelle coordinate originali; parte dall'origine del nodo.
 @export var hit_size := Vector2(40, 40)
 ## Sceglie il pannello dell'originale: mano per oggetti, bocca per persone, uscita per passaggi.

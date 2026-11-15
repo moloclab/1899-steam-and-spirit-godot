@@ -6,7 +6,6 @@
 [node name="sinkNormal" type="Node2D"]
 script = ExtResource("object_script")
 hotspot_id = "sink"
-display_name = "Lavandino"
 hit_size = Vector2(40, 56)
 
 [node name="Visual" type="Sprite2D" parent="."]

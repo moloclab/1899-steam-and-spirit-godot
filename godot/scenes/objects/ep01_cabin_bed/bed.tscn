@@ -7,7 +7,6 @@
 z_index = 2
 script = ExtResource("object_script")
 hotspot_id = "bed"
-display_name = "Letto"
 hit_size = Vector2(140, 48)
 examine_response = "ep01.cabin.bed.examine"
 interaction_response = "ep01.cabin.bed.interact"

@@ -18,7 +18,6 @@ script = ExtResource("object_script")
 inventory_definition = SubResource("inventory")
 pickup_response = "ep01.cabin.bottle.pickup"
 hotspot_id = "bottle"
-display_name = "Bourbon"
 hit_size = Vector2(28, 12)
 examine_response = "ep01.cabin.bottle.examine"
 

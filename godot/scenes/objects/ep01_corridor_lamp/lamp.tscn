@@ -25,7 +25,6 @@ animations = [{"frames": [{"duration": 1.0, "texture": SubResource("frame_0")}, 
 [node name="lampBlink" type="Node2D"]
 script = ExtResource("object_script")
 hotspot_id = "lampBlink"
-display_name = "Lampada"
 hit_size = Vector2(52, 64)
 interaction_kind = "hand"
 
