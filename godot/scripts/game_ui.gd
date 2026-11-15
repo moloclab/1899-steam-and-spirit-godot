@@ -19,7 +19,6 @@ var speech_label: Label
 var continue_label: Label
 var inventory_row: HBoxContainer
 var inventory_scroll: ScrollContainer
-var selection_label: Label
 var action_menu: Control
 var help_panel: Panel
 var help_close: Button
@@ -47,7 +46,7 @@ func _panel(rect: Rect2, color: Color, parent: Node = self) -> Panel:
 
 ## Crea un testo con lo stile comune del prototipo.
 ## Le etichette ignorano il mouse: il testo non deve ostacolare i clic sui controlli sottostanti.
-func _label(value: String, rect: Rect2, font_size: int = 18, parent: Node = self) -> Label:
+func _label(value: String, rect: Rect2, font_size: int = 32, parent: Node = self) -> Label:
 	var label := Label.new()
 	label.text = value
 	label.position = rect.position
@@ -65,7 +64,7 @@ func _button(value: String, rect: Rect2, callback: Callable, parent: Node = self
 	button.text = value
 	button.position = rect.position
 	button.size = rect.size
-	button.add_theme_font_size_override("font_size", 17)
+	button.add_theme_font_size_override("font_size", 32)
 	button.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 	button.pressed.connect(callback)
 	parent.add_child(button)
@@ -92,13 +91,12 @@ func _ready() -> void:
 	world_panel.mouse_default_cursor_shape = Control.CURSOR_ARROW
 	world_panel.gui_input.connect(func(event: InputEvent): world_input.emit(event))
 	add_child(world_panel)
-	speaker_label = _label("WINSTON CHURCHILL", Rect2(40, 506, 700, 20), 13)
+	speaker_label = _label("WINSTON CHURCHILL", Rect2(40, 506, 700, 20), 32)
 	speaker_label.add_theme_color_override("font_color", GOLD)
-	continue_label = _label("Clic / Invio / A per continuare", Rect2(780, 506, 330, 20), 13)
+	continue_label = _label("Clic / Invio / A per continuare", Rect2(780, 506, 330, 20), 32)
 	continue_label.hide()
-	speech_label = _label("", Rect2(40, 530, 1070, 50), 18)
+	speech_label = _label("", Rect2(40, 530, 1070, 50), 32)
 	speech_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	selection_label = _label("INVENTARIO", Rect2(28, 590, 750, 24), 15)
 	inventory_row = HBoxContainer.new()
 	inventory_row.position = Vector2.ZERO
 	inventory_row.size = Vector2(850, 52)
@@ -126,9 +124,9 @@ func _build_help() -> void:
 	help_panel = _panel(Rect2(0, 0, 1152, 720), Color(0, 0, 0, 0.65))
 	help_panel.z_index = 10
 	var content := _panel(Rect2(170, 95, 812, 550), Color("152027"), help_panel)
-	_label("CABINA DI CHURCHILL · COMANDI", Rect2(30, 20, 760, 40), 26, content)
+	_label("CABINA DI CHURCHILL · COMANDI", Rect2(30, 20, 760, 40), 32, content)
 	var commands := "MOUSE · BASTA IL TASTO SINISTRO\nClic sul pavimento: cammina. Clic su un oggetto: apri le due scelte.\nLente: esamina · Mano: usa/raccogli · Bocca: parla · Porta: esci.\nInventario: clic per descrizione e selezione; poi clic sul bersaglio.\nPer combinare: scegli il primo, poi clic sul secondo. Annulla: clic sul pavimento.\n\nTASTIERA\nA/D o frecce: cammina · Tab / Maiusc+Tab: scegli un bersaglio\nI: passa all'inventario / alla stanza · Invio: agisci · E: esamina\nEsc: annulla selezione · Salva e Carica: pulsanti nella parte superiore\n\nCONTROLLER (etichette Xbox)\nLevetta sinistra: cammina · LB/RB: scegli bersaglio · Y: inventario/stanza\nA: agisci · X: esamina · B: annulla · Start: apri/chiudi questo menu\nNel menu: croce direzionale e A. Salvataggio manuale, uno slot."
-	_label(commands, Rect2(30, 65, 755, 390), 17, content)
+	_label(commands, Rect2(30, 65, 755, 390), 32, content)
 	var save := _button("Salva", Rect2(30, 480, 145, 42), func():
 		save_requested.emit()
 		_toggle_help(), content)
@@ -172,9 +170,8 @@ func say(value: String, speaker: String = "Winston Churchill") -> void:
 	speaker_label.text = speaker.to_upper()
 
 ## Ricrea i pulsanti solo se cambiano gli ID o il loro ordine; conserva focus e scorrimento altrimenti.
-func refresh_inventory(inventory: Array[String], selected: String, texts) -> void:
+func refresh_inventory(inventory: Array[String], _selected: String, _texts) -> void:
 	if _inventory_built and _inventory_ids == inventory:
-		update_selection(selected, texts)
 		return
 	_inventory_built = true
 	_highlight_valid = false
@@ -188,7 +185,7 @@ func refresh_inventory(inventory: Array[String], selected: String, texts) -> voi
 		var button := Button.new()
 		# Nell'inventario l'oggetto viene mostrato solo tramite la sua icona.
 		button.icon = definition.icon
-		button.add_theme_font_size_override("font_size", 16)
+		button.add_theme_font_size_override("font_size", 32)
 		button.custom_minimum_size = Vector2(52, 52)
 		button.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 		button.pressed.connect(func(): inventory_pressed.emit(item, button))
@@ -197,13 +194,6 @@ func refresh_inventory(inventory: Array[String], selected: String, texts) -> voi
 				item_examined.emit(item))
 		inventory_row.add_child(button)
 		_inventory_buttons.append(button)
-	if inventory.is_empty():
-		_label("Ancora nessun oggetto. Esplora la cabina.", Rect2(0, 0, 750, 52), 17, inventory_row)
-	update_selection(selected, texts)
-
-## La selezione non è parte dello stato persistente e viene aggiornata senza ricreare i controlli.
-func update_selection(_selected: String, _texts) -> void:
-	selection_label.text = "INVENTARIO"
 
 ## Aggiorna colori e scorrimento solo quando cambiano selezione, focus o pulsanti.
 func highlight_inventory(selected: String, focus_index: int, focused: bool) -> void:

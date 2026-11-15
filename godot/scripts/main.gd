@@ -160,10 +160,6 @@ func _text(key: String) -> String:
 func _say(value: String) -> void:
 	ui.say(value)
 
-## Aggiorna la selezione senza ricostruire i pulsanti dell'inventario.
-func _update_selection() -> void:
-	ui.update_selection(selected_item, texts)
-
 ## Il menu sospende il passo attivo e le animazioni, mantenendo in corso la conversazione.
 func _toggle_help() -> void:
 	ui._toggle_help()
@@ -254,7 +250,6 @@ func _world_input(event: InputEvent) -> void:
 			# Sul pavimento si abbandona l'azione precedente e si sceglie una nuova destinazione.
 			_close_action_menu()
 			selected_item = ""
-			_update_selection()
 			interactions.cancel(rooms)
 			rooms.actor.target_x = rooms.current_room.definition.clamp_x(rooms.current_room.to_local(point).x)
 
