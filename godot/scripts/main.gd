@@ -24,9 +24,6 @@ var music := AudioStreamPlayer.new()
 var _active_episode := ""
 ## Selezioni temporanee: non appartengono al salvataggio e vengono scartate al cambio partita.
 var selected_item := ""
-var focus_index := 0
-var inventory_focus := false
-var keyboard_focus := false
 var menu_hotspot: Hotspot
 
 ## Prepara i componenti e collega le intenzioni della UI ai servizi del gioco.
@@ -36,7 +33,6 @@ func _ready() -> void:
 	Input.set_custom_mouse_cursor(CURSOR_NORMAL, Input.CURSOR_ARROW, Vector2(1, 1))
 	Input.set_custom_mouse_cursor(CURSOR_NORMAL, Input.CURSOR_POINTING_HAND, Vector2(1, 1))
 	Input.set_custom_mouse_cursor(CURSOR_MAGNIFIER, Input.CURSOR_CROSS, Vector2(12, 12))
-	_register_movement()
 	ui = UI.new()
 	add_child(ui)
 	ui.save_requested.connect(_save)
@@ -71,8 +67,6 @@ func _new_game() -> void:
 	sequences.cancel()
 	state = State.new(starting_episode)
 	selected_item = ""
-	inventory_focus = false
-	focus_index = 0
 	ui.help_panel.hide()
 	_load_room()
 	_show_intro()
@@ -109,7 +103,6 @@ func _load_room() -> void:
 	if not rooms.load_room(state, ui.world_panel):
 		push_error("Impossibile caricare la stanza: " + state.room)
 		return
-	focus_index = 0
 	_sync_episode()
 	_refresh()
 	rooms.pause_animations(ui.help_panel.visible)
@@ -160,35 +153,12 @@ func _text(key: String) -> String:
 func _say(value: String) -> void:
 	ui.say(value)
 
-## Il menu sospende il passo attivo e le animazioni, mantenendo in corso la conversazione.
-func _toggle_help() -> void:
-	ui._toggle_help()
-
 ## Le richieste di avvicinamento libere vengono annullate; le sequenze mantengono il proprio percorso.
 func _menu_toggled(open: bool) -> void:
 	_close_action_menu()
 	if not sequences.busy:
 		interactions.cancel(rooms)
 	rooms.pause_animations(open)
-
-## Registra due azioni di movimento continue nell'InputMap di Godot.
-## Ogni azione accetta tasti fisici e una direzione della levetta; 0.22 è la zona morta.
-func _register_movement() -> void:
-	for direction in ["walk_left", "walk_right"]:
-		# Le azioni possono essere già definite nell'editor o da un precedente avvio della scena.
-		if InputMap.has_action(direction):
-			continue
-		InputMap.add_action(direction, 0.22)
-		var left: bool = direction == "walk_left"
-		for code in ([KEY_A, KEY_LEFT] if left else [KEY_D, KEY_RIGHT]):
-			var key := InputEventKey.new()
-			key.physical_keycode = code
-			InputMap.action_add_event(direction, key)
-		# Le due metà dello stesso asse diventano due azioni; get_axis le ricompone in -1…1.
-		var stick := InputEventJoypadMotion.new()
-		stick.axis = JOY_AXIS_LEFT_X
-		stick.axis_value = -1.0 if left else 1.0
-		InputMap.action_add_event(direction, stick)
 
 ## Nasconde il pannello e rimuove i riferimenti al suo bersaglio.
 ## Il controllo di validità consente di chiamarla anche prima che il pannello sia stato costruito.
@@ -233,7 +203,6 @@ func _world_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed:
 		if event.button_index not in [MOUSE_BUTTON_LEFT, MOUSE_BUTTON_RIGHT]:
 			return
-		keyboard_focus = false
 		# gui_input fornisce una posizione locale al contenitore, mentre gli hotspot ricevono punti globali.
 		var point: Vector2 = ui.world_panel.get_global_transform() * event.position
 		var hotspot := _at_point(point)
@@ -295,98 +264,27 @@ func _cancel() -> void:
 
 	_refresh()
 
-## Sposta la selezione da tastiera/controller nella stanza oppure nell'inventario.
-## Il modulo positivo permette di tornare all'ultimo elemento quando si procede all'indietro.
-func _cycle_focus(step: int) -> void:
-	_close_action_menu()
-	keyboard_focus = true
-	var count: int = state.inventory.size() if inventory_focus else _hotspots().size()
-	if count > 0:
-		focus_index = posmod(focus_index + step, count)
-
-## Conferma il bersaglio selezionato con tastiera/controller.
-## Questi dispositivi hanno tasti distinti per agire ed esaminare e non richiedono il pannello del mouse.
-func _confirm_focus(examine: bool = false) -> void:
-	_close_action_menu()
-	keyboard_focus = true
-	if inventory_focus:
-		if not state.inventory.is_empty():
-			var item: String = state.inventory[focus_index % state.inventory.size()]
-			if examine:
-				_say(_item_description(item))
-			else:
-				_select_item(item)
-	else:
-		var hotspots := _hotspots()
-		if not hotspots.is_empty():
-			_request(hotspots[focus_index % hotspots.size()], examine)
-
-## Gestisce le scorciatoie discrete di tastiera e controller prima dei controlli UI.
-## Il movimento continuo viene invece letto in _process tramite le azioni dell'InputMap.
+## Gestisce i clic durante i dialoghi e ignora tastiera e controller.
 func _input(event: InputEvent) -> void:
-	if event is InputEventMouseMotion:
-		keyboard_focus = false
-	# Il pulsante musicale resta utilizzabile anche durante le battute e le sequenze.
-	if sequences.busy and not ui.help_panel.visible and event is InputEventMouseButton and event.pressed and not ui.music_button.get_global_rect().has_point(event.position):
+	# Impedisce anche ai controlli UI di reagire a Invio, Spazio, Tab e frecce.
+	if event is InputEventKey or event is InputEventJoypadButton or event is InputEventJoypadMotion:
+		get_viewport().set_input_as_handled()
+		return
+	# Musica e aiuti restano utilizzabili anche durante le battute e le sequenze.
+	if sequences.busy and not ui.help_panel.visible and event is InputEventMouseButton and event.pressed and not ui.music_button.get_global_rect().has_point(event.position) and not ui.help_button.get_global_rect().has_point(event.position):
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			sequences.advance_dialogue()
 		get_viewport().set_input_as_handled()
 		return
-	var key := event is InputEventKey and event.is_pressed() and not event.is_echo()
-	var joy := event is InputEventJoypadButton and event.is_pressed()
-	if not key and not joy:
-		return
-	var code: int = event.keycode if key else -1
-	var button: int = event.button_index if joy else -1
-	if code == KEY_F1 or code == KEY_QUESTION or button == JOY_BUTTON_START:
-		_toggle_help()
-	elif ui.help_panel.visible:
-		if code == KEY_ESCAPE or button == JOY_BUTTON_B:
-			_toggle_help()
-		else:
-			return # Il menu usa la navigazione UI standard di Godot.
-	# Durante una sequenza i comandi del mondo sono sospesi: conferma avanza una sola battuta.
-	elif sequences.busy:
-		if code in [KEY_ENTER, KEY_KP_ENTER, KEY_SPACE] or button == JOY_BUTTON_A:
-			sequences.advance_dialogue()
-		get_viewport().set_input_as_handled()
-		return
-	elif code == KEY_ESCAPE or button == JOY_BUTTON_B:
-		_cancel()
-	elif code == KEY_TAB or button in [JOY_BUTTON_LEFT_SHOULDER, JOY_BUTTON_RIGHT_SHOULDER]:
-		var reverse: bool = (key and event.shift_pressed) or button == JOY_BUTTON_LEFT_SHOULDER
-		_cycle_focus(-1 if reverse else 1)
-	elif code == KEY_I or button == JOY_BUTTON_Y:
-		_close_action_menu()
-		inventory_focus = not inventory_focus
-		keyboard_focus = true
-		focus_index = 0
-	elif code in [KEY_ENTER, KEY_KP_ENTER, KEY_SPACE] or button == JOY_BUTTON_A:
-		_confirm_focus()
-	elif code == KEY_E or button == JOY_BUTTON_X:
-		_confirm_focus(true)
-	else:
-		return
-	# Evita che Invio/A attivi anche un pulsante UI rimasto con il focus dopo aver agito nel gioco.
-	get_viewport().set_input_as_handled()
 
-## Il mouse usa la lente; la cornice resta riservata al focus da tastiera/controller.
-## Per la cornice dà precedenza al bersaglio del pannello aperto, poi al focus da tastiera/controller.
+## Il cursore mostra la lente sugli oggetti; la selezione resta visibile nell'inventario.
 func _update_highlight() -> void:
 	var hotspots := _hotspots()
 	var mouse_target: Node2D = null
 	if not ui.help_panel.visible and ui.world_panel.get_global_rect().has_point(get_global_mouse_position()):
 		mouse_target = _find_at_point(get_global_mouse_position(), hotspots)
 	ui.world_panel.mouse_default_cursor_shape = Control.CURSOR_CROSS if mouse_target != null else Control.CURSOR_ARROW
-	var focused: Node2D = null
-	if not ui.help_panel.visible:
-		if ui.action_menu.visible and is_instance_valid(menu_hotspot):
-			focused = menu_hotspot
-		elif keyboard_focus and not inventory_focus and not hotspots.is_empty():
-			focused = hotspots[focus_index % hotspots.size()]
-	for hotspot in hotspots:
-		hotspot.highlighted = keyboard_focus and hotspot == focused
-	ui.highlight_inventory(selected_item, focus_index, keyboard_focus and inventory_focus and not sequences.busy)
+	ui.highlight_inventory(selected_item, -1, false)
 
 ## Aggiorna il movimento libero oppure il passo attivo della sequenza, mai entrambi nello stesso frame.
 func _process(delta: float) -> void:
@@ -396,11 +294,6 @@ func _process(delta: float) -> void:
 		if sequences.busy:
 			sequences.tick(delta)
 		else:
-			var direction := Input.get_axis("walk_left", "walk_right")
-			if absf(direction) > 0.05:
-				_close_action_menu()
-				interactions.cancel(rooms)
-				rooms.actor.target_x = rooms.current_room.definition.clamp_x(rooms.actor.current_x + direction * rooms.actor.speed * delta)
 			rooms.actor.advance(delta)
 			state.player_x = rooms.actor.current_x
 			var actions: Array[Step] = interactions.take_ready_actions(state, rooms)
@@ -427,7 +320,6 @@ func _load() -> void:
 	var error: Error = Saves.load_game(state)
 	if error == OK:
 		selected_item = ""
-		focus_index = 0
 		_load_room()
 		_say(_text("common.game_loaded"))
 	elif error == ERR_FILE_NOT_FOUND:

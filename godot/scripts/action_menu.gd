@@ -29,6 +29,7 @@ func _ready() -> void:
 ## Il pulsante non applica regole del gioco: emette chosen con true per la lente e false per l'altra azione.
 func _choice(at: Vector2, caption: String, examine: bool) -> Button:
 	var button := Button.new()
+	button.focus_mode = Control.FOCUS_NONE
 	button.position = at
 	button.size = Vector2(33, 33)
 	button.tooltip_text = caption
