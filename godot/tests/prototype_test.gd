@@ -95,13 +95,14 @@ func _interact(id: String) -> void:
 	await _click(_hotspot_point(id))
 	await _choose()
 
-## Seleziona l'oggetto dalla barra e poi usa la mano del pannello.
+## Un solo clic mostra la descrizione e prepara l'oggetto per l'uso, senza pannello.
 func _select_inventory(id: String) -> void:
 	var index: int = game.state.inventory.find(id)
 	check(index >= 0, "Oggetto presente per la selezione: " + id)
 	var button: Button = game.ui.inventory_row.get_child(index)
 	await _click(button.get_global_rect().get_center())
-	await _choose()
+	check(not game.ui.action_menu.visible, "Inventario senza pannello contestuale: " + id)
+	check(game.ui.speech_label.text == game._item_description(id), "Descrizione immediata: " + id)
 	check(game.selected_item == id, "Oggetto selezionato: " + id)
 
 ## Verifica chiavi dei testi, risorse e ingressi senza ripetere gli elenchi del catalogo nei test.

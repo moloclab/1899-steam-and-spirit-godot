@@ -35,7 +35,7 @@ Le stanze vengono caricate in modo **sincrono**.
 | Camminare | Clic sul pavimento, A/D o frecce | Levetta sinistra |
 | Scegliere un bersaglio | Tab / Maiusc+Tab | RB / LB |
 | Stanza ↔ inventario | I | Y |
-| Aprire le due scelte | Clic sinistro su oggetto, persona, uscita o inventario | — |
+| Aprire le due scelte | Clic sinistro su oggetto della stanza, persona o uscita | — |
 | Agire / selezionare | Mano, bocca o uscita; Invio o Spazio | A |
 | Esaminare | Lente; destro o E | X |
 | Annullare una selezione | Pavimento o Esc | B |
@@ -43,11 +43,11 @@ Le stanze vengono caricate in modo **sincrono**.
 | Avanzare una conversazione | Clic sinistro, Invio o Spazio | A |
 | Salva / carica | Pulsanti in alto o nel menu | Dal menu |
 
-Il tasto sinistro apre il pannello originale con **lente** e **mano/bocca/uscita**.
+Nella stanza il tasto sinistro apre il pannello originale con **lente** e **mano/bocca/uscita**.
 L'azione parte dopo la scelta e dopo l'avvicinamento di Churchill.
 
-Per usare un oggetto: clic nell'inventario, poi sulla mano, quindi sul bersaglio.
-Per combinare: seleziona il primo con la mano e clicca il secondo nell'inventario.
+Un clic nell'inventario mostra subito la descrizione e seleziona l'oggetto per l'uso. Per usarlo nella stanza, clicca poi sul bersaglio.
+Per combinare: clicca sul primo oggetto e poi sul secondo nell'inventario.
 Con tastiera e controller, conferma seleziona direttamente l'oggetto o esegue l'azione.
 La cornice dorata identifica il focus da tastiera/controller; il mouse usa il cursore a lente.
 

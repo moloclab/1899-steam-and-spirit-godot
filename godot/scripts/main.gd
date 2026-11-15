@@ -28,7 +28,6 @@ var focus_index := 0
 var inventory_focus := false
 var keyboard_focus := false
 var menu_hotspot: Hotspot
-var menu_item := ""
 
 ## Prepara i componenti e collega le intenzioni della UI ai servizi del gioco.
 func _ready() -> void:
@@ -201,7 +200,6 @@ func _close_action_menu() -> void:
 	if is_instance_valid(ui.action_menu):
 		ui.action_menu.hide()
 	menu_hotspot = null
-	menu_item = ""
 
 ## Apre le due scelte su un oggetto della stanza, senza ancora eseguire alcuna azione.
 ## Il tipo esportato dell'hotspot sceglie la grafica mano, bocca oppure uscita.
@@ -218,31 +216,17 @@ func _open_hotspot_menu(hotspot: Node2D) -> void:
 	ui.action_menu.open(get_global_transform().affine_inverse() * center, kind, caption)
 
 ## Gestisce il clic sinistro su un oggetto posseduto.
-## Senza selezione apre lente/mano; con una selezione prova la combinazione o la deselezione.
-func _inventory_click(item: String, button: Button) -> void:
-	_close_action_menu()
-	interactions.cancel(rooms)
-
-	if not selected_item.is_empty():
-		_select_item(item)
-		return
-	menu_item = item
-	var center: Vector2 = button.get_global_rect().get_center()
-	ui.action_menu.open(get_global_transform().affine_inverse() * center, "hand", "Usa / combina")
+## Esamina e seleziona subito, oppure combina con l'oggetto già selezionato.
+func _inventory_click(item: String, _button: Button) -> void:
+	_select_item(item)
 
 ## Riceve la scelta dal pannello: true indica la lente, false l'interazione.
-## Gli oggetti in inventario si esaminano subito; quelli della stanza richiedono avvicinamento.
+## Gli oggetti della stanza richiedono avvicinamento.
 func _choose_action(examine: bool) -> void:
 	# Copia il bersaglio prima di chiudere il menu; il clic sulla scelta non passa alla stanza.
 	var hotspot := menu_hotspot
-	var item := menu_item
 	_close_action_menu()
-	if not item.is_empty():
-		if examine:
-			_say(_item_description(item))
-		else:
-			_select_item(item)
-	elif is_instance_valid(hotspot) and hotspot.visible:
+	if is_instance_valid(hotspot) and hotspot.visible:
 		_request(hotspot, examine)
 
 ## Gestisce solo i clic ricevuti dall'area della stanza.
@@ -302,6 +286,7 @@ func _select_item(item: String) -> void:
 		selected_item = ""
 	elif selected_item.is_empty():
 		selected_item = item
+		_say(_item_description(item))
 	else:
 		_say(_text(state.combine(selected_item, item)))
 		selected_item = ""
