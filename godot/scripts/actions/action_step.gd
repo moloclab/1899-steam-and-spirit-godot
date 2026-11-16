@@ -4,7 +4,8 @@ class_name ActionStep
 enum Kind { SAY, WALK, ANIMATE, WAIT, EFFECT, CHANGE_ROOM }
 @export var kind: Kind = Kind.SAY
 @export var text_key := ""
-@export var speaker := "Winston Churchill"
+## Il nome visualizzato è una chiave del vocabolario, come il testo della battuta.
+@export var speaker := "common.speaker.churchill"
 @export var wait_for_completion := true
 @export var character_id := "player"
 @export var target_x := 0.0

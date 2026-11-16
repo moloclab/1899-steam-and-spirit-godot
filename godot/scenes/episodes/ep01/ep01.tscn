@@ -11,7 +11,7 @@ initial_room = "ep01_cabin"
 initial_entry = "default"
 music = ExtResource("music")
 intro_keys = Array[String](["ep01.cabin.intro.headache", "ep01.cabin.intro.whiskey"])
-dialogue_path = "res://assets/dialogue/ep01/dialogue.json"
+dictionary_path = "res://assets/dictionaries/ep01/dictionary.json"
 
 [node name="EP01" type="Node"]
 script = ExtResource("episode_script")

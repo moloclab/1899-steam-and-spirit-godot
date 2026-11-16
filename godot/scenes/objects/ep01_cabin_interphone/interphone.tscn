@@ -12,12 +12,12 @@ text_key = "ep01.cabin.interphone.greeting"
 [sub_resource type="Resource" id="conversation_summons"]
 script = ExtResource("conversation_step")
 text_key = "ep01.cabin.interphone.summons"
-speaker = "Kelvin"
+speaker = "common.speaker.kelvin"
 
 [sub_resource type="Resource" id="conversation_urgency"]
 script = ExtResource("conversation_step")
 text_key = "ep01.cabin.interphone.urgency"
-speaker = "Kelvin"
+speaker = "common.speaker.kelvin"
 
 [sub_resource type="Resource" id="conversation_reply"]
 script = ExtResource("conversation_step")

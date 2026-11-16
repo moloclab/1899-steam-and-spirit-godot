@@ -76,7 +76,7 @@ disabilitati fino alla fine della sequenza, per evitare salvataggi a metà di un
 | `scenes/rooms/` | Sfondo, metadati della stanza e posizionamento delle istanze degli oggetti |
 | `scenes/episodes/epNN/` | Scena e script dell'episodio, con configurazione incorporata |
 | `scripts/data/` | Tipi di risorsa, cataloghi e schema dei progressi |
-| `assets/dialogue/common/`, `assets/dialogue/epNN/` | Testi comuni e testi IT/EN degli episodi |
+| `assets/dictionaries/common/`, `assets/dictionaries/epNN/` | Vocabolario comune (UI inclusa) e testi IT/EN degli episodi |
 | `scripts/data/episode_catalog.gd` | Registro degli episodi disponibili |
 | `scenes/characters/churchill.tscn` | Personaggio giocante riutilizzabile con animazioni già configurate |
 
@@ -107,8 +107,11 @@ Convenzioni per i contenuti persistenti:
 - Hotspot, nodi e ingressi: ID locali alla stanza, senza prefissi obbligatori.
 
 Gli oggetti riutilizzati mantengono gli ID di origine anche negli episodi successivi.
-Il servizio dei testi carica `assets/dialogue/common/dialogue.json` e il catalogo dell'episodio;
-i cataloghi già caricati restano disponibili. Per un oggetto proveniente da un altro episodio,
+Il servizio dei testi carica `assets/dictionaries/common/dictionary.json` e il catalogo dell'episodio;
+i cataloghi già caricati restano disponibili. I testi della UI usano chiavi `common.ui.*`,
+i nomi degli interlocutori `common.speaker.*` (anche nel campo `speaker` dei passi).
+Pulsanti, aiuti e tooltip condividono `texts.language` con i dialoghi e si aggiornano al cambio lingua.
+Per un oggetto proveniente da un altro episodio,
 la sua chiave carica su richiesta anche il catalogo di origine, senza cambiare episodio attivo.
 
 Gli asset grafici sono organizzati in `assets/graphics/epNN_<stanza_origine>/`,
@@ -146,7 +149,7 @@ Le due istanze dell'oblò condividono `porthole.tscn` e hanno ID distinti nella 
    per gli oggetti raccoglibili; registra il percorso della scena in `ItemCatalog.SCENES`.
 4. Per una combinazione, configura `combination_definition` nella scena dell'oggetto
    risultante e registrala nel getter `ItemCatalog.RECIPES`. Vedi `magnet_feather.tscn`.
-5. Aggiungi i testi IT/EN in `assets/dialogue/epNN/dialogue.json`, con chiavi `epNN.<ambito>.<testo>`.
+5. Aggiungi i testi IT/EN in `assets/dictionaries/epNN/dictionary.json`, con chiavi `epNN.<ambito>.<testo>`.
 
 Il catalogo legge i dati incorporati senza istanziare l'oggetto e senza caricare la
 stanza: inventario e salvataggi restano disponibili anche dopo averla lasciata.

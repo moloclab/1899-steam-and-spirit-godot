@@ -112,7 +112,7 @@ func _next() -> void:
 				var response: Variant = step.callback.call()
 				state_changed.emit()
 				if response is String and not response.is_empty():
-					line_requested.emit(response, "Winston Churchill")
+					line_requested.emit(response, "common.speaker.churchill")
 			Step.Kind.CHANGE_ROOM:
 				if not _state.enter_room(step.destination_room, step.destination_entry):
 					cancel()

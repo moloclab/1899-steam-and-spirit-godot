@@ -1,7 +1,13 @@
 extends RefCounted
 ## Risolve testi e traduzioni indipendentemente dalla UI e dalle regole degli oggetti.
 const Episodes = preload("res://scripts/data/episode_catalog.gd")
-var language := "it"
+## La stessa lingua aggiorna dialoghi e controlli già costruiti.
+signal language_changed
+var language := "it":
+	set(value):
+		if language != value:
+			language = value
+			language_changed.emit()
 var entries: Dictionary = {}
 var episode_id := ""
 var _loaded_episodes: Dictionary = {}
@@ -24,18 +30,18 @@ func _ensure_episode(next_episode: String) -> bool:
 	if episode == null:
 		return false
 	var merged := entries.duplicate()
-	var catalog_paths: Array[String] = [episode.dialogue_path]
+	var catalog_paths: Array[String] = [episode.dictionary_path]
 	if _loaded_episodes.is_empty():
-		catalog_paths.push_front(Episodes.COMMON_DIALOGUE)
+		catalog_paths.push_front(Episodes.COMMON_DICTIONARY)
 	for catalog_path in catalog_paths:
 		var parsed: Variant = JSON.parse_string(FileAccess.get_file_as_string(catalog_path))
 		if not parsed is Dictionary:
-			push_error("Catalogo dei dialoghi non leggibile: " + catalog_path)
+			push_error("Vocabolario non leggibile: " + catalog_path)
 			return false
 		for key in parsed:
-			var prefix := "common." if catalog_path == Episodes.COMMON_DIALOGUE else next_episode + "."
+			var prefix := "common." if catalog_path == Episodes.COMMON_DICTIONARY else next_episode + "."
 			if not key is String or not key.begins_with(prefix) or merged.has(key) or not parsed[key] is Dictionary:
-				push_error("Chiave dei dialoghi duplicata o non valida: " + str(key))
+				push_error("Chiave del vocabolario duplicata o non valida: " + str(key))
 				return false
 			merged[key] = parsed[key]
 	entries = merged
@@ -53,4 +59,4 @@ func text(key: String) -> String:
 	if not entry is Dictionary:
 		push_warning("Testo mancante: " + key)
 		entry = entries.get("common.missing_response", {})
-	return str(entry.get(language, entry.get("it", "Non saprei cosa farci."))).split("|")[0]
+	return str(entry.get(language, entry.get("it", key))).split("|")[0]

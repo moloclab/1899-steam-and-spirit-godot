@@ -3,6 +3,9 @@ extends Control
 ## Segnale ascoltato dal coordinatore; il menu non deve conoscere lo stato dell'enigma.
 signal chosen(examine: bool)
 # La TextureRect mostra l'immagine completa; i due Button ricevono i clic sopra le icone.
+## Condivide il vocabolario della UI e conserva il tipo di azione per i tooltip.
+var texts: RefCounted
+var _interaction_kind := ""
 var picture: TextureRect
 var examine_button: Button
 var interact_button: Button
@@ -20,9 +23,9 @@ func _ready() -> void:
 	# L'immagine è decorativa. I clic devono raggiungere i due pulsanti che vengono aggiunti dopo.
 	picture.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(picture)
-	examine_button = _choice(Vector2.ZERO, "Esamina", true)
+	examine_button = _choice(Vector2.ZERO, texts.text("common.ui.examine"), true)
 	# Le aree originali erano 22×22, con la seconda spostata di 28 pixel: moltiplichiamo per 1.5.
-	interact_button = _choice(Vector2(42, 0), "Interagisci", false)
+	interact_button = _choice(Vector2(42, 0), texts.text("common.ui.interact"), false)
 	hide()
 
 ## Crea un'area cliccabile trasparente sopra una delle due icone.
@@ -44,11 +47,18 @@ func _choice(at: Vector2, caption: String, examine: bool) -> Button:
 	add_child(button)
 	return button
 
+## Traduce anche un menu aperto, mantenendo la scelta mano, bocca o uscita.
+func refresh_texts() -> void:
+	examine_button.tooltip_text = texts.text("common.ui.examine")
+	var key := "common.ui.interact" if _interaction_kind.is_empty() else "common.ui.interact_" + _interaction_kind
+	interact_button.tooltip_text = texts.text(key)
+
 ## Mostra il menu accanto al punto at, espresso nelle coordinate del genitore.
-## kind seleziona il PNG hand/mouth/exit; interaction è il suggerimento testuale della seconda scelta.
-func open(at: Vector2, kind: String, interaction: String) -> void:
+## kind seleziona il PNG hand/mouth/exit e la chiave del suggerimento della seconda scelta.
+func open(at: Vector2, kind: String) -> void:
 	picture.texture = load("res://assets/graphics/ui/panel_%s.png" % kind)
-	interact_button.tooltip_text = interaction
+	_interaction_kind = kind
+	refresh_texts()
 	# Il menu resta interamente dentro la finestra, anche vicino ai bordi e all'inventario.
 	# L'offset colloca il piccolo cerchio inferiore in prossimità del bersaglio selezionato.
 	position = Vector2(clampf(at.x - 37.5, 12, 1065), clampf(at.y - 45, 84, 654))

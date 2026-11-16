@@ -4,7 +4,7 @@ extends Control
 const State = preload("res://scripts/game_state.gd")
 const UI = preload("res://scripts/game_ui.gd")
 const Items = preload("res://scripts/data/item_catalog.gd")
-const Texts = preload("res://scripts/data/dialogue_catalog.gd")
+const Texts = preload("res://scripts/data/dictionary_catalog.gd")
 const Rooms = preload("res://scripts/world/room_manager.gd")
 const Interactions = preload("res://scripts/actions/interaction_controller.gd")
 const Sequences = preload("res://scripts/actions/sequence_runner.gd")
@@ -32,8 +32,9 @@ func _ready() -> void:
 	texts = Texts.new(starting_episode)
 	Input.set_custom_mouse_cursor(CURSOR_NORMAL, Input.CURSOR_ARROW, Vector2(1, 1))
 	Input.set_custom_mouse_cursor(CURSOR_NORMAL, Input.CURSOR_POINTING_HAND, Vector2(1, 1))
-	Input.set_custom_mouse_cursor(CURSOR_MAGNIFIER, Input.CURSOR_CROSS, Vector2(12, 12))
+	Input.set_custom_mouse_cursor(CURSOR_MAGNIFIER, Input.CURSOR_CROSS, Vector2(1, 1))
 	ui = UI.new()
+	ui.texts = texts
 	add_child(ui)
 	ui.save_requested.connect(_save)
 	ui.load_requested.connect(_load)
@@ -175,11 +176,10 @@ func _open_hotspot_menu(hotspot: Node2D) -> void:
 
 	menu_hotspot = hotspot
 	var kind: String = hotspot.interaction_kind
-	var caption: String = {"hand": "Interagisci / raccogli", "mouth": "Parla", "exit": "Esci"}[kind]
 	var center: Vector2 = hotspot.to_global(hotspot.hit_size / 2)
 	# Stanza ingrandita e corridoio scorrevole usano trasformazioni diverse dalla UI:
 	# passiamo prima al canvas globale, poi alle coordinate locali del genitore del pannello.
-	ui.action_menu.open(get_global_transform().affine_inverse() * center, kind, caption)
+	ui.action_menu.open(get_global_transform().affine_inverse() * center, kind)
 
 ## Gestisce il clic sinistro su un oggetto posseduto.
 ## Esamina e seleziona subito, oppure combina con l'oggetto già selezionato.
@@ -310,7 +310,7 @@ func _save() -> void:
 		return
 	_close_action_menu()
 	var error: Error = Saves.save_game(state)
-	_say(_text("common.game_saved") if error == OK else "Non riesco a salvare la partita: %s" % error_string(error))
+	_say(_text("common.game_saved") if error == OK else _text("common.save_failed") % error_string(error))
 
 ## Il servizio valida e migra i dati prima di sostituire la partita corrente.
 func _load() -> void:
@@ -323,6 +323,6 @@ func _load() -> void:
 		_load_room()
 		_say(_text("common.game_loaded"))
 	elif error == ERR_FILE_NOT_FOUND:
-		_say("Non c'è ancora una partita salvata. Usa il pulsante Salva.")
+		_say(_text("common.save_not_found"))
 	else:
-		_say("Salvataggio non leggibile. La partita corrente è rimasta invariata.")
+		_say(_text("common.save_unreadable"))

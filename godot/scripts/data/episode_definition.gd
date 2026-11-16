@@ -5,4 +5,4 @@ extends Resource
 @export var initial_entry := "default"
 @export var music: AudioStream
 @export var intro_keys: Array[String] = []
-@export_file("*.json") var dialogue_path := ""
+@export_file("*.json") var dictionary_path := ""

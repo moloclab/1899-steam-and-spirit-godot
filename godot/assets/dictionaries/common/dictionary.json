@@ -1,0 +1,114 @@
+{
+  "common.cannot_combine": {
+    "it": "Non saprei come combinarli.|E' un'idea stupida.|Uhm, no.|Perchè dovrei farlo?|Non credo funzionerebbe.",
+    "en": "I don't know how to combine them.|That's a stupid idea.|Um, no.|Why would I do that?|I don't think that would work."
+  },
+  "common.cannot_use": {
+    "it": "Potrei, certo. Ma perché?",
+    "en": "I could, of course. But why?"
+  },
+  "common.game_loaded": {
+    "it": "Partita caricata.",
+    "en": "Game loaded."
+  },
+  "common.game_saved": {
+    "it": "Partita salvata.",
+    "en": "Game saved."
+  },
+  "common.missing_response": {
+    "it": "Non saprei cosa farci.",
+    "en": "I don't know what to do with it."
+  },
+  "common.nothing_interesting": {
+    "it": "Niente di interessante.",
+    "en": "Nothing interesting."
+  },
+  "common.prototype_boundary": {
+    "it": "Questa parte del Leviathan arriverà dopo. Per ora posso tornare nella mia cabina.",
+    "en": "This part of the Leviathan will come later. For now I can return to my cabin."
+  },
+  "common.ui.save": {
+    "it": "Salva",
+    "en": "Save"
+  },
+  "common.ui.load": {
+    "it": "Carica",
+    "en": "Load"
+  },
+  "common.ui.music_on": {
+    "it": "Musica: ON",
+    "en": "Music: ON"
+  },
+  "common.ui.music_off": {
+    "it": "Musica: OFF",
+    "en": "Music: OFF"
+  },
+  "common.ui.help": {
+    "it": "Aiuti",
+    "en": "Help"
+  },
+  "common.ui.continue": {
+    "it": "Clic per continuare",
+    "en": "Click to continue"
+  },
+  "common.ui.help_title": {
+    "it": "COMANDI",
+    "en": "CONTROLS"
+  },
+  "common.ui.help_commands": {
+    "it": "MOUSE · BASTA IL TASTO SINISTRO\nClic sul pavimento: cammina. Clic su un oggetto: apri le due scelte.\nLente: esamina · Mano: usa/raccogli · Bocca: parla · Porta: esci.\nInventario: clic per descrizione e selezione; poi clic sul bersaglio.\nPer combinare: scegli il primo, poi clic sul secondo. Annulla: clic sul pavimento.",
+    "en": "MOUSE · LEFT BUTTON ONLY\nClick the floor to walk. Click an object to open the two choices.\nMagnifier: examine · Hand: use/pick up · Mouth: talk · Door: exit.\nInventory: click to describe and select; then click the target.\nTo combine: select the first item, then click the second. Cancel: click the floor."
+  },
+  "common.ui.restart": {
+    "it": "Ricomincia",
+    "en": "Restart"
+  },
+  "common.ui.restart_hint": {
+    "it": "Ricomincia il prototipo. Il file salvato resta disponibile con Carica.",
+    "en": "Restart the prototype. Your saved game remains available with Load."
+  },
+  "common.ui.resume": {
+    "it": "Torna al gioco",
+    "en": "Back to game"
+  },
+  "common.ui.examine": {
+    "it": "Esamina",
+    "en": "Examine"
+  },
+  "common.ui.interact": {
+    "it": "Interagisci",
+    "en": "Interact"
+  },
+  "common.ui.interact_hand": {
+    "it": "Interagisci / raccogli",
+    "en": "Interact / pick up"
+  },
+  "common.ui.interact_mouth": {
+    "it": "Parla",
+    "en": "Talk"
+  },
+  "common.ui.interact_exit": {
+    "it": "Esci",
+    "en": "Exit"
+  },
+  "common.save_failed": {
+    "it": "Non riesco a salvare la partita: %s",
+    "en": "I can't save the game: %s"
+  },
+  "common.save_not_found": {
+    "it": "Non c'è ancora una partita salvata. Usa il pulsante Salva.",
+    "en": "There is no saved game yet. Use the Save button."
+  },
+  "common.save_unreadable": {
+    "it": "Salvataggio non leggibile. La partita corrente è rimasta invariata.",
+    "en": "The saved game could not be read. Your current game is unchanged."
+  },
+  "common.speaker.churchill": {
+    "it": "Winston Churchill",
+    "en": "Winston Churchill"
+  },
+  "common.speaker.kelvin": {
+    "it": "Kelvin",
+    "en": "Kelvin"
+  }
+}

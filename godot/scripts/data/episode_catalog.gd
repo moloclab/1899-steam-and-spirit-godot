@@ -3,7 +3,7 @@ extends RefCounted
 const Definition = preload("res://scripts/data/episode_definition.gd")
 const Definitions = preload("res://scripts/data/scene_definitions.gd")
 const DEFAULT_EPISODE := "ep01"
-const COMMON_DIALOGUE := "res://assets/dialogue/common/dialogue.json"
+const COMMON_DICTIONARY := "res://assets/dictionaries/common/dictionary.json"
 const EPISODES := {
 	"ep01": "res://scenes/episodes/ep01/ep01.tscn"
 }
