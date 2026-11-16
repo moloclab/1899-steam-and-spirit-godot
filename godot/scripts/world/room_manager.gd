@@ -60,6 +60,18 @@ func character(character_id: String) -> Character:
 			return node
 	return null
 
+## Risolve lo speaker nella stanza corrente senza conservare nodi dopo una transizione.
+func speech_target(speaker_key: String) -> Node2D:
+	if actor.speaker_key == speaker_key:
+		return actor
+	for node in current_room.find_children("*", "AnimatedSprite2D", true, false):
+		if node is Character and node.speaker_key == speaker_key:
+			return node
+	for hotspot in current_room.hotspots():
+		if hotspot.speaker_key == speaker_key:
+			return hotspot
+	return null
+
 ## Il menu sospende anche le animazioni: un'azione non termina mentre la sequenza è in pausa.
 func pause_animations(paused: bool) -> void:
 	if paused:

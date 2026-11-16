@@ -62,10 +62,10 @@ func _run() -> void:
 	game._start_actions(game.rooms.find_hotspot("interphone").conversation.steps)
 	check(game.ui.speaker_label.text == "WINSTON CHURCHILL", "Nome Churchill dal vocabolario")
 	game.sequences.advance_dialogue()
-	check(game.ui.speaker_label.text == "KELVIN", "Nome Kelvin dal vocabolario")
+	check(game.ui.speaker_label.text == "INTERPHONE", "Nome interfono dal vocabolario")
 	check(game.ui.speech_label.text == game.texts.text("ep01.cabin.interphone.summons"), "Battuta inglese della sequenza")
 	game.texts.language = "it"
-	check(game.ui.speaker_label.text == "KELVIN", "Cambio lingua conserva l'interlocutore")
+	check(game.ui.speaker_label.text == "INTERFONO", "Cambio lingua conserva l'interlocutore")
 	game.sequences.cancel()
 	game._say(game.texts.text("common.save_failed") % "test")
 	check(game.ui.speech_label.text == "Non riesco a salvare la partita: test", "Messaggio di errore con parametro")

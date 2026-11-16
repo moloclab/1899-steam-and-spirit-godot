@@ -18,6 +18,8 @@ const GOLD := Color("e5bf73")
 var texts: Texts
 var _localized_controls: Dictionary = {}
 var _speaker_key := "common.speaker.churchill"
+const SPEECH_SIZE := Vector2(100, 100)
+const SPEECH_FONT_SIZE := 32
 var world_panel: Control
 var speaker_label: Label
 var speech_label: Label
@@ -95,7 +97,7 @@ func _button(key: String, rect: Rect2, callback: Callable, parent: Node = self) 
 	return button
 
 ## Costruisce l'interfaccia nelle coordinate di riferimento 1152×720.
-## La stanza sta dentro world_panel; dialoghi e inventario restano fissi mentre il corridoio scorre.
+## La stanza sta dentro world_panel; il dialogo segue chi parla e l'inventario resta fisso.
 func _ready() -> void:
 	texts.language_changed.connect(_refresh_texts)
 	# Occupa il viewport del coordinatore senza intercettare i clic destinati ai controlli figli.
@@ -119,10 +121,20 @@ func _ready() -> void:
 	add_child(world_panel)
 	speaker_label = _label("common.speaker.churchill", Rect2(40, 506, 700, 20), 32)
 	speaker_label.add_theme_color_override("font_color", GOLD)
+	# Il nome resta disponibile alla localizzazione; la battuta identifica chi parla tramite la posizione.
+	speaker_label.hide()
 	continue_label = _label("common.ui.continue", Rect2(780, 506, 330, 20), 32)
 	continue_label.hide()
-	speech_label = _label("", Rect2(40, 530, 1070, 50), 32)
+	# Il testo si sovrappone alla stanza senza intercettare i clic e senza essere ritagliato al bordo superiore.
+	speech_label = _label("", Rect2(Vector2.ZERO, SPEECH_SIZE), SPEECH_FONT_SIZE)
 	speech_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	speech_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	speech_label.vertical_alignment = VERTICAL_ALIGNMENT_BOTTOM
+	speech_label.clip_text = true
+	speech_label.z_index = 2
+	speech_label.add_theme_color_override("font_outline_color", Color.BLACK)
+	speech_label.add_theme_constant_override("outline_size", 2)
+	speech_label.add_theme_constant_override("line_spacing", 0)
 	inventory_row = HBoxContainer.new()
 	inventory_row.position = Vector2.ZERO
 	inventory_row.size = Vector2(850, 52)
@@ -181,6 +193,25 @@ func say(value: String, speaker_key: String = "common.speaker.churchill") -> voi
 	speech_label.text = value
 	_speaker_key = speaker_key
 	speaker_label.text = texts.text(_speaker_key).to_upper()
+	# Allarga il riquadro mantenendo il carattere fisso; al limite del viewport cresce anche in altezza.
+	var font := speech_label.get_theme_font("font")
+	var width := SPEECH_SIZE.x
+	var max_width := maxf(SPEECH_SIZE.x, world_panel.size.x - 16.0)
+	var measured := font.get_multiline_string_size(value, HORIZONTAL_ALIGNMENT_CENTER, width, SPEECH_FONT_SIZE)
+	while measured.y > SPEECH_SIZE.y and width < max_width:
+		width = minf(width + 20.0, max_width)
+		measured = font.get_multiline_string_size(value, HORIZONTAL_ALIGNMENT_CENTER, width, SPEECH_FONT_SIZE)
+	speech_label.size = Vector2(width, maxf(SPEECH_SIZE.y, ceilf(measured.y)))
+
+## Converte il punto sopra chi parla nelle coordinate della UI, anche con stanze scalate e scorrevoli.
+func position_speech(target: Node2D, local_anchor: Vector2) -> void:
+	speech_label.visible = is_instance_valid(target) and target.is_visible_in_tree()
+	if not speech_label.visible:
+		return
+	var anchor := get_global_transform().affine_inverse() * target.to_global(local_anchor)
+	speech_label.position = anchor - Vector2(speech_label.size.x / 2.0, speech_label.size.y + 4.0)
+	# Mantiene leggibili le battute anche quando chi parla si trova vicino ai bordi laterali.
+	speech_label.position.x = clampf(speech_label.position.x, 8.0, world_panel.size.x - speech_label.size.x - 8.0)
 
 ## Ricrea i pulsanti solo se cambiano gli ID o il loro ordine; conserva focus e scorrimento altrimenti.
 func refresh_inventory(inventory: Array[String], _selected: String, _texts) -> void:

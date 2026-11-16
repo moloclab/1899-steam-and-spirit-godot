@@ -1,6 +1,8 @@
 extends AnimatedSprite2D
 ## Personaggio riutilizzabile: movimento e animazioni non dipendono da UI o inventario.
 @export var character_id := "player"
+## Chiave del nome usata per ancorare le battute a questo personaggio.
+@export var speaker_key := ""
 @export var speed := 115.0
 @export var half_width := 22.0
 @export var height := 100.0

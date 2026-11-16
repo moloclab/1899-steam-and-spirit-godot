@@ -306,7 +306,7 @@ func _test_interphone() -> void:
 	movement.pressed = false
 	Input.parse_input_event(movement)
 	await _click(Vector2(300, 300))
-	check(game.ui.speaker_label.text == "KELVIN", "Cambio interlocutore col mouse")
+	check(game.ui.speaker_label.text == "INTERFONO", "Cambio interlocutore col mouse")
 	await _key(KEY_F1)
 	var before_text: String = game.ui.speech_label.text
 	_step(120)

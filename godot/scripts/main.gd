@@ -48,7 +48,7 @@ func _ready() -> void:
 	ui.inventory_pressed.connect(_inventory_click)
 	ui.item_examined.connect(func(item: String): _say(_item_description(item)))
 	ui.menu_toggled.connect(_menu_toggled)
-	sequences.line_requested.connect(func(key: String, speaker: String): ui.say(_text(key), speaker))
+	sequences.line_requested.connect(func(key: String, speaker: String): _say(_text(key), speaker))
 	sequences.state_changed.connect(_after_effect)
 	sequences.waiting_changed.connect(func(waiting: bool): ui.continue_label.visible = waiting)
 	sequences.finished.connect(func(_cancelled: bool): ui.lock_interactions(false))
@@ -99,6 +99,7 @@ func _sync_episode() -> void:
 
 ## Il gestore delle stanze mantiene tutto il codice di creazione e posizionamento del personaggio.
 func _load_room() -> void:
+	ui.speech_label.hide()
 	_close_action_menu()
 	interactions.cancel(rooms)
 	if not rooms.load_room(state, ui.world_panel):
@@ -150,9 +151,22 @@ func _item_description(item: String) -> String:
 func _text(key: String) -> String:
 	return texts.text(key)
 
-## Le risposte immediate restano visibili fino alla battuta successiva, come nel prototipo.
-func _say(value: String) -> void:
-	ui.say(value)
+## Ogni nuova battuta appare sopra chi parla e resta ferma fino alla prossima interazione.
+func _say(value: String, speaker: String = "common.speaker.churchill") -> void:
+	ui.say(value, speaker)
+	# Una sequenza può emettere la battuta nello stesso frame dell'arrivo: aggiorna prima lo scorrimento.
+	rooms.position_world(ui.world_panel.size.x)
+	_position_speech()
+
+## Personaggi e oggetti espongono un punto sopra la propria sagoma nelle coordinate locali.
+func _position_speech() -> void:
+	var target := rooms.speech_target(ui._speaker_key)
+	var anchor := Vector2.ZERO
+	if target is Hotspot:
+		anchor.x = target.hit_size.x / 2.0
+	elif is_instance_valid(target):
+		anchor.x = target.half_width
+	ui.position_speech(target, anchor)
 
 ## Le richieste di avvicinamento libere vengono annullate; le sequenze mantengono il proprio percorso.
 func _menu_toggled(open: bool) -> void:
@@ -189,6 +203,7 @@ func _inventory_click(item: String, _button: Button) -> void:
 ## Riceve la scelta dal pannello: true indica la lente, false l'interazione.
 ## Gli oggetti della stanza richiedono avvicinamento.
 func _choose_action(examine: bool) -> void:
+	ui.speech_label.hide()
 	# Copia il bersaglio prima di chiudere il menu; il clic sulla scelta non passa alla stanza.
 	var hotspot := menu_hotspot
 	_close_action_menu()
@@ -201,6 +216,7 @@ func _world_input(event: InputEvent) -> void:
 	if ui.help_panel.visible or sequences.busy:
 		return
 	if event is InputEventMouseButton and event.pressed:
+		ui.speech_label.hide()
 		if event.button_index not in [MOUSE_BUTTON_LEFT, MOUSE_BUTTON_RIGHT]:
 			return
 		# gui_input fornisce una posizione locale al contenitore, mentre gli hotspot ricevono punti globali.
@@ -243,6 +259,7 @@ func _find_at_point(point: Vector2, hotspots: Array[Node2D]) -> Node2D:
 ## Seleziona un oggetto, lo deseleziona al secondo clic oppure combina due oggetti diversi.
 ## La combinazione è delegata a GameState; qui si aggiornano soltanto selezione e interfaccia.
 func _select_item(item: String) -> void:
+	ui.speech_label.hide()
 	_close_action_menu()
 	interactions.cancel(rooms)
 
@@ -270,8 +287,14 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventKey or event is InputEventJoypadButton or event is InputEventJoypadMotion:
 		get_viewport().set_input_as_handled()
 		return
+	# Il movimento del puntatore non cancella le battute; un clic nell'ambiente o nell'inventario le chiude.
+	if not ui.help_panel.visible and event is InputEventMouseButton and event.pressed:
+		if ui.world_panel.get_global_rect().has_point(event.position) or ui.inventory_scroll.get_global_rect().has_point(event.position) or (ui.action_menu.visible and ui.action_menu.get_global_rect().has_point(event.position)):
+			ui.speech_label.hide()
 	# Musica e aiuti restano utilizzabili anche durante le battute e le sequenze.
 	if sequences.busy and not ui.help_panel.visible and event is InputEventMouseButton and event.pressed and not ui.music_button.get_global_rect().has_point(event.position) and not ui.help_button.get_global_rect().has_point(event.position):
+		# Nasconde la battuta precedente prima di avanzare: la nuova resta visibile.
+		ui.speech_label.hide()
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			sequences.advance_dialogue()
 		get_viewport().set_input_as_handled()
