@@ -23,7 +23,6 @@ const SPEECH_FONT_SIZE := 32
 var world_panel: Control
 var speaker_label: Label
 var speech_label: Label
-var continue_label: Label
 var inventory_row: HBoxContainer
 var inventory_scroll: ScrollContainer
 var action_menu: Control
@@ -123,8 +122,6 @@ func _ready() -> void:
 	speaker_label.add_theme_color_override("font_color", GOLD)
 	# Il nome resta disponibile alla localizzazione; la battuta identifica chi parla tramite la posizione.
 	speaker_label.hide()
-	continue_label = _label("common.ui.continue", Rect2(780, 506, 330, 20), 32)
-	continue_label.hide()
 	# Il testo si sovrappone alla stanza senza intercettare i clic e senza essere ritagliato al bordo superiore.
 	speech_label = _label("", Rect2(Vector2.ZERO, SPEECH_SIZE), SPEECH_FONT_SIZE)
 	speech_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART

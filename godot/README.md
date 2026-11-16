@@ -51,8 +51,8 @@ Per combinare: clicca sul primo oggetto e poi sul secondo nell'inventario.
 Con tastiera e controller, conferma seleziona direttamente l'oggetto o esegue l'azione.
 La cornice dorata identifica il focus da tastiera/controller; il mouse usa il cursore a lente.
 
-Durante una sequenza, movimento e interazioni sono sospesi. Le battute che attendono
-una conferma mostrano il suggerimento **Clic / Invio / A per continuare**.
+Durante una sequenza, movimento e interazioni liberi sono sospesi.
+Un clic sinistro avvia il passo successivo quando quello corrente è terminato.
 Il menu mette in pausa anche attese e animazioni. Salva, Carica e Ricomincia sono
 disabilitati fino alla fine della sequenza, per evitare salvataggi a metà di un effetto.
 
@@ -185,16 +185,35 @@ Ogni personaggio ha un `character_id` usato dai passi della sequenza.
 
 Una risorsa `action_sequence.gd` contiene una lista di `ActionStep`:
 
-- `SAY`: chiave del testo, speaker e attesa facoltativa di conferma.
-- `WALK`: personaggio e coordinata di destinazione nella stanza, con attesa dell'arrivo.
+- Ogni passo indica `subject_id`: `player` per Churchill, oppure il `character_id`
+  di un altro personaggio o l'`hotspot_id` di un oggetto.
+- `SAY`: il soggetto dice `text_key`; voce e posizione della battuta vengono dal suo `speaker_key`.
+- `WALK`: il soggetto cammina fino al bordo di `target_hotspot_id`; se vuoto usa `target_x`.
 - `ANIMATE`: personaggio, animazione e attesa facoltativa della sua conclusione.
 - `WAIT`: durata in secondi.
 - `EFFECT`: Callable creato dallo script, per applicare una regola al momento corretto.
 - `CHANGE_ROOM`: stanza e ingresso nominato.
+- `HIDE`: nasconde il soggetto nella stanza corrente. Per una scomparsa salvata nei progressi
+  usa invece `EFFECT` e le regole dell'oggetto in `sync_from_state()`.
 
 Le animazioni cicliche devono partire senza attenderne il completamento.
-Le conferme avanzano solo le battute, senza saltare movimento, animazioni o attese.
+Il comando iniziale avvia il primo passo. Ogni clic sinistro successivo avvia un solo
+passo ulteriore: anche dopo movimento, animazione, attesa o effetto serve un nuovo clic.
+I clic durante un passo ancora in corso vengono ignorati, senza essere accodati.
+L'ultima battuta richiede un clic per chiuderla; gli altri passi finali terminano da soli.
 `cancel()` elimina i passi futuri, preservando gli effetti già applicati.
+
+Per esempio, nell'Inspector configura quattro passi:
+
+| Passo | `subject_id` | `kind` | Parametro |
+| --- | --- | --- | --- |
+| 1 | `player` | `WALK` | `target_hotspot_id = "como"` (comodino) |
+| 2 | `player` | `SAY` | `text_key` della frase 1 |
+| 3 | `player` | `SAY` | `text_key` della frase 2 |
+| 4 | `interphone` | `SAY` | `text_key` della frase 3 |
+
+La scelta dell'interazione avvia il cammino; dopo l'arrivo, tre clic distinti avviano
+le tre battute. Un ultimo clic chiude la conversazione.
 
 Assegna una sequenza al campo `conversation` di un hotspot per il dialogo a mani libere;
 `scenes/objects/ep01_cabin_interphone/interphone.tscn` contiene un esempio giocabile, come risorsa interna.

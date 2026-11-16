@@ -48,7 +48,6 @@ func _run() -> void:
 	check(game.ui.reset_button.text == "Restart" and game.ui.reset_button.tooltip_text.begins_with("Restart the prototype."), "Reset e tooltip inglesi")
 	check(has_label(game.ui.help_panel, "CONTROLS"), "Titolo aiuti inglese")
 	check(has_label(game.ui.help_panel, game.texts.entries["common.ui.help_commands"].en), "Istruzioni complete inglesi")
-	check(game.ui.continue_label.text == "Click to continue", "Invito a continuare inglese")
 	check(game.ui.music_button.text == "Music: OFF" and game.music.stream_paused, "Cambio lingua conserva musica spenta")
 	game.ui._toggle_help()
 	for pair in [["sink", "Interact / pick up"], ["interphone", "Talk"], ["door", "Exit"]]:

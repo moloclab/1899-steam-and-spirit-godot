@@ -50,7 +50,6 @@ func _ready() -> void:
 	ui.menu_toggled.connect(_menu_toggled)
 	sequences.line_requested.connect(func(key: String, speaker: String): _say(_text(key), speaker))
 	sequences.state_changed.connect(_after_effect)
-	sequences.waiting_changed.connect(func(waiting: bool): ui.continue_label.visible = waiting)
 	sequences.finished.connect(func(_cancelled: bool): ui.lock_interactions(false))
 	_load_room()
 	_show_intro()

@@ -317,7 +317,7 @@ func _test_interphone() -> void:
 	await _key(KEY_ENTER)
 	check(game.ui.speech_label.text == game._text("ep01.cabin.interphone.urgency"), "Avanzamento con tastiera")
 	await _joy(JOY_BUTTON_A)
-	check(not game.sequences.busy and not game.ui.continue_label.visible, "Fine della conversazione con controller")
+	check(not game.sequences.busy, "Fine della conversazione con controller")
 	check(game.ui.speech_label.text == game._text("ep01.cabin.interphone.reply") and game.ui.speaker_label.text == "WINSTON CHURCHILL", "Ultima battuta persistente")
 	check(not game.ui.save_buttons[0].disabled, "Interazioni riabilitate alla fine")
 
@@ -377,8 +377,14 @@ func _test_sequence_steps() -> void:
 	runner.tick(0.25)
 	check(effects.count == 0, "Conferma e attesa non anticipano gli effetti")
 	runner.tick(0.25)
+	check(runner.waiting_for_confirmation, "Fine attesa richiede un clic prima del movimento")
+	runner.advance_dialogue()
 	for i in 300:
 		runner.tick(1.0 / 60.0)
+	check(runner.waiting_for_confirmation and effects.count == 0, "Fine movimento richiede un clic prima dell'animazione")
+	runner.advance_dialogue()
+	check(runner.waiting_for_confirmation and effects.count == 0, "Animazione senza attesa richiede un clic prima dell'effetto")
+	runner.advance_dialogue()
 	check(not runner.busy and effects.count == 1 and game.rooms.actor.current_x == 320, "Sequenza attesa-movimento-animazione-effetto")
 	runner.start(steps, game.state, game.rooms)
 	runner.cancel()
@@ -399,6 +405,8 @@ func _test_sequence_steps() -> void:
 	check(runner.busy and effects.count == 1, "Attesa del completamento reale dell'animazione")
 	await create_timer(0.15).timeout
 	runner.tick(0)
+	check(runner.waiting_for_confirmation and effects.count == 1, "Fine animazione non avvia l'effetto")
+	runner.advance_dialogue()
 	check(not runner.busy and effects.count == 2, "Animazione conclusa prima dell'effetto")
 	var transition := Step.new()
 	transition.kind = Step.Kind.CHANGE_ROOM

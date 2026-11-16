@@ -63,7 +63,8 @@ func _run() -> void:
 	for language in ["it", "en"]:
 		game.texts.language = language
 		for step in interphone.conversation.steps:
-			game._say(game.texts.text(step.text_key), step.speaker)
+			# La voce e l'ancoraggio appartengono al soggetto della battuta.
+			game._say(game.texts.text(step.text_key), game.rooms.subject(step.subject_id).speaker_key)
 			await process_frame
 			check(label.get_theme_font_size("font_size") == 32, "Carattere fisso: " + step.text_key)
 			check(label.get_line_count() * label.get_line_height() <= label.size.y, "Testo contenuto: " + language + " " + step.text_key)

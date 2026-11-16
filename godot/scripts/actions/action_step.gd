@@ -1,13 +1,15 @@
 extends Resource
 class_name ActionStep
 ## Un passo di sequenza esplicito, configurabile nell'Inspector e privo di codice testuale da eseguire.
-enum Kind { SAY, WALK, ANIMATE, WAIT, EFFECT, CHANGE_ROOM }
+enum Kind { SAY, WALK, ANIMATE, WAIT, EFFECT, CHANGE_ROOM, HIDE }
 @export var kind: Kind = Kind.SAY
+## Soggetto: character_id di un personaggio oppure hotspot_id di un oggetto.
+@export var subject_id := "player"
 @export var text_key := ""
-## Il nome visualizzato è una chiave del vocabolario, come il testo della battuta.
-@export var speaker := "common.speaker.churchill"
+## Solo ANIMATE: attende la fine dell'animazione prima di accettare il clic successivo.
 @export var wait_for_completion := true
-@export var character_id := "player"
+## WALK: raggiunge il bordo dell'oggetto indicato; se vuoto usa target_x.
+@export var target_hotspot_id := ""
 @export var target_x := 0.0
 @export var animation_name := ""
 @export var seconds := 0.0

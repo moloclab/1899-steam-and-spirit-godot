@@ -60,6 +60,13 @@ func character(character_id: String) -> Character:
 			return node
 	return null
 
+## Risolve il soggetto di un'azione nella stanza corrente senza conservare nodi differiti.
+func subject(subject_id: String) -> Node2D:
+	var person := character(subject_id)
+	if person != null:
+		return person
+	return find_hotspot(subject_id)
+
 ## Risolve lo speaker nella stanza corrente senza conservare nodi dopo una transizione.
 func speech_target(speaker_key: String) -> Node2D:
 	if actor.speaker_key == speaker_key:
