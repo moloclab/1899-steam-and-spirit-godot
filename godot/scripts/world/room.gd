@@ -1,9 +1,37 @@
 extends Node2D
 ## La stanza conserva i riferimenti ai propri hotspot, inclusi quelli in contenitori annidati.
 const Definition = preload("res://scripts/data/room_definition.gd")
+const State = preload("res://scripts/game_state.gd")
+const Step = preload("res://scripts/actions/action_step.gd")
+const ItemDefinition = preload("res://scripts/data/item_definition.gd")
+const CombinationDefinition = preload("res://scripts/data/combination_definition.gd")
+## Metadati usati da ingressi, movimento e catalogo delle stanze.
 @export var definition: Definition
+## Inventario e ricette appartengono alla stanza di origine, anche quando non è caricata.
+@export var inventory_definitions: Array[ItemDefinition] = []
+## Ricette degli oggetti originati qui, utilizzabili anche dalle altre stanze.
+@export var combination_definitions: Array[CombinationDefinition] = []
+## La cache conserva tutti gli hotspot; il filtro di visibilità viene applicato a ogni richiesta.
 var _cached_hotspots: Array[Node2D] = []
 var _dirty := true
+
+## Le stanze specializzano questo ingresso per azioni narrative e conversazioni.
+func actions(state: State, hotspot_id: String, item_id: String = "", examining: bool = false) -> Array[Step]:
+	# Il percorso predefinito lascia all’hotspot le sole regole condivise; le stanze possono specializzarlo.
+	var hotspot := find_hotspot(hotspot_id)
+	return hotspot.actions(state, item_id, examining) if hotspot != null else []
+
+## La ricerca esclude anche gli oggetti nascosti da un antenato o già rimossi.
+func find_hotspot(hotspot_id: String) -> Hotspot:
+	for hotspot in hotspots():
+		if hotspot.hotspot_id == hotspot_id:
+			return hotspot
+	return null
+
+## Ripristina anche gli oggetti nascosti, poi le sottoclassi aggiornano le proprie varianti.
+func sync_from_state(state: State) -> void:
+	for hotspot in hotspots(false):
+		hotspot.sync_from_state(state)
 
 ## Le modifiche alla UI o ad altre stanze non invalidano gli hotspot di questa stanza.
 func _ready() -> void:

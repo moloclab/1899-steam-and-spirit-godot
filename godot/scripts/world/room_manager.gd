@@ -46,10 +46,8 @@ func position_world(view_width: float) -> void:
 
 ## Cerca nuovamente il bersaglio all'arrivo: un oggetto nascosto o rimosso non può agire.
 func find_hotspot(hotspot_id: String) -> Hotspot:
-	for hotspot in current_room.hotspots():
-		if hotspot.hotspot_id == hotspot_id:
-			return hotspot
-	return null
+	# La ricerca appartiene alla stanza, che mantiene la cache e controlla la visibilità corrente.
+	return current_room.find_hotspot(hotspot_id)
 
 ## Gli attori della stanza possono partecipare alle sequenze usando un ID indipendente dal nodo.
 func character(character_id: String) -> Character:

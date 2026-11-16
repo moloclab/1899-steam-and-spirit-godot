@@ -291,7 +291,7 @@ func _test_interphone() -> void:
 	check(game.ui.speech_label.text == game._text("ep01.cabin.interphone.greeting"), "Prima battuta dell'interfono")
 	check(game.ui.save_buttons[0].disabled and game.ui.reset_button.disabled, "Salvataggio e reset bloccati durante la sequenza")
 	# Sostituire una sequenza annulla le azioni future senza sbloccare l'interfaccia della successiva.
-	game._start_actions(game.rooms.find_hotspot("interphone").conversation.steps)
+	game._start_actions(game.rooms.current_room.actions(game.state, "interphone"))
 	check(game.ui.save_buttons[0].disabled and game.sequences.busy, "Blocco UI conservato dopo la sostituzione della sequenza")
 	var before_x: float = game.state.player_x
 	# Mantiene premuto il movimento durante l'aggiornamento, anziché rilasciarlo prima della verifica.
@@ -334,7 +334,8 @@ func _test_nested_hotspots() -> void:
 	game.rooms.current_room.add_child(container)
 	var collectible := Collectible.new()
 	collectible.hotspot_id = "nested"
-	collectible.inventory_definition = Items.ITEMS.ep01_cabin_bottle
+	# L’hotspot di prova usa lo stesso ID stabile della definizione incorporata nella cabina.
+	collectible.item_id = "ep01_cabin_bottle"
 	container.add_child(collectible)
 	check(game.rooms.find_hotspot("nested") == collectible, "Registrazione hotspot annidato")
 	game._request(collectible, false)
@@ -513,20 +514,20 @@ func _test_keyboard_controller() -> void:
 	await _joy(JOY_BUTTON_A)
 	check(game.state.has_item("ep01_cabin_magnet_feather") and game.selected_item.is_empty(), "Combinazione con controller")
 
-## Ogni scena deve poter essere aperta da sola; lo script appartiene alla stessa cartella.
-func _test_object_scenes() -> void:
-	for folder in DirAccess.get_directories_at("res://scenes/objects"):
-		var object_name: String = folder.split("_", true, 2)[2]
-		var scene_path := "res://scenes/objects/%s/%s.tscn" % [folder, object_name]
-		var packed: PackedScene = load(scene_path)
-		check(packed != null, "Scena autonoma caricabile: " + folder)
-		if packed == null:
-			continue
-		var object := packed.instantiate()
-		var script: Script = object.get_script()
-		check(script != null and script.resource_path == scene_path.replace(".tscn", ".gd"),
-			"Script nella cartella dell'oggetto: " + folder)
-		object.free()
+## Le stanze contengono direttamente gli oggetti e condividono i dati con il catalogo.
+func _test_room_scenes() -> void:
+	for room_id in Rooms.SCENES:
+		var packed: PackedScene = load(Rooms.SCENES[room_id])
+		var room := packed.instantiate()
+		check(room.get_script().resource_path == Rooms.SCENES[room_id].replace(".tscn", ".gd"),
+			"Script specifico della stanza: " + room_id)
+		# Anche gli oggetti nascosti devono appartenere direttamente alla scena della stanza.
+		for hotspot in room.hotspots(false):
+			check(hotspot.scene_file_path.is_empty(), "Oggetto incorporato nella stanza: " + hotspot.hotspot_id)
+		# L’identità della risorsa esclude copie separate fra stanza e catalogo inventario.
+		for item in room.inventory_definitions:
+			check(Items.ITEMS[item.item_id] == item, "Definizione condivisa senza istanziare la stanza: " + item.item_id)
+		room.free()
 	var sink: Hotspot = game.rooms.find_hotspot("sink")
 	var original_x := sink.position.x
 	check(sink.approach_position(180, 22) == 250, "Da sinistra il bordo destro di Churchill raggiunge il bordo sinistro dell'oggetto")
@@ -558,9 +559,9 @@ func _test_object_scenes() -> void:
 	game.state.player_x = original_player_x
 	var first: Hotspot = game.rooms.find_hotspot("oblo1")
 	var second: Hotspot = game.rooms.find_hotspot("oblo2")
-	check(first != second and first.scene_file_path == second.scene_file_path,
-		"Due istanze autonome della stessa scena oblò")
-	check(game.rooms.find_hotspot("bottle").inventory_definition == Items.ITEMS.ep01_cabin_bottle,
+	check(first != second and first.get_node("Visual").sprite_frames == second.get_node("Visual").sprite_frames,
+		"Due oblò distinti condividono gli stessi fotogrammi")
+	check(game.rooms.find_hotspot("bottle").item_id == Items.ITEMS.ep01_cabin_bottle.item_id,
 		"Stanza e inventario condividono la stessa definizione")
 
 ## Esegue l'intero percorso e pulisce esclusivamente le fixture create da questo script.
@@ -571,7 +572,7 @@ func _run() -> void:
 	root.add_child(game)
 	game.set_process(false)
 	await process_frame
-	_test_object_scenes()
+	_test_room_scenes()
 	await _test_cabin()
 	await _test_interphone()
 	await _test_nested_hotspots()

@@ -53,7 +53,8 @@ func _run() -> void:
 	click.button_index = MOUSE_BUTTON_RIGHT
 	game._input(click)
 	check(not label.visible, "Anche il clic destro nasconde la battuta")
-	game._start_actions(game.rooms.find_hotspot("interphone").conversation.steps)
+	# Avvia le battute dal punto d’ingresso reale della stanza, senza dipendere da risorse sull’hotspot.
+	game._start_actions(game.rooms.current_room.actions(game.state, "interphone"))
 	game.sequences.advance_dialogue()
 	check(label.visible, "Una nuova battuta torna visibile")
 	var interphone: Node2D = game.rooms.find_hotspot("interphone")
@@ -62,7 +63,7 @@ func _run() -> void:
 	# Verifica l'altezza effettiva dopo che Label ha composto ogni traduzione della conversazione.
 	for language in ["it", "en"]:
 		game.texts.language = language
-		for step in interphone.conversation.steps:
+		for step in game.rooms.current_room.actions(game.state, "interphone"):
 			# La voce e l'ancoraggio appartengono al soggetto della battuta.
 			game._say(game.texts.text(step.text_key), game.rooms.subject(step.subject_id).speaker_key)
 			await process_frame

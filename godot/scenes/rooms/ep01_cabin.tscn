@@ -1,20 +1,35 @@
-[gd_scene load_steps=16 format=3]
+[gd_scene load_steps=39 format=3]
 
-[ext_resource type="Script" path="res://scripts/world/room.gd" id="room_script"]
-[ext_resource type="Texture2D" uid="uid://37p3ga46irwy" path="res://assets/graphics/ep01_cabin/cabin_background.png" id="background"]
+; Disposizione, grafica e risposte base della stanza; le azioni specifiche sono nel .gd omonimo.
+; ExtResource richiama file esterni, SubResource definisce risorse incorporate in questa scena.
+; Le coordinate di posizione e hit_size usano i pixel originali, prima della scala della stanza.
+
+[ext_resource type="Texture2D" path="res://assets/graphics/ep01_cabin/cabin_background.png" id="background"]
+[ext_resource type="Script" path="res://scenes/rooms/ep01_cabin.gd" id="room_script"]
 [ext_resource type="Script" path="res://scripts/data/room_definition.gd" id="room_definition_definition"]
-[ext_resource type="PackedScene" path="res://scenes/objects/ep01_cabin_map/map.tscn" id="object_mapMagnet"]
-[ext_resource type="PackedScene" path="res://scenes/objects/ep01_cabin_nightstand/nightstand.tscn" id="object_como"]
-[ext_resource type="PackedScene" path="res://scenes/objects/ep01_cabin_sink/sink.tscn" id="object_sinkNormal"]
-[ext_resource type="PackedScene" path="res://scenes/objects/ep01_cabin_feather/feather.tscn" id="object_feather"]
-[ext_resource type="PackedScene" path="res://scenes/objects/ep01_cabin_porthole/porthole.tscn" id="object_oblo1"]
-[ext_resource type="PackedScene" path="res://scenes/objects/ep01_cabin_porthole/porthole.tscn" id="object_oblo2"]
-[ext_resource type="PackedScene" path="res://scenes/objects/ep01_cabin_interphone/interphone.tscn" id="object_interphone"]
-[ext_resource type="PackedScene" path="res://scenes/objects/ep01_cabin_interphone_tube/interphone_tube.tscn" id="object_interphoneTube"]
-[ext_resource type="PackedScene" path="res://scenes/objects/ep01_cabin_cabin_door/cabin_door.tscn" id="object_door"]
-[ext_resource type="PackedScene" path="res://scenes/objects/ep01_cabin_bed/bed.tscn" id="object_bed"]
-[ext_resource type="PackedScene" path="res://scenes/objects/ep01_cabin_bottle/bottle.tscn" id="object_bottle"]
+[ext_resource type="Script" path="res://scripts/hotspot.gd" id="hotspot_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/ep01_cabin/map_magnet.png" id="mapMagnet_mapMagnet"]
+[ext_resource type="Texture2D" path="res://assets/graphics/ep01_cabin/map.png" id="mapMagnet_collected_texture"]
+[ext_resource type="Texture2D" path="res://assets/graphics/ep01_cabin/como.png" id="como_como"]
+[ext_resource type="Texture2D" path="res://assets/graphics/ep01_cabin/sink.png" id="sinkNormal_sinkNormal"]
+[ext_resource type="Script" path="res://scripts/hotspots/collectible.gd" id="collectible_script"]
+[ext_resource type="Script" path="res://scripts/data/item_definition.gd" id="inventory_definition"]
+[ext_resource type="Texture2D" path="res://assets/graphics/ep01_cabin/inventory_feather.png" id="feather_inventory_icon"]
+[ext_resource type="Texture2D" path="res://assets/graphics/ep01_cabin/feather.png" id="feather_feather"]
+[ext_resource type="Texture2D" path="res://assets/graphics/ep01_cabin/oblo.png" id="oblo1_sheet"]
+[ext_resource type="Texture2D" path="res://assets/graphics/ep01_cabin/interphone.png" id="interphone_interphone"]
+[ext_resource type="Texture2D" path="res://assets/graphics/ep01_cabin/interphone_tube.png" id="interphoneTube_interphoneTube"]
+[ext_resource type="Script" path="res://scripts/hotspots/room_exit.gd" id="exit_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/ep01_cabin/door_sub.png" id="door_door"]
+[ext_resource type="Texture2D" path="res://assets/graphics/ep01_cabin/bed.png" id="bed_bed"]
+[ext_resource type="Texture2D" path="res://assets/graphics/ep01_cabin/inventory_bottle.png" id="bottle_inventory_icon"]
+[ext_resource type="Texture2D" path="res://assets/graphics/ep01_cabin/bottle.png" id="bottle_bottle"]
+[ext_resource type="Texture2D" path="res://assets/graphics/ep01_cabin/inventory_magnet.png" id="magnet_inventory_icon"]
+[ext_resource type="Texture2D" path="res://assets/graphics/ep01_cabin/inventory_magnet_feather.png" id="magnet_feather_inventory_icon"]
+[ext_resource type="Script" path="res://scripts/data/combination_definition.gd" id="combination_recipe"]
+[ext_resource type="Texture2D" path="res://assets/graphics/ep01_cabin/inventory_key.png" id="key_inventory_icon"]
 
+; Metadati letti dal catalogo senza istanziare la stanza. Gli ingressi indicano la X di Churchill.
 [sub_resource type="Resource" id="room_definition"]
 script = ExtResource("room_definition_definition")
 room_id = "ep01_cabin"
@@ -23,44 +38,258 @@ scene_path = "res://scenes/rooms/ep01_cabin.tscn"
 width = 648.0
 entries = Dictionary[String, float]({"default": 180.0, "from_corridor": 550.0})
 
+; Penna in inventario: testi e icona condivisi da raccolta, UI e salvataggi.
+[sub_resource type="Resource" id="feather_inventory"]
+script = ExtResource("inventory_definition")
+item_id = "ep01_cabin_feather"
+name_key = "ep01.inventory.feather.name"
+description_key = "ep01.inventory.feather.examine"
+icon = ExtResource("feather_inventory_icon")
+collectible = true
+
+; Oblò: sei ritagli da 48 x 48 pixel dello stesso foglio, condivisi dai due nodi.
+[sub_resource type="AtlasTexture" id="oblo1_frame_0"]
+atlas = ExtResource("oblo1_sheet")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="oblo1_frame_1"]
+atlas = ExtResource("oblo1_sheet")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="oblo1_frame_2"]
+atlas = ExtResource("oblo1_sheet")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="oblo1_frame_3"]
+atlas = ExtResource("oblo1_sheet")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="oblo1_frame_4"]
+atlas = ExtResource("oblo1_sheet")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="oblo1_frame_5"]
+atlas = ExtResource("oblo1_sheet")
+region = Rect2(240, 0, 48, 48)
+
+; Animazione ciclica: duration pesa ogni fotogramma, speed esprime i fotogrammi al secondo.
+[sub_resource type="SpriteFrames" id="oblo1_frames"]
+animations = [{"frames": [{"duration": 1.0, "texture": SubResource("oblo1_frame_0")}, {"duration": 1.0, "texture": SubResource("oblo1_frame_1")}, {"duration": 1.0, "texture": SubResource("oblo1_frame_2")}, {"duration": 1.0, "texture": SubResource("oblo1_frame_3")}, {"duration": 1.0, "texture": SubResource("oblo1_frame_4")}, {"duration": 1.0, "texture": SubResource("oblo1_frame_5")}], "loop": true, "name": &"default", "speed": 2.5}]
+
+; Bottiglia in inventario: collectible consente la raccolta tramite il comportamento comune.
+[sub_resource type="Resource" id="bottle_inventory"]
+script = ExtResource("inventory_definition")
+item_id = "ep01_cabin_bottle"
+name_key = "ep01.inventory.bottle.name"
+description_key = "ep01.inventory.bottle.examine"
+icon = ExtResource("bottle_inventory_icon")
+collectible = true
+
+; Calamita: viene raccolta dalla mappa, senza richiedere un nodo autonomo nella stanza.
+[sub_resource type="Resource" id="magnet_inventory"]
+script = ExtResource("inventory_definition")
+item_id = "ep01_cabin_magnet"
+name_key = "ep01.inventory.magnet.name"
+description_key = "ep01.inventory.magnet.examine"
+icon = ExtResource("magnet_inventory_icon")
+collectible = true
+
+; Penna magnetica: risultato di una combinazione, non raccoglibile direttamente dalla scena.
+[sub_resource type="Resource" id="magnet_feather_inventory"]
+script = ExtResource("inventory_definition")
+item_id = "ep01_cabin_magnet_feather"
+name_key = "ep01.inventory.magnet_feather.name"
+description_key = "ep01.inventory.magnet_feather.examine"
+icon = ExtResource("magnet_feather_inventory_icon")
+collectible = false
+
+; Ricetta simmetrica: consuma penna e calamita, aggiunge la penna magnetica e restituisce la risposta.
+[sub_resource type="Resource" id="magnet_feather_combination"]
+script = ExtResource("combination_recipe")
+ingredients = Array[String](["ep01_cabin_feather","ep01_cabin_magnet"])
+consumed = Array[String](["ep01_cabin_feather","ep01_cabin_magnet"])
+results = Array[String](["ep01_cabin_magnet_feather"])
+response_key = "ep01.inventory.magnet_feather.combine"
+
+; Chiave: assegnata dall’enigma del lavandino, non dalla raccolta di un hotspot autonomo.
+[sub_resource type="Resource" id="key_inventory"]
+script = ExtResource("inventory_definition")
+item_id = "ep01_cabin_key"
+name_key = "ep01.inventory.key.name"
+description_key = "ep01.inventory.key.examine"
+icon = ExtResource("key_inventory_icon")
+collectible = false
+
+; Radice della cabina: collega le azioni dello script ai dati incorporati della stanza.
 [node name="CABIN" type="Node2D" unique_id=124935942]
 script = ExtResource("room_script")
 definition = SubResource("room_definition")
+; Definizioni della stanza di origine: disponibili nel catalogo anche quando è caricata un’altra stanza.
+inventory_definitions = Array[ExtResource("inventory_definition")]([SubResource("feather_inventory"), SubResource("bottle_inventory"), SubResource("magnet_inventory"), SubResource("magnet_feather_inventory"), SubResource("key_inventory")])
+combination_definitions = Array[ExtResource("combination_recipe")]([SubResource("magnet_feather_combination")])
+; Varianti della mappa: sync_from_state sceglie la texture usando la raccolta persistente della calamita.
+map_complete_texture = ExtResource("mapMagnet_mapMagnet")
+map_collected_texture = ExtResource("mapMagnet_collected_texture")
 
+; Fondale alle coordinate originali, con origine nell’angolo superiore sinistro.
 [node name="Background" type="Sprite2D" parent="." unique_id=1915065628]
 texture = ExtResource("background")
 centered = false
 
-[node name="mapMagnet" parent="." instance=ExtResource("object_mapMagnet")]
+; Mappa: resta esaminabile dopo la raccolta; lo script della stanza sostituisce la texture.
+[node name="mapMagnet" type="Node2D" parent="."]
+script = ExtResource("hotspot_script")
+hotspot_id = "map"
+hit_size = Vector2(60, 72)
 position = Vector2(68, 64)
+examine_response = "ep01.cabin.map.examine"
 
-[node name="como" parent="." instance=ExtResource("object_como")]
+; Figlio grafico: il genitore mantiene posizione, area cliccabile e comportamento.
+[node name="Visual" type="Sprite2D" parent="mapMagnet"]
+texture = ExtResource("mapMagnet_mapMagnet")
+centered = false
+
+; Comodino: esame e interazione statica usano direttamente le risposte configurate.
+[node name="como" type="Node2D" parent="."]
+script = ExtResource("hotspot_script")
+hotspot_id = "como"
+hit_size = Vector2(40, 36)
+examine_response = "ep01.cabin.nightstand.examine"
+interaction_response = "ep01.cabin.nightstand.interact"
 position = Vector2(224, 164)
 
-[node name="sinkNormal" parent="." instance=ExtResource("object_sinkNormal")]
+; Figlio grafico: il genitore mantiene posizione, area cliccabile e comportamento.
+[node name="Visual" type="Sprite2D" parent="como"]
+texture = ExtResource("como_como")
+centered = false
+
+; Lavandino: risposte base nella scena; usi e varianti dell’enigma in ep01_cabin.gd.
+[node name="sinkNormal" type="Node2D" parent="."]
+script = ExtResource("hotspot_script")
+hotspot_id = "sink"
+hit_size = Vector2(40, 56)
 position = Vector2(272, 144)
+examine_response = "ep01.cabin.sink.examine"
+interaction_response = "ep01.cabin.sink.wash"
 
-[node name="feather" parent="." instance=ExtResource("object_feather")]
+; Figlio grafico: il genitore mantiene posizione, area cliccabile e comportamento.
+[node name="Visual" type="Sprite2D" parent="sinkNormal"]
+texture = ExtResource("sinkNormal_sinkNormal")
+centered = false
+
+; Penna raccoglibile: item_id collega il nodo alla definizione inventario della radice.
+[node name="feather" type="Node2D" parent="."]
+script = ExtResource("collectible_script")
+pickup_response = "ep01.cabin.feather.pickup"
+hotspot_id = "feather"
+hit_size = Vector2(16, 28)
+examine_response = "ep01.cabin.feather.examine"
 position = Vector2(232, 136)
+item_id = "ep01_cabin_feather"
 
-[node name="oblo1" parent="." instance=ExtResource("object_oblo1")]
+; Figlio grafico: il genitore mantiene posizione, area cliccabile e comportamento.
+[node name="Visual" type="Sprite2D" parent="feather"]
+texture = ExtResource("feather_feather")
+centered = false
+
+; Primo oblò: hotspot indipendente con animazione condivisa con il secondo.
+[node name="oblo1" type="Node2D" parent="."]
+script = ExtResource("hotspot_script")
+hotspot_id = "oblo1"
+hit_size = Vector2(48, 48)
+examine_response = "ep01.cabin.porthole.examine"
+interaction_response = "ep01.cabin.porthole.interact"
 position = Vector2(336, 75)
 
-[node name="oblo2" parent="." instance=ExtResource("object_oblo2")]
-position = Vector2(400, 75)
-hotspot_id = "oblo2"
+; Figlio grafico: il genitore mantiene posizione, area cliccabile e comportamento.
+[node name="Visual" type="AnimatedSprite2D" parent="oblo1"]
+sprite_frames = SubResource("oblo1_frames")
+autoplay = "default"
+centered = false
 
-[node name="interphone" parent="." instance=ExtResource("object_interphone")]
+; Secondo oblò: ID e posizione propri, stessi fotogrammi e risposte del primo.
+[node name="oblo2" type="Node2D" parent="."]
+script = ExtResource("hotspot_script")
+hotspot_id = "oblo2"
+hit_size = Vector2(48, 48)
+examine_response = "ep01.cabin.porthole.examine"
+interaction_response = "ep01.cabin.porthole.interact"
+position = Vector2(400, 75)
+
+; Figlio grafico: il genitore mantiene posizione, area cliccabile e comportamento.
+[node name="Visual" type="AnimatedSprite2D" parent="oblo2"]
+sprite_frames = SubResource("oblo1_frames")
+autoplay = "default"
+centered = false
+
+; Interfono: speaker_key identifica la voce; la conversazione è composta dalla stanza.
+[node name="interphone" type="Node2D" parent="."]
+script = ExtResource("hotspot_script")
+hotspot_id = "interphone"
+speaker_key = "common.speaker.interphone"
+hit_size = Vector2(24, 20)
+interaction_kind = "mouth"
+examine_response = "ep01.cabin.interphone.examine"
+interaction_response = "ep01.cabin.interphone.conversation"
 position = Vector2(478, 100)
 
-[node name="interphoneTube" parent="." instance=ExtResource("object_interphoneTube")]
+; Figlio grafico: il genitore mantiene posizione, area cliccabile e comportamento.
+[node name="Visual" type="Sprite2D" parent="interphone"]
+texture = ExtResource("interphone_interphone")
+centered = false
+
+; Tubo decorativo dell’interfono: nessuno script hotspot, quindi non è cliccabile.
+[node name="interphoneTube" type="Node2D" parent="."]
 position = Vector2(478, 0)
 
-[node name="door" parent="." instance=ExtResource("object_door")]
+; Figlio grafico: il genitore mantiene posizione, area cliccabile e comportamento.
+[node name="Visual" type="Sprite2D" parent="interphoneTube"]
+texture = ExtResource("interphoneTube_interphoneTube")
+centered = false
+
+; Uscita verso il corridoio: la stanza verifica la chiave prima di usare il passaggio comune.
+[node name="door" type="Node2D" parent="."]
+script = ExtResource("exit_script")
+destination_room = "ep01_corridor"
+destination_entry = "from_cabin"
+hotspot_id = "door"
+hit_size = Vector2(76, 116)
+interaction_kind = "exit"
+examine_response = "ep01.cabin.door.examine"
+interaction_response = "ep01.cabin.door.exit"
 position = Vector2(544, 84)
 
-[node name="bed" parent="." instance=ExtResource("object_bed")]
+; Figlio grafico: il genitore mantiene posizione, area cliccabile e comportamento.
+[node name="Visual" type="Sprite2D" parent="door"]
+texture = ExtResource("door_door")
+centered = false
+
+; Letto in primo piano: z_index lo disegna davanti a Churchill e agli oggetti sul fondo.
+[node name="bed" type="Node2D" parent="."]
+z_index = 2
+script = ExtResource("hotspot_script")
+hotspot_id = "bed"
+hit_size = Vector2(140, 48)
+examine_response = "ep01.cabin.bed.examine"
+interaction_response = "ep01.cabin.bed.interact"
 position = Vector2(18, 152)
 
-[node name="bottle" parent="." instance=ExtResource("object_bottle")]
+; Figlio grafico: il genitore mantiene posizione, area cliccabile e comportamento.
+[node name="Visual" type="Sprite2D" parent="bed"]
+texture = ExtResource("bed_bed")
+centered = false
+
+; Bottiglia raccoglibile: la raccolta comune la nasconde anche dopo uso, rientro o caricamento.
+[node name="bottle" type="Node2D" parent="."]
+script = ExtResource("collectible_script")
+pickup_response = "ep01.cabin.bottle.pickup"
+hotspot_id = "bottle"
+hit_size = Vector2(28, 12)
+examine_response = "ep01.cabin.bottle.examine"
 position = Vector2(364, 188)
+item_id = "ep01_cabin_bottle"
+
+; Figlio grafico: il genitore mantiene posizione, area cliccabile e comportamento.
+[node name="Visual" type="Sprite2D" parent="bottle"]
+texture = ExtResource("bottle_bottle")
+centered = false

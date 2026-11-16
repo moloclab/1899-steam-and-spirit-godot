@@ -1,6 +1,6 @@
 extends Control
 ## Collega i componenti del gioco: input, selezione e ciclo di aggiornamento.
-## Le regole degli enigmi restano negli hotspot; contenuti, movimento, UI e salvataggi sono indipendenti.
+## Le regole degli enigmi restano nelle stanze; movimento, UI e salvataggi sono indipendenti.
 const State = preload("res://scripts/game_state.gd")
 const UI = preload("res://scripts/game_ui.gd")
 const Items = preload("res://scripts/data/item_catalog.gd")
@@ -110,8 +110,8 @@ func _load_room() -> void:
 
 ## Sincronizza anche gli oggetti nascosti, necessari quando si ripristina un salvataggio precedente.
 func _refresh() -> void:
-	for hotspot in _hotspots(false):
-		hotspot.sync_from_state(state)
+	# La stanza aggiorna prima i comportamenti comuni e poi le proprie varianti narrative e grafiche.
+	rooms.current_room.sync_from_state(state)
 	if not state.has_item(selected_item):
 		selected_item = ""
 	ui.refresh_inventory(state.inventory, selected_item, texts)

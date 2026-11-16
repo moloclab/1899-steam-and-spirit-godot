@@ -1,22 +1,27 @@
-[gd_scene load_steps=18 format=3]
+[gd_scene load_steps=30 format=3]
 
-[ext_resource type="Script" path="res://scripts/world/room.gd" id="room_script"]
+; Disposizione, grafica e risposte base della stanza; le azioni specifiche sono nel .gd omonimo.
+; ExtResource richiama file esterni, SubResource definisce risorse incorporate in questa scena.
+; Le coordinate di posizione e hit_size usano i pixel originali, prima della scala della stanza.
+
+[ext_resource type="Script" path="res://scripts/data/item_definition.gd" id="inventory_definition"]
+[ext_resource type="Script" path="res://scripts/data/combination_definition.gd" id="combination_recipe"]
+[ext_resource type="Script" path="res://scenes/rooms/ep01_corridor.gd" id="room_script"]
 [ext_resource type="Texture2D" path="res://assets/graphics/ep01_corridor/corridor_background.png" id="background"]
 [ext_resource type="Script" path="res://scripts/data/room_definition.gd" id="room_definition_definition"]
-[ext_resource type="PackedScene" path="res://scenes/objects/ep01_corridor_cabin_exit/cabin_exit.tscn" id="object_door_cabina"]
-[ext_resource type="PackedScene" path="res://scenes/objects/ep01_corridor_churchill_sign/churchill_sign.tscn" id="object_label_cabina"]
-[ext_resource type="PackedScene" path="res://scenes/objects/ep01_corridor_axe/axe.tscn" id="object_axBoxClose"]
-[ext_resource type="PackedScene" path="res://scenes/objects/ep01_corridor_fire_sign/fire_sign.tscn" id="object_label_ax"]
-[ext_resource type="PackedScene" path="res://scenes/objects/ep01_corridor_dormitory_door/dormitory_door.tscn" id="object_door_camerata"]
-[ext_resource type="PackedScene" path="res://scenes/objects/ep01_corridor_smoker/smoker.tscn" id="object_smoker"]
-[ext_resource type="PackedScene" path="res://scenes/objects/ep01_corridor_kelvin_door/kelvin_door.tscn" id="object_door_kelvin"]
-[ext_resource type="PackedScene" path="res://scenes/objects/ep01_corridor_kelvin_sign/kelvin_sign.tscn" id="object_label_kelvin"]
-[ext_resource type="PackedScene" path="res://scenes/objects/ep01_corridor_horizontal_wire/horizontal_wire.tscn" id="object_wireH"]
-[ext_resource type="PackedScene" path="res://scenes/objects/ep01_corridor_vertical_wire/vertical_wire.tscn" id="object_wireVNormal"]
-[ext_resource type="PackedScene" path="res://scenes/objects/ep01_corridor_lamp/lamp.tscn" id="object_lampBlink"]
-[ext_resource type="PackedScene" path="res://scenes/objects/ep01_corridor_upper_deck/upper_deck.tscn" id="object_stair"]
-[ext_resource type="PackedScene" path="res://scenes/objects/ep01_corridor_lower_deck/lower_deck.tscn" id="object_manhole"]
+[ext_resource type="Script" path="res://scripts/hotspots/room_exit.gd" id="exit_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/ep01_cabin/door_sub.png" id="door_cabina_door_cabina"]
+[ext_resource type="Script" path="res://scripts/hotspot.gd" id="hotspot_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/ep01_corridor/label.png" id="label_cabina_label_cabina"]
+[ext_resource type="Texture2D" path="res://assets/graphics/ep01_corridor/ax_box.png" id="axBoxClose_axBoxClose"]
+[ext_resource type="Texture2D" path="res://assets/graphics/ep01_corridor/smoker.png" id="smoker_sheet"]
+[ext_resource type="Texture2D" path="res://assets/graphics/ep01_corridor/r2_wire_h.png" id="wireH_wireH"]
+[ext_resource type="Texture2D" path="res://assets/graphics/ep01_corridor/wire_v.png" id="wireVNormal_wireVNormal"]
+[ext_resource type="Texture2D" path="res://assets/graphics/ep01_corridor/lamp.png" id="lampBlink_sheet"]
+[ext_resource type="Texture2D" path="res://assets/graphics/ep01_corridor/stair.png" id="stair_stair"]
+[ext_resource type="Texture2D" path="res://assets/graphics/ep01_corridor/man_hole.png" id="manhole_manhole"]
 
+; Metadati letti dal catalogo senza istanziare la stanza. Gli ingressi indicano la X di Churchill.
 [sub_resource type="Resource" id="room_definition"]
 script = ExtResource("room_definition_definition")
 room_id = "ep01_corridor"
@@ -25,49 +30,243 @@ scene_path = "res://scenes/rooms/ep01_corridor.tscn"
 width = 892.0
 entries = Dictionary[String, float]({"default": 94.0, "from_cabin": 94.0})
 
+; Marinaio: sei ritagli da 40 x 108 pixel del foglio di animazione.
+[sub_resource type="AtlasTexture" id="smoker_frame_0"]
+atlas = ExtResource("smoker_sheet")
+region = Rect2(0, 0, 40, 108)
+
+[sub_resource type="AtlasTexture" id="smoker_frame_1"]
+atlas = ExtResource("smoker_sheet")
+region = Rect2(40, 0, 40, 108)
+
+[sub_resource type="AtlasTexture" id="smoker_frame_2"]
+atlas = ExtResource("smoker_sheet")
+region = Rect2(80, 0, 40, 108)
+
+[sub_resource type="AtlasTexture" id="smoker_frame_3"]
+atlas = ExtResource("smoker_sheet")
+region = Rect2(120, 0, 40, 108)
+
+[sub_resource type="AtlasTexture" id="smoker_frame_4"]
+atlas = ExtResource("smoker_sheet")
+region = Rect2(160, 0, 40, 108)
+
+[sub_resource type="AtlasTexture" id="smoker_frame_5"]
+atlas = ExtResource("smoker_sheet")
+region = Rect2(200, 0, 40, 108)
+
+; Animazione ciclica: duration pesa ogni fotogramma, speed esprime i fotogrammi al secondo.
+[sub_resource type="SpriteFrames" id="smoker_frames"]
+animations = [{"frames": [{"duration": 1.0, "texture": SubResource("smoker_frame_0")}, {"duration": 1.0, "texture": SubResource("smoker_frame_1")}, {"duration": 1.0, "texture": SubResource("smoker_frame_2")}, {"duration": 1.0, "texture": SubResource("smoker_frame_3")}, {"duration": 1.0, "texture": SubResource("smoker_frame_4")}, {"duration": 1.0, "texture": SubResource("smoker_frame_5")}], "loop": true, "name": &"default", "speed": 3.3333333333333335}]
+
+; Lampada: quattro ritagli da 52 x 64 pixel del foglio di animazione.
+[sub_resource type="AtlasTexture" id="lampBlink_frame_0"]
+atlas = ExtResource("lampBlink_sheet")
+region = Rect2(0, 0, 52, 64)
+
+[sub_resource type="AtlasTexture" id="lampBlink_frame_1"]
+atlas = ExtResource("lampBlink_sheet")
+region = Rect2(52, 0, 52, 64)
+
+[sub_resource type="AtlasTexture" id="lampBlink_frame_2"]
+atlas = ExtResource("lampBlink_sheet")
+region = Rect2(104, 0, 52, 64)
+
+[sub_resource type="AtlasTexture" id="lampBlink_frame_3"]
+atlas = ExtResource("lampBlink_sheet")
+region = Rect2(156, 0, 52, 64)
+
+; Animazione ciclica: duration pesa ogni fotogramma, speed esprime i fotogrammi al secondo.
+[sub_resource type="SpriteFrames" id="lampBlink_frames"]
+animations = [{"frames": [{"duration": 1.0, "texture": SubResource("lampBlink_frame_0")}, {"duration": 1.0, "texture": SubResource("lampBlink_frame_1")}, {"duration": 1.0, "texture": SubResource("lampBlink_frame_2")}, {"duration": 1.0, "texture": SubResource("lampBlink_frame_3")}], "loop": true, "name": &"default", "speed": 0.1}]
+
+; Radice del corridoio: usa lo script della stanza e dichiara esplicitamente gli elenchi vuoti.
 [node name="CORRIDOR" type="Node2D"]
 script = ExtResource("room_script")
 definition = SubResource("room_definition")
+; Definizioni della stanza di origine: disponibili nel catalogo anche quando è caricata un’altra stanza.
+inventory_definitions = Array[ExtResource("inventory_definition")]([])
+combination_definitions = Array[ExtResource("combination_recipe")]([])
 
+; Fondale largo: il gestore delle stanze applica lo scorrimento al seguito di Churchill.
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("background")
 centered = false
 
-[node name="door_cabina" parent="." instance=ExtResource("object_door_cabina")]
+; Ritorno alla cabina: l’ingresso nominato risolve la posizione nella stanza di destinazione.
+[node name="door_cabina" type="Node2D" parent="."]
+script = ExtResource("exit_script")
+hotspot_id = "return"
+hit_size = Vector2(76, 116)
+examine_response = "ep01.corridor.cabin_sign.examine"
+interaction_response = "ep01.cabin.door.return"
+destination_room = "ep01_cabin"
+destination_entry = "from_corridor"
+interaction_kind = "exit"
 position = Vector2(56, 84)
 
-[node name="label_cabina" parent="." instance=ExtResource("object_label_cabina")]
+; Figlio grafico: il genitore mantiene posizione, area cliccabile e comportamento.
+[node name="Visual" type="Sprite2D" parent="door_cabina"]
+centered = false
+texture = ExtResource("door_cabina_door_cabina")
+flip_h = true
+
+; Targhetta della cabina: hotspot statico con la risposta predefinita del prototipo.
+[node name="label_cabina" type="Node2D" parent="."]
+script = ExtResource("hotspot_script")
+hotspot_id = "label_cabina"
+hit_size = Vector2(20, 12)
+interaction_kind = "hand"
 position = Vector2(84, 72)
 
-[node name="axBoxClose" parent="." instance=ExtResource("object_axBoxClose")]
+; Figlio grafico: il genitore mantiene posizione, area cliccabile e comportamento.
+[node name="Visual" type="Sprite2D" parent="label_cabina"]
+centered = false
+texture = ExtResource("label_cabina_label_cabina")
+
+; Cassetta dell’ascia: esame e risposta alla mano sono configurati direttamente qui.
+[node name="axBoxClose" type="Node2D" parent="."]
+script = ExtResource("hotspot_script")
+hotspot_id = "axe"
+hit_size = Vector2(36, 44)
+examine_response = "ep01.corridor.axe.examine"
+interaction_response = "ep01.corridor.axe.case_closed"
+interaction_kind = "hand"
 position = Vector2(200, 108)
 
-[node name="label_ax" parent="." instance=ExtResource("object_label_ax")]
+; Figlio grafico: il genitore mantiene posizione, area cliccabile e comportamento.
+[node name="Visual" type="Sprite2D" parent="axBoxClose"]
+centered = false
+texture = ExtResource("axBoxClose_axBoxClose")
+
+; Targhetta antincendio: condivide la texture delle altre targhette, ma ha un ID proprio.
+[node name="label_ax" type="Node2D" parent="."]
+script = ExtResource("hotspot_script")
+hotspot_id = "label_ax"
+hit_size = Vector2(20, 12)
+interaction_kind = "hand"
 position = Vector2(244, 116)
 
-[node name="door_camerata" parent="." instance=ExtResource("object_door_camerata")]
+; Figlio grafico: il genitore mantiene posizione, area cliccabile e comportamento.
+[node name="Visual" type="Sprite2D" parent="label_ax"]
+centered = false
+texture = ExtResource("label_cabina_label_cabina")
+
+; Porta della camerata: accesso segnaposto, senza destinazione percorribile nel prototipo.
+[node name="door_camerata" type="Node2D" parent="."]
+script = ExtResource("hotspot_script")
+hotspot_id = "door_camerata"
+hit_size = Vector2(76, 116)
+interaction_kind = "exit"
 position = Vector2(326, 84)
 
-[node name="smoker" parent="." instance=ExtResource("object_smoker")]
+; Figlio grafico: il genitore mantiene posizione, area cliccabile e comportamento.
+[node name="Visual" type="Sprite2D" parent="door_camerata"]
+centered = false
+texture = ExtResource("door_cabina_door_cabina")
+flip_h = true
+
+; Marinaio: hotspot statico con grafica animata e interazione di tipo conversazione.
+[node name="smoker" type="Node2D" parent="."]
+script = ExtResource("hotspot_script")
+hotspot_id = "smoker"
+hit_size = Vector2(40, 108)
+examine_response = "ep01.corridor.smoker.examine"
+interaction_response = "ep01.corridor.smoker.conversation"
+interaction_kind = "mouth"
 position = Vector2(420, 92)
 
-[node name="door_kelvin" parent="." instance=ExtResource("object_door_kelvin")]
+; Figlio grafico: il genitore mantiene posizione, area cliccabile e comportamento.
+[node name="Visual" type="AnimatedSprite2D" parent="smoker"]
+centered = false
+sprite_frames = SubResource("smoker_frames")
+autoplay = "default"
+
+; Porta di Kelvin: accesso segnaposto con la stessa grafica delle altre porte.
+[node name="door_kelvin" type="Node2D" parent="."]
+script = ExtResource("hotspot_script")
+hotspot_id = "door_kelvin"
+hit_size = Vector2(76, 116)
+interaction_kind = "exit"
 position = Vector2(542, 84)
 
-[node name="label_kelvin" parent="." instance=ExtResource("object_label_kelvin")]
+; Figlio grafico: il genitore mantiene posizione, area cliccabile e comportamento.
+[node name="Visual" type="Sprite2D" parent="door_kelvin"]
+centered = false
+texture = ExtResource("door_cabina_door_cabina")
+flip_h = true
+
+; Targhetta di Kelvin: nodo separato che riusa la texture comune delle targhette.
+[node name="label_kelvin" type="Node2D" parent="."]
+script = ExtResource("hotspot_script")
+hotspot_id = "label_kelvin"
+hit_size = Vector2(20, 12)
+interaction_kind = "hand"
 position = Vector2(570, 72)
 
-[node name="wireH" parent="." instance=ExtResource("object_wireH")]
+; Figlio grafico: il genitore mantiene posizione, area cliccabile e comportamento.
+[node name="Visual" type="Sprite2D" parent="label_kelvin"]
+centered = false
+texture = ExtResource("label_cabina_label_cabina")
+
+; Cavo orizzontale decorativo: privo di hotspot e collocato parzialmente fuori dal fondale.
+[node name="wireH" type="Node2D" parent="."]
 position = Vector2(-4, 22)
 
-[node name="wireVNormal" parent="." instance=ExtResource("object_wireVNormal")]
+; Figlio grafico: il genitore mantiene posizione, area cliccabile e comportamento.
+[node name="Visual" type="Sprite2D" parent="wireH"]
+centered = false
+texture = ExtResource("wireH_wireH")
+
+; Cavo verticale: area cliccabile e risposta predefinita del prototipo.
+[node name="wireVNormal" type="Node2D" parent="."]
+script = ExtResource("hotspot_script")
+hotspot_id = "wireVNormal"
+hit_size = Vector2(88, 100)
+interaction_kind = "hand"
 position = Vector2(616, 28)
 
-[node name="lampBlink" parent="." instance=ExtResource("object_lampBlink")]
+; Figlio grafico: il genitore mantiene posizione, area cliccabile e comportamento.
+[node name="Visual" type="Sprite2D" parent="wireVNormal"]
+centered = false
+texture = ExtResource("wireVNormal_wireVNormal")
+
+; Lampada: hotspot con lampeggio automatico, sospeso dal menu insieme alle altre animazioni.
+[node name="lampBlink" type="Node2D" parent="."]
+script = ExtResource("hotspot_script")
+hotspot_id = "lampBlink"
+hit_size = Vector2(52, 64)
+interaction_kind = "hand"
 position = Vector2(676, 52)
 
-[node name="stair" parent="." instance=ExtResource("object_stair")]
+; Figlio grafico: il genitore mantiene posizione, area cliccabile e comportamento.
+[node name="Visual" type="AnimatedSprite2D" parent="lampBlink"]
+centered = false
+sprite_frames = SubResource("lampBlink_frames")
+autoplay = "default"
+
+; Scala verso il ponte superiore: interazione di tipo uscita, ancora senza destinazione.
+[node name="stair" type="Node2D" parent="."]
+script = ExtResource("hotspot_script")
+hotspot_id = "stair"
+hit_size = Vector2(36, 196)
+interaction_kind = "exit"
 position = Vector2(756, 0)
 
-[node name="manhole" parent="." instance=ExtResource("object_manhole")]
+; Figlio grafico: il genitore mantiene posizione, area cliccabile e comportamento.
+[node name="Visual" type="Sprite2D" parent="stair"]
+centered = false
+texture = ExtResource("stair_stair")
+
+; Passaggio al ponte inferiore: accesso segnaposto, configurato come uscita.
+[node name="manhole" type="Node2D" parent="."]
+script = ExtResource("hotspot_script")
+hotspot_id = "manhole"
+hit_size = Vector2(48, 16)
+interaction_kind = "exit"
 position = Vector2(814, 184)
+
+; Figlio grafico: il genitore mantiene posizione, area cliccabile e comportamento.
+[node name="Visual" type="Sprite2D" parent="manhole"]
+centered = false
+texture = ExtResource("manhole_manhole")

@@ -1,8 +1,7 @@
 extends "res://scripts/hotspot.gd"
-## Comportamento condiviso: l'ID deriva dalla definizione incorporata nella scena.
-var item_id: String:
-	get:
-		return inventory_definition.item_id if inventory_definition != null else ""
+## Comportamento condiviso: l'ID rimanda all'inventario della stanza di origine.
+@export var item_id := ""
+## Chiave della battuta mostrata soltanto quando la raccolta viene registrata con successo.
 @export var pickup_response := "common.nothing_interesting"
 
 ## La raccolta è registrata nello stato prima di nascondere l'oggetto nella successiva sincronizzazione.

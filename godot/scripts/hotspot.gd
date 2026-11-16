@@ -1,15 +1,10 @@
 extends Node2D
 class_name Hotspot
-## Interfaccia comune degli oggetti, configurati nella propria scena autonoma.
+## Interfaccia comune degli oggetti, configurati direttamente nella scena della stanza.
 ## Lo stato viene passato esplicitamente: nessun oggetto dipende da singleton o dalla UI.
 const State = preload("res://scripts/game_state.gd")
 const Step = preload("res://scripts/actions/action_step.gd")
 const Sequence = preload("res://scripts/actions/action_sequence.gd")
-const ItemDefinition = preload("res://scripts/data/item_definition.gd")
-const CombinationDefinition = preload("res://scripts/data/combination_definition.gd")
-## Dati condivisi con l'inventario, incorporati nella scena dell'oggetto.
-@export var inventory_definition: ItemDefinition
-@export var combination_definition: CombinationDefinition
 ## ID stabile, usato dal coordinatore per ritrovare il bersaglio all'arrivo del personaggio.
 @export var hotspot_id := ""
 ## Collega una voce del dialogo all'oggetto parlante, per esempio l'interfono.
@@ -35,6 +30,7 @@ var highlighted := false:
 
 ## Crea una sequenza senza applicare effetti durante la pianificazione.
 ## Le sottoclassi possono comporre passi diversi leggendo lo stato corrente.
+## La stanza delega qui esami statici, raccolte semplici e altre interazioni generiche.
 func actions(state: State, item_id: String = "", examining: bool = false) -> Array[Step]:
 	if not examining and item_id.is_empty() and conversation != null and not conversation.steps.is_empty():
 		return conversation.steps.duplicate()

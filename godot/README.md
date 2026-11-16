@@ -67,13 +67,13 @@ disabilitati fino alla fine della sequenza, per evitare salvataggi a metà di un
 | `scripts/game_state.gd` | Inventario, raccolte definitive e progressi per ambito; nessun accesso al disco |
 | `scripts/save_store.gd` | Salvataggi versione 3, con episodio, ID univoci e validazione |
 | `scripts/world/room_manager.gd` | Sostituzione delle stanze, personaggi, centratura/scorrimento e pausa delle animazioni |
-| `scripts/world/room.gd` | Cache degli hotspot, anche annidati, con invalidazione dopo aggiunte e rimozioni |
+| `scripts/world/room.gd` | Cache degli hotspot, inoltro delle azioni e sincronizzazione dello stato |
 | `scripts/world/character.gd` | Movimento e animazioni riutilizzabili per Churchill e altri personaggi |
 | `scripts/actions/interaction_controller.gd` | Richiesta di avvicinamento e rivalutazione del bersaglio all'arrivo |
 | `scripts/actions/sequence_runner.gd` | Esecuzione ordinata dei passi e attese di conferma/completamento |
 | `scripts/hotspot.gd`, `scripts/hotspots/` | Interfaccia comune e comportamenti condivisi: raccolta, uscita e interazione con personaggi |
-| `scenes/objects/epNN_<stanza_origine>_<oggetto>/` | Scena e script di ciascun oggetto, con grafica, configurazione e risorse incorporate |
-| `scenes/rooms/` | Sfondo, metadati della stanza e posizionamento delle istanze degli oggetti |
+| `scenes/rooms/epNN_<stanza>.tscn` | Fondale, oggetti, animazioni, interazioni base e definizioni inventario incorporate |
+| `scenes/rooms/epNN_<stanza>.gd` | Azioni narrative, conversazioni e aggiornamenti visivi della stanza |
 | `scenes/episodes/epNN/` | Scena e script dell'episodio, con configurazione incorporata |
 | `scripts/data/` | Tipi di risorsa, cataloghi e schema dei progressi |
 | `assets/dictionaries/common/`, `assets/dictionaries/epNN/` | Vocabolario comune (UI inclusa) e testi IT/EN degli episodi |
@@ -89,7 +89,7 @@ appartengono a `GameState`. Nessun nodo della stanza viene scritto nel salvatagg
 ### Episodi, ID e asset
 
 Ogni episodio ha una cartella `scenes/episodes/epNN/`, con scena `epNN.tscn` e script
-`epNN.gd`, come gli oggetti. Apri la scena, seleziona la radice ed espandi `definition`
+`epNN.gd`, come le stanze. Apri la scena, seleziona la radice ed espandi `definition`
 nell'Inspector: la risorsa incorporata, basata su `scripts/data/episode_definition.gd`,
 contiene ID, stanza e ingresso iniziali, sottofondo, chiavi dell'introduzione e percorso
 dei dialoghi. Registra il percorso della scena in `EpisodeCatalog.EPISODES`.
@@ -121,60 +121,51 @@ La ripetizione del sottofondo si imposta nelle proprietà di importazione dell'a
 I file `.import` e `.gd.uid` si conservano in Git; la cache `.godot/` è esclusa.
 Anche `tests/` è versionata, mentre `test-output/` contiene solo catture locali escluse.
 
-### Oggetti e combinazioni
+### Stanze, oggetti e combinazioni
 
-Ogni oggetto ha una cartella in `scenes/objects/epNN_<stanza_origine>_<oggetto>/`, con due file:
+Ogni stanza ha due file in `scenes/rooms/`:
 
-- **`<oggetto>.tscn`**: grafica, area cliccabile, nome e configurazione. Le risorse
-  specifiche (dati inventario, conversazioni, fotogrammi, ricette) sono incorporate.
-- **`<oggetto>.gd`**: comportamento. Gli oggetti semplici ereditano quello comune;
-  gli enigmi ridefiniscono `examine`, `interact`, `use_item` o `actions`.
+- **`epNN_<stanza>.tscn`**: fondale e nodi degli oggetti, con posizione, ordine di disegno,
+  grafica, animazioni, area cliccabile e risposte statiche di esame e interazione.
+- **`epNN_<stanza>.gd`**: estende `scripts/world/room.gd` e raccoglie azioni specifiche,
+  conversazioni, risposte dipendenti dal progresso e sincronizzazione delle varianti grafiche.
 
-Esempio: `ep01_cabin_bed/bed.tscn`. Gli oggetti riutilizzati conservano episodio e
-stanza di origine. Le scene delle stanze seguono `scenes/rooms/epNN_<stanza>.tscn`.
+Apri la scena della stanza e modifica direttamente i nodi nell'editor.
+Gli oggetti semplici usano `Hotspot`, i raccoglibili `hotspots/collectible.gd`,
+i passaggi `hotspots/room_exit.gd`; non occorrono scene o script per singolo oggetto.
+Gli oblò condividono i fotogrammi, ma rimangono nodi distinti con ID propri.
+Churchill conserva la propria scena riutilizzabile.
 
-Per modificare un oggetto, apri la sua scena. Per collocarlo, trascina quella scena
-nella stanza e imposta posizione e ordine di disegno. Non occorre rendere modificabili
-i figli dell'istanza: modifica grafica e configurazione nella scena originale.
-Le due istanze dell'oblò condividono `porthole.tscn` e hanno ID distinti nella stanza.
+La radice contiene `definition`, `inventory_definitions` e `combination_definitions`.
+I due elenchi sono risorse incorporate: includono anche oggetti ottenuti da enigmi
+o combinazioni, come chiave e penna magnetica. Il catalogo li legge dalle scene
+registrate in `RoomCatalog.SCENES` senza istanziarle. Serializza entrambi gli elenchi
+anche quando sono vuoti. Il raccoglibile usa `item_id` per riferirsi alla definizione.
 
-1. Crea la scena dell'oggetto con uno script che estende `Hotspot`, oppure uno dei
-   comportamenti comuni in `scripts/hotspots/`.
-2. Configura ID, nome, area e risposte nell'Inspector della scena dell'oggetto.
-   L'avvicinamento usa i bordi di `hit_size`: Churchill si ferma a sinistra o a destra in base alla propria posizione,
-   con il suo bordo a contatto con quello dell'oggetto. Se è già dentro l'area, sceglie il bordo più vicino.
-   La destinazione rimane entro i limiti percorribili della stanza.
-3. Se compare nell'inventario, crea una risorsa interna `ItemDefinition` nel campo
-   `inventory_definition`, con ID, icona e chiavi dei testi. Abilita `collectible`
-   per gli oggetti raccoglibili; registra il percorso della scena in `ItemCatalog.SCENES`.
-4. Per una combinazione, configura `combination_definition` nella scena dell'oggetto
-   risultante e registrala nel getter `ItemCatalog.RECIPES`. Vedi `magnet_feather.tscn`.
-5. Aggiungi i testi IT/EN in `assets/dictionaries/epNN/dictionary.json`, con chiavi `epNN.<ambito>.<testo>`.
+Per aggiungere una stanza:
 
-Il catalogo legge i dati incorporati senza istanziare l'oggetto e senza caricare la
-stanza: inventario e salvataggi restano disponibili anche dopo averla lasciata.
-Calamita, chiave e penna magnetica hanno una propria scena anche se vengono ottenute
-da un altro hotspot o da una combinazione; la mappa rimane un oggetto distinto.
+1. Crea scena e script omonimi; lo script estende `scripts/world/room.gd`.
+2. Configura la risorsa incorporata `definition`: ID, episodio, percorso, larghezza,
+   margine percorribile, quota dei piedi, scala e ingressi nominati.
+3. Registra il percorso della scena in `RoomCatalog.SCENES`.
+4. Aggiungi i nodi degli oggetti con ID univoci, area e risposte nell'Inspector.
+   Churchill si avvicina al bordo dell'area dal proprio lato.
+5. Inserisci definizioni inventario e ricette negli elenchi della radice.
+   Le combinazioni comuni restano simmetriche.
+6. Dichiara i progressi in `ProgressSchema.SCOPES` e usa
+   `get_progress(ambito, chiave)` / `set_progress(ambito, chiave, valore)`.
 
-Le combinazioni comuni sono simmetriche. Una regola narrativa particolare può
-specializzare `apply(state)`, senza ampliare un elenco di condizioni in `GameState`.
+Lo script della stanza riceve `actions(state, hotspot_id, item_id, examining)`.
+Delega le interazioni semplici a `super.actions(...)` e restituisce passi
+`ActionStep` per quelle specifiche. Gli effetti applicano le mutazioni soltanto
+durante l'esecuzione, rivalutando il possesso degli oggetti.
+La cabina mostra il modello con `drop_bottle`, `collect_key`, `use_key` e
+`talk_interphone`.
 
-### Stanze e progressi
-
-1. Crea una scena con radice `Node2D` e script `world/room.gd`.
-2. Crea una risorsa interna `data/room_definition.gd` nel campo `definition` della radice.
-3. Imposta ID univoco (`ep01_cabin`), episodio (`ep01`), percorso della scena, larghezza, margine percorribile, quota dei piedi,
-   scala e ingressi nominati. Registra il percorso della scena in `RoomCatalog.SCENES`.
-4. Le uscite indicano stanza e **nome dell'ingresso**; le coordinate appartengono alla destinazione.
-5. Dichiara valori iniziali e intervalli dei progressi in `ProgressSchema.SCOPES`.
-   Lo schema attuale gestisce flag booleani e stadi interi.
-6. Leggi/scrivi con `get_progress(ambito, chiave)` e `set_progress(ambito, chiave, valore)`.
-
-Gli hotspot hanno ID univoci nella propria stanza e possono essere annidati in contenitori.
-`sync_from_state()` aggiorna immagini e visibilità anche dei nodi nascosti.
-Per un oggetto semplice bastano le risposte nell'Inspector della sua scena; per un enigma
-modifica il suo script, mantenendo l’interfaccia comune di `Hotspot`.
-Le richieste verso nodi rimossi, in eliminazione o nascosti da un antenato vengono scartate.
+`sync_from_state(state)` richiama prima la versione comune, che aggiorna anche
+gli hotspot nascosti, poi ricostruisce le varianti della stanza.
+Le uscite indicano stanza e nome dell'ingresso; le coordinate appartengono alla
+destinazione. Le richieste verso nodi nascosti o rimossi vengono scartate.
 
 ### Personaggi e sequenze
 
@@ -194,7 +185,7 @@ Una risorsa `action_sequence.gd` contiene una lista di `ActionStep`:
 - `EFFECT`: Callable creato dallo script, per applicare una regola al momento corretto.
 - `CHANGE_ROOM`: stanza e ingresso nominato.
 - `HIDE`: nasconde il soggetto nella stanza corrente. Per una scomparsa salvata nei progressi
-  usa invece `EFFECT` e le regole dell'oggetto in `sync_from_state()`.
+  usa invece `EFFECT` e la sincronizzazione della stanza in `sync_from_state()`.
 
 Le animazioni cicliche devono partire senza attenderne il completamento.
 Il comando iniziale avvia il primo passo. Ogni clic sinistro successivo avvia un solo
@@ -215,11 +206,10 @@ Per esempio, nell'Inspector configura quattro passi:
 La scelta dell'interazione avvia il cammino; dopo l'arrivo, tre clic distinti avviano
 le tre battute. Un ultimo clic chiude la conversazione.
 
-Assegna una sequenza al campo `conversation` di un hotspot per il dialogo a mani libere;
-`scenes/objects/ep01_cabin_interphone/interphone.tscn` contiene un esempio giocabile, come risorsa interna.
-Per sequenze dipendenti dal progresso ridefinisci `actions(state, item_id, examining)`.
-Le regole semplici continuano a usare `examine`, `interact` e `use_item`: l'adattatore
-le esegue come effetti e visualizza la risposta restituita.
+Le conversazioni specifiche sono funzioni nello script della stanza:
+`ep01_cabin.gd` costruisce i quattro passi dell'interfono in `talk_interphone()`.
+Il motore delle sequenze rimane condiviso. Gli hotspot generici possono ancora
+ricevere una risorsa `conversation` per conversazioni interamente configurabili.
 
 ## Salvataggi
 
@@ -255,3 +245,9 @@ Catture con il renderer reale, da eseguire senza `--headless`:
 
 Le immagini finiscono in `test-output/`, esclusa da Git e dall'importazione Godot.
 I test non sostituiscono una prova con controller fisico o una partita completa di EP01.
+
+Regressione del refactor delle stanze e ripristino degli enigmi:
+
+```powershell
+& 'C:\Tools\Godot\Godot_v4.7.2-stable_win64_console.exe' --headless --path godot --script res://tests/room_flow_test.gd
+```

@@ -58,7 +58,8 @@ func _run() -> void:
 	check(game.ui.action_menu.visible and game.ui.action_menu.interact_button.tooltip_text == "Esci", "Menu aperto ritradotto in italiano")
 	check(game.ui.music_button.text == "Musica: OFF", "Stato musicale ritradotto")
 	game.texts.language = "en"
-	game._start_actions(game.rooms.find_hotspot("interphone").conversation.steps)
+	# I passi prodotti dalla stanza mantengono le chiavi traducibili e i soggetti delle battute.
+	game._start_actions(game.rooms.current_room.actions(game.state, "interphone"))
 	check(game.ui.speaker_label.text == "WINSTON CHURCHILL", "Nome Churchill dal vocabolario")
 	game.sequences.advance_dialogue()
 	check(game.ui.speaker_label.text == "INTERPHONE", "Nome interfono dal vocabolario")
