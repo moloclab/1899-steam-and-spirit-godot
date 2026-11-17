@@ -7,16 +7,14 @@ extends "res://scripts/world/room.gd"
 
 ## Pianifica senza effetti: possesso e condizioni vengono rivalutati durante l'esecuzione.
 func actions(state: State, hotspot_id: String, item_id: String = "", examining: bool = false) -> Array[Step]:
-	if find_hotspot(hotspot_id) == null:
+	var hotspot := find_hotspot(hotspot_id)
+	if hotspot == null:
 		return []
-	# La bocca avvia il dialogo; esame e uso di oggetti seguono invece il percorso normale.
-	if hotspot_id == "interphone" and not examining and item_id.is_empty():
-		return talk_interphone()
 	# Il Callable rinvia le mutazioni al motore delle sequenze, dopo la scelta e l’avvicinamento.
 	if hotspot_id in ["map", "sink", "door"]:
 		return [Step.effect(_execute.bind(state, hotspot_id, item_id, examining))]
 	# Letto, oblò e raccoglibili mantengono i comportamenti comuni configurati nella scena.
-	return super.actions(state, hotspot_id, item_id, examining)
+	return hotspot.actions(state, item_id, examining)
 
 ## La lente ha precedenza sull'oggetto selezionato; gli usi richiedono il possesso corrente.
 func _execute(state: State, hotspot_id: String, item_id: String, examining: bool) -> String:
@@ -87,17 +85,6 @@ func _open_door(state: State) -> String:
 		1: return "ep01.cabin.door.key_needed"
 		2: return "ep01.cabin.door.ready_to_leave"
 	return "ep01.cabin.door.locked"
-
-## Restituisce passi nuovi per ogni conversazione, eseguiti dal motore comune delle sequenze.
-func talk_interphone() -> Array[Step]:
-	var steps: Array[Step] = []
-	for line in ["greeting", "summons", "urgency", "reply"]:
-		var step := Step.new()
-		step.text_key = "ep01.cabin.interphone." + line
-		# Kelvin parla attraverso l’interfono nelle due battute centrali; le altre sono di Churchill.
-		step.subject_id = "interphone" if line in ["summons", "urgency"] else "player"
-		steps.append(step)
-	return steps
 
 ## Ricostruisce la mappa dal progresso, anche al rientro o caricando una partita precedente.
 func sync_from_state(state: State) -> void:

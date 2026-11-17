@@ -22,8 +22,5 @@ func take_ready_actions(state, rooms) -> Array[Step]:
 	# Consuma l’intenzione una sola volta, prima che una sequenza possa causare un cambio stanza.
 	var request_data := _pending.duplicate()
 	_pending.clear()
-	var hotspot: Hotspot = rooms.find_hotspot(request_data.target)
-	if hotspot == null:
-		return []
-	# La stanza decide le regole narrative; questo coordinatore gestisce soltanto l’avvicinamento.
+	# La stanza verifica il bersaglio e decide le regole narrative dopo l'avvicinamento.
 	return rooms.current_room.actions(state, request_data.target, request_data.item, request_data.examining)

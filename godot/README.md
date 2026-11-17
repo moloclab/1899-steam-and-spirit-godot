@@ -167,13 +167,15 @@ Lo script della stanza riceve `actions(state, hotspot_id, item_id, examining)`.
 Delega le interazioni semplici a `super.actions(...)` e restituisce passi
 `ActionStep` per quelle specifiche. Gli effetti applicano le mutazioni soltanto
 durante l'esecuzione, rivalutando il possesso degli oggetti.
-La cabina mostra il modello con `drop_bottle`, `collect_key`, `use_key` e
-`talk_interphone`.
+La cabina mostra il modello con `drop_bottle`, `collect_key` e `use_key`.
 
 `sync_from_state(state)` richiama prima la versione comune, che aggiorna anche
 gli hotspot nascosti, poi ricostruisce le varianti della stanza.
 Le uscite indicano stanza e nome dell'ingresso; le coordinate appartengono alla
 destinazione. Le richieste verso nodi nascosti o rimossi vengono scartate.
+Gli hotspot vengono registrati una sola volta al caricamento della stanza, anche
+se annidati: definiscili nella scena e usa la visibilità per mostrarli o nasconderli.
+Gli hotspot creati a runtime non vengono registrati.
 
 ### Personaggi e sequenze
 
@@ -214,10 +216,10 @@ Per esempio, nell'Inspector configura quattro passi:
 La scelta dell'interazione avvia il cammino; dopo l'arrivo, tre clic distinti avviano
 le tre battute. Un ultimo clic chiude la conversazione.
 
-Le conversazioni specifiche sono funzioni nello script della stanza:
-`ep01_cabin.gd` costruisce i quattro passi dell'interfono in `talk_interphone()`.
-Il motore delle sequenze rimane condiviso. Gli hotspot generici possono ancora
-ricevere una risorsa `conversation` per conversazioni interamente configurabili.
+Le conversazioni senza condizioni sono risorse `conversation` degli hotspot,
+configurabili nell'Inspector: `ep01_cabin.tscn` incorpora i quattro passi dell'interfono.
+Le conversazioni con regole narrative possono essere costruite nello script della
+stanza. Il motore delle sequenze rimane condiviso.
 
 ## Salvataggi
 

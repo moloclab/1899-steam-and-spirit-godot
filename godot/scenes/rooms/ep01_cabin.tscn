@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3]
+[gd_scene load_steps=44 format=3]
 
 ; Disposizione, grafica e risposte base della stanza; le azioni specifiche sono nel .gd omonimo.
 ; ExtResource richiama file esterni, SubResource definisce risorse incorporate in questa scena.
@@ -27,6 +27,31 @@
 [ext_resource type="Texture2D" path="res://assets/graphics/ep01_cabin/inventory_magnet.png" id="magnet_inventory_icon"]
 [ext_resource type="Texture2D" path="res://assets/graphics/ep01_cabin/inventory_magnet_feather.png" id="magnet_feather_inventory_icon"]
 [ext_resource type="Texture2D" path="res://assets/graphics/ep01_cabin/inventory_key.png" id="key_inventory_icon"]
+[ext_resource type="Script" path="res://scripts/actions/action_step.gd" id="action_step"]
+[ext_resource type="Script" path="res://scripts/actions/action_sequence.gd" id="action_sequence"]
+
+; Dialogo dell'interfono: Kelvin pronuncia le due battute centrali, Churchill le altre.
+[sub_resource type="Resource" id="interphone_greeting"]
+script = ExtResource("action_step")
+text_key = "ep01.cabin.interphone.greeting"
+
+[sub_resource type="Resource" id="interphone_summons"]
+script = ExtResource("action_step")
+subject_id = "interphone"
+text_key = "ep01.cabin.interphone.summons"
+
+[sub_resource type="Resource" id="interphone_urgency"]
+script = ExtResource("action_step")
+subject_id = "interphone"
+text_key = "ep01.cabin.interphone.urgency"
+
+[sub_resource type="Resource" id="interphone_reply"]
+script = ExtResource("action_step")
+text_key = "ep01.cabin.interphone.reply"
+
+[sub_resource type="Resource" id="interphone_conversation"]
+script = ExtResource("action_sequence")
+steps = Array[ExtResource("action_step")]([SubResource("interphone_greeting"), SubResource("interphone_summons"), SubResource("interphone_urgency"), SubResource("interphone_reply")])
 
 ; Metadati letti dal catalogo senza istanziare la stanza. Gli ingressi indicano la X di Churchill.
 [sub_resource type="Resource" id="room_definition"]
@@ -221,6 +246,7 @@ hit_size = Vector2(24, 20)
 interaction_kind = "mouth"
 examine_response = "ep01.cabin.interphone.examine"
 interaction_response = "ep01.cabin.interphone.conversation"
+conversation = SubResource("interphone_conversation")
 position = Vector2(478, 100)
 
 ; Figlio grafico: il genitore mantiene posizione, area cliccabile e comportamento.

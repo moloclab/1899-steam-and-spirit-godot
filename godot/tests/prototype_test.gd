@@ -8,7 +8,6 @@ const Rooms = preload("res://scripts/data/room_catalog.gd")
 const Texts = preload("res://scripts/data/dictionary_catalog.gd")
 const Step = preload("res://scripts/actions/action_step.gd")
 const Runner = preload("res://scripts/actions/sequence_runner.gd")
-const Collectible = preload("res://scripts/hotspots/collectible.gd")
 const Episodes = preload("res://scripts/data/episode_catalog.gd")
 const TEST_SAVE := "user://ep01_refactor_test.json"
 var game: Control
@@ -321,40 +320,33 @@ func _test_interphone() -> void:
 	check(game.ui.speech_label.text == game._text("ep01.cabin.interphone.reply") and game.ui.speaker_label.text == "WINSTON CHURCHILL", "Ultima battuta persistente")
 	check(not game.ui.save_buttons[0].disabled, "Interazioni riabilitate alla fine")
 
-## Un hotspot annidato funziona; nascondere un antenato o rimuoverlo annulla l'azione differita.
+## Gli hotspot presenti al caricamento restano ricercabili secondo visibilità e appartenenza.
 func _test_nested_hotspots() -> void:
-	var room = game.rooms.current_room
-	room.hotspots()
-	var decoration := Control.new()
-	game.ui.add_child(decoration)
-	check(not room._dirty, "Aggiungere UI non invalida la cache della stanza")
-	decoration.free()
-	check(not room._dirty, "Rimuovere UI non invalida la cache della stanza")
+	var room = load("res://scenes/rooms/ep01_cabin.tscn").instantiate()
 	var container := Node2D.new()
-	game.rooms.current_room.add_child(container)
-	var collectible := Collectible.new()
-	collectible.hotspot_id = "nested"
-	# L’hotspot di prova usa lo stesso ID stabile della definizione incorporata nella cabina.
-	collectible.item_id = "ep01_cabin_bottle"
-	container.add_child(collectible)
-	check(game.rooms.find_hotspot("nested") == collectible, "Registrazione hotspot annidato")
-	game._request(collectible, false)
-	container.hide()
-	_step()
-	check(game.rooms.find_hotspot("nested") == null and not game.state.has_item("ep01_cabin_bottle"), "Antenato nascosto annulla la richiesta")
-	container.show()
-	game._request(collectible, false)
-	container.remove_child(collectible)
-	_step()
-	check(game.rooms.find_hotspot("nested") == null, "Rimozione del nodo annulla la richiesta")
-	container.add_child(collectible)
-	check(game.rooms.find_hotspot("nested") == collectible, "Hotspot reinserito dopo la ricostruzione della cache")
-	room.remove_child(container)
-	check(game.rooms.find_hotspot("nested") == null, "Rimozione di un contenitore invalida gli hotspot annidati")
 	room.add_child(container)
-	check(game.rooms.find_hotspot("nested") == collectible, "Inserimento di un contenitore registra gli hotspot annidati")
+	# La gerarchia viene preparata prima di _ready, come per una scena salvata nell'editor.
+	var collectible: Hotspot = room.get_node("bottle")
+	collectible.owner = null
+	collectible.reparent(container)
+	root.add_child(room)
+	check(room.find_hotspot("bottle") == collectible, "Registrazione iniziale hotspot annidato")
+	container.hide()
+	check(room.find_hotspot("bottle") == null, "Antenato nascosto esclude il bersaglio")
+	check(collectible in room.hotspots(false), "Sincronizzazione include hotspot nascosti")
+	container.show()
+	check(room.find_hotspot("bottle") == collectible, "Hotspot nuovamente visibile senza ricostruire la lista")
+	container.remove_child(collectible)
+	check(room.find_hotspot("bottle") == null, "Nodo rimosso escluso dalla ricerca")
+	container.add_child(collectible)
+	check(room.find_hotspot("bottle") == collectible, "Nodo già registrato riconosciuto al rientro")
+	room.remove_child(container)
+	check(room.find_hotspot("bottle") == null, "Contenitore rimosso esclude i propri hotspot")
+	room.add_child(container)
+	check(room.find_hotspot("bottle") == collectible, "Contenitore ripristinato senza ricostruire la lista")
 	collectible.free()
-	container.queue_free()
+	check(room.find_hotspot("bottle") == null, "Nodo liberato escluso dalla ricerca")
+	room.queue_free()
 	await process_frame
 
 ## Prova ordine, attese, movimento, animazioni non cicliche e cancellazione senza effetti tardivi.

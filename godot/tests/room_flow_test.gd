@@ -108,13 +108,30 @@ func _run() -> void:
 	check(game.state.room == "ep01_cabin", "Il caricamento ripristina la porta chiusa")
 	act("interphone", "ep01_cabin_feather")
 	check(not game.sequences.busy, "Usare un oggetto sull'interfono non avvia la conversazione")
-	act("interphone")
-	check(game.sequences.busy and game.ui.speech_label.text == game._text("ep01.cabin.interphone.greeting"), "Conversazione avviata dalle azioni della stanza")
-	game.sequences.cancel()
+	act("interphone", "", true)
+	check(not game.sequences.busy and game.ui.speech_label.text == game._text("ep01.cabin.interphone.examine"), "Esame dell'interfono senza conversazione")
+	# Ripetere il dialogo deve conservare ordine e interlocutori della risorsa condivisa.
+	for repetition in range(2):
+		act("interphone")
+		for line in ["greeting", "summons", "urgency", "reply"]:
+			var speaker: String = "common.speaker.interphone" if line in ["summons", "urgency"] else game.rooms.actor.speaker_key
+			check(game.sequences.busy and game.ui.speech_label.text == game._text("ep01.cabin.interphone." + line)
+				and game.ui._speaker_key == speaker, "Battuta e interlocutore: %s, dialogo %d" % [line, repetition + 1])
+			game.sequences.advance_dialogue()
+		check(not game.sequences.busy, "Ultimo clic conclude il dialogo")
 	# Il nuovo stato deve ripristinare sia il fondale della mappa sia gli oggetti già nascosti.
 	game.state = State.new()
 	game._load_room()
 	check(game.rooms.current_room.get_node("mapMagnet/Visual").texture == complete_texture and game.rooms.find_hotspot("bottle") != null, "Nuova partita ripristina immagini e visibilità")
+	# Una richiesta perde il bersaglio se viene nascosto prima dell'arrivo del personaggio.
+	var bottle: Hotspot = game.rooms.find_hotspot("bottle")
+	game.interactions.request(bottle, "", false, game.rooms)
+	bottle.hide()
+	game.rooms.actor.place(game.rooms.actor.target_x, game.rooms.current_room.definition.floor_y)
+	check(game.interactions.take_ready_actions(game.state, game.rooms).is_empty()
+		and not game.state.has_item("ep01_cabin_bottle"), "Bersaglio nascosto durante l'avvicinamento non viene raccolto")
+	game.rooms.current_room.sync_from_state(game.state)
+	check(game.rooms.find_hotspot("bottle") == bottle, "Sincronizzazione ripristina il bersaglio senza ricostruire la lista")
 	game.queue_free()
 	await process_frame
 	# Elimina esclusivamente i file di prova, senza intervenire sul salvataggio del giocatore.
