@@ -4,6 +4,7 @@ class_name Hotspot
 ## Lo stato viene passato esplicitamente: nessun oggetto dipende da singleton o dalla UI.
 const State = preload("res://scripts/game_state.gd")
 const Step = preload("res://scripts/actions/action_step.gd")
+const Row = preload("res://scripts/actions/action_row.gd")
 const Sequence = preload("res://scripts/actions/action_sequence.gd")
 ## ID stabile, usato dal coordinatore per ritrovare il bersaglio all'arrivo del personaggio.
 @export var hotspot_id := ""
@@ -31,10 +32,10 @@ var highlighted := false:
 ## Crea una sequenza senza applicare effetti durante la pianificazione.
 ## Le sottoclassi possono comporre passi diversi leggendo lo stato corrente.
 ## La stanza delega qui esami statici, raccolte semplici e altre interazioni generiche.
-func actions(state: State, item_id: String = "", examining: bool = false) -> Array[Step]:
-	if not examining and item_id.is_empty() and conversation != null and not conversation.steps.is_empty():
-		return conversation.steps.duplicate()
-	return [Step.effect(execute.bind(state, item_id, examining))]
+func actions(state: State, item_id: String = "", examining: bool = false) -> Array[Row]:
+	if not examining and item_id.is_empty() and conversation != null and not conversation.rows.is_empty():
+		return conversation.rows.duplicate()
+	return [Row.of([Step.effect(execute.bind(state, item_id, examining))])]
 
 ## Si ferma all'esterno del bordo dal lato del giocatore, usando l'area interattiva.
 ## Se il giocatore è già sopra l'oggetto, sceglie il bordo più vicino (sinistro a parità).

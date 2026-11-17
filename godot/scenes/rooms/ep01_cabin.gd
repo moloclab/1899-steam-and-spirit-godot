@@ -6,19 +6,15 @@ extends "res://scripts/world/room.gd"
 @export var map_collected_texture: Texture2D
 
 ## Churchill resta seduto durante le quattro battute iniziali e si rialza alla chiusura.
-func introduction(keys: Array[String]) -> Array[Step]:
-	var steps := super.introduction(keys)
-	if not steps.is_empty():
-		steps[0].animation_name = "sit"
-		var stand := Step.new()
-		stand.kind = Step.Kind.ANIMATE
-		stand.animation_name = "idle"
-		stand.wait_for_completion = false
-		steps.append(stand)
-	return steps
+func introduction(keys: Array[String]) -> Array[Row]:
+	var rows := super.introduction(keys)
+	if not rows.is_empty():
+		rows[0].actions.append(Step.animate("sit"))
+		rows.append(Row.of([Step.animate("idle")]))
+	return rows
 
 ## Pianifica senza effetti: possesso e condizioni vengono rivalutati durante l'esecuzione.
-func actions(state: State, hotspot_id: String, item_id: String = "", examining: bool = false) -> Array[Step]:
+func actions(state: State, hotspot_id: String, item_id: String = "", examining: bool = false) -> Array[Row]:
 	var hotspot := find_hotspot(hotspot_id)
 	if hotspot == null:
 		return []
@@ -27,15 +23,15 @@ func actions(state: State, hotspot_id: String, item_id: String = "", examining: 
 		if hotspot_id == "sink" and item_id == "ep01_cabin_bottle" and state.get_progress("ep01_cabin", "sink_stage") == 0:
 			var context := {"started": false, "poured": false}
 			return [
-				_posed_effect(_begin_pouring.bind(state, context)),
-				Step.effect(drop_bottle.bind(state, context)),
-				Step.effect(_reveal_key.bind(state, context))
+				Row.of([Step.effect(_begin_pouring.bind(state, context)), Step.animate("back")]),
+				Row.of([Step.effect(drop_bottle.bind(state, context))]),
+				Row.of([Step.effect(_reveal_key.bind(state, context))])
 			]
 		if hotspot_id == "door" and item_id == "ep01_cabin_key" and state.get_progress("ep01_cabin", "sink_stage") == 2:
-			return [_posed_effect(use_key.bind(state)), Step.effect(_leave_after_unlock.bind(state))]
+			return [Row.of([Step.effect(use_key.bind(state)), Step.animate("back")]), Row.of([Step.effect(_leave_after_unlock.bind(state))])]
 	# Il Callable rinvia le mutazioni al motore delle sequenze, dopo la scelta e l’avvicinamento.
 	if hotspot_id in ["map", "sink", "door"]:
-		return [Step.effect(_execute.bind(state, hotspot_id, item_id, examining))]
+		return [Row.of([Step.effect(_execute.bind(state, hotspot_id, item_id, examining))])]
 	# Letto, oblò e raccoglibili mantengono i comportamenti comuni configurati nella scena.
 	return hotspot.actions(state, item_id, examining)
 
@@ -71,12 +67,6 @@ func _execute(state: State, hotspot_id: String, item_id: String, examining: bool
 			if item_id.is_empty():
 				return _open_door(state)
 	return "common.cannot_use"
-
-## La posa e la battuta iniziano insieme: non occorre un clic per il solo cambio grafico.
-func _posed_effect(callback: Callable) -> Step:
-	var step := Step.effect(callback)
-	step.animation_name = "back"
-	return step
 
 ## La prima battuta precede il consumo; il contesto vale soltanto per questa sequenza.
 func _begin_pouring(state: State, context: Dictionary) -> String:

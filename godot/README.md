@@ -53,7 +53,8 @@ Con tastiera e controller, conferma seleziona direttamente l'oggetto o esegue l'
 La cornice dorata identifica il focus da tastiera/controller; il mouse usa il cursore a lente.
 
 Durante una sequenza, movimento e interazioni liberi sono sospesi.
-Un clic sinistro avvia il passo successivo quando quello corrente è terminato.
+Un clic sinistro avvia la riga successiva, con tutte le sue azioni insieme.
+Cammini, attese e animazioni bloccanti proseguono automaticamente al loro completamento.
 Il menu mette in pausa anche attese e animazioni. Salva, Carica e Ricomincia sono
 disabilitati fino alla fine della sequenza, per evitare salvataggi a metà di un effetto.
 
@@ -165,8 +166,8 @@ Per aggiungere una stanza:
    `get_progress(ambito, chiave)` / `set_progress(ambito, chiave, valore)`.
 
 Lo script della stanza riceve `actions(state, hotspot_id, item_id, examining)`.
-Delega le interazioni semplici a `super.actions(...)` e restituisce passi
-`ActionStep` per quelle specifiche. Gli effetti applicano le mutazioni soltanto
+Delega le interazioni semplici a `super.actions(...)` e restituisce righe
+`ActionRow`, ciascuna con azioni `ActionStep`, per quelle specifiche. Gli effetti applicano le mutazioni soltanto
 durante l'esecuzione, rivalutando il possesso degli oggetti.
 La cabina mostra il modello con `drop_bottle`, `collect_key` e `use_key`.
 
@@ -185,7 +186,10 @@ animazioni e destinazione. Il marinaio nel corridoio è invece un normale hotspo
 con un figlio animato `Visual` e lo stesso avvicinamento ai bordi usato per gli oggetti.
 Ogni personaggio ha un `character_id` usato dai passi della sequenza.
 
-Una risorsa `action_sequence.gd` contiene una lista di `ActionStep`:
+Una risorsa `action_sequence.gd` contiene `rows`, una lista di `ActionRow`.
+Ogni riga contiene `actions`, una lista di `ActionStep` avviate insieme nello stesso frame.
+Nell'Inspector si aggiunge prima la riga, poi le sue azioni: è una matrice con un numero
+di colonne variabile per riga. Negli script si costruisce una riga con `Row.of([...])`.
 
 - Ogni passo indica `subject_id`: `player` per Churchill, oppure il `character_id`
   di un altro personaggio o l'`hotspot_id` di un oggetto.
@@ -199,29 +203,33 @@ Una risorsa `action_sequence.gd` contiene una lista di `ActionStep`:
   usa invece `EFFECT` e la sincronizzazione della stanza in `sync_from_state()`.
 
 Le animazioni cicliche devono partire senza attenderne il completamento.
-Nei passi `SAY` ed `EFFECT`, `animation_name` imposta una posa insieme alla battuta o all'effetto,
-senza richiedere un clic separato. L'introduzione usa le chiavi dell'episodio e il metodo
-`introduction()` della stanza per aggiungere le pose e il ritorno in piedi.
-Il comando iniziale avvia il primo passo. Ogni clic sinistro successivo avvia un solo
-passo ulteriore: anche dopo movimento, animazione, attesa o effetto serve un nuovo clic.
-I clic durante un passo ancora in corso vengono ignorati, senza essere accodati.
-L'ultima battuta richiede un clic per chiuderla; gli altri passi finali terminano da soli.
-`cancel()` elimina i passi futuri, preservando gli effetti già applicati.
+Per parlare e girarsi insieme si mettono `SAY` e `ANIMATE` nella stessa riga.
+L'introduzione usa le chiavi dell'episodio e `introduction()` della stanza per aggiungere
+la posa seduta alla prima riga e il ritorno in piedi alla chiusura.
+Il comando iniziale avvia la prima riga; ogni clic successivo avvia una nuova riga immediata.
+Come nel vecchio EP01, se una riga contiene `WALK`, `WAIT` o `ANIMATE` con attesa,
+il motore attende tutte le sue azioni bloccanti e poi avvia automaticamente la riga successiva.
+Ogni colonna conserva il proprio timer o personaggio: due cammini possono procedere insieme.
+I clic durante l'attesa vengono ignorati, senza essere accodati; il menu sospende tutta la riga.
+L'ultima riga con `SAY` richiede un clic per chiuderla; le altre righe finali terminano da sole.
+`cancel()` ferma tutti i cammini attivi ed elimina le righe future, preservando gli effetti già applicati.
+Le righe vuote e le attese nulle avanzano automaticamente. Le risorse restano immutate.
+Due azioni di cammino/animazione sullo stesso personaggio sono incompatibili nella stessa riga;
+un cambio stanza `CHANGE_ROOM` occupa una riga propria. Le righe invalide vengono annullate prima degli effetti.
 
-Per esempio, nell'Inspector configura quattro passi:
+Per esempio, nell'Inspector configura tre righe:
 
-| Passo | `subject_id` | `kind` | Parametro |
-| --- | --- | --- | --- |
-| 1 | `player` | `WALK` | `target_hotspot_id = "como"` (comodino) |
-| 2 | `player` | `SAY` | `text_key` della frase 1 |
-| 3 | `player` | `SAY` | `text_key` della frase 2 |
-| 4 | `interphone` | `SAY` | `text_key` della frase 3 |
+| Riga | Azione 1 | Azione 2 |
+| --- | --- | --- |
+| 1 | `SAY`: Churchill dice la frase 1 | `ANIMATE`: posa `back`, senza attesa |
+| 2 | `WALK`: Churchill raggiunge `sink` | — |
+| 3 | `SAY`: Churchill dice la frase 2 | — |
 
-La scelta dell'interazione avvia il cammino; dopo l'arrivo, tre clic distinti avviano
-le tre battute. Un ultimo clic chiude la conversazione.
+La prima riga avvia insieme frase e posa. Un clic avvia il cammino della seconda riga;
+all'arrivo parte automaticamente la frase della terza. Un ultimo clic chiude la conversazione.
 
 Le conversazioni senza condizioni sono risorse `conversation` degli hotspot,
-configurabili nell'Inspector: `ep01_cabin.tscn` incorpora i quattro passi dell'interfono.
+configurabili nell'Inspector: `ep01_cabin.tscn` incorpora le quattro righe dell'interfono.
 Le conversazioni con regole narrative possono essere costruite nello script della
 stanza. Il motore delle sequenze rimane condiviso.
 

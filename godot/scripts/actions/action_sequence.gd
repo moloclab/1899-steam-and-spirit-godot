@@ -1,5 +1,4 @@
 extends Resource
-## Contenitore riutilizzabile di passi: le stanze possono condividere una sequenza senza copiarne i dati.
-## Ogni passo indica soggetto e azione; il passaggio al successivo richiede un clic sinistro.
-const Step = preload("res://scripts/actions/action_step.gd")
-@export var steps: Array[Step] = []
+## Matrice riutilizzabile: righe successive, ciascuna con una o più azioni contemporanee.
+const Row = preload("res://scripts/actions/action_row.gd")
+@export var rows: Array[Row] = []

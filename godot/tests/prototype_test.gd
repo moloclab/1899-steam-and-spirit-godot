@@ -8,6 +8,7 @@ const Rooms = preload("res://scripts/data/room_catalog.gd")
 const Texts = preload("res://scripts/data/dictionary_catalog.gd")
 const Step = preload("res://scripts/actions/action_step.gd")
 const Runner = preload("res://scripts/actions/sequence_runner.gd")
+const Row = preload("res://scripts/actions/action_row.gd")
 const Episodes = preload("res://scripts/data/episode_catalog.gd")
 const TEST_SAVE := "user://ep01_refactor_test.json"
 var game: Control
@@ -374,19 +375,17 @@ func _test_sequence_steps() -> void:
 	animation.animation_name = "idle"
 	animation.wait_for_completion = false
 	var effect := Step.effect(func(): effects.count += 1)
-	var steps: Array[Step] = [wait, walk, animation, effect]
+	var steps: Array[Row] = [Row.of([wait]), Row.of([walk]), Row.of([animation]), Row.of([effect])]
 	runner.start(steps, game.state, game.rooms)
 	runner.advance_dialogue()
 	runner.tick(0.25)
 	check(effects.count == 0, "Conferma e attesa non anticipano gli effetti")
 	runner.tick(0.25)
-	check(runner.waiting_for_confirmation, "Fine attesa richiede un clic prima del movimento")
+	check(not runner.waiting_for_confirmation and game.rooms.actor.target_x == 320, "Fine attesa avvia automaticamente il movimento")
 	runner.advance_dialogue()
 	for i in 300:
 		runner.tick(1.0 / 60.0)
-	check(runner.waiting_for_confirmation and effects.count == 0, "Fine movimento richiede un clic prima dell'animazione")
-	runner.advance_dialogue()
-	check(runner.waiting_for_confirmation and effects.count == 0, "Animazione senza attesa richiede un clic prima dell'effetto")
+	check(runner.waiting_for_confirmation and effects.count == 0, "Fine movimento avvia la posa senza anticipare l'effetto")
 	runner.advance_dialogue()
 	check(not runner.busy and effects.count == 1 and game.rooms.actor.current_x == 320, "Sequenza attesa-movimento-animazione-effetto")
 	runner.start(steps, game.state, game.rooms)
@@ -402,21 +401,20 @@ func _test_sequence_steps() -> void:
 	animation = Step.new()
 	animation.kind = Step.Kind.ANIMATE
 	animation.animation_name = "test_once"
-	var animated_steps: Array[Step] = [animation, effect]
+	var animated_steps: Array[Row] = [Row.of([animation]), Row.of([effect])]
 	runner.start(animated_steps, game.state, game.rooms)
 	runner.tick(0)
 	check(runner.busy and effects.count == 1, "Attesa del completamento reale dell'animazione")
 	await create_timer(0.15).timeout
 	runner.tick(0)
-	check(runner.waiting_for_confirmation and effects.count == 1, "Fine animazione non avvia l'effetto")
-	runner.advance_dialogue()
+	check(not runner.busy and effects.count == 2, "Fine animazione avvia automaticamente l'effetto")
 	check(not runner.busy and effects.count == 2, "Animazione conclusa prima dell'effetto")
 	var transition := Step.new()
 	transition.kind = Step.Kind.CHANGE_ROOM
 	transition.destination_room = "ep01_corridor"
 	transition.destination_entry = "from_cabin"
 	runner.state_changed.connect(game._after_effect)
-	var transitions: Array[Step] = [transition]
+	var transitions: Array[Row] = [Row.of([transition])]
 	runner.start(transitions, game.state, game.rooms)
 	check(game.rooms.current_room.definition.room_id == "ep01_corridor" and game.state.player_x == 94, "Transizione come passo di sequenza")
 	# Il marinaio è un hotspot statico con grafica animata, come gli altri oggetti.
@@ -433,7 +431,7 @@ func _test_sequence_steps() -> void:
 	animation = Step.new()
 	animation.kind = Step.Kind.ANIMATE
 	animation.animation_name = "pause_test"
-	var paused_steps: Array[Step] = [animation]
+	var paused_steps: Array[Row] = [Row.of([animation])]
 	game._start_actions(paused_steps)
 	game._toggle_help()
 	await create_timer(0.2).timeout

@@ -11,13 +11,28 @@ enum Kind { SAY, WALK, ANIMATE, WAIT, EFFECT, CHANGE_ROOM, HIDE }
 ## WALK: raggiunge il bordo dell'oggetto indicato; se vuoto usa target_x.
 @export var target_hotspot_id := ""
 @export var target_x := 0.0
-## SAY ed EFFECT possono impostare una posa insieme alla battuta, senza un clic aggiuntivo.
 @export var animation_name := ""
 @export var seconds := 0.0
 @export var destination_room := ""
 @export var destination_entry := "default"
 ## Gli effetti personalizzati sono Callable creati a runtime; non vengono serializzati nei dati.
 var callback: Callable
+
+## Battuta indipendente: SAY e ANIMATE nella stessa riga permettono di parlare e cambiare posa insieme.
+static func say(key: String, subject: String = "player") -> ActionStep:
+	var step := ActionStep.new()
+	step.text_key = key
+	step.subject_id = subject
+	return step
+
+## Le pose cicliche partono senza attesa; le animazioni finite possono bloccare la riga.
+static func animate(animation: String, subject: String = "player", wait: bool = false) -> ActionStep:
+	var step := ActionStep.new()
+	step.kind = Kind.ANIMATE
+	step.subject_id = subject
+	step.animation_name = animation
+	step.wait_for_completion = wait
+	return step
 
 ## Adatta le regole degli hotspot esistenti alla coda, rimandando la mutazione fino all'esecuzione.
 static func effect(action: Callable) -> ActionStep:

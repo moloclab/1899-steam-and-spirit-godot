@@ -3,6 +3,7 @@ extends Node2D
 const Definition = preload("res://scripts/data/room_definition.gd")
 const State = preload("res://scripts/game_state.gd")
 const Step = preload("res://scripts/actions/action_step.gd")
+const Row = preload("res://scripts/actions/action_row.gd")
 const ItemDefinition = preload("res://scripts/data/item_definition.gd")
 ## Metadati usati da ingressi, movimento e catalogo delle stanze.
 @export var definition: Definition
@@ -12,16 +13,14 @@ const ItemDefinition = preload("res://scripts/data/item_definition.gd")
 var _cached_hotspots: Array[Node2D] = []
 
 ## Le battute iniziali usano lo stesso motore delle interazioni; la stanza può aggiungere pose.
-func introduction(keys: Array[String]) -> Array[Step]:
-	var steps: Array[Step] = []
+func introduction(keys: Array[String]) -> Array[Row]:
+	var rows: Array[Row] = []
 	for key in keys:
-		var step := Step.new()
-		step.text_key = key
-		steps.append(step)
-	return steps
+		rows.append(Row.of([Step.say(key)]))
+	return rows
 
 ## Le stanze specializzano questo ingresso per azioni narrative e conversazioni.
-func actions(state: State, hotspot_id: String, item_id: String = "", examining: bool = false) -> Array[Step]:
+func actions(state: State, hotspot_id: String, item_id: String = "", examining: bool = false) -> Array[Row]:
 	# Il percorso predefinito lascia all’hotspot le sole regole condivise; le stanze possono specializzarlo.
 	var hotspot := find_hotspot(hotspot_id)
 	return hotspot.actions(state, item_id, examining) if hotspot != null else []

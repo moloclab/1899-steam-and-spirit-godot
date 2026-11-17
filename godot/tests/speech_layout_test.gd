@@ -66,7 +66,8 @@ func _run() -> void:
 	# Verifica l'altezza effettiva dopo che Label ha composto ogni traduzione della conversazione.
 	for language in ["it", "en"]:
 		game.texts.language = language
-		for step in game.rooms.current_room.actions(game.state, "interphone"):
+		for row in game.rooms.current_room.actions(game.state, "interphone"):
+			var step = row.actions[0]
 			# La voce e l'ancoraggio appartengono al soggetto della battuta.
 			game._say(game.texts.text(step.text_key), game.rooms.subject(step.subject_id).speaker_key)
 			await process_frame

@@ -1,6 +1,6 @@
 extends RefCounted
 ## Conserva soltanto l'intenzione del giocatore durante l'avvicinamento, senza modificare enigmi.
-const Step = preload("res://scripts/actions/action_step.gd")
+const Row = preload("res://scripts/actions/action_row.gd")
 var _pending: Dictionary = {}
 
 ## Il bersaglio viene identificato per ID nella stanza corrente, mai conservato come nodo differito.
@@ -16,7 +16,7 @@ func cancel(rooms) -> void:
 		rooms.actor.stop_walking()
 
 ## La validità e il possesso dell'oggetto vengono rivalutati dopo l'avvicinamento.
-func take_ready_actions(state, rooms) -> Array[Step]:
+func take_ready_actions(state, rooms) -> Array[Row]:
 	if _pending.is_empty() or not rooms.actor.has_arrived():
 		return []
 	# Consuma l’intenzione una sola volta, prima che una sequenza possa causare un cambio stanza.

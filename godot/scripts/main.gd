@@ -8,7 +8,7 @@ const Texts = preload("res://scripts/data/dictionary_catalog.gd")
 const Rooms = preload("res://scripts/world/room_manager.gd")
 const Interactions = preload("res://scripts/actions/interaction_controller.gd")
 const Sequences = preload("res://scripts/actions/sequence_runner.gd")
-const Step = preload("res://scripts/actions/action_step.gd")
+const Row = preload("res://scripts/actions/action_row.gd")
 const Saves = preload("res://scripts/save_store.gd")
 const Episodes = preload("res://scripts/data/episode_catalog.gd")
 const CURSOR_NORMAL = preload("res://assets/graphics/ui/cursors/cursor_normal.png")
@@ -49,6 +49,8 @@ func _ready() -> void:
 	ui.item_examined.connect(func(item: String): _say(_item_description(item)))
 	ui.menu_toggled.connect(_menu_toggled)
 	sequences.line_requested.connect(func(key: String, speaker: String): _say(_text(key), speaker))
+	# Anche l'avanzamento automatico chiude la battuta della riga precedente.
+	sequences.row_started.connect(func(): ui.speech_label.hide())
 	sequences.state_changed.connect(_after_effect)
 	sequences.finished.connect(func(_cancelled: bool): ui.lock_interactions(false))
 	_load_room()
@@ -76,10 +78,10 @@ func _show_intro() -> void:
 	var episode = Episodes.get_episode(state.episode_id)
 	if episode == null:
 		return
-	# Ogni battuta richiede una conferma; la stanza aggiunge le pose della propria introduzione.
-	var steps = rooms.current_room.introduction(episode.intro_keys)
-	if not steps.is_empty():
-		_start_actions(steps)
+	# La stanza raggruppa battute e pose nelle righe della propria introduzione.
+	var rows = rooms.current_room.introduction(episode.intro_keys)
+	if not rows.is_empty():
+		_start_actions(rows)
 
 ## I cambi stanza nello stesso episodio conservano posizione del brano e preferenza musicale.
 func _sync_episode() -> void:
@@ -125,7 +127,7 @@ func _after_effect() -> void:
 		_refresh()
 
 ## Ogni sequenza blocca la UI prima dell'avvio; il segnale finale la riabilita anche per azioni immediate.
-func _start_actions(actions: Array[Step]) -> void:
+func _start_actions(actions: Array[Row]) -> void:
 	# La cancellazione può riabilitare la UI tramite finished: deve precedere il blocco della nuova sequenza.
 	sequences.cancel()
 	ui.lock_interactions(true)
@@ -308,7 +310,7 @@ func _update_highlight() -> void:
 	ui.world_panel.mouse_default_cursor_shape = Control.CURSOR_CROSS if mouse_target != null else Control.CURSOR_ARROW
 	ui.highlight_inventory(selected_item, -1, false)
 
-## Aggiorna il movimento libero oppure il passo attivo della sequenza, mai entrambi nello stesso frame.
+## Aggiorna il movimento libero oppure tutte le colonne della riga attiva, mai entrambi.
 func _process(delta: float) -> void:
 	if rooms.current_room == null:
 		return
@@ -318,7 +320,7 @@ func _process(delta: float) -> void:
 		else:
 			rooms.actor.advance(delta)
 			state.player_x = rooms.actor.current_x
-			var actions: Array[Step] = interactions.take_ready_actions(state, rooms)
+			var actions: Array[Row] = interactions.take_ready_actions(state, rooms)
 			if not actions.is_empty():
 				selected_item = ""
 				_start_actions(actions)
