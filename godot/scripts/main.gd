@@ -76,10 +76,10 @@ func _show_intro() -> void:
 	var episode = Episodes.get_episode(state.episode_id)
 	if episode == null:
 		return
-	var lines: Array[String] = []
-	for key in episode.intro_keys:
-		lines.append(_text(key))
-	_say("  ".join(lines))
+	# Ogni battuta richiede una conferma; la stanza aggiunge le pose della propria introduzione.
+	var steps = rooms.current_room.introduction(episode.intro_keys)
+	if not steps.is_empty():
+		_start_actions(steps)
 
 ## I cambi stanza nello stesso episodio conservano posizione del brano e preferenza musicale.
 func _sync_episode() -> void:

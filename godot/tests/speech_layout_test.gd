@@ -22,6 +22,9 @@ func _run() -> void:
 	root.add_child(game)
 	game.set_process(false)
 	await process_frame
+	# Le prove seguenti riguardano battute libere, dopo la conclusione dell'apertura.
+	while game.sequences.busy:
+		game.sequences.advance_dialogue()
 	var label: Label = game.ui.speech_label
 	game._say("Test")
 	check(label.size == Vector2(100, 100), "Riquadro 100 x 100")

@@ -94,6 +94,14 @@ func _interact(id: String) -> void:
 	await _click(_hotspot_point(id))
 	await _choose()
 
+## Completa le nuove sequenze della cabina tramite clic reali, senza saltare gli effetti.
+func _finish_narrative() -> void:
+	for index in range(10):
+		if not game.sequences.busy:
+			return
+		await _click(Vector2(100, 400))
+	check(false, "Sequenza narrativa completata entro dieci clic")
+
 ## Un solo clic mostra la descrizione e prepara l'oggetto per l'uso, senza pannello.
 func _select_inventory(id: String) -> void:
 	var index: int = game.state.inventory.find(id)
@@ -260,6 +268,7 @@ func _test_cabin() -> void:
 	await _click(_hotspot_point("sink"))
 	_step()
 	await process_frame
+	await _finish_narrative()
 	check(game.state.get_progress("ep01_cabin", "sink_stage") == 1 and not game.state.has_item("ep01_cabin_bottle"), "Bourbon consumato e chiave nello scarico")
 	check(Saves.save_game(game.state, TEST_SAVE) == OK, "Salvataggio a metà enigma")
 	await _select_inventory("ep01_cabin_magnet_feather")
@@ -271,6 +280,7 @@ func _test_cabin() -> void:
 	await _click(_hotspot_point("door"))
 	_step()
 	await process_frame
+	await _finish_narrative()
 	check(game.state.room == "ep01_corridor" and game.state.get_progress("ep01_cabin", "door_unlocked"), "Apertura della porta e uscita")
 	check(not game.state.has_item("ep01_cabin_key") and game.state.player_x == 94, "Chiave consumata e ingresso nominato")
 	await _interact("return")
@@ -564,6 +574,7 @@ func _run() -> void:
 	root.add_child(game)
 	game.set_process(false)
 	await process_frame
+	await _finish_narrative()
 	_test_room_scenes()
 	await _test_cabin()
 	await _test_interphone()

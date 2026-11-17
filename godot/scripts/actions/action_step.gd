@@ -11,6 +11,7 @@ enum Kind { SAY, WALK, ANIMATE, WAIT, EFFECT, CHANGE_ROOM, HIDE }
 ## WALK: raggiunge il bordo dell'oggetto indicato; se vuoto usa target_x.
 @export var target_hotspot_id := ""
 @export var target_x := 0.0
+## SAY ed EFFECT possono impostare una posa insieme alla battuta, senza un clic aggiuntivo.
 @export var animation_name := ""
 @export var seconds := 0.0
 @export var destination_room := ""

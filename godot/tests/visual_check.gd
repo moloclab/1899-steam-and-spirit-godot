@@ -27,11 +27,19 @@ func _run() -> void:
 	root.add_child(game)
 	game.set_process(false)
 	await _capture("ep01_cabin")
+	# Verifica anche la posa seduta iniziale prima di preparare l'inventario.
+	while game.sequences.busy:
+		game.sequences.advance_dialogue()
 	game.state.pick_up("ep01_cabin_bottle")
 	game.state.pick_up("ep01_cabin_feather")
 	game.state.pick_up("ep01_cabin_magnet")
 	game._refresh()
 	await _capture("inventory")
+	# Il versamento usa la posa originale di spalle insieme alla prima battuta.
+	game._start_actions(game.rooms.current_room.actions(game.state, "sink", "ep01_cabin_bottle"))
+	await _capture("pouring-bourbon")
+	while game.sequences.busy:
+		game.sequences.advance_dialogue()
 	# La stanza compone il dialogo; le catture mostrano il cambio speaker e la pausa della UI.
 	game._start_actions(game.rooms.current_room.actions(game.state, "interphone"))
 	game.sequences.advance_dialogue()

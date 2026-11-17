@@ -11,6 +11,15 @@ const ItemDefinition = preload("res://scripts/data/item_definition.gd")
 ## Gli hotspot sono definiti nella scena e raccolti al caricamento; cambia soltanto la visibilità.
 var _cached_hotspots: Array[Node2D] = []
 
+## Le battute iniziali usano lo stesso motore delle interazioni; la stanza può aggiungere pose.
+func introduction(keys: Array[String]) -> Array[Step]:
+	var steps: Array[Step] = []
+	for key in keys:
+		var step := Step.new()
+		step.text_key = key
+		steps.append(step)
+	return steps
+
 ## Le stanze specializzano questo ingresso per azioni narrative e conversazioni.
 func actions(state: State, hotspot_id: String, item_id: String = "", examining: bool = false) -> Array[Step]:
 	# Il percorso predefinito lascia all’hotspot le sole regole condivise; le stanze possono specializzarlo.

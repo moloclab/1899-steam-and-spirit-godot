@@ -18,6 +18,7 @@ Non richiede .NET, Docker o un server web. L'originale in `../EP01` resta il rif
 - Cabina con grafica e animazioni originali.
 - Esame, raccolta di Bourbon, penna e calamita, combinazione della penna magnetica.
 - Enigma del lavandino, recupero della chiave e apertura della porta.
+- Apertura con quattro battute e posa seduta; versamento del Bourbon in tre battute e uscita dopo la battuta sulla porta, con posa di spalle.
 - Corridoio con scorrimento e ritorno alla cabina, conservando i progressi.
 - Conversazione dell'interfono in battute successive, con Churchill e Kelvin distinti.
 - Inventario scorrevole, accessibile anche col focus di tastiera e controller.
@@ -198,6 +199,9 @@ Una risorsa `action_sequence.gd` contiene una lista di `ActionStep`:
   usa invece `EFFECT` e la sincronizzazione della stanza in `sync_from_state()`.
 
 Le animazioni cicliche devono partire senza attenderne il completamento.
+Nei passi `SAY` ed `EFFECT`, `animation_name` imposta una posa insieme alla battuta o all'effetto,
+senza richiedere un clic separato. L'introduzione usa le chiavi dell'episodio e il metodo
+`introduction()` della stanza per aggiungere le pose e il ritorno in piedi.
 Il comando iniziale avvia il primo passo. Ogni clic sinistro successivo avvia un solo
 passo ulteriore: anche dopo movimento, animazione, attesa o effetto serve un nuovo clic.
 I clic durante un passo ancora in corso vengono ignorati, senza essere accodati.

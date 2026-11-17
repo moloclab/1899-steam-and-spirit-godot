@@ -80,6 +80,14 @@ func _next() -> void:
 		return
 	var step: Step = _steps[_index]
 	_index += 1
+	# Una posa accompagnata da testo o effetto appartiene allo stesso passo dell'originale.
+	if step.kind in [Step.Kind.SAY, Step.Kind.EFFECT] and not step.animation_name.is_empty():
+		var actor := _rooms.character(step.subject_id)
+		if actor == null or not actor.sprite_frames.has_animation(step.animation_name):
+			push_error("Posa di sequenza mancante: " + step.animation_name)
+			cancel()
+			return
+		actor.play(step.animation_name)
 	match step.kind:
 		Step.Kind.SAY:
 			var subject := _rooms.subject(step.subject_id)

@@ -25,6 +25,27 @@ func check(condition: bool, message: String) -> void:
 ## Usa lo stesso ingresso del coordinatore dopo l'avvicinamento del personaggio.
 func act(target: String, item: String = "", examining: bool = false) -> void:
 	game._start_actions(game.rooms.current_room.actions(game.state, target, item, examining))
+	# I controlli del percorso verificano lo stato al termine delle nuove sequenze narrative.
+	if target != "interphone":
+		finish_sequence()
+
+## Avanza solo passi immediati; un'attesa inattesa produce un errore senza bloccare il test.
+func finish_sequence() -> void:
+	for index in range(20):
+		if not game.sequences.busy:
+			return
+		game.sequences.advance_dialogue()
+	check(false, "Sequenza immediata conclusa entro venti conferme")
+
+## L'apertura riproduce quattro battute sedute, blocca le azioni e termina in piedi.
+func test_introduction() -> void:
+	check(game.ui.save_buttons[0].disabled and game.ui.reset_button.disabled, "Introduzione protegge salvataggio e nuova partita")
+	var keys := ["ep01.cabin.intro.headache", "ep01.cabin.intro.whiskey", "ep01.cabin.intro.burp", "ep01.cabin.bottle.reconsider"]
+	for key in keys:
+		check(game.sequences.busy and game.rooms.actor.animation == &"sit"
+			and game.ui.speech_label.text == game._text(key), "Introduzione seduta, battuta: " + key)
+		game.sequences.advance_dialogue()
+	check(not game.sequences.busy and game.rooms.actor.animation == &"idle", "Chiusura dell'introduzione in piedi")
 
 ## Le ricette dell'episodio funzionano senza nodi di stanza e mantengono i controlli sul possesso.
 func _test_combinations() -> void:
@@ -57,6 +78,7 @@ func _run() -> void:
 	root.add_child(game)
 	game.set_process(false)
 	await process_frame
+	test_introduction()
 	var cabin = game.rooms.current_room
 	var map_visual = cabin.get_node("mapMagnet/Visual")
 	var complete_texture = map_visual.texture
@@ -82,8 +104,21 @@ func _run() -> void:
 	game.state.remove_item("ep01_cabin_bottle")
 	game._start_actions(pending)
 	check(game.state.get_progress("ep01_cabin", "sink_stage") == 0, "Il possesso viene rivalutato quando l'effetto viene eseguito")
+	finish_sequence()
+	check(game.state.get_progress("ep01_cabin", "sink_stage") == 0, "I passi successivi di un versamento invalido non rivelano la chiave")
 	game.state.add_item("ep01_cabin_bottle")
-	act("sink", "ep01_cabin_bottle")
+	# Le mutazioni devono avvenire sui clic originali, non alla pianificazione o alla prima battuta.
+	game._start_actions(cabin.actions(game.state, "sink", "ep01_cabin_bottle"))
+	check(game.sequences.busy and game.rooms.actor.animation == &"back"
+		and game.ui.speech_label.text == game._text("ep01.cabin.sink.pour_bourbon")
+		and game.state.has_item("ep01_cabin_bottle"), "Prima battuta di spalle senza consumare il Bourbon")
+	game.sequences.advance_dialogue()
+	check(game.sequences.busy and not game.state.has_item("ep01_cabin_bottle")
+		and game.state.get_progress("ep01_cabin", "sink_stage") == 0
+		and game.ui.speech_label.text == game._text("ep01.cabin.sink.surprise"), "Seconda battuta consuma il Bourbon senza anticipare la chiave")
+	check(game.ui.save_buttons[0].disabled, "Salvataggio bloccato fra consumo e rivelazione della chiave")
+	game.sequences.advance_dialogue()
+	check(game.ui.speech_label.text == game._text("ep01.cabin.sink.key_found"), "Terza battuta rivela la chiave")
 	check(game.state.get_progress("ep01_cabin", "sink_stage") == 1 and not game.state.has_item("ep01_cabin_bottle"), "Bottiglia consumata e chiave nello scarico")
 	act("sink", "ep01_cabin_feather")
 	check(not game.state.has_item("ep01_cabin_key") and game.state.has_item("ep01_cabin_feather"), "La penna semplice non recupera la chiave e non viene consumata")
@@ -93,8 +128,13 @@ func _run() -> void:
 	act("sink", "ep01_cabin_magnet_feather")
 	act("sink", "ep01_cabin_magnet_feather")
 	check(game.state.inventory.count("ep01_cabin_key") == 1, "Recupero della chiave senza duplicazione")
-	act("door", "ep01_cabin_key")
+	game._start_actions(cabin.actions(game.state, "door", "ep01_cabin_key"))
+	check(game.sequences.busy and game.state.room == "ep01_cabin" and game.rooms.actor.animation == &"back"
+		and not game.state.has_item("ep01_cabin_key") and game.state.get_progress("ep01_cabin", "door_unlocked")
+		and game.ui.speech_label.text == game._text("ep01.cabin.door.exit"), "Finalmente viene pronunciato nella cabina prima del passaggio")
+	game.sequences.advance_dialogue()
 	check(game.state.room == "ep01_corridor" and not game.state.has_item("ep01_cabin_key"), "Chiave consumata e transizione al corridoio")
+	check(not game.ui.speech_label.visible, "Il passaggio non ripete Finalmente nel corridoio")
 	check(Items.ITEMS.ep01_cabin_bottle != null, "Inventario della cabina accessibile dal corridoio")
 	act("return")
 	check(game.state.room == "ep01_cabin" and not game.rooms.find_hotspot("bottle"), "Rientro senza far riapparire gli oggetti raccolti")
