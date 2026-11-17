@@ -4,6 +4,8 @@ const Main = preload("res://scenes/main.tscn")
 const State = preload("res://scripts/game_state.gd")
 const Saves = preload("res://scripts/save_store.gd")
 const Items = preload("res://scripts/data/item_catalog.gd")
+const Episodes = preload("res://scripts/data/episode_catalog.gd")
+const Definitions = preload("res://scripts/data/scene_definitions.gd")
 const TEST_SAVE := "user://room_flow_test.json"
 var game: Control
 var failures := 0
@@ -24,9 +26,33 @@ func check(condition: bool, message: String) -> void:
 func act(target: String, item: String = "", examining: bool = false) -> void:
 	game._start_actions(game.rooms.current_room.actions(game.state, target, item, examining))
 
+## Le ricette dell'episodio funzionano senza nodi di stanza e mantengono i controlli sul possesso.
+func _test_combinations() -> void:
+	var episode = Episodes.get_episode("ep01")
+	var recipes: Array = Definitions.property(episode.combo_scene_path, "combination_definitions")
+	check(recipes.size() == 1 and recipes[0] == Items.RECIPES[0], "Il catalogo condivide la ricetta della scena combo dell'episodio")
+	for room_id in ["ep01_cabin", "ep01_corridor"]:
+		for reverse in [false, true]:
+			var state := State.new()
+			state.enter_room(room_id, "default" if room_id == "ep01_cabin" else "from_cabin")
+			state.pick_up("ep01_cabin_feather")
+			state.pick_up("ep01_cabin_magnet")
+			var first := "ep01_cabin_magnet" if reverse else "ep01_cabin_feather"
+			var second := "ep01_cabin_feather" if reverse else "ep01_cabin_magnet"
+			check(state.combine(first, second) == "ep01.inventory.magnet_feather.combine", "Combinazione simmetrica in " + room_id)
+			check(state.inventory == ["ep01_cabin_magnet_feather"], "Consuma solo i componenti e aggiunge un risultato in " + room_id)
+			check(state.combine(first, second) == "common.cannot_use" and state.inventory.size() == 1, "Ripetere la combinazione non duplica il risultato")
+	# Possesso incompleto e coppie senza ricetta non devono modificare l'inventario.
+	var state := State.new()
+	state.pick_up("ep01_cabin_feather")
+	check(state.combine("ep01_cabin_feather", "ep01_cabin_magnet") == "common.cannot_use" and state.inventory == ["ep01_cabin_feather"], "Ingrediente mancante rifiutato senza consumi")
+	state.pick_up("ep01_cabin_bottle")
+	check(state.combine("ep01_cabin_feather", "ep01_cabin_bottle") == "common.cannot_combine" and state.inventory.size() == 2, "Coppia sconosciuta rifiutata senza consumi")
+
 ## Il test usa soltanto un salvataggio dedicato; non tocca la partita del giocatore.
 func _run() -> void:
 	check(Items.ITEMS.size() == 5 and Items.RECIPES.size() == 1, "Inventario e ricette disponibili prima di istanziare le stanze")
+	_test_combinations()
 	game = Main.instantiate()
 	root.add_child(game)
 	game.set_process(false)

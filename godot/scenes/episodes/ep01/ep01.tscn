@@ -12,6 +12,7 @@ initial_entry = "default"
 music = ExtResource("music")
 intro_keys = Array[String](["ep01.cabin.intro.headache", "ep01.cabin.intro.whiskey"])
 dictionary_path = "res://assets/dictionaries/ep01/dictionary.json"
+combo_scene_path = "res://scenes/episodes/ep01/combo.tscn"
 
 [node name="EP01" type="Node"]
 script = ExtResource("episode_script")

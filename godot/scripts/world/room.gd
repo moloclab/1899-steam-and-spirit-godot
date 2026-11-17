@@ -4,13 +4,10 @@ const Definition = preload("res://scripts/data/room_definition.gd")
 const State = preload("res://scripts/game_state.gd")
 const Step = preload("res://scripts/actions/action_step.gd")
 const ItemDefinition = preload("res://scripts/data/item_definition.gd")
-const CombinationDefinition = preload("res://scripts/data/combination_definition.gd")
 ## Metadati usati da ingressi, movimento e catalogo delle stanze.
 @export var definition: Definition
-## Inventario e ricette appartengono alla stanza di origine, anche quando non è caricata.
+## Le definizioni inventario appartengono alla stanza di origine, anche quando non è caricata.
 @export var inventory_definitions: Array[ItemDefinition] = []
-## Ricette degli oggetti originati qui, utilizzabili anche dalle altre stanze.
-@export var combination_definitions: Array[CombinationDefinition] = []
 ## La cache conserva tutti gli hotspot; il filtro di visibilità viene applicato a ogni richiesta.
 var _cached_hotspots: Array[Node2D] = []
 var _dirty := true

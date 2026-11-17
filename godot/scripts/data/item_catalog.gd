@@ -1,7 +1,8 @@
 extends RefCounted
-## Legge inventario e ricette dalle stanze di origine senza istanziare i loro nodi.
+## Legge l'inventario dalle stanze e le ricette dagli episodi senza istanziare nodi.
 const Definitions = preload("res://scripts/data/scene_definitions.gd")
 const Rooms = preload("res://scripts/data/room_catalog.gd")
+const Episodes = preload("res://scripts/data/episode_catalog.gd")
 ## Cache condivisa fra UI, stato e validazione dei salvataggi; conserva le risorse delle scene.
 static var _items: Dictionary = {}
 static var _recipes: Array = []
@@ -12,7 +13,7 @@ static var ITEMS: Dictionary:
 	get:
 		_load_definitions()
 		return _items
-## Ricette raccolte da tutte le stanze registrate, indipendentemente da quella attiva.
+## Ricette raccolte dalle scene combo degli episodi, indipendentemente dalla stanza attiva.
 static var RECIPES: Array:
 	get:
 		_load_definitions()
@@ -25,13 +26,18 @@ static func _load_definitions() -> void:
 	# Si leggono le proprietà serializzate della radice, senza creare nodi o eseguire _ready.
 	for scene_path in Rooms.SCENES.values():
 		var items: Array = Definitions.property(scene_path, "inventory_definitions")
-		var recipes: Array = Definitions.property(scene_path, "combination_definitions")
 		for item in items:
 			# Una definizione duplicata è un errore di contenuto: non sovrascrive quella già registrata.
 			if _items.has(item.item_id):
 				push_error("ID inventario duplicato: " + item.item_id)
 				continue
 			_items[item.item_id] = item
+	# Ogni episodio indica la propria scena combo; anche qui si leggono soltanto risorse.
+	for episode_id in Episodes.EPISODES:
+		var episode = Episodes.get_episode(episode_id)
+		if episode == null or episode.combo_scene_path.is_empty():
+			continue
+		var recipes: Array = Definitions.property(episode.combo_scene_path, "combination_definitions")
 		_recipes.append_array(recipes)
 	_loaded = true
 

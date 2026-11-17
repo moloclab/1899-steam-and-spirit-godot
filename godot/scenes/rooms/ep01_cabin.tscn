@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3]
+[gd_scene load_steps=37 format=3]
 
 ; Disposizione, grafica e risposte base della stanza; le azioni specifiche sono nel .gd omonimo.
 ; ExtResource richiama file esterni, SubResource definisce risorse incorporate in questa scena.
@@ -26,7 +26,6 @@
 [ext_resource type="Texture2D" path="res://assets/graphics/ep01_cabin/bottle.png" id="bottle_bottle"]
 [ext_resource type="Texture2D" path="res://assets/graphics/ep01_cabin/inventory_magnet.png" id="magnet_inventory_icon"]
 [ext_resource type="Texture2D" path="res://assets/graphics/ep01_cabin/inventory_magnet_feather.png" id="magnet_feather_inventory_icon"]
-[ext_resource type="Script" path="res://scripts/data/combination_definition.gd" id="combination_recipe"]
 [ext_resource type="Texture2D" path="res://assets/graphics/ep01_cabin/inventory_key.png" id="key_inventory_icon"]
 
 ; Metadati letti dal catalogo senza istanziare la stanza. Gli ingressi indicano la X di Churchill.
@@ -103,14 +102,6 @@ description_key = "ep01.inventory.magnet_feather.examine"
 icon = ExtResource("magnet_feather_inventory_icon")
 collectible = false
 
-; Ricetta simmetrica: consuma penna e calamita, aggiunge la penna magnetica e restituisce la risposta.
-[sub_resource type="Resource" id="magnet_feather_combination"]
-script = ExtResource("combination_recipe")
-ingredients = Array[String](["ep01_cabin_feather","ep01_cabin_magnet"])
-consumed = Array[String](["ep01_cabin_feather","ep01_cabin_magnet"])
-results = Array[String](["ep01_cabin_magnet_feather"])
-response_key = "ep01.inventory.magnet_feather.combine"
-
 ; Chiave: assegnata dall’enigma del lavandino, non dalla raccolta di un hotspot autonomo.
 [sub_resource type="Resource" id="key_inventory"]
 script = ExtResource("inventory_definition")
@@ -126,7 +117,6 @@ script = ExtResource("room_script")
 definition = SubResource("room_definition")
 ; Definizioni della stanza di origine: disponibili nel catalogo anche quando è caricata un’altra stanza.
 inventory_definitions = Array[ExtResource("inventory_definition")]([SubResource("feather_inventory"), SubResource("bottle_inventory"), SubResource("magnet_inventory"), SubResource("magnet_feather_inventory"), SubResource("key_inventory")])
-combination_definitions = Array[ExtResource("combination_recipe")]([SubResource("magnet_feather_combination")])
 ; Varianti della mappa: sync_from_state sceglie la texture usando la raccolta persistente della calamita.
 map_complete_texture = ExtResource("mapMagnet_mapMagnet")
 map_collected_texture = ExtResource("mapMagnet_collected_texture")

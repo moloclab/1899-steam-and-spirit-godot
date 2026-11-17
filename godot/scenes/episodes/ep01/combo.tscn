@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scenes/episodes/ep01/combo.gd" id="combo_script"]
+[ext_resource type="Script" path="res://scripts/data/combination_definition.gd" id="combination_recipe"]
+
+; Ricetta simmetrica: consuma penna e calamita e crea la penna magnetica.
+[sub_resource type="Resource" id="magnet_feather_combination"]
+script = ExtResource("combination_recipe")
+ingredients = Array[String](["ep01_cabin_feather", "ep01_cabin_magnet"])
+consumed = Array[String](["ep01_cabin_feather", "ep01_cabin_magnet"])
+results = Array[String](["ep01_cabin_magnet_feather"])
+response_key = "ep01.inventory.magnet_feather.combine"
+
+[node name="COMBO" type="Node"]
+script = ExtResource("combo_script")
+combination_definitions = Array[ExtResource("combination_recipe")]([SubResource("magnet_feather_combination")])

@@ -1,11 +1,10 @@
-[gd_scene load_steps=30 format=3]
+[gd_scene load_steps=29 format=3]
 
 ; Disposizione, grafica e risposte base della stanza; le azioni specifiche sono nel .gd omonimo.
 ; ExtResource richiama file esterni, SubResource definisce risorse incorporate in questa scena.
 ; Le coordinate di posizione e hit_size usano i pixel originali, prima della scala della stanza.
 
 [ext_resource type="Script" path="res://scripts/data/item_definition.gd" id="inventory_definition"]
-[ext_resource type="Script" path="res://scripts/data/combination_definition.gd" id="combination_recipe"]
 [ext_resource type="Script" path="res://scenes/rooms/ep01_corridor.gd" id="room_script"]
 [ext_resource type="Texture2D" path="res://assets/graphics/ep01_corridor/corridor_background.png" id="background"]
 [ext_resource type="Script" path="res://scripts/data/room_definition.gd" id="room_definition_definition"]
@@ -86,7 +85,6 @@ script = ExtResource("room_script")
 definition = SubResource("room_definition")
 ; Definizioni della stanza di origine: disponibili nel catalogo anche quando è caricata un’altra stanza.
 inventory_definitions = Array[ExtResource("inventory_definition")]([])
-combination_definitions = Array[ExtResource("combination_recipe")]([])
 
 ; Fondale largo: il gestore delle stanze applica lo scorrimento al seguito di Churchill.
 [node name="Background" type="Sprite2D" parent="."]

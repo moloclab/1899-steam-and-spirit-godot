@@ -6,3 +6,5 @@ extends Resource
 @export var music: AudioStream
 @export var intro_keys: Array[String] = []
 @export_file("*.json") var dictionary_path := ""
+## Scena delle combinazioni dell'episodio, indipendente dalla stanza attiva.
+@export_file("*.tscn") var combo_scene_path := ""

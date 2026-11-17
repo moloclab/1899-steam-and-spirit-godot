@@ -136,11 +136,19 @@ i passaggi `hotspots/room_exit.gd`; non occorrono scene o script per singolo ogg
 Gli oblò condividono i fotogrammi, ma rimangono nodi distinti con ID propri.
 Churchill conserva la propria scena riutilizzabile.
 
-La radice contiene `definition`, `inventory_definitions` e `combination_definitions`.
-I due elenchi sono risorse incorporate: includono anche oggetti ottenuti da enigmi
-o combinazioni, come chiave e penna magnetica. Il catalogo li legge dalle scene
-registrate in `RoomCatalog.SCENES` senza istanziarle. Serializza entrambi gli elenchi
-anche quando sono vuoti. Il raccoglibile usa `item_id` per riferirsi alla definizione.
+La radice contiene `definition` e `inventory_definitions`. L'elenco delle definizioni
+inventario include anche oggetti ottenuti da enigmi o combinazioni, come chiave e
+penna magnetica. Il catalogo lo legge dalle scene registrate in `RoomCatalog.SCENES`
+senza istanziarle. Serializza l'elenco anche quando è vuoto.
+Il raccoglibile usa `item_id` per riferirsi alla definizione.
+
+Le combinazioni appartengono all'episodio: `scenes/episodes/ep01/combo.tscn`, con
+script `combo.gd`, contiene l'elenco incorporato `combination_definitions`, modificabile
+nell'Inspector. Configura `combo_scene_path` nella definizione dell'episodio per
+collegare la scena. Il catalogo legge le ricette dagli episodi registrati senza
+istanziare nodi: penna e calamita si possono combinare anche fuori dalla cabina.
+Ogni ricetta definisce ingredienti, oggetti consumati, risultati e risposta;
+le combinazioni comuni restano simmetriche. Un episodio senza scena combo non aggiunge ricette.
 
 Per aggiungere una stanza:
 
@@ -150,8 +158,8 @@ Per aggiungere una stanza:
 3. Registra il percorso della scena in `RoomCatalog.SCENES`.
 4. Aggiungi i nodi degli oggetti con ID univoci, area e risposte nell'Inspector.
    Churchill si avvicina al bordo dell'area dal proprio lato.
-5. Inserisci definizioni inventario e ricette negli elenchi della radice.
-   Le combinazioni comuni restano simmetriche.
+5. Inserisci le definizioni inventario nell'elenco della radice e le eventuali
+   ricette nella scena combo dell'episodio.
 6. Dichiara i progressi in `ProgressSchema.SCOPES` e usa
    `get_progress(ambito, chiave)` / `set_progress(ambito, chiave, valore)`.
 
