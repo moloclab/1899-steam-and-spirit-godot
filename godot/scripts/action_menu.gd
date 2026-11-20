@@ -61,5 +61,6 @@ func open(at: Vector2, kind: String) -> void:
 	refresh_texts()
 	# Il menu resta interamente dentro la finestra, anche vicino ai bordi e all'inventario.
 	# L'offset colloca il piccolo cerchio inferiore in prossimità del bersaglio selezionato.
-	position = Vector2(clampf(at.x - 37.5, 12, 1065), clampf(at.y - 45, 84, 654))
+	var bounds: Vector2 = get_parent().size
+	position = Vector2(clampf(at.x - size.x / 2.0, 12, bounds.x - size.x - 12), clampf(at.y - 45, 84, bounds.y - size.y - 12))
 	show()

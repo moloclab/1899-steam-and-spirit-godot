@@ -33,7 +33,7 @@ room_id = "ep01_cabin"
 episode_id = "ep01"
 scene_path = "res://scenes/rooms/ep01_cabin.tscn"
 entries = Dictionary[String, float]({
-"default": 180.0,
+"default": 150.0,
 "from_corridor": 550.0
 })
 
@@ -287,7 +287,8 @@ texture = ExtResource("door_door")
 centered = false
 
 [node name="bed" type="Node2D" parent="." unique_id=2030673934]
-z_index = 2
+; Il letto resta dietro a Churchill, anche durante la posa seduta iniziale.
+z_index = 0
 position = Vector2(18, 152)
 script = ExtResource("hotspot_script")
 hotspot_id = "bed"

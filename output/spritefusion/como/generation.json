@@ -1,0 +1,73 @@
+{
+  "request_id": "req_fe44a35d-dcf4-4d7e-be72-8c7d713670b2",
+  "status": "succeeded",
+  "output_count": 2,
+  "outputs": [
+    {
+      "id": "1fbfb4f4-f91e-41d0-bfc6-e087a2f1e31d",
+      "type": "image",
+      "createdAt": "2026-11-20T13:29:04.685Z",
+      "updatedAt": "2026-11-20T13:29:04.685Z",
+      "prompt": "Refine the small brown wooden chest of drawers in the first image with finer pixel-level detail within its existing shapes. Use the second image, Churchill, only as a reference for the amount of detail, deliberate pixel clusters and shading treatment; do not transfer the character, clothing, anatomy or colors to the furniture. Preserve the first image's recognizable silhouette, proportions, orientation, perspective, composition and dominant dark warm brown colors. Keep the primary image's canvas size and overall visual footprint. Preserve the top surface, outer frame, existing drawer divisions and handles in their original positions, and the lower contact edge. Refine the wooden frame and drawer fronts with restrained grain, subtle edge highlights and clearer joinery, while keeping the original furniture design and broad readable surfaces. Replace coarse block transitions with purposeful finer contours and shading. Add finer detail within existing coarse pixels rather than reducing the image to a coarser logical pixel grid. The supporting reference guides style, not output resolution. Preserve the source's transparency and background treatment. Do not add ornaments, objects on top, extra drawers or new furniture parts.",
+      "width": 50,
+      "height": 45,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/1fbfb4f4-f91e-41d0-bfc6-e087a2f1e31d/image.png?v=1795181344685",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "e60ced1a-7fd3-43f8-b6a1-0244c193e52f",
+      "batchIndex": 0,
+      "batchSize": 2,
+      "action": {
+        "kind": "edit"
+      }
+    },
+    {
+      "id": "276544fa-6fc1-498d-ad91-e85a0730c241",
+      "type": "image",
+      "createdAt": "2026-11-20T13:29:05.384Z",
+      "updatedAt": "2026-11-20T13:29:05.384Z",
+      "prompt": "Refine the small brown wooden chest of drawers in the first image with finer pixel-level detail within its existing shapes. Use the second image, Churchill, only as a reference for the amount of detail, deliberate pixel clusters and shading treatment; do not transfer the character, clothing, anatomy or colors to the furniture. Preserve the first image's recognizable silhouette, proportions, orientation, perspective, composition and dominant dark warm brown colors. Keep the primary image's canvas size and overall visual footprint. Preserve the top surface, outer frame, existing drawer divisions and handles in their original positions, and the lower contact edge. Refine the wooden frame and drawer fronts with restrained grain, subtle edge highlights and clearer joinery, while keeping the original furniture design and broad readable surfaces. Replace coarse block transitions with purposeful finer contours and shading. Add finer detail within existing coarse pixels rather than reducing the image to a coarser logical pixel grid. The supporting reference guides style, not output resolution. Preserve the source's transparency and background treatment. Do not add ornaments, objects on top, extra drawers or new furniture parts.",
+      "width": 94,
+      "height": 90,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/276544fa-6fc1-498d-ad91-e85a0730c241/image.png?v=1795181345384",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "e60ced1a-7fd3-43f8-b6a1-0244c193e52f",
+      "batchIndex": 1,
+      "batchSize": 2,
+      "action": {
+        "kind": "edit"
+      }
+    }
+  ],
+  "credits": {
+    "used": 15,
+    "remaining": 630
+  },
+  "inputs": [
+    {
+      "path": "godot/assets/graphics/ep01_cabin/como.png",
+      "width": 40,
+      "height": 36,
+      "sha256": "7B0EFE2123BB8F9EAAE13452E9B32F6A133F6675E313A8A5491CDD4C77F8C426"
+    },
+    {
+      "path": "godot/assets/graphics/characters/churchill/churchill-stand.png",
+      "role": "style reference"
+    }
+  ],
+  "prompt": "Refine the small brown wooden chest of drawers in the first image with finer pixel-level detail within its existing shapes. Use the second image, Churchill, only as a reference for the amount of detail, deliberate pixel clusters and shading treatment; do not transfer the character, clothing, anatomy or colors to the furniture. Preserve the first image's recognizable silhouette, proportions, orientation, perspective, composition and dominant dark warm brown colors. Keep the primary image's canvas size and overall visual footprint. Preserve the top surface, outer frame, existing drawer divisions and handles in their original positions, and the lower contact edge. Refine the wooden frame and drawer fronts with restrained grain, subtle edge highlights and clearer joinery, while keeping the original furniture design and broad readable surfaces. Replace coarse block transitions with purposeful finer contours and shading. Add finer detail within existing coarse pixels rather than reducing the image to a coarser logical pixel grid. The supporting reference guides style, not output resolution. Preserve the source's transparency and background treatment. Do not add ornaments, objects on top, extra drawers or new furniture parts.",
+  "acceptance": {
+    "width": [
+      38,
+      42
+    ],
+    "height": [
+      35,
+      37
+    ]
+  },
+  "integration": "none, pending review"
+}

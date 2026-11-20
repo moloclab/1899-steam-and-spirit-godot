@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://scripts/world/character.gd" id="character"]
 [ext_resource type="Texture2D" path="res://assets/graphics/characters/churchill/churchill-stand.png" id="idle"]
 ; Pose originali convertite da GIF, mantenendo dimensioni e trasparenza.
-[ext_resource type="Texture2D" path="res://assets/graphics/characters/churchill/churchill_sit.png" id="sit"]
+[ext_resource type="Texture2D" path="res://assets/graphics/characters/churchill/churchill-sit.png" id="sit"]
 [ext_resource type="Texture2D" path="res://assets/graphics/characters/churchill/churchill_back.png" id="back"]
 
 [sub_resource type="AtlasTexture" id="walk_0"]
@@ -46,7 +46,7 @@ animations = [{"frames": [{"duration": 1.0, "texture": SubResource("walk_0")}, {
 [node name="Churchill" type="AnimatedSprite2D"]
 script = ExtResource("character")
 speaker_key = "common.speaker.churchill"
-speed = 70.0
+speed = 80.0
 centered = false
 z_index = 1
 sprite_frames = SubResource("frames")

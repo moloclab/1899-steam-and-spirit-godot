@@ -6,7 +6,7 @@ var checks := 0
 
 ## Il viewport deve essere pronto prima di costruire la UI.
 func _initialize() -> void:
-	root.size = Vector2i(1152, 720)
+	root.size = root.content_scale_size
 	_run.call_deferred()
 
 ## Restituisce un codice di errore utilizzabile anche senza renderer.

@@ -1,0 +1,73 @@
+{
+  "request_id": "req_d5f473fd-cf76-4af3-8e68-0d1cb9d29bf4",
+  "status": "succeeded",
+  "output_count": 2,
+  "outputs": [
+    {
+      "id": "734e0586-7349-49d1-9c7e-0703cec4993c",
+      "type": "image",
+      "createdAt": "2026-11-20T13:33:05.919Z",
+      "updatedAt": "2026-11-20T13:33:05.919Z",
+      "prompt": "Refine the closed submarine cabin door in the first image with finer pixel-level detail within its existing shapes. Use the second image, Churchill, only as a reference for the amount of detail, deliberate pixel clusters and shading treatment; do not transfer the character, clothing, anatomy or colors to the door. Preserve the first image's recognizable tall rounded silhouette, proportions, frontal view, orientation, composition and muted brown olive-gray metal colors. Keep the primary image's canvas size, placement and overall visual footprint. Preserve the rounded upper corners, thick outer metal frame, the small round feature on the upper panel, existing horizontal panel divisions and lower edge in their original positions. Refine the metal surface, seams, frame edges and existing fittings with restrained highlights, subtle wear and clearer contours, keeping broad readable areas and the original industrial design. Replace coarse block transitions with purposeful finer shading consistent with the reference. Add finer detail within existing coarse pixels rather than reducing the image to a coarser logical pixel grid. The supporting reference guides style, not output resolution. Preserve the source's transparency and background treatment. Keep the door closed; do not add windows, handles, symbols, decorations or new hardware absent from the source.",
+      "width": 62,
+      "height": 95,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/734e0586-7349-49d1-9c7e-0703cec4993c/image.png?v=1795181585919",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "e3aa9ce3-f29c-4da5-9ba9-bc50d6b35eb1",
+      "batchIndex": 0,
+      "batchSize": 2,
+      "action": {
+        "kind": "edit"
+      }
+    },
+    {
+      "id": "dc3ed27e-e397-4ef7-b515-87e830d9cc11",
+      "type": "image",
+      "createdAt": "2026-11-20T13:33:06.511Z",
+      "updatedAt": "2026-11-20T13:33:06.511Z",
+      "prompt": "Refine the closed submarine cabin door in the first image with finer pixel-level detail within its existing shapes. Use the second image, Churchill, only as a reference for the amount of detail, deliberate pixel clusters and shading treatment; do not transfer the character, clothing, anatomy or colors to the door. Preserve the first image's recognizable tall rounded silhouette, proportions, frontal view, orientation, composition and muted brown olive-gray metal colors. Keep the primary image's canvas size, placement and overall visual footprint. Preserve the rounded upper corners, thick outer metal frame, the small round feature on the upper panel, existing horizontal panel divisions and lower edge in their original positions. Refine the metal surface, seams, frame edges and existing fittings with restrained highlights, subtle wear and clearer contours, keeping broad readable areas and the original industrial design. Replace coarse block transitions with purposeful finer shading consistent with the reference. Add finer detail within existing coarse pixels rather than reducing the image to a coarser logical pixel grid. The supporting reference guides style, not output resolution. Preserve the source's transparency and background treatment. Keep the door closed; do not add windows, handles, symbols, decorations or new hardware absent from the source.",
+      "width": 38,
+      "height": 59,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/dc3ed27e-e397-4ef7-b515-87e830d9cc11/image.png?v=1795181586511",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "e3aa9ce3-f29c-4da5-9ba9-bc50d6b35eb1",
+      "batchIndex": 1,
+      "batchSize": 2,
+      "action": {
+        "kind": "edit"
+      }
+    }
+  ],
+  "credits": {
+    "used": 15,
+    "remaining": 615
+  },
+  "inputs": [
+    {
+      "path": "godot/assets/graphics/ep01_cabin/door_sub.png",
+      "width": 76,
+      "height": 116,
+      "sha256": "44BE94D8D463E39CC313FFE5A099C5E1E36CDEA81630868683FCB0218AA3C914"
+    },
+    {
+      "path": "godot/assets/graphics/characters/churchill/churchill-stand.png",
+      "role": "style reference"
+    }
+  ],
+  "prompt": "Refine the closed submarine cabin door in the first image with finer pixel-level detail within its existing shapes. Use the second image, Churchill, only as a reference for the amount of detail, deliberate pixel clusters and shading treatment; do not transfer the character, clothing, anatomy or colors to the door. Preserve the first image's recognizable tall rounded silhouette, proportions, frontal view, orientation, composition and muted brown olive-gray metal colors. Keep the primary image's canvas size, placement and overall visual footprint. Preserve the rounded upper corners, thick outer metal frame, the small round feature on the upper panel, existing horizontal panel divisions and lower edge in their original positions. Refine the metal surface, seams, frame edges and existing fittings with restrained highlights, subtle wear and clearer contours, keeping broad readable areas and the original industrial design. Replace coarse block transitions with purposeful finer shading consistent with the reference. Add finer detail within existing coarse pixels rather than reducing the image to a coarser logical pixel grid. The supporting reference guides style, not output resolution. Preserve the source's transparency and background treatment. Keep the door closed; do not add windows, handles, symbols, decorations or new hardware absent from the source.",
+  "acceptance": {
+    "width": [
+      73,
+      79
+    ],
+    "height": [
+      111,
+      121
+    ]
+  },
+  "integration": "none, pending review"
+}

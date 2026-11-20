@@ -6,7 +6,7 @@ var failures := 0
 
 ## La UI richiede il viewport pronto prima della costruzione dei controlli.
 func _initialize() -> void:
-	root.size = Vector2i(1152, 720)
+	root.size = root.content_scale_size
 	_run.call_deferred()
 
 ## Ogni errore rende il processo utilizzabile anche come controllo automatico.

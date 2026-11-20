@@ -1,0 +1,77 @@
+{
+  "request_id": "req_2bc9089a-d066-43d0-a009-bfd65b4b6f36",
+  "status": "succeeded",
+  "output_count": 2,
+  "outputs": [
+    {
+      "id": "3c846989-86e8-44cc-8082-9211b96fbd99",
+      "type": "image",
+      "createdAt": "2026-11-20T13:42:49.808Z",
+      "updatedAt": "2026-11-20T13:42:49.808Z",
+      "prompt": "The first image is a wall-mounted technical plan of the Leviathian, the steampunk submarine aboard which Churchill is travelling. The submarine has a manta-ray-shaped mechanical hull. Refine the existing central drawing so it reads as a technical plan viewed from above of this submarine, preserving its manta-shaped outline, broad lateral hull sections and tapered rear section, following the source image's layout and orientation. Clarify the mechanical vessel with restrained fine hull seams and existing structural shapes rather than redesigning it. Keep the aged tan parchment, muted brown markings, original lower markings and dark brown frame. Do not reinterpret the vessel as a tree, plant, leaf or living animal. Do not invent labels or major structural features. Refine the first image with finer pixel-level detail within its existing shapes, preserving its rectangular silhouette, proportions, frontal view, composition, placement, canvas size and visual footprint. Use the second image, Churchill, only as a reference for the amount of detail, deliberate pixel clusters and shading treatment; do not transfer the character, clothing, anatomy or colors. The supporting reference guides style, not output resolution. Refine parchment texture, restrained aging, frame edges and the technical drawing with purposeful finer contours and subtle shading, keeping broad readable areas. Add finer detail within existing coarse pixels rather than reducing the image to a coarser logical pixel grid. Preserve the source's transparency and background treatment. Do not add pins, magnets, ornaments or other objects.",
+      "width": 60,
+      "height": 72,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/3c846989-86e8-44cc-8082-9211b96fbd99/image.png?v=1795182169808",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "5009e1c2-aced-4b02-9a44-4f237bf86639",
+      "batchIndex": 0,
+      "batchSize": 2,
+      "action": {
+        "kind": "edit"
+      }
+    },
+    {
+      "id": "305db0ed-9707-4346-aa80-5cf4102eb498",
+      "type": "image",
+      "createdAt": "2026-11-20T13:42:50.529Z",
+      "updatedAt": "2026-11-20T13:42:50.529Z",
+      "prompt": "The first image is a wall-mounted technical plan of the Leviathian, the steampunk submarine aboard which Churchill is travelling. The submarine has a manta-ray-shaped mechanical hull. Refine the existing central drawing so it reads as a technical plan viewed from above of this submarine, preserving its manta-shaped outline, broad lateral hull sections and tapered rear section, following the source image's layout and orientation. Clarify the mechanical vessel with restrained fine hull seams and existing structural shapes rather than redesigning it. Keep the aged tan parchment, muted brown markings, original lower markings and dark brown frame. Do not reinterpret the vessel as a tree, plant, leaf or living animal. Do not invent labels or major structural features. Refine the first image with finer pixel-level detail within its existing shapes, preserving its rectangular silhouette, proportions, frontal view, composition, placement, canvas size and visual footprint. Use the second image, Churchill, only as a reference for the amount of detail, deliberate pixel clusters and shading treatment; do not transfer the character, clothing, anatomy or colors. The supporting reference guides style, not output resolution. Refine parchment texture, restrained aging, frame edges and the technical drawing with purposeful finer contours and subtle shading, keeping broad readable areas. Add finer detail within existing coarse pixels rather than reducing the image to a coarser logical pixel grid. Preserve the source's transparency and background treatment. Do not add pins, magnets, ornaments or other objects.",
+      "width": 87,
+      "height": 92,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/305db0ed-9707-4346-aa80-5cf4102eb498/image.png?v=1795182170529",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "5009e1c2-aced-4b02-9a44-4f237bf86639",
+      "batchIndex": 1,
+      "batchSize": 2,
+      "action": {
+        "kind": "edit"
+      }
+    }
+  ],
+  "credits": {
+    "used": 15,
+    "remaining": 585
+  },
+  "inputs": [
+    {
+      "path": "godot/assets/graphics/ep01_cabin/map.png",
+      "width": 60,
+      "height": 72,
+      "sha256": "AC42E2C8F60E16910D5E1E860D780B17C3FE1BCCFFA534755FCE2DD5637B6851"
+    },
+    {
+      "path": "godot/assets/graphics/characters/churchill/churchill-stand.png",
+      "role": "style reference"
+    }
+  ],
+  "prompt": "The first image is a wall-mounted technical plan of the Leviathian, the steampunk submarine aboard which Churchill is travelling. The submarine has a manta-ray-shaped mechanical hull. Refine the existing central drawing so it reads as a technical plan viewed from above of this submarine, preserving its manta-shaped outline, broad lateral hull sections and tapered rear section, following the source image's layout and orientation. Clarify the mechanical vessel with restrained fine hull seams and existing structural shapes rather than redesigning it. Keep the aged tan parchment, muted brown markings, original lower markings and dark brown frame. Do not reinterpret the vessel as a tree, plant, leaf or living animal. Do not invent labels or major structural features. Refine the first image with finer pixel-level detail within its existing shapes, preserving its rectangular silhouette, proportions, frontal view, composition, placement, canvas size and visual footprint. Use the second image, Churchill, only as a reference for the amount of detail, deliberate pixel clusters and shading treatment; do not transfer the character, clothing, anatomy or colors. The supporting reference guides style, not output resolution. Refine parchment texture, restrained aging, frame edges and the technical drawing with purposeful finer contours and subtle shading, keeping broad readable areas. Add finer detail within existing coarse pixels rather than reducing the image to a coarser logical pixel grid. Preserve the source's transparency and background treatment. Do not add pins, magnets, ornaments or other objects.",
+  "acceptance": {
+    "width": [
+      57,
+      63
+    ],
+    "height": [
+      69,
+      75
+    ]
+  },
+  "outputs_local": [
+    "godot/assets/graphics/ep01_cabin/map-redesign-3.png",
+    "godot/assets/graphics/ep01_cabin/map-redesign-4.png"
+  ],
+  "integration": "none, pending review"
+}

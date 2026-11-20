@@ -1,0 +1,41 @@
+﻿[
+    {
+        "file":  "como.png",
+        "width":  40,
+        "height":  36,
+        "width_percent":  100,
+        "height_percent":  100,
+        "size_pass":  true,
+        "alpha":  [
+                      255,
+                      0
+                  ],
+        "sha256":  "7B0EFE2123BB8F9EAAE13452E9B32F6A133F6675E313A8A5491CDD4C77F8C426"
+    },
+    {
+        "file":  "como-redesign.png",
+        "width":  50,
+        "height":  45,
+        "width_percent":  125,
+        "height_percent":  125,
+        "size_pass":  false,
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "sha256":  "C01FE9F37551227948DBDDB487C8098C247674BC5B6CD423D2376BAAF60F1FE9"
+    },
+    {
+        "file":  "como-redesign-2.png",
+        "width":  94,
+        "height":  90,
+        "width_percent":  235,
+        "height_percent":  250,
+        "size_pass":  false,
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "sha256":  "2AD09B5B8BD26EA8DAE3D881B7D382289759DA8EB02A8CE4392CFECAFBD5EA23"
+    }
+]

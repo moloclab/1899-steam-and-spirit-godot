@@ -1,0 +1,35 @@
+﻿[
+    {
+        "file":  "bed.png",
+        "width":  140,
+        "height":  48,
+        "alpha":  [
+                      255,
+                      0
+                  ],
+        "opaque_colors":  190,
+        "sha256":  "BB17CC33C1C7C28E58D275841AE877BCFE5EE8247A663F741FD01F43628D82E8"
+    },
+    {
+        "file":  "bed-redesign.png",
+        "width":  70,
+        "height":  24,
+        "alpha":  [
+                      255,
+                      0
+                  ],
+        "opaque_colors":  16,
+        "sha256":  "EC68CCE895F897C1DD51C25D78F641C86CB28441C2359AC5241103C0793E0611"
+    },
+    {
+        "file":  "bed-redesign-2.png",
+        "width":  80,
+        "height":  27,
+        "alpha":  [
+                      255,
+                      0
+                  ],
+        "opaque_colors":  22,
+        "sha256":  "DD7DC8D5F035D29D6C2377474440D801CBA7C514E5E514AF63024FE0F931CAC2"
+    }
+]

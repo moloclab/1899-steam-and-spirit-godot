@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://f26fes8quhrw"
-path="res://.godot/imported/churchill_sit.png-229e8e902af9600644cced0e8a2cf75e.ctex"
+uid="uid://dhoihmej0g1sc"
+path="res://.godot/imported/map-redesign-3.png-41604de358450162db8bf01815ead637.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/graphics/characters/churchill/churchill_sit.png"
-dest_files=["res://.godot/imported/churchill_sit.png-229e8e902af9600644cced0e8a2cf75e.ctex"]
+source_file="res://assets/graphics/ep01_cabin/map-redesign-3.png"
+dest_files=["res://.godot/imported/map-redesign-3.png-41604de358450162db8bf01815ead637.ctex"]
 
 [params]
 

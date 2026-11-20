@@ -14,7 +14,7 @@ func start(rows: Array[Row]) -> void:
 
 ## Il viewport viene preparato prima della UI e della stanza.
 func _initialize() -> void:
-	root.size = Vector2i(1152, 720)
+	root.size = root.content_scale_size
 	_run.call_deferred()
 
 ## Ogni errore produce un codice finale utilizzabile da riga di comando.

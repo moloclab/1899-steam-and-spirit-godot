@@ -1,0 +1,41 @@
+﻿[
+    {
+        "file":  "door_sub.png",
+        "width":  76,
+        "height":  116,
+        "width_percent":  100,
+        "height_percent":  100,
+        "size_pass":  true,
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "sha256":  "44BE94D8D463E39CC313FFE5A099C5E1E36CDEA81630868683FCB0218AA3C914"
+    },
+    {
+        "file":  "door_sub-redesign.png",
+        "width":  62,
+        "height":  95,
+        "width_percent":  81.578947368421055,
+        "height_percent":  81.896551724137936,
+        "size_pass":  false,
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "sha256":  "917AB5E52F74E02AF14A56053F5A33FE10BEC1E5433C3F671DC0A5A91DDD17A1"
+    },
+    {
+        "file":  "door_sub-redesign-2.png",
+        "width":  38,
+        "height":  59,
+        "width_percent":  50,
+        "height_percent":  50.862068965517238,
+        "size_pass":  false,
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "sha256":  "955F27D1503A87D21C76FCEEE6F9967CBA5A313A98EA309C2A8E944321696769"
+    }
+]

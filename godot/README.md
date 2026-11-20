@@ -29,6 +29,17 @@ Effetti, conversazioni a scelta e altre stanze di EP01 devono ancora essere port
 La lingua visualizzata è l'italiano; il catalogo conserva anche le traduzioni inglesi.
 Le stanze vengono caricate in modo **sincrono**.
 
+## Schermo e mobile landscape
+
+La base logica è **1280 × 720 (16:9)**, definita in `project.godot`.
+Lo stretch `canvas_items`, con proporzioni `keep` e scala `fractional`, ingrandisce
+o riduce il gioco fino a occupare lo spazio disponibile senza deformarlo.
+Gli schermi di proporzioni diverse mostrano bande simmetriche; la pixel art può
+avere pixel di ampiezza non uniforme con scale frazionarie.
+L'orientamento mobile è landscape. La UI ricava la larghezza dalla base del progetto;
+le stanze conservano scala e coordinate, con centraggio o scorrimento già esistenti.
+Leggibilità, tocchi e aree sicure di notch e fotocamere richiedono una prova su device reale.
+
 ## Comandi
 
 | Azione | Mouse / tastiera | Controller (etichette Xbox) |
@@ -247,6 +258,12 @@ Il servizio scrive un temporaneo e sostituisce il file solo dopo la scrittura ri
 
 ## Verifiche
 
+Adattamento dello schermo e clic attraverso scala e bande, su cinque risoluzioni landscape:
+
+```powershell
+& 'C:\Tools\Godot\Godot_v4.7.2-stable_win64_console.exe' --headless --path godot --script res://tests/resolution_test.gd
+```
+
 Regressione automatica con la scena reale e input sintetici:
 
 ```powershell
@@ -262,7 +279,7 @@ Il file di test è distinto dal salvataggio del giocatore e viene rimosso al ter
 Catture con il renderer reale, da eseguire senza `--headless`:
 
 ```powershell
-& 'C:\Tools\Godot\Godot_v4.7.2-stable_win64_console.exe' --path 'C:\htdocs\_OLD\_GAMES\1899\godot' --script res://tests/visual_check.gd --resolution 1152x720
+& 'C:\Tools\Godot\Godot_v4.7.2-stable_win64_console.exe' --path 'C:\htdocs\_OLD\_GAMES\1899\godot' --script res://tests/visual_check.gd --resolution 1280x720
 ```
 
 Le immagini finiscono in `test-output/`, esclusa da Git e dall'importazione Godot.

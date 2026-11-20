@@ -5,7 +5,7 @@ var game: Control
 
 ## Avvia dopo l'inizializzazione del viewport alla risoluzione di riferimento.
 func _initialize() -> void:
-	root.size = Vector2i(1152, 720)
+	root.size = root.content_scale_size
 	_run.call_deferred()
 
 ## Attende il disegno effettivo prima di leggere la texture del viewport.
@@ -27,6 +27,11 @@ func _run() -> void:
 	root.add_child(game)
 	game.set_process(false)
 	await _capture("ep01_cabin")
+	# Controlla anche riduzione, telefono largo e tablet con le stesse proporzioni del gioco.
+	for resolution in [Vector2i(960, 540), Vector2i(1600, 720), Vector2i(1200, 900)]:
+		root.size = resolution
+		await _capture("landscape-%dx%d" % [resolution.x, resolution.y])
+	root.size = root.content_scale_size
 	# Verifica anche la posa seduta iniziale prima di preparare l'inventario.
 	while game.sequences.busy:
 		game.sequences.advance_dialogue()

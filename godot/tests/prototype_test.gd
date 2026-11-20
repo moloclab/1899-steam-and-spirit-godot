@@ -17,7 +17,7 @@ var checks := 0
 
 ## Attende che il viewport sia pronto prima di inviare input alla GUI di Godot.
 func _initialize() -> void:
-	root.size = Vector2i(1152, 720)
+	root.size = root.content_scale_size
 	_run.call_deferred()
 
 ## Ogni verifica segnala il proprio contesto; il processo termina con codice diverso da zero se fallisce.

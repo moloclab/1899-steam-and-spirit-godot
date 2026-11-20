@@ -1,0 +1,28 @@
+﻿[
+    {
+        "file":  "bed-redesign-3.png",
+        "width":  106,
+        "height":  35,
+        "width_percent":  75.714285714285708,
+        "height_percent":  72.916666666666657,
+        "size_pass":  false,
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "sha256":  "F0E3EC59748A8C06486A609E9A2202CF4C38AEE1C74E5FE386AB79AD21A7A3B3"
+    },
+    {
+        "file":  "bed-redesign-4.png",
+        "width":  70,
+        "height":  35,
+        "width_percent":  50,
+        "height_percent":  72.916666666666657,
+        "size_pass":  false,
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "sha256":  "CF074E79986CF75FDF5F1A29DF932FF3938456010D0E5060A7060C67FF3C0A1B"
+    }
+]

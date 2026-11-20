@@ -1,0 +1,87 @@
+{
+  "request_id": "req_c9a96c8c-9e9d-4257-8825-82eb5e79acdb",
+  "status": "succeeded",
+  "output_count": 2,
+  "outputs": [
+    {
+      "id": "5a1bab8e-d855-4a87-a0ce-30203bd817f8",
+      "type": "image",
+      "createdAt": "2026-11-20T11:49:54.262Z",
+      "updatedAt": "2026-11-20T11:49:54.262Z",
+      "prompt": "Refine the bed in the first image with finer pixel-level detail within its existing shapes. Use the second image, Churchill, only as a reference for the amount of detail, deliberate pixel clusters and shading treatment. The supporting reference guides style, not output resolution; do not transfer the character, anatomy, clothing or colors to the bed. Preserve the primary image's canvas size, subject, recognizable silhouette, proportions, orientation, side-view perspective, composition and dominant colors: a cream pillow on the left, a dark red blanket draped over a low brown bed frame. Keep its placement, the pillow position, mattress edges and lower frame contact points and overall visual footprint close to the primary image. Add finer detail within the existing coarse pixels rather than reducing the image to a coarser logical pixel grid. Replace coarse block transitions with purposeful finer contours and shading. Refine the pillow's folds, the red blanket's fabric folds and subdued texture, and the brown bed frame's edges, with restrained detail consistent with the reference. Keep broad readable areas, the same bedding and frame design, and preserve the source's transparency and background treatment. Do not add furniture, decorations or new objects.",
+      "width": 106,
+      "height": 35,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/5a1bab8e-d855-4a87-a0ce-30203bd817f8/image.png?v=1795175394262",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "4dfa004b-d6a4-41f7-bee7-ccf003ec3037",
+      "batchIndex": 0,
+      "batchSize": 2,
+      "action": {
+        "kind": "edit"
+      }
+    },
+    {
+      "id": "f4cfc4cb-10a3-4da9-a512-bee3be099971",
+      "type": "image",
+      "createdAt": "2026-11-20T11:49:55.724Z",
+      "updatedAt": "2026-11-20T11:49:55.724Z",
+      "prompt": "Refine the bed in the first image with finer pixel-level detail within its existing shapes. Use the second image, Churchill, only as a reference for the amount of detail, deliberate pixel clusters and shading treatment. The supporting reference guides style, not output resolution; do not transfer the character, anatomy, clothing or colors to the bed. Preserve the primary image's canvas size, subject, recognizable silhouette, proportions, orientation, side-view perspective, composition and dominant colors: a cream pillow on the left, a dark red blanket draped over a low brown bed frame. Keep its placement, the pillow position, mattress edges and lower frame contact points and overall visual footprint close to the primary image. Add finer detail within the existing coarse pixels rather than reducing the image to a coarser logical pixel grid. Replace coarse block transitions with purposeful finer contours and shading. Refine the pillow's folds, the red blanket's fabric folds and subdued texture, and the brown bed frame's edges, with restrained detail consistent with the reference. Keep broad readable areas, the same bedding and frame design, and preserve the source's transparency and background treatment. Do not add furniture, decorations or new objects.",
+      "width": 70,
+      "height": 35,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/f4cfc4cb-10a3-4da9-a512-bee3be099971/image.png?v=1795175395724",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "4dfa004b-d6a4-41f7-bee7-ccf003ec3037",
+      "batchIndex": 1,
+      "batchSize": 2,
+      "action": {
+        "kind": "edit"
+      }
+    }
+  ],
+  "credits": {
+    "used": 15,
+    "remaining": 495
+  },
+  "inputs": [
+    {
+      "path": "C:\\htdocs\\_OLD\\_GAMES\\1899\\output\\spritefusion\\bed\\trial-2x-20261120-124850\\bed-input-2x.png",
+      "role": "primary source enlarged 2x nearest neighbor"
+    },
+    {
+      "path": "godot/assets/graphics/characters/churchill/churchill-stand.png",
+      "role": "style reference"
+    }
+  ],
+  "source": {
+    "path": "godot/assets/graphics/ep01_cabin/bed.png",
+    "width": 140,
+    "height": 48,
+    "sha256": "BB17CC33C1C7C28E58D275841AE877BCFE5EE8247A663F741FD01F43628D82E8"
+  },
+  "acceptance": {
+    "width": [
+      133,
+      147
+    ],
+    "height": [
+      46,
+      50
+    ]
+  },
+  "outputs_local": [
+    {
+      "id": "5a1bab8e-d855-4a87-a0ce-30203bd817f8",
+      "path": "godot/assets/graphics/ep01_cabin/bed-redesign-3.png"
+    },
+    {
+      "id": "f4cfc4cb-10a3-4da9-a512-bee3be099971",
+      "path": "godot/assets/graphics/ep01_cabin/bed-redesign-4.png"
+    }
+  ],
+  "prompt": "Refine the bed in the first image with finer pixel-level detail within its existing shapes. Use the second image, Churchill, only as a reference for the amount of detail, deliberate pixel clusters and shading treatment. The supporting reference guides style, not output resolution; do not transfer the character, anatomy, clothing or colors to the bed. Preserve the primary image's canvas size, subject, recognizable silhouette, proportions, orientation, side-view perspective, composition and dominant colors: a cream pillow on the left, a dark red blanket draped over a low brown bed frame. Keep its placement, the pillow position, mattress edges and lower frame contact points and overall visual footprint close to the primary image. Add finer detail within the existing coarse pixels rather than reducing the image to a coarser logical pixel grid. Replace coarse block transitions with purposeful finer contours and shading. Refine the pillow's folds, the red blanket's fabric folds and subdued texture, and the brown bed frame's edges, with restrained detail consistent with the reference. Keep broad readable areas, the same bedding and frame design, and preserve the source's transparency and background treatment. Do not add furniture, decorations or new objects.",
+  "integration": "none"
+}

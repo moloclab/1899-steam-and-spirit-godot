@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cprngrgtx5gu1"
-path="res://.godot/imported/_bed.png-4af2eb014c9e0956916a179a3ed2a06f.ctex"
+uid="uid://skpnehaudv22"
+path="res://.godot/imported/map-redesign-4.png-c6ba54fb1a5a1568971a76f70f893ca2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/graphics/ep01_cabin/_bed.png"
-dest_files=["res://.godot/imported/_bed.png-4af2eb014c9e0956916a179a3ed2a06f.ctex"]
+source_file="res://assets/graphics/ep01_cabin/map-redesign-4.png"
+dest_files=["res://.godot/imported/map-redesign-4.png-c6ba54fb1a5a1568971a76f70f893ca2.ctex"]
 
 [params]
 

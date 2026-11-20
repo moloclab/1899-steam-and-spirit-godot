@@ -95,25 +95,28 @@ func _button(key: String, rect: Rect2, callback: Callable, parent: Node = self) 
 	parent.add_child(button)
 	return button
 
-## Costruisce l'interfaccia nelle coordinate di riferimento 1152×720.
+## Costruisce l'interfaccia nella risoluzione di riferimento del progetto.
 ## La stanza sta dentro world_panel; il dialogo segue chi parla e l'inventario resta fisso.
 func _ready() -> void:
 	texts.language_changed.connect(_refresh_texts)
 	# Occupa il viewport del coordinatore senza intercettare i clic destinati ai controlli figli.
 	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
-	save_buttons.append(_button("common.ui.save", Rect2(576, 20, 110, 38), save_requested.emit))
-	save_buttons.append(_button("common.ui.load", Rect2(696, 20, 110, 38), load_requested.emit))
+	# La larghezza logica resta fissa mentre Godot scala l'intera UI sul dispositivo.
+	var view_width := float(ProjectSettings.get_setting("display/window/size/viewport_width"))
+	var toolbar_x := view_width - 576.0
+	save_buttons.append(_button("common.ui.save", Rect2(toolbar_x, 20, 110, 38), save_requested.emit))
+	save_buttons.append(_button("common.ui.load", Rect2(toolbar_x + 120, 20, 110, 38), load_requested.emit))
 	# Il controllo musicale resta accanto a Carica e mostra lo stato corrente del sottofondo.
-	music_button = _button("common.ui.music_on", Rect2(816, 20, 150, 38), _toggle_music)
+	music_button = _button("common.ui.music_on", Rect2(toolbar_x + 240, 20, 150, 38), _toggle_music)
 	music_button.toggle_mode = true
 	music_button.button_pressed = true
-	help_button = _button("common.ui.help", Rect2(976, 20, 110, 38), _toggle_help)
+	help_button = _button("common.ui.help", Rect2(toolbar_x + 400, 20, 110, 38), _toggle_help)
 	# Il ritaglio nasconde le parti del corridoio fuori dalla finestra di gioco.
 	# I clic sono gestiti dal contenitore: le immagini della stanza sono nodi 2D, non pulsanti.
 	world_panel = Control.new()
 	world_panel.position = Vector2(0, 84)
-	world_panel.size = Vector2(1152, 412)
+	world_panel.size = Vector2(view_width, 412)
 	world_panel.clip_contents = true
 	world_panel.mouse_default_cursor_shape = Control.CURSOR_ARROW
 	world_panel.gui_input.connect(func(event: InputEvent): world_input.emit(event))
@@ -129,8 +132,11 @@ func _ready() -> void:
 	speech_label.vertical_alignment = VERTICAL_ALIGNMENT_BOTTOM
 	speech_label.clip_text = true
 	speech_label.z_index = 2
-	speech_label.add_theme_color_override("font_outline_color", Color.BLACK)
-	speech_label.add_theme_constant_override("outline_size", 2)
+	# L'ombra ripete il testo in nero, spostato di un pixel a destra e in basso.
+	speech_label.add_theme_constant_override("outline_size", 0)
+	speech_label.add_theme_color_override("font_shadow_color", Color.BLACK)
+	speech_label.add_theme_constant_override("shadow_offset_x", 2)
+	speech_label.add_theme_constant_override("shadow_offset_y", 2)
 	speech_label.add_theme_constant_override("line_spacing", 0)
 	inventory_row = HBoxContainer.new()
 	inventory_row.position = Vector2.ZERO
@@ -138,7 +144,7 @@ func _ready() -> void:
 	inventory_row.add_theme_constant_override("separation", 10)
 	inventory_scroll = ScrollContainer.new()
 	inventory_scroll.position = Vector2(28, 620)
-	inventory_scroll.size = Vector2(1095, 68)
+	inventory_scroll.size = Vector2(view_width - 56, 68)
 	inventory_scroll.vertical_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
 	add_child(inventory_scroll)
 	inventory_scroll.add_child(inventory_row)
@@ -157,9 +163,11 @@ func _toggle_music() -> void:
 ## Prepara il menu dei comandi, inizialmente nascosto, e i suoi pulsanti.
 ## Lo sfondo copre la finestra per intercettare i clic che altrimenti raggiungerebbero il gioco.
 func _build_help() -> void:
-	help_panel = _panel(Rect2(0, 0, 1152, 720), Color(0, 0, 0, 0.65))
+	# Il velo copre tutta la base logica e il menu resta centrato anche cambiando risoluzione.
+	var view_size := Vector2(ProjectSettings.get_setting("display/window/size/viewport_width"), ProjectSettings.get_setting("display/window/size/viewport_height"))
+	help_panel = _panel(Rect2(Vector2.ZERO, view_size), Color(0, 0, 0, 0.65))
 	help_panel.z_index = 10
-	var content := _panel(Rect2(170, 95, 812, 550), Color("152027"), help_panel)
+	var content := _panel(Rect2((view_size - Vector2(812, 550)) / 2.0, Vector2(812, 550)), Color("152027"), help_panel)
 	_label("common.ui.help_title", Rect2(30, 20, 760, 40), 32, content)
 	_label("common.ui.help_commands", Rect2(30, 65, 755, 390), 32, content)
 	var save := _button("common.ui.save", Rect2(30, 480, 145, 42), func():

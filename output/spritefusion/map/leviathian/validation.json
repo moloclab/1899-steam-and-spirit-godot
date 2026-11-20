@@ -1,0 +1,41 @@
+﻿[
+    {
+        "file":  "map.png",
+        "width":  60,
+        "height":  72,
+        "width_percent":  100,
+        "height_percent":  100,
+        "size_pass":  true,
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "sha256":  "AC42E2C8F60E16910D5E1E860D780B17C3FE1BCCFFA534755FCE2DD5637B6851"
+    },
+    {
+        "file":  "map-redesign-3.png",
+        "width":  60,
+        "height":  72,
+        "width_percent":  100,
+        "height_percent":  100,
+        "size_pass":  true,
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "sha256":  "9DDA4B95E5FF58BBC627DB4867EAD4702C48BE691BAAC63ED68CB3377E67B98E"
+    },
+    {
+        "file":  "map-redesign-4.png",
+        "width":  87,
+        "height":  92,
+        "width_percent":  145,
+        "height_percent":  127.77777777777777,
+        "size_pass":  false,
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "sha256":  "3EBCE917F7FEB7FD07EACE786875470DF8253FDF25789E448C536C6CCEB90F52"
+    }
+]
