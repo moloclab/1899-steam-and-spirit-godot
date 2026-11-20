@@ -42,7 +42,8 @@ func position_world(view_width: float) -> void:
 	var offset: float = (view_width - scaled_width) / 2.0
 	if scaled_width > view_width:
 		offset = clampf(view_width / 2.0 - actor.current_x * definition.visual_scale, view_width - scaled_width, 0)
-	current_room.position = Vector2(offset, 0)
+	# Anche durante lo scorrimento la stanza resta allineata ai pixel dello schermo.
+	current_room.position = Vector2(roundf(offset), 0)
 
 ## Cerca nuovamente il bersaglio all'arrivo: un oggetto nascosto o rimosso non può agire.
 func find_hotspot(hotspot_id: String) -> Hotspot:

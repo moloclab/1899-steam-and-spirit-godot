@@ -7,7 +7,8 @@ extends Resource
 @export var width := 648.0
 @export var walk_margin := 24.0
 @export var floor_y := 200.0
-@export var visual_scale := 1.5
+## La scala intera mantiene uniformi i pixel di fondali e personaggi.
+@export var visual_scale := 2.0
 @export var entries: Dictionary[String, float] = {"default": 180.0}
 
 ## Mantiene il centro del personaggio entro la corsia percorribile della stanza.

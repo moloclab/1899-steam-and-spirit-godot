@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bu7mgqmufehac"
-path="res://.godot/imported/churchill_stand_detailed.png-3367033b10c327a441f932dbb714e270.ctex"
+uid="uid://cprngrgtx5gu1"
+path="res://.godot/imported/_bed.png-4af2eb014c9e0956916a179a3ed2a06f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/graphics/characters/churchill/churchill_stand_detailed.png"
-dest_files=["res://.godot/imported/churchill_stand_detailed.png-3367033b10c327a441f932dbb714e270.ctex"]
+source_file="res://assets/graphics/ep01_cabin/_bed.png"
+dest_files=["res://.godot/imported/_bed.png-4af2eb014c9e0956916a179a3ed2a06f.ctex"]
 
 [params]
 

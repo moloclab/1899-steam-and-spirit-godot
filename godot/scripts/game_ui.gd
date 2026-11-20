@@ -18,7 +18,7 @@ const GOLD := Color("e5bf73")
 var texts: Texts
 var _localized_controls: Dictionary = {}
 var _speaker_key := "common.speaker.churchill"
-const SPEECH_SIZE := Vector2(100, 100)
+const SPEECH_SIZE := Vector2(200, 100)
 const SPEECH_FONT_SIZE := 32
 var world_panel: Control
 var speaker_label: Label

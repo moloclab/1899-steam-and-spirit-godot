@@ -1,50 +1,52 @@
 [gd_scene load_steps=15 format=3]
 
-[ext_resource type="Texture2D" path="res://assets/graphics/characters/churchill/churchill_walk.png" id="walk_sheet"]
+; Camminata: 8 fotogrammi da 50x100 pixel a 12 fps, per seguire meglio lo spostamento.
+[ext_resource type="Texture2D" path="res://assets/graphics/characters/churchill/churchill-walk.png" id="walk_sheet"]
 [ext_resource type="Script" path="res://scripts/world/character.gd" id="character"]
-[ext_resource type="Texture2D" path="res://assets/graphics/characters/churchill/churchill_stand.png" id="idle"]
+[ext_resource type="Texture2D" path="res://assets/graphics/characters/churchill/churchill-stand.png" id="idle"]
 ; Pose originali convertite da GIF, mantenendo dimensioni e trasparenza.
 [ext_resource type="Texture2D" path="res://assets/graphics/characters/churchill/churchill_sit.png" id="sit"]
 [ext_resource type="Texture2D" path="res://assets/graphics/characters/churchill/churchill_back.png" id="back"]
 
 [sub_resource type="AtlasTexture" id="walk_0"]
 atlas = ExtResource("walk_sheet")
-region = Rect2(0, 0, 44, 100)
+region = Rect2(0, 0, 50, 100)
 
 [sub_resource type="AtlasTexture" id="walk_1"]
 atlas = ExtResource("walk_sheet")
-region = Rect2(44, 0, 44, 100)
+region = Rect2(50, 0, 50, 100)
 
 [sub_resource type="AtlasTexture" id="walk_2"]
 atlas = ExtResource("walk_sheet")
-region = Rect2(88, 0, 44, 100)
+region = Rect2(100, 0, 50, 100)
 
 [sub_resource type="AtlasTexture" id="walk_3"]
 atlas = ExtResource("walk_sheet")
-region = Rect2(132, 0, 44, 100)
+region = Rect2(150, 0, 50, 100)
 
 [sub_resource type="AtlasTexture" id="walk_4"]
 atlas = ExtResource("walk_sheet")
-region = Rect2(176, 0, 44, 100)
+region = Rect2(200, 0, 50, 100)
 
 [sub_resource type="AtlasTexture" id="walk_5"]
 atlas = ExtResource("walk_sheet")
-region = Rect2(220, 0, 44, 100)
+region = Rect2(250, 0, 50, 100)
 
 [sub_resource type="AtlasTexture" id="walk_6"]
 atlas = ExtResource("walk_sheet")
-region = Rect2(264, 0, 44, 100)
+region = Rect2(300, 0, 50, 100)
 
 [sub_resource type="AtlasTexture" id="walk_7"]
 atlas = ExtResource("walk_sheet")
-region = Rect2(308, 0, 44, 100)
+region = Rect2(350, 0, 50, 100)
 
 [sub_resource type="SpriteFrames" id="frames"]
-animations = [{"frames": [{"duration": 1.0, "texture": SubResource("walk_0")}, {"duration": 1.0, "texture": SubResource("walk_1")}, {"duration": 1.0, "texture": SubResource("walk_2")}, {"duration": 1.0, "texture": SubResource("walk_3")}, {"duration": 1.0, "texture": SubResource("walk_4")}, {"duration": 1.0, "texture": SubResource("walk_5")}, {"duration": 1.0, "texture": SubResource("walk_6")}, {"duration": 1.0, "texture": SubResource("walk_7")}], "loop": true, "name": &"walk", "speed": 10}, {"frames": [{"duration": 1.0, "texture": ExtResource("idle")}], "loop": true, "name": &"idle", "speed": 1.0}, {"frames": [{"duration": 1.0, "texture": ExtResource("sit")}], "loop": true, "name": &"sit", "speed": 1.0}, {"frames": [{"duration": 1.0, "texture": ExtResource("back")}], "loop": true, "name": &"back", "speed": 1.0}]
+animations = [{"frames": [{"duration": 1.0, "texture": SubResource("walk_0")}, {"duration": 1.0, "texture": SubResource("walk_1")}, {"duration": 1.0, "texture": SubResource("walk_2")}, {"duration": 1.0, "texture": SubResource("walk_3")}, {"duration": 1.0, "texture": SubResource("walk_4")}, {"duration": 1.0, "texture": SubResource("walk_5")}, {"duration": 1.0, "texture": SubResource("walk_6")}, {"duration": 1.0, "texture": SubResource("walk_7")}], "loop": true, "name": &"walk", "speed": 16}, {"frames": [{"duration": 1.0, "texture": ExtResource("idle")}], "loop": true, "name": &"idle", "speed": 1.0}, {"frames": [{"duration": 1.0, "texture": ExtResource("sit")}], "loop": true, "name": &"sit", "speed": 1.0}, {"frames": [{"duration": 1.0, "texture": ExtResource("back")}], "loop": true, "name": &"back", "speed": 1.0}]
 
 [node name="Churchill" type="AnimatedSprite2D"]
 script = ExtResource("character")
 speaker_key = "common.speaker.churchill"
+speed = 70.0
 centered = false
 z_index = 1
 sprite_frames = SubResource("frames")

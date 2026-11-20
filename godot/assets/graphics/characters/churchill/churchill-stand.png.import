@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://checivqbug3py"
-path="res://.godot/imported/churchill_stand.png-4212f00c4afaea0de33e90e745ce3422.ctex"
+uid="uid://dhutwvwf7vqs2"
+path="res://.godot/imported/churchill-stand.png-b909912edbd1df8d7ec69133ce1cc77a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/graphics/characters/churchill/churchill_stand.png"
-dest_files=["res://.godot/imported/churchill_stand.png-4212f00c4afaea0de33e90e745ce3422.ctex"]
+source_file="res://assets/graphics/characters/churchill/churchill-stand.png"
+dest_files=["res://.godot/imported/churchill-stand.png-b909912edbd1df8d7ec69133ce1cc77a.ctex"]
 
 [params]
 
