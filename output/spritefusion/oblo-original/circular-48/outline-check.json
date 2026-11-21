@@ -1,0 +1,101 @@
+﻿[
+    {
+        "variant":  "Variante 1",
+        "horizontal_mask_difference":  0,
+        "vertical_mask_difference":  16,
+        "top_center_colors":  [
+                                  "#000000",
+                                  "#97A05B",
+                                  "#686234",
+                                  "#B2AE58"
+                              ]
+    },
+    {
+        "variant":  "Variante 2",
+        "horizontal_mask_difference":  0,
+        "vertical_mask_difference":  0,
+        "top_center_colors":  [
+                                  "#000000",
+                                  "#42321E",
+                                  "#A98C5B",
+                                  "#655134"
+                              ]
+    },
+    {
+        "variant":  "Variante 3",
+        "horizontal_mask_difference":  2,
+        "vertical_mask_difference":  2,
+        "top_center_colors":  [
+                                  "#0A070C",
+                                  "#DBB24C",
+                                  "#E4BD57",
+                                  "#6B4718"
+                              ]
+    },
+    {
+        "variant":  "Variante 4",
+        "horizontal_mask_difference":  0,
+        "vertical_mask_difference":  4,
+        "top_center_colors":  [
+                                  "#000000",
+                                  "#CEB062",
+                                  "#7A5D2B",
+                                  "#CEB062"
+                              ]
+    },
+    {
+        "variant":  "Variante 5",
+        "horizontal_mask_difference":  0,
+        "vertical_mask_difference":  12,
+        "top_center_colors":  [
+                                  "#000000",
+                                  "#78613F",
+                                  "#78613F",
+                                  "#483720"
+                              ]
+    },
+    {
+        "variant":  "Variante 6",
+        "horizontal_mask_difference":  2,
+        "vertical_mask_difference":  6,
+        "top_center_colors":  [
+                                  "#000000",
+                                  "#F6DB73",
+                                  "#E8BD5D",
+                                  "#C18536"
+                              ]
+    },
+    {
+        "variant":  "Variante 7",
+        "horizontal_mask_difference":  2,
+        "vertical_mask_difference":  24,
+        "top_center_colors":  [
+                                  "#000000",
+                                  "#121012",
+                                  "#121012",
+                                  "#A17034"
+                              ]
+    },
+    {
+        "variant":  "Variante 8",
+        "horizontal_mask_difference":  0,
+        "vertical_mask_difference":  0,
+        "top_center_colors":  [
+                                  "#000000",
+                                  "#A7A95F",
+                                  "#5B6A40",
+                                  "#5B6A40"
+                              ]
+    },
+    {
+        "variant":  "Variante 9",
+        "horizontal_mask_difference":  0,
+        "vertical_mask_difference":  12,
+        "top_center_colors":  [
+                                  "#000000",
+                                  "#BFAA66",
+                                  "#514027",
+                                  "#BFAA66"
+                              ]
+    }
+]

@@ -1,0 +1,252 @@
+{
+  "method": "generate_sprites_in_style",
+  "size": 48,
+  "prompt": "Create a perfectly circular brass porthole in the cabin of a nineteenth-century submarine, viewed exactly straight on. A clear glass pane shows seawater outside, reaching approximately halfway up the circular opening, with a gently readable sea surface and muted blue-green water below it. Give the glass only subtle restrained reflections so the seawater remains easy to read.\nThe first reference is the original porthole: use it for the subject, placement, overall size, brass and sea color identity and central opening. Refine its coarse silhouette into a geometrically regular circle: equal width and height, symmetric outer contour and a concentric circular glass opening. The brass rim has consistent apparent thickness all around, with restrained fine highlights and warm shaded brass. Preserve the frontal perspective, the center and the cardinal edge alignment. Keep the porthole almost edge-to-edge across both width and height of the square composition, with minimal exterior empty margins.\nThe second reference, the approved Churchill sprite, guides only the finer level of detail, deliberate small pixel clusters, restrained shading and dark outline. Do not transfer his anatomy, clothing, character features or unrelated colors. Draw the porthole at the fine native detail scale of that reference, rather than as enlarged coarse blocks.\nGive the outer silhouette a continuous near-black or dark brown outline exactly one final-image pixel thick. Keep the outline even and clean, with balanced stepped diagonals that describe a true circle, and no doubled borders, blur, antialiasing or halo. Keep inner lines subtle, the opening round and the brass rim readable. Preserve binary exterior alpha and the source's background treatment.\nThe third reference is the game's shared palette swatches and guides only the color family. Use these as a flexible base, with additional harmonious shades allowed for brass, clear glass and seawater; no exact color constraint.\nDepict only the porthole and its visible glass and sea, without a surrounding wall or extra mechanical attachments or scenery.",
+  "inputs": [
+    {
+      "alpha": [
+        0,
+        255
+      ],
+      "visible": [
+        48,
+        48
+      ],
+      "path": "godot/assets/graphics/ep01_cabin/oblo-original.png",
+      "bounds": [
+        0,
+        0,
+        48,
+        48
+      ],
+      "canvas": [
+        48,
+        48
+      ]
+    },
+    {
+      "alpha": [
+        0,
+        255
+      ],
+      "visible": [
+        46,
+        100
+      ],
+      "path": "godot/assets/graphics/characters/churchill/churchill-stand.png",
+      "bounds": [
+        0,
+        0,
+        46,
+        100
+      ],
+      "canvas": [
+        46,
+        100
+      ]
+    },
+    {
+      "alpha": [
+        255
+      ],
+      "visible": [
+        256,
+        128
+      ],
+      "path": "godot/palette/1899-base-128-swatches.png",
+      "bounds": [
+        0,
+        0,
+        256,
+        128
+      ],
+      "canvas": [
+        256,
+        128
+      ]
+    }
+  ],
+  "result": {
+    "request_id": "req_ec1e4e30-b00f-49ab-9cd0-199e076d236d",
+    "status": "succeeded",
+    "output_count": 9,
+    "outputs": [
+      {
+        "id": "b75a8112-e479-4819-8083-23cc4712b7f6",
+        "type": "image",
+        "createdAt": "2026-11-21T17:35:07.997Z",
+        "updatedAt": "2026-11-21T17:35:07.997Z",
+        "prompt": "Create a perfectly circular brass porthole in the cabin of a nineteenth-century submarine, viewed exactly straight on. A clear glass pane shows seawater outside, reaching approximately halfway up the circular opening, with a gently readable sea surface and muted blue-green water below it. Give the glass only subtle restrained reflections so the seawater remains easy to read.\nThe first reference is the original porthole: use it for the subject, placement, overall size, brass and sea color identity and central opening. Refine its coarse silhouette into a geometrically regular circle: equal width and height, symmetric outer contour and a concentric circular glass opening. The brass rim has consistent apparent thickness all around, with restrained fine highlights and warm shaded brass. Preserve the frontal perspective, the center and the cardinal edge alignment. Keep the porthole almost edge-to-edge across both width and height of the square composition, with minimal exterior empty margins.\nThe second reference, the approved Churchill sprite, guides only the finer level of detail, deliberate small pixel clusters, restrained shading and dark outline. Do not transfer his anatomy, clothing, character features or unrelated colors. Draw the porthole at the fine native detail scale of that reference, rather than as enlarged coarse blocks.\nGive the outer silhouette a continuous near-black or dark brown outline exactly one final-image pixel thick. Keep the outline even and clean, with balanced stepped diagonals that describe a true circle, and no doubled borders, blur, antialiasing or halo. Keep inner lines subtle, the opening round and the brass rim readable. Preserve binary exterior alpha and the source's background treatment.\nThe third reference is the game's shared palette swatches and guides only the color family. Use these as a flexible base, with additional harmonious shades allowed for brass, clear glass and seawater; no exact color constraint.\nDepict only the porthole and its visible glass and sea, without a surrounding wall or extra mechanical attachments or scenery.",
+        "width": 48,
+        "height": 48,
+        "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/b75a8112-e479-4819-8083-23cc4712b7f6/image.png?v=1795282507997",
+        "style": "default",
+        "tags": [],
+        "contentType": "image/png",
+        "batchId": "633819ec-d8f0-4072-8b9b-360a4b39b6b1",
+        "batchIndex": 0,
+        "batchSize": 9,
+        "action": {
+          "kind": "same-style"
+        }
+      },
+      {
+        "id": "b49538bc-be2b-4de2-b71a-423b2d27b2ca",
+        "type": "image",
+        "createdAt": "2026-11-21T17:35:08.844Z",
+        "updatedAt": "2026-11-21T17:35:08.844Z",
+        "prompt": "Create a perfectly circular brass porthole in the cabin of a nineteenth-century submarine, viewed exactly straight on. A clear glass pane shows seawater outside, reaching approximately halfway up the circular opening, with a gently readable sea surface and muted blue-green water below it. Give the glass only subtle restrained reflections so the seawater remains easy to read.\nThe first reference is the original porthole: use it for the subject, placement, overall size, brass and sea color identity and central opening. Refine its coarse silhouette into a geometrically regular circle: equal width and height, symmetric outer contour and a concentric circular glass opening. The brass rim has consistent apparent thickness all around, with restrained fine highlights and warm shaded brass. Preserve the frontal perspective, the center and the cardinal edge alignment. Keep the porthole almost edge-to-edge across both width and height of the square composition, with minimal exterior empty margins.\nThe second reference, the approved Churchill sprite, guides only the finer level of detail, deliberate small pixel clusters, restrained shading and dark outline. Do not transfer his anatomy, clothing, character features or unrelated colors. Draw the porthole at the fine native detail scale of that reference, rather than as enlarged coarse blocks.\nGive the outer silhouette a continuous near-black or dark brown outline exactly one final-image pixel thick. Keep the outline even and clean, with balanced stepped diagonals that describe a true circle, and no doubled borders, blur, antialiasing or halo. Keep inner lines subtle, the opening round and the brass rim readable. Preserve binary exterior alpha and the source's background treatment.\nThe third reference is the game's shared palette swatches and guides only the color family. Use these as a flexible base, with additional harmonious shades allowed for brass, clear glass and seawater; no exact color constraint.\nDepict only the porthole and its visible glass and sea, without a surrounding wall or extra mechanical attachments or scenery.",
+        "width": 48,
+        "height": 48,
+        "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/b49538bc-be2b-4de2-b71a-423b2d27b2ca/image.png?v=1795282508844",
+        "style": "default",
+        "tags": [],
+        "contentType": "image/png",
+        "batchId": "633819ec-d8f0-4072-8b9b-360a4b39b6b1",
+        "batchIndex": 1,
+        "batchSize": 9,
+        "action": {
+          "kind": "same-style"
+        }
+      },
+      {
+        "id": "be1eb8b6-947c-400e-9333-1a2b60d68905",
+        "type": "image",
+        "createdAt": "2026-11-21T17:35:09.610Z",
+        "updatedAt": "2026-11-21T17:35:09.610Z",
+        "prompt": "Create a perfectly circular brass porthole in the cabin of a nineteenth-century submarine, viewed exactly straight on. A clear glass pane shows seawater outside, reaching approximately halfway up the circular opening, with a gently readable sea surface and muted blue-green water below it. Give the glass only subtle restrained reflections so the seawater remains easy to read.\nThe first reference is the original porthole: use it for the subject, placement, overall size, brass and sea color identity and central opening. Refine its coarse silhouette into a geometrically regular circle: equal width and height, symmetric outer contour and a concentric circular glass opening. The brass rim has consistent apparent thickness all around, with restrained fine highlights and warm shaded brass. Preserve the frontal perspective, the center and the cardinal edge alignment. Keep the porthole almost edge-to-edge across both width and height of the square composition, with minimal exterior empty margins.\nThe second reference, the approved Churchill sprite, guides only the finer level of detail, deliberate small pixel clusters, restrained shading and dark outline. Do not transfer his anatomy, clothing, character features or unrelated colors. Draw the porthole at the fine native detail scale of that reference, rather than as enlarged coarse blocks.\nGive the outer silhouette a continuous near-black or dark brown outline exactly one final-image pixel thick. Keep the outline even and clean, with balanced stepped diagonals that describe a true circle, and no doubled borders, blur, antialiasing or halo. Keep inner lines subtle, the opening round and the brass rim readable. Preserve binary exterior alpha and the source's background treatment.\nThe third reference is the game's shared palette swatches and guides only the color family. Use these as a flexible base, with additional harmonious shades allowed for brass, clear glass and seawater; no exact color constraint.\nDepict only the porthole and its visible glass and sea, without a surrounding wall or extra mechanical attachments or scenery.",
+        "width": 48,
+        "height": 48,
+        "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/be1eb8b6-947c-400e-9333-1a2b60d68905/image.png?v=1795282509610",
+        "style": "default",
+        "tags": [],
+        "contentType": "image/png",
+        "batchId": "633819ec-d8f0-4072-8b9b-360a4b39b6b1",
+        "batchIndex": 2,
+        "batchSize": 9,
+        "action": {
+          "kind": "same-style"
+        }
+      },
+      {
+        "id": "0925df9b-ea46-4c85-8873-70bbfd124e0c",
+        "type": "image",
+        "createdAt": "2026-11-21T17:35:10.471Z",
+        "updatedAt": "2026-11-21T17:35:10.471Z",
+        "prompt": "Create a perfectly circular brass porthole in the cabin of a nineteenth-century submarine, viewed exactly straight on. A clear glass pane shows seawater outside, reaching approximately halfway up the circular opening, with a gently readable sea surface and muted blue-green water below it. Give the glass only subtle restrained reflections so the seawater remains easy to read.\nThe first reference is the original porthole: use it for the subject, placement, overall size, brass and sea color identity and central opening. Refine its coarse silhouette into a geometrically regular circle: equal width and height, symmetric outer contour and a concentric circular glass opening. The brass rim has consistent apparent thickness all around, with restrained fine highlights and warm shaded brass. Preserve the frontal perspective, the center and the cardinal edge alignment. Keep the porthole almost edge-to-edge across both width and height of the square composition, with minimal exterior empty margins.\nThe second reference, the approved Churchill sprite, guides only the finer level of detail, deliberate small pixel clusters, restrained shading and dark outline. Do not transfer his anatomy, clothing, character features or unrelated colors. Draw the porthole at the fine native detail scale of that reference, rather than as enlarged coarse blocks.\nGive the outer silhouette a continuous near-black or dark brown outline exactly one final-image pixel thick. Keep the outline even and clean, with balanced stepped diagonals that describe a true circle, and no doubled borders, blur, antialiasing or halo. Keep inner lines subtle, the opening round and the brass rim readable. Preserve binary exterior alpha and the source's background treatment.\nThe third reference is the game's shared palette swatches and guides only the color family. Use these as a flexible base, with additional harmonious shades allowed for brass, clear glass and seawater; no exact color constraint.\nDepict only the porthole and its visible glass and sea, without a surrounding wall or extra mechanical attachments or scenery.",
+        "width": 48,
+        "height": 48,
+        "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/0925df9b-ea46-4c85-8873-70bbfd124e0c/image.png?v=1795282510471",
+        "style": "default",
+        "tags": [],
+        "contentType": "image/png",
+        "batchId": "633819ec-d8f0-4072-8b9b-360a4b39b6b1",
+        "batchIndex": 3,
+        "batchSize": 9,
+        "action": {
+          "kind": "same-style"
+        }
+      },
+      {
+        "id": "12db9a3a-7f00-4bd2-a85b-3bde80e57e8c",
+        "type": "image",
+        "createdAt": "2026-11-21T17:35:11.401Z",
+        "updatedAt": "2026-11-21T17:35:11.401Z",
+        "prompt": "Create a perfectly circular brass porthole in the cabin of a nineteenth-century submarine, viewed exactly straight on. A clear glass pane shows seawater outside, reaching approximately halfway up the circular opening, with a gently readable sea surface and muted blue-green water below it. Give the glass only subtle restrained reflections so the seawater remains easy to read.\nThe first reference is the original porthole: use it for the subject, placement, overall size, brass and sea color identity and central opening. Refine its coarse silhouette into a geometrically regular circle: equal width and height, symmetric outer contour and a concentric circular glass opening. The brass rim has consistent apparent thickness all around, with restrained fine highlights and warm shaded brass. Preserve the frontal perspective, the center and the cardinal edge alignment. Keep the porthole almost edge-to-edge across both width and height of the square composition, with minimal exterior empty margins.\nThe second reference, the approved Churchill sprite, guides only the finer level of detail, deliberate small pixel clusters, restrained shading and dark outline. Do not transfer his anatomy, clothing, character features or unrelated colors. Draw the porthole at the fine native detail scale of that reference, rather than as enlarged coarse blocks.\nGive the outer silhouette a continuous near-black or dark brown outline exactly one final-image pixel thick. Keep the outline even and clean, with balanced stepped diagonals that describe a true circle, and no doubled borders, blur, antialiasing or halo. Keep inner lines subtle, the opening round and the brass rim readable. Preserve binary exterior alpha and the source's background treatment.\nThe third reference is the game's shared palette swatches and guides only the color family. Use these as a flexible base, with additional harmonious shades allowed for brass, clear glass and seawater; no exact color constraint.\nDepict only the porthole and its visible glass and sea, without a surrounding wall or extra mechanical attachments or scenery.",
+        "width": 48,
+        "height": 48,
+        "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/12db9a3a-7f00-4bd2-a85b-3bde80e57e8c/image.png?v=1795282511401",
+        "style": "default",
+        "tags": [],
+        "contentType": "image/png",
+        "batchId": "633819ec-d8f0-4072-8b9b-360a4b39b6b1",
+        "batchIndex": 4,
+        "batchSize": 9,
+        "action": {
+          "kind": "same-style"
+        }
+      },
+      {
+        "id": "9c959610-a2a8-405f-aa66-4afe551e15cc",
+        "type": "image",
+        "createdAt": "2026-11-21T17:35:12.208Z",
+        "updatedAt": "2026-11-21T17:35:12.208Z",
+        "prompt": "Create a perfectly circular brass porthole in the cabin of a nineteenth-century submarine, viewed exactly straight on. A clear glass pane shows seawater outside, reaching approximately halfway up the circular opening, with a gently readable sea surface and muted blue-green water below it. Give the glass only subtle restrained reflections so the seawater remains easy to read.\nThe first reference is the original porthole: use it for the subject, placement, overall size, brass and sea color identity and central opening. Refine its coarse silhouette into a geometrically regular circle: equal width and height, symmetric outer contour and a concentric circular glass opening. The brass rim has consistent apparent thickness all around, with restrained fine highlights and warm shaded brass. Preserve the frontal perspective, the center and the cardinal edge alignment. Keep the porthole almost edge-to-edge across both width and height of the square composition, with minimal exterior empty margins.\nThe second reference, the approved Churchill sprite, guides only the finer level of detail, deliberate small pixel clusters, restrained shading and dark outline. Do not transfer his anatomy, clothing, character features or unrelated colors. Draw the porthole at the fine native detail scale of that reference, rather than as enlarged coarse blocks.\nGive the outer silhouette a continuous near-black or dark brown outline exactly one final-image pixel thick. Keep the outline even and clean, with balanced stepped diagonals that describe a true circle, and no doubled borders, blur, antialiasing or halo. Keep inner lines subtle, the opening round and the brass rim readable. Preserve binary exterior alpha and the source's background treatment.\nThe third reference is the game's shared palette swatches and guides only the color family. Use these as a flexible base, with additional harmonious shades allowed for brass, clear glass and seawater; no exact color constraint.\nDepict only the porthole and its visible glass and sea, without a surrounding wall or extra mechanical attachments or scenery.",
+        "width": 48,
+        "height": 48,
+        "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/9c959610-a2a8-405f-aa66-4afe551e15cc/image.png?v=1795282512208",
+        "style": "default",
+        "tags": [],
+        "contentType": "image/png",
+        "batchId": "633819ec-d8f0-4072-8b9b-360a4b39b6b1",
+        "batchIndex": 5,
+        "batchSize": 9,
+        "action": {
+          "kind": "same-style"
+        }
+      },
+      {
+        "id": "f222d19b-d3e8-4b7b-9eaf-1ff207f099c0",
+        "type": "image",
+        "createdAt": "2026-11-21T17:35:13.029Z",
+        "updatedAt": "2026-11-21T17:35:13.029Z",
+        "prompt": "Create a perfectly circular brass porthole in the cabin of a nineteenth-century submarine, viewed exactly straight on. A clear glass pane shows seawater outside, reaching approximately halfway up the circular opening, with a gently readable sea surface and muted blue-green water below it. Give the glass only subtle restrained reflections so the seawater remains easy to read.\nThe first reference is the original porthole: use it for the subject, placement, overall size, brass and sea color identity and central opening. Refine its coarse silhouette into a geometrically regular circle: equal width and height, symmetric outer contour and a concentric circular glass opening. The brass rim has consistent apparent thickness all around, with restrained fine highlights and warm shaded brass. Preserve the frontal perspective, the center and the cardinal edge alignment. Keep the porthole almost edge-to-edge across both width and height of the square composition, with minimal exterior empty margins.\nThe second reference, the approved Churchill sprite, guides only the finer level of detail, deliberate small pixel clusters, restrained shading and dark outline. Do not transfer his anatomy, clothing, character features or unrelated colors. Draw the porthole at the fine native detail scale of that reference, rather than as enlarged coarse blocks.\nGive the outer silhouette a continuous near-black or dark brown outline exactly one final-image pixel thick. Keep the outline even and clean, with balanced stepped diagonals that describe a true circle, and no doubled borders, blur, antialiasing or halo. Keep inner lines subtle, the opening round and the brass rim readable. Preserve binary exterior alpha and the source's background treatment.\nThe third reference is the game's shared palette swatches and guides only the color family. Use these as a flexible base, with additional harmonious shades allowed for brass, clear glass and seawater; no exact color constraint.\nDepict only the porthole and its visible glass and sea, without a surrounding wall or extra mechanical attachments or scenery.",
+        "width": 48,
+        "height": 48,
+        "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/f222d19b-d3e8-4b7b-9eaf-1ff207f099c0/image.png?v=1795282513029",
+        "style": "default",
+        "tags": [],
+        "contentType": "image/png",
+        "batchId": "633819ec-d8f0-4072-8b9b-360a4b39b6b1",
+        "batchIndex": 6,
+        "batchSize": 9,
+        "action": {
+          "kind": "same-style"
+        }
+      },
+      {
+        "id": "8aff6abf-ae4a-4fa0-a8e9-46edcea5f8c1",
+        "type": "image",
+        "createdAt": "2026-11-21T17:35:13.916Z",
+        "updatedAt": "2026-11-21T17:35:13.916Z",
+        "prompt": "Create a perfectly circular brass porthole in the cabin of a nineteenth-century submarine, viewed exactly straight on. A clear glass pane shows seawater outside, reaching approximately halfway up the circular opening, with a gently readable sea surface and muted blue-green water below it. Give the glass only subtle restrained reflections so the seawater remains easy to read.\nThe first reference is the original porthole: use it for the subject, placement, overall size, brass and sea color identity and central opening. Refine its coarse silhouette into a geometrically regular circle: equal width and height, symmetric outer contour and a concentric circular glass opening. The brass rim has consistent apparent thickness all around, with restrained fine highlights and warm shaded brass. Preserve the frontal perspective, the center and the cardinal edge alignment. Keep the porthole almost edge-to-edge across both width and height of the square composition, with minimal exterior empty margins.\nThe second reference, the approved Churchill sprite, guides only the finer level of detail, deliberate small pixel clusters, restrained shading and dark outline. Do not transfer his anatomy, clothing, character features or unrelated colors. Draw the porthole at the fine native detail scale of that reference, rather than as enlarged coarse blocks.\nGive the outer silhouette a continuous near-black or dark brown outline exactly one final-image pixel thick. Keep the outline even and clean, with balanced stepped diagonals that describe a true circle, and no doubled borders, blur, antialiasing or halo. Keep inner lines subtle, the opening round and the brass rim readable. Preserve binary exterior alpha and the source's background treatment.\nThe third reference is the game's shared palette swatches and guides only the color family. Use these as a flexible base, with additional harmonious shades allowed for brass, clear glass and seawater; no exact color constraint.\nDepict only the porthole and its visible glass and sea, without a surrounding wall or extra mechanical attachments or scenery.",
+        "width": 48,
+        "height": 48,
+        "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/8aff6abf-ae4a-4fa0-a8e9-46edcea5f8c1/image.png?v=1795282513916",
+        "style": "default",
+        "tags": [],
+        "contentType": "image/png",
+        "batchId": "633819ec-d8f0-4072-8b9b-360a4b39b6b1",
+        "batchIndex": 7,
+        "batchSize": 9,
+        "action": {
+          "kind": "same-style"
+        }
+      },
+      {
+        "id": "a166725a-6809-48d5-8a8f-fbf3e7830ce9",
+        "type": "image",
+        "createdAt": "2026-11-21T17:35:14.821Z",
+        "updatedAt": "2026-11-21T17:35:14.821Z",
+        "prompt": "Create a perfectly circular brass porthole in the cabin of a nineteenth-century submarine, viewed exactly straight on. A clear glass pane shows seawater outside, reaching approximately halfway up the circular opening, with a gently readable sea surface and muted blue-green water below it. Give the glass only subtle restrained reflections so the seawater remains easy to read.\nThe first reference is the original porthole: use it for the subject, placement, overall size, brass and sea color identity and central opening. Refine its coarse silhouette into a geometrically regular circle: equal width and height, symmetric outer contour and a concentric circular glass opening. The brass rim has consistent apparent thickness all around, with restrained fine highlights and warm shaded brass. Preserve the frontal perspective, the center and the cardinal edge alignment. Keep the porthole almost edge-to-edge across both width and height of the square composition, with minimal exterior empty margins.\nThe second reference, the approved Churchill sprite, guides only the finer level of detail, deliberate small pixel clusters, restrained shading and dark outline. Do not transfer his anatomy, clothing, character features or unrelated colors. Draw the porthole at the fine native detail scale of that reference, rather than as enlarged coarse blocks.\nGive the outer silhouette a continuous near-black or dark brown outline exactly one final-image pixel thick. Keep the outline even and clean, with balanced stepped diagonals that describe a true circle, and no doubled borders, blur, antialiasing or halo. Keep inner lines subtle, the opening round and the brass rim readable. Preserve binary exterior alpha and the source's background treatment.\nThe third reference is the game's shared palette swatches and guides only the color family. Use these as a flexible base, with additional harmonious shades allowed for brass, clear glass and seawater; no exact color constraint.\nDepict only the porthole and its visible glass and sea, without a surrounding wall or extra mechanical attachments or scenery.",
+        "width": 48,
+        "height": 48,
+        "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/a166725a-6809-48d5-8a8f-fbf3e7830ce9/image.png?v=1795282514821",
+        "style": "default",
+        "tags": [],
+        "contentType": "image/png",
+        "batchId": "633819ec-d8f0-4072-8b9b-360a4b39b6b1",
+        "batchIndex": 8,
+        "batchSize": 9,
+        "action": {
+          "kind": "same-style"
+        }
+      }
+    ],
+    "credits": {
+      "used": 15,
+      "remaining": 330
+    }
+  },
+  "decision": "Pending visual choice; source and scenes unchanged."
+}

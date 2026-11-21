@@ -1,0 +1,232 @@
+﻿[
+    {
+        "label":  "Originale",
+        "file":  "frame-0-original.png",
+        "canvas":  [
+                       48,
+                       48
+                   ],
+        "bounds":  [
+                       0,
+                       0,
+                       48,
+                       48
+                   ],
+        "visible":  [
+                        48,
+                        48
+                    ],
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "size_ok":  true
+    },
+    {
+        "label":  "Variante 1",
+        "file":  "oblo-original-redesign.png",
+        "canvas":  [
+                       48,
+                       48
+                   ],
+        "bounds":  [
+                       2,
+                       2,
+                       45,
+                       46
+                   ],
+        "visible":  [
+                        43,
+                        44
+                    ],
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "size_ok":  false
+    },
+    {
+        "label":  "Variante 2",
+        "file":  "oblo-original-redesign-2.png",
+        "canvas":  [
+                       48,
+                       48
+                   ],
+        "bounds":  [
+                       2,
+                       2,
+                       45,
+                       45
+                   ],
+        "visible":  [
+                        43,
+                        43
+                    ],
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "size_ok":  false
+    },
+    {
+        "label":  "Variante 3",
+        "file":  "oblo-original-redesign-3.png",
+        "canvas":  [
+                       48,
+                       48
+                   ],
+        "bounds":  [
+                       2,
+                       2,
+                       45,
+                       45
+                   ],
+        "visible":  [
+                        43,
+                        43
+                    ],
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "size_ok":  false
+    },
+    {
+        "label":  "Variante 4",
+        "file":  "oblo-original-redesign-4.png",
+        "canvas":  [
+                       48,
+                       48
+                   ],
+        "bounds":  [
+                       2,
+                       2,
+                       45,
+                       46
+                   ],
+        "visible":  [
+                        43,
+                        44
+                    ],
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "size_ok":  false
+    },
+    {
+        "label":  "Variante 5",
+        "file":  "oblo-original-redesign-5.png",
+        "canvas":  [
+                       48,
+                       48
+                   ],
+        "bounds":  [
+                       2,
+                       2,
+                       45,
+                       46
+                   ],
+        "visible":  [
+                        43,
+                        44
+                    ],
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "size_ok":  false
+    },
+    {
+        "label":  "Variante 6",
+        "file":  "oblo-original-redesign-6.png",
+        "canvas":  [
+                       48,
+                       48
+                   ],
+        "bounds":  [
+                       2,
+                       2,
+                       45,
+                       46
+                   ],
+        "visible":  [
+                        43,
+                        44
+                    ],
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "size_ok":  false
+    },
+    {
+        "label":  "Variante 7",
+        "file":  "oblo-original-redesign-7.png",
+        "canvas":  [
+                       48,
+                       48
+                   ],
+        "bounds":  [
+                       2,
+                       2,
+                       45,
+                       46
+                   ],
+        "visible":  [
+                        43,
+                        44
+                    ],
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "size_ok":  false
+    },
+    {
+        "label":  "Variante 8",
+        "file":  "oblo-original-redesign-8.png",
+        "canvas":  [
+                       48,
+                       48
+                   ],
+        "bounds":  [
+                       2,
+                       2,
+                       45,
+                       45
+                   ],
+        "visible":  [
+                        43,
+                        43
+                    ],
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "size_ok":  false
+    },
+    {
+        "label":  "Variante 9",
+        "file":  "oblo-original-redesign-9.png",
+        "canvas":  [
+                       48,
+                       48
+                   ],
+        "bounds":  [
+                       2,
+                       2,
+                       45,
+                       46
+                   ],
+        "visible":  [
+                        43,
+                        44
+                    ],
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "size_ok":  false
+    }
+]

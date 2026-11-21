@@ -76,29 +76,54 @@ name_key = "ep01.inventory.key.name"
 description_key = "ep01.inventory.key.examine"
 icon = ExtResource("key_inventory_icon")
 
+; Ciclo locale: si muove solo l'acqua, con cornice e riflessi fissi.
 [sub_resource type="AtlasTexture" id="oblo1_frame_0"]
 atlas = ExtResource("oblo1_sheet")
-region = Rect2(0, 0, 48, 48)
+region = Rect2(0, 0, 43, 43)
 
 [sub_resource type="AtlasTexture" id="oblo1_frame_1"]
 atlas = ExtResource("oblo1_sheet")
-region = Rect2(48, 0, 48, 48)
+region = Rect2(43, 0, 43, 43)
 
 [sub_resource type="AtlasTexture" id="oblo1_frame_2"]
 atlas = ExtResource("oblo1_sheet")
-region = Rect2(96, 0, 48, 48)
+region = Rect2(86, 0, 43, 43)
 
 [sub_resource type="AtlasTexture" id="oblo1_frame_3"]
 atlas = ExtResource("oblo1_sheet")
-region = Rect2(144, 0, 48, 48)
+region = Rect2(129, 0, 43, 43)
 
 [sub_resource type="AtlasTexture" id="oblo1_frame_4"]
 atlas = ExtResource("oblo1_sheet")
-region = Rect2(192, 0, 48, 48)
+region = Rect2(172, 0, 43, 43)
 
 [sub_resource type="AtlasTexture" id="oblo1_frame_5"]
 atlas = ExtResource("oblo1_sheet")
-region = Rect2(240, 0, 48, 48)
+region = Rect2(215, 0, 43, 43)
+
+[sub_resource type="AtlasTexture" id="oblo1_frame_6"]
+atlas = ExtResource("oblo1_sheet")
+region = Rect2(258, 0, 43, 43)
+
+[sub_resource type="AtlasTexture" id="oblo1_frame_7"]
+atlas = ExtResource("oblo1_sheet")
+region = Rect2(301, 0, 43, 43)
+
+[sub_resource type="AtlasTexture" id="oblo1_frame_8"]
+atlas = ExtResource("oblo1_sheet")
+region = Rect2(344, 0, 43, 43)
+
+[sub_resource type="AtlasTexture" id="oblo1_frame_9"]
+atlas = ExtResource("oblo1_sheet")
+region = Rect2(387, 0, 43, 43)
+
+[sub_resource type="AtlasTexture" id="oblo1_frame_10"]
+atlas = ExtResource("oblo1_sheet")
+region = Rect2(430, 0, 43, 43)
+
+[sub_resource type="AtlasTexture" id="oblo1_frame_11"]
+atlas = ExtResource("oblo1_sheet")
+region = Rect2(473, 0, 43, 43)
 
 [sub_resource type="SpriteFrames" id="oblo1_frames"]
 animations = [{
@@ -120,10 +145,28 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("oblo1_frame_5")
+}, {
+"duration": 1.0,
+"texture": SubResource("oblo1_frame_6")
+}, {
+"duration": 1.0,
+"texture": SubResource("oblo1_frame_7")
+}, {
+"duration": 1.0,
+"texture": SubResource("oblo1_frame_8")
+}, {
+"duration": 1.0,
+"texture": SubResource("oblo1_frame_9")
+}, {
+"duration": 1.0,
+"texture": SubResource("oblo1_frame_10")
+}, {
+"duration": 1.0,
+"texture": SubResource("oblo1_frame_11")
 }],
-"loop": 1,
+"loop": true,
 "name": &"default",
-"speed": 2.5
+"speed": 13.0
 }]
 
 [sub_resource type="Resource" id="interphone_greeting"]
@@ -237,6 +280,8 @@ examine_response = "ep01.cabin.porthole.examine"
 interaction_response = "ep01.cabin.porthole.interact"
 
 [node name="Visual" type="AnimatedSprite2D" parent="oblo1" unique_id=987567133]
+; Centra il soggetto ritagliato 43×43 nell'ingombro originale 48×48.
+position = Vector2(2.5, 2.5)
 sprite_frames = SubResource("oblo1_frames")
 autoplay = "default"
 centered = false
@@ -250,8 +295,12 @@ examine_response = "ep01.cabin.porthole.examine"
 interaction_response = "ep01.cabin.porthole.interact"
 
 [node name="Visual" type="AnimatedSprite2D" parent="oblo2" unique_id=1334300312]
+; Mantiene lo stesso allineamento del primo oblò senza ridimensionare i pixel.
+position = Vector2(2.5, 2.5)
 sprite_frames = SubResource("oblo1_frames")
 autoplay = "default"
+; Sfasa l'acqua di un terzo di ciclo, mantenendo la stessa velocità del primo oblò.
+frame = 4
 centered = false
 
 [node name="interphone" type="Node2D" parent="." unique_id=1378675226]

@@ -1,0 +1,194 @@
+{
+  "method": "generate_sprites_in_style",
+  "size": 48,
+  "prompt": "Create a submarine cabin porthole seen straight on, with a brass rim and clear glass. Through the glass the seawater outside rises to approximately halfway up the opening, with a readable waterline around the middle. This is the first still frame for the existing porthole animation.\nUse the first reference for the subject, recognizable rounded silhouette, proportions, frontal perspective, composition, brass tones, placement of the opening and central water level. Keep the design simple and recognizable; refine the brass material and the distinction between the clear upper glass and seawater in the lower half. Preserve the original flat frontal view and modest rim thickness. Do not add scenery, creatures, pipes or unrelated functional parts.\nUse the second reference, Churchill, only for the finer detail, deliberate pixel clusters, restrained shading and dark outline treatment. Do not transfer his anatomy, clothing or colors. The third reference, the approved quill and inkwell, further guides the fine dark outline and restrained material shading, not the subject.\nGive the outer silhouette a continuous very dark brown or near-black outline exactly one final-image pixel thick, with stepped pixel diagonals and no doubled border, antialiasing, blur or halo. Keep internal lines subordinate. Keep the source's binary transparency around the object and do not add a surrounding wall. The clear glass must still show the sea beyond; it is not an empty cutout.\nThe porthole occupies almost the full width and height of the square composition, with only narrow clear margins. Keep its center and cardinal edge landmarks aligned with the first reference.\nThe fourth reference contains the shared game palette swatches and guides only colors. Use it as a flexible base, allowing additional harmonious shades for brass, glass and seawater; exact palette matching is not required.",
+  "inputs": [
+    "output/spritefusion/oblo/first-frame-48/frame-0-original.png",
+    "godot/assets/graphics/characters/churchill/churchill-stand.png",
+    "godot/assets/graphics/ep01_cabin/feather.png",
+    "godot/palette/1899-base-128-swatches.png"
+  ],
+  "result": {
+    "request_id": "req_0564ecbf-4c58-41c1-af08-476c84fae474",
+    "status": "succeeded",
+    "output_count": 9,
+    "outputs": [
+      {
+        "id": "cb38a83e-8716-493e-a90c-bc451dd0b74a",
+        "type": "image",
+        "createdAt": "2026-11-21T17:20:17.525Z",
+        "updatedAt": "2026-11-21T17:20:17.525Z",
+        "prompt": "Create a submarine cabin porthole seen straight on, with a brass rim and clear glass. Through the glass the seawater outside rises to approximately halfway up the opening, with a readable waterline around the middle. This is the first still frame for the existing porthole animation.\nUse the first reference for the subject, recognizable rounded silhouette, proportions, frontal perspective, composition, brass tones, placement of the opening and central water level. Keep the design simple and recognizable; refine the brass material and the distinction between the clear upper glass and seawater in the lower half. Preserve the original flat frontal view and modest rim thickness. Do not add scenery, creatures, pipes or unrelated functional parts.\nUse the second reference, Churchill, only for the finer detail, deliberate pixel clusters, restrained shading and dark outline treatment. Do not transfer his anatomy, clothing or colors. The third reference, the approved quill and inkwell, further guides the fine dark outline and restrained material shading, not the subject.\nGive the outer silhouette a continuous very dark brown or near-black outline exactly one final-image pixel thick, with stepped pixel diagonals and no doubled border, antialiasing, blur or halo. Keep internal lines subordinate. Keep the source's binary transparency around the object and do not add a surrounding wall. The clear glass must still show the sea beyond; it is not an empty cutout.\nThe porthole occupies almost the full width and height of the square composition, with only narrow clear margins. Keep its center and cardinal edge landmarks aligned with the first reference.\nThe fourth reference contains the shared game palette swatches and guides only colors. Use it as a flexible base, allowing additional harmonious shades for brass, glass and seawater; exact palette matching is not required.",
+        "width": 48,
+        "height": 48,
+        "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/cb38a83e-8716-493e-a90c-bc451dd0b74a/image.png?v=1795281617525",
+        "style": "default",
+        "tags": [],
+        "contentType": "image/png",
+        "batchId": "bdd35d2e-1b6b-4086-b128-fc96ac8f6a7d",
+        "batchIndex": 0,
+        "batchSize": 9,
+        "action": {
+          "kind": "same-style"
+        }
+      },
+      {
+        "id": "99fb571d-27cb-475a-96cc-b5f58475c59c",
+        "type": "image",
+        "createdAt": "2026-11-21T17:20:18.317Z",
+        "updatedAt": "2026-11-21T17:20:18.317Z",
+        "prompt": "Create a submarine cabin porthole seen straight on, with a brass rim and clear glass. Through the glass the seawater outside rises to approximately halfway up the opening, with a readable waterline around the middle. This is the first still frame for the existing porthole animation.\nUse the first reference for the subject, recognizable rounded silhouette, proportions, frontal perspective, composition, brass tones, placement of the opening and central water level. Keep the design simple and recognizable; refine the brass material and the distinction between the clear upper glass and seawater in the lower half. Preserve the original flat frontal view and modest rim thickness. Do not add scenery, creatures, pipes or unrelated functional parts.\nUse the second reference, Churchill, only for the finer detail, deliberate pixel clusters, restrained shading and dark outline treatment. Do not transfer his anatomy, clothing or colors. The third reference, the approved quill and inkwell, further guides the fine dark outline and restrained material shading, not the subject.\nGive the outer silhouette a continuous very dark brown or near-black outline exactly one final-image pixel thick, with stepped pixel diagonals and no doubled border, antialiasing, blur or halo. Keep internal lines subordinate. Keep the source's binary transparency around the object and do not add a surrounding wall. The clear glass must still show the sea beyond; it is not an empty cutout.\nThe porthole occupies almost the full width and height of the square composition, with only narrow clear margins. Keep its center and cardinal edge landmarks aligned with the first reference.\nThe fourth reference contains the shared game palette swatches and guides only colors. Use it as a flexible base, allowing additional harmonious shades for brass, glass and seawater; exact palette matching is not required.",
+        "width": 48,
+        "height": 48,
+        "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/99fb571d-27cb-475a-96cc-b5f58475c59c/image.png?v=1795281618317",
+        "style": "default",
+        "tags": [],
+        "contentType": "image/png",
+        "batchId": "bdd35d2e-1b6b-4086-b128-fc96ac8f6a7d",
+        "batchIndex": 1,
+        "batchSize": 9,
+        "action": {
+          "kind": "same-style"
+        }
+      },
+      {
+        "id": "81d24b75-f276-4855-8c66-d33340f66f08",
+        "type": "image",
+        "createdAt": "2026-11-21T17:20:19.112Z",
+        "updatedAt": "2026-11-21T17:20:19.112Z",
+        "prompt": "Create a submarine cabin porthole seen straight on, with a brass rim and clear glass. Through the glass the seawater outside rises to approximately halfway up the opening, with a readable waterline around the middle. This is the first still frame for the existing porthole animation.\nUse the first reference for the subject, recognizable rounded silhouette, proportions, frontal perspective, composition, brass tones, placement of the opening and central water level. Keep the design simple and recognizable; refine the brass material and the distinction between the clear upper glass and seawater in the lower half. Preserve the original flat frontal view and modest rim thickness. Do not add scenery, creatures, pipes or unrelated functional parts.\nUse the second reference, Churchill, only for the finer detail, deliberate pixel clusters, restrained shading and dark outline treatment. Do not transfer his anatomy, clothing or colors. The third reference, the approved quill and inkwell, further guides the fine dark outline and restrained material shading, not the subject.\nGive the outer silhouette a continuous very dark brown or near-black outline exactly one final-image pixel thick, with stepped pixel diagonals and no doubled border, antialiasing, blur or halo. Keep internal lines subordinate. Keep the source's binary transparency around the object and do not add a surrounding wall. The clear glass must still show the sea beyond; it is not an empty cutout.\nThe porthole occupies almost the full width and height of the square composition, with only narrow clear margins. Keep its center and cardinal edge landmarks aligned with the first reference.\nThe fourth reference contains the shared game palette swatches and guides only colors. Use it as a flexible base, allowing additional harmonious shades for brass, glass and seawater; exact palette matching is not required.",
+        "width": 48,
+        "height": 48,
+        "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/81d24b75-f276-4855-8c66-d33340f66f08/image.png?v=1795281619112",
+        "style": "default",
+        "tags": [],
+        "contentType": "image/png",
+        "batchId": "bdd35d2e-1b6b-4086-b128-fc96ac8f6a7d",
+        "batchIndex": 2,
+        "batchSize": 9,
+        "action": {
+          "kind": "same-style"
+        }
+      },
+      {
+        "id": "bc500b45-0e6a-46f0-a540-2d71f9ba85b0",
+        "type": "image",
+        "createdAt": "2026-11-21T17:20:19.975Z",
+        "updatedAt": "2026-11-21T17:20:19.975Z",
+        "prompt": "Create a submarine cabin porthole seen straight on, with a brass rim and clear glass. Through the glass the seawater outside rises to approximately halfway up the opening, with a readable waterline around the middle. This is the first still frame for the existing porthole animation.\nUse the first reference for the subject, recognizable rounded silhouette, proportions, frontal perspective, composition, brass tones, placement of the opening and central water level. Keep the design simple and recognizable; refine the brass material and the distinction between the clear upper glass and seawater in the lower half. Preserve the original flat frontal view and modest rim thickness. Do not add scenery, creatures, pipes or unrelated functional parts.\nUse the second reference, Churchill, only for the finer detail, deliberate pixel clusters, restrained shading and dark outline treatment. Do not transfer his anatomy, clothing or colors. The third reference, the approved quill and inkwell, further guides the fine dark outline and restrained material shading, not the subject.\nGive the outer silhouette a continuous very dark brown or near-black outline exactly one final-image pixel thick, with stepped pixel diagonals and no doubled border, antialiasing, blur or halo. Keep internal lines subordinate. Keep the source's binary transparency around the object and do not add a surrounding wall. The clear glass must still show the sea beyond; it is not an empty cutout.\nThe porthole occupies almost the full width and height of the square composition, with only narrow clear margins. Keep its center and cardinal edge landmarks aligned with the first reference.\nThe fourth reference contains the shared game palette swatches and guides only colors. Use it as a flexible base, allowing additional harmonious shades for brass, glass and seawater; exact palette matching is not required.",
+        "width": 48,
+        "height": 48,
+        "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/bc500b45-0e6a-46f0-a540-2d71f9ba85b0/image.png?v=1795281619975",
+        "style": "default",
+        "tags": [],
+        "contentType": "image/png",
+        "batchId": "bdd35d2e-1b6b-4086-b128-fc96ac8f6a7d",
+        "batchIndex": 3,
+        "batchSize": 9,
+        "action": {
+          "kind": "same-style"
+        }
+      },
+      {
+        "id": "986fdb07-ce6b-4bf5-910f-e6f777deec75",
+        "type": "image",
+        "createdAt": "2026-11-21T17:20:20.755Z",
+        "updatedAt": "2026-11-21T17:20:20.755Z",
+        "prompt": "Create a submarine cabin porthole seen straight on, with a brass rim and clear glass. Through the glass the seawater outside rises to approximately halfway up the opening, with a readable waterline around the middle. This is the first still frame for the existing porthole animation.\nUse the first reference for the subject, recognizable rounded silhouette, proportions, frontal perspective, composition, brass tones, placement of the opening and central water level. Keep the design simple and recognizable; refine the brass material and the distinction between the clear upper glass and seawater in the lower half. Preserve the original flat frontal view and modest rim thickness. Do not add scenery, creatures, pipes or unrelated functional parts.\nUse the second reference, Churchill, only for the finer detail, deliberate pixel clusters, restrained shading and dark outline treatment. Do not transfer his anatomy, clothing or colors. The third reference, the approved quill and inkwell, further guides the fine dark outline and restrained material shading, not the subject.\nGive the outer silhouette a continuous very dark brown or near-black outline exactly one final-image pixel thick, with stepped pixel diagonals and no doubled border, antialiasing, blur or halo. Keep internal lines subordinate. Keep the source's binary transparency around the object and do not add a surrounding wall. The clear glass must still show the sea beyond; it is not an empty cutout.\nThe porthole occupies almost the full width and height of the square composition, with only narrow clear margins. Keep its center and cardinal edge landmarks aligned with the first reference.\nThe fourth reference contains the shared game palette swatches and guides only colors. Use it as a flexible base, allowing additional harmonious shades for brass, glass and seawater; exact palette matching is not required.",
+        "width": 48,
+        "height": 48,
+        "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/986fdb07-ce6b-4bf5-910f-e6f777deec75/image.png?v=1795281620755",
+        "style": "default",
+        "tags": [],
+        "contentType": "image/png",
+        "batchId": "bdd35d2e-1b6b-4086-b128-fc96ac8f6a7d",
+        "batchIndex": 4,
+        "batchSize": 9,
+        "action": {
+          "kind": "same-style"
+        }
+      },
+      {
+        "id": "ce4b3f55-95a4-4d1f-9b2b-31b3a289d747",
+        "type": "image",
+        "createdAt": "2026-11-21T17:20:21.549Z",
+        "updatedAt": "2026-11-21T17:20:21.549Z",
+        "prompt": "Create a submarine cabin porthole seen straight on, with a brass rim and clear glass. Through the glass the seawater outside rises to approximately halfway up the opening, with a readable waterline around the middle. This is the first still frame for the existing porthole animation.\nUse the first reference for the subject, recognizable rounded silhouette, proportions, frontal perspective, composition, brass tones, placement of the opening and central water level. Keep the design simple and recognizable; refine the brass material and the distinction between the clear upper glass and seawater in the lower half. Preserve the original flat frontal view and modest rim thickness. Do not add scenery, creatures, pipes or unrelated functional parts.\nUse the second reference, Churchill, only for the finer detail, deliberate pixel clusters, restrained shading and dark outline treatment. Do not transfer his anatomy, clothing or colors. The third reference, the approved quill and inkwell, further guides the fine dark outline and restrained material shading, not the subject.\nGive the outer silhouette a continuous very dark brown or near-black outline exactly one final-image pixel thick, with stepped pixel diagonals and no doubled border, antialiasing, blur or halo. Keep internal lines subordinate. Keep the source's binary transparency around the object and do not add a surrounding wall. The clear glass must still show the sea beyond; it is not an empty cutout.\nThe porthole occupies almost the full width and height of the square composition, with only narrow clear margins. Keep its center and cardinal edge landmarks aligned with the first reference.\nThe fourth reference contains the shared game palette swatches and guides only colors. Use it as a flexible base, allowing additional harmonious shades for brass, glass and seawater; exact palette matching is not required.",
+        "width": 48,
+        "height": 48,
+        "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/ce4b3f55-95a4-4d1f-9b2b-31b3a289d747/image.png?v=1795281621549",
+        "style": "default",
+        "tags": [],
+        "contentType": "image/png",
+        "batchId": "bdd35d2e-1b6b-4086-b128-fc96ac8f6a7d",
+        "batchIndex": 5,
+        "batchSize": 9,
+        "action": {
+          "kind": "same-style"
+        }
+      },
+      {
+        "id": "6930fcc2-a45d-4943-bcfd-3cc02c969a8b",
+        "type": "image",
+        "createdAt": "2026-11-21T17:20:22.315Z",
+        "updatedAt": "2026-11-21T17:20:22.315Z",
+        "prompt": "Create a submarine cabin porthole seen straight on, with a brass rim and clear glass. Through the glass the seawater outside rises to approximately halfway up the opening, with a readable waterline around the middle. This is the first still frame for the existing porthole animation.\nUse the first reference for the subject, recognizable rounded silhouette, proportions, frontal perspective, composition, brass tones, placement of the opening and central water level. Keep the design simple and recognizable; refine the brass material and the distinction between the clear upper glass and seawater in the lower half. Preserve the original flat frontal view and modest rim thickness. Do not add scenery, creatures, pipes or unrelated functional parts.\nUse the second reference, Churchill, only for the finer detail, deliberate pixel clusters, restrained shading and dark outline treatment. Do not transfer his anatomy, clothing or colors. The third reference, the approved quill and inkwell, further guides the fine dark outline and restrained material shading, not the subject.\nGive the outer silhouette a continuous very dark brown or near-black outline exactly one final-image pixel thick, with stepped pixel diagonals and no doubled border, antialiasing, blur or halo. Keep internal lines subordinate. Keep the source's binary transparency around the object and do not add a surrounding wall. The clear glass must still show the sea beyond; it is not an empty cutout.\nThe porthole occupies almost the full width and height of the square composition, with only narrow clear margins. Keep its center and cardinal edge landmarks aligned with the first reference.\nThe fourth reference contains the shared game palette swatches and guides only colors. Use it as a flexible base, allowing additional harmonious shades for brass, glass and seawater; exact palette matching is not required.",
+        "width": 48,
+        "height": 48,
+        "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/6930fcc2-a45d-4943-bcfd-3cc02c969a8b/image.png?v=1795281622315",
+        "style": "default",
+        "tags": [],
+        "contentType": "image/png",
+        "batchId": "bdd35d2e-1b6b-4086-b128-fc96ac8f6a7d",
+        "batchIndex": 6,
+        "batchSize": 9,
+        "action": {
+          "kind": "same-style"
+        }
+      },
+      {
+        "id": "8b6f937d-aa7e-4520-9ddd-6f84d0f8943d",
+        "type": "image",
+        "createdAt": "2026-11-21T17:20:23.064Z",
+        "updatedAt": "2026-11-21T17:20:23.064Z",
+        "prompt": "Create a submarine cabin porthole seen straight on, with a brass rim and clear glass. Through the glass the seawater outside rises to approximately halfway up the opening, with a readable waterline around the middle. This is the first still frame for the existing porthole animation.\nUse the first reference for the subject, recognizable rounded silhouette, proportions, frontal perspective, composition, brass tones, placement of the opening and central water level. Keep the design simple and recognizable; refine the brass material and the distinction between the clear upper glass and seawater in the lower half. Preserve the original flat frontal view and modest rim thickness. Do not add scenery, creatures, pipes or unrelated functional parts.\nUse the second reference, Churchill, only for the finer detail, deliberate pixel clusters, restrained shading and dark outline treatment. Do not transfer his anatomy, clothing or colors. The third reference, the approved quill and inkwell, further guides the fine dark outline and restrained material shading, not the subject.\nGive the outer silhouette a continuous very dark brown or near-black outline exactly one final-image pixel thick, with stepped pixel diagonals and no doubled border, antialiasing, blur or halo. Keep internal lines subordinate. Keep the source's binary transparency around the object and do not add a surrounding wall. The clear glass must still show the sea beyond; it is not an empty cutout.\nThe porthole occupies almost the full width and height of the square composition, with only narrow clear margins. Keep its center and cardinal edge landmarks aligned with the first reference.\nThe fourth reference contains the shared game palette swatches and guides only colors. Use it as a flexible base, allowing additional harmonious shades for brass, glass and seawater; exact palette matching is not required.",
+        "width": 48,
+        "height": 48,
+        "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/8b6f937d-aa7e-4520-9ddd-6f84d0f8943d/image.png?v=1795281623064",
+        "style": "default",
+        "tags": [],
+        "contentType": "image/png",
+        "batchId": "bdd35d2e-1b6b-4086-b128-fc96ac8f6a7d",
+        "batchIndex": 7,
+        "batchSize": 9,
+        "action": {
+          "kind": "same-style"
+        }
+      },
+      {
+        "id": "250d9253-a2a8-498d-9120-4f991afe504c",
+        "type": "image",
+        "createdAt": "2026-11-21T17:20:23.899Z",
+        "updatedAt": "2026-11-21T17:20:23.899Z",
+        "prompt": "Create a submarine cabin porthole seen straight on, with a brass rim and clear glass. Through the glass the seawater outside rises to approximately halfway up the opening, with a readable waterline around the middle. This is the first still frame for the existing porthole animation.\nUse the first reference for the subject, recognizable rounded silhouette, proportions, frontal perspective, composition, brass tones, placement of the opening and central water level. Keep the design simple and recognizable; refine the brass material and the distinction between the clear upper glass and seawater in the lower half. Preserve the original flat frontal view and modest rim thickness. Do not add scenery, creatures, pipes or unrelated functional parts.\nUse the second reference, Churchill, only for the finer detail, deliberate pixel clusters, restrained shading and dark outline treatment. Do not transfer his anatomy, clothing or colors. The third reference, the approved quill and inkwell, further guides the fine dark outline and restrained material shading, not the subject.\nGive the outer silhouette a continuous very dark brown or near-black outline exactly one final-image pixel thick, with stepped pixel diagonals and no doubled border, antialiasing, blur or halo. Keep internal lines subordinate. Keep the source's binary transparency around the object and do not add a surrounding wall. The clear glass must still show the sea beyond; it is not an empty cutout.\nThe porthole occupies almost the full width and height of the square composition, with only narrow clear margins. Keep its center and cardinal edge landmarks aligned with the first reference.\nThe fourth reference contains the shared game palette swatches and guides only colors. Use it as a flexible base, allowing additional harmonious shades for brass, glass and seawater; exact palette matching is not required.",
+        "width": 48,
+        "height": 48,
+        "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/250d9253-a2a8-498d-9120-4f991afe504c/image.png?v=1795281623899",
+        "style": "default",
+        "tags": [],
+        "contentType": "image/png",
+        "batchId": "bdd35d2e-1b6b-4086-b128-fc96ac8f6a7d",
+        "batchIndex": 8,
+        "batchSize": 9,
+        "action": {
+          "kind": "same-style"
+        }
+      }
+    ],
+    "credits": {
+      "used": 15,
+      "remaining": 345
+    }
+  },
+  "decision": "Pending visual selection; original sheet and Godot scene unchanged."
+}
