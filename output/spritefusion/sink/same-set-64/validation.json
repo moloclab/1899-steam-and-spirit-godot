@@ -1,0 +1,212 @@
+﻿{
+    "value":  [
+                  {
+                      "variant":  1,
+                      "asset_id":  "1e34260c-0c97-452e-90c2-6b349faa034b",
+                      "file":  "godot/assets/graphics/ep01_cabin/sink-redesign.png",
+                      "canvas":  [
+                                     64,
+                                     64
+                                 ],
+                      "visible_bounds":  [
+                                             13,
+                                             1,
+                                             38,
+                                             62
+                                         ],
+                      "size_conforms":  false,
+                      "alpha_values":  [
+                                           0,
+                                           255
+                                       ],
+                      "opaque_colors":  25,
+                      "decision":  "discarded by user; local variant deleted",
+                      "outline":  "see review.md"
+                  },
+                  {
+                      "variant":  2,
+                      "asset_id":  "d736f402-2910-4b7b-b2a1-8352447939c2",
+                      "file":  "godot/assets/graphics/ep01_cabin/sink-redesign-2.png",
+                      "canvas":  [
+                                     64,
+                                     64
+                                 ],
+                      "visible_bounds":  [
+                                             13,
+                                             1,
+                                             37,
+                                             62
+                                         ],
+                      "size_conforms":  false,
+                      "alpha_values":  [
+                                           0,
+                                           255
+                                       ],
+                      "opaque_colors":  31,
+                      "decision":  "discarded by user; local variant deleted",
+                      "outline":  "see review.md"
+                  },
+                  {
+                      "variant":  3,
+                      "asset_id":  "9e0257b0-2214-4417-9aeb-0dcf0280d45f",
+                      "file":  "godot/assets/graphics/ep01_cabin/sink-redesign-3.png",
+                      "canvas":  [
+                                     64,
+                                     64
+                                 ],
+                      "visible_bounds":  [
+                                             13,
+                                             1,
+                                             38,
+                                             62
+                                         ],
+                      "size_conforms":  false,
+                      "alpha_values":  [
+                                           0,
+                                           255
+                                       ],
+                      "opaque_colors":  29,
+                      "decision":  "discarded by user; local variant deleted",
+                      "outline":  "see review.md"
+                  },
+                  {
+                      "variant":  4,
+                      "asset_id":  "a0c1c191-4c76-4444-9af5-841fe89838a8",
+                      "file":  "godot/assets/graphics/ep01_cabin/sink-redesign-4.png",
+                      "canvas":  [
+                                     64,
+                                     64
+                                 ],
+                      "visible_bounds":  [
+                                             14,
+                                             1,
+                                             36,
+                                             62
+                                         ],
+                      "size_conforms":  false,
+                      "alpha_values":  [
+                                           0,
+                                           255
+                                       ],
+                      "opaque_colors":  24,
+                      "decision":  "selected by user with size exception; transparent margins cropped; integrated as sink.png",
+                      "outline":  "see review.md"
+                  },
+                  {
+                      "variant":  5,
+                      "asset_id":  "572a97a4-5a9a-445d-a7a0-1905c1777c31",
+                      "file":  "godot/assets/graphics/ep01_cabin/sink-redesign-5.png",
+                      "canvas":  [
+                                     64,
+                                     64
+                                 ],
+                      "visible_bounds":  [
+                                             14,
+                                             2,
+                                             36,
+                                             60
+                                         ],
+                      "size_conforms":  false,
+                      "alpha_values":  [
+                                           0,
+                                           255
+                                       ],
+                      "opaque_colors":  26,
+                      "decision":  "discarded by user; local variant deleted",
+                      "outline":  "see review.md"
+                  },
+                  {
+                      "variant":  6,
+                      "asset_id":  "335a5cf6-b693-4704-8989-1a901723748e",
+                      "file":  "godot/assets/graphics/ep01_cabin/sink-redesign-6.png",
+                      "canvas":  [
+                                     64,
+                                     64
+                                 ],
+                      "visible_bounds":  [
+                                             14,
+                                             2,
+                                             35,
+                                             60
+                                         ],
+                      "size_conforms":  false,
+                      "alpha_values":  [
+                                           0,
+                                           255
+                                       ],
+                      "opaque_colors":  27,
+                      "decision":  "discarded by user; local variant deleted",
+                      "outline":  "see review.md"
+                  },
+                  {
+                      "variant":  7,
+                      "asset_id":  "39ca66f2-b057-4445-96de-f71f0fca7683",
+                      "file":  "godot/assets/graphics/ep01_cabin/sink-redesign-7.png",
+                      "canvas":  [
+                                     64,
+                                     64
+                                 ],
+                      "visible_bounds":  [
+                                             14,
+                                             2,
+                                             36,
+                                             60
+                                         ],
+                      "size_conforms":  false,
+                      "alpha_values":  [
+                                           0,
+                                           255
+                                       ],
+                      "opaque_colors":  32,
+                      "decision":  "discarded by user; local variant deleted",
+                      "outline":  "see review.md"
+                  },
+                  {
+                      "variant":  8,
+                      "asset_id":  "4a92bcf6-9574-48f3-bc35-d0feef0ccfd2",
+                      "file":  "godot/assets/graphics/ep01_cabin/sink-redesign-8.png",
+                      "canvas":  [
+                                     64,
+                                     64
+                                 ],
+                      "visible_bounds":  [
+                                             14,
+                                             2,
+                                             36,
+                                             60
+                                         ],
+                      "size_conforms":  false,
+                      "alpha_values":  [
+                                           0,
+                                           255
+                                       ],
+                      "opaque_colors":  21,
+                      "decision":  "discarded by user; local variant deleted",
+                      "outline":  "see review.md"
+                  },
+                  {
+                      "variant":  9,
+                      "asset_id":  "ce69274c-619f-42af-9aa1-f8668b5f1416",
+                      "file":  "godot/assets/graphics/ep01_cabin/sink-redesign-9.png",
+                      "canvas":  [
+                                     64,
+                                     64
+                                 ],
+                      "visible_bounds":  [
+                                             14,
+                                             2,
+                                             35,
+                                             60
+                                         ],
+                      "size_conforms":  false,
+                      "alpha_values":  [
+                                           0,
+                                           255
+                                       ],
+                      "opaque_colors":  23,
+                      "decision":  "discarded by user; local variant deleted",
+                      "outline":  "see review.md"
+                  }
+              ],
+    "Count":  9
+}

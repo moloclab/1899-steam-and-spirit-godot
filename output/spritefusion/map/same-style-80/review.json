@@ -1,0 +1,15 @@
+{
+  "decision": "awaiting_user_selection_and_explicit_size_exception",
+  "recommended_variant": 6,
+  "original_visible_size": [60, 72],
+  "allowed_visible_width": [57, 63],
+  "allowed_visible_height": [69, 75],
+  "all_variants_outside_size_tolerance": true,
+  "outline_review": "Visual inspection of the nearest-neighbor comparison and native variant 6 shows a dark one-pixel outer contour around the wooden frame, with thicker inner structural frame details. Confirm again on the selected variant before integration.",
+  "alpha_review": "All native variants have binary alpha 0 and 255, as recorded in validation.json.",
+  "visual_notes": "All variants show a brown ink technical manta-shaped submarine drawing on warm framed parchment. Variant 6 has a clean, readable silhouette. Some candidates introduce hanging loops, a functional addition absent from the source, which had a solid top tab.",
+  "scene_review": "Scene uses map.png for the map after collection of the magnet, and map_magnet.png for the initial state. Neither state nor scene references were modified. In-scene integration review remains pending selection.",
+  "original_preserved": true,
+  "native_outputs_unmodified": true,
+  "generation_cost_credits": 15
+}

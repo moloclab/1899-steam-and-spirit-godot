@@ -1,0 +1,57 @@
+{
+  "request_id": "req_b15207fa-b4ec-4caf-958f-1c2fd8745d26",
+  "status": "succeeded",
+  "output_count": 2,
+  "outputs": [
+    {
+      "id": "0c27a2cb-af57-492f-b01c-6292d02b99af",
+      "type": "image",
+      "createdAt": "2026-11-21T14:38:03.371Z",
+      "updatedAt": "2026-11-21T14:38:03.371Z",
+      "prompt": "Edit this exact closed bronze submarine cabin door with only two targeted changes. Add a small functional bronze horizontal lever handle with a short mounting plate on the right-hand side of the door at mid-height, clearly readable and contained inside the existing outer silhouette. Make the outer frame and matching inner panel corners noticeably less rounded: a predominantly rectangular door with long straight top, bottom and side edges and only short stepped chamfers at the corners. Preserve the current door width and height, placement in the composition, bottom baseline, frontal perspective, round upper porthole and its position, horizontal panel divisions, muted brown bronze colors, subtle material shading, and current detail level. Keep the silhouette's continuous very dark outline exactly one final-image pixel thick; internal frame lines subordinate, no thicker black border, blur, antialiasing or halo. Preserve the existing transparency treatment and surrounding empty space. Do not add any other hardware, decorations, objects, or change the door's proportions.",
+      "width": 76,
+      "height": 116,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/0c27a2cb-af57-492f-b01c-6292d02b99af/image.png?v=1795271883371",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "067323df-389b-4ff1-9cf2-34f22a33e68a",
+      "batchIndex": 0,
+      "batchSize": 2,
+      "action": {
+        "kind": "edit",
+        "sourceImageAssetId": "59e5d5bc-8dcb-4ed1-95ab-c553d33b65b5",
+        "sourceImageAssetIds": [
+          "59e5d5bc-8dcb-4ed1-95ab-c553d33b65b5"
+        ]
+      }
+    },
+    {
+      "id": "0dda4d5a-3d48-492c-a79f-b188a6e12dc5",
+      "type": "image",
+      "createdAt": "2026-11-21T14:38:04.106Z",
+      "updatedAt": "2026-11-21T14:38:04.106Z",
+      "prompt": "Edit this exact closed bronze submarine cabin door with only two targeted changes. Add a small functional bronze horizontal lever handle with a short mounting plate on the right-hand side of the door at mid-height, clearly readable and contained inside the existing outer silhouette. Make the outer frame and matching inner panel corners noticeably less rounded: a predominantly rectangular door with long straight top, bottom and side edges and only short stepped chamfers at the corners. Preserve the current door width and height, placement in the composition, bottom baseline, frontal perspective, round upper porthole and its position, horizontal panel divisions, muted brown bronze colors, subtle material shading, and current detail level. Keep the silhouette's continuous very dark outline exactly one final-image pixel thick; internal frame lines subordinate, no thicker black border, blur, antialiasing or halo. Preserve the existing transparency treatment and surrounding empty space. Do not add any other hardware, decorations, objects, or change the door's proportions.",
+      "width": 72,
+      "height": 114,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/0dda4d5a-3d48-492c-a79f-b188a6e12dc5/image.png?v=1795271884106",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "067323df-389b-4ff1-9cf2-34f22a33e68a",
+      "batchIndex": 1,
+      "batchSize": 2,
+      "action": {
+        "kind": "edit",
+        "sourceImageAssetId": "59e5d5bc-8dcb-4ed1-95ab-c553d33b65b5",
+        "sourceImageAssetIds": [
+          "59e5d5bc-8dcb-4ed1-95ab-c553d33b65b5"
+        ]
+      }
+    }
+  ],
+  "credits": {
+    "used": 15,
+    "remaining": 405
+  }
+}

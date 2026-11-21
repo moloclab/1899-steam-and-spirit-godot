@@ -1,0 +1,29 @@
+{
+  "method": "generate_sprites_in_style",
+  "size": 48,
+  "credits": 15,
+  "prompt": "Create a small low dark brown wooden bedside cabinet for a steampunk submarine cabin. The first reference is the original subject: preserve its compact wide silhouette, straight-on perspective, frame, existing front-panel and handle arrangement, empty top and bottom floor-contact points. Keep its recognizable design and dominant warm brown colors. The cabinet occupies about five sixths of the square canvas width and three quarters of its height, centered with modest empty margins. It is wider than tall. Preserve the shape and relative positions of the top edge, front frame and feet.\n\nUse the second reference, Churchill, only for the amount of finer detail, deliberate small pixel clusters, restrained shading and dark outline treatment. Do not borrow anatomy, clothing or character colors.\nThe third reference is the previously approved cabinet: use it for restrained wood grain, joints and readable material detail, while preserving the first reference's design and proportions. Its outline is not the model to copy.\nThe fourth reference is an approved quill and inkwell: use only its dark silhouette outline treatment, not its subject or colors.\nGive the cabinet a consistent very dark brown outer outline exactly one final-image pixel thick, following the silhouette. Keep it continuous, with stepped diagonals, no doubled border, blur, antialiasing or halo. Keep internal lines subtle and subordinate to the outline. Add purposeful finer wood contours, subtle grain, restrained highlights and shading within broad readable surfaces. Do not add objects on top, drawers, ornaments, writing or decorative hardware.\n\nThe fifth reference is the game's shared 128-color palette, used ONLY as a base color reference. It does not depict the subject and must not influence composition or shape. Favor its warm browns, ochres and dark neutrals, keeping the subject's identity. Allow additional harmonious shades where needed for wood, lighting, detail or readability; exact palette matching is not required. Preserve the source's transparency and background treatment.",
+  "inputs": [
+    "godot/assets/graphics/ep01_cabin/como.gif",
+    "godot/assets/graphics/characters/churchill/churchill-stand.png",
+    "godot/assets/graphics/ep01_cabin/como.png",
+    "godot/assets/graphics/ep01_cabin/feather.png",
+    "godot/palette/1899-base-128-swatches.png"
+  ],
+  "palette_mode": "visual reference only, no exact palette constraint",
+  "source_visible_bounds": {
+    "x": 0,
+    "y": 0,
+    "width": 40,
+    "height": 36
+  },
+  "allowed_visible_width": [
+    38,
+    42
+  ],
+  "allowed_visible_height": [
+    35,
+    37
+  ],
+  "status": "awaiting generation"
+}

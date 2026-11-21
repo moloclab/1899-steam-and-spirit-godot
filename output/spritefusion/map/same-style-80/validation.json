@@ -1,0 +1,192 @@
+﻿[
+    {
+        "Index":  0,
+        "File":  "map.png",
+        "Canvas":  [
+                       60,
+                       72
+                   ],
+        "Bounds":  [
+                       0,
+                       0,
+                       60,
+                       72
+                   ],
+        "Alpha":  [
+                      0,
+                      255
+                  ],
+        "WithinTolerance":  true
+    },
+    {
+        "Index":  1,
+        "File":  "map-redesign.png",
+        "Canvas":  [
+                       80,
+                       80
+                   ],
+        "Bounds":  [
+                       9,
+                       0,
+                       61,
+                       79
+                   ],
+        "Alpha":  [
+                      0,
+                      255
+                  ],
+        "WithinTolerance":  false
+    },
+    {
+        "Index":  2,
+        "File":  "map-redesign-2.png",
+        "Canvas":  [
+                       80,
+                       80
+                   ],
+        "Bounds":  [
+                       8,
+                       0,
+                       63,
+                       79
+                   ],
+        "Alpha":  [
+                      0,
+                      255
+                  ],
+        "WithinTolerance":  false
+    },
+    {
+        "Index":  3,
+        "File":  "map-redesign-3.png",
+        "Canvas":  [
+                       80,
+                       80
+                   ],
+        "Bounds":  [
+                       9,
+                       0,
+                       61,
+                       79
+                   ],
+        "Alpha":  [
+                      0,
+                      255
+                  ],
+        "WithinTolerance":  false
+    },
+    {
+        "Index":  4,
+        "File":  "map-redesign-4.png",
+        "Canvas":  [
+                       80,
+                       80
+                   ],
+        "Bounds":  [
+                       8,
+                       1,
+                       64,
+                       78
+                   ],
+        "Alpha":  [
+                      0,
+                      255
+                  ],
+        "WithinTolerance":  false
+    },
+    {
+        "Index":  5,
+        "File":  "map-redesign-5.png",
+        "Canvas":  [
+                       80,
+                       80
+                   ],
+        "Bounds":  [
+                       9,
+                       1,
+                       62,
+                       78
+                   ],
+        "Alpha":  [
+                      0,
+                      255
+                  ],
+        "WithinTolerance":  false
+    },
+    {
+        "Index":  6,
+        "File":  "map-redesign-6.png",
+        "Canvas":  [
+                       80,
+                       80
+                   ],
+        "Bounds":  [
+                       9,
+                       1,
+                       61,
+                       78
+                   ],
+        "Alpha":  [
+                      0,
+                      255
+                  ],
+        "WithinTolerance":  false
+    },
+    {
+        "Index":  7,
+        "File":  "map-redesign-7.png",
+        "Canvas":  [
+                       80,
+                       80
+                   ],
+        "Bounds":  [
+                       9,
+                       1,
+                       62,
+                       78
+                   ],
+        "Alpha":  [
+                      0,
+                      255
+                  ],
+        "WithinTolerance":  false
+    },
+    {
+        "Index":  8,
+        "File":  "map-redesign-8.png",
+        "Canvas":  [
+                       80,
+                       80
+                   ],
+        "Bounds":  [
+                       9,
+                       1,
+                       61,
+                       78
+                   ],
+        "Alpha":  [
+                      0,
+                      255
+                  ],
+        "WithinTolerance":  false
+    },
+    {
+        "Index":  9,
+        "File":  "map-redesign-9.png",
+        "Canvas":  [
+                       80,
+                       80
+                   ],
+        "Bounds":  [
+                       9,
+                       1,
+                       62,
+                       77
+                   ],
+        "Alpha":  [
+                      0,
+                      255
+                  ],
+        "WithinTolerance":  false
+    }
+]

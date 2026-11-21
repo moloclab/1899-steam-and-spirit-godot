@@ -1,0 +1,95 @@
+{
+  "request_id": "req_ea867420-5682-4833-b7af-5b3448cb87e3",
+  "status": "succeeded",
+  "output_count": 4,
+  "outputs": [
+    {
+      "id": "422bee8c-fd27-4d9e-aa76-6230ab5ad2bb",
+      "type": "image",
+      "createdAt": "2026-11-21T14:50:12.079Z",
+      "updatedAt": "2026-11-21T14:50:12.079Z",
+      "prompt": "Create the low horizontal single bed from the first reference, in the cabin of the steampunk submarine Leviathian in the adventure game 1899. Use that first reference for subject, silhouette, proportions, orientation, side-on slightly elevated perspective and dominant colors: one pale cream pillow at the LEFT end, a dark red burgundy blanket covering the long mattress with its broad front drape, and a low dark brown wooden bed frame with short visible supports. Keep its long low silhouette, original mattress slope, pillow placement, floor contact line and recognizable arrangement. Do not add a tall headboard, footboard, extra pillows, patterned bedspread, characters, decorations or new functional features.\n\nMake the complete bed span the maximum possible width of the square composition, almost edge to edge with negligible side margins, fully contained with no cut-off visible pixels. Preserve the source aspect ratio: the bed is approximately three times as wide as it is tall, occupying just over one third of the square height. Do not make it a tall bulky bed or rotate its perspective.\n\nThe second reference, approved Churchill, guides ONLY the amount of fine detail, deliberate pixel clusters, restrained shading and outline. Do not transfer human anatomy, clothing or character colors. The third reference is the approved wooden cabinet in the SAME cabin: match the muted dark reddish brown wood, deep brown shadows and restrained highlights for the existing bed frame, without copying cabinet doors, panels or hardware.\n\nGive the subject a continuous very dark outer outline exactly one final-image pixel thick, following the silhouette, with stepped pixel diagonals. Keep interior lines subtle and subordinate, no doubled outline, blur, antialiasing or halo. Preserve the source transparency and background treatment, with binary alpha. Refine the burgundy blanket using purposeful small folds and restrained red highlights, the cream pillow with a few readable soft folds and warm shading, and the wood with subtle grain. Keep large readable areas and the original simple design.\n\nThe fourth reference is ONLY the game's shared 128-color palette, a flexible starting point for colors; it must not influence composition or shapes. Preserve dominant burgundy red, warm cream and muted dark brown. Additional harmonious shades are allowed for material, lighting and readability; exact palette matching is not required.",
+      "width": 128,
+      "height": 128,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/422bee8c-fd27-4d9e-aa76-6230ab5ad2bb/image.png?v=1795272612079",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "c5f3b674-ee5a-4518-a5da-c23bf8d19214",
+      "batchIndex": 0,
+      "batchSize": 4,
+      "action": {
+        "kind": "same-style"
+      }
+    },
+    {
+      "id": "27e88bc8-03f2-4516-96a3-a0288eab14e4",
+      "type": "image",
+      "createdAt": "2026-11-21T14:50:12.521Z",
+      "updatedAt": "2026-11-21T14:50:12.521Z",
+      "prompt": "Create the low horizontal single bed from the first reference, in the cabin of the steampunk submarine Leviathian in the adventure game 1899. Use that first reference for subject, silhouette, proportions, orientation, side-on slightly elevated perspective and dominant colors: one pale cream pillow at the LEFT end, a dark red burgundy blanket covering the long mattress with its broad front drape, and a low dark brown wooden bed frame with short visible supports. Keep its long low silhouette, original mattress slope, pillow placement, floor contact line and recognizable arrangement. Do not add a tall headboard, footboard, extra pillows, patterned bedspread, characters, decorations or new functional features.\n\nMake the complete bed span the maximum possible width of the square composition, almost edge to edge with negligible side margins, fully contained with no cut-off visible pixels. Preserve the source aspect ratio: the bed is approximately three times as wide as it is tall, occupying just over one third of the square height. Do not make it a tall bulky bed or rotate its perspective.\n\nThe second reference, approved Churchill, guides ONLY the amount of fine detail, deliberate pixel clusters, restrained shading and outline. Do not transfer human anatomy, clothing or character colors. The third reference is the approved wooden cabinet in the SAME cabin: match the muted dark reddish brown wood, deep brown shadows and restrained highlights for the existing bed frame, without copying cabinet doors, panels or hardware.\n\nGive the subject a continuous very dark outer outline exactly one final-image pixel thick, following the silhouette, with stepped pixel diagonals. Keep interior lines subtle and subordinate, no doubled outline, blur, antialiasing or halo. Preserve the source transparency and background treatment, with binary alpha. Refine the burgundy blanket using purposeful small folds and restrained red highlights, the cream pillow with a few readable soft folds and warm shading, and the wood with subtle grain. Keep large readable areas and the original simple design.\n\nThe fourth reference is ONLY the game's shared 128-color palette, a flexible starting point for colors; it must not influence composition or shapes. Preserve dominant burgundy red, warm cream and muted dark brown. Additional harmonious shades are allowed for material, lighting and readability; exact palette matching is not required.",
+      "width": 128,
+      "height": 128,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/27e88bc8-03f2-4516-96a3-a0288eab14e4/image.png?v=1795272612521",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "c5f3b674-ee5a-4518-a5da-c23bf8d19214",
+      "batchIndex": 1,
+      "batchSize": 4,
+      "action": {
+        "kind": "same-style"
+      }
+    },
+    {
+      "id": "5b7c2d3c-f73c-4bfd-bce9-7c37affe5e61",
+      "type": "image",
+      "createdAt": "2026-11-21T14:50:12.948Z",
+      "updatedAt": "2026-11-21T14:50:12.948Z",
+      "prompt": "Create the low horizontal single bed from the first reference, in the cabin of the steampunk submarine Leviathian in the adventure game 1899. Use that first reference for subject, silhouette, proportions, orientation, side-on slightly elevated perspective and dominant colors: one pale cream pillow at the LEFT end, a dark red burgundy blanket covering the long mattress with its broad front drape, and a low dark brown wooden bed frame with short visible supports. Keep its long low silhouette, original mattress slope, pillow placement, floor contact line and recognizable arrangement. Do not add a tall headboard, footboard, extra pillows, patterned bedspread, characters, decorations or new functional features.\n\nMake the complete bed span the maximum possible width of the square composition, almost edge to edge with negligible side margins, fully contained with no cut-off visible pixels. Preserve the source aspect ratio: the bed is approximately three times as wide as it is tall, occupying just over one third of the square height. Do not make it a tall bulky bed or rotate its perspective.\n\nThe second reference, approved Churchill, guides ONLY the amount of fine detail, deliberate pixel clusters, restrained shading and outline. Do not transfer human anatomy, clothing or character colors. The third reference is the approved wooden cabinet in the SAME cabin: match the muted dark reddish brown wood, deep brown shadows and restrained highlights for the existing bed frame, without copying cabinet doors, panels or hardware.\n\nGive the subject a continuous very dark outer outline exactly one final-image pixel thick, following the silhouette, with stepped pixel diagonals. Keep interior lines subtle and subordinate, no doubled outline, blur, antialiasing or halo. Preserve the source transparency and background treatment, with binary alpha. Refine the burgundy blanket using purposeful small folds and restrained red highlights, the cream pillow with a few readable soft folds and warm shading, and the wood with subtle grain. Keep large readable areas and the original simple design.\n\nThe fourth reference is ONLY the game's shared 128-color palette, a flexible starting point for colors; it must not influence composition or shapes. Preserve dominant burgundy red, warm cream and muted dark brown. Additional harmonious shades are allowed for material, lighting and readability; exact palette matching is not required.",
+      "width": 128,
+      "height": 128,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/5b7c2d3c-f73c-4bfd-bce9-7c37affe5e61/image.png?v=1795272612948",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "c5f3b674-ee5a-4518-a5da-c23bf8d19214",
+      "batchIndex": 2,
+      "batchSize": 4,
+      "action": {
+        "kind": "same-style"
+      }
+    },
+    {
+      "id": "cbb2c73b-296d-4236-b47d-5f7e35565fd4",
+      "type": "image",
+      "createdAt": "2026-11-21T14:50:13.376Z",
+      "updatedAt": "2026-11-21T14:50:13.376Z",
+      "prompt": "Create the low horizontal single bed from the first reference, in the cabin of the steampunk submarine Leviathian in the adventure game 1899. Use that first reference for subject, silhouette, proportions, orientation, side-on slightly elevated perspective and dominant colors: one pale cream pillow at the LEFT end, a dark red burgundy blanket covering the long mattress with its broad front drape, and a low dark brown wooden bed frame with short visible supports. Keep its long low silhouette, original mattress slope, pillow placement, floor contact line and recognizable arrangement. Do not add a tall headboard, footboard, extra pillows, patterned bedspread, characters, decorations or new functional features.\n\nMake the complete bed span the maximum possible width of the square composition, almost edge to edge with negligible side margins, fully contained with no cut-off visible pixels. Preserve the source aspect ratio: the bed is approximately three times as wide as it is tall, occupying just over one third of the square height. Do not make it a tall bulky bed or rotate its perspective.\n\nThe second reference, approved Churchill, guides ONLY the amount of fine detail, deliberate pixel clusters, restrained shading and outline. Do not transfer human anatomy, clothing or character colors. The third reference is the approved wooden cabinet in the SAME cabin: match the muted dark reddish brown wood, deep brown shadows and restrained highlights for the existing bed frame, without copying cabinet doors, panels or hardware.\n\nGive the subject a continuous very dark outer outline exactly one final-image pixel thick, following the silhouette, with stepped pixel diagonals. Keep interior lines subtle and subordinate, no doubled outline, blur, antialiasing or halo. Preserve the source transparency and background treatment, with binary alpha. Refine the burgundy blanket using purposeful small folds and restrained red highlights, the cream pillow with a few readable soft folds and warm shading, and the wood with subtle grain. Keep large readable areas and the original simple design.\n\nThe fourth reference is ONLY the game's shared 128-color palette, a flexible starting point for colors; it must not influence composition or shapes. Preserve dominant burgundy red, warm cream and muted dark brown. Additional harmonious shades are allowed for material, lighting and readability; exact palette matching is not required.",
+      "width": 128,
+      "height": 128,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/cbb2c73b-296d-4236-b47d-5f7e35565fd4/image.png?v=1795272613376",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "c5f3b674-ee5a-4518-a5da-c23bf8d19214",
+      "batchIndex": 3,
+      "batchSize": 4,
+      "action": {
+        "kind": "same-style"
+      }
+    }
+  ],
+  "credits": {
+    "used": 15,
+    "remaining": 390
+  },
+  "input_paths": [
+    "godot/assets/graphics/ep01_cabin/bed.png",
+    "godot/assets/graphics/characters/churchill/churchill-stand.png",
+    "godot/assets/graphics/ep01_cabin/como.png",
+    "godot/palette/1899-base-128-swatches.png"
+  ],
+  "requested_size": 128,
+  "authorization": "User approved maximum width 128 as a size exception; variants only, original unchanged."
+}

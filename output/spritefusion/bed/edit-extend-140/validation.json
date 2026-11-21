@@ -1,0 +1,65 @@
+﻿[
+    {
+        "file":  "bed-before.png",
+        "canvas":  [
+                       120,
+                       39
+                   ],
+        "visible":  [
+                        120,
+                        39
+                    ],
+        "bounds":  [
+                       0,
+                       0,
+                       120,
+                       39
+                   ],
+        "alpha":  [
+                      0,
+                      255
+                  ]
+    },
+    {
+        "file":  "bed-extended-1.png",
+        "canvas":  [
+                       140,
+                       39
+                   ],
+        "visible":  [
+                        140,
+                        39
+                    ],
+        "bounds":  [
+                       0,
+                       0,
+                       140,
+                       39
+                   ],
+        "alpha":  [
+                      0,
+                      255
+                  ]
+    },
+    {
+        "file":  "bed-extended-2.png",
+        "canvas":  [
+                       165,
+                       34
+                   ],
+        "visible":  [
+                        165,
+                        34
+                    ],
+        "bounds":  [
+                       0,
+                       0,
+                       165,
+                       34
+                   ],
+        "alpha":  [
+                      0,
+                      255
+                  ]
+    }
+]

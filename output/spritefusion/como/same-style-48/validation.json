@@ -1,0 +1,146 @@
+﻿[
+    {
+        "file":  "godot/assets/graphics/ep01_cabin/como-redesign-3.png",
+        "canvas_width":  48,
+        "canvas_height":  48,
+        "bounds_x":  4,
+        "bounds_y":  6,
+        "subject_width":  40,
+        "subject_height":  36,
+        "canvas_pass":  false,
+        "subject_pass":  true,
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "sha256":  "62A99F50A4E4CA560F137CC082322674AC97DE3578E5D7E97F34BD92D7E892DF"
+    },
+    {
+        "file":  "godot/assets/graphics/ep01_cabin/como-redesign-4.png",
+        "canvas_width":  48,
+        "canvas_height":  48,
+        "bounds_x":  4,
+        "bounds_y":  6,
+        "subject_width":  40,
+        "subject_height":  36,
+        "canvas_pass":  false,
+        "subject_pass":  true,
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "sha256":  "CEF2C9217C1545F91B6A1213EDA7874C81F68D8527C6189932836560735DC95C"
+    },
+    {
+        "file":  "godot/assets/graphics/ep01_cabin/como-redesign-5.png",
+        "canvas_width":  48,
+        "canvas_height":  48,
+        "bounds_x":  4,
+        "bounds_y":  6,
+        "subject_width":  40,
+        "subject_height":  36,
+        "canvas_pass":  false,
+        "subject_pass":  true,
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "sha256":  "2FD0A68B072DE3F691BA649D295B6CB01AC3CA22C8B727986BEB2661A4FE83D8"
+    },
+    {
+        "file":  "godot/assets/graphics/ep01_cabin/como-redesign-6.png",
+        "canvas_width":  48,
+        "canvas_height":  48,
+        "bounds_x":  4,
+        "bounds_y":  6,
+        "subject_width":  40,
+        "subject_height":  36,
+        "canvas_pass":  false,
+        "subject_pass":  true,
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "sha256":  "2D235CC61FADD0FFA890D9D0D7BDD1E73C3AB4CE938C9DDEDEB9004541D38B4E"
+    },
+    {
+        "file":  "godot/assets/graphics/ep01_cabin/como-redesign-7.png",
+        "canvas_width":  48,
+        "canvas_height":  48,
+        "bounds_x":  4,
+        "bounds_y":  6,
+        "subject_width":  40,
+        "subject_height":  36,
+        "canvas_pass":  false,
+        "subject_pass":  true,
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "sha256":  "B304C34F846C7632558788DDA8BCF719A45D8987445CE0D0CD612FC31DA42A25"
+    },
+    {
+        "file":  "godot/assets/graphics/ep01_cabin/como-redesign-8.png",
+        "canvas_width":  48,
+        "canvas_height":  48,
+        "bounds_x":  4,
+        "bounds_y":  6,
+        "subject_width":  40,
+        "subject_height":  36,
+        "canvas_pass":  false,
+        "subject_pass":  true,
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "sha256":  "EF526B8562924F537142FCC47DD6A95C905B0A619E720F7CC820B8ED0179FA5D"
+    },
+    {
+        "file":  "godot/assets/graphics/ep01_cabin/como-redesign-9.png",
+        "canvas_width":  48,
+        "canvas_height":  48,
+        "bounds_x":  4,
+        "bounds_y":  6,
+        "subject_width":  40,
+        "subject_height":  36,
+        "canvas_pass":  false,
+        "subject_pass":  true,
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "sha256":  "8569F4C525BB26BA4B637BD8EE98625B7F1F5ED7F318AFBC43C41B2CE56F5BE9"
+    },
+    {
+        "file":  "godot/assets/graphics/ep01_cabin/como-redesign-10.png",
+        "canvas_width":  48,
+        "canvas_height":  48,
+        "bounds_x":  4,
+        "bounds_y":  6,
+        "subject_width":  40,
+        "subject_height":  36,
+        "canvas_pass":  false,
+        "subject_pass":  true,
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "sha256":  "27587B8365C4A5DD1E8A45C3126519E0F5B504C4330C722D163B597FA8233885"
+    },
+    {
+        "file":  "godot/assets/graphics/ep01_cabin/como-redesign-11.png",
+        "canvas_width":  48,
+        "canvas_height":  48,
+        "bounds_x":  4,
+        "bounds_y":  6,
+        "subject_width":  40,
+        "subject_height":  36,
+        "canvas_pass":  false,
+        "subject_pass":  true,
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "sha256":  "0C9926B28AEA3294D8E7BC2810006524B85C6A6F97E38D195ADE04B6ABF1D88C"
+    }
+]

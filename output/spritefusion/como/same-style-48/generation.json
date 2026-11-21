@@ -1,0 +1,252 @@
+{
+  "request_id": "req_db50411e-dd9c-408d-8adf-6247c3dca739",
+  "status": "succeeded",
+  "output_count": 9,
+  "outputs": [
+    {
+      "id": "c0a34fbf-4a21-45ed-9aac-33ab660d722c",
+      "type": "image",
+      "createdAt": "2026-11-20T15:28:16.939Z",
+      "updatedAt": "2026-11-20T15:28:16.939Z",
+      "prompt": "A small low brown wooden bedside cabinet for a steampunk submarine cabin, matching the furniture in the first reference. Use the first reference for the subject, compact wide proportions, straight-on view, warm dark brown wood, original top surface, outer frame, drawer arrangement, handle placement and bottom contact edge. The cabinet is wider than it is tall and occupies most of the width but about three quarters of the height of the square composition, leaving modest empty space around it. Preserve the simple recognizable furniture design. Use the second reference, Churchill, only for its restrained fine pixel detail, deliberate small pixel clusters and shading treatment, without borrowing the character's anatomy, clothing or colors. Add subtle wood grain, clearer frame joints, restrained edge highlights and finer contours inside the original shapes. Keep broad readable wood surfaces and the existing dominant colors. The top is empty. Do not add drawers, ornaments, objects, writing or decorative hardware.",
+      "width": 48,
+      "height": 48,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/c0a34fbf-4a21-45ed-9aac-33ab660d722c/image.png?v=1795188496939",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "ebd8604c-1e96-414a-b825-36ea53036c7e",
+      "batchIndex": 0,
+      "batchSize": 9,
+      "action": {
+        "kind": "same-style"
+      }
+    },
+    {
+      "id": "d7db763b-e60b-4904-9c2e-e5ac56c03afd",
+      "type": "image",
+      "createdAt": "2026-11-20T15:28:17.779Z",
+      "updatedAt": "2026-11-20T15:28:17.779Z",
+      "prompt": "A small low brown wooden bedside cabinet for a steampunk submarine cabin, matching the furniture in the first reference. Use the first reference for the subject, compact wide proportions, straight-on view, warm dark brown wood, original top surface, outer frame, drawer arrangement, handle placement and bottom contact edge. The cabinet is wider than it is tall and occupies most of the width but about three quarters of the height of the square composition, leaving modest empty space around it. Preserve the simple recognizable furniture design. Use the second reference, Churchill, only for its restrained fine pixel detail, deliberate small pixel clusters and shading treatment, without borrowing the character's anatomy, clothing or colors. Add subtle wood grain, clearer frame joints, restrained edge highlights and finer contours inside the original shapes. Keep broad readable wood surfaces and the existing dominant colors. The top is empty. Do not add drawers, ornaments, objects, writing or decorative hardware.",
+      "width": 48,
+      "height": 48,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/d7db763b-e60b-4904-9c2e-e5ac56c03afd/image.png?v=1795188497779",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "ebd8604c-1e96-414a-b825-36ea53036c7e",
+      "batchIndex": 1,
+      "batchSize": 9,
+      "action": {
+        "kind": "same-style"
+      }
+    },
+    {
+      "id": "8e47f70a-704a-4528-9e53-05babb6704d1",
+      "type": "image",
+      "createdAt": "2026-11-20T15:28:18.626Z",
+      "updatedAt": "2026-11-20T15:28:18.626Z",
+      "prompt": "A small low brown wooden bedside cabinet for a steampunk submarine cabin, matching the furniture in the first reference. Use the first reference for the subject, compact wide proportions, straight-on view, warm dark brown wood, original top surface, outer frame, drawer arrangement, handle placement and bottom contact edge. The cabinet is wider than it is tall and occupies most of the width but about three quarters of the height of the square composition, leaving modest empty space around it. Preserve the simple recognizable furniture design. Use the second reference, Churchill, only for its restrained fine pixel detail, deliberate small pixel clusters and shading treatment, without borrowing the character's anatomy, clothing or colors. Add subtle wood grain, clearer frame joints, restrained edge highlights and finer contours inside the original shapes. Keep broad readable wood surfaces and the existing dominant colors. The top is empty. Do not add drawers, ornaments, objects, writing or decorative hardware.",
+      "width": 48,
+      "height": 48,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/8e47f70a-704a-4528-9e53-05babb6704d1/image.png?v=1795188498626",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "ebd8604c-1e96-414a-b825-36ea53036c7e",
+      "batchIndex": 2,
+      "batchSize": 9,
+      "action": {
+        "kind": "same-style"
+      }
+    },
+    {
+      "id": "38c72ba6-635f-4197-a427-effc2b16c182",
+      "type": "image",
+      "createdAt": "2026-11-20T15:28:19.410Z",
+      "updatedAt": "2026-11-20T15:28:19.410Z",
+      "prompt": "A small low brown wooden bedside cabinet for a steampunk submarine cabin, matching the furniture in the first reference. Use the first reference for the subject, compact wide proportions, straight-on view, warm dark brown wood, original top surface, outer frame, drawer arrangement, handle placement and bottom contact edge. The cabinet is wider than it is tall and occupies most of the width but about three quarters of the height of the square composition, leaving modest empty space around it. Preserve the simple recognizable furniture design. Use the second reference, Churchill, only for its restrained fine pixel detail, deliberate small pixel clusters and shading treatment, without borrowing the character's anatomy, clothing or colors. Add subtle wood grain, clearer frame joints, restrained edge highlights and finer contours inside the original shapes. Keep broad readable wood surfaces and the existing dominant colors. The top is empty. Do not add drawers, ornaments, objects, writing or decorative hardware.",
+      "width": 48,
+      "height": 48,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/38c72ba6-635f-4197-a427-effc2b16c182/image.png?v=1795188499410",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "ebd8604c-1e96-414a-b825-36ea53036c7e",
+      "batchIndex": 3,
+      "batchSize": 9,
+      "action": {
+        "kind": "same-style"
+      }
+    },
+    {
+      "id": "322ae7fe-f34a-4763-a862-d24a24fe2209",
+      "type": "image",
+      "createdAt": "2026-11-20T15:28:20.173Z",
+      "updatedAt": "2026-11-20T15:28:20.173Z",
+      "prompt": "A small low brown wooden bedside cabinet for a steampunk submarine cabin, matching the furniture in the first reference. Use the first reference for the subject, compact wide proportions, straight-on view, warm dark brown wood, original top surface, outer frame, drawer arrangement, handle placement and bottom contact edge. The cabinet is wider than it is tall and occupies most of the width but about three quarters of the height of the square composition, leaving modest empty space around it. Preserve the simple recognizable furniture design. Use the second reference, Churchill, only for its restrained fine pixel detail, deliberate small pixel clusters and shading treatment, without borrowing the character's anatomy, clothing or colors. Add subtle wood grain, clearer frame joints, restrained edge highlights and finer contours inside the original shapes. Keep broad readable wood surfaces and the existing dominant colors. The top is empty. Do not add drawers, ornaments, objects, writing or decorative hardware.",
+      "width": 48,
+      "height": 48,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/322ae7fe-f34a-4763-a862-d24a24fe2209/image.png?v=1795188500173",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "ebd8604c-1e96-414a-b825-36ea53036c7e",
+      "batchIndex": 4,
+      "batchSize": 9,
+      "action": {
+        "kind": "same-style"
+      }
+    },
+    {
+      "id": "ad0f5db2-71d6-4c4d-b955-1bd669fddefd",
+      "type": "image",
+      "createdAt": "2026-11-20T15:28:20.902Z",
+      "updatedAt": "2026-11-20T15:28:20.902Z",
+      "prompt": "A small low brown wooden bedside cabinet for a steampunk submarine cabin, matching the furniture in the first reference. Use the first reference for the subject, compact wide proportions, straight-on view, warm dark brown wood, original top surface, outer frame, drawer arrangement, handle placement and bottom contact edge. The cabinet is wider than it is tall and occupies most of the width but about three quarters of the height of the square composition, leaving modest empty space around it. Preserve the simple recognizable furniture design. Use the second reference, Churchill, only for its restrained fine pixel detail, deliberate small pixel clusters and shading treatment, without borrowing the character's anatomy, clothing or colors. Add subtle wood grain, clearer frame joints, restrained edge highlights and finer contours inside the original shapes. Keep broad readable wood surfaces and the existing dominant colors. The top is empty. Do not add drawers, ornaments, objects, writing or decorative hardware.",
+      "width": 48,
+      "height": 48,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/ad0f5db2-71d6-4c4d-b955-1bd669fddefd/image.png?v=1795188500902",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "ebd8604c-1e96-414a-b825-36ea53036c7e",
+      "batchIndex": 5,
+      "batchSize": 9,
+      "action": {
+        "kind": "same-style"
+      }
+    },
+    {
+      "id": "997971fb-d691-44c8-abb0-67a64c4fce3c",
+      "type": "image",
+      "createdAt": "2026-11-20T15:28:21.749Z",
+      "updatedAt": "2026-11-20T15:28:21.749Z",
+      "prompt": "A small low brown wooden bedside cabinet for a steampunk submarine cabin, matching the furniture in the first reference. Use the first reference for the subject, compact wide proportions, straight-on view, warm dark brown wood, original top surface, outer frame, drawer arrangement, handle placement and bottom contact edge. The cabinet is wider than it is tall and occupies most of the width but about three quarters of the height of the square composition, leaving modest empty space around it. Preserve the simple recognizable furniture design. Use the second reference, Churchill, only for its restrained fine pixel detail, deliberate small pixel clusters and shading treatment, without borrowing the character's anatomy, clothing or colors. Add subtle wood grain, clearer frame joints, restrained edge highlights and finer contours inside the original shapes. Keep broad readable wood surfaces and the existing dominant colors. The top is empty. Do not add drawers, ornaments, objects, writing or decorative hardware.",
+      "width": 48,
+      "height": 48,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/997971fb-d691-44c8-abb0-67a64c4fce3c/image.png?v=1795188501749",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "ebd8604c-1e96-414a-b825-36ea53036c7e",
+      "batchIndex": 6,
+      "batchSize": 9,
+      "action": {
+        "kind": "same-style"
+      }
+    },
+    {
+      "id": "567d78ce-58d5-4898-b85a-54bfaf31c314",
+      "type": "image",
+      "createdAt": "2026-11-20T15:28:22.624Z",
+      "updatedAt": "2026-11-20T15:28:22.624Z",
+      "prompt": "A small low brown wooden bedside cabinet for a steampunk submarine cabin, matching the furniture in the first reference. Use the first reference for the subject, compact wide proportions, straight-on view, warm dark brown wood, original top surface, outer frame, drawer arrangement, handle placement and bottom contact edge. The cabinet is wider than it is tall and occupies most of the width but about three quarters of the height of the square composition, leaving modest empty space around it. Preserve the simple recognizable furniture design. Use the second reference, Churchill, only for its restrained fine pixel detail, deliberate small pixel clusters and shading treatment, without borrowing the character's anatomy, clothing or colors. Add subtle wood grain, clearer frame joints, restrained edge highlights and finer contours inside the original shapes. Keep broad readable wood surfaces and the existing dominant colors. The top is empty. Do not add drawers, ornaments, objects, writing or decorative hardware.",
+      "width": 48,
+      "height": 48,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/567d78ce-58d5-4898-b85a-54bfaf31c314/image.png?v=1795188502624",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "ebd8604c-1e96-414a-b825-36ea53036c7e",
+      "batchIndex": 7,
+      "batchSize": 9,
+      "action": {
+        "kind": "same-style"
+      }
+    },
+    {
+      "id": "8e41126f-5bd3-42ac-9891-a598f73c9650",
+      "type": "image",
+      "createdAt": "2026-11-20T15:28:23.465Z",
+      "updatedAt": "2026-11-20T15:28:23.465Z",
+      "prompt": "A small low brown wooden bedside cabinet for a steampunk submarine cabin, matching the furniture in the first reference. Use the first reference for the subject, compact wide proportions, straight-on view, warm dark brown wood, original top surface, outer frame, drawer arrangement, handle placement and bottom contact edge. The cabinet is wider than it is tall and occupies most of the width but about three quarters of the height of the square composition, leaving modest empty space around it. Preserve the simple recognizable furniture design. Use the second reference, Churchill, only for its restrained fine pixel detail, deliberate small pixel clusters and shading treatment, without borrowing the character's anatomy, clothing or colors. Add subtle wood grain, clearer frame joints, restrained edge highlights and finer contours inside the original shapes. Keep broad readable wood surfaces and the existing dominant colors. The top is empty. Do not add drawers, ornaments, objects, writing or decorative hardware.",
+      "width": 48,
+      "height": 48,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/8e41126f-5bd3-42ac-9891-a598f73c9650/image.png?v=1795188503465",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "ebd8604c-1e96-414a-b825-36ea53036c7e",
+      "batchIndex": 8,
+      "batchSize": 9,
+      "action": {
+        "kind": "same-style"
+      }
+    }
+  ],
+  "credits": {
+    "used": 15,
+    "remaining": 480
+  },
+  "operation": "generate_sprites_in_style",
+  "size": 48,
+  "inputs": [
+    {
+      "path": "godot/assets/graphics/ep01_cabin/como.png",
+      "width": 40,
+      "height": 36,
+      "bounds": [
+        0,
+        0,
+        40,
+        36
+      ],
+      "sha256": "7B0EFE2123BB8F9EAAE13452E9B32F6A133F6675E313A8A5491CDD4C77F8C426"
+    },
+    {
+      "path": "godot/assets/graphics/characters/churchill/churchill-stand.png",
+      "role": "detail and style reference"
+    }
+  ],
+  "outputs_local": [
+    {
+      "id": "c0a34fbf-4a21-45ed-9aac-33ab660d722c",
+      "path": "godot/assets/graphics/ep01_cabin/como-redesign-3.png"
+    },
+    {
+      "id": "d7db763b-e60b-4904-9c2e-e5ac56c03afd",
+      "path": "godot/assets/graphics/ep01_cabin/como-redesign-4.png"
+    },
+    {
+      "id": "8e47f70a-704a-4528-9e53-05babb6704d1",
+      "path": "godot/assets/graphics/ep01_cabin/como-redesign-5.png"
+    },
+    {
+      "id": "38c72ba6-635f-4197-a427-effc2b16c182",
+      "path": "godot/assets/graphics/ep01_cabin/como-redesign-6.png"
+    },
+    {
+      "id": "322ae7fe-f34a-4763-a862-d24a24fe2209",
+      "path": "godot/assets/graphics/ep01_cabin/como-redesign-7.png"
+    },
+    {
+      "id": "ad0f5db2-71d6-4c4d-b955-1bd669fddefd",
+      "path": "godot/assets/graphics/ep01_cabin/como-redesign-8.png"
+    },
+    {
+      "id": "997971fb-d691-44c8-abb0-67a64c4fce3c",
+      "path": "godot/assets/graphics/ep01_cabin/como-redesign-9.png"
+    },
+    {
+      "id": "567d78ce-58d5-4898-b85a-54bfaf31c314",
+      "path": "godot/assets/graphics/ep01_cabin/como-redesign-10.png"
+    },
+    {
+      "id": "8e41126f-5bd3-42ac-9891-a598f73c9650",
+      "path": "godot/assets/graphics/ep01_cabin/como-redesign-11.png"
+    }
+  ],
+  "prompt": "A small low brown wooden bedside cabinet for a steampunk submarine cabin, matching the furniture in the first reference. Use the first reference for the subject, compact wide proportions, straight-on view, warm dark brown wood, original top surface, outer frame, drawer arrangement, handle placement and bottom contact edge. The cabinet is wider than it is tall and occupies most of the width but about three quarters of the height of the square composition, leaving modest empty space around it. Preserve the simple recognizable furniture design. Use the second reference, Churchill, only for its restrained fine pixel detail, deliberate small pixel clusters and shading treatment, without borrowing the character's anatomy, clothing or colors. Add subtle wood grain, clearer frame joints, restrained edge highlights and finer contours inside the original shapes. Keep broad readable wood surfaces and the existing dominant colors. The top is empty. Do not add drawers, ornaments, objects, writing or decorative hardware.",
+  "acceptance": {
+    "subject_width": [
+      38,
+      42
+    ],
+    "subject_height": [
+      35,
+      37
+    ]
+  },
+  "integration": "none, experimental square canvas"
+}

@@ -1,0 +1,117 @@
+﻿[
+    {
+        "file":  "door_sub.png",
+        "canvas":  [
+                       76,
+                       116
+                   ],
+        "bounds":  [
+                       0,
+                       0,
+                       76,
+                       116
+                   ],
+        "visible":  [
+                        76,
+                        116
+                    ],
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "size_pass":  true,
+        "sha256":  "44BE94D8D463E39CC313FFE5A099C5E1E36CDEA81630868683FCB0218AA3C914"
+    },
+    {
+        "file":  "door_sub-redesign.png",
+        "canvas":  [
+                       128,
+                       128
+                   ],
+        "bounds":  [
+                       26,
+                       6,
+                       102,
+                       122
+                   ],
+        "visible":  [
+                        76,
+                        116
+                    ],
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "size_pass":  true,
+        "sha256":  "986A6ABC562064EFAAC390FA3D6DEFBF5A2AC4EDB310482DBF706BCE37CB407E"
+    },
+    {
+        "file":  "door_sub-redesign-2.png",
+        "canvas":  [
+                       128,
+                       128
+                   ],
+        "bounds":  [
+                       26,
+                       6,
+                       102,
+                       122
+                   ],
+        "visible":  [
+                        76,
+                        116
+                    ],
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "size_pass":  true,
+        "sha256":  "4560F5E729E33BC90B1C3A7BB712A1149099A16C039DD62DA907CE2A637D7DB9"
+    },
+    {
+        "file":  "door_sub-redesign-3.png",
+        "canvas":  [
+                       128,
+                       128
+                   ],
+        "bounds":  [
+                       26,
+                       6,
+                       102,
+                       122
+                   ],
+        "visible":  [
+                        76,
+                        116
+                    ],
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "size_pass":  true,
+        "sha256":  "1258C1A7D7603CC4A7741EF6C1519C3DC5FA1C09F6A85F42A1F2428A2B531F2A"
+    },
+    {
+        "file":  "door_sub-redesign-4.png",
+        "canvas":  [
+                       128,
+                       128
+                   ],
+        "bounds":  [
+                       26,
+                       6,
+                       102,
+                       122
+                   ],
+        "visible":  [
+                        76,
+                        116
+                    ],
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "size_pass":  true,
+        "sha256":  "AAF91034D88A1230F4A3F234AEC5682F34D6A25AD97EC8F50B68AABE5EAE45ED"
+    }
+]

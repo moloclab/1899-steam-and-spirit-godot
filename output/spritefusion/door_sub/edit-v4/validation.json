@@ -1,0 +1,94 @@
+﻿[
+    {
+        "file":  "door_sub.png",
+        "canvas":  [
+                       76,
+                       116
+                   ],
+        "bounds":  [
+                       0,
+                       0,
+                       76,
+                       116
+                   ],
+        "visible":  [
+                        76,
+                        116
+                    ],
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "size_pass":  true,
+        "sha256":  "44BE94D8D463E39CC313FFE5A099C5E1E36CDEA81630868683FCB0218AA3C914"
+    },
+    {
+        "file":  "door_sub-redesign-4.png",
+        "canvas":  [
+                       128,
+                       128
+                   ],
+        "bounds":  [
+                       26,
+                       6,
+                       102,
+                       122
+                   ],
+        "visible":  [
+                        76,
+                        116
+                    ],
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "size_pass":  true,
+        "sha256":  "AAF91034D88A1230F4A3F234AEC5682F34D6A25AD97EC8F50B68AABE5EAE45ED"
+    },
+    {
+        "file":  "door_sub-redesign-5.png",
+        "canvas":  [
+                       76,
+                       116
+                   ],
+        "bounds":  [
+                       0,
+                       0,
+                       76,
+                       116
+                   ],
+        "visible":  [
+                        76,
+                        116
+                    ],
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "size_pass":  true,
+        "sha256":  "120397DEFB564124F5BE3A7E185DD1F1A5FB848460EAF82A2A492CD636BD2AAC"
+    },
+    {
+        "file":  "door_sub-redesign-6.png",
+        "canvas":  [
+                       72,
+                       114
+                   ],
+        "bounds":  [
+                       0,
+                       0,
+                       72,
+                       114
+                   ],
+        "visible":  [
+                        72,
+                        114
+                    ],
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "size_pass":  false,
+        "sha256":  "CB124AC646AEBBEC520A6950681858EF54A42AB23085BAF48D9CEC34FA96F5BD"
+    }
+]

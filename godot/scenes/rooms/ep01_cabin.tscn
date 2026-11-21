@@ -32,8 +32,9 @@ script = ExtResource("room_definition_definition")
 room_id = "ep01_cabin"
 episode_id = "ep01"
 scene_path = "res://scenes/rooms/ep01_cabin.tscn"
+; Allinea la posa seduta iniziale al materasso del letto.
 entries = Dictionary[String, float]({
-"default": 150.0,
+"default": 100.0,
 "from_corridor": 550.0
 })
 
@@ -176,10 +177,12 @@ texture = ExtResource("background")
 centered = false
 
 [node name="mapMagnet" type="Node2D" parent="." unique_id=9763528]
-position = Vector2(68, 64)
+; Centra la mappa nello spazio fra il bordo del letto e il comò.
+position = Vector2(157, 60)
 script = ExtResource("hotspot_script")
 hotspot_id = "map"
-hit_size = Vector2(60, 72)
+; Include l'ingombro approvato della pianta dopo la raccolta della calamita.
+hit_size = Vector2(61, 79)
 examine_response = "ep01.cabin.map.examine"
 
 [node name="Visual" type="Sprite2D" parent="mapMagnet" unique_id=667163389]
@@ -187,10 +190,11 @@ texture = ExtResource("mapMagnet_mapMagnet")
 centered = false
 
 [node name="como" type="Node2D" parent="." unique_id=1283005312]
-position = Vector2(224, 164)
+; Compensa il pixel aggiuntivo in altezza mantenendo la base alla quota y=200.
+position = Vector2(224, 163)
 script = ExtResource("hotspot_script")
 hotspot_id = "como"
-hit_size = Vector2(40, 36)
+hit_size = Vector2(40, 37)
 examine_response = "ep01.cabin.nightstand.examine"
 interaction_response = "ep01.cabin.nightstand.interact"
 
@@ -199,10 +203,11 @@ texture = ExtResource("como_como")
 centered = false
 
 [node name="sinkNormal" type="Node2D" parent="." unique_id=942851978]
-position = Vector2(272, 144)
+; Compensa l'altezza del lavabo approvato mantenendo la base alla quota y=200.
+position = Vector2(272, 138)
 script = ExtResource("hotspot_script")
 hotspot_id = "sink"
-hit_size = Vector2(40, 56)
+hit_size = Vector2(36, 62)
 examine_response = "ep01.cabin.sink.examine"
 interaction_response = "ep01.cabin.sink.wash"
 
@@ -289,10 +294,11 @@ centered = false
 [node name="bed" type="Node2D" parent="." unique_id=2030673934]
 ; Il letto resta dietro a Churchill, anche durante la posa seduta iniziale.
 z_index = 0
-position = Vector2(18, 152)
+; Il letto allungato misura 140x39: la base resta a y=200.
+position = Vector2(18, 161)
 script = ExtResource("hotspot_script")
 hotspot_id = "bed"
-hit_size = Vector2(140, 48)
+hit_size = Vector2(140, 39)
 examine_response = "ep01.cabin.bed.examine"
 interaction_response = "ep01.cabin.bed.interact"
 

@@ -1,0 +1,182 @@
+{
+  "request_id": "req_603b5792-d0aa-4441-95ea-8f1589c70b2b",
+  "status": "succeeded",
+  "output_count": 9,
+  "outputs": [
+    {
+      "id": "1e34260c-0c97-452e-90c2-6b349faa034b",
+      "type": "image",
+      "createdAt": "2026-11-21T14:18:33.444Z",
+      "updatedAt": "2026-11-21T14:18:33.444Z",
+      "prompt": "Create the small freestanding washstand and sink from the first reference for a steampunk submarine cabin. Preserve the original subject and its recognizable silhouette: a tall narrow wooden sink cabinet, a light cream basin and rim above it, and the existing small brass faucet and fittings at the top. Straight-on perspective, original basin shape and plumbing arrangement, empty usable basin, existing single cabinet front, and original floor-contact points. It occupies about five eighths of the square composition width and seven eighths of its height, centered with modest empty margins. Preserve the relative heights of the basin, faucet, cabinet and bottom edge.\n\nThe second reference, Churchill, is ONLY a guide to deliberate fine pixel clusters, restrained shading and the thin dark silhouette outline. Do not borrow human anatomy, clothing or character colors.\n\nThe third reference, the approved cabinet, is the PRIMARY FURNITURE STYLE AND COLOR REFERENCE. The washstand and that cabinet belong to the SAME matching furniture set in the same room. Match the cabinet's muted dark reddish brown wood, nearly black brown shadows and outline, restrained warm brown edge highlights, simple recessed rectangular wooden front panel, small subdued metal details, squared construction, trim and bottom support treatment. Give the sink's lower wooden cabinet the same finish, panel language and level of detail. Keep the recognizable sink and cream basin above it; do not turn it into another bedside cabinet. Prefer the approved cabinet's actual dark muted finish over the blurry warmer wood in the source. No extra drawers, additional compartments, new locks, decorative metal corner plates or unrelated ornament. Keep existing hardware subtle and in the same muted metal family as the matching cabinet. Refine the basin with restrained cream highlights and warm shaded edges, the brass faucet with limited highlights, and the wood with subtle grain and purposeful fine contours.\n\nUse a continuous very dark outer outline exactly one final-image pixel thick, coherent with the approved cabinet and Churchill, following the full sink and cabinet silhouette. Keep stepped pixel diagonals, subordinate interior lines, no doubled outline, blur, antialiasing or halo. Preserve broad readable surfaces and the source's transparency and background treatment.\n\nThe fourth reference is ONLY the game's shared 128-color palette, a flexible color starting point. It must not influence shape or composition. Favor its dark warm browns, subdued neutrals, creams and aged brass colors; additional harmonious shades are allowed where useful for materials, lighting or readability. Exact palette matching is not required. The approved cabinet remains the more specific authority for the wood finish.",
+      "width": 64,
+      "height": 64,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/1e34260c-0c97-452e-90c2-6b349faa034b/image.png?v=1795270713444",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "4a04aa8b-0d9c-4735-a7f4-a976a3a4d821",
+      "batchIndex": 0,
+      "batchSize": 9,
+      "action": {
+        "kind": "same-style"
+      }
+    },
+    {
+      "id": "d736f402-2910-4b7b-b2a1-8352447939c2",
+      "type": "image",
+      "createdAt": "2026-11-21T14:18:33.834Z",
+      "updatedAt": "2026-11-21T14:18:33.834Z",
+      "prompt": "Create the small freestanding washstand and sink from the first reference for a steampunk submarine cabin. Preserve the original subject and its recognizable silhouette: a tall narrow wooden sink cabinet, a light cream basin and rim above it, and the existing small brass faucet and fittings at the top. Straight-on perspective, original basin shape and plumbing arrangement, empty usable basin, existing single cabinet front, and original floor-contact points. It occupies about five eighths of the square composition width and seven eighths of its height, centered with modest empty margins. Preserve the relative heights of the basin, faucet, cabinet and bottom edge.\n\nThe second reference, Churchill, is ONLY a guide to deliberate fine pixel clusters, restrained shading and the thin dark silhouette outline. Do not borrow human anatomy, clothing or character colors.\n\nThe third reference, the approved cabinet, is the PRIMARY FURNITURE STYLE AND COLOR REFERENCE. The washstand and that cabinet belong to the SAME matching furniture set in the same room. Match the cabinet's muted dark reddish brown wood, nearly black brown shadows and outline, restrained warm brown edge highlights, simple recessed rectangular wooden front panel, small subdued metal details, squared construction, trim and bottom support treatment. Give the sink's lower wooden cabinet the same finish, panel language and level of detail. Keep the recognizable sink and cream basin above it; do not turn it into another bedside cabinet. Prefer the approved cabinet's actual dark muted finish over the blurry warmer wood in the source. No extra drawers, additional compartments, new locks, decorative metal corner plates or unrelated ornament. Keep existing hardware subtle and in the same muted metal family as the matching cabinet. Refine the basin with restrained cream highlights and warm shaded edges, the brass faucet with limited highlights, and the wood with subtle grain and purposeful fine contours.\n\nUse a continuous very dark outer outline exactly one final-image pixel thick, coherent with the approved cabinet and Churchill, following the full sink and cabinet silhouette. Keep stepped pixel diagonals, subordinate interior lines, no doubled outline, blur, antialiasing or halo. Preserve broad readable surfaces and the source's transparency and background treatment.\n\nThe fourth reference is ONLY the game's shared 128-color palette, a flexible color starting point. It must not influence shape or composition. Favor its dark warm browns, subdued neutrals, creams and aged brass colors; additional harmonious shades are allowed where useful for materials, lighting or readability. Exact palette matching is not required. The approved cabinet remains the more specific authority for the wood finish.",
+      "width": 64,
+      "height": 64,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/d736f402-2910-4b7b-b2a1-8352447939c2/image.png?v=1795270713834",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "4a04aa8b-0d9c-4735-a7f4-a976a3a4d821",
+      "batchIndex": 1,
+      "batchSize": 9,
+      "action": {
+        "kind": "same-style"
+      }
+    },
+    {
+      "id": "9e0257b0-2214-4417-9aeb-0dcf0280d45f",
+      "type": "image",
+      "createdAt": "2026-11-21T14:18:34.174Z",
+      "updatedAt": "2026-11-21T14:18:34.174Z",
+      "prompt": "Create the small freestanding washstand and sink from the first reference for a steampunk submarine cabin. Preserve the original subject and its recognizable silhouette: a tall narrow wooden sink cabinet, a light cream basin and rim above it, and the existing small brass faucet and fittings at the top. Straight-on perspective, original basin shape and plumbing arrangement, empty usable basin, existing single cabinet front, and original floor-contact points. It occupies about five eighths of the square composition width and seven eighths of its height, centered with modest empty margins. Preserve the relative heights of the basin, faucet, cabinet and bottom edge.\n\nThe second reference, Churchill, is ONLY a guide to deliberate fine pixel clusters, restrained shading and the thin dark silhouette outline. Do not borrow human anatomy, clothing or character colors.\n\nThe third reference, the approved cabinet, is the PRIMARY FURNITURE STYLE AND COLOR REFERENCE. The washstand and that cabinet belong to the SAME matching furniture set in the same room. Match the cabinet's muted dark reddish brown wood, nearly black brown shadows and outline, restrained warm brown edge highlights, simple recessed rectangular wooden front panel, small subdued metal details, squared construction, trim and bottom support treatment. Give the sink's lower wooden cabinet the same finish, panel language and level of detail. Keep the recognizable sink and cream basin above it; do not turn it into another bedside cabinet. Prefer the approved cabinet's actual dark muted finish over the blurry warmer wood in the source. No extra drawers, additional compartments, new locks, decorative metal corner plates or unrelated ornament. Keep existing hardware subtle and in the same muted metal family as the matching cabinet. Refine the basin with restrained cream highlights and warm shaded edges, the brass faucet with limited highlights, and the wood with subtle grain and purposeful fine contours.\n\nUse a continuous very dark outer outline exactly one final-image pixel thick, coherent with the approved cabinet and Churchill, following the full sink and cabinet silhouette. Keep stepped pixel diagonals, subordinate interior lines, no doubled outline, blur, antialiasing or halo. Preserve broad readable surfaces and the source's transparency and background treatment.\n\nThe fourth reference is ONLY the game's shared 128-color palette, a flexible color starting point. It must not influence shape or composition. Favor its dark warm browns, subdued neutrals, creams and aged brass colors; additional harmonious shades are allowed where useful for materials, lighting or readability. Exact palette matching is not required. The approved cabinet remains the more specific authority for the wood finish.",
+      "width": 64,
+      "height": 64,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/9e0257b0-2214-4417-9aeb-0dcf0280d45f/image.png?v=1795270714174",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "4a04aa8b-0d9c-4735-a7f4-a976a3a4d821",
+      "batchIndex": 2,
+      "batchSize": 9,
+      "action": {
+        "kind": "same-style"
+      }
+    },
+    {
+      "id": "a0c1c191-4c76-4444-9af5-841fe89838a8",
+      "type": "image",
+      "createdAt": "2026-11-21T14:18:34.636Z",
+      "updatedAt": "2026-11-21T14:18:34.636Z",
+      "prompt": "Create the small freestanding washstand and sink from the first reference for a steampunk submarine cabin. Preserve the original subject and its recognizable silhouette: a tall narrow wooden sink cabinet, a light cream basin and rim above it, and the existing small brass faucet and fittings at the top. Straight-on perspective, original basin shape and plumbing arrangement, empty usable basin, existing single cabinet front, and original floor-contact points. It occupies about five eighths of the square composition width and seven eighths of its height, centered with modest empty margins. Preserve the relative heights of the basin, faucet, cabinet and bottom edge.\n\nThe second reference, Churchill, is ONLY a guide to deliberate fine pixel clusters, restrained shading and the thin dark silhouette outline. Do not borrow human anatomy, clothing or character colors.\n\nThe third reference, the approved cabinet, is the PRIMARY FURNITURE STYLE AND COLOR REFERENCE. The washstand and that cabinet belong to the SAME matching furniture set in the same room. Match the cabinet's muted dark reddish brown wood, nearly black brown shadows and outline, restrained warm brown edge highlights, simple recessed rectangular wooden front panel, small subdued metal details, squared construction, trim and bottom support treatment. Give the sink's lower wooden cabinet the same finish, panel language and level of detail. Keep the recognizable sink and cream basin above it; do not turn it into another bedside cabinet. Prefer the approved cabinet's actual dark muted finish over the blurry warmer wood in the source. No extra drawers, additional compartments, new locks, decorative metal corner plates or unrelated ornament. Keep existing hardware subtle and in the same muted metal family as the matching cabinet. Refine the basin with restrained cream highlights and warm shaded edges, the brass faucet with limited highlights, and the wood with subtle grain and purposeful fine contours.\n\nUse a continuous very dark outer outline exactly one final-image pixel thick, coherent with the approved cabinet and Churchill, following the full sink and cabinet silhouette. Keep stepped pixel diagonals, subordinate interior lines, no doubled outline, blur, antialiasing or halo. Preserve broad readable surfaces and the source's transparency and background treatment.\n\nThe fourth reference is ONLY the game's shared 128-color palette, a flexible color starting point. It must not influence shape or composition. Favor its dark warm browns, subdued neutrals, creams and aged brass colors; additional harmonious shades are allowed where useful for materials, lighting or readability. Exact palette matching is not required. The approved cabinet remains the more specific authority for the wood finish.",
+      "width": 64,
+      "height": 64,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/a0c1c191-4c76-4444-9af5-841fe89838a8/image.png?v=1795270714636",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "4a04aa8b-0d9c-4735-a7f4-a976a3a4d821",
+      "batchIndex": 3,
+      "batchSize": 9,
+      "action": {
+        "kind": "same-style"
+      }
+    },
+    {
+      "id": "572a97a4-5a9a-445d-a7a0-1905c1777c31",
+      "type": "image",
+      "createdAt": "2026-11-21T14:18:34.953Z",
+      "updatedAt": "2026-11-21T14:18:34.953Z",
+      "prompt": "Create the small freestanding washstand and sink from the first reference for a steampunk submarine cabin. Preserve the original subject and its recognizable silhouette: a tall narrow wooden sink cabinet, a light cream basin and rim above it, and the existing small brass faucet and fittings at the top. Straight-on perspective, original basin shape and plumbing arrangement, empty usable basin, existing single cabinet front, and original floor-contact points. It occupies about five eighths of the square composition width and seven eighths of its height, centered with modest empty margins. Preserve the relative heights of the basin, faucet, cabinet and bottom edge.\n\nThe second reference, Churchill, is ONLY a guide to deliberate fine pixel clusters, restrained shading and the thin dark silhouette outline. Do not borrow human anatomy, clothing or character colors.\n\nThe third reference, the approved cabinet, is the PRIMARY FURNITURE STYLE AND COLOR REFERENCE. The washstand and that cabinet belong to the SAME matching furniture set in the same room. Match the cabinet's muted dark reddish brown wood, nearly black brown shadows and outline, restrained warm brown edge highlights, simple recessed rectangular wooden front panel, small subdued metal details, squared construction, trim and bottom support treatment. Give the sink's lower wooden cabinet the same finish, panel language and level of detail. Keep the recognizable sink and cream basin above it; do not turn it into another bedside cabinet. Prefer the approved cabinet's actual dark muted finish over the blurry warmer wood in the source. No extra drawers, additional compartments, new locks, decorative metal corner plates or unrelated ornament. Keep existing hardware subtle and in the same muted metal family as the matching cabinet. Refine the basin with restrained cream highlights and warm shaded edges, the brass faucet with limited highlights, and the wood with subtle grain and purposeful fine contours.\n\nUse a continuous very dark outer outline exactly one final-image pixel thick, coherent with the approved cabinet and Churchill, following the full sink and cabinet silhouette. Keep stepped pixel diagonals, subordinate interior lines, no doubled outline, blur, antialiasing or halo. Preserve broad readable surfaces and the source's transparency and background treatment.\n\nThe fourth reference is ONLY the game's shared 128-color palette, a flexible color starting point. It must not influence shape or composition. Favor its dark warm browns, subdued neutrals, creams and aged brass colors; additional harmonious shades are allowed where useful for materials, lighting or readability. Exact palette matching is not required. The approved cabinet remains the more specific authority for the wood finish.",
+      "width": 64,
+      "height": 64,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/572a97a4-5a9a-445d-a7a0-1905c1777c31/image.png?v=1795270714953",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "4a04aa8b-0d9c-4735-a7f4-a976a3a4d821",
+      "batchIndex": 4,
+      "batchSize": 9,
+      "action": {
+        "kind": "same-style"
+      }
+    },
+    {
+      "id": "335a5cf6-b693-4704-8989-1a901723748e",
+      "type": "image",
+      "createdAt": "2026-11-21T14:18:35.366Z",
+      "updatedAt": "2026-11-21T14:18:35.366Z",
+      "prompt": "Create the small freestanding washstand and sink from the first reference for a steampunk submarine cabin. Preserve the original subject and its recognizable silhouette: a tall narrow wooden sink cabinet, a light cream basin and rim above it, and the existing small brass faucet and fittings at the top. Straight-on perspective, original basin shape and plumbing arrangement, empty usable basin, existing single cabinet front, and original floor-contact points. It occupies about five eighths of the square composition width and seven eighths of its height, centered with modest empty margins. Preserve the relative heights of the basin, faucet, cabinet and bottom edge.\n\nThe second reference, Churchill, is ONLY a guide to deliberate fine pixel clusters, restrained shading and the thin dark silhouette outline. Do not borrow human anatomy, clothing or character colors.\n\nThe third reference, the approved cabinet, is the PRIMARY FURNITURE STYLE AND COLOR REFERENCE. The washstand and that cabinet belong to the SAME matching furniture set in the same room. Match the cabinet's muted dark reddish brown wood, nearly black brown shadows and outline, restrained warm brown edge highlights, simple recessed rectangular wooden front panel, small subdued metal details, squared construction, trim and bottom support treatment. Give the sink's lower wooden cabinet the same finish, panel language and level of detail. Keep the recognizable sink and cream basin above it; do not turn it into another bedside cabinet. Prefer the approved cabinet's actual dark muted finish over the blurry warmer wood in the source. No extra drawers, additional compartments, new locks, decorative metal corner plates or unrelated ornament. Keep existing hardware subtle and in the same muted metal family as the matching cabinet. Refine the basin with restrained cream highlights and warm shaded edges, the brass faucet with limited highlights, and the wood with subtle grain and purposeful fine contours.\n\nUse a continuous very dark outer outline exactly one final-image pixel thick, coherent with the approved cabinet and Churchill, following the full sink and cabinet silhouette. Keep stepped pixel diagonals, subordinate interior lines, no doubled outline, blur, antialiasing or halo. Preserve broad readable surfaces and the source's transparency and background treatment.\n\nThe fourth reference is ONLY the game's shared 128-color palette, a flexible color starting point. It must not influence shape or composition. Favor its dark warm browns, subdued neutrals, creams and aged brass colors; additional harmonious shades are allowed where useful for materials, lighting or readability. Exact palette matching is not required. The approved cabinet remains the more specific authority for the wood finish.",
+      "width": 64,
+      "height": 64,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/335a5cf6-b693-4704-8989-1a901723748e/image.png?v=1795270715366",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "4a04aa8b-0d9c-4735-a7f4-a976a3a4d821",
+      "batchIndex": 5,
+      "batchSize": 9,
+      "action": {
+        "kind": "same-style"
+      }
+    },
+    {
+      "id": "39ca66f2-b057-4445-96de-f71f0fca7683",
+      "type": "image",
+      "createdAt": "2026-11-21T14:18:35.685Z",
+      "updatedAt": "2026-11-21T14:18:35.685Z",
+      "prompt": "Create the small freestanding washstand and sink from the first reference for a steampunk submarine cabin. Preserve the original subject and its recognizable silhouette: a tall narrow wooden sink cabinet, a light cream basin and rim above it, and the existing small brass faucet and fittings at the top. Straight-on perspective, original basin shape and plumbing arrangement, empty usable basin, existing single cabinet front, and original floor-contact points. It occupies about five eighths of the square composition width and seven eighths of its height, centered with modest empty margins. Preserve the relative heights of the basin, faucet, cabinet and bottom edge.\n\nThe second reference, Churchill, is ONLY a guide to deliberate fine pixel clusters, restrained shading and the thin dark silhouette outline. Do not borrow human anatomy, clothing or character colors.\n\nThe third reference, the approved cabinet, is the PRIMARY FURNITURE STYLE AND COLOR REFERENCE. The washstand and that cabinet belong to the SAME matching furniture set in the same room. Match the cabinet's muted dark reddish brown wood, nearly black brown shadows and outline, restrained warm brown edge highlights, simple recessed rectangular wooden front panel, small subdued metal details, squared construction, trim and bottom support treatment. Give the sink's lower wooden cabinet the same finish, panel language and level of detail. Keep the recognizable sink and cream basin above it; do not turn it into another bedside cabinet. Prefer the approved cabinet's actual dark muted finish over the blurry warmer wood in the source. No extra drawers, additional compartments, new locks, decorative metal corner plates or unrelated ornament. Keep existing hardware subtle and in the same muted metal family as the matching cabinet. Refine the basin with restrained cream highlights and warm shaded edges, the brass faucet with limited highlights, and the wood with subtle grain and purposeful fine contours.\n\nUse a continuous very dark outer outline exactly one final-image pixel thick, coherent with the approved cabinet and Churchill, following the full sink and cabinet silhouette. Keep stepped pixel diagonals, subordinate interior lines, no doubled outline, blur, antialiasing or halo. Preserve broad readable surfaces and the source's transparency and background treatment.\n\nThe fourth reference is ONLY the game's shared 128-color palette, a flexible color starting point. It must not influence shape or composition. Favor its dark warm browns, subdued neutrals, creams and aged brass colors; additional harmonious shades are allowed where useful for materials, lighting or readability. Exact palette matching is not required. The approved cabinet remains the more specific authority for the wood finish.",
+      "width": 64,
+      "height": 64,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/39ca66f2-b057-4445-96de-f71f0fca7683/image.png?v=1795270715685",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "4a04aa8b-0d9c-4735-a7f4-a976a3a4d821",
+      "batchIndex": 6,
+      "batchSize": 9,
+      "action": {
+        "kind": "same-style"
+      }
+    },
+    {
+      "id": "4a92bcf6-9574-48f3-bc35-d0feef0ccfd2",
+      "type": "image",
+      "createdAt": "2026-11-21T14:18:36.103Z",
+      "updatedAt": "2026-11-21T14:18:36.103Z",
+      "prompt": "Create the small freestanding washstand and sink from the first reference for a steampunk submarine cabin. Preserve the original subject and its recognizable silhouette: a tall narrow wooden sink cabinet, a light cream basin and rim above it, and the existing small brass faucet and fittings at the top. Straight-on perspective, original basin shape and plumbing arrangement, empty usable basin, existing single cabinet front, and original floor-contact points. It occupies about five eighths of the square composition width and seven eighths of its height, centered with modest empty margins. Preserve the relative heights of the basin, faucet, cabinet and bottom edge.\n\nThe second reference, Churchill, is ONLY a guide to deliberate fine pixel clusters, restrained shading and the thin dark silhouette outline. Do not borrow human anatomy, clothing or character colors.\n\nThe third reference, the approved cabinet, is the PRIMARY FURNITURE STYLE AND COLOR REFERENCE. The washstand and that cabinet belong to the SAME matching furniture set in the same room. Match the cabinet's muted dark reddish brown wood, nearly black brown shadows and outline, restrained warm brown edge highlights, simple recessed rectangular wooden front panel, small subdued metal details, squared construction, trim and bottom support treatment. Give the sink's lower wooden cabinet the same finish, panel language and level of detail. Keep the recognizable sink and cream basin above it; do not turn it into another bedside cabinet. Prefer the approved cabinet's actual dark muted finish over the blurry warmer wood in the source. No extra drawers, additional compartments, new locks, decorative metal corner plates or unrelated ornament. Keep existing hardware subtle and in the same muted metal family as the matching cabinet. Refine the basin with restrained cream highlights and warm shaded edges, the brass faucet with limited highlights, and the wood with subtle grain and purposeful fine contours.\n\nUse a continuous very dark outer outline exactly one final-image pixel thick, coherent with the approved cabinet and Churchill, following the full sink and cabinet silhouette. Keep stepped pixel diagonals, subordinate interior lines, no doubled outline, blur, antialiasing or halo. Preserve broad readable surfaces and the source's transparency and background treatment.\n\nThe fourth reference is ONLY the game's shared 128-color palette, a flexible color starting point. It must not influence shape or composition. Favor its dark warm browns, subdued neutrals, creams and aged brass colors; additional harmonious shades are allowed where useful for materials, lighting or readability. Exact palette matching is not required. The approved cabinet remains the more specific authority for the wood finish.",
+      "width": 64,
+      "height": 64,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/4a92bcf6-9574-48f3-bc35-d0feef0ccfd2/image.png?v=1795270716103",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "4a04aa8b-0d9c-4735-a7f4-a976a3a4d821",
+      "batchIndex": 7,
+      "batchSize": 9,
+      "action": {
+        "kind": "same-style"
+      }
+    },
+    {
+      "id": "ce69274c-619f-42af-9aa1-f8668b5f1416",
+      "type": "image",
+      "createdAt": "2026-11-21T14:18:36.468Z",
+      "updatedAt": "2026-11-21T14:18:36.468Z",
+      "prompt": "Create the small freestanding washstand and sink from the first reference for a steampunk submarine cabin. Preserve the original subject and its recognizable silhouette: a tall narrow wooden sink cabinet, a light cream basin and rim above it, and the existing small brass faucet and fittings at the top. Straight-on perspective, original basin shape and plumbing arrangement, empty usable basin, existing single cabinet front, and original floor-contact points. It occupies about five eighths of the square composition width and seven eighths of its height, centered with modest empty margins. Preserve the relative heights of the basin, faucet, cabinet and bottom edge.\n\nThe second reference, Churchill, is ONLY a guide to deliberate fine pixel clusters, restrained shading and the thin dark silhouette outline. Do not borrow human anatomy, clothing or character colors.\n\nThe third reference, the approved cabinet, is the PRIMARY FURNITURE STYLE AND COLOR REFERENCE. The washstand and that cabinet belong to the SAME matching furniture set in the same room. Match the cabinet's muted dark reddish brown wood, nearly black brown shadows and outline, restrained warm brown edge highlights, simple recessed rectangular wooden front panel, small subdued metal details, squared construction, trim and bottom support treatment. Give the sink's lower wooden cabinet the same finish, panel language and level of detail. Keep the recognizable sink and cream basin above it; do not turn it into another bedside cabinet. Prefer the approved cabinet's actual dark muted finish over the blurry warmer wood in the source. No extra drawers, additional compartments, new locks, decorative metal corner plates or unrelated ornament. Keep existing hardware subtle and in the same muted metal family as the matching cabinet. Refine the basin with restrained cream highlights and warm shaded edges, the brass faucet with limited highlights, and the wood with subtle grain and purposeful fine contours.\n\nUse a continuous very dark outer outline exactly one final-image pixel thick, coherent with the approved cabinet and Churchill, following the full sink and cabinet silhouette. Keep stepped pixel diagonals, subordinate interior lines, no doubled outline, blur, antialiasing or halo. Preserve broad readable surfaces and the source's transparency and background treatment.\n\nThe fourth reference is ONLY the game's shared 128-color palette, a flexible color starting point. It must not influence shape or composition. Favor its dark warm browns, subdued neutrals, creams and aged brass colors; additional harmonious shades are allowed where useful for materials, lighting or readability. Exact palette matching is not required. The approved cabinet remains the more specific authority for the wood finish.",
+      "width": 64,
+      "height": 64,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/ce69274c-619f-42af-9aa1-f8668b5f1416/image.png?v=1795270716468",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "4a04aa8b-0d9c-4735-a7f4-a976a3a4d821",
+      "batchIndex": 8,
+      "batchSize": 9,
+      "action": {
+        "kind": "same-style"
+      }
+    }
+  ],
+  "credits": {
+    "used": 15,
+    "remaining": 435
+  }
+}

@@ -1,0 +1,128 @@
+﻿[
+    {
+        "file":  "godot/assets/graphics/ep01_cabin/feather-redesign.png",
+        "canvas_width":  32,
+        "canvas_height":  32,
+        "bounds_x":  5,
+        "bounds_y":  1,
+        "subject_width":  21,
+        "subject_height":  30,
+        "subject_pass":  false,
+        "alpha":  [
+                      0,
+                      255
+                  ]
+    },
+    {
+        "file":  "godot/assets/graphics/ep01_cabin/feather-redesign-2.png",
+        "canvas_width":  32,
+        "canvas_height":  32,
+        "bounds_x":  5,
+        "bounds_y":  1,
+        "subject_width":  22,
+        "subject_height":  29,
+        "subject_pass":  false,
+        "alpha":  [
+                      0,
+                      255
+                  ]
+    },
+    {
+        "file":  "godot/assets/graphics/ep01_cabin/feather-redesign-3.png",
+        "canvas_width":  32,
+        "canvas_height":  32,
+        "bounds_x":  6,
+        "bounds_y":  2,
+        "subject_width":  20,
+        "subject_height":  28,
+        "subject_pass":  false,
+        "alpha":  [
+                      0,
+                      255
+                  ]
+    },
+    {
+        "file":  "godot/assets/graphics/ep01_cabin/feather-redesign-4.png",
+        "canvas_width":  32,
+        "canvas_height":  32,
+        "bounds_x":  6,
+        "bounds_y":  2,
+        "subject_width":  20,
+        "subject_height":  28,
+        "subject_pass":  false,
+        "alpha":  [
+                      0,
+                      255
+                  ]
+    },
+    {
+        "file":  "godot/assets/graphics/ep01_cabin/feather-redesign-5.png",
+        "canvas_width":  32,
+        "canvas_height":  32,
+        "bounds_x":  5,
+        "bounds_y":  1,
+        "subject_width":  21,
+        "subject_height":  29,
+        "subject_pass":  false,
+        "alpha":  [
+                      0,
+                      255
+                  ]
+    },
+    {
+        "file":  "godot/assets/graphics/ep01_cabin/feather-redesign-6.png",
+        "canvas_width":  32,
+        "canvas_height":  32,
+        "bounds_x":  6,
+        "bounds_y":  1,
+        "subject_width":  19,
+        "subject_height":  29,
+        "subject_pass":  false,
+        "alpha":  [
+                      0,
+                      255
+                  ]
+    },
+    {
+        "file":  "godot/assets/graphics/ep01_cabin/feather-redesign-7.png",
+        "canvas_width":  32,
+        "canvas_height":  32,
+        "bounds_x":  6,
+        "bounds_y":  1,
+        "subject_width":  19,
+        "subject_height":  29,
+        "subject_pass":  false,
+        "alpha":  [
+                      0,
+                      255
+                  ]
+    },
+    {
+        "file":  "godot/assets/graphics/ep01_cabin/feather-redesign-8.png",
+        "canvas_width":  32,
+        "canvas_height":  32,
+        "bounds_x":  6,
+        "bounds_y":  2,
+        "subject_width":  19,
+        "subject_height":  28,
+        "subject_pass":  false,
+        "alpha":  [
+                      0,
+                      255
+                  ]
+    },
+    {
+        "file":  "godot/assets/graphics/ep01_cabin/feather-redesign-9.png",
+        "canvas_width":  32,
+        "canvas_height":  32,
+        "bounds_x":  5,
+        "bounds_y":  1,
+        "subject_width":  21,
+        "subject_height":  29,
+        "subject_pass":  false,
+        "alpha":  [
+                      0,
+                      255
+                  ]
+    }
+]

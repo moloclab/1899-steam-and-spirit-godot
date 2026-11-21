@@ -1,0 +1,34 @@
+﻿{
+    "variant":  9,
+    "asset_id":  "6d58f3b0-3f56-4cf5-a705-0f09f775c23f",
+    "native":  "como-selected-native.png",
+    "previous":  "como-before-selection.png",
+    "crop":  [
+                 4,
+                 5,
+                 40,
+                 37
+             ],
+    "target":  "godot/assets/graphics/ep01_cabin/como.png",
+    "visible_pixels_verified":  true,
+    "scene_position":  [
+                           224,
+                           163
+                       ],
+    "hit_size":  [
+                     40,
+                     37
+                 ],
+    "base_y":  200,
+    "discarded_local_variants":  [
+                                     1,
+                                     2,
+                                     3,
+                                     4,
+                                     5,
+                                     6,
+                                     7,
+                                     8
+                                 ],
+    "spritefusion_library_modified":  false
+}

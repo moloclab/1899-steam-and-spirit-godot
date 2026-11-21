@@ -1,0 +1,19 @@
+﻿{
+    "selected":  "door_sub-redesign-4.png",
+    "native":  "selected-4-native.png",
+    "original":  "original.png",
+    "crop":  [
+                 26,
+                 6,
+                 76,
+                 116
+             ],
+    "installed":  "godot/assets/graphics/ep01_cabin/door_sub.png",
+    "size":  [
+                 76,
+                 116
+             ],
+    "pixel_comparison":  "identical",
+    "sha256":  "D56E5CF11F4443FA7929DBF37A5742A12B50794B6BDA09BD56D33DB2A890CF24",
+    "scene_changes":  false
+}

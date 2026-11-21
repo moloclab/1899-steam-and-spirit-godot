@@ -1,0 +1,95 @@
+{
+  "request_id": "req_ecd05076-1491-4d4d-867a-a260c8a2fd6e",
+  "status": "succeeded",
+  "output_count": 4,
+  "outputs": [
+    {
+      "id": "e657bb32-9f59-4b32-95d9-6b454e2d6213",
+      "type": "image",
+      "createdAt": "2026-11-21T14:32:39.168Z",
+      "updatedAt": "2026-11-21T14:32:39.168Z",
+      "prompt": "Create a closed metal watertight cabin door aboard the Leviathian, a late-Victorian steampunk submarine. First reference defines the subject: straight-on view, tall narrow rounded rectangular silhouette with clipped/rounded upper corners and softly rounded lower corners, heavy dull brown bronze metal rim, small dark round porthole in the upper third, restrained horizontal structural seams across the lower panels. Preserve this design, perspective and dominant muted dark olive-brown and bronze tones. Preserve its attachment silhouette, bottom baseline, porthole position and broad readable panels. Refine metal joints, subtle aged metal shading and the porthole rim; do not add wheels, handles, hinges projecting beyond the silhouette, pipes, decorations or extra functional elements absent from the original. Second reference Churchill supplies only the finer detail level, deliberate pixel clusters, restrained shading and dark outline treatment; do not transfer character anatomy, clothing or character colors. Third reference is the approved cabin cabinet and supplies compatible material rendering and outline treatment only, not wood construction or furniture features. Fourth reference is the common 128-color swatch sheet, used as a flexible color base; additional harmonious shades are allowed. Give the door a continuous very dark outline exactly one final-image pixel thick, uniform around its silhouette, with stepped diagonals, no doubled border, halo, blur or antialiasing. Internal lines must remain subtle and subordinate. Keep the original transparency treatment. The subject occupies about three fifths of the square composition width and just over nine tenths of its height, centered with little space above and below.",
+      "width": 128,
+      "height": 128,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/e657bb32-9f59-4b32-95d9-6b454e2d6213/image.png?v=1795271559168",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "0885bbc4-0482-4c60-b83c-80e0e8fde15c",
+      "batchIndex": 0,
+      "batchSize": 4,
+      "action": {
+        "kind": "same-style"
+      }
+    },
+    {
+      "id": "d39436a4-c82b-4cb8-bd7c-a30baac01e8b",
+      "type": "image",
+      "createdAt": "2026-11-21T14:32:39.607Z",
+      "updatedAt": "2026-11-21T14:32:39.607Z",
+      "prompt": "Create a closed metal watertight cabin door aboard the Leviathian, a late-Victorian steampunk submarine. First reference defines the subject: straight-on view, tall narrow rounded rectangular silhouette with clipped/rounded upper corners and softly rounded lower corners, heavy dull brown bronze metal rim, small dark round porthole in the upper third, restrained horizontal structural seams across the lower panels. Preserve this design, perspective and dominant muted dark olive-brown and bronze tones. Preserve its attachment silhouette, bottom baseline, porthole position and broad readable panels. Refine metal joints, subtle aged metal shading and the porthole rim; do not add wheels, handles, hinges projecting beyond the silhouette, pipes, decorations or extra functional elements absent from the original. Second reference Churchill supplies only the finer detail level, deliberate pixel clusters, restrained shading and dark outline treatment; do not transfer character anatomy, clothing or character colors. Third reference is the approved cabin cabinet and supplies compatible material rendering and outline treatment only, not wood construction or furniture features. Fourth reference is the common 128-color swatch sheet, used as a flexible color base; additional harmonious shades are allowed. Give the door a continuous very dark outline exactly one final-image pixel thick, uniform around its silhouette, with stepped diagonals, no doubled border, halo, blur or antialiasing. Internal lines must remain subtle and subordinate. Keep the original transparency treatment. The subject occupies about three fifths of the square composition width and just over nine tenths of its height, centered with little space above and below.",
+      "width": 128,
+      "height": 128,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/d39436a4-c82b-4cb8-bd7c-a30baac01e8b/image.png?v=1795271559607",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "0885bbc4-0482-4c60-b83c-80e0e8fde15c",
+      "batchIndex": 1,
+      "batchSize": 4,
+      "action": {
+        "kind": "same-style"
+      }
+    },
+    {
+      "id": "aad39a2e-1882-4a64-be83-9a3f39add7ba",
+      "type": "image",
+      "createdAt": "2026-11-21T14:32:40.030Z",
+      "updatedAt": "2026-11-21T14:32:40.030Z",
+      "prompt": "Create a closed metal watertight cabin door aboard the Leviathian, a late-Victorian steampunk submarine. First reference defines the subject: straight-on view, tall narrow rounded rectangular silhouette with clipped/rounded upper corners and softly rounded lower corners, heavy dull brown bronze metal rim, small dark round porthole in the upper third, restrained horizontal structural seams across the lower panels. Preserve this design, perspective and dominant muted dark olive-brown and bronze tones. Preserve its attachment silhouette, bottom baseline, porthole position and broad readable panels. Refine metal joints, subtle aged metal shading and the porthole rim; do not add wheels, handles, hinges projecting beyond the silhouette, pipes, decorations or extra functional elements absent from the original. Second reference Churchill supplies only the finer detail level, deliberate pixel clusters, restrained shading and dark outline treatment; do not transfer character anatomy, clothing or character colors. Third reference is the approved cabin cabinet and supplies compatible material rendering and outline treatment only, not wood construction or furniture features. Fourth reference is the common 128-color swatch sheet, used as a flexible color base; additional harmonious shades are allowed. Give the door a continuous very dark outline exactly one final-image pixel thick, uniform around its silhouette, with stepped diagonals, no doubled border, halo, blur or antialiasing. Internal lines must remain subtle and subordinate. Keep the original transparency treatment. The subject occupies about three fifths of the square composition width and just over nine tenths of its height, centered with little space above and below.",
+      "width": 128,
+      "height": 128,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/aad39a2e-1882-4a64-be83-9a3f39add7ba/image.png?v=1795271560030",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "0885bbc4-0482-4c60-b83c-80e0e8fde15c",
+      "batchIndex": 2,
+      "batchSize": 4,
+      "action": {
+        "kind": "same-style"
+      }
+    },
+    {
+      "id": "59e5d5bc-8dcb-4ed1-95ab-c553d33b65b5",
+      "type": "image",
+      "createdAt": "2026-11-21T14:32:40.469Z",
+      "updatedAt": "2026-11-21T14:32:40.469Z",
+      "prompt": "Create a closed metal watertight cabin door aboard the Leviathian, a late-Victorian steampunk submarine. First reference defines the subject: straight-on view, tall narrow rounded rectangular silhouette with clipped/rounded upper corners and softly rounded lower corners, heavy dull brown bronze metal rim, small dark round porthole in the upper third, restrained horizontal structural seams across the lower panels. Preserve this design, perspective and dominant muted dark olive-brown and bronze tones. Preserve its attachment silhouette, bottom baseline, porthole position and broad readable panels. Refine metal joints, subtle aged metal shading and the porthole rim; do not add wheels, handles, hinges projecting beyond the silhouette, pipes, decorations or extra functional elements absent from the original. Second reference Churchill supplies only the finer detail level, deliberate pixel clusters, restrained shading and dark outline treatment; do not transfer character anatomy, clothing or character colors. Third reference is the approved cabin cabinet and supplies compatible material rendering and outline treatment only, not wood construction or furniture features. Fourth reference is the common 128-color swatch sheet, used as a flexible color base; additional harmonious shades are allowed. Give the door a continuous very dark outline exactly one final-image pixel thick, uniform around its silhouette, with stepped diagonals, no doubled border, halo, blur or antialiasing. Internal lines must remain subtle and subordinate. Keep the original transparency treatment. The subject occupies about three fifths of the square composition width and just over nine tenths of its height, centered with little space above and below.",
+      "width": 128,
+      "height": 128,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/59e5d5bc-8dcb-4ed1-95ab-c553d33b65b5/image.png?v=1795271560469",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "0885bbc4-0482-4c60-b83c-80e0e8fde15c",
+      "batchIndex": 3,
+      "batchSize": 4,
+      "action": {
+        "kind": "same-style"
+      }
+    }
+  ],
+  "credits": {
+    "used": 15,
+    "remaining": 420
+  },
+  "inputs": [
+    "godot/assets/graphics/ep01_cabin/door_sub.png",
+    "godot/assets/graphics/characters/churchill/churchill-stand.png",
+    "godot/assets/graphics/ep01_cabin/como.png",
+    "godot/palette/1899-base-128-swatches.png"
+  ],
+  "prompt": "Create a closed metal watertight cabin door aboard the Leviathian, a late-Victorian steampunk submarine. First reference defines the subject: straight-on view, tall narrow rounded rectangular silhouette with clipped/rounded upper corners and softly rounded lower corners, heavy dull brown bronze metal rim, small dark round porthole in the upper third, restrained horizontal structural seams across the lower panels. Preserve this design, perspective and dominant muted dark olive-brown and bronze tones. Preserve its attachment silhouette, bottom baseline, porthole position and broad readable panels. Refine metal joints, subtle aged metal shading and the porthole rim; do not add wheels, handles, hinges projecting beyond the silhouette, pipes, decorations or extra functional elements absent from the original. Second reference Churchill supplies only the finer detail level, deliberate pixel clusters, restrained shading and dark outline treatment; do not transfer character anatomy, clothing or character colors. Third reference is the approved cabin cabinet and supplies compatible material rendering and outline treatment only, not wood construction or furniture features. Fourth reference is the common 128-color swatch sheet, used as a flexible color base; additional harmonious shades are allowed. Give the door a continuous very dark outline exactly one final-image pixel thick, uniform around its silhouette, with stepped diagonals, no doubled border, halo, blur or antialiasing. Internal lines must remain subtle and subordinate. Keep the original transparency treatment. The subject occupies about three fifths of the square composition width and just over nine tenths of its height, centered with little space above and below.",
+  "size": 128
+}

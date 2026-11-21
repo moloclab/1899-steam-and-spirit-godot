@@ -1,0 +1,51 @@
+{
+  "request_id": "req_400ace5c-e187-4ac1-b513-4aa373c7c9e9",
+  "status": "succeeded",
+  "output_count": 2,
+  "outputs": [
+    {
+      "id": "b0958721-68dc-4662-915d-9d97c7ad8a9f",
+      "type": "image",
+      "createdAt": "2026-11-21T14:58:12.155Z",
+      "updatedAt": "2026-11-21T14:58:12.155Z",
+      "prompt": "Lengthen this existing bed to fill the ENTIRE available horizontal canvas, reaching the far right edge. The empty strip on the right is working space for extending the bed, not a margin to retain. Extend the mattress, red blanket and wooden frame horizontally toward the right, relocating the existing right end support to the far right boundary and seamlessly continuing the middle surfaces. Keep the bed's current height and floor-contact line unchanged. Preserve the approved design exactly: cream pillow at the left, low side view, dark warm wooden frame and front wood grain, red blanket with the same folds and restrained shading, dark thin outer outline. Keep the pillow, left end, colors, pixel detail and perspective unchanged. Do not scale the whole bed or enlarge the pillow, do not add height, new objects, ornaments, headboards or feet. Keep the source alpha and background treatment. Only extend the existing bed horizontally so it occupies the full available width.",
+      "width": 140,
+      "height": 39,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/b0958721-68dc-4662-915d-9d97c7ad8a9f/image.png?v=1795273092155",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "3f1ffddd-3b11-4d35-a59c-ccd04ed4edb5",
+      "batchIndex": 0,
+      "batchSize": 2,
+      "action": {
+        "kind": "edit"
+      }
+    },
+    {
+      "id": "90673d3d-bb72-420b-a3e6-9f3c2b42e5a9",
+      "type": "image",
+      "createdAt": "2026-11-21T14:58:12.683Z",
+      "updatedAt": "2026-11-21T14:58:12.683Z",
+      "prompt": "Lengthen this existing bed to fill the ENTIRE available horizontal canvas, reaching the far right edge. The empty strip on the right is working space for extending the bed, not a margin to retain. Extend the mattress, red blanket and wooden frame horizontally toward the right, relocating the existing right end support to the far right boundary and seamlessly continuing the middle surfaces. Keep the bed's current height and floor-contact line unchanged. Preserve the approved design exactly: cream pillow at the left, low side view, dark warm wooden frame and front wood grain, red blanket with the same folds and restrained shading, dark thin outer outline. Keep the pillow, left end, colors, pixel detail and perspective unchanged. Do not scale the whole bed or enlarge the pillow, do not add height, new objects, ornaments, headboards or feet. Keep the source alpha and background treatment. Only extend the existing bed horizontally so it occupies the full available width.",
+      "width": 165,
+      "height": 34,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/90673d3d-bb72-420b-a3e6-9f3c2b42e5a9/image.png?v=1795273092683",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "3f1ffddd-3b11-4d35-a59c-ccd04ed4edb5",
+      "batchIndex": 1,
+      "batchSize": 2,
+      "action": {
+        "kind": "edit"
+      }
+    }
+  ],
+  "credits": {
+    "used": 15,
+    "remaining": 375
+  },
+  "input_path": "output/spritefusion/bed/edit-extend-140/bed-input-140.png",
+  "preparation": "Unscaled current bed 120x39 at (0,0), canvas extended right by 20 transparent columns to enable requested horizontal extension."
+}

@@ -1,0 +1,17 @@
+{
+  "selected_variant": 3,
+  "user_instruction": "usa la variante 3",
+  "size_exception_approved": true,
+  "native_copy": "map-selected-native.png",
+  "original_backup": "map-original.png",
+  "destination": "godot/assets/graphics/ep01_cabin/map.png",
+  "native_canvas": [80, 80],
+  "crop": [9, 0, 61, 79],
+  "final_size": [61, 79],
+  "cropped_pixels_equal_native": true,
+  "position_preserved": [68, 64],
+  "hotspot_size": [61, 79],
+  "outline": "Dark one-pixel outer contour visually checked on the native selected variant.",
+  "other_variants_preserved": true,
+  "initial_magnet_state": "map_magnet.png remains unchanged"
+}

@@ -1,0 +1,107 @@
+﻿[
+    {
+        "file":  "bed-original.png",
+        "canvas":  [
+                       140,
+                       48
+                   ],
+        "bounds":  [
+                       0,
+                       0,
+                       140,
+                       48
+                   ],
+        "visible":  [
+                        140,
+                        48
+                    ],
+        "alpha":  [
+                      0,
+                      255
+                  ]
+    },
+    {
+        "file":  "bed-redesign-2.png",
+        "canvas":  [
+                       128,
+                       128
+                   ],
+        "bounds":  [
+                       3,
+                       41,
+                       124,
+                       86
+                   ],
+        "visible":  [
+                        121,
+                        45
+                    ],
+        "alpha":  [
+                      0,
+                      255
+                  ]
+    },
+    {
+        "file":  "bed-redesign-3.png",
+        "canvas":  [
+                       128,
+                       128
+                   ],
+        "bounds":  [
+                       4,
+                       42,
+                       124,
+                       86
+                   ],
+        "visible":  [
+                        120,
+                        44
+                    ],
+        "alpha":  [
+                      0,
+                      255
+                  ]
+    },
+    {
+        "file":  "bed-redesign-4.png",
+        "canvas":  [
+                       128,
+                       128
+                   ],
+        "bounds":  [
+                       4,
+                       34,
+                       124,
+                       93
+                   ],
+        "visible":  [
+                        120,
+                        59
+                    ],
+        "alpha":  [
+                      0,
+                      255
+                  ]
+    },
+    {
+        "file":  "bed-redesign-5.png",
+        "canvas":  [
+                       128,
+                       128
+                   ],
+        "bounds":  [
+                       4,
+                       44,
+                       124,
+                       83
+                   ],
+        "visible":  [
+                        120,
+                        39
+                    ],
+        "alpha":  [
+                      0,
+                      255
+                  ]
+    }
+]

@@ -1,0 +1,15 @@
+﻿{
+    "selected_variant":  3,
+    "crop":  {
+                 "y":  2,
+                 "width":  20,
+                 "height":  28,
+                 "x":  6
+             },
+    "destination":  "godot/assets/graphics/ep01_cabin/feather.png",
+    "backup":  "C:\\htdocs\\_OLD\\_GAMES\\1899\\output\\spritefusion\\feather\\same-style-32\\feather-original.png",
+    "source":  "godot/assets/graphics/ep01_cabin/feather-redesign-3.png",
+    "pixel_match":  true,
+    "final_sha256":  "E4856928EE03C1029632279F2111C97E8BB1CEE80BF20966FA7468A4BE7CE44E",
+    "rescaled":  false
+}

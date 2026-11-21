@@ -1,0 +1,190 @@
+{
+  "request_id": "req_49dd6e91-3493-4ebc-baa6-733708d3309f",
+  "status": "succeeded",
+  "output_count": 9,
+  "outputs": [
+    {
+      "id": "2a7a0440-23e5-4c94-ad8c-a8d354150320",
+      "type": "image",
+      "createdAt": "2026-11-21T15:08:01.798Z",
+      "updatedAt": "2026-11-21T15:08:01.798Z",
+      "prompt": "Create a wall-mounted framed paper deck plan of the Leviathan, the steampunk submarine aboard which Churchill travels. The Leviathan has the shape of a manta ray. The first reference is the actual object: preserve its upright rectangular wooden frame, front-facing flat view, warm aged ochre parchment, dark brown frame, and centered top-down technical plan of a wide manta-shaped submarine with swept wings, central hull and narrow tail. Refine the existing faint schematic with readable fine brown ink contours, a few restrained internal compartment divisions and mechanical construction details that remain a DRAWING ON PAPER. Preserve its orientation and composition. The result must clearly be a framed floor plan, rather than a physical submarine model or an animal. The whole framed object occupies about three quarters of the square composition's width and nine tenths of its height. Use reference two (Churchill) ONLY for finer deliberate pixel clusters, restrained shading and outline treatment; do not include a person or transfer clothing, anatomy or character colors. Reference three, the approved quill and inkwell, further guides the outline only. Give the frame a continuous very dark brown outer outline exactly one final-image pixel thick with stepped diagonals, no double borders, blur, antialiasing or halos. Keep interior ink lines subordinate and preserve broad readable parchment areas. Preserve the source transparency and background treatment. Reference four contains the shared 128-color swatches: use them only as a flexible base for harmonious warm parchment and wood colors, permitting additional matching shades. Do not introduce labels, symbols, decorations or narrative objects absent from the source.",
+      "width": 80,
+      "height": 80,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/2a7a0440-23e5-4c94-ad8c-a8d354150320/image.png?v=1795273681798",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "578bf15b-8531-4f81-b903-89a7c67cbaea",
+      "batchIndex": 0,
+      "batchSize": 9,
+      "action": {
+        "kind": "same-style"
+      }
+    },
+    {
+      "id": "9344f2e2-76a1-43d1-bfd0-032812049f8a",
+      "type": "image",
+      "createdAt": "2026-11-21T15:08:02.322Z",
+      "updatedAt": "2026-11-21T15:08:02.322Z",
+      "prompt": "Create a wall-mounted framed paper deck plan of the Leviathan, the steampunk submarine aboard which Churchill travels. The Leviathan has the shape of a manta ray. The first reference is the actual object: preserve its upright rectangular wooden frame, front-facing flat view, warm aged ochre parchment, dark brown frame, and centered top-down technical plan of a wide manta-shaped submarine with swept wings, central hull and narrow tail. Refine the existing faint schematic with readable fine brown ink contours, a few restrained internal compartment divisions and mechanical construction details that remain a DRAWING ON PAPER. Preserve its orientation and composition. The result must clearly be a framed floor plan, rather than a physical submarine model or an animal. The whole framed object occupies about three quarters of the square composition's width and nine tenths of its height. Use reference two (Churchill) ONLY for finer deliberate pixel clusters, restrained shading and outline treatment; do not include a person or transfer clothing, anatomy or character colors. Reference three, the approved quill and inkwell, further guides the outline only. Give the frame a continuous very dark brown outer outline exactly one final-image pixel thick with stepped diagonals, no double borders, blur, antialiasing or halos. Keep interior ink lines subordinate and preserve broad readable parchment areas. Preserve the source transparency and background treatment. Reference four contains the shared 128-color swatches: use them only as a flexible base for harmonious warm parchment and wood colors, permitting additional matching shades. Do not introduce labels, symbols, decorations or narrative objects absent from the source.",
+      "width": 80,
+      "height": 80,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/9344f2e2-76a1-43d1-bfd0-032812049f8a/image.png?v=1795273682322",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "578bf15b-8531-4f81-b903-89a7c67cbaea",
+      "batchIndex": 1,
+      "batchSize": 9,
+      "action": {
+        "kind": "same-style"
+      }
+    },
+    {
+      "id": "3fa954ad-012d-48a7-baa6-883ba7b3cc92",
+      "type": "image",
+      "createdAt": "2026-11-21T15:08:02.769Z",
+      "updatedAt": "2026-11-21T15:08:02.769Z",
+      "prompt": "Create a wall-mounted framed paper deck plan of the Leviathan, the steampunk submarine aboard which Churchill travels. The Leviathan has the shape of a manta ray. The first reference is the actual object: preserve its upright rectangular wooden frame, front-facing flat view, warm aged ochre parchment, dark brown frame, and centered top-down technical plan of a wide manta-shaped submarine with swept wings, central hull and narrow tail. Refine the existing faint schematic with readable fine brown ink contours, a few restrained internal compartment divisions and mechanical construction details that remain a DRAWING ON PAPER. Preserve its orientation and composition. The result must clearly be a framed floor plan, rather than a physical submarine model or an animal. The whole framed object occupies about three quarters of the square composition's width and nine tenths of its height. Use reference two (Churchill) ONLY for finer deliberate pixel clusters, restrained shading and outline treatment; do not include a person or transfer clothing, anatomy or character colors. Reference three, the approved quill and inkwell, further guides the outline only. Give the frame a continuous very dark brown outer outline exactly one final-image pixel thick with stepped diagonals, no double borders, blur, antialiasing or halos. Keep interior ink lines subordinate and preserve broad readable parchment areas. Preserve the source transparency and background treatment. Reference four contains the shared 128-color swatches: use them only as a flexible base for harmonious warm parchment and wood colors, permitting additional matching shades. Do not introduce labels, symbols, decorations or narrative objects absent from the source.",
+      "width": 80,
+      "height": 80,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/3fa954ad-012d-48a7-baa6-883ba7b3cc92/image.png?v=1795273682769",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "578bf15b-8531-4f81-b903-89a7c67cbaea",
+      "batchIndex": 2,
+      "batchSize": 9,
+      "action": {
+        "kind": "same-style"
+      }
+    },
+    {
+      "id": "66a7e6c9-82b2-4e67-8d63-6bcaf25d3e60",
+      "type": "image",
+      "createdAt": "2026-11-21T15:08:03.287Z",
+      "updatedAt": "2026-11-21T15:08:03.287Z",
+      "prompt": "Create a wall-mounted framed paper deck plan of the Leviathan, the steampunk submarine aboard which Churchill travels. The Leviathan has the shape of a manta ray. The first reference is the actual object: preserve its upright rectangular wooden frame, front-facing flat view, warm aged ochre parchment, dark brown frame, and centered top-down technical plan of a wide manta-shaped submarine with swept wings, central hull and narrow tail. Refine the existing faint schematic with readable fine brown ink contours, a few restrained internal compartment divisions and mechanical construction details that remain a DRAWING ON PAPER. Preserve its orientation and composition. The result must clearly be a framed floor plan, rather than a physical submarine model or an animal. The whole framed object occupies about three quarters of the square composition's width and nine tenths of its height. Use reference two (Churchill) ONLY for finer deliberate pixel clusters, restrained shading and outline treatment; do not include a person or transfer clothing, anatomy or character colors. Reference three, the approved quill and inkwell, further guides the outline only. Give the frame a continuous very dark brown outer outline exactly one final-image pixel thick with stepped diagonals, no double borders, blur, antialiasing or halos. Keep interior ink lines subordinate and preserve broad readable parchment areas. Preserve the source transparency and background treatment. Reference four contains the shared 128-color swatches: use them only as a flexible base for harmonious warm parchment and wood colors, permitting additional matching shades. Do not introduce labels, symbols, decorations or narrative objects absent from the source.",
+      "width": 80,
+      "height": 80,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/66a7e6c9-82b2-4e67-8d63-6bcaf25d3e60/image.png?v=1795273683287",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "578bf15b-8531-4f81-b903-89a7c67cbaea",
+      "batchIndex": 3,
+      "batchSize": 9,
+      "action": {
+        "kind": "same-style"
+      }
+    },
+    {
+      "id": "3f470f3c-c400-4ccb-9964-0618274030de",
+      "type": "image",
+      "createdAt": "2026-11-21T15:08:03.709Z",
+      "updatedAt": "2026-11-21T15:08:03.709Z",
+      "prompt": "Create a wall-mounted framed paper deck plan of the Leviathan, the steampunk submarine aboard which Churchill travels. The Leviathan has the shape of a manta ray. The first reference is the actual object: preserve its upright rectangular wooden frame, front-facing flat view, warm aged ochre parchment, dark brown frame, and centered top-down technical plan of a wide manta-shaped submarine with swept wings, central hull and narrow tail. Refine the existing faint schematic with readable fine brown ink contours, a few restrained internal compartment divisions and mechanical construction details that remain a DRAWING ON PAPER. Preserve its orientation and composition. The result must clearly be a framed floor plan, rather than a physical submarine model or an animal. The whole framed object occupies about three quarters of the square composition's width and nine tenths of its height. Use reference two (Churchill) ONLY for finer deliberate pixel clusters, restrained shading and outline treatment; do not include a person or transfer clothing, anatomy or character colors. Reference three, the approved quill and inkwell, further guides the outline only. Give the frame a continuous very dark brown outer outline exactly one final-image pixel thick with stepped diagonals, no double borders, blur, antialiasing or halos. Keep interior ink lines subordinate and preserve broad readable parchment areas. Preserve the source transparency and background treatment. Reference four contains the shared 128-color swatches: use them only as a flexible base for harmonious warm parchment and wood colors, permitting additional matching shades. Do not introduce labels, symbols, decorations or narrative objects absent from the source.",
+      "width": 80,
+      "height": 80,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/3f470f3c-c400-4ccb-9964-0618274030de/image.png?v=1795273683709",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "578bf15b-8531-4f81-b903-89a7c67cbaea",
+      "batchIndex": 4,
+      "batchSize": 9,
+      "action": {
+        "kind": "same-style"
+      }
+    },
+    {
+      "id": "33f578a4-824d-449b-aee9-c97a65e7f449",
+      "type": "image",
+      "createdAt": "2026-11-21T15:08:04.141Z",
+      "updatedAt": "2026-11-21T15:08:04.141Z",
+      "prompt": "Create a wall-mounted framed paper deck plan of the Leviathan, the steampunk submarine aboard which Churchill travels. The Leviathan has the shape of a manta ray. The first reference is the actual object: preserve its upright rectangular wooden frame, front-facing flat view, warm aged ochre parchment, dark brown frame, and centered top-down technical plan of a wide manta-shaped submarine with swept wings, central hull and narrow tail. Refine the existing faint schematic with readable fine brown ink contours, a few restrained internal compartment divisions and mechanical construction details that remain a DRAWING ON PAPER. Preserve its orientation and composition. The result must clearly be a framed floor plan, rather than a physical submarine model or an animal. The whole framed object occupies about three quarters of the square composition's width and nine tenths of its height. Use reference two (Churchill) ONLY for finer deliberate pixel clusters, restrained shading and outline treatment; do not include a person or transfer clothing, anatomy or character colors. Reference three, the approved quill and inkwell, further guides the outline only. Give the frame a continuous very dark brown outer outline exactly one final-image pixel thick with stepped diagonals, no double borders, blur, antialiasing or halos. Keep interior ink lines subordinate and preserve broad readable parchment areas. Preserve the source transparency and background treatment. Reference four contains the shared 128-color swatches: use them only as a flexible base for harmonious warm parchment and wood colors, permitting additional matching shades. Do not introduce labels, symbols, decorations or narrative objects absent from the source.",
+      "width": 80,
+      "height": 80,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/33f578a4-824d-449b-aee9-c97a65e7f449/image.png?v=1795273684141",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "578bf15b-8531-4f81-b903-89a7c67cbaea",
+      "batchIndex": 5,
+      "batchSize": 9,
+      "action": {
+        "kind": "same-style"
+      }
+    },
+    {
+      "id": "6b319f79-a633-4c56-b078-94d511539440",
+      "type": "image",
+      "createdAt": "2026-11-21T15:08:04.586Z",
+      "updatedAt": "2026-11-21T15:08:04.586Z",
+      "prompt": "Create a wall-mounted framed paper deck plan of the Leviathan, the steampunk submarine aboard which Churchill travels. The Leviathan has the shape of a manta ray. The first reference is the actual object: preserve its upright rectangular wooden frame, front-facing flat view, warm aged ochre parchment, dark brown frame, and centered top-down technical plan of a wide manta-shaped submarine with swept wings, central hull and narrow tail. Refine the existing faint schematic with readable fine brown ink contours, a few restrained internal compartment divisions and mechanical construction details that remain a DRAWING ON PAPER. Preserve its orientation and composition. The result must clearly be a framed floor plan, rather than a physical submarine model or an animal. The whole framed object occupies about three quarters of the square composition's width and nine tenths of its height. Use reference two (Churchill) ONLY for finer deliberate pixel clusters, restrained shading and outline treatment; do not include a person or transfer clothing, anatomy or character colors. Reference three, the approved quill and inkwell, further guides the outline only. Give the frame a continuous very dark brown outer outline exactly one final-image pixel thick with stepped diagonals, no double borders, blur, antialiasing or halos. Keep interior ink lines subordinate and preserve broad readable parchment areas. Preserve the source transparency and background treatment. Reference four contains the shared 128-color swatches: use them only as a flexible base for harmonious warm parchment and wood colors, permitting additional matching shades. Do not introduce labels, symbols, decorations or narrative objects absent from the source.",
+      "width": 80,
+      "height": 80,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/6b319f79-a633-4c56-b078-94d511539440/image.png?v=1795273684586",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "578bf15b-8531-4f81-b903-89a7c67cbaea",
+      "batchIndex": 6,
+      "batchSize": 9,
+      "action": {
+        "kind": "same-style"
+      }
+    },
+    {
+      "id": "f587fffd-190e-49c0-a66b-ffbe6e2c5864",
+      "type": "image",
+      "createdAt": "2026-11-21T15:08:04.940Z",
+      "updatedAt": "2026-11-21T15:08:04.940Z",
+      "prompt": "Create a wall-mounted framed paper deck plan of the Leviathan, the steampunk submarine aboard which Churchill travels. The Leviathan has the shape of a manta ray. The first reference is the actual object: preserve its upright rectangular wooden frame, front-facing flat view, warm aged ochre parchment, dark brown frame, and centered top-down technical plan of a wide manta-shaped submarine with swept wings, central hull and narrow tail. Refine the existing faint schematic with readable fine brown ink contours, a few restrained internal compartment divisions and mechanical construction details that remain a DRAWING ON PAPER. Preserve its orientation and composition. The result must clearly be a framed floor plan, rather than a physical submarine model or an animal. The whole framed object occupies about three quarters of the square composition's width and nine tenths of its height. Use reference two (Churchill) ONLY for finer deliberate pixel clusters, restrained shading and outline treatment; do not include a person or transfer clothing, anatomy or character colors. Reference three, the approved quill and inkwell, further guides the outline only. Give the frame a continuous very dark brown outer outline exactly one final-image pixel thick with stepped diagonals, no double borders, blur, antialiasing or halos. Keep interior ink lines subordinate and preserve broad readable parchment areas. Preserve the source transparency and background treatment. Reference four contains the shared 128-color swatches: use them only as a flexible base for harmonious warm parchment and wood colors, permitting additional matching shades. Do not introduce labels, symbols, decorations or narrative objects absent from the source.",
+      "width": 80,
+      "height": 80,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/f587fffd-190e-49c0-a66b-ffbe6e2c5864/image.png?v=1795273684940",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "578bf15b-8531-4f81-b903-89a7c67cbaea",
+      "batchIndex": 7,
+      "batchSize": 9,
+      "action": {
+        "kind": "same-style"
+      }
+    },
+    {
+      "id": "a6bf59c8-0a6c-4ee1-9608-a25b3e0240c0",
+      "type": "image",
+      "createdAt": "2026-11-21T15:08:05.307Z",
+      "updatedAt": "2026-11-21T15:08:05.307Z",
+      "prompt": "Create a wall-mounted framed paper deck plan of the Leviathan, the steampunk submarine aboard which Churchill travels. The Leviathan has the shape of a manta ray. The first reference is the actual object: preserve its upright rectangular wooden frame, front-facing flat view, warm aged ochre parchment, dark brown frame, and centered top-down technical plan of a wide manta-shaped submarine with swept wings, central hull and narrow tail. Refine the existing faint schematic with readable fine brown ink contours, a few restrained internal compartment divisions and mechanical construction details that remain a DRAWING ON PAPER. Preserve its orientation and composition. The result must clearly be a framed floor plan, rather than a physical submarine model or an animal. The whole framed object occupies about three quarters of the square composition's width and nine tenths of its height. Use reference two (Churchill) ONLY for finer deliberate pixel clusters, restrained shading and outline treatment; do not include a person or transfer clothing, anatomy or character colors. Reference three, the approved quill and inkwell, further guides the outline only. Give the frame a continuous very dark brown outer outline exactly one final-image pixel thick with stepped diagonals, no double borders, blur, antialiasing or halos. Keep interior ink lines subordinate and preserve broad readable parchment areas. Preserve the source transparency and background treatment. Reference four contains the shared 128-color swatches: use them only as a flexible base for harmonious warm parchment and wood colors, permitting additional matching shades. Do not introduce labels, symbols, decorations or narrative objects absent from the source.",
+      "width": 80,
+      "height": 80,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/a6bf59c8-0a6c-4ee1-9608-a25b3e0240c0/image.png?v=1795273685307",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "578bf15b-8531-4f81-b903-89a7c67cbaea",
+      "batchIndex": 8,
+      "batchSize": 9,
+      "action": {
+        "kind": "same-style"
+      }
+    }
+  ],
+  "credits": {
+    "used": 15,
+    "remaining": 360
+  },
+  "inputs": [
+    "godot/assets/graphics/ep01_cabin/map.png",
+    "godot/assets/graphics/characters/churchill/churchill-stand.png",
+    "godot/assets/graphics/ep01_cabin/feather.png",
+    "godot/palette/1899-base-128-swatches.png"
+  ],
+  "size": 80,
+  "prompt": "Create a wall-mounted framed paper deck plan of the Leviathan, the steampunk submarine aboard which Churchill travels. The Leviathan has the shape of a manta ray. The first reference is the actual object: preserve its upright rectangular wooden frame, front-facing flat view, warm aged ochre parchment, dark brown frame, and centered top-down technical plan of a wide manta-shaped submarine with swept wings, central hull and narrow tail. Refine the existing faint schematic with readable fine brown ink contours, a few restrained internal compartment divisions and mechanical construction details that remain a DRAWING ON PAPER. Preserve its orientation and composition. The result must clearly be a framed floor plan, rather than a physical submarine model or an animal. The whole framed object occupies about three quarters of the square composition's width and nine tenths of its height. Use reference two (Churchill) ONLY for finer deliberate pixel clusters, restrained shading and outline treatment; do not include a person or transfer clothing, anatomy or character colors. Reference three, the approved quill and inkwell, further guides the outline only. Give the frame a continuous very dark brown outer outline exactly one final-image pixel thick with stepped diagonals, no double borders, blur, antialiasing or halos. Keep interior ink lines subordinate and preserve broad readable parchment areas. Preserve the source transparency and background treatment. Reference four contains the shared 128-color swatches: use them only as a flexible base for harmonious warm parchment and wood colors, permitting additional matching shades. Do not introduce labels, symbols, decorations or narrative objects absent from the source."
+}

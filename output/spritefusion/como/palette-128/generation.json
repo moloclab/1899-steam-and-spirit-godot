@@ -1,0 +1,182 @@
+{
+  "request_id": "req_bdf00038-53ab-47d1-a651-806dcb17b404",
+  "status": "succeeded",
+  "output_count": 9,
+  "outputs": [
+    {
+      "id": "20548784-3f97-4122-9e44-70d2d779372b",
+      "type": "image",
+      "createdAt": "2026-11-21T14:10:13.242Z",
+      "updatedAt": "2026-11-21T14:10:13.242Z",
+      "prompt": "Create a small low dark brown wooden bedside cabinet for a steampunk submarine cabin. The first reference is the original subject: preserve its compact wide silhouette, straight-on perspective, frame, existing front-panel and handle arrangement, empty top and bottom floor-contact points. Keep its recognizable design and dominant warm brown colors. The cabinet occupies about five sixths of the square canvas width and three quarters of its height, centered with modest empty margins. It is wider than tall. Preserve the shape and relative positions of the top edge, front frame and feet.\n\nUse the second reference, Churchill, only for the amount of finer detail, deliberate small pixel clusters, restrained shading and dark outline treatment. Do not borrow anatomy, clothing or character colors.\nThe third reference is the previously approved cabinet: use it for restrained wood grain, joints and readable material detail, while preserving the first reference's design and proportions. Its outline is not the model to copy.\nThe fourth reference is an approved quill and inkwell: use only its dark silhouette outline treatment, not its subject or colors.\nGive the cabinet a consistent very dark brown outer outline exactly one final-image pixel thick, following the silhouette. Keep it continuous, with stepped diagonals, no doubled border, blur, antialiasing or halo. Keep internal lines subtle and subordinate to the outline. Add purposeful finer wood contours, subtle grain, restrained highlights and shading within broad readable surfaces. Do not add objects on top, drawers, ornaments, writing or decorative hardware.\n\nThe fifth reference is the game's shared 128-color palette, used ONLY as a base color reference. It does not depict the subject and must not influence composition or shape. Favor its warm browns, ochres and dark neutrals, keeping the subject's identity. Allow additional harmonious shades where needed for wood, lighting, detail or readability; exact palette matching is not required. Preserve the source's transparency and background treatment.",
+      "width": 48,
+      "height": 48,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/20548784-3f97-4122-9e44-70d2d779372b/image.png?v=1795270213242",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "948eda4b-eac7-4630-a804-ab6e69d44a20",
+      "batchIndex": 0,
+      "batchSize": 9,
+      "action": {
+        "kind": "same-style"
+      }
+    },
+    {
+      "id": "2094e061-1820-4825-9e1a-b150ad970a5f",
+      "type": "image",
+      "createdAt": "2026-11-21T14:10:13.661Z",
+      "updatedAt": "2026-11-21T14:10:13.661Z",
+      "prompt": "Create a small low dark brown wooden bedside cabinet for a steampunk submarine cabin. The first reference is the original subject: preserve its compact wide silhouette, straight-on perspective, frame, existing front-panel and handle arrangement, empty top and bottom floor-contact points. Keep its recognizable design and dominant warm brown colors. The cabinet occupies about five sixths of the square canvas width and three quarters of its height, centered with modest empty margins. It is wider than tall. Preserve the shape and relative positions of the top edge, front frame and feet.\n\nUse the second reference, Churchill, only for the amount of finer detail, deliberate small pixel clusters, restrained shading and dark outline treatment. Do not borrow anatomy, clothing or character colors.\nThe third reference is the previously approved cabinet: use it for restrained wood grain, joints and readable material detail, while preserving the first reference's design and proportions. Its outline is not the model to copy.\nThe fourth reference is an approved quill and inkwell: use only its dark silhouette outline treatment, not its subject or colors.\nGive the cabinet a consistent very dark brown outer outline exactly one final-image pixel thick, following the silhouette. Keep it continuous, with stepped diagonals, no doubled border, blur, antialiasing or halo. Keep internal lines subtle and subordinate to the outline. Add purposeful finer wood contours, subtle grain, restrained highlights and shading within broad readable surfaces. Do not add objects on top, drawers, ornaments, writing or decorative hardware.\n\nThe fifth reference is the game's shared 128-color palette, used ONLY as a base color reference. It does not depict the subject and must not influence composition or shape. Favor its warm browns, ochres and dark neutrals, keeping the subject's identity. Allow additional harmonious shades where needed for wood, lighting, detail or readability; exact palette matching is not required. Preserve the source's transparency and background treatment.",
+      "width": 48,
+      "height": 48,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/2094e061-1820-4825-9e1a-b150ad970a5f/image.png?v=1795270213661",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "948eda4b-eac7-4630-a804-ab6e69d44a20",
+      "batchIndex": 1,
+      "batchSize": 9,
+      "action": {
+        "kind": "same-style"
+      }
+    },
+    {
+      "id": "3796dc4d-94b4-4772-904b-61e832b81c7b",
+      "type": "image",
+      "createdAt": "2026-11-21T14:10:13.988Z",
+      "updatedAt": "2026-11-21T14:10:13.988Z",
+      "prompt": "Create a small low dark brown wooden bedside cabinet for a steampunk submarine cabin. The first reference is the original subject: preserve its compact wide silhouette, straight-on perspective, frame, existing front-panel and handle arrangement, empty top and bottom floor-contact points. Keep its recognizable design and dominant warm brown colors. The cabinet occupies about five sixths of the square canvas width and three quarters of its height, centered with modest empty margins. It is wider than tall. Preserve the shape and relative positions of the top edge, front frame and feet.\n\nUse the second reference, Churchill, only for the amount of finer detail, deliberate small pixel clusters, restrained shading and dark outline treatment. Do not borrow anatomy, clothing or character colors.\nThe third reference is the previously approved cabinet: use it for restrained wood grain, joints and readable material detail, while preserving the first reference's design and proportions. Its outline is not the model to copy.\nThe fourth reference is an approved quill and inkwell: use only its dark silhouette outline treatment, not its subject or colors.\nGive the cabinet a consistent very dark brown outer outline exactly one final-image pixel thick, following the silhouette. Keep it continuous, with stepped diagonals, no doubled border, blur, antialiasing or halo. Keep internal lines subtle and subordinate to the outline. Add purposeful finer wood contours, subtle grain, restrained highlights and shading within broad readable surfaces. Do not add objects on top, drawers, ornaments, writing or decorative hardware.\n\nThe fifth reference is the game's shared 128-color palette, used ONLY as a base color reference. It does not depict the subject and must not influence composition or shape. Favor its warm browns, ochres and dark neutrals, keeping the subject's identity. Allow additional harmonious shades where needed for wood, lighting, detail or readability; exact palette matching is not required. Preserve the source's transparency and background treatment.",
+      "width": 48,
+      "height": 48,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/3796dc4d-94b4-4772-904b-61e832b81c7b/image.png?v=1795270213988",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "948eda4b-eac7-4630-a804-ab6e69d44a20",
+      "batchIndex": 2,
+      "batchSize": 9,
+      "action": {
+        "kind": "same-style"
+      }
+    },
+    {
+      "id": "25d6333a-06e7-4ca5-878a-168445c3b736",
+      "type": "image",
+      "createdAt": "2026-11-21T14:10:14.473Z",
+      "updatedAt": "2026-11-21T14:10:14.473Z",
+      "prompt": "Create a small low dark brown wooden bedside cabinet for a steampunk submarine cabin. The first reference is the original subject: preserve its compact wide silhouette, straight-on perspective, frame, existing front-panel and handle arrangement, empty top and bottom floor-contact points. Keep its recognizable design and dominant warm brown colors. The cabinet occupies about five sixths of the square canvas width and three quarters of its height, centered with modest empty margins. It is wider than tall. Preserve the shape and relative positions of the top edge, front frame and feet.\n\nUse the second reference, Churchill, only for the amount of finer detail, deliberate small pixel clusters, restrained shading and dark outline treatment. Do not borrow anatomy, clothing or character colors.\nThe third reference is the previously approved cabinet: use it for restrained wood grain, joints and readable material detail, while preserving the first reference's design and proportions. Its outline is not the model to copy.\nThe fourth reference is an approved quill and inkwell: use only its dark silhouette outline treatment, not its subject or colors.\nGive the cabinet a consistent very dark brown outer outline exactly one final-image pixel thick, following the silhouette. Keep it continuous, with stepped diagonals, no doubled border, blur, antialiasing or halo. Keep internal lines subtle and subordinate to the outline. Add purposeful finer wood contours, subtle grain, restrained highlights and shading within broad readable surfaces. Do not add objects on top, drawers, ornaments, writing or decorative hardware.\n\nThe fifth reference is the game's shared 128-color palette, used ONLY as a base color reference. It does not depict the subject and must not influence composition or shape. Favor its warm browns, ochres and dark neutrals, keeping the subject's identity. Allow additional harmonious shades where needed for wood, lighting, detail or readability; exact palette matching is not required. Preserve the source's transparency and background treatment.",
+      "width": 48,
+      "height": 48,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/25d6333a-06e7-4ca5-878a-168445c3b736/image.png?v=1795270214473",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "948eda4b-eac7-4630-a804-ab6e69d44a20",
+      "batchIndex": 3,
+      "batchSize": 9,
+      "action": {
+        "kind": "same-style"
+      }
+    },
+    {
+      "id": "aa17fb96-ac89-48a7-9873-c2987263e732",
+      "type": "image",
+      "createdAt": "2026-11-21T14:10:14.851Z",
+      "updatedAt": "2026-11-21T14:10:14.851Z",
+      "prompt": "Create a small low dark brown wooden bedside cabinet for a steampunk submarine cabin. The first reference is the original subject: preserve its compact wide silhouette, straight-on perspective, frame, existing front-panel and handle arrangement, empty top and bottom floor-contact points. Keep its recognizable design and dominant warm brown colors. The cabinet occupies about five sixths of the square canvas width and three quarters of its height, centered with modest empty margins. It is wider than tall. Preserve the shape and relative positions of the top edge, front frame and feet.\n\nUse the second reference, Churchill, only for the amount of finer detail, deliberate small pixel clusters, restrained shading and dark outline treatment. Do not borrow anatomy, clothing or character colors.\nThe third reference is the previously approved cabinet: use it for restrained wood grain, joints and readable material detail, while preserving the first reference's design and proportions. Its outline is not the model to copy.\nThe fourth reference is an approved quill and inkwell: use only its dark silhouette outline treatment, not its subject or colors.\nGive the cabinet a consistent very dark brown outer outline exactly one final-image pixel thick, following the silhouette. Keep it continuous, with stepped diagonals, no doubled border, blur, antialiasing or halo. Keep internal lines subtle and subordinate to the outline. Add purposeful finer wood contours, subtle grain, restrained highlights and shading within broad readable surfaces. Do not add objects on top, drawers, ornaments, writing or decorative hardware.\n\nThe fifth reference is the game's shared 128-color palette, used ONLY as a base color reference. It does not depict the subject and must not influence composition or shape. Favor its warm browns, ochres and dark neutrals, keeping the subject's identity. Allow additional harmonious shades where needed for wood, lighting, detail or readability; exact palette matching is not required. Preserve the source's transparency and background treatment.",
+      "width": 48,
+      "height": 48,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/aa17fb96-ac89-48a7-9873-c2987263e732/image.png?v=1795270214851",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "948eda4b-eac7-4630-a804-ab6e69d44a20",
+      "batchIndex": 4,
+      "batchSize": 9,
+      "action": {
+        "kind": "same-style"
+      }
+    },
+    {
+      "id": "bf03c71f-d7c2-4db2-97b4-106031c5a6af",
+      "type": "image",
+      "createdAt": "2026-11-21T14:10:15.264Z",
+      "updatedAt": "2026-11-21T14:10:15.264Z",
+      "prompt": "Create a small low dark brown wooden bedside cabinet for a steampunk submarine cabin. The first reference is the original subject: preserve its compact wide silhouette, straight-on perspective, frame, existing front-panel and handle arrangement, empty top and bottom floor-contact points. Keep its recognizable design and dominant warm brown colors. The cabinet occupies about five sixths of the square canvas width and three quarters of its height, centered with modest empty margins. It is wider than tall. Preserve the shape and relative positions of the top edge, front frame and feet.\n\nUse the second reference, Churchill, only for the amount of finer detail, deliberate small pixel clusters, restrained shading and dark outline treatment. Do not borrow anatomy, clothing or character colors.\nThe third reference is the previously approved cabinet: use it for restrained wood grain, joints and readable material detail, while preserving the first reference's design and proportions. Its outline is not the model to copy.\nThe fourth reference is an approved quill and inkwell: use only its dark silhouette outline treatment, not its subject or colors.\nGive the cabinet a consistent very dark brown outer outline exactly one final-image pixel thick, following the silhouette. Keep it continuous, with stepped diagonals, no doubled border, blur, antialiasing or halo. Keep internal lines subtle and subordinate to the outline. Add purposeful finer wood contours, subtle grain, restrained highlights and shading within broad readable surfaces. Do not add objects on top, drawers, ornaments, writing or decorative hardware.\n\nThe fifth reference is the game's shared 128-color palette, used ONLY as a base color reference. It does not depict the subject and must not influence composition or shape. Favor its warm browns, ochres and dark neutrals, keeping the subject's identity. Allow additional harmonious shades where needed for wood, lighting, detail or readability; exact palette matching is not required. Preserve the source's transparency and background treatment.",
+      "width": 48,
+      "height": 48,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/bf03c71f-d7c2-4db2-97b4-106031c5a6af/image.png?v=1795270215264",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "948eda4b-eac7-4630-a804-ab6e69d44a20",
+      "batchIndex": 5,
+      "batchSize": 9,
+      "action": {
+        "kind": "same-style"
+      }
+    },
+    {
+      "id": "74b2e08f-bf11-42a9-bdff-604c92f33d5f",
+      "type": "image",
+      "createdAt": "2026-11-21T14:10:15.773Z",
+      "updatedAt": "2026-11-21T14:10:15.773Z",
+      "prompt": "Create a small low dark brown wooden bedside cabinet for a steampunk submarine cabin. The first reference is the original subject: preserve its compact wide silhouette, straight-on perspective, frame, existing front-panel and handle arrangement, empty top and bottom floor-contact points. Keep its recognizable design and dominant warm brown colors. The cabinet occupies about five sixths of the square canvas width and three quarters of its height, centered with modest empty margins. It is wider than tall. Preserve the shape and relative positions of the top edge, front frame and feet.\n\nUse the second reference, Churchill, only for the amount of finer detail, deliberate small pixel clusters, restrained shading and dark outline treatment. Do not borrow anatomy, clothing or character colors.\nThe third reference is the previously approved cabinet: use it for restrained wood grain, joints and readable material detail, while preserving the first reference's design and proportions. Its outline is not the model to copy.\nThe fourth reference is an approved quill and inkwell: use only its dark silhouette outline treatment, not its subject or colors.\nGive the cabinet a consistent very dark brown outer outline exactly one final-image pixel thick, following the silhouette. Keep it continuous, with stepped diagonals, no doubled border, blur, antialiasing or halo. Keep internal lines subtle and subordinate to the outline. Add purposeful finer wood contours, subtle grain, restrained highlights and shading within broad readable surfaces. Do not add objects on top, drawers, ornaments, writing or decorative hardware.\n\nThe fifth reference is the game's shared 128-color palette, used ONLY as a base color reference. It does not depict the subject and must not influence composition or shape. Favor its warm browns, ochres and dark neutrals, keeping the subject's identity. Allow additional harmonious shades where needed for wood, lighting, detail or readability; exact palette matching is not required. Preserve the source's transparency and background treatment.",
+      "width": 48,
+      "height": 48,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/74b2e08f-bf11-42a9-bdff-604c92f33d5f/image.png?v=1795270215773",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "948eda4b-eac7-4630-a804-ab6e69d44a20",
+      "batchIndex": 6,
+      "batchSize": 9,
+      "action": {
+        "kind": "same-style"
+      }
+    },
+    {
+      "id": "8930116f-1509-4e8d-b90f-a79ad7cce57c",
+      "type": "image",
+      "createdAt": "2026-11-21T14:10:16.184Z",
+      "updatedAt": "2026-11-21T14:10:16.184Z",
+      "prompt": "Create a small low dark brown wooden bedside cabinet for a steampunk submarine cabin. The first reference is the original subject: preserve its compact wide silhouette, straight-on perspective, frame, existing front-panel and handle arrangement, empty top and bottom floor-contact points. Keep its recognizable design and dominant warm brown colors. The cabinet occupies about five sixths of the square canvas width and three quarters of its height, centered with modest empty margins. It is wider than tall. Preserve the shape and relative positions of the top edge, front frame and feet.\n\nUse the second reference, Churchill, only for the amount of finer detail, deliberate small pixel clusters, restrained shading and dark outline treatment. Do not borrow anatomy, clothing or character colors.\nThe third reference is the previously approved cabinet: use it for restrained wood grain, joints and readable material detail, while preserving the first reference's design and proportions. Its outline is not the model to copy.\nThe fourth reference is an approved quill and inkwell: use only its dark silhouette outline treatment, not its subject or colors.\nGive the cabinet a consistent very dark brown outer outline exactly one final-image pixel thick, following the silhouette. Keep it continuous, with stepped diagonals, no doubled border, blur, antialiasing or halo. Keep internal lines subtle and subordinate to the outline. Add purposeful finer wood contours, subtle grain, restrained highlights and shading within broad readable surfaces. Do not add objects on top, drawers, ornaments, writing or decorative hardware.\n\nThe fifth reference is the game's shared 128-color palette, used ONLY as a base color reference. It does not depict the subject and must not influence composition or shape. Favor its warm browns, ochres and dark neutrals, keeping the subject's identity. Allow additional harmonious shades where needed for wood, lighting, detail or readability; exact palette matching is not required. Preserve the source's transparency and background treatment.",
+      "width": 48,
+      "height": 48,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/8930116f-1509-4e8d-b90f-a79ad7cce57c/image.png?v=1795270216184",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "948eda4b-eac7-4630-a804-ab6e69d44a20",
+      "batchIndex": 7,
+      "batchSize": 9,
+      "action": {
+        "kind": "same-style"
+      }
+    },
+    {
+      "id": "6d58f3b0-3f56-4cf5-a705-0f09f775c23f",
+      "type": "image",
+      "createdAt": "2026-11-21T14:10:16.546Z",
+      "updatedAt": "2026-11-21T14:10:16.546Z",
+      "prompt": "Create a small low dark brown wooden bedside cabinet for a steampunk submarine cabin. The first reference is the original subject: preserve its compact wide silhouette, straight-on perspective, frame, existing front-panel and handle arrangement, empty top and bottom floor-contact points. Keep its recognizable design and dominant warm brown colors. The cabinet occupies about five sixths of the square canvas width and three quarters of its height, centered with modest empty margins. It is wider than tall. Preserve the shape and relative positions of the top edge, front frame and feet.\n\nUse the second reference, Churchill, only for the amount of finer detail, deliberate small pixel clusters, restrained shading and dark outline treatment. Do not borrow anatomy, clothing or character colors.\nThe third reference is the previously approved cabinet: use it for restrained wood grain, joints and readable material detail, while preserving the first reference's design and proportions. Its outline is not the model to copy.\nThe fourth reference is an approved quill and inkwell: use only its dark silhouette outline treatment, not its subject or colors.\nGive the cabinet a consistent very dark brown outer outline exactly one final-image pixel thick, following the silhouette. Keep it continuous, with stepped diagonals, no doubled border, blur, antialiasing or halo. Keep internal lines subtle and subordinate to the outline. Add purposeful finer wood contours, subtle grain, restrained highlights and shading within broad readable surfaces. Do not add objects on top, drawers, ornaments, writing or decorative hardware.\n\nThe fifth reference is the game's shared 128-color palette, used ONLY as a base color reference. It does not depict the subject and must not influence composition or shape. Favor its warm browns, ochres and dark neutrals, keeping the subject's identity. Allow additional harmonious shades where needed for wood, lighting, detail or readability; exact palette matching is not required. Preserve the source's transparency and background treatment.",
+      "width": 48,
+      "height": 48,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/6d58f3b0-3f56-4cf5-a705-0f09f775c23f/image.png?v=1795270216546",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "948eda4b-eac7-4630-a804-ab6e69d44a20",
+      "batchIndex": 8,
+      "batchSize": 9,
+      "action": {
+        "kind": "same-style"
+      }
+    }
+  ],
+  "credits": {
+    "used": 15,
+    "remaining": 450
+  }
+}

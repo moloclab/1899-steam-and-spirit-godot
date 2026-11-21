@@ -1,0 +1,31 @@
+﻿{
+    "final_sha256":  "34AF77701A73BEB3CF8A02EFAD896BB1C16BB82C8CA05BB0D43FAA3B4D08D37B",
+    "pixel_match":  true,
+    "original_backup":  "C:\\htdocs\\_OLD\\_GAMES\\1899\\output\\spritefusion\\como\\same-style-48\\como-original.png",
+    "selected_variant":  5,
+    "native_backup":  "C:\\htdocs\\_OLD\\_GAMES\\1899\\output\\spritefusion\\como\\same-style-48\\como-selected-native.png",
+    "destination":  "godot/assets/graphics/ep01_cabin/como.png",
+    "selected_asset_id":  "8e47f70a-704a-4528-9e53-05babb6704d1",
+    "crop":  {
+                 "y":  6,
+                 "width":  40,
+                 "height":  36,
+                 "x":  4
+             },
+    "rescaled":  false,
+    "deleted":  [
+                    "como-redesign-10.png",
+                    "como-redesign-11.png",
+                    "como-redesign-2.png",
+                    "como-redesign-2.png.import",
+                    "como-redesign-3.png",
+                    "como-redesign-4.png",
+                    "como-redesign-5.png",
+                    "como-redesign-6.png",
+                    "como-redesign-7.png",
+                    "como-redesign-8.png",
+                    "como-redesign-9.png",
+                    "como-redesign.png",
+                    "como-redesign.png.import"
+                ]
+}

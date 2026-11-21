@@ -1,0 +1,35 @@
+﻿{
+    "variant":  4,
+    "asset_id":  "a0c1c191-4c76-4444-9af5-841fe89838a8",
+    "native":  "sink-selected-native.png",
+    "original":  "sink-original.png",
+    "crop":  [
+                 14,
+                 1,
+                 36,
+                 62
+             ],
+    "target":  "godot/assets/graphics/ep01_cabin/sink.png",
+    "visible_pixels_verified":  true,
+    "size_exception_accepted_by_user":  true,
+    "scene_position":  [
+                           272,
+                           138
+                       ],
+    "hit_size":  [
+                     36,
+                     62
+                 ],
+    "base_y":  200,
+    "discarded_local_variants":  [
+                                     1,
+                                     2,
+                                     3,
+                                     5,
+                                     6,
+                                     7,
+                                     8,
+                                     9
+                                 ],
+    "spritefusion_library_modified":  false
+}
