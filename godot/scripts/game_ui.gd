@@ -121,6 +121,20 @@ func _ready() -> void:
 	world_panel.mouse_default_cursor_shape = Control.CURSOR_ARROW
 	world_panel.gui_input.connect(func(event: InputEvent): world_input.emit(event))
 	add_child(world_panel)
+	# Una patina fissa copre tutte le stanze; lo z_index la mantiene sopra anche al personaggio.
+	var grime := TextureRect.new()
+	grime.name = "WorldGrime"
+	grime.texture = preload("res://assets/graphics/ui/hover.png")
+	grime.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	grime.stretch_mode = TextureRect.STRETCH_SCALE
+	grime.z_index = 2
+	# Il velo lascia passare clic e touch al contenitore della stanza.
+	grime.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	var grime_material := CanvasItemMaterial.new()
+	grime_material.blend_mode = CanvasItemMaterial.BLEND_MODE_MUL
+	grime.material = grime_material
+	world_panel.add_child(grime)
+	grime.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	speaker_label = _label("common.speaker.churchill", Rect2(40, 506, 700, 20), 32)
 	speaker_label.add_theme_color_override("font_color", GOLD)
 	# Il nome resta disponibile alla localizzazione; la battuta identifica chi parla tramite la posizione.
