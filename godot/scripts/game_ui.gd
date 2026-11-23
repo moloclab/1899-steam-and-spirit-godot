@@ -112,20 +112,22 @@ func _ready() -> void:
 	music_button.toggle_mode = true
 	music_button.button_pressed = true
 	help_button = _button("common.ui.help", Rect2(toolbar_x + 400, 20, 110, 38), _toggle_help)
-	# Nella prova a 3× i comandi si sovrappongono alla stanza, sopra la patina.
-	for button in save_buttons + [music_button, help_button]:
-		button.z_index = 3
 	# Il ritaglio nasconde le parti del corridoio fuori dalla finestra di gioco.
 	# I clic sono gestiti dal contenitore: le immagini della stanza sono nodi 2D, non pulsanti.
 	world_panel = Control.new()
 	# La stanza parte dal bordo superiore della finestra.
 	world_panel.position = Vector2.ZERO
-	# L'area della stanza occupa tutti i 720 pixel, anche sotto l'inventario.
-	world_panel.size = Vector2(view_width, 720)
+	# La parete parte da y=0: i suoi 192 px a scala 3× terminano dove inizia l'inventario.
+	var world_height := 576.0
+	world_panel.size = Vector2(view_width, world_height)
 	world_panel.clip_contents = true
 	world_panel.mouse_default_cursor_shape = Control.CURSOR_ARROW
 	world_panel.gui_input.connect(func(event: InputEvent): world_input.emit(event))
 	add_child(world_panel)
+	# L'ordine dei nodi assegna i clic ai pulsanti prima della stanza; lo z_index regola solo il disegno.
+	for button in save_buttons + [music_button, help_button]:
+		move_child(button, get_child_count() - 1)
+		button.z_index = 3
 	speaker_label = _label("common.speaker.churchill", Rect2(40, 506, 700, 20), 32)
 	speaker_label.add_theme_color_override("font_color", GOLD)
 	# Il nome resta disponibile alla localizzazione; la battuta identifica chi parla tramite la posizione.
@@ -143,16 +145,21 @@ func _ready() -> void:
 	speech_label.add_theme_constant_override("shadow_offset_x", 2)
 	speech_label.add_theme_constant_override("shadow_offset_y", 2)
 	speech_label.add_theme_constant_override("line_spacing", 0)
+	# La fascia opaca usa il marrone scuro #120F0E della palette e resta separata dalla stanza.
+	var view_height := float(ProjectSettings.get_setting("display/window/size/viewport_height"))
+	var inventory_background := _panel(Rect2(0, world_height, view_width, view_height - world_height), Color("120F0E"))
+	inventory_background.z_index = 3
 	inventory_row = HBoxContainer.new()
 	inventory_row.position = Vector2.ZERO
 	inventory_row.size = Vector2(850, 52)
 	inventory_row.add_theme_constant_override("separation", 10)
 	inventory_scroll = ScrollContainer.new()
-	# Il contenitore dell'inventario lascia visibile lo sfondo sottostante.
+	# Il contenitore lascia visibile lo sfondo dedicato della fascia inventario.
 	inventory_scroll.add_theme_stylebox_override("panel", StyleBoxEmpty.new())
-	# L'inventario trasparente si sovrappone alla stanza e alla sua patina.
+	# Le icone stanno sopra la fascia opaca, fuori dall'area della stanza e della patina.
 	inventory_scroll.z_index = 3
-	inventory_scroll.position = Vector2(28, 620)
+	# Conserva due pixel di margine interno rispetto all'inizio della fascia.
+	inventory_scroll.position = Vector2(28, world_height + 2)
 	inventory_scroll.size = Vector2(view_width - 56, 68)
 	inventory_scroll.vertical_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
 	add_child(inventory_scroll)

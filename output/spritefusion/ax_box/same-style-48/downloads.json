@@ -1,0 +1,47 @@
+[
+  {
+    "variant": 1,
+    "id": "51e474e5-45c9-403b-8305-a69032c396cf",
+    "file": "godot/assets/graphics/ep01_corridor/ax_box-redesign.png"
+  },
+  {
+    "variant": 2,
+    "id": "4ffada5c-8a11-4704-8791-600639bbe9a0",
+    "file": "godot/assets/graphics/ep01_corridor/ax_box-redesign-2.png"
+  },
+  {
+    "variant": 3,
+    "id": "1d22a6b2-13aa-4bbd-9449-d4ae0b7495be",
+    "file": "godot/assets/graphics/ep01_corridor/ax_box-redesign-3.png"
+  },
+  {
+    "variant": 4,
+    "id": "b428622f-3ddb-4d0b-9f81-423d6e1bc5fb",
+    "file": "godot/assets/graphics/ep01_corridor/ax_box-redesign-4.png"
+  },
+  {
+    "variant": 5,
+    "id": "d29fa80e-40c5-4602-a702-a29ca10dcccf",
+    "file": "godot/assets/graphics/ep01_corridor/ax_box-redesign-5.png"
+  },
+  {
+    "variant": 6,
+    "id": "c0b519d1-c7c9-4f34-a7b4-c98d12cd1405",
+    "file": "godot/assets/graphics/ep01_corridor/ax_box-redesign-6.png"
+  },
+  {
+    "variant": 7,
+    "id": "06ff49c2-072f-451c-88f2-bd9f32903bdc",
+    "file": "godot/assets/graphics/ep01_corridor/ax_box-redesign-7.png"
+  },
+  {
+    "variant": 8,
+    "id": "46e8ec52-b6b1-40e9-8ec0-24129a96d99d",
+    "file": "godot/assets/graphics/ep01_corridor/ax_box-redesign-8.png"
+  },
+  {
+    "variant": 9,
+    "id": "cda5f6d0-6c70-4fce-905f-66ff66b338f7",
+    "file": "godot/assets/graphics/ep01_corridor/ax_box-redesign-9.png"
+  }
+]

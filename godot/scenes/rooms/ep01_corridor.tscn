@@ -126,7 +126,8 @@ texture = ExtResource("label_cabina_label_cabina")
 [node name="axBoxClose" type="Node2D" parent="."]
 script = ExtResource("hotspot_script")
 hotspot_id = "axe"
-hit_size = Vector2(36, 44)
+; Allinea l'area cliccabile alla variante 3 approvata, mantenendo l'ancoraggio.
+hit_size = Vector2(34, 44)
 examine_response = "ep01.corridor.axe.examine"
 interaction_response = "ep01.corridor.axe.case_closed"
 interaction_kind = "hand"

@@ -1,0 +1,41 @@
+{
+  "size": 48,
+  "inputs": [
+    "godot/assets/graphics/ep01_corridor/ax_box.png",
+    "godot/assets/graphics/characters/churchill/churchill-stand.png",
+    "godot/assets/graphics/ep01_cabin/como.png",
+    "godot/palette/1899-base-128-swatches.png"
+  ],
+  "prompt": "Create a wall-mounted emergency axe inside its closed glass display case, for a late nineteenth-century submarine corridor. The FIRST reference is the exact subject: preserve the upright rectangular brown wooden case, narrow frame, muted dark olive glass/backing, single axe with reddish rust-colored head near the upper left and long ochre wooden handle descending toward the lower left, and the small warm brass rectangular label centered on the bottom frame. The axe remains visibly enclosed behind glass. Preserve the original front view with its slight side depth, silhouette, proportions and dominant brown, olive and ochre colors. No extra objects, no second axe, no added signage. Keep the small bottom label as a few restrained engraved marks, without inventing legible words.\nThe SECOND reference, Churchill, provides ONLY the amount of finer detail, deliberate pixel clusters, restrained shading and outer outline treatment, not anatomy, clothes or character colors. The THIRD reference is the approved wooden cabinet: use only its coherent wood and metal material treatment, not its shape or fittings. The FOURTH reference supplies the shared 128-color base palette as a flexible color guide, with additional harmonious shades permitted and no exact palette restriction.\nGive the case a continuous dark brown near-black outer outline exactly one final-image pixel thick, with stepped diagonals, no double border, halo, blur or antialiasing. Internal lines remain subtle. Refine the narrow wooden frame, axe blade and handle; a few restrained glass highlights should communicate the pane while keeping the axe clearly readable. Preserve the source alpha treatment. The entire case should occupy three quarters of the square composition in width and about eleven twelfths in height; retain its tall rectangular proportions. Keep top and bottom edges, axe placement and the small bottom-centered label aligned to the first reference.",
+  "source": {
+    "canvas": [
+      36,
+      44
+    ],
+    "bounds": [
+      0,
+      0,
+      36,
+      44
+    ],
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  "allowed_visible_size": {
+    "width": [
+      35,
+      37
+    ],
+    "height": [
+      42,
+      46
+    ]
+  },
+  "anchor": [
+    200,
+    108
+  ],
+  "decision": "awaiting visual choice; original and scene unchanged"
+}

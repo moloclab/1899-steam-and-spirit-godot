@@ -1,0 +1,13 @@
+{
+  "variant": 3,
+  "asset_id": "1d22a6b2-13aa-4bbd-9449-d4ae0b7495be",
+  "approval": "usa v3",
+  "size_exception": "34x44 approved after dimensions were disclosed",
+  "native_canvas": [48, 48],
+  "crop": [7, 2, 34, 44],
+  "integrated_file": "godot/assets/graphics/ep01_corridor/ax_box.png",
+  "pixel_differences_from_native_crop": 0,
+  "scene": "godot/scenes/rooms/ep01_corridor.tscn",
+  "position": [200, 108],
+  "hotspot_size": [34, 44]
+}

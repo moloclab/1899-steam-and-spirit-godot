@@ -1,0 +1,192 @@
+﻿[
+    {
+        "variant":  0,
+        "file":  "godot/assets/graphics/ep01_corridor/ax_box.png",
+        "canvas":  [
+                       36,
+                       44
+                   ],
+        "bounds":  [
+                       0,
+                       0,
+                       36,
+                       44
+                   ],
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "size_conforms":  true
+    },
+    {
+        "variant":  1,
+        "file":  "godot/assets/graphics/ep01_corridor/ax_box-redesign.png",
+        "canvas":  [
+                       48,
+                       48
+                   ],
+        "bounds":  [
+                       4,
+                       1,
+                       39,
+                       45
+                   ],
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "size_conforms":  false
+    },
+    {
+        "variant":  2,
+        "file":  "godot/assets/graphics/ep01_corridor/ax_box-redesign-2.png",
+        "canvas":  [
+                       48,
+                       48
+                   ],
+        "bounds":  [
+                       6,
+                       2,
+                       36,
+                       44
+                   ],
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "size_conforms":  true
+    },
+    {
+        "variant":  3,
+        "file":  "godot/assets/graphics/ep01_corridor/ax_box-redesign-3.png",
+        "canvas":  [
+                       48,
+                       48
+                   ],
+        "bounds":  [
+                       7,
+                       2,
+                       34,
+                       44
+                   ],
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "size_conforms":  false
+    },
+    {
+        "variant":  4,
+        "file":  "godot/assets/graphics/ep01_corridor/ax_box-redesign-4.png",
+        "canvas":  [
+                       48,
+                       48
+                   ],
+        "bounds":  [
+                       4,
+                       1,
+                       39,
+                       45
+                   ],
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "size_conforms":  false
+    },
+    {
+        "variant":  5,
+        "file":  "godot/assets/graphics/ep01_corridor/ax_box-redesign-5.png",
+        "canvas":  [
+                       48,
+                       48
+                   ],
+        "bounds":  [
+                       5,
+                       2,
+                       37,
+                       44
+                   ],
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "size_conforms":  true
+    },
+    {
+        "variant":  6,
+        "file":  "godot/assets/graphics/ep01_corridor/ax_box-redesign-6.png",
+        "canvas":  [
+                       48,
+                       48
+                   ],
+        "bounds":  [
+                       6,
+                       1,
+                       35,
+                       45
+                   ],
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "size_conforms":  true
+    },
+    {
+        "variant":  7,
+        "file":  "godot/assets/graphics/ep01_corridor/ax_box-redesign-7.png",
+        "canvas":  [
+                       48,
+                       48
+                   ],
+        "bounds":  [
+                       6,
+                       2,
+                       36,
+                       44
+                   ],
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "size_conforms":  true
+    },
+    {
+        "variant":  8,
+        "file":  "godot/assets/graphics/ep01_corridor/ax_box-redesign-8.png",
+        "canvas":  [
+                       48,
+                       48
+                   ],
+        "bounds":  [
+                       6,
+                       2,
+                       35,
+                       44
+                   ],
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "size_conforms":  true
+    },
+    {
+        "variant":  9,
+        "file":  "godot/assets/graphics/ep01_corridor/ax_box-redesign-9.png",
+        "canvas":  [
+                       48,
+                       48
+                   ],
+        "bounds":  [
+                       6,
+                       2,
+                       36,
+                       44
+                   ],
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "size_conforms":  true
+    }
+]

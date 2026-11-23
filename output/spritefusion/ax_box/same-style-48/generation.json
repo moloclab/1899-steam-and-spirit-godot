@@ -1,0 +1,182 @@
+{
+  "request_id": "req_6a4dafd8-b365-4762-b73d-9da0dd4b3bf9",
+  "status": "succeeded",
+  "output_count": 9,
+  "outputs": [
+    {
+      "id": "51e474e5-45c9-403b-8305-a69032c396cf",
+      "type": "image",
+      "createdAt": "2026-11-23T09:21:18.273Z",
+      "updatedAt": "2026-11-23T09:21:18.273Z",
+      "prompt": "Create a wall-mounted emergency axe inside its closed glass display case, for a late nineteenth-century submarine corridor. The FIRST reference is the exact subject: preserve the upright rectangular brown wooden case, narrow frame, muted dark olive glass/backing, single axe with reddish rust-colored head near the upper left and long ochre wooden handle descending toward the lower left, and the small warm brass rectangular label centered on the bottom frame. The axe remains visibly enclosed behind glass. Preserve the original front view with its slight side depth, silhouette, proportions and dominant brown, olive and ochre colors. No extra objects, no second axe, no added signage. Keep the small bottom label as a few restrained engraved marks, without inventing legible words.\nThe SECOND reference, Churchill, provides ONLY the amount of finer detail, deliberate pixel clusters, restrained shading and outer outline treatment, not anatomy, clothes or character colors. The THIRD reference is the approved wooden cabinet: use only its coherent wood and metal material treatment, not its shape or fittings. The FOURTH reference supplies the shared 128-color base palette as a flexible color guide, with additional harmonious shades permitted and no exact palette restriction.\nGive the case a continuous dark brown near-black outer outline exactly one final-image pixel thick, with stepped diagonals, no double border, halo, blur or antialiasing. Internal lines remain subtle. Refine the narrow wooden frame, axe blade and handle; a few restrained glass highlights should communicate the pane while keeping the axe clearly readable. Preserve the source alpha treatment. The entire case should occupy three quarters of the square composition in width and about eleven twelfths in height; retain its tall rectangular proportions. Keep top and bottom edges, axe placement and the small bottom-centered label aligned to the first reference.",
+      "width": 48,
+      "height": 48,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/51e474e5-45c9-403b-8305-a69032c396cf/image.png?v=1795425678273",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "88db2e3c-14fb-438d-9d80-29dce868c167",
+      "batchIndex": 0,
+      "batchSize": 9,
+      "action": {
+        "kind": "same-style"
+      }
+    },
+    {
+      "id": "4ffada5c-8a11-4704-8791-600639bbe9a0",
+      "type": "image",
+      "createdAt": "2026-11-23T09:21:19.104Z",
+      "updatedAt": "2026-11-23T09:21:19.104Z",
+      "prompt": "Create a wall-mounted emergency axe inside its closed glass display case, for a late nineteenth-century submarine corridor. The FIRST reference is the exact subject: preserve the upright rectangular brown wooden case, narrow frame, muted dark olive glass/backing, single axe with reddish rust-colored head near the upper left and long ochre wooden handle descending toward the lower left, and the small warm brass rectangular label centered on the bottom frame. The axe remains visibly enclosed behind glass. Preserve the original front view with its slight side depth, silhouette, proportions and dominant brown, olive and ochre colors. No extra objects, no second axe, no added signage. Keep the small bottom label as a few restrained engraved marks, without inventing legible words.\nThe SECOND reference, Churchill, provides ONLY the amount of finer detail, deliberate pixel clusters, restrained shading and outer outline treatment, not anatomy, clothes or character colors. The THIRD reference is the approved wooden cabinet: use only its coherent wood and metal material treatment, not its shape or fittings. The FOURTH reference supplies the shared 128-color base palette as a flexible color guide, with additional harmonious shades permitted and no exact palette restriction.\nGive the case a continuous dark brown near-black outer outline exactly one final-image pixel thick, with stepped diagonals, no double border, halo, blur or antialiasing. Internal lines remain subtle. Refine the narrow wooden frame, axe blade and handle; a few restrained glass highlights should communicate the pane while keeping the axe clearly readable. Preserve the source alpha treatment. The entire case should occupy three quarters of the square composition in width and about eleven twelfths in height; retain its tall rectangular proportions. Keep top and bottom edges, axe placement and the small bottom-centered label aligned to the first reference.",
+      "width": 48,
+      "height": 48,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/4ffada5c-8a11-4704-8791-600639bbe9a0/image.png?v=1795425679104",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "88db2e3c-14fb-438d-9d80-29dce868c167",
+      "batchIndex": 1,
+      "batchSize": 9,
+      "action": {
+        "kind": "same-style"
+      }
+    },
+    {
+      "id": "1d22a6b2-13aa-4bbd-9449-d4ae0b7495be",
+      "type": "image",
+      "createdAt": "2026-11-23T09:21:19.972Z",
+      "updatedAt": "2026-11-23T09:21:19.972Z",
+      "prompt": "Create a wall-mounted emergency axe inside its closed glass display case, for a late nineteenth-century submarine corridor. The FIRST reference is the exact subject: preserve the upright rectangular brown wooden case, narrow frame, muted dark olive glass/backing, single axe with reddish rust-colored head near the upper left and long ochre wooden handle descending toward the lower left, and the small warm brass rectangular label centered on the bottom frame. The axe remains visibly enclosed behind glass. Preserve the original front view with its slight side depth, silhouette, proportions and dominant brown, olive and ochre colors. No extra objects, no second axe, no added signage. Keep the small bottom label as a few restrained engraved marks, without inventing legible words.\nThe SECOND reference, Churchill, provides ONLY the amount of finer detail, deliberate pixel clusters, restrained shading and outer outline treatment, not anatomy, clothes or character colors. The THIRD reference is the approved wooden cabinet: use only its coherent wood and metal material treatment, not its shape or fittings. The FOURTH reference supplies the shared 128-color base palette as a flexible color guide, with additional harmonious shades permitted and no exact palette restriction.\nGive the case a continuous dark brown near-black outer outline exactly one final-image pixel thick, with stepped diagonals, no double border, halo, blur or antialiasing. Internal lines remain subtle. Refine the narrow wooden frame, axe blade and handle; a few restrained glass highlights should communicate the pane while keeping the axe clearly readable. Preserve the source alpha treatment. The entire case should occupy three quarters of the square composition in width and about eleven twelfths in height; retain its tall rectangular proportions. Keep top and bottom edges, axe placement and the small bottom-centered label aligned to the first reference.",
+      "width": 48,
+      "height": 48,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/1d22a6b2-13aa-4bbd-9449-d4ae0b7495be/image.png?v=1795425679972",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "88db2e3c-14fb-438d-9d80-29dce868c167",
+      "batchIndex": 2,
+      "batchSize": 9,
+      "action": {
+        "kind": "same-style"
+      }
+    },
+    {
+      "id": "b428622f-3ddb-4d0b-9f81-423d6e1bc5fb",
+      "type": "image",
+      "createdAt": "2026-11-23T09:21:20.729Z",
+      "updatedAt": "2026-11-23T09:21:20.729Z",
+      "prompt": "Create a wall-mounted emergency axe inside its closed glass display case, for a late nineteenth-century submarine corridor. The FIRST reference is the exact subject: preserve the upright rectangular brown wooden case, narrow frame, muted dark olive glass/backing, single axe with reddish rust-colored head near the upper left and long ochre wooden handle descending toward the lower left, and the small warm brass rectangular label centered on the bottom frame. The axe remains visibly enclosed behind glass. Preserve the original front view with its slight side depth, silhouette, proportions and dominant brown, olive and ochre colors. No extra objects, no second axe, no added signage. Keep the small bottom label as a few restrained engraved marks, without inventing legible words.\nThe SECOND reference, Churchill, provides ONLY the amount of finer detail, deliberate pixel clusters, restrained shading and outer outline treatment, not anatomy, clothes or character colors. The THIRD reference is the approved wooden cabinet: use only its coherent wood and metal material treatment, not its shape or fittings. The FOURTH reference supplies the shared 128-color base palette as a flexible color guide, with additional harmonious shades permitted and no exact palette restriction.\nGive the case a continuous dark brown near-black outer outline exactly one final-image pixel thick, with stepped diagonals, no double border, halo, blur or antialiasing. Internal lines remain subtle. Refine the narrow wooden frame, axe blade and handle; a few restrained glass highlights should communicate the pane while keeping the axe clearly readable. Preserve the source alpha treatment. The entire case should occupy three quarters of the square composition in width and about eleven twelfths in height; retain its tall rectangular proportions. Keep top and bottom edges, axe placement and the small bottom-centered label aligned to the first reference.",
+      "width": 48,
+      "height": 48,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/b428622f-3ddb-4d0b-9f81-423d6e1bc5fb/image.png?v=1795425680729",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "88db2e3c-14fb-438d-9d80-29dce868c167",
+      "batchIndex": 3,
+      "batchSize": 9,
+      "action": {
+        "kind": "same-style"
+      }
+    },
+    {
+      "id": "d29fa80e-40c5-4602-a702-a29ca10dcccf",
+      "type": "image",
+      "createdAt": "2026-11-23T09:21:21.596Z",
+      "updatedAt": "2026-11-23T09:21:21.596Z",
+      "prompt": "Create a wall-mounted emergency axe inside its closed glass display case, for a late nineteenth-century submarine corridor. The FIRST reference is the exact subject: preserve the upright rectangular brown wooden case, narrow frame, muted dark olive glass/backing, single axe with reddish rust-colored head near the upper left and long ochre wooden handle descending toward the lower left, and the small warm brass rectangular label centered on the bottom frame. The axe remains visibly enclosed behind glass. Preserve the original front view with its slight side depth, silhouette, proportions and dominant brown, olive and ochre colors. No extra objects, no second axe, no added signage. Keep the small bottom label as a few restrained engraved marks, without inventing legible words.\nThe SECOND reference, Churchill, provides ONLY the amount of finer detail, deliberate pixel clusters, restrained shading and outer outline treatment, not anatomy, clothes or character colors. The THIRD reference is the approved wooden cabinet: use only its coherent wood and metal material treatment, not its shape or fittings. The FOURTH reference supplies the shared 128-color base palette as a flexible color guide, with additional harmonious shades permitted and no exact palette restriction.\nGive the case a continuous dark brown near-black outer outline exactly one final-image pixel thick, with stepped diagonals, no double border, halo, blur or antialiasing. Internal lines remain subtle. Refine the narrow wooden frame, axe blade and handle; a few restrained glass highlights should communicate the pane while keeping the axe clearly readable. Preserve the source alpha treatment. The entire case should occupy three quarters of the square composition in width and about eleven twelfths in height; retain its tall rectangular proportions. Keep top and bottom edges, axe placement and the small bottom-centered label aligned to the first reference.",
+      "width": 48,
+      "height": 48,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/d29fa80e-40c5-4602-a702-a29ca10dcccf/image.png?v=1795425681596",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "88db2e3c-14fb-438d-9d80-29dce868c167",
+      "batchIndex": 4,
+      "batchSize": 9,
+      "action": {
+        "kind": "same-style"
+      }
+    },
+    {
+      "id": "c0b519d1-c7c9-4f34-a7b4-c98d12cd1405",
+      "type": "image",
+      "createdAt": "2026-11-23T09:21:22.469Z",
+      "updatedAt": "2026-11-23T09:21:22.469Z",
+      "prompt": "Create a wall-mounted emergency axe inside its closed glass display case, for a late nineteenth-century submarine corridor. The FIRST reference is the exact subject: preserve the upright rectangular brown wooden case, narrow frame, muted dark olive glass/backing, single axe with reddish rust-colored head near the upper left and long ochre wooden handle descending toward the lower left, and the small warm brass rectangular label centered on the bottom frame. The axe remains visibly enclosed behind glass. Preserve the original front view with its slight side depth, silhouette, proportions and dominant brown, olive and ochre colors. No extra objects, no second axe, no added signage. Keep the small bottom label as a few restrained engraved marks, without inventing legible words.\nThe SECOND reference, Churchill, provides ONLY the amount of finer detail, deliberate pixel clusters, restrained shading and outer outline treatment, not anatomy, clothes or character colors. The THIRD reference is the approved wooden cabinet: use only its coherent wood and metal material treatment, not its shape or fittings. The FOURTH reference supplies the shared 128-color base palette as a flexible color guide, with additional harmonious shades permitted and no exact palette restriction.\nGive the case a continuous dark brown near-black outer outline exactly one final-image pixel thick, with stepped diagonals, no double border, halo, blur or antialiasing. Internal lines remain subtle. Refine the narrow wooden frame, axe blade and handle; a few restrained glass highlights should communicate the pane while keeping the axe clearly readable. Preserve the source alpha treatment. The entire case should occupy three quarters of the square composition in width and about eleven twelfths in height; retain its tall rectangular proportions. Keep top and bottom edges, axe placement and the small bottom-centered label aligned to the first reference.",
+      "width": 48,
+      "height": 48,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/c0b519d1-c7c9-4f34-a7b4-c98d12cd1405/image.png?v=1795425682469",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "88db2e3c-14fb-438d-9d80-29dce868c167",
+      "batchIndex": 5,
+      "batchSize": 9,
+      "action": {
+        "kind": "same-style"
+      }
+    },
+    {
+      "id": "06ff49c2-072f-451c-88f2-bd9f32903bdc",
+      "type": "image",
+      "createdAt": "2026-11-23T09:21:23.292Z",
+      "updatedAt": "2026-11-23T09:21:23.292Z",
+      "prompt": "Create a wall-mounted emergency axe inside its closed glass display case, for a late nineteenth-century submarine corridor. The FIRST reference is the exact subject: preserve the upright rectangular brown wooden case, narrow frame, muted dark olive glass/backing, single axe with reddish rust-colored head near the upper left and long ochre wooden handle descending toward the lower left, and the small warm brass rectangular label centered on the bottom frame. The axe remains visibly enclosed behind glass. Preserve the original front view with its slight side depth, silhouette, proportions and dominant brown, olive and ochre colors. No extra objects, no second axe, no added signage. Keep the small bottom label as a few restrained engraved marks, without inventing legible words.\nThe SECOND reference, Churchill, provides ONLY the amount of finer detail, deliberate pixel clusters, restrained shading and outer outline treatment, not anatomy, clothes or character colors. The THIRD reference is the approved wooden cabinet: use only its coherent wood and metal material treatment, not its shape or fittings. The FOURTH reference supplies the shared 128-color base palette as a flexible color guide, with additional harmonious shades permitted and no exact palette restriction.\nGive the case a continuous dark brown near-black outer outline exactly one final-image pixel thick, with stepped diagonals, no double border, halo, blur or antialiasing. Internal lines remain subtle. Refine the narrow wooden frame, axe blade and handle; a few restrained glass highlights should communicate the pane while keeping the axe clearly readable. Preserve the source alpha treatment. The entire case should occupy three quarters of the square composition in width and about eleven twelfths in height; retain its tall rectangular proportions. Keep top and bottom edges, axe placement and the small bottom-centered label aligned to the first reference.",
+      "width": 48,
+      "height": 48,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/06ff49c2-072f-451c-88f2-bd9f32903bdc/image.png?v=1795425683292",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "88db2e3c-14fb-438d-9d80-29dce868c167",
+      "batchIndex": 6,
+      "batchSize": 9,
+      "action": {
+        "kind": "same-style"
+      }
+    },
+    {
+      "id": "46e8ec52-b6b1-40e9-8ec0-24129a96d99d",
+      "type": "image",
+      "createdAt": "2026-11-23T09:21:24.092Z",
+      "updatedAt": "2026-11-23T09:21:24.092Z",
+      "prompt": "Create a wall-mounted emergency axe inside its closed glass display case, for a late nineteenth-century submarine corridor. The FIRST reference is the exact subject: preserve the upright rectangular brown wooden case, narrow frame, muted dark olive glass/backing, single axe with reddish rust-colored head near the upper left and long ochre wooden handle descending toward the lower left, and the small warm brass rectangular label centered on the bottom frame. The axe remains visibly enclosed behind glass. Preserve the original front view with its slight side depth, silhouette, proportions and dominant brown, olive and ochre colors. No extra objects, no second axe, no added signage. Keep the small bottom label as a few restrained engraved marks, without inventing legible words.\nThe SECOND reference, Churchill, provides ONLY the amount of finer detail, deliberate pixel clusters, restrained shading and outer outline treatment, not anatomy, clothes or character colors. The THIRD reference is the approved wooden cabinet: use only its coherent wood and metal material treatment, not its shape or fittings. The FOURTH reference supplies the shared 128-color base palette as a flexible color guide, with additional harmonious shades permitted and no exact palette restriction.\nGive the case a continuous dark brown near-black outer outline exactly one final-image pixel thick, with stepped diagonals, no double border, halo, blur or antialiasing. Internal lines remain subtle. Refine the narrow wooden frame, axe blade and handle; a few restrained glass highlights should communicate the pane while keeping the axe clearly readable. Preserve the source alpha treatment. The entire case should occupy three quarters of the square composition in width and about eleven twelfths in height; retain its tall rectangular proportions. Keep top and bottom edges, axe placement and the small bottom-centered label aligned to the first reference.",
+      "width": 48,
+      "height": 48,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/46e8ec52-b6b1-40e9-8ec0-24129a96d99d/image.png?v=1795425684092",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "88db2e3c-14fb-438d-9d80-29dce868c167",
+      "batchIndex": 7,
+      "batchSize": 9,
+      "action": {
+        "kind": "same-style"
+      }
+    },
+    {
+      "id": "cda5f6d0-6c70-4fce-905f-66ff66b338f7",
+      "type": "image",
+      "createdAt": "2026-11-23T09:21:24.827Z",
+      "updatedAt": "2026-11-23T09:21:24.827Z",
+      "prompt": "Create a wall-mounted emergency axe inside its closed glass display case, for a late nineteenth-century submarine corridor. The FIRST reference is the exact subject: preserve the upright rectangular brown wooden case, narrow frame, muted dark olive glass/backing, single axe with reddish rust-colored head near the upper left and long ochre wooden handle descending toward the lower left, and the small warm brass rectangular label centered on the bottom frame. The axe remains visibly enclosed behind glass. Preserve the original front view with its slight side depth, silhouette, proportions and dominant brown, olive and ochre colors. No extra objects, no second axe, no added signage. Keep the small bottom label as a few restrained engraved marks, without inventing legible words.\nThe SECOND reference, Churchill, provides ONLY the amount of finer detail, deliberate pixel clusters, restrained shading and outer outline treatment, not anatomy, clothes or character colors. The THIRD reference is the approved wooden cabinet: use only its coherent wood and metal material treatment, not its shape or fittings. The FOURTH reference supplies the shared 128-color base palette as a flexible color guide, with additional harmonious shades permitted and no exact palette restriction.\nGive the case a continuous dark brown near-black outer outline exactly one final-image pixel thick, with stepped diagonals, no double border, halo, blur or antialiasing. Internal lines remain subtle. Refine the narrow wooden frame, axe blade and handle; a few restrained glass highlights should communicate the pane while keeping the axe clearly readable. Preserve the source alpha treatment. The entire case should occupy three quarters of the square composition in width and about eleven twelfths in height; retain its tall rectangular proportions. Keep top and bottom edges, axe placement and the small bottom-centered label aligned to the first reference.",
+      "width": 48,
+      "height": 48,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/cda5f6d0-6c70-4fce-905f-66ff66b338f7/image.png?v=1795425684827",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "88db2e3c-14fb-438d-9d80-29dce868c167",
+      "batchIndex": 8,
+      "batchSize": 9,
+      "action": {
+        "kind": "same-style"
+      }
+    }
+  ],
+  "credits": {
+    "used": 15,
+    "remaining": 270
+  }
+}

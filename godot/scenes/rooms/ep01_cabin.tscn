@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://ijxhyx1f3soh" path="res://scripts/actions/action_row.gd" id="action_row"]
 [ext_resource type="Script" uid="uid://dhwghtvndfnw4" path="res://scripts/actions/action_sequence.gd" id="action_sequence"]
 [ext_resource type="Script" uid="uid://cd16yclgw3qqd" path="res://scripts/actions/action_step.gd" id="action_step"]
-[ext_resource type="Texture2D" uid="uid://37p3ga46irwy" path="res://assets/graphics/ep01_cabin/cabin_background.png" id="background"]
+[ext_resource type="Texture2D" uid="uid://dkllr3263gajg" path="res://assets/graphics/ep01_cabin/background-room-wall.png" id="background"]
 [ext_resource type="Texture2D" uid="uid://dpqfforgflm8g" path="res://assets/graphics/ep01_cabin/bed.png" id="bed_bed"]
 [ext_resource type="Texture2D" uid="uid://dbv1yvgispe0d" path="res://assets/graphics/ep01_cabin/bottle.png" id="bottle_bottle"]
 [ext_resource type="Texture2D" uid="uid://bxw2upn8y43dc" path="res://assets/graphics/ep01_cabin/inventory_bottle.png" id="bottle_inventory_icon"]
@@ -33,6 +33,8 @@ room_id = "ep01_cabin"
 episode_id = "ep01"
 scene_path = "res://scenes/rooms/ep01_cabin.tscn"
 width = 500.0
+; Mantiene Churchill allineato agli oggetti dopo lo spostamento della cabina di 34 px a schermo.
+floor_y = 188.666667
 entries = Dictionary[String, float]({
 "default": 65.0,
 "from_corridor": 435.0
@@ -214,13 +216,14 @@ definition = SubResource("room_definition")
 inventory_definitions = Array[ExtResource("inventory_definition")]([SubResource("feather_inventory"), SubResource("bottle_inventory"), SubResource("magnet_inventory"), SubResource("magnet_feather_inventory"), SubResource("key_inventory")])
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1915065628]
+; La parete non deformata parte da y=0 e termina a 576 px a schermo alla scala 3×.
 texture = ExtResource("background")
 centered = false
 region_enabled = true
-region_rect = Rect2(0, 0, 500, 275)
+region_rect = Rect2(0, 0, 500, 192)
 
 [node name="mapMagnet" type="Node2D" parent="." unique_id=9763528]
-position = Vector2(112, 44)
+position = Vector2(112, 32.666667)
 script = ExtResource("hotspot_script")
 hotspot_id = "map"
 hit_size = Vector2(61, 79)
@@ -232,7 +235,7 @@ texture = ExtResource("mapMagnet_mapMagnet")
 centered = false
 
 [node name="como" type="Node2D" parent="." unique_id=1283005312]
-position = Vector2(177, 163)
+position = Vector2(177, 151.666667)
 script = ExtResource("hotspot_script")
 hotspot_id = "como"
 hit_size = Vector2(40, 37)
@@ -244,7 +247,7 @@ texture = ExtResource("como_como")
 centered = false
 
 [node name="sinkNormal" type="Node2D" parent="." unique_id=942851978]
-position = Vector2(224, 138)
+position = Vector2(224, 126.666667)
 script = ExtResource("hotspot_script")
 hotspot_id = "sink"
 hit_size = Vector2(36, 62)
@@ -256,7 +259,7 @@ texture = ExtResource("sinkNormal_sinkNormal")
 centered = false
 
 [node name="feather" type="Node2D" parent="." unique_id=1319962481]
-position = Vector2(185, 136)
+position = Vector2(185, 124.666667)
 script = ExtResource("collectible_script")
 item_id = "ep01_cabin_feather"
 pickup_response = "ep01.cabin.feather.pickup"
@@ -269,7 +272,7 @@ texture = ExtResource("feather_feather")
 centered = false
 
 [node name="oblo1" type="Node2D" parent="." unique_id=1234644115]
-position = Vector2(239, 75)
+position = Vector2(239, 63.666667)
 script = ExtResource("hotspot_script")
 hotspot_id = "oblo1"
 hit_size = Vector2(48, 48)
@@ -283,7 +286,7 @@ autoplay = "default"
 centered = false
 
 [node name="oblo2" type="Node2D" parent="." unique_id=135417799]
-position = Vector2(299, 75)
+position = Vector2(299, 63.666667)
 script = ExtResource("hotspot_script")
 hotspot_id = "oblo2"
 hit_size = Vector2(48, 48)
@@ -298,7 +301,7 @@ frame = 4
 centered = false
 
 [node name="interphone" type="Node2D" parent="." unique_id=1378675226]
-position = Vector2(374, 100)
+position = Vector2(374, 88.666667)
 script = ExtResource("hotspot_script")
 hotspot_id = "interphone"
 speaker_key = "common.speaker.interphone"
@@ -313,7 +316,7 @@ texture = ExtResource("interphone_interphone")
 centered = false
 
 [node name="interphoneTube" type="Node2D" parent="." unique_id=1806298363]
-position = Vector2(374, 0)
+position = Vector2(374, -11.333333)
 
 [node name="Visual" type="Sprite2D" parent="interphoneTube" unique_id=914625104]
 scale = Vector2(1, 0.9574468)
@@ -321,7 +324,7 @@ texture = ExtResource("interphoneTube_interphoneTube")
 centered = false
 
 [node name="door" type="Node2D" parent="." unique_id=563401759]
-position = Vector2(422, 84)
+position = Vector2(422, 72.666667)
 script = ExtResource("exit_script")
 destination_room = "ep01_corridor"
 destination_entry = "from_cabin"
@@ -336,7 +339,7 @@ texture = ExtResource("door_door")
 centered = false
 
 [node name="bed" type="Node2D" parent="." unique_id=2030673934]
-position = Vector2(2, 161)
+position = Vector2(2, 149.666667)
 script = ExtResource("hotspot_script")
 hotspot_id = "bed"
 hit_size = Vector2(140, 39)
@@ -348,7 +351,7 @@ texture = ExtResource("bed_bed")
 centered = false
 
 [node name="bottle" type="Node2D" parent="." unique_id=1581295987]
-position = Vector2(301, 188)
+position = Vector2(301, 176.666667)
 script = ExtResource("collectible_script")
 item_id = "ep01_cabin_bottle"
 pickup_response = "ep01.cabin.bottle.pickup"
