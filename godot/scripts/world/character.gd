@@ -8,6 +8,8 @@ extends AnimatedSprite2D
 @export var height := 100.0
 @export var idle_animation := "idle"
 @export var walk_animation := "walk"
+## Sposta solo la grafica delle pose configurate, senza cambiare la quota dei piedi.
+@export var animation_offsets: Dictionary[String, Vector2] = {}
 var current_x := 0.0
 var target_x := 0.0
 
@@ -15,6 +17,12 @@ var target_x := 0.0
 func _ready() -> void:
 	current_x = position.x + half_width
 	target_x = current_x
+	animation_changed.connect(_update_animation_offset)
+	_update_animation_offset()
+
+## Ripristina l'offset neutro passando a un'animazione senza spostamento dedicato.
+func _update_animation_offset() -> void:
+	offset = animation_offsets.get(String(animation), Vector2.ZERO)
 
 ## Posiziona il personaggio usando centro orizzontale e quota dei piedi, comuni alle stanze.
 func place(center_x: float, floor_y: float) -> void:

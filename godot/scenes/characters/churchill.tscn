@@ -47,6 +47,8 @@ animations = [{"frames": [{"duration": 1.0, "texture": SubResource("walk_0")}, {
 script = ExtResource("character")
 speaker_key = "common.speaker.churchill"
 speed = 80.0
+; Abbassa la posa seduta di 6 pixel logici (18 pixel alla scala 3 della stanza).
+animation_offsets = Dictionary[String, Vector2]({"sit": Vector2(0, 14)})
 centered = false
 z_index = 1
 sprite_frames = SubResource("frames")
