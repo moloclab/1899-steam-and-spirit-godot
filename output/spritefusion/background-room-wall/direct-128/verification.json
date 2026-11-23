@@ -1,0 +1,17 @@
+﻿{
+    "width":  128,
+    "height":  128,
+    "colors":  [
+                   "#7B6F58",
+                   "#635741",
+                   "#5F4F36",
+                   "#736352"
+               ],
+    "alpha":  [
+                  255
+              ],
+    "seamHorizontalMean":  14.669270833333346,
+    "seamVerticalMean":  8.7161458333333321,
+    "internalHorizontalMean":  0.50412155511811163,
+    "internalVerticalMean":  0.48238599081364952
+}

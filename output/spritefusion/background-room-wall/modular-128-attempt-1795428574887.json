@@ -1,0 +1,21 @@
+{
+  "date": "2026-11-23",
+  "tool": "generate_sprites_in_style",
+  "size": 128,
+  "inputs": [
+    "output/spritefusion/background-room-wall/wall-sample-128.png",
+    "godot/assets/graphics/characters/churchill/churchill-stand.png",
+    "godot/palette/1899-base-128-swatches.png"
+  ],
+  "prompt": "Create a single seamless repeating wall-surface texture for the interior of a Victorian steampunk submarine. Use the first reference for the existing wall's muted warm grey-brown and olive metal tones, subdued atmosphere and quiet surface character. It is aged submarine metal, not brick, stone, fabric or wood. Show only a flat front-facing expanse of wall material filling the entire square from edge to edge.\n\nThis is a base modular wall tile to repeat both horizontally and vertically. Opposite edges must join seamlessly: left to right and top to bottom, including all four corners. Keep the illumination and average tone even across the surface, no vignette, gradient, cast shadows or central highlight. No perimeter frame, bevel, border, floor, skirting or empty margins. Avoid any recognizable central motif that becomes obvious in repetition.\n\nKeep the design very simple and low contrast: broad calm readable metal areas, restrained patina, a few subtle material marks and deliberate pixel clusters. No pipes, gears, instruments, portholes, lamps, lettering, ornaments or prominent rivets; those will be separate later additions. Do not introduce a busy grid of metal panels.\n\nThe second reference, Churchill, guides only the pixel-art detail scale, restrained shading and contour language. Do not include the character or transfer his anatomy, clothing, silhouette or colors. Where actual material contours are present use a dark single-pixel line, with internal marks subtle and subordinate; do not outline the square canvas. No blur, antialiasing, halo or thick outlines.\nThe third reference contains the game's shared base color swatches, only a flexible color guide. Preserve the wall's dominant muted tones; additional harmonious shades are allowed. Do not reproduce the swatches as shapes or patterns.",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "The generation could not be completed. No sprite was saved, so the credits were refunded."
+      }
+    ],
+    "isError": true
+  },
+  "status": "failed_no_sprite_saved_credits_refunded"
+}

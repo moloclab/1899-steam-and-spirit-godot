@@ -1,0 +1,21 @@
+{
+  "date": "2026-11-23",
+  "tool": "generate_sprites_in_style",
+  "size": 128,
+  "inputs": [
+    "godot/assets/graphics/ep01_cabin/wall-sample-128.png",
+    "godot/assets/graphics/characters/churchill/churchill-stand.png",
+    "godot/palette/1899-base-128-swatches.png"
+  ],
+  "prompt": "Create a simple seamless wall texture for the interior of a Victorian steampunk submarine, using the first reference for the wall material, front-facing composition and muted warm grey-brown and olive colors. Fill the entire square edge to edge with an opaque continuous expanse of aged metal, with broad calm areas and subtle low-contrast patina. It must repeat seamlessly horizontally and vertically: left and right edges connect, top and bottom edges connect, and the corners connect. Use even illumination throughout.\n\nKeep the wall plain and understated, ready for separate decorations later. Avoid prominent stains, panel grids, rivets, pipes, gears, portholes, instruments, lettering, floor, baseboard or a frame. No vignette or directional lighting gradients. This is a wall surface, not brickwork, fabric or wood.\n\nUse the second reference only for the finer pixel-art detail, deliberate clusters, restrained shading and dark single-pixel contour language. Do not include the character or copy his clothing, anatomy or colors. Keep actual material contours subtle and dark, one final-image pixel thick; do not draw any outline around the square canvas. Avoid blur, antialiasing, halos and doubled lines.\nThe third reference is the shared base color palette, only a flexible guide to harmonious tones, not a pattern to reproduce. Allow additional harmonious shades when useful while preserving the wall's dominant colors.",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "The generation could not be completed. No sprite was saved, so the credits were refunded."
+      }
+    ],
+    "isError": true
+  },
+  "status": "failed_no_sprite_saved_credits_refunded"
+}

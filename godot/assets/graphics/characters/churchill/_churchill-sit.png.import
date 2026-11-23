@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnikbp2v5k1j0"
-path="res://.godot/imported/background-room-redesign-imagegen.png-c7c7cb6b14c4fd5f284582df6c4f1a15.ctex"
+uid="uid://ci5gkpli1vv5u"
+path="res://.godot/imported/_churchill-sit.png-9de36d771bcad44710e1da9367a12634.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/graphics/ep01_cabin/background-room-redesign-imagegen.png"
-dest_files=["res://.godot/imported/background-room-redesign-imagegen.png-c7c7cb6b14c4fd5f284582df6c4f1a15.ctex"]
+source_file="res://assets/graphics/characters/churchill/_churchill-sit.png"
+dest_files=["res://.godot/imported/_churchill-sit.png-9de36d771bcad44710e1da9367a12634.ctex"]
 
 [params]
 

@@ -1,0 +1,65 @@
+{
+  "source": "godot/assets/graphics/ep01_cabin/wall-sample-128.png",
+  "paletteMethod": "32 luminance quantiles sampled from opaque source pixels; all colors present in source",
+  "request_id": "req_f088601c-b0d6-4190-b0c4-bb9032a9ab4e",
+  "status": "succeeded",
+  "output_count": 1,
+  "outputs": [
+    {
+      "id": "96ea8a95-1924-42b9-9ca0-4041b60a6711",
+      "type": "image",
+      "createdAt": "2026-11-23T10:18:59.756Z",
+      "updatedAt": "2026-11-23T10:18:59.756Z",
+      "prompt": "A seamless repeating wall surface for the interior of a Victorian steampunk submarine. Flat front view of aged matte metal, subdued warm grey-brown and olive tones. A quiet continuous wall material fills the square entirely edge to edge. Use broad readable calm areas, restrained pixel clusters, very subtle low-contrast patina and sparse fine wear. Keep the surface simple so decorative objects can be added separately later.\n\nOpposite edges must connect seamlessly in both directions: left to right, top to bottom, including the corners. Uniform illumination and average tone across the entire surface, with no vignette, directional gradient, central spotlight or cast shadows. Avoid any distinctive central motif or prominent stain that would make repetition obvious.\n\nNo pipes, gears, portholes, instruments, lamps, lettering, rivet arrays, panel grids, brickwork, fabric or wood grain. No floor, skirting, frame, bevel or border around the square. No empty margins. The entire surface is opaque wall material. Use the supplied colors only. Deliberate fine pixel-art detail and restrained shading, no blur, antialiasing or halos. Where material contours are needed keep them dark and a single pixel thick, with internal marks subordinate; do not outline the canvas.",
+      "width": 128,
+      "height": 128,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/96ea8a95-1924-42b9-9ca0-4041b60a6711/image.png?v=1795429139756",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "e87cfd79-dadd-457b-8bcc-aedcbce78a61",
+      "batchIndex": 0,
+      "batchSize": 1,
+      "palette": {
+        "colors": [
+          "#5f4f36",
+          "#5f533b",
+          "#635441",
+          "#615642",
+          "#635741",
+          "#66583d",
+          "#655943",
+          "#655a44",
+          "#6a5a43",
+          "#6c5b3f",
+          "#655d48",
+          "#695d46",
+          "#6a5e44",
+          "#675f4b",
+          "#6a5f49",
+          "#6b6044",
+          "#6c6048",
+          "#6e604b",
+          "#6e6147",
+          "#70614a",
+          "#6f6249",
+          "#71624c",
+          "#6f634e",
+          "#70644a",
+          "#736352",
+          "#72654b",
+          "#72664d",
+          "#73674f",
+          "#746852",
+          "#796950",
+          "#7a6b56",
+          "#7b6f58"
+        ]
+      }
+    }
+  ],
+  "credits": {
+    "used": 5,
+    "remaining": 265
+  }
+}
