@@ -1,0 +1,23 @@
+{
+  "source": "godot/assets/graphics/ep01_cabin/background-room-wall.png",
+  "source_size": [
+    1018,
+    192
+  ],
+  "size": 128,
+  "prompt": "A front-facing interior bulkhead wall of a Victorian steampunk submarine, redesigned from the first reference. A continuous wall of aged riveted metal plates, subdued warm olive-brown and taupe metal, fine dark plate joints, small rivets and localized reddish-brown rust stains with short corrosion streaks. Preserve the first reference's simple wall-only composition and thin dark horizontal floor boundary along the very bottom; no visible floor area. Fill the square with wall surface above that bottom line, no framing or margins. Even dim lighting, restrained contrast and broad quiet areas for a reusable adventure-game background. The second reference is Churchill and supplies only fine pixel clusters, restrained shading and dark single-pixel contour treatment, never anatomy or clothing. The third reference is the game's shared palette from godot/palette and guides the dominant colors, with harmonious extra metal and rust shades allowed. Metal rather than brick or wood. No characters, furniture, doors, portholes, pipes, gears, lamps, text or symbols. No blur, antialiasing or thick outlines. Keep left and right wall edges compatible for horizontal repetition.",
+  "references": [
+    "godot/assets/graphics/ep01_cabin/background-room-wall.png",
+    "godot/assets/graphics/characters/churchill/churchill-stand.png",
+    "godot/palette/1899-base-128-swatches.png"
+  ],
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "The generation could not be completed. No sprite was saved, so the credits were refunded."
+      }
+    ],
+    "isError": true
+  }
+}

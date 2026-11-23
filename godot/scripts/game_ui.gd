@@ -112,29 +112,20 @@ func _ready() -> void:
 	music_button.toggle_mode = true
 	music_button.button_pressed = true
 	help_button = _button("common.ui.help", Rect2(toolbar_x + 400, 20, 110, 38), _toggle_help)
+	# Nella prova a 3× i comandi si sovrappongono alla stanza, sopra la patina.
+	for button in save_buttons + [music_button, help_button]:
+		button.z_index = 3
 	# Il ritaglio nasconde le parti del corridoio fuori dalla finestra di gioco.
 	# I clic sono gestiti dal contenitore: le immagini della stanza sono nodi 2D, non pulsanti.
 	world_panel = Control.new()
-	world_panel.position = Vector2(0, 84)
-	world_panel.size = Vector2(view_width, 412)
+	# La stanza parte dal bordo superiore della finestra.
+	world_panel.position = Vector2.ZERO
+	# L'area della stanza occupa tutti i 720 pixel, anche sotto l'inventario.
+	world_panel.size = Vector2(view_width, 720)
 	world_panel.clip_contents = true
 	world_panel.mouse_default_cursor_shape = Control.CURSOR_ARROW
 	world_panel.gui_input.connect(func(event: InputEvent): world_input.emit(event))
 	add_child(world_panel)
-	# Una patina fissa copre tutte le stanze; lo z_index la mantiene sopra anche al personaggio.
-	var grime := TextureRect.new()
-	grime.name = "WorldGrime"
-	grime.texture = preload("res://assets/graphics/ui/hover.png")
-	grime.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-	grime.stretch_mode = TextureRect.STRETCH_SCALE
-	grime.z_index = 2
-	# Il velo lascia passare clic e touch al contenitore della stanza.
-	grime.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	var grime_material := CanvasItemMaterial.new()
-	grime_material.blend_mode = CanvasItemMaterial.BLEND_MODE_MUL
-	grime.material = grime_material
-	world_panel.add_child(grime)
-	grime.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	speaker_label = _label("common.speaker.churchill", Rect2(40, 506, 700, 20), 32)
 	speaker_label.add_theme_color_override("font_color", GOLD)
 	# Il nome resta disponibile alla localizzazione; la battuta identifica chi parla tramite la posizione.
@@ -157,6 +148,10 @@ func _ready() -> void:
 	inventory_row.size = Vector2(850, 52)
 	inventory_row.add_theme_constant_override("separation", 10)
 	inventory_scroll = ScrollContainer.new()
+	# Il contenitore dell'inventario lascia visibile lo sfondo sottostante.
+	inventory_scroll.add_theme_stylebox_override("panel", StyleBoxEmpty.new())
+	# L'inventario trasparente si sovrappone alla stanza e alla sua patina.
+	inventory_scroll.z_index = 3
 	inventory_scroll.position = Vector2(28, 620)
 	inventory_scroll.size = Vector2(view_width - 56, 68)
 	inventory_scroll.vertical_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
@@ -249,6 +244,9 @@ func refresh_inventory(inventory: Array[String], _selected: String, _texts) -> v
 		button.focus_mode = Control.FOCUS_NONE
 		# Nell'inventario l'oggetto viene mostrato solo tramite la sua icona.
 		button.icon = definition.icon
+		# Le icone restano senza riquadro anche al passaggio del mouse e durante il clic.
+		for style in ["normal", "hover", "pressed", "disabled", "focus"]:
+			button.add_theme_stylebox_override(style, StyleBoxEmpty.new())
 		button.add_theme_font_size_override("font_size", 32)
 		button.custom_minimum_size = Vector2(52, 52)
 		button.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND

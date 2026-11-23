@@ -1,0 +1,11 @@
+{
+  "approval": "si, usa edit 2",
+  "asset_id": "fe1a2fa4-1dcd-49f7-b898-09cb6a964dc8",
+  "native_size": [21, 114],
+  "integrated_file": "godot/assets/graphics/ep01_cabin/interphone_tube_full.png",
+  "pixel_changes": false,
+  "top_anchor": [478, 0],
+  "hotspot_position": [478, 93],
+  "hotspot_size": [21, 21],
+  "visual_offset": [0, -93]
+}

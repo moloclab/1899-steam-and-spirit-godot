@@ -1,0 +1,87 @@
+{
+  "request_id": "req_bc332778-48c8-423f-bb55-df39148d16fe",
+  "status": "succeeded",
+  "output_count": 4,
+  "outputs": [
+    {
+      "id": "c3c0da33-9e6d-4b17-8b73-1ec451bf0522",
+      "type": "image",
+      "createdAt": "2026-11-22T13:03:52.348Z",
+      "updatedAt": "2026-11-22T13:03:52.348Z",
+      "prompt": "Create the wall-mounted metal speaking tube used to communicate between compartments of the Leviathan, a late nineteenth-century steampunk submarine. The FIRST reference is the exact subject: preserve its exceptionally tall slender vertical silhouette, straight pipe entering from the top edge, recurring warm brass mounting collars along the shaft, and the wider dark flared speaking opening projecting toward the left at the very bottom. Preserve its original side-on view, proportions, dominant muted olive-brown aged metal with ochre brass accents, top attachment and lower opening position. This is an acoustic communication pipe, not an electrical telephone, weapon, plumbing faucet or musical instrument. No extra hoses, gauges, handles, cables or decorative machinery.\nThe SECOND reference, Churchill, provides ONLY the amount of finer detail, deliberate pixel clusters, restrained shading and consistent dark outline exactly one final-image pixel thick around the outer silhouette. Do not transfer anatomy, clothes or character colors. The THIRD reference is the approved cabin washbasin: use only its restrained treatment of metal and coherent object rendering. The FOURTH reference contains the shared 128-color swatches as a flexible color base only; additional harmonious material shades are allowed, exact matching is not required.\nThe speaking tube occupies nearly the full height of the square composition, about fifteen sixteenths, and its widest lower mouth occupies less than one fifth of the square width. Keep the long shaft narrow, a little under one tenth of the square width. Keep the same lower mouth profile and the top connection aligned vertically, with the opening to the left. Refine metal volume through subtle longitudinal highlights, collar seams and controlled darker recesses. Maintain broad readable surfaces, not busy texture. Give the subject a continuous near-black or dark-brown outer outline exactly one final-image pixel thick, stepped diagonals, no doubled border, halo, blur or antialiasing. Internal lines stay subordinate. Preserve the source transparency and background treatment.",
+      "width": 128,
+      "height": 128,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/c3c0da33-9e6d-4b17-8b73-1ec451bf0522/image.png?v=1795352632348",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "801899f1-2792-45a8-bc42-7b3a5943597e",
+      "batchIndex": 0,
+      "batchSize": 4,
+      "action": {
+        "kind": "same-style"
+      }
+    },
+    {
+      "id": "3a895c07-3e54-4165-b551-074aa9f83018",
+      "type": "image",
+      "createdAt": "2026-11-22T13:03:52.779Z",
+      "updatedAt": "2026-11-22T13:03:52.779Z",
+      "prompt": "Create the wall-mounted metal speaking tube used to communicate between compartments of the Leviathan, a late nineteenth-century steampunk submarine. The FIRST reference is the exact subject: preserve its exceptionally tall slender vertical silhouette, straight pipe entering from the top edge, recurring warm brass mounting collars along the shaft, and the wider dark flared speaking opening projecting toward the left at the very bottom. Preserve its original side-on view, proportions, dominant muted olive-brown aged metal with ochre brass accents, top attachment and lower opening position. This is an acoustic communication pipe, not an electrical telephone, weapon, plumbing faucet or musical instrument. No extra hoses, gauges, handles, cables or decorative machinery.\nThe SECOND reference, Churchill, provides ONLY the amount of finer detail, deliberate pixel clusters, restrained shading and consistent dark outline exactly one final-image pixel thick around the outer silhouette. Do not transfer anatomy, clothes or character colors. The THIRD reference is the approved cabin washbasin: use only its restrained treatment of metal and coherent object rendering. The FOURTH reference contains the shared 128-color swatches as a flexible color base only; additional harmonious material shades are allowed, exact matching is not required.\nThe speaking tube occupies nearly the full height of the square composition, about fifteen sixteenths, and its widest lower mouth occupies less than one fifth of the square width. Keep the long shaft narrow, a little under one tenth of the square width. Keep the same lower mouth profile and the top connection aligned vertically, with the opening to the left. Refine metal volume through subtle longitudinal highlights, collar seams and controlled darker recesses. Maintain broad readable surfaces, not busy texture. Give the subject a continuous near-black or dark-brown outer outline exactly one final-image pixel thick, stepped diagonals, no doubled border, halo, blur or antialiasing. Internal lines stay subordinate. Preserve the source transparency and background treatment.",
+      "width": 128,
+      "height": 128,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/3a895c07-3e54-4165-b551-074aa9f83018/image.png?v=1795352632779",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "801899f1-2792-45a8-bc42-7b3a5943597e",
+      "batchIndex": 1,
+      "batchSize": 4,
+      "action": {
+        "kind": "same-style"
+      }
+    },
+    {
+      "id": "0fe1d75f-6053-44ff-9f63-61d6e5c76850",
+      "type": "image",
+      "createdAt": "2026-11-22T13:03:53.183Z",
+      "updatedAt": "2026-11-22T13:03:53.183Z",
+      "prompt": "Create the wall-mounted metal speaking tube used to communicate between compartments of the Leviathan, a late nineteenth-century steampunk submarine. The FIRST reference is the exact subject: preserve its exceptionally tall slender vertical silhouette, straight pipe entering from the top edge, recurring warm brass mounting collars along the shaft, and the wider dark flared speaking opening projecting toward the left at the very bottom. Preserve its original side-on view, proportions, dominant muted olive-brown aged metal with ochre brass accents, top attachment and lower opening position. This is an acoustic communication pipe, not an electrical telephone, weapon, plumbing faucet or musical instrument. No extra hoses, gauges, handles, cables or decorative machinery.\nThe SECOND reference, Churchill, provides ONLY the amount of finer detail, deliberate pixel clusters, restrained shading and consistent dark outline exactly one final-image pixel thick around the outer silhouette. Do not transfer anatomy, clothes or character colors. The THIRD reference is the approved cabin washbasin: use only its restrained treatment of metal and coherent object rendering. The FOURTH reference contains the shared 128-color swatches as a flexible color base only; additional harmonious material shades are allowed, exact matching is not required.\nThe speaking tube occupies nearly the full height of the square composition, about fifteen sixteenths, and its widest lower mouth occupies less than one fifth of the square width. Keep the long shaft narrow, a little under one tenth of the square width. Keep the same lower mouth profile and the top connection aligned vertically, with the opening to the left. Refine metal volume through subtle longitudinal highlights, collar seams and controlled darker recesses. Maintain broad readable surfaces, not busy texture. Give the subject a continuous near-black or dark-brown outer outline exactly one final-image pixel thick, stepped diagonals, no doubled border, halo, blur or antialiasing. Internal lines stay subordinate. Preserve the source transparency and background treatment.",
+      "width": 128,
+      "height": 128,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/0fe1d75f-6053-44ff-9f63-61d6e5c76850/image.png?v=1795352633183",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "801899f1-2792-45a8-bc42-7b3a5943597e",
+      "batchIndex": 2,
+      "batchSize": 4,
+      "action": {
+        "kind": "same-style"
+      }
+    },
+    {
+      "id": "3698ad64-3c8e-456e-929e-4014b4846fe6",
+      "type": "image",
+      "createdAt": "2026-11-22T13:03:53.506Z",
+      "updatedAt": "2026-11-22T13:03:53.506Z",
+      "prompt": "Create the wall-mounted metal speaking tube used to communicate between compartments of the Leviathan, a late nineteenth-century steampunk submarine. The FIRST reference is the exact subject: preserve its exceptionally tall slender vertical silhouette, straight pipe entering from the top edge, recurring warm brass mounting collars along the shaft, and the wider dark flared speaking opening projecting toward the left at the very bottom. Preserve its original side-on view, proportions, dominant muted olive-brown aged metal with ochre brass accents, top attachment and lower opening position. This is an acoustic communication pipe, not an electrical telephone, weapon, plumbing faucet or musical instrument. No extra hoses, gauges, handles, cables or decorative machinery.\nThe SECOND reference, Churchill, provides ONLY the amount of finer detail, deliberate pixel clusters, restrained shading and consistent dark outline exactly one final-image pixel thick around the outer silhouette. Do not transfer anatomy, clothes or character colors. The THIRD reference is the approved cabin washbasin: use only its restrained treatment of metal and coherent object rendering. The FOURTH reference contains the shared 128-color swatches as a flexible color base only; additional harmonious material shades are allowed, exact matching is not required.\nThe speaking tube occupies nearly the full height of the square composition, about fifteen sixteenths, and its widest lower mouth occupies less than one fifth of the square width. Keep the long shaft narrow, a little under one tenth of the square width. Keep the same lower mouth profile and the top connection aligned vertically, with the opening to the left. Refine metal volume through subtle longitudinal highlights, collar seams and controlled darker recesses. Maintain broad readable surfaces, not busy texture. Give the subject a continuous near-black or dark-brown outer outline exactly one final-image pixel thick, stepped diagonals, no doubled border, halo, blur or antialiasing. Internal lines stay subordinate. Preserve the source transparency and background treatment.",
+      "width": 128,
+      "height": 128,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/3698ad64-3c8e-456e-929e-4014b4846fe6/image.png?v=1795352633506",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "801899f1-2792-45a8-bc42-7b3a5943597e",
+      "batchIndex": 3,
+      "batchSize": 4,
+      "action": {
+        "kind": "same-style"
+      }
+    }
+  ],
+  "credits": {
+    "used": 15,
+    "remaining": 315
+  }
+}

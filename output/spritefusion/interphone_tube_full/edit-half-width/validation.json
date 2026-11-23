@@ -1,0 +1,74 @@
+﻿[
+    {
+        "label":  "V4 originale",
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "file":  "output/spritefusion/interphone_tube_full/narrower/before-37x121.png",
+        "bounds":  [
+                       0,
+                       0,
+                       37,
+                       121
+                   ],
+        "canvas":  [
+                       37,
+                       121
+                   ]
+    },
+    {
+        "label":  "Riduzione diretta",
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "file":  "godot/assets/graphics/ep01_cabin/interphone_tube_full.png",
+        "bounds":  [
+                       0,
+                       0,
+                       19,
+                       121
+                   ],
+        "canvas":  [
+                       19,
+                       121
+                   ]
+    },
+    {
+        "label":  "Edit 1",
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "file":  "godot/assets/graphics/ep01_cabin/interphone_tube_full-redesign-5.png",
+        "bounds":  [
+                       0,
+                       0,
+                       37,
+                       121
+                   ],
+        "canvas":  [
+                       37,
+                       121
+                   ]
+    },
+    {
+        "label":  "Edit 2",
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "file":  "godot/assets/graphics/ep01_cabin/interphone_tube_full-redesign-6.png",
+        "bounds":  [
+                       0,
+                       0,
+                       21,
+                       114
+                   ],
+        "canvas":  [
+                       21,
+                       114
+                   ]
+    }
+]

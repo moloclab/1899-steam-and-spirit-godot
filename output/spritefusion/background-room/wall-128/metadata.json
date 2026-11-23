@@ -1,0 +1,31 @@
+{
+  "status": "generation_failed_no_sprite_saved_credits_refunded",
+  "source": "godot/assets/graphics/ep01_cabin/background-room.png",
+  "source_size": [
+    1018,
+    275
+  ],
+  "crop": [
+    0,
+    32,
+    128,
+    128
+  ],
+  "size": 128,
+  "prompt": "Create an edge-to-edge material sample of the interior metal wall of the Leviathian, a Victorian steampunk submarine, for a side-view adventure game. The first reference is an actual unscaled crop of the existing wall: preserve its muted warm olive-brown and taupe dominant colors, flat front-facing perspective and quiet background role. Redesign the surface as broad aged metal plates with subtle horizontal and vertical joints, a few small flush rivets and restrained wear. It must read as metal rather than brick or stone. Fill the whole square with continuous opaque wall surface, suitable for repetition in both directions: matching opposite edges, even lighting, no vignette, no border around the canvas, no floor or skirting. Keep panel seams fine and dark, with the single-pixel dark contour treatment of the style references; avoid heavy black bars. Broad calm areas should dominate, with deliberate small pixel clusters and restrained shading rather than dense texture noise. The second reference, Churchill, supplies only the degree of detail, shading and contour style; do not include the character, clothing, anatomy or character colors. The third reference, the quill and inkwell, further guides fine dark contours only; do not include these objects. The fourth reference is the game's common color palette, used only as a flexible color guide; additional harmonious shades are allowed. No objects, pipes, doors, portholes, writing or symbols. No blur, gradients with antialiasing, or doubled outlines.",
+  "references": [
+    "wall-reference.png",
+    "godot/assets/graphics/characters/churchill/churchill-stand.png",
+    "godot/assets/graphics/ep01_cabin/feather.png",
+    "godot/palette/1899-base-128-swatches.png"
+  ],
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "The generation could not be completed. No sprite was saved, so the credits were refunded."
+      }
+    ],
+    "isError": true
+  }
+}

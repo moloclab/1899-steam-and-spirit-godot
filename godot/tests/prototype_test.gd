@@ -285,7 +285,7 @@ func _test_cabin() -> void:
 	check(game.state.room == "ep01_corridor" and game.state.get_progress("ep01_cabin", "door_unlocked"), "Apertura della porta e uscita")
 	check(not game.state.has_item("ep01_cabin_key") and game.state.player_x == 94, "Chiave consumata e ingresso nominato")
 	await _interact("return")
-	check(game.state.room == "ep01_cabin" and game.state.player_x == 550, "Ritorno alla cabina")
+	check(game.state.room == "ep01_cabin" and game.state.player_x == 435, "Ritorno alla cabina")
 	check(not game.rooms.current_room.get_node("bottle").visible, "Oggetti consumati assenti al ritorno")
 	check(Saves.load_game(game.state, TEST_SAVE) == OK, "Ripresa del salvataggio intermedio")
 	game._load_room()
@@ -530,23 +530,24 @@ func _test_room_scenes() -> void:
 		room.free()
 	var sink: Hotspot = game.rooms.find_hotspot("sink")
 	var original_x := sink.position.x
-	check(sink.approach_position(180, 22) == 250, "Da sinistra il bordo destro di Churchill raggiunge il bordo sinistro dell'oggetto")
-	check(sink.approach_position(500, 22) == 334, "Da destra il bordo sinistro di Churchill raggiunge il bordo destro dell'oggetto")
-	check(sink.approach_position(290, 22) == 250 and sink.approach_position(300, 22) == 334,
+	# Il lavabo della cabina larga 500 px occupa l'intervallo orizzontale 219–255.
+	check(sink.approach_position(180, 22) == 197, "Da sinistra il bordo destro di Churchill raggiunge il bordo sinistro dell'oggetto")
+	check(sink.approach_position(500, 22) == 277, "Da destra il bordo sinistro di Churchill raggiunge il bordo destro dell'oggetto")
+	check(sink.approach_position(230, 22) == 197 and sink.approach_position(244, 22) == 277,
 		"Dentro l'oggetto viene scelto il bordo più vicino")
-	check(sink.approach_position(292, 22) == 250, "Al centro dell'oggetto viene scelto il bordo sinistro")
+	check(sink.approach_position(237, 22) == 197, "Al centro dell'oggetto viene scelto il bordo sinistro")
 	sink.position.x += 30
-	check(sink.approach_position(180, 22) == 280, "Avvicinamento segue lo spostamento dell'oggetto")
+	check(sink.approach_position(180, 22) == 227, "Avvicinamento segue lo spostamento dell'oggetto")
 	sink.position.x = original_x
 	sink.scale.x = 2
-	check(sink.approach_position(500, 22) == 374, "Avvicinamento tiene conto della scala dell'oggetto e della stanza")
+	check(sink.approach_position(500, 22) == 313, "Avvicinamento tiene conto della scala dell'oggetto e della stanza")
 	sink.scale.x = 1
 	var actor = game.rooms.actor
 	var original_player_x: float = actor.current_x
 	for x in [180.0, 500.0]:
 		actor.place(x, game.rooms.current_room.definition.floor_y)
 		game.interactions.request(sink, "", true, game.rooms)
-		check(actor.target_x == (250 if x == 180 else 334), "La richiesta sceglie il bordo dal lato di arrivo")
+		check(actor.target_x == (197 if x == 180 else 277), "La richiesta sceglie il bordo dal lato di arrivo")
 		_step()
 		check(actor.has_arrived(), "Churchill raggiunge il bordo e completa l'avvicinamento")
 	actor.place(24, game.rooms.current_room.definition.floor_y)

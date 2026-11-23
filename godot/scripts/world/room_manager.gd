@@ -32,6 +32,23 @@ func load_room(state, host: Control) -> bool:
 	current_room.add_child(actor)
 	state.player_x = definition.clamp_x(state.player_x)
 	actor.place(state.player_x, definition.floor_y)
+	# La patina appartiene alla stanza: ne segue scala e scorrimento sopra al personaggio.
+	var grime := TextureRect.new()
+	grime.name = "WorldGrime"
+	grime.texture = preload("res://assets/graphics/ui/hover.png")
+	grime.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	grime.stretch_mode = TextureRect.STRETCH_SCALE
+	# Copre tutta la larghezza del fondale mantenendo l'altezza visibile del pannello.
+	grime.size = Vector2(definition.width, host.size.y / definition.visual_scale)
+	grime.z_index = 2
+	# La patina mantiene il proprio colore con opacità al 50%.
+	grime.modulate.a = 1
+	# Il velo lascia passare clic e touch al contenitore della stanza.
+	grime.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	var grime_material := CanvasItemMaterial.new()
+	grime_material.blend_mode = CanvasItemMaterial.BLEND_MODE_MUL
+	grime.material = grime_material
+	current_room.add_child(grime)
 	position_world(host.size.x)
 	return true
 

@@ -1,0 +1,192 @@
+﻿[
+    {
+        "variant":  0,
+        "file":  "bottle.png",
+        "canvas":  [
+                       28,
+                       12
+                   ],
+        "bounds":  {
+                       "y":  0,
+                       "alpha":  [
+                                     255,
+                                     0
+                                 ],
+                       "width":  28,
+                       "height":  12,
+                       "x":  0
+                   },
+        "size_compliant":  true
+    },
+    {
+        "variant":  1,
+        "file":  "bottle-redesign.png",
+        "canvas":  [
+                       32,
+                       32
+                   ],
+        "bounds":  {
+                       "y":  9,
+                       "alpha":  [
+                                     255,
+                                     0
+                                 ],
+                       "width":  32,
+                       "height":  13,
+                       "x":  0
+                   },
+        "size_compliant":  false
+    },
+    {
+        "variant":  2,
+        "file":  "bottle-redesign-2.png",
+        "canvas":  [
+                       32,
+                       32
+                   ],
+        "bounds":  {
+                       "y":  2,
+                       "alpha":  [
+                                     255,
+                                     0
+                                 ],
+                       "width":  31,
+                       "height":  27,
+                       "x":  0
+                   },
+        "size_compliant":  false
+    },
+    {
+        "variant":  3,
+        "file":  "bottle-redesign-3.png",
+        "canvas":  [
+                       32,
+                       32
+                   ],
+        "bounds":  {
+                       "y":  9,
+                       "alpha":  [
+                                     255,
+                                     0
+                                 ],
+                       "width":  32,
+                       "height":  14,
+                       "x":  0
+                   },
+        "size_compliant":  false
+    },
+    {
+        "variant":  4,
+        "file":  "bottle-redesign-4.png",
+        "canvas":  [
+                       32,
+                       32
+                   ],
+        "bounds":  {
+                       "y":  10,
+                       "alpha":  [
+                                     255,
+                                     0
+                                 ],
+                       "width":  32,
+                       "height":  12,
+                       "x":  0
+                   },
+        "size_compliant":  false
+    },
+    {
+        "variant":  5,
+        "file":  "bottle-redesign-5.png",
+        "canvas":  [
+                       32,
+                       32
+                   ],
+        "bounds":  {
+                       "y":  10,
+                       "alpha":  [
+                                     255,
+                                     0
+                                 ],
+                       "width":  31,
+                       "height":  12,
+                       "x":  0
+                   },
+        "size_compliant":  false
+    },
+    {
+        "variant":  6,
+        "file":  "bottle-redesign-6.png",
+        "canvas":  [
+                       32,
+                       32
+                   ],
+        "bounds":  {
+                       "y":  2,
+                       "alpha":  [
+                                     255,
+                                     0
+                                 ],
+                       "width":  32,
+                       "height":  27,
+                       "x":  0
+                   },
+        "size_compliant":  false
+    },
+    {
+        "variant":  7,
+        "file":  "bottle-redesign-7.png",
+        "canvas":  [
+                       32,
+                       32
+                   ],
+        "bounds":  {
+                       "y":  9,
+                       "alpha":  [
+                                     255,
+                                     0
+                                 ],
+                       "width":  31,
+                       "height":  14,
+                       "x":  0
+                   },
+        "size_compliant":  false
+    },
+    {
+        "variant":  8,
+        "file":  "bottle-redesign-8.png",
+        "canvas":  [
+                       32,
+                       32
+                   ],
+        "bounds":  {
+                       "y":  9,
+                       "alpha":  [
+                                     255,
+                                     0
+                                 ],
+                       "width":  32,
+                       "height":  14,
+                       "x":  0
+                   },
+        "size_compliant":  false
+    },
+    {
+        "variant":  9,
+        "file":  "bottle-redesign-9.png",
+        "canvas":  [
+                       32,
+                       32
+                   ],
+        "bounds":  {
+                       "y":  10,
+                       "alpha":  [
+                                     255,
+                                     0
+                                 ],
+                       "width":  32,
+                       "height":  12,
+                       "x":  0
+                   },
+        "size_compliant":  false
+    }
+]

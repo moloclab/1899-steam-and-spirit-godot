@@ -1,0 +1,22 @@
+﻿[
+    {
+        "variant":  1,
+        "id":  "c3c0da33-9e6d-4b17-8b73-1ec451bf0522",
+        "file":  "godot/assets/graphics/ep01_cabin/interphone_tube_full-redesign.png"
+    },
+    {
+        "variant":  2,
+        "id":  "3a895c07-3e54-4165-b551-074aa9f83018",
+        "file":  "godot/assets/graphics/ep01_cabin/interphone_tube_full-redesign-2.png"
+    },
+    {
+        "variant":  3,
+        "id":  "0fe1d75f-6053-44ff-9f63-61d6e5c76850",
+        "file":  "godot/assets/graphics/ep01_cabin/interphone_tube_full-redesign-3.png"
+    },
+    {
+        "variant":  4,
+        "id":  "3698ad64-3c8e-456e-929e-4014b4846fe6",
+        "file":  "godot/assets/graphics/ep01_cabin/interphone_tube_full-redesign-4.png"
+    }
+]

@@ -1,0 +1,14 @@
+{
+  "variant": 4,
+  "asset_id": "3698ad64-3c8e-456e-929e-4014b4846fe6",
+  "approval": "usa v4",
+  "native_canvas": [128, 128],
+  "crop": [45, 3, 37, 121],
+  "integrated_file": "godot/assets/graphics/ep01_cabin/interphone_tube_full.png",
+  "pixel_comparison": "all cropped pixels match native V4",
+  "scene": "godot/scenes/rooms/ep01_cabin.tscn",
+  "top_anchor": [478, 0],
+  "hotspot_position": [478, 100],
+  "hotspot_size": [37, 21],
+  "visual_offset": [0, -100]
+}

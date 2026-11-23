@@ -1,0 +1,41 @@
+{
+  "size": 128,
+  "inputs": [
+    "godot/assets/graphics/ep01_cabin/interphone_tube_full.png",
+    "godot/assets/graphics/characters/churchill/churchill-stand.png",
+    "godot/assets/graphics/ep01_cabin/sink.png",
+    "godot/palette/1899-base-128-swatches.png"
+  ],
+  "prompt": "Create the wall-mounted metal speaking tube used to communicate between compartments of the Leviathan, a late nineteenth-century steampunk submarine. The FIRST reference is the exact subject: preserve its exceptionally tall slender vertical silhouette, straight pipe entering from the top edge, recurring warm brass mounting collars along the shaft, and the wider dark flared speaking opening projecting toward the left at the very bottom. Preserve its original side-on view, proportions, dominant muted olive-brown aged metal with ochre brass accents, top attachment and lower opening position. This is an acoustic communication pipe, not an electrical telephone, weapon, plumbing faucet or musical instrument. No extra hoses, gauges, handles, cables or decorative machinery.\nThe SECOND reference, Churchill, provides ONLY the amount of finer detail, deliberate pixel clusters, restrained shading and consistent dark outline exactly one final-image pixel thick around the outer silhouette. Do not transfer anatomy, clothes or character colors. The THIRD reference is the approved cabin washbasin: use only its restrained treatment of metal and coherent object rendering. The FOURTH reference contains the shared 128-color swatches as a flexible color base only; additional harmonious material shades are allowed, exact matching is not required.\nThe speaking tube occupies nearly the full height of the square composition, about fifteen sixteenths, and its widest lower mouth occupies less than one fifth of the square width. Keep the long shaft narrow, a little under one tenth of the square width. Keep the same lower mouth profile and the top connection aligned vertically, with the opening to the left. Refine metal volume through subtle longitudinal highlights, collar seams and controlled darker recesses. Maintain broad readable surfaces, not busy texture. Give the subject a continuous near-black or dark-brown outer outline exactly one final-image pixel thick, stepped diagonals, no doubled border, halo, blur or antialiasing. Internal lines stay subordinate. Preserve the source transparency and background treatment.",
+  "source": {
+    "canvas": [
+      24,
+      120
+    ],
+    "bounds": [
+      0,
+      0,
+      24,
+      120
+    ],
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  "allowed_visible_size": {
+    "width": [
+      23,
+      25
+    ],
+    "height": [
+      114,
+      126
+    ]
+  },
+  "scene_anchor": [
+    478,
+    0
+  ],
+  "decision": "awaiting visual choice; source and scene unchanged"
+}

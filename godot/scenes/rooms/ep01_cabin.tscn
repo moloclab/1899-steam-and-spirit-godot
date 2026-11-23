@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bahxas0nyxs3e"]
 
+[ext_resource type="Script" uid="uid://ijxhyx1f3soh" path="res://scripts/actions/action_row.gd" id="action_row"]
 [ext_resource type="Script" uid="uid://dhwghtvndfnw4" path="res://scripts/actions/action_sequence.gd" id="action_sequence"]
-[ext_resource type="Script" path="res://scripts/actions/action_row.gd" id="action_row"]
 [ext_resource type="Script" uid="uid://cd16yclgw3qqd" path="res://scripts/actions/action_step.gd" id="action_step"]
 [ext_resource type="Texture2D" uid="uid://37p3ga46irwy" path="res://assets/graphics/ep01_cabin/cabin_background.png" id="background"]
 [ext_resource type="Texture2D" uid="uid://dpqfforgflm8g" path="res://assets/graphics/ep01_cabin/bed.png" id="bed_bed"]
@@ -32,10 +32,10 @@ script = ExtResource("room_definition_definition")
 room_id = "ep01_cabin"
 episode_id = "ep01"
 scene_path = "res://scenes/rooms/ep01_cabin.tscn"
-; Allinea la posa seduta iniziale al materasso del letto.
+width = 500.0
 entries = Dictionary[String, float]({
-"default": 100.0,
-"from_corridor": 550.0
+"default": 65.0,
+"from_corridor": 435.0
 })
 
 [sub_resource type="Resource" id="feather_inventory"]
@@ -76,7 +76,6 @@ name_key = "ep01.inventory.key.name"
 description_key = "ep01.inventory.key.examine"
 icon = ExtResource("key_inventory_icon")
 
-; Ciclo locale: si muove solo l'acqua, con cornice e riflessi fissi.
 [sub_resource type="AtlasTexture" id="oblo1_frame_0"]
 atlas = ExtResource("oblo1_sheet")
 region = Rect2(0, 0, 43, 43)
@@ -164,7 +163,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("oblo1_frame_11")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 13.0
 }]
@@ -173,32 +172,31 @@ animations = [{
 script = ExtResource("action_step")
 text_key = "ep01.cabin.interphone.greeting"
 
+[sub_resource type="Resource" id="interphone_row_1"]
+script = ExtResource("action_row")
+actions = Array[ExtResource("action_step")]([SubResource("interphone_greeting")])
+
 [sub_resource type="Resource" id="interphone_summons"]
 script = ExtResource("action_step")
 subject_id = "interphone"
 text_key = "ep01.cabin.interphone.summons"
+
+[sub_resource type="Resource" id="interphone_row_2"]
+script = ExtResource("action_row")
+actions = Array[ExtResource("action_step")]([SubResource("interphone_summons")])
 
 [sub_resource type="Resource" id="interphone_urgency"]
 script = ExtResource("action_step")
 subject_id = "interphone"
 text_key = "ep01.cabin.interphone.urgency"
 
-[sub_resource type="Resource" id="interphone_reply"]
-script = ExtResource("action_step")
-text_key = "ep01.cabin.interphone.reply"
-
-; Matrice dell'interfono: ogni riga contiene la battuta da avviare con il clic.
-[sub_resource type="Resource" id="interphone_row_1"]
-script = ExtResource("action_row")
-actions = Array[ExtResource("action_step")]([SubResource("interphone_greeting")])
-
-[sub_resource type="Resource" id="interphone_row_2"]
-script = ExtResource("action_row")
-actions = Array[ExtResource("action_step")]([SubResource("interphone_summons")])
-
 [sub_resource type="Resource" id="interphone_row_3"]
 script = ExtResource("action_row")
 actions = Array[ExtResource("action_step")]([SubResource("interphone_urgency")])
+
+[sub_resource type="Resource" id="interphone_reply"]
+script = ExtResource("action_step")
+text_key = "ep01.cabin.interphone.reply"
 
 [sub_resource type="Resource" id="interphone_row_4"]
 script = ExtResource("action_row")
@@ -218,23 +216,23 @@ inventory_definitions = Array[ExtResource("inventory_definition")]([SubResource(
 [node name="Background" type="Sprite2D" parent="." unique_id=1915065628]
 texture = ExtResource("background")
 centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 500, 275)
 
 [node name="mapMagnet" type="Node2D" parent="." unique_id=9763528]
-; Centra la mappa nello spazio fra il bordo del letto e il comò.
-position = Vector2(157, 60)
+position = Vector2(112, 44)
 script = ExtResource("hotspot_script")
 hotspot_id = "map"
-; Include l'ingombro approvato della pianta dopo la raccolta della calamita.
 hit_size = Vector2(61, 79)
 examine_response = "ep01.cabin.map.examine"
 
 [node name="Visual" type="Sprite2D" parent="mapMagnet" unique_id=667163389]
+scale = Vector2(0.99425286, 1)
 texture = ExtResource("mapMagnet_mapMagnet")
 centered = false
 
 [node name="como" type="Node2D" parent="." unique_id=1283005312]
-; Compensa il pixel aggiuntivo in altezza mantenendo la base alla quota y=200.
-position = Vector2(224, 163)
+position = Vector2(177, 163)
 script = ExtResource("hotspot_script")
 hotspot_id = "como"
 hit_size = Vector2(40, 37)
@@ -246,8 +244,7 @@ texture = ExtResource("como_como")
 centered = false
 
 [node name="sinkNormal" type="Node2D" parent="." unique_id=942851978]
-; Compensa l'altezza del lavabo approvato mantenendo la base alla quota y=200.
-position = Vector2(272, 138)
+position = Vector2(224, 138)
 script = ExtResource("hotspot_script")
 hotspot_id = "sink"
 hit_size = Vector2(36, 62)
@@ -259,7 +256,7 @@ texture = ExtResource("sinkNormal_sinkNormal")
 centered = false
 
 [node name="feather" type="Node2D" parent="." unique_id=1319962481]
-position = Vector2(232, 136)
+position = Vector2(185, 136)
 script = ExtResource("collectible_script")
 item_id = "ep01_cabin_feather"
 pickup_response = "ep01.cabin.feather.pickup"
@@ -272,7 +269,7 @@ texture = ExtResource("feather_feather")
 centered = false
 
 [node name="oblo1" type="Node2D" parent="." unique_id=1234644115]
-position = Vector2(336, 75)
+position = Vector2(239, 75)
 script = ExtResource("hotspot_script")
 hotspot_id = "oblo1"
 hit_size = Vector2(48, 48)
@@ -280,14 +277,13 @@ examine_response = "ep01.cabin.porthole.examine"
 interaction_response = "ep01.cabin.porthole.interact"
 
 [node name="Visual" type="AnimatedSprite2D" parent="oblo1" unique_id=987567133]
-; Centra il soggetto ritagliato 43×43 nell'ingombro originale 48×48.
 position = Vector2(2.5, 2.5)
 sprite_frames = SubResource("oblo1_frames")
 autoplay = "default"
 centered = false
 
 [node name="oblo2" type="Node2D" parent="." unique_id=135417799]
-position = Vector2(400, 75)
+position = Vector2(299, 75)
 script = ExtResource("hotspot_script")
 hotspot_id = "oblo2"
 hit_size = Vector2(48, 48)
@@ -295,16 +291,14 @@ examine_response = "ep01.cabin.porthole.examine"
 interaction_response = "ep01.cabin.porthole.interact"
 
 [node name="Visual" type="AnimatedSprite2D" parent="oblo2" unique_id=1334300312]
-; Mantiene lo stesso allineamento del primo oblò senza ridimensionare i pixel.
 position = Vector2(2.5, 2.5)
 sprite_frames = SubResource("oblo1_frames")
 autoplay = "default"
-; Sfasa l'acqua di un terzo di ciclo, mantenendo la stessa velocità del primo oblò.
 frame = 4
 centered = false
 
 [node name="interphone" type="Node2D" parent="." unique_id=1378675226]
-position = Vector2(478, 100)
+position = Vector2(374, 100)
 script = ExtResource("hotspot_script")
 hotspot_id = "interphone"
 speaker_key = "common.speaker.interphone"
@@ -319,14 +313,15 @@ texture = ExtResource("interphone_interphone")
 centered = false
 
 [node name="interphoneTube" type="Node2D" parent="." unique_id=1806298363]
-position = Vector2(478, 0)
+position = Vector2(374, 0)
 
 [node name="Visual" type="Sprite2D" parent="interphoneTube" unique_id=914625104]
+scale = Vector2(1, 0.9574468)
 texture = ExtResource("interphoneTube_interphoneTube")
 centered = false
 
 [node name="door" type="Node2D" parent="." unique_id=563401759]
-position = Vector2(544, 84)
+position = Vector2(422, 84)
 script = ExtResource("exit_script")
 destination_room = "ep01_corridor"
 destination_entry = "from_cabin"
@@ -341,10 +336,7 @@ texture = ExtResource("door_door")
 centered = false
 
 [node name="bed" type="Node2D" parent="." unique_id=2030673934]
-; Il letto resta dietro a Churchill, anche durante la posa seduta iniziale.
-z_index = 0
-; Il letto allungato misura 140x39: la base resta a y=200.
-position = Vector2(18, 161)
+position = Vector2(2, 161)
 script = ExtResource("hotspot_script")
 hotspot_id = "bed"
 hit_size = Vector2(140, 39)
@@ -356,12 +348,12 @@ texture = ExtResource("bed_bed")
 centered = false
 
 [node name="bottle" type="Node2D" parent="." unique_id=1581295987]
-position = Vector2(364, 188)
+position = Vector2(301, 188)
 script = ExtResource("collectible_script")
 item_id = "ep01_cabin_bottle"
 pickup_response = "ep01.cabin.bottle.pickup"
 hotspot_id = "bottle"
-hit_size = Vector2(28, 12)
+hit_size = Vector2(32, 12)
 examine_response = "ep01.cabin.bottle.examine"
 
 [node name="Visual" type="Sprite2D" parent="bottle" unique_id=1610427772]

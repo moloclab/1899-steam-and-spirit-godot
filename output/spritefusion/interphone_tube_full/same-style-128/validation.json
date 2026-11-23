@@ -1,0 +1,97 @@
+﻿[
+    {
+        "file":  "output/spritefusion/interphone_tube_full/same-style-128/interphone_tube_full-original.png",
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "size_conforms":  true,
+        "bounds":  [
+                       0,
+                       0,
+                       24,
+                       120
+                   ],
+        "canvas":  [
+                       24,
+                       120
+                   ],
+        "variant":  0
+    },
+    {
+        "file":  "godot/assets/graphics/ep01_cabin/interphone_tube_full-redesign.png",
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "size_conforms":  true,
+        "bounds":  [
+                       52,
+                       3,
+                       24,
+                       122
+                   ],
+        "canvas":  [
+                       128,
+                       128
+                   ],
+        "variant":  1
+    },
+    {
+        "file":  "godot/assets/graphics/ep01_cabin/interphone_tube_full-redesign-2.png",
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "size_conforms":  false,
+        "bounds":  [
+                       49,
+                       3,
+                       29,
+                       121
+                   ],
+        "canvas":  [
+                       128,
+                       128
+                   ],
+        "variant":  2
+    },
+    {
+        "file":  "godot/assets/graphics/ep01_cabin/interphone_tube_full-redesign-3.png",
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "size_conforms":  false,
+        "bounds":  [
+                       47,
+                       3,
+                       34,
+                       121
+                   ],
+        "canvas":  [
+                       128,
+                       128
+                   ],
+        "variant":  3
+    },
+    {
+        "file":  "godot/assets/graphics/ep01_cabin/interphone_tube_full-redesign-4.png",
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "size_conforms":  false,
+        "bounds":  [
+                       45,
+                       3,
+                       37,
+                       121
+                   ],
+        "canvas":  [
+                       128,
+                       128
+                   ],
+        "variant":  4
+    }
+]

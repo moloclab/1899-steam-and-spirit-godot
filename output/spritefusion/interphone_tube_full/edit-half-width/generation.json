@@ -1,0 +1,57 @@
+{
+  "request_id": "req_60496232-d26d-4733-9d54-1f0e9c2fcdfc",
+  "status": "succeeded",
+  "output_count": 2,
+  "outputs": [
+    {
+      "id": "92ea1dad-0c3c-4c1c-829d-d2eec9a9e0e0",
+      "type": "image",
+      "createdAt": "2026-11-22T13:17:37.359Z",
+      "updatedAt": "2026-11-22T13:17:37.359Z",
+      "prompt": "Edit this wall-mounted metal acoustic speaking tube used to communicate between compartments of the Leviathan submarine. Make the entire object HALF AS WIDE as it is now, including the long vertical shaft, the flared speaking mouth at the bottom, collars and wall brackets. Keep its full visible height exactly unchanged and keep the top connection and lower mouth at their current vertical levels. Keep the same orientation, with the lower mouth opening toward the left. Redraw the slimmer forms with readable volumes and deliberate shading rather than merely squeezing the existing artwork. Preserve the recognizable design, aged olive-brown metal, muted brass fittings, existing collar positions, restrained highlights and continuous dark outer outline exactly one final-image pixel thick. Keep the shaft straight and slender and the mouth recognizably hollow but half its original width. Preserve the existing composition and background treatment, with no new equipment, no added decoration, no blur, no antialiasing and no halo.",
+      "width": 37,
+      "height": 121,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/92ea1dad-0c3c-4c1c-829d-d2eec9a9e0e0/image.png?v=1795353457359",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "5a061cc9-d550-470b-b5c0-2c39bb8cbcf6",
+      "batchIndex": 0,
+      "batchSize": 2,
+      "action": {
+        "kind": "edit",
+        "sourceImageAssetId": "3698ad64-3c8e-456e-929e-4014b4846fe6",
+        "sourceImageAssetIds": [
+          "3698ad64-3c8e-456e-929e-4014b4846fe6"
+        ]
+      }
+    },
+    {
+      "id": "fe1a2fa4-1dcd-49f7-b898-09cb6a964dc8",
+      "type": "image",
+      "createdAt": "2026-11-22T13:17:38.089Z",
+      "updatedAt": "2026-11-22T13:17:38.089Z",
+      "prompt": "Edit this wall-mounted metal acoustic speaking tube used to communicate between compartments of the Leviathan submarine. Make the entire object HALF AS WIDE as it is now, including the long vertical shaft, the flared speaking mouth at the bottom, collars and wall brackets. Keep its full visible height exactly unchanged and keep the top connection and lower mouth at their current vertical levels. Keep the same orientation, with the lower mouth opening toward the left. Redraw the slimmer forms with readable volumes and deliberate shading rather than merely squeezing the existing artwork. Preserve the recognizable design, aged olive-brown metal, muted brass fittings, existing collar positions, restrained highlights and continuous dark outer outline exactly one final-image pixel thick. Keep the shaft straight and slender and the mouth recognizably hollow but half its original width. Preserve the existing composition and background treatment, with no new equipment, no added decoration, no blur, no antialiasing and no halo.",
+      "width": 21,
+      "height": 114,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/fe1a2fa4-1dcd-49f7-b898-09cb6a964dc8/image.png?v=1795353458089",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "5a061cc9-d550-470b-b5c0-2c39bb8cbcf6",
+      "batchIndex": 1,
+      "batchSize": 2,
+      "action": {
+        "kind": "edit",
+        "sourceImageAssetId": "3698ad64-3c8e-456e-929e-4014b4846fe6",
+        "sourceImageAssetIds": [
+          "3698ad64-3c8e-456e-929e-4014b4846fe6"
+        ]
+      }
+    }
+  ],
+  "credits": {
+    "used": 15,
+    "remaining": 300
+  }
+}
