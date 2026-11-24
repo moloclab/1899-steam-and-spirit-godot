@@ -1,0 +1,200 @@
+{
+  "inputs": [
+    "godot/assets/graphics/ep01_cabin/queen.png",
+    "godot/assets/graphics/characters/churchill/churchill-stand.png",
+    "godot/assets/graphics/ep01_cabin/feather.png",
+    "godot/palette/1899-base-128-swatches.png"
+  ],
+  "prompt": "Create a small grayscale half-length portrait of a queen for a Victorian adventure game. The FIRST reference is the actual subject: preserve her upright crowned head, long pale veil, head orientation, recognizable silhouette, shoulder line and half-bust composition, pale dress and neutral gray background. Refine the crown, veil folds and garment with deliberate fine pixel clusters and restrained shading while preserving the source design and broad readable areas. Keep it a flat portrait with an opaque gray backdrop inside the portrait rectangle; no picture frame, pedestal, extra props, lettering or full body. Center the upright portrait rectangle, occupying about five eighths of the square composition's width and nine tenths of its height; leave unused margins outside this rectangle empty. Use the SECOND reference, Churchill, only for the amount of finer detail, restrained shading and dark outline treatment. Do not transfer his clothes, anatomy or brown colors to the queen. The THIRD reference, quill and inkwell, is only an additional thin outline style example. Give the queen's silhouette a consistent dark outline exactly one final-image pixel thick, with continuous readable stepped diagonals, no doubled borders, blur, antialiasing or halo. Keep internal lines subtle and subordinate. Do not add a border around the background rectangle or canvas. Keep the face simply stylized and readable at tiny scale. The FOURTH reference supplies the project's shared base palette as flexible color guidance only; retain the original grayscale dominance and allow harmonious additional neutral shades for material, lighting and readability without exact palette matching.",
+  "size": 48,
+  "source": {
+    "width": 30,
+    "height": 43,
+    "alpha": [
+      253,
+      255
+    ]
+  },
+  "result": {
+    "request_id": "req_3624f0d2-9a01-41c2-af14-d5f6dcda6dc7",
+    "status": "succeeded",
+    "output_count": 9,
+    "outputs": [
+      {
+        "id": "d1252603-67c2-4b04-9709-bf887792a01b",
+        "type": "image",
+        "createdAt": "2026-11-24T11:19:18.200Z",
+        "updatedAt": "2026-11-24T11:19:18.200Z",
+        "prompt": "Create a small grayscale half-length portrait of a queen for a Victorian adventure game. The FIRST reference is the actual subject: preserve her upright crowned head, long pale veil, head orientation, recognizable silhouette, shoulder line and half-bust composition, pale dress and neutral gray background. Refine the crown, veil folds and garment with deliberate fine pixel clusters and restrained shading while preserving the source design and broad readable areas. Keep it a flat portrait with an opaque gray backdrop inside the portrait rectangle; no picture frame, pedestal, extra props, lettering or full body. Center the upright portrait rectangle, occupying about five eighths of the square composition's width and nine tenths of its height; leave unused margins outside this rectangle empty. Use the SECOND reference, Churchill, only for the amount of finer detail, restrained shading and dark outline treatment. Do not transfer his clothes, anatomy or brown colors to the queen. The THIRD reference, quill and inkwell, is only an additional thin outline style example. Give the queen's silhouette a consistent dark outline exactly one final-image pixel thick, with continuous readable stepped diagonals, no doubled borders, blur, antialiasing or halo. Keep internal lines subtle and subordinate. Do not add a border around the background rectangle or canvas. Keep the face simply stylized and readable at tiny scale. The FOURTH reference supplies the project's shared base palette as flexible color guidance only; retain the original grayscale dominance and allow harmonious additional neutral shades for material, lighting and readability without exact palette matching.",
+        "width": 48,
+        "height": 48,
+        "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/d1252603-67c2-4b04-9709-bf887792a01b/image.png?v=1795519158200",
+        "style": "default",
+        "tags": [],
+        "contentType": "image/png",
+        "batchId": "21551870-fc77-46ac-b5cc-ca199ae305d1",
+        "batchIndex": 0,
+        "batchSize": 9,
+        "action": {
+          "kind": "same-style"
+        }
+      },
+      {
+        "id": "f3dd2f37-31f9-4f13-9464-d9d66974ac57",
+        "type": "image",
+        "createdAt": "2026-11-24T11:19:18.638Z",
+        "updatedAt": "2026-11-24T11:19:18.638Z",
+        "prompt": "Create a small grayscale half-length portrait of a queen for a Victorian adventure game. The FIRST reference is the actual subject: preserve her upright crowned head, long pale veil, head orientation, recognizable silhouette, shoulder line and half-bust composition, pale dress and neutral gray background. Refine the crown, veil folds and garment with deliberate fine pixel clusters and restrained shading while preserving the source design and broad readable areas. Keep it a flat portrait with an opaque gray backdrop inside the portrait rectangle; no picture frame, pedestal, extra props, lettering or full body. Center the upright portrait rectangle, occupying about five eighths of the square composition's width and nine tenths of its height; leave unused margins outside this rectangle empty. Use the SECOND reference, Churchill, only for the amount of finer detail, restrained shading and dark outline treatment. Do not transfer his clothes, anatomy or brown colors to the queen. The THIRD reference, quill and inkwell, is only an additional thin outline style example. Give the queen's silhouette a consistent dark outline exactly one final-image pixel thick, with continuous readable stepped diagonals, no doubled borders, blur, antialiasing or halo. Keep internal lines subtle and subordinate. Do not add a border around the background rectangle or canvas. Keep the face simply stylized and readable at tiny scale. The FOURTH reference supplies the project's shared base palette as flexible color guidance only; retain the original grayscale dominance and allow harmonious additional neutral shades for material, lighting and readability without exact palette matching.",
+        "width": 48,
+        "height": 48,
+        "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/f3dd2f37-31f9-4f13-9464-d9d66974ac57/image.png?v=1795519158638",
+        "style": "default",
+        "tags": [],
+        "contentType": "image/png",
+        "batchId": "21551870-fc77-46ac-b5cc-ca199ae305d1",
+        "batchIndex": 1,
+        "batchSize": 9,
+        "action": {
+          "kind": "same-style"
+        }
+      },
+      {
+        "id": "e46ae4b8-c9bb-4e03-a36b-20cdd37ba49d",
+        "type": "image",
+        "createdAt": "2026-11-24T11:19:19.115Z",
+        "updatedAt": "2026-11-24T11:19:19.115Z",
+        "prompt": "Create a small grayscale half-length portrait of a queen for a Victorian adventure game. The FIRST reference is the actual subject: preserve her upright crowned head, long pale veil, head orientation, recognizable silhouette, shoulder line and half-bust composition, pale dress and neutral gray background. Refine the crown, veil folds and garment with deliberate fine pixel clusters and restrained shading while preserving the source design and broad readable areas. Keep it a flat portrait with an opaque gray backdrop inside the portrait rectangle; no picture frame, pedestal, extra props, lettering or full body. Center the upright portrait rectangle, occupying about five eighths of the square composition's width and nine tenths of its height; leave unused margins outside this rectangle empty. Use the SECOND reference, Churchill, only for the amount of finer detail, restrained shading and dark outline treatment. Do not transfer his clothes, anatomy or brown colors to the queen. The THIRD reference, quill and inkwell, is only an additional thin outline style example. Give the queen's silhouette a consistent dark outline exactly one final-image pixel thick, with continuous readable stepped diagonals, no doubled borders, blur, antialiasing or halo. Keep internal lines subtle and subordinate. Do not add a border around the background rectangle or canvas. Keep the face simply stylized and readable at tiny scale. The FOURTH reference supplies the project's shared base palette as flexible color guidance only; retain the original grayscale dominance and allow harmonious additional neutral shades for material, lighting and readability without exact palette matching.",
+        "width": 48,
+        "height": 48,
+        "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/e46ae4b8-c9bb-4e03-a36b-20cdd37ba49d/image.png?v=1795519159115",
+        "style": "default",
+        "tags": [],
+        "contentType": "image/png",
+        "batchId": "21551870-fc77-46ac-b5cc-ca199ae305d1",
+        "batchIndex": 2,
+        "batchSize": 9,
+        "action": {
+          "kind": "same-style"
+        }
+      },
+      {
+        "id": "9bd6e10d-4233-48d5-a87a-8b3dd98921a7",
+        "type": "image",
+        "createdAt": "2026-11-24T11:19:19.570Z",
+        "updatedAt": "2026-11-24T11:19:19.570Z",
+        "prompt": "Create a small grayscale half-length portrait of a queen for a Victorian adventure game. The FIRST reference is the actual subject: preserve her upright crowned head, long pale veil, head orientation, recognizable silhouette, shoulder line and half-bust composition, pale dress and neutral gray background. Refine the crown, veil folds and garment with deliberate fine pixel clusters and restrained shading while preserving the source design and broad readable areas. Keep it a flat portrait with an opaque gray backdrop inside the portrait rectangle; no picture frame, pedestal, extra props, lettering or full body. Center the upright portrait rectangle, occupying about five eighths of the square composition's width and nine tenths of its height; leave unused margins outside this rectangle empty. Use the SECOND reference, Churchill, only for the amount of finer detail, restrained shading and dark outline treatment. Do not transfer his clothes, anatomy or brown colors to the queen. The THIRD reference, quill and inkwell, is only an additional thin outline style example. Give the queen's silhouette a consistent dark outline exactly one final-image pixel thick, with continuous readable stepped diagonals, no doubled borders, blur, antialiasing or halo. Keep internal lines subtle and subordinate. Do not add a border around the background rectangle or canvas. Keep the face simply stylized and readable at tiny scale. The FOURTH reference supplies the project's shared base palette as flexible color guidance only; retain the original grayscale dominance and allow harmonious additional neutral shades for material, lighting and readability without exact palette matching.",
+        "width": 48,
+        "height": 48,
+        "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/9bd6e10d-4233-48d5-a87a-8b3dd98921a7/image.png?v=1795519159570",
+        "style": "default",
+        "tags": [],
+        "contentType": "image/png",
+        "batchId": "21551870-fc77-46ac-b5cc-ca199ae305d1",
+        "batchIndex": 3,
+        "batchSize": 9,
+        "action": {
+          "kind": "same-style"
+        }
+      },
+      {
+        "id": "27a5e617-b0db-486c-9c80-03da19959cf8",
+        "type": "image",
+        "createdAt": "2026-11-24T11:19:20.019Z",
+        "updatedAt": "2026-11-24T11:19:20.019Z",
+        "prompt": "Create a small grayscale half-length portrait of a queen for a Victorian adventure game. The FIRST reference is the actual subject: preserve her upright crowned head, long pale veil, head orientation, recognizable silhouette, shoulder line and half-bust composition, pale dress and neutral gray background. Refine the crown, veil folds and garment with deliberate fine pixel clusters and restrained shading while preserving the source design and broad readable areas. Keep it a flat portrait with an opaque gray backdrop inside the portrait rectangle; no picture frame, pedestal, extra props, lettering or full body. Center the upright portrait rectangle, occupying about five eighths of the square composition's width and nine tenths of its height; leave unused margins outside this rectangle empty. Use the SECOND reference, Churchill, only for the amount of finer detail, restrained shading and dark outline treatment. Do not transfer his clothes, anatomy or brown colors to the queen. The THIRD reference, quill and inkwell, is only an additional thin outline style example. Give the queen's silhouette a consistent dark outline exactly one final-image pixel thick, with continuous readable stepped diagonals, no doubled borders, blur, antialiasing or halo. Keep internal lines subtle and subordinate. Do not add a border around the background rectangle or canvas. Keep the face simply stylized and readable at tiny scale. The FOURTH reference supplies the project's shared base palette as flexible color guidance only; retain the original grayscale dominance and allow harmonious additional neutral shades for material, lighting and readability without exact palette matching.",
+        "width": 48,
+        "height": 48,
+        "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/27a5e617-b0db-486c-9c80-03da19959cf8/image.png?v=1795519160019",
+        "style": "default",
+        "tags": [],
+        "contentType": "image/png",
+        "batchId": "21551870-fc77-46ac-b5cc-ca199ae305d1",
+        "batchIndex": 4,
+        "batchSize": 9,
+        "action": {
+          "kind": "same-style"
+        }
+      },
+      {
+        "id": "a7bf6f7a-45b9-4c6e-9d76-62a99ea6fa63",
+        "type": "image",
+        "createdAt": "2026-11-24T11:19:20.445Z",
+        "updatedAt": "2026-11-24T11:19:20.445Z",
+        "prompt": "Create a small grayscale half-length portrait of a queen for a Victorian adventure game. The FIRST reference is the actual subject: preserve her upright crowned head, long pale veil, head orientation, recognizable silhouette, shoulder line and half-bust composition, pale dress and neutral gray background. Refine the crown, veil folds and garment with deliberate fine pixel clusters and restrained shading while preserving the source design and broad readable areas. Keep it a flat portrait with an opaque gray backdrop inside the portrait rectangle; no picture frame, pedestal, extra props, lettering or full body. Center the upright portrait rectangle, occupying about five eighths of the square composition's width and nine tenths of its height; leave unused margins outside this rectangle empty. Use the SECOND reference, Churchill, only for the amount of finer detail, restrained shading and dark outline treatment. Do not transfer his clothes, anatomy or brown colors to the queen. The THIRD reference, quill and inkwell, is only an additional thin outline style example. Give the queen's silhouette a consistent dark outline exactly one final-image pixel thick, with continuous readable stepped diagonals, no doubled borders, blur, antialiasing or halo. Keep internal lines subtle and subordinate. Do not add a border around the background rectangle or canvas. Keep the face simply stylized and readable at tiny scale. The FOURTH reference supplies the project's shared base palette as flexible color guidance only; retain the original grayscale dominance and allow harmonious additional neutral shades for material, lighting and readability without exact palette matching.",
+        "width": 48,
+        "height": 48,
+        "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/a7bf6f7a-45b9-4c6e-9d76-62a99ea6fa63/image.png?v=1795519160445",
+        "style": "default",
+        "tags": [],
+        "contentType": "image/png",
+        "batchId": "21551870-fc77-46ac-b5cc-ca199ae305d1",
+        "batchIndex": 5,
+        "batchSize": 9,
+        "action": {
+          "kind": "same-style"
+        }
+      },
+      {
+        "id": "089977d2-0e89-496b-9c59-a12513d7a77f",
+        "type": "image",
+        "createdAt": "2026-11-24T11:19:20.901Z",
+        "updatedAt": "2026-11-24T11:19:20.901Z",
+        "prompt": "Create a small grayscale half-length portrait of a queen for a Victorian adventure game. The FIRST reference is the actual subject: preserve her upright crowned head, long pale veil, head orientation, recognizable silhouette, shoulder line and half-bust composition, pale dress and neutral gray background. Refine the crown, veil folds and garment with deliberate fine pixel clusters and restrained shading while preserving the source design and broad readable areas. Keep it a flat portrait with an opaque gray backdrop inside the portrait rectangle; no picture frame, pedestal, extra props, lettering or full body. Center the upright portrait rectangle, occupying about five eighths of the square composition's width and nine tenths of its height; leave unused margins outside this rectangle empty. Use the SECOND reference, Churchill, only for the amount of finer detail, restrained shading and dark outline treatment. Do not transfer his clothes, anatomy or brown colors to the queen. The THIRD reference, quill and inkwell, is only an additional thin outline style example. Give the queen's silhouette a consistent dark outline exactly one final-image pixel thick, with continuous readable stepped diagonals, no doubled borders, blur, antialiasing or halo. Keep internal lines subtle and subordinate. Do not add a border around the background rectangle or canvas. Keep the face simply stylized and readable at tiny scale. The FOURTH reference supplies the project's shared base palette as flexible color guidance only; retain the original grayscale dominance and allow harmonious additional neutral shades for material, lighting and readability without exact palette matching.",
+        "width": 49,
+        "height": 49,
+        "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/089977d2-0e89-496b-9c59-a12513d7a77f/image.png?v=1795519160901",
+        "style": "default",
+        "tags": [],
+        "contentType": "image/png",
+        "batchId": "21551870-fc77-46ac-b5cc-ca199ae305d1",
+        "batchIndex": 6,
+        "batchSize": 9,
+        "action": {
+          "kind": "same-style"
+        }
+      },
+      {
+        "id": "9c966c68-e973-4d98-890a-9f1b73f3f213",
+        "type": "image",
+        "createdAt": "2026-11-24T11:19:21.368Z",
+        "updatedAt": "2026-11-24T11:19:21.368Z",
+        "prompt": "Create a small grayscale half-length portrait of a queen for a Victorian adventure game. The FIRST reference is the actual subject: preserve her upright crowned head, long pale veil, head orientation, recognizable silhouette, shoulder line and half-bust composition, pale dress and neutral gray background. Refine the crown, veil folds and garment with deliberate fine pixel clusters and restrained shading while preserving the source design and broad readable areas. Keep it a flat portrait with an opaque gray backdrop inside the portrait rectangle; no picture frame, pedestal, extra props, lettering or full body. Center the upright portrait rectangle, occupying about five eighths of the square composition's width and nine tenths of its height; leave unused margins outside this rectangle empty. Use the SECOND reference, Churchill, only for the amount of finer detail, restrained shading and dark outline treatment. Do not transfer his clothes, anatomy or brown colors to the queen. The THIRD reference, quill and inkwell, is only an additional thin outline style example. Give the queen's silhouette a consistent dark outline exactly one final-image pixel thick, with continuous readable stepped diagonals, no doubled borders, blur, antialiasing or halo. Keep internal lines subtle and subordinate. Do not add a border around the background rectangle or canvas. Keep the face simply stylized and readable at tiny scale. The FOURTH reference supplies the project's shared base palette as flexible color guidance only; retain the original grayscale dominance and allow harmonious additional neutral shades for material, lighting and readability without exact palette matching.",
+        "width": 49,
+        "height": 49,
+        "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/9c966c68-e973-4d98-890a-9f1b73f3f213/image.png?v=1795519161368",
+        "style": "default",
+        "tags": [],
+        "contentType": "image/png",
+        "batchId": "21551870-fc77-46ac-b5cc-ca199ae305d1",
+        "batchIndex": 7,
+        "batchSize": 9,
+        "action": {
+          "kind": "same-style"
+        }
+      },
+      {
+        "id": "751ec318-a36a-4afb-8303-1e43f85234d3",
+        "type": "image",
+        "createdAt": "2026-11-24T11:19:21.803Z",
+        "updatedAt": "2026-11-24T11:19:21.803Z",
+        "prompt": "Create a small grayscale half-length portrait of a queen for a Victorian adventure game. The FIRST reference is the actual subject: preserve her upright crowned head, long pale veil, head orientation, recognizable silhouette, shoulder line and half-bust composition, pale dress and neutral gray background. Refine the crown, veil folds and garment with deliberate fine pixel clusters and restrained shading while preserving the source design and broad readable areas. Keep it a flat portrait with an opaque gray backdrop inside the portrait rectangle; no picture frame, pedestal, extra props, lettering or full body. Center the upright portrait rectangle, occupying about five eighths of the square composition's width and nine tenths of its height; leave unused margins outside this rectangle empty. Use the SECOND reference, Churchill, only for the amount of finer detail, restrained shading and dark outline treatment. Do not transfer his clothes, anatomy or brown colors to the queen. The THIRD reference, quill and inkwell, is only an additional thin outline style example. Give the queen's silhouette a consistent dark outline exactly one final-image pixel thick, with continuous readable stepped diagonals, no doubled borders, blur, antialiasing or halo. Keep internal lines subtle and subordinate. Do not add a border around the background rectangle or canvas. Keep the face simply stylized and readable at tiny scale. The FOURTH reference supplies the project's shared base palette as flexible color guidance only; retain the original grayscale dominance and allow harmonious additional neutral shades for material, lighting and readability without exact palette matching.",
+        "width": 49,
+        "height": 49,
+        "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/751ec318-a36a-4afb-8303-1e43f85234d3/image.png?v=1795519161803",
+        "style": "default",
+        "tags": [],
+        "contentType": "image/png",
+        "batchId": "21551870-fc77-46ac-b5cc-ca199ae305d1",
+        "batchIndex": 8,
+        "batchSize": 9,
+        "action": {
+          "kind": "same-style"
+        }
+      }
+    ],
+    "credits": {
+      "used": 15,
+      "remaining": 220
+    }
+  }
+}

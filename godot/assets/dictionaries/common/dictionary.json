@@ -43,6 +43,10 @@
     "it": "Musica: OFF",
     "en": "Music: OFF"
   },
+  "common.ui.language": {
+    "it": "Lingua: Italiano",
+    "en": "Language: English"
+  },
   "common.ui.help": {
     "it": "Aiuti",
     "en": "Help"

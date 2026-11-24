@@ -1,0 +1,37 @@
+{
+  "source": {
+    "file": "godot/assets/graphics/ep01_cabin/queen-128.png",
+    "canvas": [
+      128,
+      181
+    ],
+    "bounds": [
+      0,
+      0,
+      128,
+      181
+    ],
+    "alpha": [
+      255
+    ]
+  },
+  "inputs": [
+    "godot/assets/graphics/ep01_cabin/queen-128.png",
+    "godot/assets/graphics/characters/churchill/churchill-stand.png",
+    "godot/assets/graphics/ep01_cabin/feather.png",
+    "godot/palette/1899-base-128-swatches.png"
+  ],
+  "size": 24,
+  "size_decision": "Canvas 24x24 richiesto esplicitamente dall'utente; riduzione dell'ingombro autorizzata per questa prova.",
+  "prompt": "Create a tiny grayscale half-bust portrait of a queen for a Victorian adventure game. The FIRST reference defines the subject: crowned upright head turned toward the left, pale lace veil descending to the right shoulder, pale formal gown, necklace and broad shoulder line, against an opaque dark-gray photographic backdrop. Preserve the recognizable silhouette, orientation, proportions, composition and grayscale dominance. Simplify into deliberate readable pixel clusters with restrained shading appropriate to a very small game portrait. Keep the whole bust and crown visible. The vertical portrait rectangle should occupy about seven tenths of the square composition's width and nearly its full height; keep its gray background contained within that upright rectangle and leave the unused side margins empty. Do not widen or squash the queen. Do not add a frame, sash, text, furniture or pedestal. Use the SECOND reference, Churchill, ONLY for finer pixel-detail language, restrained shading and the thin dark outline, without transferring his clothes, anatomy or colors. Use the THIRD reference, quill and inkwell, only as another example of the outline treatment. Give the queen's silhouette a consistent dark outline exactly one final-image pixel thick with stepped diagonals and subtle subordinate internal lines. No doubled border, blur, antialiasing or halo; do not add an artificial border around the background rectangle or square canvas. Keep the face simply stylized and readable. The FOURTH reference is the shared 128-color project palette as flexible color guidance only; preserve neutral grays and allow harmonious additional gray shades, without exact color matching.",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "The generation could not be completed. No sprite was saved, so the credits were refunded."
+      }
+    ],
+    "isError": true
+  },
+  "decision": "Generazione non completata; nessuno sprite salvato e crediti rimborsati. Originale invariato. Nessun tentativo automatico."
+}

@@ -1,0 +1,34 @@
+{
+  "source": "godot/assets/graphics/ep01_cabin/pixel_art_small.png",
+  "source_canvas": [
+    24,
+    34
+  ],
+  "source_visible_bounds": [
+    0,
+    0,
+    24,
+    34
+  ],
+  "alpha": [
+    255
+  ],
+  "source_format": "Format24bppRgb",
+  "inputs": [
+    "godot/assets/graphics/ep01_cabin/pixel_art_small.png",
+    "godot/assets/graphics/characters/churchill/churchill-stand.png",
+    "godot/palette/1899-base-128-swatches.png"
+  ],
+  "size": 48,
+  "prompt": "Redesign the first reference as a grayscale painted half-bust portrait of a queen, preserving her crown, veil, face orientation, pose, proportions and light gray opaque background. Preserve the tall rectangular portrait composition, occupying about half the square width and seven tenths of its height. Use the second reference, Churchill, only for finer pixel clusters, restrained shading and a thin continuous dark outline around the queen's silhouette; do not transfer his anatomy, clothing or colors. Keep the outline single-pixel thin with stepped diagonals, no doubled edges, blur or antialiasing. Refine the crown, veil and regal dress while retaining broad readable areas and recognizable features at small size. The third reference is the shared 128-color palette, used only as flexible color guidance; keep this portrait predominantly grayscale. Do not add a picture frame or new objects.",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "The generation could not be completed. No sprite was saved, so the credits were refunded."
+      }
+    ],
+    "isError": true
+  },
+  "decision": "Generazione fallita: nessuno sprite salvato, crediti rimborsati. Nessun nuovo tentativo automatico. Originale e scene invariati."
+}

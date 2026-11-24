@@ -1,0 +1,44 @@
+{
+  "subject": "Mezzo busto della regina Vittoria",
+  "source_canvas": [
+    40,
+    56
+  ],
+  "source_visible_bounds": [
+    0,
+    0,
+    40,
+    56
+  ],
+  "source_alpha": [
+    255
+  ],
+  "requested_size": 64,
+  "tolerance": {
+    "width": [
+      38,
+      42
+    ],
+    "height": [
+      54,
+      58
+    ]
+  },
+  "inputs": [
+    "godot/assets/graphics/ep01_cabin/pixel_art_small.png",
+    "godot/assets/graphics/characters/churchill/churchill-stand.png",
+    "godot/assets/graphics/ep01_cabin/feather.png",
+    "godot/palette/1899-base-128-swatches.png"
+  ],
+  "prompt": "Create a small grayscale half-length portrait of Queen Victoria, an elderly Victorian queen wearing a crown and a pale lace veil, in left-facing profile/three-quarter profile, following the FIRST reference closely for identity, silhouette, pose, head direction, bust composition and dominant light and dark gray values. It is a flat portrait image with a mottled charcoal-gray opaque background, not a freestanding sculpture. Preserve the pale broad shoulder and upper-torso area and the existing crown/veil silhouette; clarify the tiny portrait with purposeful finer contours and restrained shading. Do not add a frame, pedestal, full body, lettering, furniture or unrelated objects. The portrait rectangle should occupy about five eighths of the square composition's width and seven eighths of its height, centered, with its original opaque gray background inside that rectangle and empty margins outside it. Keep the portrait's upright proportions and full original composition. Use the SECOND reference, Churchill, ONLY for the degree of finer detail, deliberate pixel clusters, restrained shading and consistent dark single-pixel outline treatment; do not transfer his anatomy, clothing or brown colors. Use the THIRD reference, the quill and inkwell, only as an additional example of the thin dark silhouette outline. Give the queen's silhouette a continuous dark outline exactly one final-image pixel thick, with stepped diagonals, subtle internal lines, no doubled border, blur, antialiasing or halo; do not outline the canvas or add an artificial picture frame. Keep the queen recognizable at this tiny scale without overloading facial details. The FOURTH reference contains the project's shared base color swatches, for flexible color guidance only: retain the portrait's neutral grayscale dominance, allowing harmonious additional gray shades for readability, without requiring exact palette matches.",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "The generation could not be completed. No sprite was saved, so the credits were refunded."
+      }
+    ],
+    "isError": true
+  },
+  "decision": "Generazione fallita; nessuno sprite salvato, crediti rimborsati. Originale invariato."
+}

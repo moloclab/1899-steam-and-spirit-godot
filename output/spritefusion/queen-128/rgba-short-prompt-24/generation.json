@@ -1,0 +1,24 @@
+{
+  "source": "godot/assets/graphics/ep01_cabin/queen-128.png",
+  "conversion": {
+    "format": "Format32bppArgb",
+    "different_pixels": 0
+  },
+  "inputs": [
+    "C:\\htdocs\\_OLD\\_GAMES\\1899\\output\\spritefusion\\queen-128\\rgba-short-prompt-24\\input-rgba.png",
+    "godot/assets/graphics/characters/churchill/churchill-stand.png",
+    "godot/palette/1899-base-128-swatches.png"
+  ],
+  "size": 24,
+  "prompt": "Redesign the queen in the first reference as a grayscale half-bust portrait. Preserve her crown, veil, pose and proportions. Use Churchill only for pixel detail, restrained shading and a dark one-pixel outline. Keep the gray background and simplify details for readability. The palette swatches provide flexible color guidance.",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "The generation could not be completed. No sprite was saved, so the credits were refunded."
+      }
+    ],
+    "isError": true
+  },
+  "decision": "Anche la copia RGBA con pixel invariati fallisce. Nessuno sprite salvato; crediti rimborsati. Originale invariato. Nessun tentativo automatico."
+}

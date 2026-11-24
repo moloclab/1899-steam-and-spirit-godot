@@ -1,0 +1,20 @@
+{
+  "source": "godot/assets/graphics/ep01_cabin/queen-128.png",
+  "inputs": [
+    "godot/assets/graphics/ep01_cabin/queen-128.png",
+    "godot/assets/graphics/characters/churchill/churchill-stand.png",
+    "godot/palette/1899-base-128-swatches.png"
+  ],
+  "size": 24,
+  "prompt": "Redesign the queen in the first reference as a grayscale half-bust portrait. Preserve her crown, veil, pose and proportions. Use Churchill only for pixel detail, restrained shading and a dark one-pixel outline. Keep the gray background and simplify details for readability. The palette swatches provide flexible color guidance.",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "The generation could not be completed. No sprite was saved, so the credits were refunded."
+      }
+    ],
+    "isError": true
+  },
+  "decision": "Tentativo con prompt breve richiesto dall'utente. Generazione fallita; nessuno sprite salvato e crediti rimborsati. Originale invariato."
+}

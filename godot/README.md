@@ -26,7 +26,7 @@ Non richiede .NET, Docker o un server web. L'originale in `../EP01` resta il rif
 
 Gli altri accessi del corridoio sono segnaposto; la battuta del marinaio resta semplificata.
 Effetti, conversazioni a scelta e altre stanze di EP01 devono ancora essere portati.
-La lingua visualizzata è l'italiano; il catalogo conserva anche le traduzioni inglesi.
+La lingua predefinita è l'italiano; il pulsante Lingua nel pannello aiuti alterna italiano e inglese.
 Le stanze vengono caricate in modo **sincrono**.
 
 ## Schermo e mobile landscape

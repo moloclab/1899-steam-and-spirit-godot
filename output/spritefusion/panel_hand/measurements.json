@@ -1,0 +1,244 @@
+﻿[
+    {
+        "file":  "godot/assets/graphics/ui/panel_hand.png",
+        "canvas":  [
+                       50,
+                       36
+                   ],
+        "bounds":  [
+                       0,
+                       0,
+                       50,
+                       36
+                   ],
+        "visible":  [
+                        50,
+                        36
+                    ],
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "size_conformant":  true
+    },
+    {
+        "file":  "godot/assets/graphics/ui/panel_hand-redesign.png",
+        "canvas":  [
+                       64,
+                       64
+                   ],
+        "bounds":  [
+                       16,
+                       17,
+                       47,
+                       46
+                   ],
+        "visible":  [
+                        31,
+                        29
+                    ],
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "size_conformant":  false
+    },
+    {
+        "file":  "godot/assets/graphics/ui/panel_hand-redesign-2.png",
+        "canvas":  [
+                       64,
+                       64
+                   ],
+        "bounds":  [
+                       16,
+                       17,
+                       47,
+                       47
+                   ],
+        "visible":  [
+                        31,
+                        30
+                    ],
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "size_conformant":  false
+    },
+    {
+        "file":  "godot/assets/graphics/ui/panel_hand-redesign-3.png",
+        "canvas":  [
+                       64,
+                       64
+                   ],
+        "bounds":  [
+                       17,
+                       17,
+                       47,
+                       46
+                   ],
+        "visible":  [
+                        30,
+                        29
+                    ],
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "size_conformant":  false
+    },
+    {
+        "file":  "godot/assets/graphics/ui/panel_hand-redesign-4.png",
+        "canvas":  [
+                       64,
+                       64
+                   ],
+        "bounds":  [
+                       17,
+                       17,
+                       47,
+                       46
+                   ],
+        "visible":  [
+                        30,
+                        29
+                    ],
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "size_conformant":  false
+    },
+    {
+        "file":  "godot/assets/graphics/ui/panel_hand-redesign-5.png",
+        "canvas":  [
+                       64,
+                       64
+                   ],
+        "bounds":  [
+                       17,
+                       17,
+                       47,
+                       47
+                   ],
+        "visible":  [
+                        30,
+                        30
+                    ],
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "size_conformant":  false
+    },
+    {
+        "file":  "godot/assets/graphics/ui/panel_hand-redesign-6.png",
+        "canvas":  [
+                       64,
+                       64
+                   ],
+        "bounds":  [
+                       17,
+                       17,
+                       47,
+                       46
+                   ],
+        "visible":  [
+                        30,
+                        29
+                    ],
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "size_conformant":  false
+    },
+    {
+        "file":  "godot/assets/graphics/ui/panel_hand-redesign-7.png",
+        "canvas":  [
+                       64,
+                       64
+                   ],
+        "bounds":  [
+                       17,
+                       17,
+                       47,
+                       47
+                   ],
+        "visible":  [
+                        30,
+                        30
+                    ],
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "size_conformant":  false
+    },
+    {
+        "file":  "godot/assets/graphics/ui/panel_hand-redesign-8.png",
+        "canvas":  [
+                       64,
+                       64
+                   ],
+        "bounds":  [
+                       17,
+                       17,
+                       47,
+                       46
+                   ],
+        "visible":  [
+                        30,
+                        29
+                    ],
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "size_conformant":  false
+    },
+    {
+        "file":  "godot/assets/graphics/ui/panel_hand-redesign-9.png",
+        "canvas":  [
+                       64,
+                       64
+                   ],
+        "bounds":  [
+                       17,
+                       18,
+                       46,
+                       46
+                   ],
+        "visible":  [
+                        29,
+                        28
+                    ],
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "size_conformant":  false
+    },
+    {
+        "file":  "godot/assets/graphics/characters/churchill/churchill-stand.png",
+        "canvas":  [
+                       46,
+                       100
+                   ],
+        "bounds":  [
+                       0,
+                       0,
+                       46,
+                       100
+                   ],
+        "visible":  [
+                        46,
+                        100
+                    ],
+        "alpha":  [
+                      0,
+                      255
+                  ],
+        "size_conformant":  false
+    }
+]

@@ -33,6 +33,7 @@ func _run() -> void:
 	await process_frame
 	check(not DirAccess.dir_exists_absolute("res://assets/dialogue"), "Cartella originale rinominata")
 	check(game.ui.save_buttons[0].text == "Salva", "UI iniziale italiana")
+	check(game.texts.language == "it" and game.ui.language_button.text == "Lingua: Italiano", "Lingua predefinita italiana")
 	check(has_label(game.ui.help_panel, "COMANDI"), "Titolo aiuti italiano")
 	for key in game.texts.entries:
 		var entry: Dictionary = game.texts.entries[key]
@@ -40,7 +41,12 @@ func _run() -> void:
 	game.ui._toggle_help()
 	game.ui.music_button.button_pressed = false
 	game.ui._toggle_music()
-	game.texts.language = "en"
+	# Il pulsante alterna entrambe le lingue senza cambiare pausa e stato musicale.
+	game.ui.language_button.pressed.emit()
+	check(game.texts.language == "en" and game.ui.language_button.text == "Language: English", "Pulsante lingua inglese")
+	game.ui.language_button.pressed.emit()
+	check(game.texts.language == "it" and game.ui.language_button.text == "Lingua: Italiano", "Pulsante ritorna all'italiano")
+	game.ui.language_button.pressed.emit()
 	check(game.ui.help_panel.visible, "Cambio lingua conserva il pannello aperto")
 	check(game.ui.save_buttons[0].text == "Save" and game.ui.save_buttons[1].text == "Load", "Pulsanti aiuti inglesi")
 	check(game.ui.help_button.text == "Help" and game.ui.help_close.text == "Back to game", "Apertura e chiusura aiuti inglesi")

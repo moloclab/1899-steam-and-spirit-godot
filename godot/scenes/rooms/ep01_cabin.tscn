@@ -221,7 +221,7 @@ region_enabled = true
 region_rect = Rect2(218, 0, 500, 192)
 
 [node name="mapMagnet" type="Node2D" parent="." unique_id=9763528]
-position = Vector2(112, 32.666668)
+position = Vector2(116, 32.666668)
 script = ExtResource("hotspot_script")
 hotspot_id = "map"
 hit_size = Vector2(61, 79)
@@ -322,7 +322,7 @@ texture = ExtResource("interphoneTube_interphoneTube")
 centered = false
 
 [node name="door" type="Node2D" parent="." unique_id=563401759]
-position = Vector2(422, 72.666664)
+position = Vector2(415, 72.666664)
 script = ExtResource("exit_script")
 destination_room = "ep01_corridor"
 destination_entry = "from_cabin"
@@ -333,7 +333,6 @@ examine_response = "ep01.cabin.door.examine"
 interaction_response = "ep01.cabin.door.exit"
 
 [node name="Visual" type="Sprite2D" parent="door" unique_id=662268761]
-position = Vector2(-7, 0)
 texture = ExtResource("door_door")
 centered = false
 

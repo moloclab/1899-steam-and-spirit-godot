@@ -1,0 +1,192 @@
+{
+  "tool": "generate_sprites_in_style",
+  "size": 64,
+  "inputs": [
+    "godot/assets/graphics/ui/panel_hand.png",
+    "godot/assets/graphics/characters/churchill/churchill-stand.png",
+    "godot/palette/1899-base-128-swatches.png"
+  ],
+  "prompt": "Redesign the compact adventure-game UI selector shown in the first reference: an ivory outlined small hollow circle below, a magnifying glass above-left with pale lens and short dark handle pointing diagonally down-right, and an ivory open hand above-right with fingers upright and thumb toward the left. These three separated symbols form ONE interface graphic; preserve their exact arrangement, relative scale, recognizable silhouettes, negative spaces and dominant ivory, white, charcoal and muted warm gray colors. The small bottom circle is an unfilled graphic ring, not a large medallion or backdrop. No lettering. Keep this as a flat readable interface graphic, with restrained finer shading on the hand and lens. The whole composition spans about four fifths of the square width and a little over half its height, preserving the first reference's wide proportions. Use the second reference, Churchill, ONLY for deliberate finer pixel clusters, restrained shading, and a continuous dark outer outline exactly one final-image pixel thick with stepped diagonals. Do not transfer the character, clothing, anatomy, or brown costume into the UI. Keep internal lines subordinate; no doubled outlines, blur, antialiasing, glow or halo. Preserve the source alpha/background treatment and empty spaces. The third reference is the shared 128-color base palette, for color guidance only; additional harmonious shades are allowed, exact matching is not required.",
+  "result": {
+    "request_id": "req_fcd2a1bb-4bf2-4f44-ae7c-b9ef0388a13d",
+    "status": "succeeded",
+    "output_count": 9,
+    "outputs": [
+      {
+        "id": "eae657c2-14ed-45e2-9a65-65b35f4cd5be",
+        "type": "image",
+        "createdAt": "2026-11-24T09:47:47.335Z",
+        "updatedAt": "2026-11-24T09:47:47.335Z",
+        "prompt": "Redesign the compact adventure-game UI selector shown in the first reference: an ivory outlined small hollow circle below, a magnifying glass above-left with pale lens and short dark handle pointing diagonally down-right, and an ivory open hand above-right with fingers upright and thumb toward the left. These three separated symbols form ONE interface graphic; preserve their exact arrangement, relative scale, recognizable silhouettes, negative spaces and dominant ivory, white, charcoal and muted warm gray colors. The small bottom circle is an unfilled graphic ring, not a large medallion or backdrop. No lettering. Keep this as a flat readable interface graphic, with restrained finer shading on the hand and lens. The whole composition spans about four fifths of the square width and a little over half its height, preserving the first reference's wide proportions. Use the second reference, Churchill, ONLY for deliberate finer pixel clusters, restrained shading, and a continuous dark outer outline exactly one final-image pixel thick with stepped diagonals. Do not transfer the character, clothing, anatomy, or brown costume into the UI. Keep internal lines subordinate; no doubled outlines, blur, antialiasing, glow or halo. Preserve the source alpha/background treatment and empty spaces. The third reference is the shared 128-color base palette, for color guidance only; additional harmonious shades are allowed, exact matching is not required.",
+        "width": 64,
+        "height": 64,
+        "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/eae657c2-14ed-45e2-9a65-65b35f4cd5be/image.png?v=1795513667335",
+        "style": "default",
+        "tags": [],
+        "contentType": "image/png",
+        "batchId": "6b11ce8d-bcde-4a97-b073-013179b8d71d",
+        "batchIndex": 0,
+        "batchSize": 9,
+        "action": {
+          "kind": "same-style"
+        }
+      },
+      {
+        "id": "c0a989ac-12ba-41cd-b90d-5d842cb6f3d1",
+        "type": "image",
+        "createdAt": "2026-11-24T09:47:48.286Z",
+        "updatedAt": "2026-11-24T09:47:48.286Z",
+        "prompt": "Redesign the compact adventure-game UI selector shown in the first reference: an ivory outlined small hollow circle below, a magnifying glass above-left with pale lens and short dark handle pointing diagonally down-right, and an ivory open hand above-right with fingers upright and thumb toward the left. These three separated symbols form ONE interface graphic; preserve their exact arrangement, relative scale, recognizable silhouettes, negative spaces and dominant ivory, white, charcoal and muted warm gray colors. The small bottom circle is an unfilled graphic ring, not a large medallion or backdrop. No lettering. Keep this as a flat readable interface graphic, with restrained finer shading on the hand and lens. The whole composition spans about four fifths of the square width and a little over half its height, preserving the first reference's wide proportions. Use the second reference, Churchill, ONLY for deliberate finer pixel clusters, restrained shading, and a continuous dark outer outline exactly one final-image pixel thick with stepped diagonals. Do not transfer the character, clothing, anatomy, or brown costume into the UI. Keep internal lines subordinate; no doubled outlines, blur, antialiasing, glow or halo. Preserve the source alpha/background treatment and empty spaces. The third reference is the shared 128-color base palette, for color guidance only; additional harmonious shades are allowed, exact matching is not required.",
+        "width": 64,
+        "height": 64,
+        "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/c0a989ac-12ba-41cd-b90d-5d842cb6f3d1/image.png?v=1795513668286",
+        "style": "default",
+        "tags": [],
+        "contentType": "image/png",
+        "batchId": "6b11ce8d-bcde-4a97-b073-013179b8d71d",
+        "batchIndex": 1,
+        "batchSize": 9,
+        "action": {
+          "kind": "same-style"
+        }
+      },
+      {
+        "id": "b41da364-d8f6-4adf-a261-ad87921dd5dc",
+        "type": "image",
+        "createdAt": "2026-11-24T09:47:49.147Z",
+        "updatedAt": "2026-11-24T09:47:49.147Z",
+        "prompt": "Redesign the compact adventure-game UI selector shown in the first reference: an ivory outlined small hollow circle below, a magnifying glass above-left with pale lens and short dark handle pointing diagonally down-right, and an ivory open hand above-right with fingers upright and thumb toward the left. These three separated symbols form ONE interface graphic; preserve their exact arrangement, relative scale, recognizable silhouettes, negative spaces and dominant ivory, white, charcoal and muted warm gray colors. The small bottom circle is an unfilled graphic ring, not a large medallion or backdrop. No lettering. Keep this as a flat readable interface graphic, with restrained finer shading on the hand and lens. The whole composition spans about four fifths of the square width and a little over half its height, preserving the first reference's wide proportions. Use the second reference, Churchill, ONLY for deliberate finer pixel clusters, restrained shading, and a continuous dark outer outline exactly one final-image pixel thick with stepped diagonals. Do not transfer the character, clothing, anatomy, or brown costume into the UI. Keep internal lines subordinate; no doubled outlines, blur, antialiasing, glow or halo. Preserve the source alpha/background treatment and empty spaces. The third reference is the shared 128-color base palette, for color guidance only; additional harmonious shades are allowed, exact matching is not required.",
+        "width": 64,
+        "height": 64,
+        "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/b41da364-d8f6-4adf-a261-ad87921dd5dc/image.png?v=1795513669147",
+        "style": "default",
+        "tags": [],
+        "contentType": "image/png",
+        "batchId": "6b11ce8d-bcde-4a97-b073-013179b8d71d",
+        "batchIndex": 2,
+        "batchSize": 9,
+        "action": {
+          "kind": "same-style"
+        }
+      },
+      {
+        "id": "1b74193a-d7d4-4b39-abcd-4a7630d91a11",
+        "type": "image",
+        "createdAt": "2026-11-24T09:47:49.963Z",
+        "updatedAt": "2026-11-24T09:47:49.963Z",
+        "prompt": "Redesign the compact adventure-game UI selector shown in the first reference: an ivory outlined small hollow circle below, a magnifying glass above-left with pale lens and short dark handle pointing diagonally down-right, and an ivory open hand above-right with fingers upright and thumb toward the left. These three separated symbols form ONE interface graphic; preserve their exact arrangement, relative scale, recognizable silhouettes, negative spaces and dominant ivory, white, charcoal and muted warm gray colors. The small bottom circle is an unfilled graphic ring, not a large medallion or backdrop. No lettering. Keep this as a flat readable interface graphic, with restrained finer shading on the hand and lens. The whole composition spans about four fifths of the square width and a little over half its height, preserving the first reference's wide proportions. Use the second reference, Churchill, ONLY for deliberate finer pixel clusters, restrained shading, and a continuous dark outer outline exactly one final-image pixel thick with stepped diagonals. Do not transfer the character, clothing, anatomy, or brown costume into the UI. Keep internal lines subordinate; no doubled outlines, blur, antialiasing, glow or halo. Preserve the source alpha/background treatment and empty spaces. The third reference is the shared 128-color base palette, for color guidance only; additional harmonious shades are allowed, exact matching is not required.",
+        "width": 64,
+        "height": 64,
+        "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/1b74193a-d7d4-4b39-abcd-4a7630d91a11/image.png?v=1795513669963",
+        "style": "default",
+        "tags": [],
+        "contentType": "image/png",
+        "batchId": "6b11ce8d-bcde-4a97-b073-013179b8d71d",
+        "batchIndex": 3,
+        "batchSize": 9,
+        "action": {
+          "kind": "same-style"
+        }
+      },
+      {
+        "id": "d6a6637a-3400-40f3-bab1-937fff678974",
+        "type": "image",
+        "createdAt": "2026-11-24T09:47:50.741Z",
+        "updatedAt": "2026-11-24T09:47:50.741Z",
+        "prompt": "Redesign the compact adventure-game UI selector shown in the first reference: an ivory outlined small hollow circle below, a magnifying glass above-left with pale lens and short dark handle pointing diagonally down-right, and an ivory open hand above-right with fingers upright and thumb toward the left. These three separated symbols form ONE interface graphic; preserve their exact arrangement, relative scale, recognizable silhouettes, negative spaces and dominant ivory, white, charcoal and muted warm gray colors. The small bottom circle is an unfilled graphic ring, not a large medallion or backdrop. No lettering. Keep this as a flat readable interface graphic, with restrained finer shading on the hand and lens. The whole composition spans about four fifths of the square width and a little over half its height, preserving the first reference's wide proportions. Use the second reference, Churchill, ONLY for deliberate finer pixel clusters, restrained shading, and a continuous dark outer outline exactly one final-image pixel thick with stepped diagonals. Do not transfer the character, clothing, anatomy, or brown costume into the UI. Keep internal lines subordinate; no doubled outlines, blur, antialiasing, glow or halo. Preserve the source alpha/background treatment and empty spaces. The third reference is the shared 128-color base palette, for color guidance only; additional harmonious shades are allowed, exact matching is not required.",
+        "width": 64,
+        "height": 64,
+        "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/d6a6637a-3400-40f3-bab1-937fff678974/image.png?v=1795513670741",
+        "style": "default",
+        "tags": [],
+        "contentType": "image/png",
+        "batchId": "6b11ce8d-bcde-4a97-b073-013179b8d71d",
+        "batchIndex": 4,
+        "batchSize": 9,
+        "action": {
+          "kind": "same-style"
+        }
+      },
+      {
+        "id": "8c717df6-1355-42f1-a112-83a8d9836643",
+        "type": "image",
+        "createdAt": "2026-11-24T09:47:51.473Z",
+        "updatedAt": "2026-11-24T09:47:51.473Z",
+        "prompt": "Redesign the compact adventure-game UI selector shown in the first reference: an ivory outlined small hollow circle below, a magnifying glass above-left with pale lens and short dark handle pointing diagonally down-right, and an ivory open hand above-right with fingers upright and thumb toward the left. These three separated symbols form ONE interface graphic; preserve their exact arrangement, relative scale, recognizable silhouettes, negative spaces and dominant ivory, white, charcoal and muted warm gray colors. The small bottom circle is an unfilled graphic ring, not a large medallion or backdrop. No lettering. Keep this as a flat readable interface graphic, with restrained finer shading on the hand and lens. The whole composition spans about four fifths of the square width and a little over half its height, preserving the first reference's wide proportions. Use the second reference, Churchill, ONLY for deliberate finer pixel clusters, restrained shading, and a continuous dark outer outline exactly one final-image pixel thick with stepped diagonals. Do not transfer the character, clothing, anatomy, or brown costume into the UI. Keep internal lines subordinate; no doubled outlines, blur, antialiasing, glow or halo. Preserve the source alpha/background treatment and empty spaces. The third reference is the shared 128-color base palette, for color guidance only; additional harmonious shades are allowed, exact matching is not required.",
+        "width": 64,
+        "height": 64,
+        "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/8c717df6-1355-42f1-a112-83a8d9836643/image.png?v=1795513671473",
+        "style": "default",
+        "tags": [],
+        "contentType": "image/png",
+        "batchId": "6b11ce8d-bcde-4a97-b073-013179b8d71d",
+        "batchIndex": 5,
+        "batchSize": 9,
+        "action": {
+          "kind": "same-style"
+        }
+      },
+      {
+        "id": "1c593648-a81a-4422-a494-663094467a9d",
+        "type": "image",
+        "createdAt": "2026-11-24T09:47:52.251Z",
+        "updatedAt": "2026-11-24T09:47:52.251Z",
+        "prompt": "Redesign the compact adventure-game UI selector shown in the first reference: an ivory outlined small hollow circle below, a magnifying glass above-left with pale lens and short dark handle pointing diagonally down-right, and an ivory open hand above-right with fingers upright and thumb toward the left. These three separated symbols form ONE interface graphic; preserve their exact arrangement, relative scale, recognizable silhouettes, negative spaces and dominant ivory, white, charcoal and muted warm gray colors. The small bottom circle is an unfilled graphic ring, not a large medallion or backdrop. No lettering. Keep this as a flat readable interface graphic, with restrained finer shading on the hand and lens. The whole composition spans about four fifths of the square width and a little over half its height, preserving the first reference's wide proportions. Use the second reference, Churchill, ONLY for deliberate finer pixel clusters, restrained shading, and a continuous dark outer outline exactly one final-image pixel thick with stepped diagonals. Do not transfer the character, clothing, anatomy, or brown costume into the UI. Keep internal lines subordinate; no doubled outlines, blur, antialiasing, glow or halo. Preserve the source alpha/background treatment and empty spaces. The third reference is the shared 128-color base palette, for color guidance only; additional harmonious shades are allowed, exact matching is not required.",
+        "width": 64,
+        "height": 64,
+        "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/1c593648-a81a-4422-a494-663094467a9d/image.png?v=1795513672251",
+        "style": "default",
+        "tags": [],
+        "contentType": "image/png",
+        "batchId": "6b11ce8d-bcde-4a97-b073-013179b8d71d",
+        "batchIndex": 6,
+        "batchSize": 9,
+        "action": {
+          "kind": "same-style"
+        }
+      },
+      {
+        "id": "e0455030-6bc4-43d3-ab28-3e4dce1ccfd8",
+        "type": "image",
+        "createdAt": "2026-11-24T09:47:53.064Z",
+        "updatedAt": "2026-11-24T09:47:53.064Z",
+        "prompt": "Redesign the compact adventure-game UI selector shown in the first reference: an ivory outlined small hollow circle below, a magnifying glass above-left with pale lens and short dark handle pointing diagonally down-right, and an ivory open hand above-right with fingers upright and thumb toward the left. These three separated symbols form ONE interface graphic; preserve their exact arrangement, relative scale, recognizable silhouettes, negative spaces and dominant ivory, white, charcoal and muted warm gray colors. The small bottom circle is an unfilled graphic ring, not a large medallion or backdrop. No lettering. Keep this as a flat readable interface graphic, with restrained finer shading on the hand and lens. The whole composition spans about four fifths of the square width and a little over half its height, preserving the first reference's wide proportions. Use the second reference, Churchill, ONLY for deliberate finer pixel clusters, restrained shading, and a continuous dark outer outline exactly one final-image pixel thick with stepped diagonals. Do not transfer the character, clothing, anatomy, or brown costume into the UI. Keep internal lines subordinate; no doubled outlines, blur, antialiasing, glow or halo. Preserve the source alpha/background treatment and empty spaces. The third reference is the shared 128-color base palette, for color guidance only; additional harmonious shades are allowed, exact matching is not required.",
+        "width": 64,
+        "height": 64,
+        "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/e0455030-6bc4-43d3-ab28-3e4dce1ccfd8/image.png?v=1795513673064",
+        "style": "default",
+        "tags": [],
+        "contentType": "image/png",
+        "batchId": "6b11ce8d-bcde-4a97-b073-013179b8d71d",
+        "batchIndex": 7,
+        "batchSize": 9,
+        "action": {
+          "kind": "same-style"
+        }
+      },
+      {
+        "id": "00217df6-81ac-4319-8d04-d1e8cca9b35b",
+        "type": "image",
+        "createdAt": "2026-11-24T09:47:53.908Z",
+        "updatedAt": "2026-11-24T09:47:53.908Z",
+        "prompt": "Redesign the compact adventure-game UI selector shown in the first reference: an ivory outlined small hollow circle below, a magnifying glass above-left with pale lens and short dark handle pointing diagonally down-right, and an ivory open hand above-right with fingers upright and thumb toward the left. These three separated symbols form ONE interface graphic; preserve their exact arrangement, relative scale, recognizable silhouettes, negative spaces and dominant ivory, white, charcoal and muted warm gray colors. The small bottom circle is an unfilled graphic ring, not a large medallion or backdrop. No lettering. Keep this as a flat readable interface graphic, with restrained finer shading on the hand and lens. The whole composition spans about four fifths of the square width and a little over half its height, preserving the first reference's wide proportions. Use the second reference, Churchill, ONLY for deliberate finer pixel clusters, restrained shading, and a continuous dark outer outline exactly one final-image pixel thick with stepped diagonals. Do not transfer the character, clothing, anatomy, or brown costume into the UI. Keep internal lines subordinate; no doubled outlines, blur, antialiasing, glow or halo. Preserve the source alpha/background treatment and empty spaces. The third reference is the shared 128-color base palette, for color guidance only; additional harmonious shades are allowed, exact matching is not required.",
+        "width": 64,
+        "height": 64,
+        "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/00217df6-81ac-4319-8d04-d1e8cca9b35b/image.png?v=1795513673908",
+        "style": "default",
+        "tags": [],
+        "contentType": "image/png",
+        "batchId": "6b11ce8d-bcde-4a97-b073-013179b8d71d",
+        "batchIndex": 8,
+        "batchSize": 9,
+        "action": {
+          "kind": "same-style"
+        }
+      }
+    ],
+    "credits": {
+      "used": 15,
+      "remaining": 235
+    }
+  }
+}

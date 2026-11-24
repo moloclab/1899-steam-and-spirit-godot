@@ -31,6 +31,7 @@ var help_close: Button
 var reset_button: Button
 var save_buttons: Array[Button] = []
 var music_button: Button
+var language_button: Button
 var help_button: Button
 var _inventory_ids: Array[String] = []
 var _inventory_buttons: Array[Button] = []
@@ -169,6 +170,10 @@ func _toggle_music() -> void:
 	_localize(music_button, "common.ui.music_on" if music_button.button_pressed else "common.ui.music_off")
 	music_toggled.emit(music_button.button_pressed)
 
+## Alterna italiano e inglese tramite il catalogo condiviso, aggiornando anche i dialoghi.
+func _toggle_language() -> void:
+	texts.language = "en" if texts.language == "it" else "it"
+
 ## Prepara il menu dei comandi, inizialmente nascosto, e i suoi pulsanti.
 ## Lo sfondo copre la finestra per intercettare i clic che altrimenti raggiungerebbero il gioco.
 func _build_help() -> void:
@@ -183,6 +188,8 @@ func _build_help() -> void:
 	music_button = _button("common.ui.music_on", Rect2(30, 480, 200, 42), _toggle_music, content)
 	music_button.toggle_mode = true
 	music_button.button_pressed = true
+	# La lingua corrente resta visibile accanto alla musica e cambia senza chiudere gli aiuti.
+	language_button = _button("common.ui.language", Rect2(250, 480, 300, 42), _toggle_language, content)
 	var save := _button("common.ui.save", Rect2(30, 540, 145, 42), func():
 		save_requested.emit()
 		_toggle_help(), content)
