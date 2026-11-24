@@ -42,8 +42,7 @@ func _run() -> void:
 	game.ui._toggle_music()
 	game.texts.language = "en"
 	check(game.ui.help_panel.visible, "Cambio lingua conserva il pannello aperto")
-	check(game.ui.save_buttons[0].text == "Save" and game.ui.save_buttons[1].text == "Load", "Barra superiore inglese")
-	check(game.ui.save_buttons[2].text == "Save" and game.ui.save_buttons[3].text == "Load", "Pulsanti aiuti inglesi")
+	check(game.ui.save_buttons[0].text == "Save" and game.ui.save_buttons[1].text == "Load", "Pulsanti aiuti inglesi")
 	check(game.ui.help_button.text == "Help" and game.ui.help_close.text == "Back to game", "Apertura e chiusura aiuti inglesi")
 	check(game.ui.reset_button.text == "Restart" and game.ui.reset_button.tooltip_text.begins_with("Restart the prototype."), "Reset e tooltip inglesi")
 	check(has_label(game.ui.help_panel, "CONTROLS"), "Titolo aiuti inglese")

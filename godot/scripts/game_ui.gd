@@ -19,7 +19,7 @@ var texts: Texts
 var _localized_controls: Dictionary = {}
 var _speaker_key := "common.speaker.churchill"
 const SPEECH_SIZE := Vector2(200, 100)
-const SPEECH_FONT_SIZE := 32
+const SPEECH_FONT_SIZE := 40
 var world_panel: Control
 var speaker_label: Label
 var speech_label: Label
@@ -104,14 +104,8 @@ func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
 	# La larghezza logica resta fissa mentre Godot scala l'intera UI sul dispositivo.
 	var view_width := float(ProjectSettings.get_setting("display/window/size/viewport_width"))
-	var toolbar_x := view_width - 576.0
-	save_buttons.append(_button("common.ui.save", Rect2(toolbar_x, 20, 110, 38), save_requested.emit))
-	save_buttons.append(_button("common.ui.load", Rect2(toolbar_x + 120, 20, 110, 38), load_requested.emit))
-	# Il controllo musicale resta accanto a Carica e mostra lo stato corrente del sottofondo.
-	music_button = _button("common.ui.music_on", Rect2(toolbar_x + 240, 20, 150, 38), _toggle_music)
-	music_button.toggle_mode = true
-	music_button.button_pressed = true
-	help_button = _button("common.ui.help", Rect2(toolbar_x + 400, 20, 110, 38), _toggle_help)
+	# Solo l'accesso agli aiuti resta visibile durante il gioco.
+	help_button = _button("common.ui.help", Rect2(view_width - 130, 20, 110, 38), _toggle_help)
 	# Il ritaglio nasconde le parti del corridoio fuori dalla finestra di gioco.
 	# I clic sono gestiti dal contenitore: le immagini della stanza sono nodi 2D, non pulsanti.
 	world_panel = Control.new()
@@ -125,9 +119,8 @@ func _ready() -> void:
 	world_panel.gui_input.connect(func(event: InputEvent): world_input.emit(event))
 	add_child(world_panel)
 	# L'ordine dei nodi assegna i clic ai pulsanti prima della stanza; lo z_index regola solo il disegno.
-	for button in save_buttons + [music_button, help_button]:
-		move_child(button, get_child_count() - 1)
-		button.z_index = 3
+	move_child(help_button, get_child_count() - 1)
+	help_button.z_index = 3
 	speaker_label = _label("common.speaker.churchill", Rect2(40, 506, 700, 20), 32)
 	speaker_label.add_theme_color_override("font_color", GOLD)
 	# Il nome resta disponibile alla localizzazione; la battuta identifica chi parla tramite la posizione.
@@ -142,8 +135,8 @@ func _ready() -> void:
 	# L'ombra ripete il testo in nero, spostato di un pixel a destra e in basso.
 	speech_label.add_theme_constant_override("outline_size", 0)
 	speech_label.add_theme_color_override("font_shadow_color", Color.BLACK)
-	speech_label.add_theme_constant_override("shadow_offset_x", 2)
-	speech_label.add_theme_constant_override("shadow_offset_y", 2)
+	speech_label.add_theme_constant_override("shadow_offset_x", 3)
+	speech_label.add_theme_constant_override("shadow_offset_y", 3)
 	speech_label.add_theme_constant_override("line_spacing", 0)
 	# La fascia opaca usa il marrone scuro #120F0E della palette e resta separata dalla stanza.
 	var view_height := float(ProjectSettings.get_setting("display/window/size/viewport_height"))
@@ -183,18 +176,22 @@ func _build_help() -> void:
 	var view_size := Vector2(ProjectSettings.get_setting("display/window/size/viewport_width"), ProjectSettings.get_setting("display/window/size/viewport_height"))
 	help_panel = _panel(Rect2(Vector2.ZERO, view_size), Color(0, 0, 0, 0.65))
 	help_panel.z_index = 10
-	var content := _panel(Rect2((view_size - Vector2(812, 550)) / 2.0, Vector2(812, 550)), Color("152027"), help_panel)
+	var content := _panel(Rect2((view_size - Vector2(812, 610)) / 2.0, Vector2(812, 610)), Color("152027"), help_panel)
 	_label("common.ui.help_title", Rect2(30, 20, 760, 40), 32, content)
 	_label("common.ui.help_commands", Rect2(30, 65, 755, 390), 32, content)
-	var save := _button("common.ui.save", Rect2(30, 480, 145, 42), func():
+	# La musica eredita la visibilità del pannello, con una riga dedicata sopra gli altri comandi.
+	music_button = _button("common.ui.music_on", Rect2(30, 480, 200, 42), _toggle_music, content)
+	music_button.toggle_mode = true
+	music_button.button_pressed = true
+	var save := _button("common.ui.save", Rect2(30, 540, 145, 42), func():
 		save_requested.emit()
 		_toggle_help(), content)
-	var load_button := _button("common.ui.load", Rect2(185, 480, 145, 42), func():
+	var load_button := _button("common.ui.load", Rect2(185, 540, 145, 42), func():
 		load_requested.emit()
 		_toggle_help(), content)
-	reset_button = _button("common.ui.restart", Rect2(340, 480, 180, 42), new_game_requested.emit, content)
+	reset_button = _button("common.ui.restart", Rect2(340, 540, 180, 42), new_game_requested.emit, content)
 	_localize(reset_button, "common.ui.restart_hint", "tooltip_text")
-	help_close = _button("common.ui.resume", Rect2(530, 480, 250, 42), _toggle_help, content)
+	help_close = _button("common.ui.resume", Rect2(530, 540, 250, 42), _toggle_help, content)
 	save_buttons.append(save)
 	save_buttons.append(load_button)
 	help_panel.hide()
@@ -230,7 +227,8 @@ func position_speech(target: Node2D, local_anchor: Vector2) -> void:
 	if not speech_label.visible:
 		return
 	var anchor := get_global_transform().affine_inverse() * target.to_global(local_anchor)
-	speech_label.position = anchor - Vector2(speech_label.size.x / 2.0, speech_label.size.y + 4.0)
+	# Lascia 6 pixel UI tra il punto di ancoraggio e il testo del dialogo.
+	speech_label.position = anchor - Vector2(speech_label.size.x / 2.0, speech_label.size.y + 20.0)
 	# Mantiene leggibili le battute anche quando chi parla si trova vicino ai bordi laterali.
 	speech_label.position.x = clampf(speech_label.position.x, 8.0, world_panel.size.x - speech_label.size.x - 8.0)
 

@@ -53,7 +53,7 @@ Leggibilità, tocchi e aree sicure di notch e fotocamere richiedono una prova su
 | Annullare una selezione | Pavimento o Esc | B |
 | Menu comandi / pausa | ? / F1 | Start |
 | Avanzare una conversazione | Clic sinistro, Invio o Spazio | A |
-| Salva / carica | Pulsanti in alto o nel menu | Dal menu |
+| Salva / carica | Dal pannello aiuti | Dal menu |
 
 Nella stanza il tasto sinistro apre il pannello originale con **lente** e **mano/bocca/uscita**.
 L'azione parte dopo la scelta e dopo l'avvicinamento di Churchill.

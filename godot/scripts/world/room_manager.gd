@@ -41,8 +41,6 @@ func load_room(state, host: Control) -> bool:
 	# Copre tutta la larghezza del fondale mantenendo l'altezza visibile del pannello.
 	grime.size = Vector2(definition.width, host.size.y / definition.visual_scale)
 	grime.z_index = 2
-	# La patina mantiene il proprio colore con opacità al 50%.
-	grime.modulate.a = 1
 	# Il velo lascia passare clic e touch al contenitore della stanza.
 	grime.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	var grime_material := CanvasItemMaterial.new()
