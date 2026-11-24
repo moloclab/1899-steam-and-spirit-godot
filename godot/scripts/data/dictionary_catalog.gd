@@ -3,7 +3,8 @@ extends RefCounted
 const Episodes = preload("res://scripts/data/episode_catalog.gd")
 ## La stessa lingua aggiorna dialoghi e controlli già costruiti.
 signal language_changed
-var language := "it":
+## Il gioco parte in inglese; il pannello aiuti consente di passare all'italiano.
+var language := "en":
 	set(value):
 		if language != value:
 			language = value

@@ -35,7 +35,7 @@ scene_path = "res://scenes/rooms/ep01_cabin.tscn"
 width = 500.0
 floor_y = 188.666667
 entries = Dictionary[String, float]({
-"default": 75.0,
+"default": 79.0,
 "from_corridor": 435.0
 })
 
@@ -349,7 +349,7 @@ texture = ExtResource("bed_bed")
 centered = false
 
 [node name="bottle" type="Node2D" parent="." unique_id=1581295987]
-position = Vector2(309, 176.66667)
+position = Vector2(325, 176.66667)
 script = ExtResource("collectible_script")
 item_id = "ep01_cabin_bottle"
 pickup_response = "ep01.cabin.bottle.pickup"
@@ -358,5 +358,6 @@ hit_size = Vector2(32, 12)
 examine_response = "ep01.cabin.bottle.examine"
 
 [node name="Visual" type="Sprite2D" parent="bottle" unique_id=1610427772]
+position = Vector2(-2, 0)
 texture = ExtResource("bottle_bottle")
 centered = false
