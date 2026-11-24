@@ -1,0 +1,142 @@
+﻿[
+    {
+        "File":  "inventory_magnet.png",
+        "CanvasWidth":  40,
+        "CanvasHeight":  40,
+        "X":  13,
+        "Y":  12,
+        "VisibleWidth":  15,
+        "VisibleHeight":  15,
+        "Alpha":  [
+                      255,
+                      0
+                  ],
+        "SizeConforming":  true
+    },
+    {
+        "File":  "inventory_magnet-redesign.png",
+        "CanvasWidth":  48,
+        "CanvasHeight":  48,
+        "X":  16,
+        "Y":  16,
+        "VisibleWidth":  15,
+        "VisibleHeight":  16,
+        "Alpha":  [
+                      255,
+                      0
+                  ],
+        "SizeConforming":  false
+    },
+    {
+        "File":  "inventory_magnet-redesign-2.png",
+        "CanvasWidth":  48,
+        "CanvasHeight":  48,
+        "X":  18,
+        "Y":  18,
+        "VisibleWidth":  12,
+        "VisibleHeight":  12,
+        "Alpha":  [
+                      255,
+                      0
+                  ],
+        "SizeConforming":  false
+    },
+    {
+        "File":  "inventory_magnet-redesign-3.png",
+        "CanvasWidth":  48,
+        "CanvasHeight":  48,
+        "X":  17,
+        "Y":  16,
+        "VisibleWidth":  13,
+        "VisibleHeight":  15,
+        "Alpha":  [
+                      255,
+                      0
+                  ],
+        "SizeConforming":  false
+    },
+    {
+        "File":  "inventory_magnet-redesign-4.png",
+        "CanvasWidth":  48,
+        "CanvasHeight":  48,
+        "X":  17,
+        "Y":  16,
+        "VisibleWidth":  14,
+        "VisibleHeight":  15,
+        "Alpha":  [
+                      255,
+                      0
+                  ],
+        "SizeConforming":  false
+    },
+    {
+        "File":  "inventory_magnet-redesign-5.png",
+        "CanvasWidth":  48,
+        "CanvasHeight":  48,
+        "X":  17,
+        "Y":  16,
+        "VisibleWidth":  14,
+        "VisibleHeight":  16,
+        "Alpha":  [
+                      255,
+                      0
+                  ],
+        "SizeConforming":  false
+    },
+    {
+        "File":  "inventory_magnet-redesign-6.png",
+        "CanvasWidth":  48,
+        "CanvasHeight":  48,
+        "X":  16,
+        "Y":  16,
+        "VisibleWidth":  15,
+        "VisibleHeight":  15,
+        "Alpha":  [
+                      255,
+                      0
+                  ],
+        "SizeConforming":  true
+    },
+    {
+        "File":  "inventory_magnet-redesign-7.png",
+        "CanvasWidth":  48,
+        "CanvasHeight":  48,
+        "X":  17,
+        "Y":  16,
+        "VisibleWidth":  14,
+        "VisibleHeight":  15,
+        "Alpha":  [
+                      255,
+                      0
+                  ],
+        "SizeConforming":  false
+    },
+    {
+        "File":  "inventory_magnet-redesign-8.png",
+        "CanvasWidth":  48,
+        "CanvasHeight":  48,
+        "X":  17,
+        "Y":  16,
+        "VisibleWidth":  13,
+        "VisibleHeight":  16,
+        "Alpha":  [
+                      255,
+                      0
+                  ],
+        "SizeConforming":  false
+    },
+    {
+        "File":  "inventory_magnet-redesign-9.png",
+        "CanvasWidth":  48,
+        "CanvasHeight":  48,
+        "X":  17,
+        "Y":  16,
+        "VisibleWidth":  13,
+        "VisibleHeight":  15,
+        "Alpha":  [
+                      255,
+                      0
+                  ],
+        "SizeConforming":  false
+    }
+]

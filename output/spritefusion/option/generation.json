@@ -1,0 +1,229 @@
+﻿{
+    "inputs":  [
+                   "godot/assets/graphics/ui/option.png",
+                   "godot/assets/graphics/characters/churchill/churchill-stand.png",
+                   "godot/assets/graphics/ep01_cabin/inventory_magnet.png",
+                   "godot/palette/1899-base-128-swatches.png"
+               ],
+    "size":  48,
+    "original":  {
+                     "CanvasWidth":  40,
+                     "CanvasHeight":  40,
+                     "X":  0,
+                     "Y":  0,
+                     "VisibleWidth":  40,
+                     "VisibleHeight":  40,
+                     "Alpha":  [
+                                   255
+                               ]
+                 },
+    "originalSubjectOutline":  {
+                                   "x":  5,
+                                   "y":  3,
+                                   "width":  31,
+                                   "height":  33,
+                                   "method":  "Visual inspection of dark outer outline, corroborated by identical bounds at mean RGB thresholds 25,30,35,40; source has fully opaque brown backdrop, alpha bounds are entire 40x40 canvas."
+                               },
+    "originalSha256":  "924062F177D0083F89FE1E037F0327FC88CAACEA812D511319A313DC79746284",
+    "result":  {
+                   "request_id":  "req_2af8d8ff-0c35-464b-9c93-30379ff99722",
+                   "status":  "succeeded",
+                   "output_count":  9,
+                   "outputs":  [
+                                   {
+                                       "id":  "5ad5dd48-7fe7-486d-aa07-0cb6719194f4",
+                                       "type":  "image",
+                                       "createdAt":  "2026-11-24T14:31:47.812Z",
+                                       "updatedAt":  "2026-11-24T14:31:47.812Z",
+                                       "prompt":  "Redesign the first reference as a small antique brass magnetic compass inventory icon. Preserve the subject\u0027s recognizable upright near-front view, round slightly oval brass casing, tiny attachment lug centered at twelve o\u0027clock, weathered warm ochre/gold rim and pale parchment dial. Preserve the central diagonal compass needle: red half points towards the upper right and ivory/white half points towards the lower left. Keep its geometry, orientation, warm brass and cream dominant colors, centered face and subdued historical atmosphere. This is a compass, not a clock, watch or medallion. Keep any dial marks minimal and subordinate to the readable two-tone needle; do not add large letters, text, hands, gears or decorations. Isolate the compass itself from the first reference\u0027s opaque brown square backdrop: the final background must be empty alpha, including around the small top lug. Keep the subject centered and small, occupying approximately five eighths of the square width and about seven tenths of its height, with generous empty margins. The second reference, approved Churchill, provides only the finer deliberate pixel clusters, restrained shading and dark outline style, never character anatomy, clothing or colors. The third reference is an approved inventory magnet; use it only for a simple readable small-object outline and controlled metallic shading. Do not transfer its cylindrical silhouette or red face. The fourth reference provides the game\u0027s shared flexible base palette for colors only; allow additional harmonious shades for brass, glass and dial readability without exact palette matching. Give the whole compass, including the top lug, a consistent very dark outer outline exactly one final-image pixel thick, with stepped pixel diagonals, no doubled border, blur, antialiasing or halo. Keep interior contours finer and subordinate. Use restrained brass highlights and delicate warm shading rather than adding unrelated ornament. Maintain binary alpha.",
+                                       "width":  48,
+                                       "height":  48,
+                                       "assetUrl":  "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/5ad5dd48-7fe7-486d-aa07-0cb6719194f4/image.png?v=1795530707812",
+                                       "style":  "default",
+                                       "tags":  [
+
+                                                ],
+                                       "contentType":  "image/png",
+                                       "batchId":  "8bd0d2a6-c4b3-4308-8155-45cec86112e0",
+                                       "batchIndex":  0,
+                                       "batchSize":  9,
+                                       "action":  {
+                                                      "kind":  "same-style"
+                                                  }
+                                   },
+                                   {
+                                       "id":  "a5b4daac-21a3-4ab7-93dc-82afeec34feb",
+                                       "type":  "image",
+                                       "createdAt":  "2026-11-24T14:31:48.654Z",
+                                       "updatedAt":  "2026-11-24T14:31:48.654Z",
+                                       "prompt":  "Redesign the first reference as a small antique brass magnetic compass inventory icon. Preserve the subject\u0027s recognizable upright near-front view, round slightly oval brass casing, tiny attachment lug centered at twelve o\u0027clock, weathered warm ochre/gold rim and pale parchment dial. Preserve the central diagonal compass needle: red half points towards the upper right and ivory/white half points towards the lower left. Keep its geometry, orientation, warm brass and cream dominant colors, centered face and subdued historical atmosphere. This is a compass, not a clock, watch or medallion. Keep any dial marks minimal and subordinate to the readable two-tone needle; do not add large letters, text, hands, gears or decorations. Isolate the compass itself from the first reference\u0027s opaque brown square backdrop: the final background must be empty alpha, including around the small top lug. Keep the subject centered and small, occupying approximately five eighths of the square width and about seven tenths of its height, with generous empty margins. The second reference, approved Churchill, provides only the finer deliberate pixel clusters, restrained shading and dark outline style, never character anatomy, clothing or colors. The third reference is an approved inventory magnet; use it only for a simple readable small-object outline and controlled metallic shading. Do not transfer its cylindrical silhouette or red face. The fourth reference provides the game\u0027s shared flexible base palette for colors only; allow additional harmonious shades for brass, glass and dial readability without exact palette matching. Give the whole compass, including the top lug, a consistent very dark outer outline exactly one final-image pixel thick, with stepped pixel diagonals, no doubled border, blur, antialiasing or halo. Keep interior contours finer and subordinate. Use restrained brass highlights and delicate warm shading rather than adding unrelated ornament. Maintain binary alpha.",
+                                       "width":  48,
+                                       "height":  48,
+                                       "assetUrl":  "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/a5b4daac-21a3-4ab7-93dc-82afeec34feb/image.png?v=1795530708654",
+                                       "style":  "default",
+                                       "tags":  [
+
+                                                ],
+                                       "contentType":  "image/png",
+                                       "batchId":  "8bd0d2a6-c4b3-4308-8155-45cec86112e0",
+                                       "batchIndex":  1,
+                                       "batchSize":  9,
+                                       "action":  {
+                                                      "kind":  "same-style"
+                                                  }
+                                   },
+                                   {
+                                       "id":  "966b9732-c9a9-4f55-b0ff-0615a5b00db5",
+                                       "type":  "image",
+                                       "createdAt":  "2026-11-24T14:31:49.569Z",
+                                       "updatedAt":  "2026-11-24T14:31:49.569Z",
+                                       "prompt":  "Redesign the first reference as a small antique brass magnetic compass inventory icon. Preserve the subject\u0027s recognizable upright near-front view, round slightly oval brass casing, tiny attachment lug centered at twelve o\u0027clock, weathered warm ochre/gold rim and pale parchment dial. Preserve the central diagonal compass needle: red half points towards the upper right and ivory/white half points towards the lower left. Keep its geometry, orientation, warm brass and cream dominant colors, centered face and subdued historical atmosphere. This is a compass, not a clock, watch or medallion. Keep any dial marks minimal and subordinate to the readable two-tone needle; do not add large letters, text, hands, gears or decorations. Isolate the compass itself from the first reference\u0027s opaque brown square backdrop: the final background must be empty alpha, including around the small top lug. Keep the subject centered and small, occupying approximately five eighths of the square width and about seven tenths of its height, with generous empty margins. The second reference, approved Churchill, provides only the finer deliberate pixel clusters, restrained shading and dark outline style, never character anatomy, clothing or colors. The third reference is an approved inventory magnet; use it only for a simple readable small-object outline and controlled metallic shading. Do not transfer its cylindrical silhouette or red face. The fourth reference provides the game\u0027s shared flexible base palette for colors only; allow additional harmonious shades for brass, glass and dial readability without exact palette matching. Give the whole compass, including the top lug, a consistent very dark outer outline exactly one final-image pixel thick, with stepped pixel diagonals, no doubled border, blur, antialiasing or halo. Keep interior contours finer and subordinate. Use restrained brass highlights and delicate warm shading rather than adding unrelated ornament. Maintain binary alpha.",
+                                       "width":  48,
+                                       "height":  48,
+                                       "assetUrl":  "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/966b9732-c9a9-4f55-b0ff-0615a5b00db5/image.png?v=1795530709569",
+                                       "style":  "default",
+                                       "tags":  [
+
+                                                ],
+                                       "contentType":  "image/png",
+                                       "batchId":  "8bd0d2a6-c4b3-4308-8155-45cec86112e0",
+                                       "batchIndex":  2,
+                                       "batchSize":  9,
+                                       "action":  {
+                                                      "kind":  "same-style"
+                                                  }
+                                   },
+                                   {
+                                       "id":  "7ba6aa87-2f1a-47ee-800a-dccbd67d262f",
+                                       "type":  "image",
+                                       "createdAt":  "2026-11-24T14:31:50.481Z",
+                                       "updatedAt":  "2026-11-24T14:31:50.481Z",
+                                       "prompt":  "Redesign the first reference as a small antique brass magnetic compass inventory icon. Preserve the subject\u0027s recognizable upright near-front view, round slightly oval brass casing, tiny attachment lug centered at twelve o\u0027clock, weathered warm ochre/gold rim and pale parchment dial. Preserve the central diagonal compass needle: red half points towards the upper right and ivory/white half points towards the lower left. Keep its geometry, orientation, warm brass and cream dominant colors, centered face and subdued historical atmosphere. This is a compass, not a clock, watch or medallion. Keep any dial marks minimal and subordinate to the readable two-tone needle; do not add large letters, text, hands, gears or decorations. Isolate the compass itself from the first reference\u0027s opaque brown square backdrop: the final background must be empty alpha, including around the small top lug. Keep the subject centered and small, occupying approximately five eighths of the square width and about seven tenths of its height, with generous empty margins. The second reference, approved Churchill, provides only the finer deliberate pixel clusters, restrained shading and dark outline style, never character anatomy, clothing or colors. The third reference is an approved inventory magnet; use it only for a simple readable small-object outline and controlled metallic shading. Do not transfer its cylindrical silhouette or red face. The fourth reference provides the game\u0027s shared flexible base palette for colors only; allow additional harmonious shades for brass, glass and dial readability without exact palette matching. Give the whole compass, including the top lug, a consistent very dark outer outline exactly one final-image pixel thick, with stepped pixel diagonals, no doubled border, blur, antialiasing or halo. Keep interior contours finer and subordinate. Use restrained brass highlights and delicate warm shading rather than adding unrelated ornament. Maintain binary alpha.",
+                                       "width":  48,
+                                       "height":  48,
+                                       "assetUrl":  "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/7ba6aa87-2f1a-47ee-800a-dccbd67d262f/image.png?v=1795530710481",
+                                       "style":  "default",
+                                       "tags":  [
+
+                                                ],
+                                       "contentType":  "image/png",
+                                       "batchId":  "8bd0d2a6-c4b3-4308-8155-45cec86112e0",
+                                       "batchIndex":  3,
+                                       "batchSize":  9,
+                                       "action":  {
+                                                      "kind":  "same-style"
+                                                  }
+                                   },
+                                   {
+                                       "id":  "dbe31baf-f269-48dd-b902-1779ee7cbcdb",
+                                       "type":  "image",
+                                       "createdAt":  "2026-11-24T14:31:51.392Z",
+                                       "updatedAt":  "2026-11-24T14:31:51.392Z",
+                                       "prompt":  "Redesign the first reference as a small antique brass magnetic compass inventory icon. Preserve the subject\u0027s recognizable upright near-front view, round slightly oval brass casing, tiny attachment lug centered at twelve o\u0027clock, weathered warm ochre/gold rim and pale parchment dial. Preserve the central diagonal compass needle: red half points towards the upper right and ivory/white half points towards the lower left. Keep its geometry, orientation, warm brass and cream dominant colors, centered face and subdued historical atmosphere. This is a compass, not a clock, watch or medallion. Keep any dial marks minimal and subordinate to the readable two-tone needle; do not add large letters, text, hands, gears or decorations. Isolate the compass itself from the first reference\u0027s opaque brown square backdrop: the final background must be empty alpha, including around the small top lug. Keep the subject centered and small, occupying approximately five eighths of the square width and about seven tenths of its height, with generous empty margins. The second reference, approved Churchill, provides only the finer deliberate pixel clusters, restrained shading and dark outline style, never character anatomy, clothing or colors. The third reference is an approved inventory magnet; use it only for a simple readable small-object outline and controlled metallic shading. Do not transfer its cylindrical silhouette or red face. The fourth reference provides the game\u0027s shared flexible base palette for colors only; allow additional harmonious shades for brass, glass and dial readability without exact palette matching. Give the whole compass, including the top lug, a consistent very dark outer outline exactly one final-image pixel thick, with stepped pixel diagonals, no doubled border, blur, antialiasing or halo. Keep interior contours finer and subordinate. Use restrained brass highlights and delicate warm shading rather than adding unrelated ornament. Maintain binary alpha.",
+                                       "width":  48,
+                                       "height":  48,
+                                       "assetUrl":  "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/dbe31baf-f269-48dd-b902-1779ee7cbcdb/image.png?v=1795530711392",
+                                       "style":  "default",
+                                       "tags":  [
+
+                                                ],
+                                       "contentType":  "image/png",
+                                       "batchId":  "8bd0d2a6-c4b3-4308-8155-45cec86112e0",
+                                       "batchIndex":  4,
+                                       "batchSize":  9,
+                                       "action":  {
+                                                      "kind":  "same-style"
+                                                  }
+                                   },
+                                   {
+                                       "id":  "491603c6-4e96-41cf-b8d8-e572155fa5ed",
+                                       "type":  "image",
+                                       "createdAt":  "2026-11-24T14:31:52.322Z",
+                                       "updatedAt":  "2026-11-24T14:31:52.322Z",
+                                       "prompt":  "Redesign the first reference as a small antique brass magnetic compass inventory icon. Preserve the subject\u0027s recognizable upright near-front view, round slightly oval brass casing, tiny attachment lug centered at twelve o\u0027clock, weathered warm ochre/gold rim and pale parchment dial. Preserve the central diagonal compass needle: red half points towards the upper right and ivory/white half points towards the lower left. Keep its geometry, orientation, warm brass and cream dominant colors, centered face and subdued historical atmosphere. This is a compass, not a clock, watch or medallion. Keep any dial marks minimal and subordinate to the readable two-tone needle; do not add large letters, text, hands, gears or decorations. Isolate the compass itself from the first reference\u0027s opaque brown square backdrop: the final background must be empty alpha, including around the small top lug. Keep the subject centered and small, occupying approximately five eighths of the square width and about seven tenths of its height, with generous empty margins. The second reference, approved Churchill, provides only the finer deliberate pixel clusters, restrained shading and dark outline style, never character anatomy, clothing or colors. The third reference is an approved inventory magnet; use it only for a simple readable small-object outline and controlled metallic shading. Do not transfer its cylindrical silhouette or red face. The fourth reference provides the game\u0027s shared flexible base palette for colors only; allow additional harmonious shades for brass, glass and dial readability without exact palette matching. Give the whole compass, including the top lug, a consistent very dark outer outline exactly one final-image pixel thick, with stepped pixel diagonals, no doubled border, blur, antialiasing or halo. Keep interior contours finer and subordinate. Use restrained brass highlights and delicate warm shading rather than adding unrelated ornament. Maintain binary alpha.",
+                                       "width":  48,
+                                       "height":  48,
+                                       "assetUrl":  "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/491603c6-4e96-41cf-b8d8-e572155fa5ed/image.png?v=1795530712322",
+                                       "style":  "default",
+                                       "tags":  [
+
+                                                ],
+                                       "contentType":  "image/png",
+                                       "batchId":  "8bd0d2a6-c4b3-4308-8155-45cec86112e0",
+                                       "batchIndex":  5,
+                                       "batchSize":  9,
+                                       "action":  {
+                                                      "kind":  "same-style"
+                                                  }
+                                   },
+                                   {
+                                       "id":  "d86f5904-a9e9-4f04-902b-301ea87c62c2",
+                                       "type":  "image",
+                                       "createdAt":  "2026-11-24T14:31:53.158Z",
+                                       "updatedAt":  "2026-11-24T14:31:53.158Z",
+                                       "prompt":  "Redesign the first reference as a small antique brass magnetic compass inventory icon. Preserve the subject\u0027s recognizable upright near-front view, round slightly oval brass casing, tiny attachment lug centered at twelve o\u0027clock, weathered warm ochre/gold rim and pale parchment dial. Preserve the central diagonal compass needle: red half points towards the upper right and ivory/white half points towards the lower left. Keep its geometry, orientation, warm brass and cream dominant colors, centered face and subdued historical atmosphere. This is a compass, not a clock, watch or medallion. Keep any dial marks minimal and subordinate to the readable two-tone needle; do not add large letters, text, hands, gears or decorations. Isolate the compass itself from the first reference\u0027s opaque brown square backdrop: the final background must be empty alpha, including around the small top lug. Keep the subject centered and small, occupying approximately five eighths of the square width and about seven tenths of its height, with generous empty margins. The second reference, approved Churchill, provides only the finer deliberate pixel clusters, restrained shading and dark outline style, never character anatomy, clothing or colors. The third reference is an approved inventory magnet; use it only for a simple readable small-object outline and controlled metallic shading. Do not transfer its cylindrical silhouette or red face. The fourth reference provides the game\u0027s shared flexible base palette for colors only; allow additional harmonious shades for brass, glass and dial readability without exact palette matching. Give the whole compass, including the top lug, a consistent very dark outer outline exactly one final-image pixel thick, with stepped pixel diagonals, no doubled border, blur, antialiasing or halo. Keep interior contours finer and subordinate. Use restrained brass highlights and delicate warm shading rather than adding unrelated ornament. Maintain binary alpha.",
+                                       "width":  48,
+                                       "height":  48,
+                                       "assetUrl":  "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/d86f5904-a9e9-4f04-902b-301ea87c62c2/image.png?v=1795530713158",
+                                       "style":  "default",
+                                       "tags":  [
+
+                                                ],
+                                       "contentType":  "image/png",
+                                       "batchId":  "8bd0d2a6-c4b3-4308-8155-45cec86112e0",
+                                       "batchIndex":  6,
+                                       "batchSize":  9,
+                                       "action":  {
+                                                      "kind":  "same-style"
+                                                  }
+                                   },
+                                   {
+                                       "id":  "31e14adb-c129-4913-bebe-5ff4113a560e",
+                                       "type":  "image",
+                                       "createdAt":  "2026-11-24T14:31:54.036Z",
+                                       "updatedAt":  "2026-11-24T14:31:54.036Z",
+                                       "prompt":  "Redesign the first reference as a small antique brass magnetic compass inventory icon. Preserve the subject\u0027s recognizable upright near-front view, round slightly oval brass casing, tiny attachment lug centered at twelve o\u0027clock, weathered warm ochre/gold rim and pale parchment dial. Preserve the central diagonal compass needle: red half points towards the upper right and ivory/white half points towards the lower left. Keep its geometry, orientation, warm brass and cream dominant colors, centered face and subdued historical atmosphere. This is a compass, not a clock, watch or medallion. Keep any dial marks minimal and subordinate to the readable two-tone needle; do not add large letters, text, hands, gears or decorations. Isolate the compass itself from the first reference\u0027s opaque brown square backdrop: the final background must be empty alpha, including around the small top lug. Keep the subject centered and small, occupying approximately five eighths of the square width and about seven tenths of its height, with generous empty margins. The second reference, approved Churchill, provides only the finer deliberate pixel clusters, restrained shading and dark outline style, never character anatomy, clothing or colors. The third reference is an approved inventory magnet; use it only for a simple readable small-object outline and controlled metallic shading. Do not transfer its cylindrical silhouette or red face. The fourth reference provides the game\u0027s shared flexible base palette for colors only; allow additional harmonious shades for brass, glass and dial readability without exact palette matching. Give the whole compass, including the top lug, a consistent very dark outer outline exactly one final-image pixel thick, with stepped pixel diagonals, no doubled border, blur, antialiasing or halo. Keep interior contours finer and subordinate. Use restrained brass highlights and delicate warm shading rather than adding unrelated ornament. Maintain binary alpha.",
+                                       "width":  48,
+                                       "height":  48,
+                                       "assetUrl":  "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/31e14adb-c129-4913-bebe-5ff4113a560e/image.png?v=1795530714036",
+                                       "style":  "default",
+                                       "tags":  [
+
+                                                ],
+                                       "contentType":  "image/png",
+                                       "batchId":  "8bd0d2a6-c4b3-4308-8155-45cec86112e0",
+                                       "batchIndex":  7,
+                                       "batchSize":  9,
+                                       "action":  {
+                                                      "kind":  "same-style"
+                                                  }
+                                   },
+                                   {
+                                       "id":  "4d1f2e1c-345e-459b-85e4-81e0fb82cc39",
+                                       "type":  "image",
+                                       "createdAt":  "2026-11-24T14:31:54.906Z",
+                                       "updatedAt":  "2026-11-24T14:31:54.906Z",
+                                       "prompt":  "Redesign the first reference as a small antique brass magnetic compass inventory icon. Preserve the subject\u0027s recognizable upright near-front view, round slightly oval brass casing, tiny attachment lug centered at twelve o\u0027clock, weathered warm ochre/gold rim and pale parchment dial. Preserve the central diagonal compass needle: red half points towards the upper right and ivory/white half points towards the lower left. Keep its geometry, orientation, warm brass and cream dominant colors, centered face and subdued historical atmosphere. This is a compass, not a clock, watch or medallion. Keep any dial marks minimal and subordinate to the readable two-tone needle; do not add large letters, text, hands, gears or decorations. Isolate the compass itself from the first reference\u0027s opaque brown square backdrop: the final background must be empty alpha, including around the small top lug. Keep the subject centered and small, occupying approximately five eighths of the square width and about seven tenths of its height, with generous empty margins. The second reference, approved Churchill, provides only the finer deliberate pixel clusters, restrained shading and dark outline style, never character anatomy, clothing or colors. The third reference is an approved inventory magnet; use it only for a simple readable small-object outline and controlled metallic shading. Do not transfer its cylindrical silhouette or red face. The fourth reference provides the game\u0027s shared flexible base palette for colors only; allow additional harmonious shades for brass, glass and dial readability without exact palette matching. Give the whole compass, including the top lug, a consistent very dark outer outline exactly one final-image pixel thick, with stepped pixel diagonals, no doubled border, blur, antialiasing or halo. Keep interior contours finer and subordinate. Use restrained brass highlights and delicate warm shading rather than adding unrelated ornament. Maintain binary alpha.",
+                                       "width":  48,
+                                       "height":  48,
+                                       "assetUrl":  "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/4d1f2e1c-345e-459b-85e4-81e0fb82cc39/image.png?v=1795530714906",
+                                       "style":  "default",
+                                       "tags":  [
+
+                                                ],
+                                       "contentType":  "image/png",
+                                       "batchId":  "8bd0d2a6-c4b3-4308-8155-45cec86112e0",
+                                       "batchIndex":  8,
+                                       "batchSize":  9,
+                                       "action":  {
+                                                      "kind":  "same-style"
+                                                  }
+                                   }
+                               ],
+                   "credits":  {
+                                   "used":  15,
+                                   "remaining":  160
+                               }
+               },
+    "decision":  "User selected V1 (usa v1) after size and outline differences were disclosed. Integrated at option.png: transparent 50x50, subject 39x46 at (5,2), no resizing or alteration of visible pixels. Original and native preserved; no scene references added."
+}

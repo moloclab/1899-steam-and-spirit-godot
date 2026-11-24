@@ -1,0 +1,142 @@
+﻿[
+    {
+        "File":  "original.png",
+        "CanvasWidth":  40,
+        "CanvasHeight":  40,
+        "X":  4,
+        "Y":  4,
+        "VisibleWidth":  32,
+        "VisibleHeight":  32,
+        "Alpha":  [
+                      255,
+                      0
+                  ],
+        "SizeConforming":  true
+    },
+    {
+        "File":  "inventory_feather-redesign.png",
+        "CanvasWidth":  48,
+        "CanvasHeight":  48,
+        "X":  3,
+        "Y":  1,
+        "VisibleWidth":  42,
+        "VisibleHeight":  46,
+        "Alpha":  [
+                      255,
+                      0
+                  ],
+        "SizeConforming":  false
+    },
+    {
+        "File":  "inventory_feather-redesign-2.png",
+        "CanvasWidth":  48,
+        "CanvasHeight":  48,
+        "X":  9,
+        "Y":  9,
+        "VisibleWidth":  29,
+        "VisibleHeight":  29,
+        "Alpha":  [
+                      255,
+                      0
+                  ],
+        "SizeConforming":  false
+    },
+    {
+        "File":  "inventory_feather-redesign-3.png",
+        "CanvasWidth":  48,
+        "CanvasHeight":  48,
+        "X":  3,
+        "Y":  1,
+        "VisibleWidth":  41,
+        "VisibleHeight":  46,
+        "Alpha":  [
+                      255,
+                      0
+                  ],
+        "SizeConforming":  false
+    },
+    {
+        "File":  "inventory_feather-redesign-4.png",
+        "CanvasWidth":  48,
+        "CanvasHeight":  48,
+        "X":  2,
+        "Y":  2,
+        "VisibleWidth":  43,
+        "VisibleHeight":  44,
+        "Alpha":  [
+                      255,
+                      0
+                  ],
+        "SizeConforming":  false
+    },
+    {
+        "File":  "inventory_feather-redesign-5.png",
+        "CanvasWidth":  48,
+        "CanvasHeight":  48,
+        "X":  3,
+        "Y":  1,
+        "VisibleWidth":  42,
+        "VisibleHeight":  46,
+        "Alpha":  [
+                      255,
+                      0
+                  ],
+        "SizeConforming":  false
+    },
+    {
+        "File":  "inventory_feather-redesign-6.png",
+        "CanvasWidth":  48,
+        "CanvasHeight":  48,
+        "X":  2,
+        "Y":  1,
+        "VisibleWidth":  43,
+        "VisibleHeight":  46,
+        "Alpha":  [
+                      255,
+                      0
+                  ],
+        "SizeConforming":  false
+    },
+    {
+        "File":  "inventory_feather-redesign-7.png",
+        "CanvasWidth":  48,
+        "CanvasHeight":  48,
+        "X":  3,
+        "Y":  2,
+        "VisibleWidth":  42,
+        "VisibleHeight":  44,
+        "Alpha":  [
+                      255,
+                      0
+                  ],
+        "SizeConforming":  false
+    },
+    {
+        "File":  "inventory_feather-redesign-8.png",
+        "CanvasWidth":  48,
+        "CanvasHeight":  48,
+        "X":  4,
+        "Y":  1,
+        "VisibleWidth":  40,
+        "VisibleHeight":  45,
+        "Alpha":  [
+                      255,
+                      0
+                  ],
+        "SizeConforming":  false
+    },
+    {
+        "File":  "inventory_feather-redesign-9.png",
+        "CanvasWidth":  48,
+        "CanvasHeight":  48,
+        "X":  3,
+        "Y":  2,
+        "VisibleWidth":  42,
+        "VisibleHeight":  44,
+        "Alpha":  [
+                      255,
+                      0
+                  ],
+        "SizeConforming":  false
+    }
+]

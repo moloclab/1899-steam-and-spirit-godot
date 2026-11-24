@@ -1,0 +1,141 @@
+﻿[
+    {
+        "File":  "original.png",
+        "CanvasWidth":  40,
+        "CanvasHeight":  40,
+        "X":  0,
+        "Y":  0,
+        "VisibleWidth":  40,
+        "VisibleHeight":  40,
+        "Alpha":  [
+                      255
+                  ],
+        "SizeConforming":  false
+    },
+    {
+        "File":  "option-redesign.png",
+        "CanvasWidth":  48,
+        "CanvasHeight":  48,
+        "X":  4,
+        "Y":  1,
+        "VisibleWidth":  39,
+        "VisibleHeight":  46,
+        "Alpha":  [
+                      255,
+                      0
+                  ],
+        "SizeConforming":  false
+    },
+    {
+        "File":  "option-redesign-2.png",
+        "CanvasWidth":  48,
+        "CanvasHeight":  48,
+        "X":  4,
+        "Y":  3,
+        "VisibleWidth":  39,
+        "VisibleHeight":  42,
+        "Alpha":  [
+                      255,
+                      0
+                  ],
+        "SizeConforming":  false
+    },
+    {
+        "File":  "option-redesign-3.png",
+        "CanvasWidth":  48,
+        "CanvasHeight":  48,
+        "X":  4,
+        "Y":  2,
+        "VisibleWidth":  39,
+        "VisibleHeight":  44,
+        "Alpha":  [
+                      255,
+                      0
+                  ],
+        "SizeConforming":  false
+    },
+    {
+        "File":  "option-redesign-4.png",
+        "CanvasWidth":  48,
+        "CanvasHeight":  48,
+        "X":  4,
+        "Y":  1,
+        "VisibleWidth":  39,
+        "VisibleHeight":  46,
+        "Alpha":  [
+                      255,
+                      0
+                  ],
+        "SizeConforming":  false
+    },
+    {
+        "File":  "option-redesign-5.png",
+        "CanvasWidth":  48,
+        "CanvasHeight":  48,
+        "X":  14,
+        "Y":  13,
+        "VisibleWidth":  19,
+        "VisibleHeight":  21,
+        "Alpha":  [
+                      255,
+                      0
+                  ],
+        "SizeConforming":  false
+    },
+    {
+        "File":  "option-redesign-6.png",
+        "CanvasWidth":  48,
+        "CanvasHeight":  48,
+        "X":  14,
+        "Y":  12,
+        "VisibleWidth":  19,
+        "VisibleHeight":  24,
+        "Alpha":  [
+                      255,
+                      0
+                  ],
+        "SizeConforming":  false
+    },
+    {
+        "File":  "option-redesign-7.png",
+        "CanvasWidth":  48,
+        "CanvasHeight":  48,
+        "X":  14,
+        "Y":  13,
+        "VisibleWidth":  19,
+        "VisibleHeight":  22,
+        "Alpha":  [
+                      255,
+                      0
+                  ],
+        "SizeConforming":  false
+    },
+    {
+        "File":  "option-redesign-8.png",
+        "CanvasWidth":  48,
+        "CanvasHeight":  48,
+        "X":  14,
+        "Y":  12,
+        "VisibleWidth":  19,
+        "VisibleHeight":  23,
+        "Alpha":  [
+                      255,
+                      0
+                  ],
+        "SizeConforming":  false
+    },
+    {
+        "File":  "option-redesign-9.png",
+        "CanvasWidth":  48,
+        "CanvasHeight":  48,
+        "X":  14,
+        "Y":  12,
+        "VisibleWidth":  19,
+        "VisibleHeight":  23,
+        "Alpha":  [
+                      255,
+                      0
+                  ],
+        "SizeConforming":  false
+    }
+]

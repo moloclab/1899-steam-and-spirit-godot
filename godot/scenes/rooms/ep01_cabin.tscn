@@ -221,7 +221,7 @@ region_enabled = true
 region_rect = Rect2(218, 0, 500, 192)
 
 [node name="mapMagnet" type="Node2D" parent="." unique_id=9763528]
-position = Vector2(116, 32.666668)
+position = Vector2(116, 39.666668)
 script = ExtResource("hotspot_script")
 hotspot_id = "map"
 hit_size = Vector2(61, 79)

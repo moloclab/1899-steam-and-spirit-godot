@@ -1,0 +1,15 @@
+# Bussola dell'inventario: prova di redesign
+
+- Originale `godot/assets/graphics/ui/option.png`: canvas 40x40 completamente opaco. Alpha bounds 40x40, che includono lo sfondo marrone e non descrivono la sola bussola. SHA256 924062F177D0083F89FE1E037F0327FC88CAACEA812D511319A313DC79746284.
+- Sagoma stimata visivamente dal contorno esterno: (5,3)-(35,35), 31x33. Gli stessi estremi si ottengono cercando pixel scuri con soglie di media RGB 25, 30, 35 e 40. Il valore e un riferimento di sagoma corroborato dal contorno, non una misura alpha della sorgente. Non e stata modificata o segmentata la sorgente.
+- Soggetto: bussola antica in ottone, piccolo attacco superiore, quadrante chiaro, ago rosso rivolto in alto a destra e chiaro in basso a sinistra. Richiesta dall'utente come oggetto inventario: il risultato finale approvato andra centrato in PNG trasparente 50x50 senza ridimensionare i pixel.
+- Una chiamata Sprite Fusion generate_sprites_in_style, size 48, 15 crediti. Riferimenti ordinati: originale, Churchill, magnete inventario approvato (solo stile di oggetto e metallo), palette flessibile. Prompt e ID dei nove risultati in generation.json.
+- Nove PNG nativi 48x48 salvati accanto all'originale, senza modifiche ai risultati. V1 39x46; V2 39x42; V3 39x44; V4 39x46; V5 19x21; V6 19x24; V7 19x22; V8 19x23; V9 19x23. Bounds e valori alpha in measurements.json.
+- Rispetto alla sagoma stimata 31x33, l'intervallo 95-105% e 30-32 in larghezza e 32-34 in altezza. Nessuna variante rientra. Tutte entrano invece nel canvas finale 50x50; i due vincoli restano distinti.
+- Controllo visivo: mantengono la direzione dell'ago e i colori dominanti. Il contorno esterno scuro e presente, ma in particolare V1-V4 mostrano segmenti spessi o raddoppiati e ombre scure piu estese; nessuna dichiarazione di piena conformita del bordo. I risultati piu piccoli sono meno dettagliati e l'attacco superiore varia. Le varianti con anello aperto accentuano un dettaglio appena accennato nella sorgente.
+- comparison.png mostra originale, nove candidati e riferimenti approvati. Anteprime 2x su area inventario 50x50, dettagli nearest-neighbor 5x; non e una cattura del gioco. Nessun riferimento all'originale option.png e stato trovato in scene, risorse o script correnti, quindi nessuna integrazione nella scena e stata simulata.
+- Originale invariato, nessuna integrazione o rigenerazione automatica. In attesa della scelta dell'utente e di eventuali deroghe o correzioni richieste.
+
+## Integrazione V1
+
+L'utente ha scelto V1 dopo la segnalazione delle differenze dimensionali e del bordo. Integrata in godot/assets/graphics/ui/option.png su canvas trasparente 50x50, soggetto 39x46 centrato in (5,2), con 5/6 pixel di margine orizzontale e 2/2 verticale. Pixel RGBA del soggetto e trasparenza dei margini verificati dal PNG salvato. Nessun ridimensionamento o ridisegno del risultato scelto. Originale conservato in original.png e nativo in selected-v1-native.png. Nessun riferimento di scena aggiunto; varianti conservate.

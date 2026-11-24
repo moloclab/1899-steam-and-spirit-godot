@@ -133,7 +133,7 @@ Conservare i risultati nativi. Per la variante scelta è consentito eliminare so
 | --- | --- |
 | Personaggi statici | Identità, posa, proporzioni, quota dei piedi, orientamento e trattamento del volto. Usare la posa approvata come riferimento per le altre. |
 | Oggetti della stanza | Base, sagoma, attacchi e punti usati nelle interazioni. Conservare la posizione rispetto al fondale. |
-| Icone inventario e cursori | Riconoscibilità alla dimensione effettiva. Per i cursori preservare anche il punto attivo. |
+| Icone inventario e cursori | Riconoscibilità alla dimensione effettiva. Le icone inventario devono essere PNG trasparenti di 50×50 px, con il soggetto centrato senza ridimensionarne i pixel visibili. Per i cursori preservare anche il punto attivo. |
 | Stati dello stesso oggetto | Usare lo stato approvato come riferimento comune, mantenendo identiche le parti che non cambiano. |
 | Animazioni | Lavorare sui singoli fotogrammi con un riferimento comune. Conservare ordine, durate, ancoraggi e continuità dei volumi; verificare il ciclo in movimento. |
 | Fondali | Conservare prospettiva, pavimento, aperture e raccordi con gli oggetti. Validare un primo fondale nella scena prima di estendere il metodo agli altri. |
@@ -143,6 +143,10 @@ Non inviare uno spritesheet come se fosse un singolo soggetto da ridisegnare. Pe
 ## Integrare e riutilizzare
 
 Integrare un risultato dopo l'approvazione visiva e il controllo del bordo, verificando scala, offset, regioni degli atlas e riferimenti delle scene. Conservare una copia dell'originale e l'output nativo nei materiali della prova. Quando l'utente chiede di sostituire l'asset, rimuovere i soli margini trasparenti della variante scelta e salvarla al percorso originale, così le scene esistenti la utilizzano. Mantenere le coordinate di gioco e gli hotspot coerenti con l'ingombro approvato. Conservare la scala esistente salvo un adattamento motivato e verificato.
+
+Per le icone inventario, dopo il ritaglio dei margini nativi, collocare il soggetto al centro di un canvas trasparente di 50×50 px. Distribuire i margini in modo uguale; quando la differenza è dispari, lasciare il pixel aggiuntivo a destra o in basso. Questo canvas comune mantiene uniforme lo spazio occupato dalle icone e non modifica le dimensioni del soggetto.
+
+Applicare questa regola quando l'utente specifica nel prompt che si tratta di un oggetto dell'inventario. Il canvas finale di 50×50 px riguarda il PNG integrato nel gioco; conservare invariati i risultati nativi della generazione e continuare a misurare separatamente l'ingombro visibile del soggetto.
 
 Eliminare le varianti scartate e i relativi `.import` solo quando richiesto; controllare prima eventuali riferimenti nelle scene. La loro eliminazione riguarda i file locali, senza cancellare la libreria Sprite Fusion.
 

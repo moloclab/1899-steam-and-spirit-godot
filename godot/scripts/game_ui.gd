@@ -96,6 +96,23 @@ func _button(key: String, rect: Rect2, callback: Callable, parent: Node = self) 
 	parent.add_child(button)
 	return button
 
+## Condivide scala e stile delle icone, con sfondo configurabile per la bussola.
+func _inventory_button(texture: Texture2D, background: Color = Color.BLACK) -> Button:
+	var button := Button.new()
+	button.focus_mode = Control.FOCUS_NONE
+	var icon_image: Image = texture.get_image().duplicate()
+	icon_image.resize(icon_image.get_width() * 2, icon_image.get_height() * 2, Image.INTERPOLATE_NEAREST)
+	button.icon = ImageTexture.create_from_image(icon_image)
+	button.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+	var icon_background := StyleBoxFlat.new()
+	icon_background.bg_color = background
+	for style in ["normal", "hover", "pressed", "disabled", "focus"]:
+		button.add_theme_stylebox_override(style, icon_background)
+	button.add_theme_font_size_override("font_size", 32)
+	button.custom_minimum_size = Vector2(100, 100)
+	button.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+	return button
+
 ## Costruisce l'interfaccia nella risoluzione di riferimento del progetto.
 ## La stanza sta dentro world_panel; il dialogo segue chi parla e l'inventario resta fisso.
 func _ready() -> void:
@@ -105,8 +122,6 @@ func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
 	# La larghezza logica resta fissa mentre Godot scala l'intera UI sul dispositivo.
 	var view_width := float(ProjectSettings.get_setting("display/window/size/viewport_width"))
-	# Solo l'accesso agli aiuti resta visibile durante il gioco.
-	help_button = _button("common.ui.help", Rect2(view_width - 130, 20, 110, 38), _toggle_help)
 	# Il ritaglio nasconde le parti del corridoio fuori dalla finestra di gioco.
 	# I clic sono gestiti dal contenitore: le immagini della stanza sono nodi 2D, non pulsanti.
 	world_panel = Control.new()
@@ -119,9 +134,6 @@ func _ready() -> void:
 	world_panel.mouse_default_cursor_shape = Control.CURSOR_ARROW
 	world_panel.gui_input.connect(func(event: InputEvent): world_input.emit(event))
 	add_child(world_panel)
-	# L'ordine dei nodi assegna i clic ai pulsanti prima della stanza; lo z_index regola solo il disegno.
-	move_child(help_button, get_child_count() - 1)
-	help_button.z_index = 3
 	speaker_label = _label("common.speaker.churchill", Rect2(40, 506, 700, 20), 32)
 	speaker_label.add_theme_color_override("font_color", GOLD)
 	# Il nome resta disponibile alla localizzazione; la battuta identifica chi parla tramite la posizione.
@@ -141,23 +153,47 @@ func _ready() -> void:
 	speech_label.add_theme_constant_override("line_spacing", 0)
 	# La fascia opaca usa il marrone scuro #120F0E della palette e resta separata dalla stanza.
 	var view_height := float(ProjectSettings.get_setting("display/window/size/viewport_height"))
-	var inventory_background := _panel(Rect2(0, world_height, view_width, view_height - world_height), Color("120F0E"))
+	var inventory_background := _panel(Rect2(0, world_height, view_width, view_height - world_height), Color("0B0908"))
 	inventory_background.z_index = 3
+	# La bussola resta nel primo spazio anche con inventario vuoto o scorrimento degli oggetti.
+	# Lo sfondo trasparente lascia visibile la fascia inventario sotto la bussola.
+	help_button = _inventory_button(preload("res://assets/graphics/ui/option.png"), Color.TRANSPARENT)
+	help_button.position = Vector2(20, world_height + 19)
+	help_button.z_index = 3
+	_localize(help_button, "common.ui.help", "tooltip_text")
+	help_button.pressed.connect(_toggle_help)
+	add_child(help_button)
 	inventory_row = HBoxContainer.new()
 	inventory_row.position = Vector2.ZERO
-	inventory_row.size = Vector2(850, 52)
+	# Le icone 50×50 occupano 100 px alla scala di visualizzazione 2×.
+	inventory_row.size = Vector2(850, 100)
 	inventory_row.add_theme_constant_override("separation", 10)
 	inventory_scroll = ScrollContainer.new()
 	# Il contenitore lascia visibile lo sfondo dedicato della fascia inventario.
 	inventory_scroll.add_theme_stylebox_override("panel", StyleBoxEmpty.new())
-	# Le icone stanno sopra la fascia opaca, fuori dall'area della stanza e della patina.
+	# Le icone stanno sopra la fascia opaca e sotto la patina dell'inventario.
 	inventory_scroll.z_index = 3
-	# Conserva due pixel di margine interno rispetto all'inizio della fascia.
-	inventory_scroll.position = Vector2(28, world_height + 2)
-	inventory_scroll.size = Vector2(view_width - 56, 68)
+	# Riserva il primo spazio fisso alla bussola e mantiene la separazione comune di 10 px.
+	inventory_scroll.position = help_button.position + Vector2(110, 0)
+	# Lascia spazio sotto le icone anche alla barra di scorrimento orizzontale.
+	inventory_scroll.size = Vector2(view_width - 166, 120)
 	inventory_scroll.vertical_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
 	add_child(inventory_scroll)
 	inventory_scroll.add_child(inventory_row)
+	# La stessa patina della stanza si sovrappone anche alla fascia e alle icone, lasciando passare i clic.
+	var inventory_grime := TextureRect.new()
+	inventory_grime.name = "InventoryGrime"
+	inventory_grime.texture = preload("res://assets/graphics/ui/hover.png")
+	inventory_grime.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	inventory_grime.stretch_mode = TextureRect.STRETCH_SCALE
+	inventory_grime.position = inventory_background.position
+	inventory_grime.size = inventory_background.size
+	inventory_grime.z_index = 4
+	inventory_grime.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	var grime_material := CanvasItemMaterial.new()
+	grime_material.blend_mode = CanvasItemMaterial.BLEND_MODE_MUL
+	inventory_grime.material = grime_material
+	add_child(inventory_grime)
 	# Il pannello è figlio della UI, così mantiene dimensioni fisse e non viene ritagliato dalla stanza.
 	action_menu = ActionMenu.new()
 	action_menu.texts = texts
@@ -252,16 +288,7 @@ func refresh_inventory(inventory: Array[String], _selected: String, _texts) -> v
 		child.queue_free()
 	for item in inventory:
 		var definition: Resource = Items.ITEMS[item]
-		var button := Button.new()
-		button.focus_mode = Control.FOCUS_NONE
-		# Nell'inventario l'oggetto viene mostrato solo tramite la sua icona.
-		button.icon = definition.icon
-		# Le icone restano senza riquadro anche al passaggio del mouse e durante il clic.
-		for style in ["normal", "hover", "pressed", "disabled", "focus"]:
-			button.add_theme_stylebox_override(style, StyleBoxEmpty.new())
-		button.add_theme_font_size_override("font_size", 32)
-		button.custom_minimum_size = Vector2(52, 52)
-		button.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+		var button := _inventory_button(definition.icon)
 		button.pressed.connect(func(): inventory_pressed.emit(item, button))
 		button.gui_input.connect(func(event: InputEvent):
 			if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_RIGHT:

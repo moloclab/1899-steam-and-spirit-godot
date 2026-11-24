@@ -1,0 +1,47 @@
+﻿[
+    {
+        "File":  "inventory_bottle.png",
+        "Canvas":  "50x50",
+        "VisibleWidth":  16,
+        "VisibleHeight":  33,
+        "X":  17,
+        "Y":  8,
+        "RgbaVerified":  true
+    },
+    {
+        "File":  "inventory_feather.png",
+        "Canvas":  "50x50",
+        "VisibleWidth":  42,
+        "VisibleHeight":  44,
+        "X":  4,
+        "Y":  3,
+        "RgbaVerified":  true
+    },
+    {
+        "File":  "inventory_key.png",
+        "Canvas":  "50x50",
+        "VisibleWidth":  13,
+        "VisibleHeight":  32,
+        "X":  18,
+        "Y":  9,
+        "RgbaVerified":  true
+    },
+    {
+        "File":  "inventory_magnet.png",
+        "Canvas":  "50x50",
+        "VisibleWidth":  15,
+        "VisibleHeight":  16,
+        "X":  17,
+        "Y":  17,
+        "RgbaVerified":  true
+    },
+    {
+        "File":  "inventory_magnet_feather.png",
+        "Canvas":  "50x50",
+        "VisibleWidth":  32,
+        "VisibleHeight":  32,
+        "X":  9,
+        "Y":  9,
+        "RgbaVerified":  true
+    }
+]

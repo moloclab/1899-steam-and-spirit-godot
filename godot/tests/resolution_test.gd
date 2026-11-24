@@ -41,6 +41,11 @@ func _run() -> void:
 	game.set_process(false)
 	while game.sequences.busy:
 		game.sequences.advance_dialogue()
+	# Un inventario lungo verifica che la bussola resti raggiungibile anche scorrendo gli oggetti.
+	var many: Array[String] = []
+	for i in 30:
+		many.append("ep01_cabin_bottle")
+	game.ui.refresh_inventory(many, "", game.texts)
 	for resolution in [Vector2i(960, 540), Vector2i(1280, 720), Vector2i(1920, 1080), Vector2i(2400, 1080), Vector2i(1440, 1080)]:
 		root.size = resolution
 		await process_frame
@@ -55,6 +60,11 @@ func _run() -> void:
 		check(transform.origin.is_equal_approx(margins), context + ": bande simmetriche")
 		for control in [game.ui.world_panel, game.ui.inventory_scroll, game.ui.help_button, game.ui.music_button]:
 			check(logical.encloses(control.get_global_rect()), context + ": controllo contenuto")
+		var compass_rect: Rect2 = game.ui.help_button.get_global_rect()
+		check(compass_rect.end.x < game.ui.inventory_scroll.get_global_rect().position.x and is_equal_approx(compass_rect.position.y, game.ui.inventory_scroll.position.y), context + ": bussola nel primo spazio separato dagli oggetti")
+		game.ui.inventory_scroll.scroll_horizontal = 200
+		await process_frame
+		check(game.ui.help_button.get_global_rect() == compass_rect, context + ": bussola fissa durante lo scorrimento")
 		await _click(game.ui.help_button)
 		check(game.ui.help_panel.visible, context + ": clic scalato apre il menu")
 		check(game.ui.help_panel.get_global_rect().is_equal_approx(logical), context + ": velo su tutta la UI")

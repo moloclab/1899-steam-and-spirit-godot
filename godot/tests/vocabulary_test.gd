@@ -48,7 +48,7 @@ func _run() -> void:
 	check(game.texts.language == "en" and game.ui.language_button.text == "Language: English", "Pulsante ritorna all'inglese")
 	check(game.ui.help_panel.visible, "Cambio lingua conserva il pannello aperto")
 	check(game.ui.save_buttons[0].text == "Save" and game.ui.save_buttons[1].text == "Load", "Pulsanti aiuti inglesi")
-	check(game.ui.help_button.text == "Help" and game.ui.help_close.text == "Back to game", "Apertura e chiusura aiuti inglesi")
+	check(game.ui.help_button.text.is_empty() and game.ui.help_button.tooltip_text == "Help" and game.ui.help_close.text == "Back to game", "Bussola senza etichetta e tooltip aiuti inglese")
 	check(game.ui.reset_button.text == "Restart" and game.ui.reset_button.tooltip_text.begins_with("Restart the prototype."), "Reset e tooltip inglesi")
 	check(has_label(game.ui.help_panel, "CONTROLS"), "Titolo aiuti inglese")
 	check(has_label(game.ui.help_panel, game.texts.entries["common.ui.help_commands"].en), "Istruzioni complete inglesi")

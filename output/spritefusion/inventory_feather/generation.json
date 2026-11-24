@@ -1,0 +1,223 @@
+﻿{
+    "inputs":  [
+                   "godot/assets/graphics/ep01_cabin/inventory_feather.png",
+                   "godot/assets/graphics/characters/churchill/churchill-stand.png",
+                   "godot/assets/graphics/ep01_cabin/feather.png",
+                   "godot/palette/1899-base-128-swatches.png"
+               ],
+    "size":  48,
+    "original":  {
+                     "CanvasWidth":  40,
+                     "CanvasHeight":  40,
+                     "X":  4,
+                     "Y":  4,
+                     "VisibleWidth":  32,
+                     "VisibleHeight":  32,
+                     "Alpha":  [
+                                   255,
+                                   0
+                               ]
+                 },
+    "originalSha256":  "ABD9F11799B9BB913F3D51EAA754F9024207F0948588BBEB6D9F0D5E2BA30683",
+    "result":  {
+                   "request_id":  "req_1bb16a07-2775-4ce4-bd41-cd8d6b551bd2",
+                   "status":  "succeeded",
+                   "output_count":  9,
+                   "outputs":  [
+                                   {
+                                       "id":  "52e43aad-795a-4a40-9c13-04c01c1a3254",
+                                       "type":  "image",
+                                       "createdAt":  "2026-11-24T14:06:59.095Z",
+                                       "updatedAt":  "2026-11-24T14:06:59.095Z",
+                                       "prompt":  "Redesign an inventory icon of a goose-quill writing pen with a pointed writing nib. The first reference is the actual subject and must determine its recognizable silhouette, diagonal orientation, proportions and dominant colors: a long warm ivory and cream feather extending towards the upper left, with its central shaft continuing down towards a small pointed dark brown writing nib at the lower right. This is a single loose writing quill, without an inkwell or magnet. Keep the same gently curved tapering feather shape and readable diagonal composition, centered and occupying about two thirds of the square in both width and height, leaving clear empty margins. Refine the central rachis, purposeful fine feather barbs and subtle cream/beige shading, with a legible pointed nib, without adding decorations or changing the direction. Use the second reference, approved Churchill, only for the degree of fine detail, restrained shading, deliberate pixel clusters and very dark outline treatment; do not transfer anatomy, clothing, facial features or character colors. The third reference, approved quill and inkwell, guides the quill\u0027s ivory material and the small-object outline style only. Do not copy its inkwell or its upright orientation. The fourth reference shows the shared game palette as a flexible base for colors only; allow harmonious additional shades for material and readability rather than exact matching. Give the entire subject a consistent continuous dark outline exactly one final-image pixel thick, with stepped diagonal edges, no doubled border, blur, antialiasing or halo. Keep internal lines subtle and subordinate to the outline. Preserve the source transparency treatment, with binary alpha.",
+                                       "width":  48,
+                                       "height":  48,
+                                       "assetUrl":  "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/52e43aad-795a-4a40-9c13-04c01c1a3254/image.png?v=1795529219095",
+                                       "style":  "default",
+                                       "tags":  [
+
+                                                ],
+                                       "contentType":  "image/png",
+                                       "batchId":  "32d6c13e-28dc-443e-8d93-3c5c93635bcd",
+                                       "batchIndex":  0,
+                                       "batchSize":  9,
+                                       "action":  {
+                                                      "kind":  "same-style"
+                                                  }
+                                   },
+                                   {
+                                       "id":  "4994a925-0e11-4cad-ac11-ab210ac35da0",
+                                       "type":  "image",
+                                       "createdAt":  "2026-11-24T14:07:00.049Z",
+                                       "updatedAt":  "2026-11-24T14:07:00.049Z",
+                                       "prompt":  "Redesign an inventory icon of a goose-quill writing pen with a pointed writing nib. The first reference is the actual subject and must determine its recognizable silhouette, diagonal orientation, proportions and dominant colors: a long warm ivory and cream feather extending towards the upper left, with its central shaft continuing down towards a small pointed dark brown writing nib at the lower right. This is a single loose writing quill, without an inkwell or magnet. Keep the same gently curved tapering feather shape and readable diagonal composition, centered and occupying about two thirds of the square in both width and height, leaving clear empty margins. Refine the central rachis, purposeful fine feather barbs and subtle cream/beige shading, with a legible pointed nib, without adding decorations or changing the direction. Use the second reference, approved Churchill, only for the degree of fine detail, restrained shading, deliberate pixel clusters and very dark outline treatment; do not transfer anatomy, clothing, facial features or character colors. The third reference, approved quill and inkwell, guides the quill\u0027s ivory material and the small-object outline style only. Do not copy its inkwell or its upright orientation. The fourth reference shows the shared game palette as a flexible base for colors only; allow harmonious additional shades for material and readability rather than exact matching. Give the entire subject a consistent continuous dark outline exactly one final-image pixel thick, with stepped diagonal edges, no doubled border, blur, antialiasing or halo. Keep internal lines subtle and subordinate to the outline. Preserve the source transparency treatment, with binary alpha.",
+                                       "width":  48,
+                                       "height":  48,
+                                       "assetUrl":  "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/4994a925-0e11-4cad-ac11-ab210ac35da0/image.png?v=1795529220049",
+                                       "style":  "default",
+                                       "tags":  [
+
+                                                ],
+                                       "contentType":  "image/png",
+                                       "batchId":  "32d6c13e-28dc-443e-8d93-3c5c93635bcd",
+                                       "batchIndex":  1,
+                                       "batchSize":  9,
+                                       "action":  {
+                                                      "kind":  "same-style"
+                                                  }
+                                   },
+                                   {
+                                       "id":  "437c6495-5ad3-49c0-9a13-3b8866836983",
+                                       "type":  "image",
+                                       "createdAt":  "2026-11-24T14:07:01.001Z",
+                                       "updatedAt":  "2026-11-24T14:07:01.001Z",
+                                       "prompt":  "Redesign an inventory icon of a goose-quill writing pen with a pointed writing nib. The first reference is the actual subject and must determine its recognizable silhouette, diagonal orientation, proportions and dominant colors: a long warm ivory and cream feather extending towards the upper left, with its central shaft continuing down towards a small pointed dark brown writing nib at the lower right. This is a single loose writing quill, without an inkwell or magnet. Keep the same gently curved tapering feather shape and readable diagonal composition, centered and occupying about two thirds of the square in both width and height, leaving clear empty margins. Refine the central rachis, purposeful fine feather barbs and subtle cream/beige shading, with a legible pointed nib, without adding decorations or changing the direction. Use the second reference, approved Churchill, only for the degree of fine detail, restrained shading, deliberate pixel clusters and very dark outline treatment; do not transfer anatomy, clothing, facial features or character colors. The third reference, approved quill and inkwell, guides the quill\u0027s ivory material and the small-object outline style only. Do not copy its inkwell or its upright orientation. The fourth reference shows the shared game palette as a flexible base for colors only; allow harmonious additional shades for material and readability rather than exact matching. Give the entire subject a consistent continuous dark outline exactly one final-image pixel thick, with stepped diagonal edges, no doubled border, blur, antialiasing or halo. Keep internal lines subtle and subordinate to the outline. Preserve the source transparency treatment, with binary alpha.",
+                                       "width":  48,
+                                       "height":  48,
+                                       "assetUrl":  "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/437c6495-5ad3-49c0-9a13-3b8866836983/image.png?v=1795529221001",
+                                       "style":  "default",
+                                       "tags":  [
+
+                                                ],
+                                       "contentType":  "image/png",
+                                       "batchId":  "32d6c13e-28dc-443e-8d93-3c5c93635bcd",
+                                       "batchIndex":  2,
+                                       "batchSize":  9,
+                                       "action":  {
+                                                      "kind":  "same-style"
+                                                  }
+                                   },
+                                   {
+                                       "id":  "fcd7daeb-c75e-46ec-9fc6-60576a8ef1d6",
+                                       "type":  "image",
+                                       "createdAt":  "2026-11-24T14:07:01.897Z",
+                                       "updatedAt":  "2026-11-24T14:07:01.897Z",
+                                       "prompt":  "Redesign an inventory icon of a goose-quill writing pen with a pointed writing nib. The first reference is the actual subject and must determine its recognizable silhouette, diagonal orientation, proportions and dominant colors: a long warm ivory and cream feather extending towards the upper left, with its central shaft continuing down towards a small pointed dark brown writing nib at the lower right. This is a single loose writing quill, without an inkwell or magnet. Keep the same gently curved tapering feather shape and readable diagonal composition, centered and occupying about two thirds of the square in both width and height, leaving clear empty margins. Refine the central rachis, purposeful fine feather barbs and subtle cream/beige shading, with a legible pointed nib, without adding decorations or changing the direction. Use the second reference, approved Churchill, only for the degree of fine detail, restrained shading, deliberate pixel clusters and very dark outline treatment; do not transfer anatomy, clothing, facial features or character colors. The third reference, approved quill and inkwell, guides the quill\u0027s ivory material and the small-object outline style only. Do not copy its inkwell or its upright orientation. The fourth reference shows the shared game palette as a flexible base for colors only; allow harmonious additional shades for material and readability rather than exact matching. Give the entire subject a consistent continuous dark outline exactly one final-image pixel thick, with stepped diagonal edges, no doubled border, blur, antialiasing or halo. Keep internal lines subtle and subordinate to the outline. Preserve the source transparency treatment, with binary alpha.",
+                                       "width":  48,
+                                       "height":  48,
+                                       "assetUrl":  "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/fcd7daeb-c75e-46ec-9fc6-60576a8ef1d6/image.png?v=1795529221897",
+                                       "style":  "default",
+                                       "tags":  [
+
+                                                ],
+                                       "contentType":  "image/png",
+                                       "batchId":  "32d6c13e-28dc-443e-8d93-3c5c93635bcd",
+                                       "batchIndex":  3,
+                                       "batchSize":  9,
+                                       "action":  {
+                                                      "kind":  "same-style"
+                                                  }
+                                   },
+                                   {
+                                       "id":  "44320665-caeb-48a1-a9dc-2a9de11a1b0e",
+                                       "type":  "image",
+                                       "createdAt":  "2026-11-24T14:07:02.774Z",
+                                       "updatedAt":  "2026-11-24T14:07:02.774Z",
+                                       "prompt":  "Redesign an inventory icon of a goose-quill writing pen with a pointed writing nib. The first reference is the actual subject and must determine its recognizable silhouette, diagonal orientation, proportions and dominant colors: a long warm ivory and cream feather extending towards the upper left, with its central shaft continuing down towards a small pointed dark brown writing nib at the lower right. This is a single loose writing quill, without an inkwell or magnet. Keep the same gently curved tapering feather shape and readable diagonal composition, centered and occupying about two thirds of the square in both width and height, leaving clear empty margins. Refine the central rachis, purposeful fine feather barbs and subtle cream/beige shading, with a legible pointed nib, without adding decorations or changing the direction. Use the second reference, approved Churchill, only for the degree of fine detail, restrained shading, deliberate pixel clusters and very dark outline treatment; do not transfer anatomy, clothing, facial features or character colors. The third reference, approved quill and inkwell, guides the quill\u0027s ivory material and the small-object outline style only. Do not copy its inkwell or its upright orientation. The fourth reference shows the shared game palette as a flexible base for colors only; allow harmonious additional shades for material and readability rather than exact matching. Give the entire subject a consistent continuous dark outline exactly one final-image pixel thick, with stepped diagonal edges, no doubled border, blur, antialiasing or halo. Keep internal lines subtle and subordinate to the outline. Preserve the source transparency treatment, with binary alpha.",
+                                       "width":  48,
+                                       "height":  48,
+                                       "assetUrl":  "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/44320665-caeb-48a1-a9dc-2a9de11a1b0e/image.png?v=1795529222774",
+                                       "style":  "default",
+                                       "tags":  [
+
+                                                ],
+                                       "contentType":  "image/png",
+                                       "batchId":  "32d6c13e-28dc-443e-8d93-3c5c93635bcd",
+                                       "batchIndex":  4,
+                                       "batchSize":  9,
+                                       "action":  {
+                                                      "kind":  "same-style"
+                                                  }
+                                   },
+                                   {
+                                       "id":  "47075747-2d02-47fe-b916-1719818ca45e",
+                                       "type":  "image",
+                                       "createdAt":  "2026-11-24T14:07:03.662Z",
+                                       "updatedAt":  "2026-11-24T14:07:03.662Z",
+                                       "prompt":  "Redesign an inventory icon of a goose-quill writing pen with a pointed writing nib. The first reference is the actual subject and must determine its recognizable silhouette, diagonal orientation, proportions and dominant colors: a long warm ivory and cream feather extending towards the upper left, with its central shaft continuing down towards a small pointed dark brown writing nib at the lower right. This is a single loose writing quill, without an inkwell or magnet. Keep the same gently curved tapering feather shape and readable diagonal composition, centered and occupying about two thirds of the square in both width and height, leaving clear empty margins. Refine the central rachis, purposeful fine feather barbs and subtle cream/beige shading, with a legible pointed nib, without adding decorations or changing the direction. Use the second reference, approved Churchill, only for the degree of fine detail, restrained shading, deliberate pixel clusters and very dark outline treatment; do not transfer anatomy, clothing, facial features or character colors. The third reference, approved quill and inkwell, guides the quill\u0027s ivory material and the small-object outline style only. Do not copy its inkwell or its upright orientation. The fourth reference shows the shared game palette as a flexible base for colors only; allow harmonious additional shades for material and readability rather than exact matching. Give the entire subject a consistent continuous dark outline exactly one final-image pixel thick, with stepped diagonal edges, no doubled border, blur, antialiasing or halo. Keep internal lines subtle and subordinate to the outline. Preserve the source transparency treatment, with binary alpha.",
+                                       "width":  48,
+                                       "height":  48,
+                                       "assetUrl":  "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/47075747-2d02-47fe-b916-1719818ca45e/image.png?v=1795529223662",
+                                       "style":  "default",
+                                       "tags":  [
+
+                                                ],
+                                       "contentType":  "image/png",
+                                       "batchId":  "32d6c13e-28dc-443e-8d93-3c5c93635bcd",
+                                       "batchIndex":  5,
+                                       "batchSize":  9,
+                                       "action":  {
+                                                      "kind":  "same-style"
+                                                  }
+                                   },
+                                   {
+                                       "id":  "34b9ae85-53c0-4402-8732-bf89ea07a195",
+                                       "type":  "image",
+                                       "createdAt":  "2026-11-24T14:07:04.569Z",
+                                       "updatedAt":  "2026-11-24T14:07:04.569Z",
+                                       "prompt":  "Redesign an inventory icon of a goose-quill writing pen with a pointed writing nib. The first reference is the actual subject and must determine its recognizable silhouette, diagonal orientation, proportions and dominant colors: a long warm ivory and cream feather extending towards the upper left, with its central shaft continuing down towards a small pointed dark brown writing nib at the lower right. This is a single loose writing quill, without an inkwell or magnet. Keep the same gently curved tapering feather shape and readable diagonal composition, centered and occupying about two thirds of the square in both width and height, leaving clear empty margins. Refine the central rachis, purposeful fine feather barbs and subtle cream/beige shading, with a legible pointed nib, without adding decorations or changing the direction. Use the second reference, approved Churchill, only for the degree of fine detail, restrained shading, deliberate pixel clusters and very dark outline treatment; do not transfer anatomy, clothing, facial features or character colors. The third reference, approved quill and inkwell, guides the quill\u0027s ivory material and the small-object outline style only. Do not copy its inkwell or its upright orientation. The fourth reference shows the shared game palette as a flexible base for colors only; allow harmonious additional shades for material and readability rather than exact matching. Give the entire subject a consistent continuous dark outline exactly one final-image pixel thick, with stepped diagonal edges, no doubled border, blur, antialiasing or halo. Keep internal lines subtle and subordinate to the outline. Preserve the source transparency treatment, with binary alpha.",
+                                       "width":  48,
+                                       "height":  48,
+                                       "assetUrl":  "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/34b9ae85-53c0-4402-8732-bf89ea07a195/image.png?v=1795529224569",
+                                       "style":  "default",
+                                       "tags":  [
+
+                                                ],
+                                       "contentType":  "image/png",
+                                       "batchId":  "32d6c13e-28dc-443e-8d93-3c5c93635bcd",
+                                       "batchIndex":  6,
+                                       "batchSize":  9,
+                                       "action":  {
+                                                      "kind":  "same-style"
+                                                  }
+                                   },
+                                   {
+                                       "id":  "c0efeba3-3b18-448b-8686-68e335119639",
+                                       "type":  "image",
+                                       "createdAt":  "2026-11-24T14:07:05.343Z",
+                                       "updatedAt":  "2026-11-24T14:07:05.343Z",
+                                       "prompt":  "Redesign an inventory icon of a goose-quill writing pen with a pointed writing nib. The first reference is the actual subject and must determine its recognizable silhouette, diagonal orientation, proportions and dominant colors: a long warm ivory and cream feather extending towards the upper left, with its central shaft continuing down towards a small pointed dark brown writing nib at the lower right. This is a single loose writing quill, without an inkwell or magnet. Keep the same gently curved tapering feather shape and readable diagonal composition, centered and occupying about two thirds of the square in both width and height, leaving clear empty margins. Refine the central rachis, purposeful fine feather barbs and subtle cream/beige shading, with a legible pointed nib, without adding decorations or changing the direction. Use the second reference, approved Churchill, only for the degree of fine detail, restrained shading, deliberate pixel clusters and very dark outline treatment; do not transfer anatomy, clothing, facial features or character colors. The third reference, approved quill and inkwell, guides the quill\u0027s ivory material and the small-object outline style only. Do not copy its inkwell or its upright orientation. The fourth reference shows the shared game palette as a flexible base for colors only; allow harmonious additional shades for material and readability rather than exact matching. Give the entire subject a consistent continuous dark outline exactly one final-image pixel thick, with stepped diagonal edges, no doubled border, blur, antialiasing or halo. Keep internal lines subtle and subordinate to the outline. Preserve the source transparency treatment, with binary alpha.",
+                                       "width":  48,
+                                       "height":  48,
+                                       "assetUrl":  "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/c0efeba3-3b18-448b-8686-68e335119639/image.png?v=1795529225343",
+                                       "style":  "default",
+                                       "tags":  [
+
+                                                ],
+                                       "contentType":  "image/png",
+                                       "batchId":  "32d6c13e-28dc-443e-8d93-3c5c93635bcd",
+                                       "batchIndex":  7,
+                                       "batchSize":  9,
+                                       "action":  {
+                                                      "kind":  "same-style"
+                                                  }
+                                   },
+                                   {
+                                       "id":  "0272b7e3-b74a-4acc-bc17-75fa4d54508c",
+                                       "type":  "image",
+                                       "createdAt":  "2026-11-24T14:07:06.260Z",
+                                       "updatedAt":  "2026-11-24T14:07:06.260Z",
+                                       "prompt":  "Redesign an inventory icon of a goose-quill writing pen with a pointed writing nib. The first reference is the actual subject and must determine its recognizable silhouette, diagonal orientation, proportions and dominant colors: a long warm ivory and cream feather extending towards the upper left, with its central shaft continuing down towards a small pointed dark brown writing nib at the lower right. This is a single loose writing quill, without an inkwell or magnet. Keep the same gently curved tapering feather shape and readable diagonal composition, centered and occupying about two thirds of the square in both width and height, leaving clear empty margins. Refine the central rachis, purposeful fine feather barbs and subtle cream/beige shading, with a legible pointed nib, without adding decorations or changing the direction. Use the second reference, approved Churchill, only for the degree of fine detail, restrained shading, deliberate pixel clusters and very dark outline treatment; do not transfer anatomy, clothing, facial features or character colors. The third reference, approved quill and inkwell, guides the quill\u0027s ivory material and the small-object outline style only. Do not copy its inkwell or its upright orientation. The fourth reference shows the shared game palette as a flexible base for colors only; allow harmonious additional shades for material and readability rather than exact matching. Give the entire subject a consistent continuous dark outline exactly one final-image pixel thick, with stepped diagonal edges, no doubled border, blur, antialiasing or halo. Keep internal lines subtle and subordinate to the outline. Preserve the source transparency treatment, with binary alpha.",
+                                       "width":  48,
+                                       "height":  48,
+                                       "assetUrl":  "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/0272b7e3-b74a-4acc-bc17-75fa4d54508c/image.png?v=1795529226260",
+                                       "style":  "default",
+                                       "tags":  [
+
+                                                ],
+                                       "contentType":  "image/png",
+                                       "batchId":  "32d6c13e-28dc-443e-8d93-3c5c93635bcd",
+                                       "batchIndex":  8,
+                                       "batchSize":  9,
+                                       "action":  {
+                                                      "kind":  "same-style"
+                                                  }
+                                   }
+                               ],
+                   "credits":  {
+                                   "used":  15,
+                                   "remaining":  175
+                               }
+               },
+    "decision":  "User selected V7 and changed inventory canvas to 50x50, accepting its visible size 42x44 and reversed diagonal. Integrated at original path, subject centered at (4,3), without resizing. Original and native preserved."
+}

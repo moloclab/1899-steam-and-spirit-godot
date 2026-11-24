@@ -1,0 +1,210 @@
+﻿{
+    "inputs":  [
+                   "godot/assets/graphics/ep01_cabin/inventory_magnet.png",
+                   "godot/assets/graphics/characters/churchill/churchill-stand.png",
+                   "godot/assets/graphics/ep01_cabin/feather.png",
+                   "godot/palette/1899-base-128-swatches.png"
+               ],
+    "size":  48,
+    "result":  {
+                   "request_id":  "req_1d785b8d-aa86-4d28-a2c7-20295c8dd684",
+                   "status":  "succeeded",
+                   "output_count":  9,
+                   "outputs":  [
+                                   {
+                                       "id":  "fb71a18e-637f-4494-9205-f86343ff1106",
+                                       "type":  "image",
+                                       "createdAt":  "2026-11-24T13:50:59.301Z",
+                                       "updatedAt":  "2026-11-24T13:50:59.301Z",
+                                       "prompt":  "Redesign the inventory icon of a small cylindrical magnet with a single red circular top face and a short dark gray metallic cylindrical body. The first reference is the actual subject: preserve its upright orientation, squat proportions, elliptical red top seen from slightly above, plain gray sides, silhouette and dominant red/gray colors. It is a solid cylinder, no hole, no horseshoe, no handle, no letters or additional components. Keep the subject small and centered, occupying just under one third of the square composition in both width and height, with generous empty margins as in the original. The second reference, approved Churchill, guides only finer deliberate pixel clusters, restrained material shading and the dark outline, never anatomy, clothing or character colors. The third reference, approved quill and inkwell, guides small-object detail and outline only; do not add a feather or inkwell. Give the magnet a continuous very dark outer outline exactly one final-image pixel thick, stepped diagonals, no doubled borders, blur, antialiasing or halo. Keep internal lines subordinate and the small red face clearly readable. Refine metallic curvature through subtle gray highlights and shadows and restrained shading on the red face without changing the design. Preserve the source transparency treatment. The fourth reference contains the game\u0027s shared base palette and guides colors only; additional harmonious shades are allowed and exact matching is not required.",
+                                       "width":  48,
+                                       "height":  48,
+                                       "assetUrl":  "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/fb71a18e-637f-4494-9205-f86343ff1106/image.png?v=1795528259301",
+                                       "style":  "default",
+                                       "tags":  [
+
+                                                ],
+                                       "contentType":  "image/png",
+                                       "batchId":  "e77a7e64-59a8-4079-81c3-3a9e05453a9e",
+                                       "batchIndex":  0,
+                                       "batchSize":  9,
+                                       "action":  {
+                                                      "kind":  "same-style"
+                                                  }
+                                   },
+                                   {
+                                       "id":  "1eaf97ee-b38b-4804-9a7b-628b2ab4c4c4",
+                                       "type":  "image",
+                                       "createdAt":  "2026-11-24T13:51:00.240Z",
+                                       "updatedAt":  "2026-11-24T13:51:00.240Z",
+                                       "prompt":  "Redesign the inventory icon of a small cylindrical magnet with a single red circular top face and a short dark gray metallic cylindrical body. The first reference is the actual subject: preserve its upright orientation, squat proportions, elliptical red top seen from slightly above, plain gray sides, silhouette and dominant red/gray colors. It is a solid cylinder, no hole, no horseshoe, no handle, no letters or additional components. Keep the subject small and centered, occupying just under one third of the square composition in both width and height, with generous empty margins as in the original. The second reference, approved Churchill, guides only finer deliberate pixel clusters, restrained material shading and the dark outline, never anatomy, clothing or character colors. The third reference, approved quill and inkwell, guides small-object detail and outline only; do not add a feather or inkwell. Give the magnet a continuous very dark outer outline exactly one final-image pixel thick, stepped diagonals, no doubled borders, blur, antialiasing or halo. Keep internal lines subordinate and the small red face clearly readable. Refine metallic curvature through subtle gray highlights and shadows and restrained shading on the red face without changing the design. Preserve the source transparency treatment. The fourth reference contains the game\u0027s shared base palette and guides colors only; additional harmonious shades are allowed and exact matching is not required.",
+                                       "width":  48,
+                                       "height":  48,
+                                       "assetUrl":  "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/1eaf97ee-b38b-4804-9a7b-628b2ab4c4c4/image.png?v=1795528260240",
+                                       "style":  "default",
+                                       "tags":  [
+
+                                                ],
+                                       "contentType":  "image/png",
+                                       "batchId":  "e77a7e64-59a8-4079-81c3-3a9e05453a9e",
+                                       "batchIndex":  1,
+                                       "batchSize":  9,
+                                       "action":  {
+                                                      "kind":  "same-style"
+                                                  }
+                                   },
+                                   {
+                                       "id":  "fbee3f77-a032-4cda-934c-5337b96a9d0d",
+                                       "type":  "image",
+                                       "createdAt":  "2026-11-24T13:51:01.210Z",
+                                       "updatedAt":  "2026-11-24T13:51:01.210Z",
+                                       "prompt":  "Redesign the inventory icon of a small cylindrical magnet with a single red circular top face and a short dark gray metallic cylindrical body. The first reference is the actual subject: preserve its upright orientation, squat proportions, elliptical red top seen from slightly above, plain gray sides, silhouette and dominant red/gray colors. It is a solid cylinder, no hole, no horseshoe, no handle, no letters or additional components. Keep the subject small and centered, occupying just under one third of the square composition in both width and height, with generous empty margins as in the original. The second reference, approved Churchill, guides only finer deliberate pixel clusters, restrained material shading and the dark outline, never anatomy, clothing or character colors. The third reference, approved quill and inkwell, guides small-object detail and outline only; do not add a feather or inkwell. Give the magnet a continuous very dark outer outline exactly one final-image pixel thick, stepped diagonals, no doubled borders, blur, antialiasing or halo. Keep internal lines subordinate and the small red face clearly readable. Refine metallic curvature through subtle gray highlights and shadows and restrained shading on the red face without changing the design. Preserve the source transparency treatment. The fourth reference contains the game\u0027s shared base palette and guides colors only; additional harmonious shades are allowed and exact matching is not required.",
+                                       "width":  48,
+                                       "height":  48,
+                                       "assetUrl":  "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/fbee3f77-a032-4cda-934c-5337b96a9d0d/image.png?v=1795528261210",
+                                       "style":  "default",
+                                       "tags":  [
+
+                                                ],
+                                       "contentType":  "image/png",
+                                       "batchId":  "e77a7e64-59a8-4079-81c3-3a9e05453a9e",
+                                       "batchIndex":  2,
+                                       "batchSize":  9,
+                                       "action":  {
+                                                      "kind":  "same-style"
+                                                  }
+                                   },
+                                   {
+                                       "id":  "93c07884-0367-4378-ae4e-97e355830f27",
+                                       "type":  "image",
+                                       "createdAt":  "2026-11-24T13:51:02.109Z",
+                                       "updatedAt":  "2026-11-24T13:51:02.109Z",
+                                       "prompt":  "Redesign the inventory icon of a small cylindrical magnet with a single red circular top face and a short dark gray metallic cylindrical body. The first reference is the actual subject: preserve its upright orientation, squat proportions, elliptical red top seen from slightly above, plain gray sides, silhouette and dominant red/gray colors. It is a solid cylinder, no hole, no horseshoe, no handle, no letters or additional components. Keep the subject small and centered, occupying just under one third of the square composition in both width and height, with generous empty margins as in the original. The second reference, approved Churchill, guides only finer deliberate pixel clusters, restrained material shading and the dark outline, never anatomy, clothing or character colors. The third reference, approved quill and inkwell, guides small-object detail and outline only; do not add a feather or inkwell. Give the magnet a continuous very dark outer outline exactly one final-image pixel thick, stepped diagonals, no doubled borders, blur, antialiasing or halo. Keep internal lines subordinate and the small red face clearly readable. Refine metallic curvature through subtle gray highlights and shadows and restrained shading on the red face without changing the design. Preserve the source transparency treatment. The fourth reference contains the game\u0027s shared base palette and guides colors only; additional harmonious shades are allowed and exact matching is not required.",
+                                       "width":  48,
+                                       "height":  48,
+                                       "assetUrl":  "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/93c07884-0367-4378-ae4e-97e355830f27/image.png?v=1795528262109",
+                                       "style":  "default",
+                                       "tags":  [
+
+                                                ],
+                                       "contentType":  "image/png",
+                                       "batchId":  "e77a7e64-59a8-4079-81c3-3a9e05453a9e",
+                                       "batchIndex":  3,
+                                       "batchSize":  9,
+                                       "action":  {
+                                                      "kind":  "same-style"
+                                                  }
+                                   },
+                                   {
+                                       "id":  "c290af10-28b8-4e0d-a358-7f86d8acd490",
+                                       "type":  "image",
+                                       "createdAt":  "2026-11-24T13:51:03.074Z",
+                                       "updatedAt":  "2026-11-24T13:51:03.074Z",
+                                       "prompt":  "Redesign the inventory icon of a small cylindrical magnet with a single red circular top face and a short dark gray metallic cylindrical body. The first reference is the actual subject: preserve its upright orientation, squat proportions, elliptical red top seen from slightly above, plain gray sides, silhouette and dominant red/gray colors. It is a solid cylinder, no hole, no horseshoe, no handle, no letters or additional components. Keep the subject small and centered, occupying just under one third of the square composition in both width and height, with generous empty margins as in the original. The second reference, approved Churchill, guides only finer deliberate pixel clusters, restrained material shading and the dark outline, never anatomy, clothing or character colors. The third reference, approved quill and inkwell, guides small-object detail and outline only; do not add a feather or inkwell. Give the magnet a continuous very dark outer outline exactly one final-image pixel thick, stepped diagonals, no doubled borders, blur, antialiasing or halo. Keep internal lines subordinate and the small red face clearly readable. Refine metallic curvature through subtle gray highlights and shadows and restrained shading on the red face without changing the design. Preserve the source transparency treatment. The fourth reference contains the game\u0027s shared base palette and guides colors only; additional harmonious shades are allowed and exact matching is not required.",
+                                       "width":  48,
+                                       "height":  48,
+                                       "assetUrl":  "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/c290af10-28b8-4e0d-a358-7f86d8acd490/image.png?v=1795528263074",
+                                       "style":  "default",
+                                       "tags":  [
+
+                                                ],
+                                       "contentType":  "image/png",
+                                       "batchId":  "e77a7e64-59a8-4079-81c3-3a9e05453a9e",
+                                       "batchIndex":  4,
+                                       "batchSize":  9,
+                                       "action":  {
+                                                      "kind":  "same-style"
+                                                  }
+                                   },
+                                   {
+                                       "id":  "ec6ae0a3-fdbf-4718-8f41-d519fa2e3377",
+                                       "type":  "image",
+                                       "createdAt":  "2026-11-24T13:51:04.002Z",
+                                       "updatedAt":  "2026-11-24T13:51:04.002Z",
+                                       "prompt":  "Redesign the inventory icon of a small cylindrical magnet with a single red circular top face and a short dark gray metallic cylindrical body. The first reference is the actual subject: preserve its upright orientation, squat proportions, elliptical red top seen from slightly above, plain gray sides, silhouette and dominant red/gray colors. It is a solid cylinder, no hole, no horseshoe, no handle, no letters or additional components. Keep the subject small and centered, occupying just under one third of the square composition in both width and height, with generous empty margins as in the original. The second reference, approved Churchill, guides only finer deliberate pixel clusters, restrained material shading and the dark outline, never anatomy, clothing or character colors. The third reference, approved quill and inkwell, guides small-object detail and outline only; do not add a feather or inkwell. Give the magnet a continuous very dark outer outline exactly one final-image pixel thick, stepped diagonals, no doubled borders, blur, antialiasing or halo. Keep internal lines subordinate and the small red face clearly readable. Refine metallic curvature through subtle gray highlights and shadows and restrained shading on the red face without changing the design. Preserve the source transparency treatment. The fourth reference contains the game\u0027s shared base palette and guides colors only; additional harmonious shades are allowed and exact matching is not required.",
+                                       "width":  48,
+                                       "height":  48,
+                                       "assetUrl":  "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/ec6ae0a3-fdbf-4718-8f41-d519fa2e3377/image.png?v=1795528264002",
+                                       "style":  "default",
+                                       "tags":  [
+
+                                                ],
+                                       "contentType":  "image/png",
+                                       "batchId":  "e77a7e64-59a8-4079-81c3-3a9e05453a9e",
+                                       "batchIndex":  5,
+                                       "batchSize":  9,
+                                       "action":  {
+                                                      "kind":  "same-style"
+                                                  }
+                                   },
+                                   {
+                                       "id":  "e19840cc-564b-48a4-81bc-de32ed68bf3f",
+                                       "type":  "image",
+                                       "createdAt":  "2026-11-24T13:51:04.936Z",
+                                       "updatedAt":  "2026-11-24T13:51:04.936Z",
+                                       "prompt":  "Redesign the inventory icon of a small cylindrical magnet with a single red circular top face and a short dark gray metallic cylindrical body. The first reference is the actual subject: preserve its upright orientation, squat proportions, elliptical red top seen from slightly above, plain gray sides, silhouette and dominant red/gray colors. It is a solid cylinder, no hole, no horseshoe, no handle, no letters or additional components. Keep the subject small and centered, occupying just under one third of the square composition in both width and height, with generous empty margins as in the original. The second reference, approved Churchill, guides only finer deliberate pixel clusters, restrained material shading and the dark outline, never anatomy, clothing or character colors. The third reference, approved quill and inkwell, guides small-object detail and outline only; do not add a feather or inkwell. Give the magnet a continuous very dark outer outline exactly one final-image pixel thick, stepped diagonals, no doubled borders, blur, antialiasing or halo. Keep internal lines subordinate and the small red face clearly readable. Refine metallic curvature through subtle gray highlights and shadows and restrained shading on the red face without changing the design. Preserve the source transparency treatment. The fourth reference contains the game\u0027s shared base palette and guides colors only; additional harmonious shades are allowed and exact matching is not required.",
+                                       "width":  48,
+                                       "height":  48,
+                                       "assetUrl":  "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/e19840cc-564b-48a4-81bc-de32ed68bf3f/image.png?v=1795528264936",
+                                       "style":  "default",
+                                       "tags":  [
+
+                                                ],
+                                       "contentType":  "image/png",
+                                       "batchId":  "e77a7e64-59a8-4079-81c3-3a9e05453a9e",
+                                       "batchIndex":  6,
+                                       "batchSize":  9,
+                                       "action":  {
+                                                      "kind":  "same-style"
+                                                  }
+                                   },
+                                   {
+                                       "id":  "3626f485-9efc-4d9b-8376-fced46b06fc8",
+                                       "type":  "image",
+                                       "createdAt":  "2026-11-24T13:51:05.908Z",
+                                       "updatedAt":  "2026-11-24T13:51:05.908Z",
+                                       "prompt":  "Redesign the inventory icon of a small cylindrical magnet with a single red circular top face and a short dark gray metallic cylindrical body. The first reference is the actual subject: preserve its upright orientation, squat proportions, elliptical red top seen from slightly above, plain gray sides, silhouette and dominant red/gray colors. It is a solid cylinder, no hole, no horseshoe, no handle, no letters or additional components. Keep the subject small and centered, occupying just under one third of the square composition in both width and height, with generous empty margins as in the original. The second reference, approved Churchill, guides only finer deliberate pixel clusters, restrained material shading and the dark outline, never anatomy, clothing or character colors. The third reference, approved quill and inkwell, guides small-object detail and outline only; do not add a feather or inkwell. Give the magnet a continuous very dark outer outline exactly one final-image pixel thick, stepped diagonals, no doubled borders, blur, antialiasing or halo. Keep internal lines subordinate and the small red face clearly readable. Refine metallic curvature through subtle gray highlights and shadows and restrained shading on the red face without changing the design. Preserve the source transparency treatment. The fourth reference contains the game\u0027s shared base palette and guides colors only; additional harmonious shades are allowed and exact matching is not required.",
+                                       "width":  48,
+                                       "height":  48,
+                                       "assetUrl":  "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/3626f485-9efc-4d9b-8376-fced46b06fc8/image.png?v=1795528265908",
+                                       "style":  "default",
+                                       "tags":  [
+
+                                                ],
+                                       "contentType":  "image/png",
+                                       "batchId":  "e77a7e64-59a8-4079-81c3-3a9e05453a9e",
+                                       "batchIndex":  7,
+                                       "batchSize":  9,
+                                       "action":  {
+                                                      "kind":  "same-style"
+                                                  }
+                                   },
+                                   {
+                                       "id":  "6e577e25-5870-4882-a42f-f9294ae66c4b",
+                                       "type":  "image",
+                                       "createdAt":  "2026-11-24T13:51:06.757Z",
+                                       "updatedAt":  "2026-11-24T13:51:06.757Z",
+                                       "prompt":  "Redesign the inventory icon of a small cylindrical magnet with a single red circular top face and a short dark gray metallic cylindrical body. The first reference is the actual subject: preserve its upright orientation, squat proportions, elliptical red top seen from slightly above, plain gray sides, silhouette and dominant red/gray colors. It is a solid cylinder, no hole, no horseshoe, no handle, no letters or additional components. Keep the subject small and centered, occupying just under one third of the square composition in both width and height, with generous empty margins as in the original. The second reference, approved Churchill, guides only finer deliberate pixel clusters, restrained material shading and the dark outline, never anatomy, clothing or character colors. The third reference, approved quill and inkwell, guides small-object detail and outline only; do not add a feather or inkwell. Give the magnet a continuous very dark outer outline exactly one final-image pixel thick, stepped diagonals, no doubled borders, blur, antialiasing or halo. Keep internal lines subordinate and the small red face clearly readable. Refine metallic curvature through subtle gray highlights and shadows and restrained shading on the red face without changing the design. Preserve the source transparency treatment. The fourth reference contains the game\u0027s shared base palette and guides colors only; additional harmonious shades are allowed and exact matching is not required.",
+                                       "width":  48,
+                                       "height":  48,
+                                       "assetUrl":  "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/6e577e25-5870-4882-a42f-f9294ae66c4b/image.png?v=1795528266757",
+                                       "style":  "default",
+                                       "tags":  [
+
+                                                ],
+                                       "contentType":  "image/png",
+                                       "batchId":  "e77a7e64-59a8-4079-81c3-3a9e05453a9e",
+                                       "batchIndex":  8,
+                                       "batchSize":  9,
+                                       "action":  {
+                                                      "kind":  "same-style"
+                                                  }
+                                   }
+                               ],
+                   "credits":  {
+                                   "used":  15,
+                                   "remaining":  190
+                               }
+               },
+    "decision":  "User selected V1 (usa v1), approving visible size 15x16 instead of 15x15. Cropped transparent margins only; integrated at original path. Native and original preserved."
+}
