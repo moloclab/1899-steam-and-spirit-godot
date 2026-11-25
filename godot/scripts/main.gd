@@ -30,9 +30,10 @@ var menu_hotspot: Hotspot
 func _ready() -> void:
 	state = State.new(starting_episode)
 	texts = Texts.new(starting_episode)
-	Input.set_custom_mouse_cursor(CURSOR_NORMAL, Input.CURSOR_ARROW, Vector2(1, 1))
-	Input.set_custom_mouse_cursor(CURSOR_NORMAL, Input.CURSOR_POINTING_HAND, Vector2(1, 1))
-	Input.set_custom_mouse_cursor(CURSOR_MAGNIFIER, Input.CURSOR_CROSS, Vector2(1, 1))
+	# Il punto attivo coincide con la punta disegnata, spostata a destra nel PNG trasparente.
+	Input.set_custom_mouse_cursor(CURSOR_NORMAL, Input.CURSOR_ARROW, Vector2(10, 0))
+	Input.set_custom_mouse_cursor(CURSOR_NORMAL, Input.CURSOR_POINTING_HAND, Vector2(10, 0))
+	Input.set_custom_mouse_cursor(CURSOR_MAGNIFIER, Input.CURSOR_CROSS, Vector2(10, 0))
 	ui = UI.new()
 	ui.texts = texts
 	add_child(ui)

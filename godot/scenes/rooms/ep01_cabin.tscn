@@ -228,7 +228,6 @@ hit_size = Vector2(61, 79)
 examine_response = "ep01.cabin.map.examine"
 
 [node name="Visual" type="Sprite2D" parent="mapMagnet" unique_id=667163389]
-scale = Vector2(0.99425286, 1)
 texture = ExtResource("mapMagnet_mapMagnet")
 centered = false
 
@@ -270,7 +269,7 @@ texture = ExtResource("feather_feather")
 centered = false
 
 [node name="oblo1" type="Node2D" parent="." unique_id=1234644115]
-position = Vector2(233, 65.66667)
+position = Vector2(235, 67)
 script = ExtResource("hotspot_script")
 hotspot_id = "oblo1"
 hit_size = Vector2(48, 48)
@@ -278,13 +277,12 @@ examine_response = "ep01.cabin.porthole.examine"
 interaction_response = "ep01.cabin.porthole.interact"
 
 [node name="Visual" type="AnimatedSprite2D" parent="oblo1" unique_id=987567133]
-position = Vector2(2, 2)
 sprite_frames = SubResource("oblo1_frames")
 autoplay = "default"
 centered = false
 
 [node name="oblo2" type="Node2D" parent="." unique_id=135417799]
-position = Vector2(302, 65.66667)
+position = Vector2(305, 67)
 script = ExtResource("hotspot_script")
 hotspot_id = "oblo2"
 hit_size = Vector2(48, 48)
@@ -292,7 +290,6 @@ examine_response = "ep01.cabin.porthole.examine"
 interaction_response = "ep01.cabin.porthole.interact"
 
 [node name="Visual" type="AnimatedSprite2D" parent="oblo2" unique_id=1334300312]
-position = Vector2(3, 2)
 sprite_frames = SubResource("oblo1_frames")
 autoplay = "default"
 frame = 4
@@ -358,6 +355,5 @@ hit_size = Vector2(32, 12)
 examine_response = "ep01.cabin.bottle.examine"
 
 [node name="Visual" type="Sprite2D" parent="bottle" unique_id=1610427772]
-position = Vector2(-2, 0)
 texture = ExtResource("bottle_bottle")
 centered = false

@@ -51,7 +51,7 @@ func _click(point: Vector2, button: MouseButton = MOUSE_BUTTON_LEFT) -> void:
 	root.push_input(event, true)
 	await process_frame
 
-## Tastiera e controller passano dallo stesso percorso del gioco, compresa la conferma dei dialoghi.
+## Invia input da tastiera per verificare che il gioco basato sul mouse lo ignori.
 func _key(code: Key) -> void:
 	var event := InputEventKey.new()
 	event.keycode = code
@@ -316,19 +316,21 @@ func _test_interphone() -> void:
 	movement.pressed = false
 	Input.parse_input_event(movement)
 	await _click(Vector2(300, 300))
-	check(game.ui.speaker_label.text == "INTERFONO", "Cambio interlocutore col mouse")
-	await _key(KEY_F1)
+	check(game.ui.speaker_label.text == game._text("common.speaker.interphone").to_upper(), "Cambio interlocutore col mouse nella lingua corrente")
+	await _click(game.ui.help_button.get_global_rect().get_center())
 	var before_text: String = game.ui.speech_label.text
 	_step(120)
 	check(game.ui.help_panel.visible and game.ui.speech_label.text == before_text, "Menu in pausa senza avanzamento")
 	check(game.rooms.actor.speed_scale == 0, "Animazioni sospese dal menu")
-	await _key(KEY_ESCAPE)
+	await _click(game.ui.help_close.get_global_rect().get_center())
 	check(not game.ui.help_panel.visible and game.rooms.actor.speed_scale == 1, "Ripresa delle animazioni")
-	await _key(KEY_ENTER)
-	check(game.ui.speech_label.text == game._text("ep01.cabin.interphone.urgency"), "Avanzamento con tastiera")
-	await _joy(JOY_BUTTON_A)
-	check(not game.sequences.busy, "Fine della conversazione con controller")
-	check(game.ui.speech_label.text == game._text("ep01.cabin.interphone.reply") and game.ui.speaker_label.text == "WINSTON CHURCHILL", "Ultima battuta persistente")
+	await _click(Vector2(300, 300))
+	check(game.ui.speech_label.text == game._text("ep01.cabin.interphone.urgency"), "Avanzamento col mouse")
+	await _click(Vector2(300, 300))
+	check(game.ui.speech_label.text == game._text("ep01.cabin.interphone.reply") and game.ui.speaker_label.text == game._text("common.speaker.churchill").to_upper(), "Ultima battuta persistente")
+	# Anche l'ultima riga richiede la conferma prima di sbloccare le interazioni.
+	await _click(Vector2(300, 300))
+	check(not game.sequences.busy, "Fine della conversazione col mouse")
 	check(not game.ui.save_buttons[0].disabled, "Interazioni riabilitate alla fine")
 
 ## Gli hotspot presenti al caricamento restano ricercabili secondo visibilità e appartenenza.
@@ -433,28 +435,27 @@ func _test_sequence_steps() -> void:
 	animation.animation_name = "pause_test"
 	var paused_steps: Array[Row] = [Row.of([animation])]
 	game._start_actions(paused_steps)
-	game._toggle_help()
+	await _click(game.ui.help_button.get_global_rect().get_center())
 	await create_timer(0.2).timeout
 	game._process(1)
 	check(game.sequences.busy and game.rooms.actor.is_playing(), "Animazione di sequenza ancora in attesa durante la pausa")
-	game._toggle_help()
+	await _click(game.ui.help_close.get_global_rect().get_center())
 	await create_timer(0.2).timeout
 	game._process(0)
 	check(not game.sequences.busy, "Completamento dell'animazione dopo la ripresa")
 
-## Gli aggiornamenti senza variazioni conservano i controlli e l'eventuale focus UI.
+## Gli aggiornamenti senza variazioni conservano i controlli dell'inventario.
 func _test_inventory_reuse() -> void:
 	var empty: Array[String] = []
 	game.ui.refresh_inventory(empty, "", game.texts)
-	var placeholder = game.ui.inventory_row.get_child(0)
+	check(game.ui.inventory_row.get_child_count() == 0, "Inventario vuoto senza segnaposto")
 	game.ui.refresh_inventory(empty, "", game.texts)
-	check(game.ui.inventory_row.get_child(0) == placeholder, "Inventario vuoto mantiene il messaggio senza ricrearlo")
+	check(game.ui.inventory_row.get_child_count() == 0, "Aggiornamento vuoto senza nuovi controlli")
 	var items: Array[String] = ["ep01_cabin_bottle", "ep01_cabin_feather"]
 	game.ui.refresh_inventory(items, "", game.texts)
 	var button = game.ui._inventory_buttons[0]
-	button.grab_focus()
 	game.ui.refresh_inventory(items.duplicate(), items[0], game.texts)
-	check(game.ui._inventory_buttons[0] == button and button.has_focus(), "Selezione conserva pulsanti e focus dell'inventario")
+	check(game.ui._inventory_buttons[0] == button and button.focus_mode == Control.FOCUS_NONE, "Selezione conserva i pulsanti senza focus da tastiera")
 	game.ui.lock_interactions(true)
 	game.ui.refresh_inventory(items, "", game.texts)
 	check(button.disabled, "Aggiornamento invariato conserva il blocco delle interazioni")
@@ -484,35 +485,40 @@ func _test_inventory_scroll() -> void:
 	game._refresh()
 	await process_frame
 
-## Copre esame e raccolta dalla stanza e combinazione nell'inventario con input diversi dal mouse.
+## Tastiera e controller non devono muovere il personaggio o interagire con il mondo.
 func _test_keyboard_controller() -> void:
 	game._new_game()
 	await process_frame
-	await _key(KEY_E)
+	var intro_text: String = game.ui.speech_label.text
+	for code in [KEY_ENTER, KEY_SPACE, KEY_E, KEY_F1, KEY_ESCAPE, KEY_TAB]:
+		await _key(code)
+		check(game.sequences.busy and game.ui.speech_label.text == intro_text and not game.ui.help_panel.visible,
+			"Tastiera ignorata durante l'introduzione: " + str(code))
+	for button in [JOY_BUTTON_A, JOY_BUTTON_Y, JOY_BUTTON_RIGHT_SHOULDER]:
+		await _joy(button)
+		check(game.sequences.busy and game.ui.speech_label.text == intro_text,
+			"Controller ignorato durante l'introduzione: " + str(button))
+	await _finish_narrative()
+	var before_x: float = game.rooms.actor.current_x
+	# Mantiene premuti i comandi durante i frame che potrebbero muovere il personaggio.
+	for code in [KEY_A, KEY_D, KEY_LEFT, KEY_RIGHT]:
+		var event := InputEventKey.new()
+		event.keycode = code
+		event.physical_keycode = code
+		event.pressed = true
+		Input.parse_input_event(event)
+		_step(30)
+		event = event.duplicate()
+		event.pressed = false
+		Input.parse_input_event(event)
+		check(game.rooms.actor.current_x == before_x, "Movimento da tastiera ignorato: " + str(code))
+	for code in [KEY_E, KEY_TAB, KEY_ENTER]:
+		await _key(code)
+	for button in [JOY_BUTTON_A, JOY_BUTTON_Y, JOY_BUTTON_RIGHT_SHOULDER]:
+		await _joy(button)
 	_step()
-	check(game.state.inventory.is_empty() and game.ui.speech_label.text == game._text("ep01.cabin.map.examine"),
-		"Esame con tastiera senza raccolta")
-	await _joy(JOY_BUTTON_A)
-	_step()
-	await process_frame
-	check(game.state.has_item("ep01_cabin_magnet"), "Raccolta con controller")
-	var feather_index := 0
-	var hotspots: Array[Node2D] = game._hotspots()
-	for i in hotspots.size():
-		if hotspots[i].hotspot_id == "feather":
-			feather_index = i
-	for i in feather_index:
-		await _key(KEY_TAB)
-	await _key(KEY_ENTER)
-	_step()
-	await process_frame
-	check(game.state.has_item("ep01_cabin_feather"), "Navigazione e raccolta con tastiera")
-	await _joy(JOY_BUTTON_Y)
-	await _joy(JOY_BUTTON_A)
-	check(game.selected_item == "ep01_cabin_magnet", "Selezione nell'inventario con controller")
-	await _joy(JOY_BUTTON_RIGHT_SHOULDER)
-	await _joy(JOY_BUTTON_A)
-	check(game.state.has_item("ep01_cabin_magnet_feather") and game.selected_item.is_empty(), "Combinazione con controller")
+	check(game.state.inventory.is_empty() and game.selected_item.is_empty() and not game.ui.action_menu.visible,
+		"Tastiera e controller non interagiscono con gli oggetti")
 
 ## Le stanze contengono direttamente gli oggetti e condividono i dati con il catalogo.
 func _test_room_scenes() -> void:
@@ -530,6 +536,8 @@ func _test_room_scenes() -> void:
 		room.free()
 	var sink: Hotspot = game.rooms.find_hotspot("sink")
 	var original_x := sink.position.x
+	# Isola la geometria dalle modifiche al layout effettivo della scena.
+	sink.position.x = 219
 	# Il lavabo della cabina larga 500 px occupa l'intervallo orizzontale 219–255.
 	check(sink.approach_position(180, 22) == 197, "Da sinistra il bordo destro di Churchill raggiunge il bordo sinistro dell'oggetto")
 	check(sink.approach_position(500, 22) == 277, "Da destra il bordo sinistro di Churchill raggiunge il bordo destro dell'oggetto")
@@ -538,10 +546,15 @@ func _test_room_scenes() -> void:
 	check(sink.approach_position(237, 22) == 197, "Al centro dell'oggetto viene scelto il bordo sinistro")
 	sink.position.x += 30
 	check(sink.approach_position(180, 22) == 227, "Avvicinamento segue lo spostamento dell'oggetto")
-	sink.position.x = original_x
+	sink.position.x = 219
 	sink.scale.x = 2
 	check(sink.approach_position(500, 22) == 313, "Avvicinamento tiene conto della scala dell'oggetto e della stanza")
 	sink.scale.x = 1
+	# Verifica i bordi senza margini aggiuntivi nella stanza ingrandita.
+	for point in [Vector2(0, 0), sink.hit_size - Vector2(0.1, 0.1)]:
+		check(sink.contains(sink.to_global(point)), "Punto interno selezionabile con stanza ingrandita")
+	for point in [Vector2(-0.1, 10), Vector2(sink.hit_size.x + 0.1, 10), Vector2(10, -0.1), Vector2(10, sink.hit_size.y + 0.1)]:
+		check(not sink.contains(sink.to_global(point)), "Punto esterno escluso senza margine ingrandito")
 	var actor = game.rooms.actor
 	var original_player_x: float = actor.current_x
 	for x in [180.0, 500.0]:
@@ -585,6 +598,8 @@ func _run() -> void:
 	await _test_episode_configuration()
 	game.queue_free()
 	await process_frame
+	# Attende che il mixer audio rilasci i decoder dopo la rimozione del player.
+	await create_timer(0.15).timeout
 	DirAccess.remove_absolute(ProjectSettings.globalize_path(TEST_SAVE))
 	DirAccess.remove_absolute(ProjectSettings.globalize_path(TEST_SAVE + ".tmp"))
 	print("EP01: %d verifiche, %d errori" % [checks, failures])

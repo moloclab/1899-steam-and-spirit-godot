@@ -174,6 +174,8 @@ func _run() -> void:
 	check(game.rooms.find_hotspot("bottle") == bottle, "Sincronizzazione ripristina il bersaglio senza ricostruire la lista")
 	game.queue_free()
 	await process_frame
+	# Attende che il mixer audio rilasci i decoder dopo la rimozione del player.
+	await create_timer(0.15).timeout
 	# Elimina esclusivamente i file di prova, senza intervenire sul salvataggio del giocatore.
 	DirAccess.remove_absolute(ProjectSettings.globalize_path(TEST_SAVE))
 	DirAccess.remove_absolute(ProjectSettings.globalize_path(TEST_SAVE + ".tmp"))

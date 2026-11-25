@@ -82,9 +82,9 @@ func sync_from_state(_state: State) -> void:
 	pass
 
 ## Verifica un punto globale dopo averlo convertito nelle coordinate locali dell'hotspot.
-## Il margine di quattro pixel rende più agevoli i clic sugli oggetti piccoli.
+## Usa esattamente hit_size: un margine locale verrebbe ingrandito dalla scala della stanza.
 func contains(point: Vector2) -> bool:
-	return is_visible_in_tree() and Rect2(Vector2.ZERO, hit_size).grow(4).has_point(to_local(point))
+	return is_visible_in_tree() and Rect2(Vector2.ZERO, hit_size).has_point(to_local(point))
 
 ## Disegna soltanto la cornice di selezione; l'immagine dell'oggetto è nel figlio Visual.
 func _draw() -> void:

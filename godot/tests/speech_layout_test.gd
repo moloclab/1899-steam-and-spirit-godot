@@ -1,6 +1,7 @@
 extends SceneTree
-## Verifica gli ancoraggi reali e il contenimento delle battute con carattere fisso a 32 px.
+## Verifica ancoraggi e contenimento delle battute con le dimensioni configurate nella UI.
 const Main = preload("res://scenes/main.tscn")
+const UI = preload("res://scripts/game_ui.gd")
 var failures := 0
 var checks := 0
 
@@ -27,7 +28,7 @@ func _run() -> void:
 		game.sequences.advance_dialogue()
 	var label: Label = game.ui.speech_label
 	game._say("Test")
-	check(label.size == Vector2(100, 100), "Riquadro 100 x 100")
+	check(label.size == UI.SPEECH_SIZE, "Dimensioni base del riquadro configurate nella UI")
 	check(label.horizontal_alignment == HORIZONTAL_ALIGNMENT_CENTER and label.vertical_alignment == VERTICAL_ALIGNMENT_BOTTOM, "Testo centrato in basso")
 	check(label.mouse_filter == Control.MOUSE_FILTER_IGNORE, "Il testo lascia passare i clic")
 	check(not game.ui.speaker_label.visible, "Nessun nome sotto il gioco")
@@ -44,7 +45,7 @@ func _run() -> void:
 	game._process(0)
 	check(not label.visible, "La battuta resta nascosta nei frame successivi")
 	game._say("Test")
-	click.position = Vector2(50, 640)
+	click.position = game.ui.inventory_scroll.get_global_rect().get_center()
 	game._input(click)
 	check(not label.visible, "Il clic nell'inventario nasconde la battuta")
 	game._say("Test")
@@ -62,7 +63,7 @@ func _run() -> void:
 	check(label.visible, "Una nuova battuta torna visibile")
 	var interphone: Node2D = game.rooms.find_hotspot("interphone")
 	var anchor: Vector2 = interphone.to_global(Vector2(interphone.hit_size.x / 2.0, 0))
-	check((label.global_position + Vector2(label.size.x / 2.0, label.size.y + 4.0)).is_equal_approx(anchor), "La battuta appare sopra l'interfono scalato")
+	check((label.global_position + Vector2(label.size.x / 2.0, label.size.y + 20.0)).is_equal_approx(anchor), "La battuta appare sopra l'interfono scalato")
 	# Verifica l'altezza effettiva dopo che Label ha composto ogni traduzione della conversazione.
 	for language in ["it", "en"]:
 		game.texts.language = language
@@ -71,12 +72,12 @@ func _run() -> void:
 			# La voce e l'ancoraggio appartengono al soggetto della battuta.
 			game._say(game.texts.text(step.text_key), game.rooms.subject(step.subject_id).speaker_key)
 			await process_frame
-			check(label.get_theme_font_size("font_size") == 32, "Carattere fisso: " + step.text_key)
+			check(label.get_theme_font_size("font_size") == UI.SPEECH_FONT_SIZE, "Carattere fisso: " + step.text_key)
 			check(label.get_line_count() * label.get_line_height() <= label.size.y, "Testo contenuto: " + language + " " + step.text_key)
 	# Una battuta estesa deve allargare il riquadro e mantenersi dentro i bordi della UI.
 	game._say("Una battuta lunga da leggere per intero. ".repeat(12))
 	await process_frame
-	check(label.size.x > 100 and label.get_theme_font_size("font_size") == 32, "Riquadro espanso senza ridurre il carattere")
+	check(label.size.x > UI.SPEECH_SIZE.x and label.get_theme_font_size("font_size") == UI.SPEECH_FONT_SIZE, "Riquadro espanso senza ridurre il carattere")
 	check(label.get_line_count() * label.get_line_height() <= label.size.y, "Battuta lunga interamente contenuta")
 	game.rooms.actor.place(30, game.rooms.current_room.definition.floor_y)
 	game._process(0)
@@ -88,10 +89,12 @@ func _run() -> void:
 	game._process(0)
 	game._say("Test")
 	anchor = game.rooms.actor.to_global(Vector2(game.rooms.actor.half_width, 0))
-	check((label.global_position + Vector2(label.size.x / 2.0, label.size.y + 4.0)).is_equal_approx(anchor), "Ancoraggio dopo cambio stanza e scorrimento")
+	check((label.global_position + Vector2(label.size.x / 2.0, label.size.y + 20.0)).is_equal_approx(anchor), "Ancoraggio dopo cambio stanza e scorrimento")
 	game._say("Test", "common.speaker.interphone")
 	check(not label.visible, "Interlocutore assente nascosto")
 	game.queue_free()
 	await process_frame
+	# Attende che il mixer audio rilasci i decoder dopo la rimozione del player.
+	await create_timer(0.15).timeout
 	print("Dialoghi: %d verifiche, %d errori" % [checks, failures])
 	quit(0 if failures == 0 else 1)

@@ -77,5 +77,7 @@ func _run() -> void:
 		game.ui.action_menu.hide()
 	game.queue_free()
 	await process_frame
+	# Attende che il mixer audio rilasci i decoder dopo la rimozione del player.
+	await create_timer(0.15).timeout
 	print("Risoluzioni: %d verifiche, %d errori" % [checks, failures])
 	quit(0 if failures == 0 else 1)

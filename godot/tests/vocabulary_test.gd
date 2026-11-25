@@ -75,5 +75,7 @@ func _run() -> void:
 	check(game.ui.speech_label.text == "Non riesco a salvare la partita: test", "Messaggio di errore con parametro")
 	game.queue_free()
 	await process_frame
+	# Attende che il mixer audio rilasci i decoder dopo la rimozione del player.
+	await create_timer(0.15).timeout
 	print("Vocabolario: %d verifiche, %d errori" % [checks, failures])
 	quit(0 if failures == 0 else 1)
