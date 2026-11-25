@@ -1,0 +1,202 @@
+﻿[
+    {
+        "label":  "Originale",
+        "path":  "godot/assets/graphics/ep01_cabin/inventory_bottle.png",
+        "canvas":  [
+                       50,
+                       50
+                   ],
+        "bounds":  [
+                       19,
+                       10,
+                       31,
+                       40
+                   ],
+        "visible":  [
+                        12,
+                        30
+                    ],
+        "binary_alpha":  true,
+        "size_compliant":  true
+    },
+    {
+        "label":  "V1",
+        "path":  "godot/assets/graphics/ep01_cabin/inventory_bottle-redesign.png",
+        "canvas":  [
+                       48,
+                       48
+                   ],
+        "bounds":  [
+                       16,
+                       1,
+                       31,
+                       47
+                   ],
+        "visible":  [
+                        15,
+                        46
+                    ],
+        "binary_alpha":  true,
+        "size_compliant":  false
+    },
+    {
+        "label":  "V2",
+        "path":  "godot/assets/graphics/ep01_cabin/inventory_bottle-redesign-2.png",
+        "canvas":  [
+                       48,
+                       48
+                   ],
+        "bounds":  [
+                       16,
+                       1,
+                       32,
+                       46
+                   ],
+        "visible":  [
+                        16,
+                        45
+                    ],
+        "binary_alpha":  true,
+        "size_compliant":  false
+    },
+    {
+        "label":  "V3",
+        "path":  "godot/assets/graphics/ep01_cabin/inventory_bottle-redesign-3.png",
+        "canvas":  [
+                       48,
+                       48
+                   ],
+        "bounds":  [
+                       16,
+                       1,
+                       32,
+                       47
+                   ],
+        "visible":  [
+                        16,
+                        46
+                    ],
+        "binary_alpha":  true,
+        "size_compliant":  false
+    },
+    {
+        "label":  "V4",
+        "path":  "godot/assets/graphics/ep01_cabin/inventory_bottle-redesign-4.png",
+        "canvas":  [
+                       48,
+                       48
+                   ],
+        "bounds":  [
+                       17,
+                       1,
+                       30,
+                       47
+                   ],
+        "visible":  [
+                        13,
+                        46
+                    ],
+        "binary_alpha":  true,
+        "size_compliant":  false
+    },
+    {
+        "label":  "V5",
+        "path":  "godot/assets/graphics/ep01_cabin/inventory_bottle-redesign-5.png",
+        "canvas":  [
+                       48,
+                       48
+                   ],
+        "bounds":  [
+                       17,
+                       1,
+                       31,
+                       47
+                   ],
+        "visible":  [
+                        14,
+                        46
+                    ],
+        "binary_alpha":  true,
+        "size_compliant":  false
+    },
+    {
+        "label":  "V6",
+        "path":  "godot/assets/graphics/ep01_cabin/inventory_bottle-redesign-6.png",
+        "canvas":  [
+                       48,
+                       48
+                   ],
+        "bounds":  [
+                       15,
+                       1,
+                       32,
+                       46
+                   ],
+        "visible":  [
+                        17,
+                        45
+                    ],
+        "binary_alpha":  true,
+        "size_compliant":  false
+    },
+    {
+        "label":  "V7",
+        "path":  "godot/assets/graphics/ep01_cabin/inventory_bottle-redesign-7.png",
+        "canvas":  [
+                       48,
+                       48
+                   ],
+        "bounds":  [
+                       16,
+                       1,
+                       31,
+                       46
+                   ],
+        "visible":  [
+                        15,
+                        45
+                    ],
+        "binary_alpha":  true,
+        "size_compliant":  false
+    },
+    {
+        "label":  "V8",
+        "path":  "godot/assets/graphics/ep01_cabin/inventory_bottle-redesign-8.png",
+        "canvas":  [
+                       48,
+                       48
+                   ],
+        "bounds":  [
+                       16,
+                       1,
+                       32,
+                       46
+                   ],
+        "visible":  [
+                        16,
+                        45
+                    ],
+        "binary_alpha":  true,
+        "size_compliant":  false
+    },
+    {
+        "label":  "V9",
+        "path":  "godot/assets/graphics/ep01_cabin/inventory_bottle-redesign-9.png",
+        "canvas":  [
+                       48,
+                       48
+                   ],
+        "bounds":  [
+                       17,
+                       1,
+                       31,
+                       47
+                   ],
+        "visible":  [
+                        14,
+                        46
+                    ],
+        "binary_alpha":  true,
+        "size_compliant":  false
+    }
+]

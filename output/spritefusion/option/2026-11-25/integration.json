@@ -1,0 +1,20 @@
+﻿{
+    "alpha":  [
+                  255,
+                  0
+              ],
+    "selectedVariant":  2,
+    "opaquePixels":  1134,
+    "decision":  "User selected V2 (usa v2) after disclosure of 38x41 subject exceeding 40x40. Integrated at option.png on a transparent 40x41 canvas, subject at (1,0), unchanged visible pixels. Original and selected native preserved. Existing 2x nearest UI scale retained; no script or scene changes.",
+    "bounds":  [
+                   1,
+                   0,
+                   38,
+                   41
+               ],
+    "canvas":  [
+                   40,
+                   41
+               ],
+    "pixelMismatches":  0
+}

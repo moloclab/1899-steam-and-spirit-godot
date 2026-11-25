@@ -1,0 +1,256 @@
+﻿{
+    "request_id":  "req_ba9530dd-b104-48de-b81f-73ce3934f268",
+    "status":  "succeeded",
+    "output_count":  9,
+    "outputs":  [
+                    {
+                        "id":  "2f33fb70-4d56-479b-8700-d5eaa5a5a4a3",
+                        "type":  "image",
+                        "createdAt":  "2026-11-25T15:34:08.030Z",
+                        "updatedAt":  "2026-11-25T15:34:08.030Z",
+                        "prompt":  "Create a single upright whiskey bottle inventory icon for the historical adventure game 1899. The first reference defines the upright orientation, tall narrow silhouette, relative size, composition and dominant colors. Preserve its narrow neck, small dark closure, olive amber glass, broad pale parchment label and flat base. This is the SAME bottle seen lying sideways in reference three: use reference three as the primary reference for its actual design, warm olive amber glass, cream label with restrained dark markings, dark outline and material shading, translating that same bottle into the upright inventory pose of reference one. Do not copy its horizontal orientation. Reference two (Churchill) guides only purposeful detail, restrained shading, deliberate pixel clusters and a consistent dark outline exactly one final-image pixel thick following the silhouette. Do not transfer anatomy, clothes or unrelated objects. Reference four is only a flexible color guide; harmonious additional material shades are allowed. The upright bottle should occupy roughly one quarter of the square composition\u0027s width and five eighths of its height, centered. Keep a continuous dark outer contour, stepped diagonals, subtle interior lines, no doubled outline, halo, blur or antialiasing. Preserve clear areas and recognizable period bottle proportions; no new brand, embellishments, props or cast shadow. Preserve the source background treatment and binary alpha. Refine glass with restrained highlights, amber liquor shading and the small parchment label, readable at inventory size.",
+                        "width":  48,
+                        "height":  48,
+                        "assetUrl":  "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/2f33fb70-4d56-479b-8700-d5eaa5a5a4a3/image.png?v=1795620848030",
+                        "style":  "default",
+                        "tags":  [
+
+                                 ],
+                        "contentType":  "image/png",
+                        "batchId":  "9f75be4e-adc7-48e7-95c1-333e1aa10fda",
+                        "batchIndex":  0,
+                        "batchSize":  9,
+                        "action":  {
+                                       "kind":  "same-style"
+                                   }
+                    },
+                    {
+                        "id":  "17411863-e27c-499b-bba6-7f2453b3bdbf",
+                        "type":  "image",
+                        "createdAt":  "2026-11-25T15:34:08.426Z",
+                        "updatedAt":  "2026-11-25T15:34:08.426Z",
+                        "prompt":  "Create a single upright whiskey bottle inventory icon for the historical adventure game 1899. The first reference defines the upright orientation, tall narrow silhouette, relative size, composition and dominant colors. Preserve its narrow neck, small dark closure, olive amber glass, broad pale parchment label and flat base. This is the SAME bottle seen lying sideways in reference three: use reference three as the primary reference for its actual design, warm olive amber glass, cream label with restrained dark markings, dark outline and material shading, translating that same bottle into the upright inventory pose of reference one. Do not copy its horizontal orientation. Reference two (Churchill) guides only purposeful detail, restrained shading, deliberate pixel clusters and a consistent dark outline exactly one final-image pixel thick following the silhouette. Do not transfer anatomy, clothes or unrelated objects. Reference four is only a flexible color guide; harmonious additional material shades are allowed. The upright bottle should occupy roughly one quarter of the square composition\u0027s width and five eighths of its height, centered. Keep a continuous dark outer contour, stepped diagonals, subtle interior lines, no doubled outline, halo, blur or antialiasing. Preserve clear areas and recognizable period bottle proportions; no new brand, embellishments, props or cast shadow. Preserve the source background treatment and binary alpha. Refine glass with restrained highlights, amber liquor shading and the small parchment label, readable at inventory size.",
+                        "width":  48,
+                        "height":  48,
+                        "assetUrl":  "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/17411863-e27c-499b-bba6-7f2453b3bdbf/image.png?v=1795620848426",
+                        "style":  "default",
+                        "tags":  [
+
+                                 ],
+                        "contentType":  "image/png",
+                        "batchId":  "9f75be4e-adc7-48e7-95c1-333e1aa10fda",
+                        "batchIndex":  1,
+                        "batchSize":  9,
+                        "action":  {
+                                       "kind":  "same-style"
+                                   }
+                    },
+                    {
+                        "id":  "08510993-3640-4a94-8f59-ebf9c1d70bc4",
+                        "type":  "image",
+                        "createdAt":  "2026-11-25T15:34:08.831Z",
+                        "updatedAt":  "2026-11-25T15:34:08.831Z",
+                        "prompt":  "Create a single upright whiskey bottle inventory icon for the historical adventure game 1899. The first reference defines the upright orientation, tall narrow silhouette, relative size, composition and dominant colors. Preserve its narrow neck, small dark closure, olive amber glass, broad pale parchment label and flat base. This is the SAME bottle seen lying sideways in reference three: use reference three as the primary reference for its actual design, warm olive amber glass, cream label with restrained dark markings, dark outline and material shading, translating that same bottle into the upright inventory pose of reference one. Do not copy its horizontal orientation. Reference two (Churchill) guides only purposeful detail, restrained shading, deliberate pixel clusters and a consistent dark outline exactly one final-image pixel thick following the silhouette. Do not transfer anatomy, clothes or unrelated objects. Reference four is only a flexible color guide; harmonious additional material shades are allowed. The upright bottle should occupy roughly one quarter of the square composition\u0027s width and five eighths of its height, centered. Keep a continuous dark outer contour, stepped diagonals, subtle interior lines, no doubled outline, halo, blur or antialiasing. Preserve clear areas and recognizable period bottle proportions; no new brand, embellishments, props or cast shadow. Preserve the source background treatment and binary alpha. Refine glass with restrained highlights, amber liquor shading and the small parchment label, readable at inventory size.",
+                        "width":  48,
+                        "height":  48,
+                        "assetUrl":  "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/08510993-3640-4a94-8f59-ebf9c1d70bc4/image.png?v=1795620848831",
+                        "style":  "default",
+                        "tags":  [
+
+                                 ],
+                        "contentType":  "image/png",
+                        "batchId":  "9f75be4e-adc7-48e7-95c1-333e1aa10fda",
+                        "batchIndex":  2,
+                        "batchSize":  9,
+                        "action":  {
+                                       "kind":  "same-style"
+                                   }
+                    },
+                    {
+                        "id":  "c657ab6d-6d70-4f05-82a4-4497bd687e45",
+                        "type":  "image",
+                        "createdAt":  "2026-11-25T15:34:09.316Z",
+                        "updatedAt":  "2026-11-25T15:34:09.316Z",
+                        "prompt":  "Create a single upright whiskey bottle inventory icon for the historical adventure game 1899. The first reference defines the upright orientation, tall narrow silhouette, relative size, composition and dominant colors. Preserve its narrow neck, small dark closure, olive amber glass, broad pale parchment label and flat base. This is the SAME bottle seen lying sideways in reference three: use reference three as the primary reference for its actual design, warm olive amber glass, cream label with restrained dark markings, dark outline and material shading, translating that same bottle into the upright inventory pose of reference one. Do not copy its horizontal orientation. Reference two (Churchill) guides only purposeful detail, restrained shading, deliberate pixel clusters and a consistent dark outline exactly one final-image pixel thick following the silhouette. Do not transfer anatomy, clothes or unrelated objects. Reference four is only a flexible color guide; harmonious additional material shades are allowed. The upright bottle should occupy roughly one quarter of the square composition\u0027s width and five eighths of its height, centered. Keep a continuous dark outer contour, stepped diagonals, subtle interior lines, no doubled outline, halo, blur or antialiasing. Preserve clear areas and recognizable period bottle proportions; no new brand, embellishments, props or cast shadow. Preserve the source background treatment and binary alpha. Refine glass with restrained highlights, amber liquor shading and the small parchment label, readable at inventory size.",
+                        "width":  48,
+                        "height":  48,
+                        "assetUrl":  "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/c657ab6d-6d70-4f05-82a4-4497bd687e45/image.png?v=1795620849316",
+                        "style":  "default",
+                        "tags":  [
+
+                                 ],
+                        "contentType":  "image/png",
+                        "batchId":  "9f75be4e-adc7-48e7-95c1-333e1aa10fda",
+                        "batchIndex":  3,
+                        "batchSize":  9,
+                        "action":  {
+                                       "kind":  "same-style"
+                                   }
+                    },
+                    {
+                        "id":  "bf6fd990-8bbe-42ee-8992-937a6e6eb408",
+                        "type":  "image",
+                        "createdAt":  "2026-11-25T15:34:09.757Z",
+                        "updatedAt":  "2026-11-25T15:34:09.757Z",
+                        "prompt":  "Create a single upright whiskey bottle inventory icon for the historical adventure game 1899. The first reference defines the upright orientation, tall narrow silhouette, relative size, composition and dominant colors. Preserve its narrow neck, small dark closure, olive amber glass, broad pale parchment label and flat base. This is the SAME bottle seen lying sideways in reference three: use reference three as the primary reference for its actual design, warm olive amber glass, cream label with restrained dark markings, dark outline and material shading, translating that same bottle into the upright inventory pose of reference one. Do not copy its horizontal orientation. Reference two (Churchill) guides only purposeful detail, restrained shading, deliberate pixel clusters and a consistent dark outline exactly one final-image pixel thick following the silhouette. Do not transfer anatomy, clothes or unrelated objects. Reference four is only a flexible color guide; harmonious additional material shades are allowed. The upright bottle should occupy roughly one quarter of the square composition\u0027s width and five eighths of its height, centered. Keep a continuous dark outer contour, stepped diagonals, subtle interior lines, no doubled outline, halo, blur or antialiasing. Preserve clear areas and recognizable period bottle proportions; no new brand, embellishments, props or cast shadow. Preserve the source background treatment and binary alpha. Refine glass with restrained highlights, amber liquor shading and the small parchment label, readable at inventory size.",
+                        "width":  48,
+                        "height":  48,
+                        "assetUrl":  "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/bf6fd990-8bbe-42ee-8992-937a6e6eb408/image.png?v=1795620849757",
+                        "style":  "default",
+                        "tags":  [
+
+                                 ],
+                        "contentType":  "image/png",
+                        "batchId":  "9f75be4e-adc7-48e7-95c1-333e1aa10fda",
+                        "batchIndex":  4,
+                        "batchSize":  9,
+                        "action":  {
+                                       "kind":  "same-style"
+                                   }
+                    },
+                    {
+                        "id":  "fc64ae13-438b-4547-964b-6bb0e0deb9d9",
+                        "type":  "image",
+                        "createdAt":  "2026-11-25T15:34:10.229Z",
+                        "updatedAt":  "2026-11-25T15:34:10.229Z",
+                        "prompt":  "Create a single upright whiskey bottle inventory icon for the historical adventure game 1899. The first reference defines the upright orientation, tall narrow silhouette, relative size, composition and dominant colors. Preserve its narrow neck, small dark closure, olive amber glass, broad pale parchment label and flat base. This is the SAME bottle seen lying sideways in reference three: use reference three as the primary reference for its actual design, warm olive amber glass, cream label with restrained dark markings, dark outline and material shading, translating that same bottle into the upright inventory pose of reference one. Do not copy its horizontal orientation. Reference two (Churchill) guides only purposeful detail, restrained shading, deliberate pixel clusters and a consistent dark outline exactly one final-image pixel thick following the silhouette. Do not transfer anatomy, clothes or unrelated objects. Reference four is only a flexible color guide; harmonious additional material shades are allowed. The upright bottle should occupy roughly one quarter of the square composition\u0027s width and five eighths of its height, centered. Keep a continuous dark outer contour, stepped diagonals, subtle interior lines, no doubled outline, halo, blur or antialiasing. Preserve clear areas and recognizable period bottle proportions; no new brand, embellishments, props or cast shadow. Preserve the source background treatment and binary alpha. Refine glass with restrained highlights, amber liquor shading and the small parchment label, readable at inventory size.",
+                        "width":  48,
+                        "height":  48,
+                        "assetUrl":  "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/fc64ae13-438b-4547-964b-6bb0e0deb9d9/image.png?v=1795620850229",
+                        "style":  "default",
+                        "tags":  [
+
+                                 ],
+                        "contentType":  "image/png",
+                        "batchId":  "9f75be4e-adc7-48e7-95c1-333e1aa10fda",
+                        "batchIndex":  5,
+                        "batchSize":  9,
+                        "action":  {
+                                       "kind":  "same-style"
+                                   }
+                    },
+                    {
+                        "id":  "8af8b688-798d-4a06-b19f-d59577be0509",
+                        "type":  "image",
+                        "createdAt":  "2026-11-25T15:34:10.637Z",
+                        "updatedAt":  "2026-11-25T15:34:10.637Z",
+                        "prompt":  "Create a single upright whiskey bottle inventory icon for the historical adventure game 1899. The first reference defines the upright orientation, tall narrow silhouette, relative size, composition and dominant colors. Preserve its narrow neck, small dark closure, olive amber glass, broad pale parchment label and flat base. This is the SAME bottle seen lying sideways in reference three: use reference three as the primary reference for its actual design, warm olive amber glass, cream label with restrained dark markings, dark outline and material shading, translating that same bottle into the upright inventory pose of reference one. Do not copy its horizontal orientation. Reference two (Churchill) guides only purposeful detail, restrained shading, deliberate pixel clusters and a consistent dark outline exactly one final-image pixel thick following the silhouette. Do not transfer anatomy, clothes or unrelated objects. Reference four is only a flexible color guide; harmonious additional material shades are allowed. The upright bottle should occupy roughly one quarter of the square composition\u0027s width and five eighths of its height, centered. Keep a continuous dark outer contour, stepped diagonals, subtle interior lines, no doubled outline, halo, blur or antialiasing. Preserve clear areas and recognizable period bottle proportions; no new brand, embellishments, props or cast shadow. Preserve the source background treatment and binary alpha. Refine glass with restrained highlights, amber liquor shading and the small parchment label, readable at inventory size.",
+                        "width":  48,
+                        "height":  48,
+                        "assetUrl":  "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/8af8b688-798d-4a06-b19f-d59577be0509/image.png?v=1795620850637",
+                        "style":  "default",
+                        "tags":  [
+
+                                 ],
+                        "contentType":  "image/png",
+                        "batchId":  "9f75be4e-adc7-48e7-95c1-333e1aa10fda",
+                        "batchIndex":  6,
+                        "batchSize":  9,
+                        "action":  {
+                                       "kind":  "same-style"
+                                   }
+                    },
+                    {
+                        "id":  "f66bcb55-e25c-45d5-93e4-cf19b3a7da0b",
+                        "type":  "image",
+                        "createdAt":  "2026-11-25T15:34:11.017Z",
+                        "updatedAt":  "2026-11-25T15:34:11.017Z",
+                        "prompt":  "Create a single upright whiskey bottle inventory icon for the historical adventure game 1899. The first reference defines the upright orientation, tall narrow silhouette, relative size, composition and dominant colors. Preserve its narrow neck, small dark closure, olive amber glass, broad pale parchment label and flat base. This is the SAME bottle seen lying sideways in reference three: use reference three as the primary reference for its actual design, warm olive amber glass, cream label with restrained dark markings, dark outline and material shading, translating that same bottle into the upright inventory pose of reference one. Do not copy its horizontal orientation. Reference two (Churchill) guides only purposeful detail, restrained shading, deliberate pixel clusters and a consistent dark outline exactly one final-image pixel thick following the silhouette. Do not transfer anatomy, clothes or unrelated objects. Reference four is only a flexible color guide; harmonious additional material shades are allowed. The upright bottle should occupy roughly one quarter of the square composition\u0027s width and five eighths of its height, centered. Keep a continuous dark outer contour, stepped diagonals, subtle interior lines, no doubled outline, halo, blur or antialiasing. Preserve clear areas and recognizable period bottle proportions; no new brand, embellishments, props or cast shadow. Preserve the source background treatment and binary alpha. Refine glass with restrained highlights, amber liquor shading and the small parchment label, readable at inventory size.",
+                        "width":  48,
+                        "height":  48,
+                        "assetUrl":  "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/f66bcb55-e25c-45d5-93e4-cf19b3a7da0b/image.png?v=1795620851017",
+                        "style":  "default",
+                        "tags":  [
+
+                                 ],
+                        "contentType":  "image/png",
+                        "batchId":  "9f75be4e-adc7-48e7-95c1-333e1aa10fda",
+                        "batchIndex":  7,
+                        "batchSize":  9,
+                        "action":  {
+                                       "kind":  "same-style"
+                                   }
+                    },
+                    {
+                        "id":  "70ca71a5-829f-40d3-926a-cdcda353db44",
+                        "type":  "image",
+                        "createdAt":  "2026-11-25T15:34:11.471Z",
+                        "updatedAt":  "2026-11-25T15:34:11.471Z",
+                        "prompt":  "Create a single upright whiskey bottle inventory icon for the historical adventure game 1899. The first reference defines the upright orientation, tall narrow silhouette, relative size, composition and dominant colors. Preserve its narrow neck, small dark closure, olive amber glass, broad pale parchment label and flat base. This is the SAME bottle seen lying sideways in reference three: use reference three as the primary reference for its actual design, warm olive amber glass, cream label with restrained dark markings, dark outline and material shading, translating that same bottle into the upright inventory pose of reference one. Do not copy its horizontal orientation. Reference two (Churchill) guides only purposeful detail, restrained shading, deliberate pixel clusters and a consistent dark outline exactly one final-image pixel thick following the silhouette. Do not transfer anatomy, clothes or unrelated objects. Reference four is only a flexible color guide; harmonious additional material shades are allowed. The upright bottle should occupy roughly one quarter of the square composition\u0027s width and five eighths of its height, centered. Keep a continuous dark outer contour, stepped diagonals, subtle interior lines, no doubled outline, halo, blur or antialiasing. Preserve clear areas and recognizable period bottle proportions; no new brand, embellishments, props or cast shadow. Preserve the source background treatment and binary alpha. Refine glass with restrained highlights, amber liquor shading and the small parchment label, readable at inventory size.",
+                        "width":  48,
+                        "height":  48,
+                        "assetUrl":  "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/70ca71a5-829f-40d3-926a-cdcda353db44/image.png?v=1795620851471",
+                        "style":  "default",
+                        "tags":  [
+
+                                 ],
+                        "contentType":  "image/png",
+                        "batchId":  "9f75be4e-adc7-48e7-95c1-333e1aa10fda",
+                        "batchIndex":  8,
+                        "batchSize":  9,
+                        "action":  {
+                                       "kind":  "same-style"
+                                   }
+                    }
+                ],
+    "credits":  {
+                    "used":  15,
+                    "remaining":  115
+                },
+    "inputs":  [
+                   "godot/assets/graphics/ep01_cabin/inventory_bottle.png",
+                   "godot/assets/graphics/characters/churchill/churchill-stand.png",
+                   "godot/assets/graphics/ep01_cabin/bottle.png",
+                   "godot/palette/1899-base-128-swatches.png"
+               ],
+    "size":  48,
+    "prompt":  "Create a single upright whiskey bottle inventory icon for the historical adventure game 1899. The first reference defines the upright orientation, tall narrow silhouette, relative size, composition and dominant colors. Preserve its narrow neck, small dark closure, olive amber glass, broad pale parchment label and flat base. This is the SAME bottle seen lying sideways in reference three: use reference three as the primary reference for its actual design, warm olive amber glass, cream label with restrained dark markings, dark outline and material shading, translating that same bottle into the upright inventory pose of reference one. Do not copy its horizontal orientation. Reference two (Churchill) guides only purposeful detail, restrained shading, deliberate pixel clusters and a consistent dark outline exactly one final-image pixel thick following the silhouette. Do not transfer anatomy, clothes or unrelated objects. Reference four is only a flexible color guide; harmonious additional material shades are allowed. The upright bottle should occupy roughly one quarter of the square composition\u0027s width and five eighths of its height, centered. Keep a continuous dark outer contour, stepped diagonals, subtle interior lines, no doubled outline, halo, blur or antialiasing. Preserve clear areas and recognizable period bottle proportions; no new brand, embellishments, props or cast shadow. Preserve the source background treatment and binary alpha. Refine glass with restrained highlights, amber liquor shading and the small parchment label, readable at inventory size.",
+    "files":  [
+                  {
+                      "id":  "2f33fb70-4d56-479b-8700-d5eaa5a5a4a3",
+                      "url":  "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/2f33fb70-4d56-479b-8700-d5eaa5a5a4a3/image.png?v=1795620848030",
+                      "path":  "godot/assets/graphics/ep01_cabin/inventory_bottle-redesign.png"
+                  },
+                  {
+                      "id":  "17411863-e27c-499b-bba6-7f2453b3bdbf",
+                      "url":  "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/17411863-e27c-499b-bba6-7f2453b3bdbf/image.png?v=1795620848426",
+                      "path":  "godot/assets/graphics/ep01_cabin/inventory_bottle-redesign-2.png"
+                  },
+                  {
+                      "id":  "08510993-3640-4a94-8f59-ebf9c1d70bc4",
+                      "url":  "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/08510993-3640-4a94-8f59-ebf9c1d70bc4/image.png?v=1795620848831",
+                      "path":  "godot/assets/graphics/ep01_cabin/inventory_bottle-redesign-3.png"
+                  },
+                  {
+                      "id":  "c657ab6d-6d70-4f05-82a4-4497bd687e45",
+                      "url":  "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/c657ab6d-6d70-4f05-82a4-4497bd687e45/image.png?v=1795620849316",
+                      "path":  "godot/assets/graphics/ep01_cabin/inventory_bottle-redesign-4.png"
+                  },
+                  {
+                      "id":  "bf6fd990-8bbe-42ee-8992-937a6e6eb408",
+                      "url":  "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/bf6fd990-8bbe-42ee-8992-937a6e6eb408/image.png?v=1795620849757",
+                      "path":  "godot/assets/graphics/ep01_cabin/inventory_bottle-redesign-5.png"
+                  },
+                  {
+                      "id":  "fc64ae13-438b-4547-964b-6bb0e0deb9d9",
+                      "url":  "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/fc64ae13-438b-4547-964b-6bb0e0deb9d9/image.png?v=1795620850229",
+                      "path":  "godot/assets/graphics/ep01_cabin/inventory_bottle-redesign-6.png"
+                  },
+                  {
+                      "id":  "8af8b688-798d-4a06-b19f-d59577be0509",
+                      "url":  "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/8af8b688-798d-4a06-b19f-d59577be0509/image.png?v=1795620850637",
+                      "path":  "godot/assets/graphics/ep01_cabin/inventory_bottle-redesign-7.png"
+                  },
+                  {
+                      "id":  "f66bcb55-e25c-45d5-93e4-cf19b3a7da0b",
+                      "url":  "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/f66bcb55-e25c-45d5-93e4-cf19b3a7da0b/image.png?v=1795620851017",
+                      "path":  "godot/assets/graphics/ep01_cabin/inventory_bottle-redesign-8.png"
+                  },
+                  {
+                      "id":  "70ca71a5-829f-40d3-926a-cdcda353db44",
+                      "url":  "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/70ca71a5-829f-40d3-926a-cdcda353db44/image.png?v=1795620851471",
+                      "path":  "godot/assets/graphics/ep01_cabin/inventory_bottle-redesign-9.png"
+                  }
+              ],
+    "decision":  "V7 approvata dall utente il 2026-11-25, inclusa deroga dimensionale 15x45. Integrata senza ricampionamento su canvas 50x50, posizione (17,2)."
+}

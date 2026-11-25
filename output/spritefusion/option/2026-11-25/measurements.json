@@ -1,0 +1,192 @@
+﻿[
+    {
+        "variant":  0,
+        "file":  "C:\\htdocs\\_OLD\\_GAMES\\1899\\output\\spritefusion\\option\\2026-11-25\\original.png",
+        "canvas":  [
+                       50,
+                       50
+                   ],
+        "bounds":  [
+                       11,
+                       8,
+                       27,
+                       32
+                   ],
+        "alpha":  [
+                      255,
+                      0
+                  ],
+        "fits40":  true
+    },
+    {
+        "variant":  1,
+        "file":  "C:\\htdocs\\_OLD\\_GAMES\\1899\\godot\\assets\\graphics\\ui\\option-redesign.png",
+        "canvas":  [
+                       48,
+                       48
+                   ],
+        "bounds":  [
+                       5,
+                       0,
+                       38,
+                       47
+                   ],
+        "alpha":  [
+                      255,
+                      0
+                  ],
+        "fits40":  false
+    },
+    {
+        "variant":  2,
+        "file":  "C:\\htdocs\\_OLD\\_GAMES\\1899\\godot\\assets\\graphics\\ui\\option-redesign-2.png",
+        "canvas":  [
+                       48,
+                       48
+                   ],
+        "bounds":  [
+                       5,
+                       3,
+                       38,
+                       41
+                   ],
+        "alpha":  [
+                      255,
+                      0
+                  ],
+        "fits40":  false
+    },
+    {
+        "variant":  3,
+        "file":  "C:\\htdocs\\_OLD\\_GAMES\\1899\\godot\\assets\\graphics\\ui\\option-redesign-3.png",
+        "canvas":  [
+                       48,
+                       48
+                   ],
+        "bounds":  [
+                       5,
+                       1,
+                       38,
+                       45
+                   ],
+        "alpha":  [
+                      255,
+                      0
+                  ],
+        "fits40":  false
+    },
+    {
+        "variant":  4,
+        "file":  "C:\\htdocs\\_OLD\\_GAMES\\1899\\godot\\assets\\graphics\\ui\\option-redesign-4.png",
+        "canvas":  [
+                       48,
+                       48
+                   ],
+        "bounds":  [
+                       5,
+                       1,
+                       38,
+                       46
+                   ],
+        "alpha":  [
+                      255,
+                      0
+                  ],
+        "fits40":  false
+    },
+    {
+        "variant":  5,
+        "file":  "C:\\htdocs\\_OLD\\_GAMES\\1899\\godot\\assets\\graphics\\ui\\option-redesign-5.png",
+        "canvas":  [
+                       48,
+                       48
+                   ],
+        "bounds":  [
+                       5,
+                       3,
+                       38,
+                       42
+                   ],
+        "alpha":  [
+                      255,
+                      0
+                  ],
+        "fits40":  false
+    },
+    {
+        "variant":  6,
+        "file":  "C:\\htdocs\\_OLD\\_GAMES\\1899\\godot\\assets\\graphics\\ui\\option-redesign-6.png",
+        "canvas":  [
+                       48,
+                       48
+                   ],
+        "bounds":  [
+                       5,
+                       1,
+                       38,
+                       45
+                   ],
+        "alpha":  [
+                      255,
+                      0
+                  ],
+        "fits40":  false
+    },
+    {
+        "variant":  7,
+        "file":  "C:\\htdocs\\_OLD\\_GAMES\\1899\\godot\\assets\\graphics\\ui\\option-redesign-7.png",
+        "canvas":  [
+                       48,
+                       48
+                   ],
+        "bounds":  [
+                       5,
+                       2,
+                       38,
+                       44
+                   ],
+        "alpha":  [
+                      255,
+                      0
+                  ],
+        "fits40":  false
+    },
+    {
+        "variant":  8,
+        "file":  "C:\\htdocs\\_OLD\\_GAMES\\1899\\godot\\assets\\graphics\\ui\\option-redesign-8.png",
+        "canvas":  [
+                       48,
+                       48
+                   ],
+        "bounds":  [
+                       5,
+                       1,
+                       38,
+                       46
+                   ],
+        "alpha":  [
+                      255,
+                      0
+                  ],
+        "fits40":  false
+    },
+    {
+        "variant":  9,
+        "file":  "C:\\htdocs\\_OLD\\_GAMES\\1899\\godot\\assets\\graphics\\ui\\option-redesign-9.png",
+        "canvas":  [
+                       48,
+                       48
+                   ],
+        "bounds":  [
+                       5,
+                       0,
+                       38,
+                       47
+                   ],
+        "alpha":  [
+                      255,
+                      0
+                  ],
+        "fits40":  false
+    }
+]

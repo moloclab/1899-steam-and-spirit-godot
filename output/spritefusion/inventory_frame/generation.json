@@ -1,0 +1,187 @@
+{
+  "request_id": "req_c21b3378-5edd-44b4-89bb-426c110082c2",
+  "status": "succeeded",
+  "output_count": 9,
+  "outputs": [
+    {
+      "id": "c2960f66-9fb1-4138-869b-98cae27f6ab7",
+      "type": "image",
+      "createdAt": "2026-11-25T13:21:22.839Z",
+      "updatedAt": "2026-11-25T13:21:22.839Z",
+      "prompt": "Create a very thin square golden UI border frame for the inventory panel of the adventure game 1899. Front view, straight symmetrical horizontal and vertical rails, a large empty open center showing whatever is behind the frame. Restrained antique gold and warm brass, tiny muted highlights and dark brown recesses. The frame should occupy almost the full square composition but its rails must be narrow and lightweight, leaving most of the area open. Add only subtle Victorian steampunk accents: tiny inset rivets and modest angular brass joinery at the four corners. Keep the corner ornaments small, contained in the border, and the long straight rails plain so this border can be adapted to a wide horizontal panel. No bulky gears, pipes, protruding ornaments, text, symbols, objects, glass, backing plate or filled center. A fine continuous dark outer contour and restrained internal lines, deliberate fine detail and stepped diagonals, no blur or halo. Reference 1 provides only the game's shading, fine detail and dark contour style; do not reproduce the character, anatomy or clothing. Reference 2 supplies the project's flexible color reference only: favor its muted golden ochres, warm brass and dark browns; harmonious extra shades are allowed. The whole central opening and the space outside the frame are empty cutouts.",
+      "width": 48,
+      "height": 48,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/c2960f66-9fb1-4138-869b-98cae27f6ab7/image.png?v=1795612882839",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "7d12c46a-f429-4f0e-8be1-55bccb95f228",
+      "batchIndex": 0,
+      "batchSize": 9,
+      "action": {
+        "kind": "same-style"
+      }
+    },
+    {
+      "id": "6d801ab5-0315-40b5-b66d-e86a33827ca9",
+      "type": "image",
+      "createdAt": "2026-11-25T13:21:23.309Z",
+      "updatedAt": "2026-11-25T13:21:23.309Z",
+      "prompt": "Create a very thin square golden UI border frame for the inventory panel of the adventure game 1899. Front view, straight symmetrical horizontal and vertical rails, a large empty open center showing whatever is behind the frame. Restrained antique gold and warm brass, tiny muted highlights and dark brown recesses. The frame should occupy almost the full square composition but its rails must be narrow and lightweight, leaving most of the area open. Add only subtle Victorian steampunk accents: tiny inset rivets and modest angular brass joinery at the four corners. Keep the corner ornaments small, contained in the border, and the long straight rails plain so this border can be adapted to a wide horizontal panel. No bulky gears, pipes, protruding ornaments, text, symbols, objects, glass, backing plate or filled center. A fine continuous dark outer contour and restrained internal lines, deliberate fine detail and stepped diagonals, no blur or halo. Reference 1 provides only the game's shading, fine detail and dark contour style; do not reproduce the character, anatomy or clothing. Reference 2 supplies the project's flexible color reference only: favor its muted golden ochres, warm brass and dark browns; harmonious extra shades are allowed. The whole central opening and the space outside the frame are empty cutouts.",
+      "width": 48,
+      "height": 48,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/6d801ab5-0315-40b5-b66d-e86a33827ca9/image.png?v=1795612883309",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "7d12c46a-f429-4f0e-8be1-55bccb95f228",
+      "batchIndex": 1,
+      "batchSize": 9,
+      "action": {
+        "kind": "same-style"
+      }
+    },
+    {
+      "id": "356a0162-0aff-4fb4-8c4c-eb69a961e53a",
+      "type": "image",
+      "createdAt": "2026-11-25T13:21:23.897Z",
+      "updatedAt": "2026-11-25T13:21:23.897Z",
+      "prompt": "Create a very thin square golden UI border frame for the inventory panel of the adventure game 1899. Front view, straight symmetrical horizontal and vertical rails, a large empty open center showing whatever is behind the frame. Restrained antique gold and warm brass, tiny muted highlights and dark brown recesses. The frame should occupy almost the full square composition but its rails must be narrow and lightweight, leaving most of the area open. Add only subtle Victorian steampunk accents: tiny inset rivets and modest angular brass joinery at the four corners. Keep the corner ornaments small, contained in the border, and the long straight rails plain so this border can be adapted to a wide horizontal panel. No bulky gears, pipes, protruding ornaments, text, symbols, objects, glass, backing plate or filled center. A fine continuous dark outer contour and restrained internal lines, deliberate fine detail and stepped diagonals, no blur or halo. Reference 1 provides only the game's shading, fine detail and dark contour style; do not reproduce the character, anatomy or clothing. Reference 2 supplies the project's flexible color reference only: favor its muted golden ochres, warm brass and dark browns; harmonious extra shades are allowed. The whole central opening and the space outside the frame are empty cutouts.",
+      "width": 48,
+      "height": 48,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/356a0162-0aff-4fb4-8c4c-eb69a961e53a/image.png?v=1795612883897",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "7d12c46a-f429-4f0e-8be1-55bccb95f228",
+      "batchIndex": 2,
+      "batchSize": 9,
+      "action": {
+        "kind": "same-style"
+      }
+    },
+    {
+      "id": "d105d81a-31b4-489b-a3f1-d54218cebffd",
+      "type": "image",
+      "createdAt": "2026-11-25T13:21:24.351Z",
+      "updatedAt": "2026-11-25T13:21:24.351Z",
+      "prompt": "Create a very thin square golden UI border frame for the inventory panel of the adventure game 1899. Front view, straight symmetrical horizontal and vertical rails, a large empty open center showing whatever is behind the frame. Restrained antique gold and warm brass, tiny muted highlights and dark brown recesses. The frame should occupy almost the full square composition but its rails must be narrow and lightweight, leaving most of the area open. Add only subtle Victorian steampunk accents: tiny inset rivets and modest angular brass joinery at the four corners. Keep the corner ornaments small, contained in the border, and the long straight rails plain so this border can be adapted to a wide horizontal panel. No bulky gears, pipes, protruding ornaments, text, symbols, objects, glass, backing plate or filled center. A fine continuous dark outer contour and restrained internal lines, deliberate fine detail and stepped diagonals, no blur or halo. Reference 1 provides only the game's shading, fine detail and dark contour style; do not reproduce the character, anatomy or clothing. Reference 2 supplies the project's flexible color reference only: favor its muted golden ochres, warm brass and dark browns; harmonious extra shades are allowed. The whole central opening and the space outside the frame are empty cutouts.",
+      "width": 48,
+      "height": 48,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/d105d81a-31b4-489b-a3f1-d54218cebffd/image.png?v=1795612884351",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "7d12c46a-f429-4f0e-8be1-55bccb95f228",
+      "batchIndex": 3,
+      "batchSize": 9,
+      "action": {
+        "kind": "same-style"
+      }
+    },
+    {
+      "id": "a8cbe954-8540-47e4-860d-c7d856c03f50",
+      "type": "image",
+      "createdAt": "2026-11-25T13:21:24.818Z",
+      "updatedAt": "2026-11-25T13:21:24.818Z",
+      "prompt": "Create a very thin square golden UI border frame for the inventory panel of the adventure game 1899. Front view, straight symmetrical horizontal and vertical rails, a large empty open center showing whatever is behind the frame. Restrained antique gold and warm brass, tiny muted highlights and dark brown recesses. The frame should occupy almost the full square composition but its rails must be narrow and lightweight, leaving most of the area open. Add only subtle Victorian steampunk accents: tiny inset rivets and modest angular brass joinery at the four corners. Keep the corner ornaments small, contained in the border, and the long straight rails plain so this border can be adapted to a wide horizontal panel. No bulky gears, pipes, protruding ornaments, text, symbols, objects, glass, backing plate or filled center. A fine continuous dark outer contour and restrained internal lines, deliberate fine detail and stepped diagonals, no blur or halo. Reference 1 provides only the game's shading, fine detail and dark contour style; do not reproduce the character, anatomy or clothing. Reference 2 supplies the project's flexible color reference only: favor its muted golden ochres, warm brass and dark browns; harmonious extra shades are allowed. The whole central opening and the space outside the frame are empty cutouts.",
+      "width": 48,
+      "height": 48,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/a8cbe954-8540-47e4-860d-c7d856c03f50/image.png?v=1795612884818",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "7d12c46a-f429-4f0e-8be1-55bccb95f228",
+      "batchIndex": 4,
+      "batchSize": 9,
+      "action": {
+        "kind": "same-style"
+      }
+    },
+    {
+      "id": "fe935a15-5a90-4af0-8e1a-0f626ebc9595",
+      "type": "image",
+      "createdAt": "2026-11-25T13:21:25.279Z",
+      "updatedAt": "2026-11-25T13:21:25.279Z",
+      "prompt": "Create a very thin square golden UI border frame for the inventory panel of the adventure game 1899. Front view, straight symmetrical horizontal and vertical rails, a large empty open center showing whatever is behind the frame. Restrained antique gold and warm brass, tiny muted highlights and dark brown recesses. The frame should occupy almost the full square composition but its rails must be narrow and lightweight, leaving most of the area open. Add only subtle Victorian steampunk accents: tiny inset rivets and modest angular brass joinery at the four corners. Keep the corner ornaments small, contained in the border, and the long straight rails plain so this border can be adapted to a wide horizontal panel. No bulky gears, pipes, protruding ornaments, text, symbols, objects, glass, backing plate or filled center. A fine continuous dark outer contour and restrained internal lines, deliberate fine detail and stepped diagonals, no blur or halo. Reference 1 provides only the game's shading, fine detail and dark contour style; do not reproduce the character, anatomy or clothing. Reference 2 supplies the project's flexible color reference only: favor its muted golden ochres, warm brass and dark browns; harmonious extra shades are allowed. The whole central opening and the space outside the frame are empty cutouts.",
+      "width": 48,
+      "height": 48,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/fe935a15-5a90-4af0-8e1a-0f626ebc9595/image.png?v=1795612885279",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "7d12c46a-f429-4f0e-8be1-55bccb95f228",
+      "batchIndex": 5,
+      "batchSize": 9,
+      "action": {
+        "kind": "same-style"
+      }
+    },
+    {
+      "id": "763a238f-c691-45b8-b42a-558796045fa0",
+      "type": "image",
+      "createdAt": "2026-11-25T13:21:25.726Z",
+      "updatedAt": "2026-11-25T13:21:25.726Z",
+      "prompt": "Create a very thin square golden UI border frame for the inventory panel of the adventure game 1899. Front view, straight symmetrical horizontal and vertical rails, a large empty open center showing whatever is behind the frame. Restrained antique gold and warm brass, tiny muted highlights and dark brown recesses. The frame should occupy almost the full square composition but its rails must be narrow and lightweight, leaving most of the area open. Add only subtle Victorian steampunk accents: tiny inset rivets and modest angular brass joinery at the four corners. Keep the corner ornaments small, contained in the border, and the long straight rails plain so this border can be adapted to a wide horizontal panel. No bulky gears, pipes, protruding ornaments, text, symbols, objects, glass, backing plate or filled center. A fine continuous dark outer contour and restrained internal lines, deliberate fine detail and stepped diagonals, no blur or halo. Reference 1 provides only the game's shading, fine detail and dark contour style; do not reproduce the character, anatomy or clothing. Reference 2 supplies the project's flexible color reference only: favor its muted golden ochres, warm brass and dark browns; harmonious extra shades are allowed. The whole central opening and the space outside the frame are empty cutouts.",
+      "width": 48,
+      "height": 48,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/763a238f-c691-45b8-b42a-558796045fa0/image.png?v=1795612885726",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "7d12c46a-f429-4f0e-8be1-55bccb95f228",
+      "batchIndex": 6,
+      "batchSize": 9,
+      "action": {
+        "kind": "same-style"
+      }
+    },
+    {
+      "id": "7ee7435c-d03a-489a-935e-eb022bc160b2",
+      "type": "image",
+      "createdAt": "2026-11-25T13:21:26.173Z",
+      "updatedAt": "2026-11-25T13:21:26.173Z",
+      "prompt": "Create a very thin square golden UI border frame for the inventory panel of the adventure game 1899. Front view, straight symmetrical horizontal and vertical rails, a large empty open center showing whatever is behind the frame. Restrained antique gold and warm brass, tiny muted highlights and dark brown recesses. The frame should occupy almost the full square composition but its rails must be narrow and lightweight, leaving most of the area open. Add only subtle Victorian steampunk accents: tiny inset rivets and modest angular brass joinery at the four corners. Keep the corner ornaments small, contained in the border, and the long straight rails plain so this border can be adapted to a wide horizontal panel. No bulky gears, pipes, protruding ornaments, text, symbols, objects, glass, backing plate or filled center. A fine continuous dark outer contour and restrained internal lines, deliberate fine detail and stepped diagonals, no blur or halo. Reference 1 provides only the game's shading, fine detail and dark contour style; do not reproduce the character, anatomy or clothing. Reference 2 supplies the project's flexible color reference only: favor its muted golden ochres, warm brass and dark browns; harmonious extra shades are allowed. The whole central opening and the space outside the frame are empty cutouts.",
+      "width": 48,
+      "height": 48,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/7ee7435c-d03a-489a-935e-eb022bc160b2/image.png?v=1795612886173",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "7d12c46a-f429-4f0e-8be1-55bccb95f228",
+      "batchIndex": 7,
+      "batchSize": 9,
+      "action": {
+        "kind": "same-style"
+      }
+    },
+    {
+      "id": "644d74bf-ea55-46f8-ab42-1bbec390817a",
+      "type": "image",
+      "createdAt": "2026-11-25T13:21:26.652Z",
+      "updatedAt": "2026-11-25T13:21:26.652Z",
+      "prompt": "Create a very thin square golden UI border frame for the inventory panel of the adventure game 1899. Front view, straight symmetrical horizontal and vertical rails, a large empty open center showing whatever is behind the frame. Restrained antique gold and warm brass, tiny muted highlights and dark brown recesses. The frame should occupy almost the full square composition but its rails must be narrow and lightweight, leaving most of the area open. Add only subtle Victorian steampunk accents: tiny inset rivets and modest angular brass joinery at the four corners. Keep the corner ornaments small, contained in the border, and the long straight rails plain so this border can be adapted to a wide horizontal panel. No bulky gears, pipes, protruding ornaments, text, symbols, objects, glass, backing plate or filled center. A fine continuous dark outer contour and restrained internal lines, deliberate fine detail and stepped diagonals, no blur or halo. Reference 1 provides only the game's shading, fine detail and dark contour style; do not reproduce the character, anatomy or clothing. Reference 2 supplies the project's flexible color reference only: favor its muted golden ochres, warm brass and dark browns; harmonious extra shades are allowed. The whole central opening and the space outside the frame are empty cutouts.",
+      "width": 48,
+      "height": 48,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/644d74bf-ea55-46f8-ab42-1bbec390817a/image.png?v=1795612886652",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "7d12c46a-f429-4f0e-8be1-55bccb95f228",
+      "batchIndex": 8,
+      "batchSize": 9,
+      "action": {
+        "kind": "same-style"
+      }
+    }
+  ],
+  "credits": {
+    "used": 15,
+    "remaining": 130
+  },
+  "inputs": [
+    "godot/assets/graphics/characters/churchill/churchill-stand.png",
+    "godot/palette/1899-base-128-swatches.png"
+  ],
+  "purpose": "Cornice per singoli slot inventario. Prompt inviato prima della precisazione utente; risultati da valutare come cornici quadrate. Nessuna integrazione."
+}

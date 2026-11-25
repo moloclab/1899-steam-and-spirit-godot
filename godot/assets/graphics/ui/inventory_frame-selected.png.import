@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ci5gkpli1vv5u"
-path="res://.godot/imported/_churchill-sit.png-9de36d771bcad44710e1da9367a12634.ctex"
+uid="uid://d0lm2vjarw522"
+path="res://.godot/imported/inventory_frame-selected.png-8d4175b71f07e8ebc6ffddf1acf01364.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/graphics/characters/churchill/_churchill-sit.png"
-dest_files=["res://.godot/imported/_churchill-sit.png-9de36d771bcad44710e1da9367a12634.ctex"]
+source_file="res://assets/graphics/ui/inventory_frame-selected.png"
+dest_files=["res://.godot/imported/inventory_frame-selected.png-8d4175b71f07e8ebc6ffddf1acf01364.ctex"]
 
 [params]
 

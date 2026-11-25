@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dv6tank85gndv"
-path="res://.godot/imported/_churchill-walk.png-bc5d3fd02f29c77905ef4c63124b8599.ctex"
+uid="uid://3u4wy7m5uptx"
+path="res://.godot/imported/inventory_frame.png-a1c6d9725748c43a3ff1d1dac5b51e84.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/graphics/characters/churchill/_churchill-walk.png"
-dest_files=["res://.godot/imported/_churchill-walk.png-bc5d3fd02f29c77905ef4c63124b8599.ctex"]
+source_file="res://assets/graphics/ui/inventory_frame.png"
+dest_files=["res://.godot/imported/inventory_frame.png-a1c6d9725748c43a3ff1d1dac5b51e84.ctex"]
 
 [params]
 

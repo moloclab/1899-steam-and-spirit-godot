@@ -1,0 +1,164 @@
+﻿[
+    {
+        "file":  "godot/assets/graphics/ui/inventory_frame-redesign.png",
+        "canvas":  [
+                       48,
+                       48
+                   ],
+        "bounds":  [
+                       2,
+                       1,
+                       44,
+                       45
+                   ],
+        "alphaValues":  [
+                            0,
+                            255
+                        ],
+        "centerAlpha":  0
+    },
+    {
+        "file":  "godot/assets/graphics/ui/inventory_frame-redesign-2.png",
+        "canvas":  [
+                       48,
+                       48
+                   ],
+        "bounds":  [
+                       2,
+                       2,
+                       43,
+                       43
+                   ],
+        "alphaValues":  [
+                            0,
+                            255
+                        ],
+        "centerAlpha":  0
+    },
+    {
+        "file":  "godot/assets/graphics/ui/inventory_frame-redesign-3.png",
+        "canvas":  [
+                       48,
+                       48
+                   ],
+        "bounds":  [
+                       2,
+                       3,
+                       43,
+                       42
+                   ],
+        "alphaValues":  [
+                            0,
+                            255
+                        ],
+        "centerAlpha":  0
+    },
+    {
+        "file":  "godot/assets/graphics/ui/inventory_frame-redesign-4.png",
+        "canvas":  [
+                       48,
+                       48
+                   ],
+        "bounds":  [
+                       2,
+                       2,
+                       43,
+                       44
+                   ],
+        "alphaValues":  [
+                            0,
+                            255
+                        ],
+        "centerAlpha":  0
+    },
+    {
+        "file":  "godot/assets/graphics/ui/inventory_frame-redesign-5.png",
+        "canvas":  [
+                       48,
+                       48
+                   ],
+        "bounds":  [
+                       2,
+                       2,
+                       43,
+                       44
+                   ],
+        "alphaValues":  [
+                            0,
+                            255
+                        ],
+        "centerAlpha":  0
+    },
+    {
+        "file":  "godot/assets/graphics/ui/inventory_frame-redesign-6.png",
+        "canvas":  [
+                       48,
+                       48
+                   ],
+        "bounds":  [
+                       2,
+                       2,
+                       43,
+                       43
+                   ],
+        "alphaValues":  [
+                            0,
+                            255
+                        ],
+        "centerAlpha":  0
+    },
+    {
+        "file":  "godot/assets/graphics/ui/inventory_frame-redesign-7.png",
+        "canvas":  [
+                       48,
+                       48
+                   ],
+        "bounds":  [
+                       3,
+                       2,
+                       42,
+                       43
+                   ],
+        "alphaValues":  [
+                            0,
+                            255
+                        ],
+        "centerAlpha":  0
+    },
+    {
+        "file":  "godot/assets/graphics/ui/inventory_frame-redesign-8.png",
+        "canvas":  [
+                       48,
+                       48
+                   ],
+        "bounds":  [
+                       2,
+                       2,
+                       43,
+                       43
+                   ],
+        "alphaValues":  [
+                            0,
+                            255
+                        ],
+        "centerAlpha":  0
+    },
+    {
+        "file":  "godot/assets/graphics/ui/inventory_frame-redesign-9.png",
+        "canvas":  [
+                       48,
+                       48
+                   ],
+        "bounds":  [
+                       2,
+                       2,
+                       43,
+                       44
+                   ],
+        "alphaValues":  [
+                            0,
+                            255
+                        ],
+        "centerAlpha":  0
+    }
+]

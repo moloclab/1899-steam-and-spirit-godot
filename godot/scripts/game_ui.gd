@@ -14,6 +14,11 @@ const ActionMenu = preload("res://scripts/action_menu.gd")
 const Texts = preload("res://scripts/data/dictionary_catalog.gd")
 const Items = preload("res://scripts/data/item_catalog.gd")
 const GOLD := Color("e5bf73")
+## Cornici approvate: V2 per gli slot normali, V9 per l'oggetto selezionato.
+const INVENTORY_FRAME := preload("res://assets/graphics/ui/inventory_frame.png")
+const INVENTORY_FRAME_SELECTED := preload("res://assets/graphics/ui/inventory_frame-selected.png")
+## Riutilizza V2 desaturata per tutti gli slot senza modificare il PNG originale.
+var _inventory_frame_gray: ImageTexture
 ## Il coordinatore passa il catalogo condiviso prima della creazione dei controlli.
 var texts: Texts
 var _localized_controls: Dictionary = {}
@@ -96,13 +101,14 @@ func _button(key: String, rect: Rect2, callback: Callable, parent: Node = self) 
 	parent.add_child(button)
 	return button
 
-## Condivide scala e stile delle icone, con sfondo #120f0e configurabile per la bussola.
-func _inventory_button(texture: Texture2D, background: Color = Color("120f0e")) -> Button:
+## Condivide scala e stile delle icone, lasciando trasparente lo sfondo degli slot.
+func _inventory_button(texture: Texture2D, background: Color = Color.TRANSPARENT) -> Button:
 	var button := Button.new()
 	button.focus_mode = Control.FOCUS_NONE
 	var icon_image: Image = texture.get_image().duplicate()
 	icon_image.resize(icon_image.get_width() * 2, icon_image.get_height() * 2, Image.INTERPOLATE_NEAREST)
 	button.icon = ImageTexture.create_from_image(icon_image)
+	button.icon_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	button.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 	var icon_background := StyleBoxFlat.new()
 	icon_background.bg_color = background
@@ -116,6 +122,9 @@ func _inventory_button(texture: Texture2D, background: Color = Color("120f0e")) 
 ## Costruisce l'interfaccia nella risoluzione di riferimento del progetto.
 ## La stanza sta dentro world_panel; il dialogo segue chi parla e l'inventario resta fisso.
 func _ready() -> void:
+	# Desatura e scurisce la cornice V2 al 60% della luminosita', conservandone il canale alpha.
+	var frame_image := INVENTORY_FRAME.get_image().duplicate() as Image
+	_inventory_frame_gray = ImageTexture.create_from_image(frame_image)
 	texts.language_changed.connect(_refresh_texts)
 	# Occupa il viewport del coordinatore senza intercettare i clic destinati ai controlli figli.
 	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
@@ -158,15 +167,15 @@ func _ready() -> void:
 	# La bussola resta nel primo spazio anche con inventario vuoto o scorrimento degli oggetti.
 	# Lo sfondo trasparente lascia visibile la fascia inventario sotto la bussola.
 	help_button = _inventory_button(preload("res://assets/graphics/ui/option.png"), Color.TRANSPARENT)
-	help_button.position = Vector2(20, world_height + 19)
+	help_button.position = Vector2(30, world_height + 19)
 	help_button.z_index = 3
 	_localize(help_button, "common.ui.help", "tooltip_text")
 	help_button.pressed.connect(_toggle_help)
 	add_child(help_button)
 	inventory_row = HBoxContainer.new()
 	inventory_row.position = Vector2.ZERO
-	# Le icone 50×50 occupano 100 px alla scala di visualizzazione 2×.
-	inventory_row.size = Vector2(850, 100)
+	# I pannelli 52×52 occupano 104 px alla scala di visualizzazione 2×.
+	inventory_row.size = Vector2(850, 104)
 	inventory_row.add_theme_constant_override("separation", 10)
 	inventory_scroll = ScrollContainer.new()
 	# Il contenitore lascia visibile lo sfondo dedicato della fascia inventario.
@@ -289,6 +298,18 @@ func refresh_inventory(inventory: Array[String], _selected: String, _texts) -> v
 	for item in inventory:
 		var definition: Resource = Items.ITEMS[item]
 		var button := _inventory_button(definition.icon)
+		# Riserva un pannello 52×52 a scala 2×, mantenendo l'icona centrata.
+		button.custom_minimum_size = Vector2(104, 104)
+		# Disegna la cornice dietro l'icona, senza intercettare i clic o cambiare le dimensioni dello slot.
+		var frame := TextureRect.new()
+		frame.name = "InventoryFrame"
+		frame.show_behind_parent = true
+		frame.texture = INVENTORY_FRAME_SELECTED if item == _selected else _inventory_frame_gray
+		frame.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+		frame.stretch_mode = TextureRect.STRETCH_SCALE
+		frame.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		button.add_child(frame)
+		frame.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 		button.pressed.connect(func(): inventory_pressed.emit(item, button))
 		button.gui_input.connect(func(event: InputEvent):
 			if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_RIGHT:
@@ -296,7 +317,7 @@ func refresh_inventory(inventory: Array[String], _selected: String, _texts) -> v
 		inventory_row.add_child(button)
 		_inventory_buttons.append(button)
 
-## Aggiorna colori e scorrimento solo quando cambiano selezione, focus o pulsanti.
+## Aggiorna cornice, colore del focus e scorrimento quando cambiano selezione o pulsanti.
 func highlight_inventory(selected: String, focus_index: int, focused: bool) -> void:
 	var active_index := posmod(focus_index, _inventory_ids.size()) if focused and not _inventory_ids.is_empty() else -1
 	if _highlight_valid and _highlight_selected == selected and _highlight_index == active_index:
@@ -307,7 +328,10 @@ func highlight_inventory(selected: String, focus_index: int, focused: bool) -> v
 	for i in _inventory_buttons.size():
 		var button := _inventory_buttons[i]
 		var is_focused := i == active_index
-		button.modulate = GOLD if is_focused or _inventory_ids[i] == selected else Color.WHITE
+		# La selezione usa V9; il colore dorato continua a indicare il focus da tastiera.
+		var frame := button.get_node("InventoryFrame") as TextureRect
+		frame.texture = INVENTORY_FRAME_SELECTED if _inventory_ids[i] == selected else _inventory_frame_gray
+		button.modulate = GOLD if is_focused else Color.WHITE
 		if is_focused:
 			inventory_scroll.ensure_control_visible(button)
 
