@@ -48,18 +48,18 @@ func _run() -> void:
 	check(game.texts.language == "en" and game.ui.language_button.text == "Language: English", "Pulsante ritorna all'inglese")
 	check(game.ui.help_panel.visible, "Cambio lingua conserva il pannello aperto")
 	check(game.ui.save_buttons[0].text == "Save" and game.ui.save_buttons[1].text == "Load", "Pulsanti aiuti inglesi")
-	check(game.ui.help_button.text.is_empty() and game.ui.help_button.tooltip_text == "Help" and game.ui.help_close.text == "Back to game", "Bussola senza etichetta e tooltip aiuti inglese")
-	check(game.ui.reset_button.text == "Restart" and game.ui.reset_button.tooltip_text.begins_with("Restart the prototype."), "Reset e tooltip inglesi")
+	check(game.ui.help_button.text.is_empty() and game.ui.help_button.tooltip_text.is_empty() and game.ui.help_close.text == "Back to game", "Bussola senza etichetta e tooltip, chiusura aiuti inglese")
+	check(game.ui.reset_button.text == "Restart" and game.ui.reset_button.tooltip_text.is_empty(), "Reset inglese senza tooltip")
 	check(has_label(game.ui.help_panel, "CONTROLS"), "Titolo aiuti inglese")
 	check(has_label(game.ui.help_panel, game.texts.entries["common.ui.help_commands"].en), "Istruzioni complete inglesi")
 	check(game.ui.music_button.text == "Music: OFF" and game.music.stream_paused, "Cambio lingua conserva musica spenta")
 	game.ui._toggle_help()
-	for pair in [["sink", "Interact / pick up"], ["interphone", "Talk"], ["door", "Exit"]]:
-		game._open_hotspot_menu(game.rooms.find_hotspot(pair[0]))
-		check(game.ui.action_menu.interact_button.tooltip_text == pair[1], "Tooltip azione inglese: " + pair[0])
-	check(game.ui.action_menu.examine_button.tooltip_text == "Examine", "Tooltip esame inglese")
+	for hotspot_id in ["sink", "interphone", "door"]:
+		game._open_hotspot_menu(game.rooms.find_hotspot(hotspot_id))
+		check(game.ui.action_menu.interact_button.tooltip_text.is_empty(), "Azione senza tooltip: " + hotspot_id)
+	check(game.ui.action_menu.examine_button.tooltip_text.is_empty(), "Esame senza tooltip")
 	game.texts.language = "it"
-	check(game.ui.action_menu.visible and game.ui.action_menu.interact_button.tooltip_text == "Esci", "Menu aperto ritradotto in italiano")
+	check(game.ui.action_menu.visible and game.ui.action_menu.interact_button.tooltip_text.is_empty(), "Menu aperto senza tooltip dopo il cambio lingua")
 	check(game.ui.music_button.text == "Musica: OFF", "Stato musicale ritradotto")
 	game.texts.language = "en"
 	# I passi prodotti dalla stanza mantengono le chiavi traducibili e i soggetti delle battute.

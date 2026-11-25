@@ -2,13 +2,15 @@
 
 Il metodo principale approvato è `same-style`, tramite lo strumento MCP Sprite Fusion `generate_sprites_in_style`, con dimensione `size` esplicita. Gli asset devono ricevere un livello di dettaglio coerente con Churchill, conservando identità, funzione nella scena e ingombro del soggetto. Il procedimento lavora direttamente sui file presenti in `godot/assets/graphics` (cartella `assets/graphics` rispetto a questa guida).
 
-## Riferimento approvato
+## Riferimenti approvati
 
 | Ruolo | File | Dimensioni |
 | --- | --- | --- |
 | Risultato approvato | `assets/graphics/characters/churchill/churchill-stand.png` | 46×100 px |
 
-Churchill definisce il risultato visivo desiderato e non va ridisegnato salvo richiesta esplicita. L'applicazione del metodo a fondali e animazioni va verificata sui primi esempi di ciascuna categoria.
+Tutte le immagini attualmente presenti in `assets/graphics/ep01_cabin/` e `assets/graphics/characters/`, incluse le sottocartelle, sono già state ridisegnate e approvate dall'utente al 25 novembre 2026. Possono essere usate come riferimenti per i successivi redesign, scegliendo quelle più pertinenti per categoria, soggetto, materiali e posa. Questa approvazione riguarda i file attuali e non si estende automaticamente a nuove varianti o aggiunte future.
+
+Churchill resta il riferimento stilistico generale e non va ridisegnato salvo richiesta esplicita. Per gli spritesheet approvati estrarre i fotogrammi pertinenti prima di usarli come riferimenti.
 
 ## Stile e contorno comuni
 
@@ -42,7 +44,7 @@ Usare `generate_sprites_in_style` con questi riferimenti, nell'ordine:
 
 1. Il file da ridisegnare in `godot/assets/graphics`, alle dimensioni attuali, oppure un suo fotogramma estratto nel caso di uno spritesheet. Guida soggetto, composizione, proporzioni e colori dominanti.
 2. Churchill approvato come riferimento per il grado di dettaglio, le ombreggiature e il contorno scuro di un pixel. Il calamaio approvato può fornire un ulteriore riferimento per il bordo.
-3. Quando disponibile, un asset approvato della stessa categoria o lo stesso personaggio nella posa principale, dichiarandone il ruolo nel prompt.
+3. Un asset approvato pertinente da `assets/graphics/ep01_cabin/` o `assets/graphics/characters/`, preferendo la stessa categoria o lo stesso personaggio nella posa principale e dichiarandone il ruolo nel prompt.
 
 Per un oggetto o un fondale, specificare che Churchill fornisce soltanto un riferimento stilistico: abiti, anatomia e colori del personaggio non devono trasferirsi all'asset. Quando esiste un riferimento più pertinente già approvato, preferirlo per quella categoria.
 
@@ -139,7 +141,7 @@ Applicare questa regola quando l'utente specifica nel prompt che si tratta di un
 
 Eliminare le varianti scartate e i relativi `.import` solo quando richiesto; controllare prima eventuali riferimenti nelle scene. La loro eliminazione riguarda i file locali, senza cancellare la libreria Sprite Fusion.
 
-Ogni nuovo asset approvato amplia i riferimenti disponibili: Churchill resta il riferimento iniziale per i personaggi; il primo oggetto e il primo fondale approvati diventano riferimenti per le rispettive categorie.
+Ogni nuovo asset approvato amplia i riferimenti disponibili nelle rispettive categorie, aggiungendosi alle immagini già approvate di `assets/graphics/ep01_cabin/` e `assets/graphics/characters/`. Churchill resta il riferimento stilistico generale; preferire un riferimento della stessa categoria quando più pertinente.
 
 ### Richiesta riutilizzabile
 

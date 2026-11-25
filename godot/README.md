@@ -123,7 +123,7 @@ Gli oggetti riutilizzati mantengono gli ID di origine anche negli episodi succes
 Il servizio dei testi carica `assets/dictionaries/common/dictionary.json` e il catalogo dell'episodio;
 i cataloghi già caricati restano disponibili. I testi della UI usano chiavi `common.ui.*`,
 i nomi degli interlocutori `common.speaker.*` (anche nel campo `speaker` dei passi).
-Pulsanti, aiuti e tooltip condividono `texts.language` con i dialoghi e si aggiornano al cambio lingua.
+Pulsanti e aiuti condividono `texts.language` con i dialoghi e si aggiornano al cambio lingua.
 Per un oggetto proveniente da un altro episodio,
 la sua chiave carica su richiesta anche il catalogo di origine, senza cambiare episodio attivo.
 

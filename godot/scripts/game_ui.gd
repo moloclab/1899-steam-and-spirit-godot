@@ -45,7 +45,7 @@ var _highlight_valid := false
 var _highlight_selected := ""
 var _highlight_index := -1
 
-## Conserva le chiavi per aggiornare etichette e tooltip quando cambia la lingua.
+## Conserva le chiavi per aggiornare i testi quando cambia la lingua.
 func _localize(control: Control, key: String, property: String = "text") -> void:
 	if key.is_empty():
 		return
@@ -60,7 +60,6 @@ func _refresh_texts() -> void:
 		for property in _localized_controls[control]:
 			control.set(property, texts.text(_localized_controls[control][property]))
 	speaker_label.text = texts.text(_speaker_key).to_upper()
-	action_menu.refresh_texts()
 
 ## Crea un pannello con posizione e dimensioni espresse nelle coordinate del suo genitore.
 ## Il genitore predefinito è questa scena; i pannelli del menu usano invece un contenitore.
@@ -169,7 +168,6 @@ func _ready() -> void:
 	help_button = _inventory_button(preload("res://assets/graphics/ui/option.png"), Color.TRANSPARENT)
 	help_button.position = Vector2(30, world_height + 19)
 	help_button.z_index = 3
-	_localize(help_button, "common.ui.help", "tooltip_text")
 	help_button.pressed.connect(_toggle_help)
 	add_child(help_button)
 	inventory_row = HBoxContainer.new()
@@ -205,7 +203,6 @@ func _ready() -> void:
 	add_child(inventory_grime)
 	# Il pannello è figlio della UI, così mantiene dimensioni fisse e non viene ritagliato dalla stanza.
 	action_menu = ActionMenu.new()
-	action_menu.texts = texts
 	add_child(action_menu)
 	action_menu.chosen.connect(func(examine: bool): action_chosen.emit(examine))
 	_build_help()
@@ -242,7 +239,6 @@ func _build_help() -> void:
 		load_requested.emit()
 		_toggle_help(), content)
 	reset_button = _button("common.ui.restart", Rect2(340, 540, 180, 42), new_game_requested.emit, content)
-	_localize(reset_button, "common.ui.restart_hint", "tooltip_text")
 	help_close = _button("common.ui.resume", Rect2(530, 540, 250, 42), _toggle_help, content)
 	save_buttons.append(save)
 	save_buttons.append(load_button)
