@@ -1,0 +1,224 @@
+﻿[
+    {
+        "file":  "inventory_key.png",
+        "canvas":  [
+                       50,
+                       50
+                   ],
+        "bounds":  [
+                       18,
+                       9,
+                       13,
+                       32
+                   ],
+        "alphaValues":  [
+                            0,
+                            255
+                        ],
+        "sizeConforming":  true
+    },
+    {
+        "file":  "churchill-stand.png",
+        "canvas":  [
+                       46,
+                       100
+                   ],
+        "bounds":  [
+                       0,
+                       0,
+                       46,
+                       100
+                   ],
+        "alphaValues":  [
+                            0,
+                            255
+                        ],
+        "sizeConforming":  false
+    },
+    {
+        "file":  "feather.png",
+        "canvas":  [
+                       20,
+                       28
+                   ],
+        "bounds":  [
+                       0,
+                       0,
+                       20,
+                       28
+                   ],
+        "alphaValues":  [
+                            0,
+                            6,
+                            10,
+                            11,
+                            14,
+                            19,
+                            26,
+                            255
+                        ],
+        "sizeConforming":  false
+    },
+    {
+        "file":  "inventory_key-redesign.png",
+        "canvas":  [
+                       32,
+                       32
+                   ],
+        "bounds":  [
+                       10,
+                       0,
+                       12,
+                       32
+                   ],
+        "alphaValues":  [
+                            0,
+                            255
+                        ],
+        "sizeConforming":  false
+    },
+    {
+        "file":  "inventory_key-redesign-2.png",
+        "canvas":  [
+                       32,
+                       32
+                   ],
+        "bounds":  [
+                       10,
+                       1,
+                       11,
+                       29
+                   ],
+        "alphaValues":  [
+                            0,
+                            255
+                        ],
+        "sizeConforming":  false
+    },
+    {
+        "file":  "inventory_key-redesign-3.png",
+        "canvas":  [
+                       32,
+                       32
+                   ],
+        "bounds":  [
+                       8,
+                       0,
+                       15,
+                       31
+                   ],
+        "alphaValues":  [
+                            0,
+                            255
+                        ],
+        "sizeConforming":  false
+    },
+    {
+        "file":  "inventory_key-redesign-4.png",
+        "canvas":  [
+                       32,
+                       32
+                   ],
+        "bounds":  [
+                       9,
+                       0,
+                       14,
+                       31
+                   ],
+        "alphaValues":  [
+                            0,
+                            255
+                        ],
+        "sizeConforming":  false
+    },
+    {
+        "file":  "inventory_key-redesign-5.png",
+        "canvas":  [
+                       32,
+                       32
+                   ],
+        "bounds":  [
+                       11,
+                       1,
+                       9,
+                       30
+                   ],
+        "alphaValues":  [
+                            0,
+                            255
+                        ],
+        "sizeConforming":  false
+    },
+    {
+        "file":  "inventory_key-redesign-6.png",
+        "canvas":  [
+                       32,
+                       32
+                   ],
+        "bounds":  [
+                       9,
+                       0,
+                       14,
+                       31
+                   ],
+        "alphaValues":  [
+                            0,
+                            255
+                        ],
+        "sizeConforming":  false
+    },
+    {
+        "file":  "inventory_key-redesign-7.png",
+        "canvas":  [
+                       32,
+                       32
+                   ],
+        "bounds":  [
+                       9,
+                       1,
+                       14,
+                       29
+                   ],
+        "alphaValues":  [
+                            0,
+                            255
+                        ],
+        "sizeConforming":  false
+    },
+    {
+        "file":  "inventory_key-redesign-8.png",
+        "canvas":  [
+                       32,
+                       32
+                   ],
+        "bounds":  [
+                       10,
+                       0,
+                       12,
+                       31
+                   ],
+        "alphaValues":  [
+                            0,
+                            255
+                        ],
+        "sizeConforming":  false
+    },
+    {
+        "file":  "inventory_key-redesign-9.png",
+        "canvas":  [
+                       32,
+                       32
+                   ],
+        "bounds":  [
+                       10,
+                       0,
+                       12,
+                       31
+                   ],
+        "alphaValues":  [
+                            0,
+                            255
+                        ],
+        "sizeConforming":  false
+    }
+]

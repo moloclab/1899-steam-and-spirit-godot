@@ -6,14 +6,9 @@ Il metodo principale approvato è `same-style`, tramite lo strumento MCP Sprite 
 
 | Ruolo | File | Dimensioni |
 | --- | --- | --- |
-| Originale del confronto storico | `assets/graphics/characters/churchill/churchillStand.gif` | 44×100 px |
 | Risultato approvato | `assets/graphics/characters/churchill/churchill-stand.png` | 46×100 px |
 
-Nell'originale tutti i blocchi allineati 4×4 sono uniformi: il file contiene già l'ingrandimento della griglia di base. Il risultato approvato usa dettagli più fini all'interno di quella griglia, mantenendo l'altezza. Entrambi hanno trasparenza binaria, con alpha 0 o 255. I colori opachi passano da 63 a 38: aggiungere dettaglio non richiede aumentare il numero di colori.
-
-Churchill definisce il risultato visivo desiderato. Il metodo `same-style` è stato approvato nelle prove sul comò e sul calamaio con penna d'oca. L'applicazione a fondali e animazioni va verificata sui primi esempi di ciascuna categoria.
-
-churchillStand.gif documenta soltanto il confronto storico di Churchill. Tutte le sorgenti da modificare sono già in `godot/assets/graphics`. Churchill approvato si usa come riferimento e non va ridisegnato salvo richiesta esplicita.
+Churchill definisce il risultato visivo desiderato e non va ridisegnato salvo richiesta esplicita. L'applicazione del metodo a fondali e animazioni va verificata sui primi esempi di ciascuna categoria.
 
 ## Stile e contorno comuni
 
@@ -23,11 +18,11 @@ Usare un tono molto scuro, vicino al nero o al marrone scuro dei riferimenti, co
 
 Per fondali e superfici continue, applicare questo linguaggio ai contorni degli elementi rappresentati e ai raccordi pertinenti, senza aggiungere una cornice artificiale intorno al canvas. I fotogrammi di un'animazione devono mantenere lo stesso trattamento del bordo.
 
-Il primo comò approvato (prova `same-style-48`) resta un riferimento storico per il dettaglio del legno e per le proporzioni, ma non per il contorno, che era ancora da uniformare. Il comò attualmente integrato è la variante 9 della prova con palette flessibile, scelta esplicitamente dall'utente anche per il nuovo trattamento del frontale e della ferramenta.
+Per mobili coordinati usare il comò approvato attualmente integrato, `assets/graphics/ep01_cabin/como.png`, come riferimento del set.
 
 ## Palette cromatica di riferimento
 
-La prima palette comune di 128 colori di base è stata estratta dagli asset originali in `../EP01/img`, bilanciando fondali, personaggi, oggetti, inventario e interfaccia. La [tavola con codici HEX](palette/1899-base-128.png), i [campioni senza testo](palette/1899-base-128-swatches.png), il [file GPL](palette/1899-base-128.gpl) e il [file JSON](palette/1899-base-128.json) sono in `palette/`. Il [README della palette](palette/README.md) documenta metodo, pesi e riproduzione. La prima selezione resta da confrontare con i redesign approvati e da validare su scene rappresentative; le righe della tavola raggruppano colori affini e non definiscono rampe di materiale già approvate.
+La palette comune di 128 colori è disponibile come [tavola con codici HEX](palette/1899-base-128.png), [campioni senza testo](palette/1899-base-128-swatches.png), [file GPL](palette/1899-base-128.gpl) e [file JSON](palette/1899-base-128.json). Il [README della palette](palette/README.md) documenta origine e metodo di estrazione. Validare la coerenza con i redesign nella scena; i gruppi di colori della tavola non definiscono rampe di materiale già approvate.
 
 Usare la palette come base cromatica trasversale per il redesign. I 128 colori costituiscono un riferimento comune, non un limite al numero di colori del gioco o dei singoli asset. Ogni asset può usarne un sottoinsieme e introdurre sfumature aggiuntive quando aiutano a rappresentare materiali, illuminazione, dettagli o leggibilità, mantenendo coerenza con le tonalità di base, l'identità del soggetto e l'atmosfera della scena.
 
@@ -39,7 +34,7 @@ Non richiedere l'aderenza esatta ai codici della palette, né applicare conversi
 2. Descrivere accuratamente che cosa rappresenta, usando il contesto fornito dall'utente. Registrare dimensioni del file, rettangolo dei pixel visibili, trasparenza e ancoraggi importanti: piedi, base dell'oggetto, attacchi, aperture o raccordi con altri elementi. Per un soggetto ambiguo chiarirne la natura prima della generazione.
 3. Controllare la griglia effettiva e usare le dimensioni attuali del file come risoluzione di lavoro. Non applicare un ulteriore ×4 agli asset già ingranditi.
 4. Per gli spritesheet estrarre i singoli fotogrammi e ricavare ordine, regioni e durate dalle risorse e dalle scene Godot che li utilizzano.
-5. Conservare il file sorgente invariato. Salvare il risultato nella stessa cartella, aggiungendo `-redesign` al nome prima dell'estensione: per esempio, `assets/graphics/ep01_cabin/bed.png` diventa `assets/graphics/ep01_cabin/bed-redesign.png`. Salvare eventuali file di preparazione, confronti e metadati in `../output/spritefusion/<nome-asset>/`.
+5. Conservare il file sorgente invariato fino alla scelta dell'utente. Salvare file di preparazione, confronti e metadati in `../output/spritefusion/<nome-asset>/`; per i risultati nativi seguire la numerazione indicata in “Valutare i risultati”.
 
 ## Eseguire il redesign
 
@@ -92,7 +87,7 @@ Adattare le ultime righe al soggetto: pieghe e volumi per abiti, venature per le
 
 Precisare sempre la natura del soggetto. Per esempio, `feather.png` rappresenta un calamaio con penna d'oca per scrivere; `map.png` è la planimetria del Leviathian, il sottomarino steampunk a forma di manta su cui viaggia Churchill. La descrizione deve chiarire il contenuto, oltre ai materiali e allo stile.
 
-Mantenere i colori dominanti del soggetto nel prompt e indicare la palette comune di 128 colori come base flessibile, secondo la sezione dedicata. Quando si allegano i campioni `palette/1899-base-128-swatches.png`, dichiarare che guidano soltanto i colori, senza modificare l'ordine dei riferimenti del soggetto e dello stile. Il contorno scuro è un requisito comune da specificare sempre.
+Quando si allegano i campioni `palette/1899-base-128-swatches.png`, dichiarare nel prompt che guidano soltanto i colori, senza modificare l'ordine dei riferimenti del soggetto e dello stile.
 
 Ogni chiamata `generate_sprites_in_style` costa attualmente 15 crediti e restituisce più varianti. Comunicare il costo prima della generazione e iniziare con una chiamata per asset da valutare. Dopo un timeout controllare `list_assets` prima di qualsiasi nuovo tentativo: il risultato potrebbe essere già salvato e addebitato.
 
@@ -110,22 +105,9 @@ Verificare esplicitamente che il bordo esterno sia scuro e di un pixel alla riso
 
 Larghezza e altezza del soggetto visibile, contorno incluso, devono restare ciascuna tra il 95% e il 105% della corrispondente dimensione della sorgente visibile, escludendo i margini completamente trasparenti. Per dimensioni intere, il minimo è `ceil(dimensione × 0.95)` e il massimo è `floor(dimensione × 1.05)`. Registrare separatamente le dimensioni del canvas. Un output fuori intervallo non è conforme per impostazione predefinita: segnalarlo e attendere una deroga esplicita prima di integrarlo, anche se il disegno è interessante.
 
-Churchill approvato passa da 44 a 46 px di larghezza e rientra nella tolleranza. Valutare anche l'ingombro del soggetto e i punti di contatto; il numero di pixel da solo non misura la compatibilità. Deformazioni, cambi di prospettiva o spostamenti degli ancoraggi richiedono una valutazione distinta.
+Valutare anche i punti di contatto: le dimensioni da sole non misurano la compatibilità. Deformazioni, cambi di prospettiva o spostamenti degli ancoraggi richiedono una valutazione distinta. Ogni deroga dimensionale vale soltanto per l'asset approvato e non modifica la tolleranza per i successivi.
 
-### Prove approvate
-
-| Asset | Parametro | Risultato scelto e integrazione |
-| --- | --- | --- |
-| Comò | `size: 48` | Variante 5, soggetto 40×36 px nel canvas 48×48. Rimossi solo i margini trasparenti e sostituito `como.png`. Il bordo resta da uniformare alla nuova regola comune. |
-| Comò, palette flessibile 128 | `size: 48` | Variante 9 scelta dall'utente, inclusi i cambiamenti al frontale e alla ferramenta. Soggetto 40×37 px nel canvas 48×48; rimossi solo i margini trasparenti e sostituito `como.png`. Posizione y da 164 a 163 e hotspot 40×37 per mantenere la base a y=200. Nativo e copia precedente in `../output/spritefusion/como/palette-128/`; eliminate le altre otto varianti locali. |
-| Calamaio con penna d'oca | `size: 32` | Variante 3, soggetto 20×28 px nel canvas 32×32. L'utente ha approvato esplicitamente la larghezza maggiore rispetto ai 16×28 px originali. Rimossi solo i margini trasparenti e sostituito `feather.png`. |
-| Lavabo abbinato al comò | `size: 64` | Variante 4 scelta dall'utente dopo la segnalazione delle dimensioni fuori tolleranza: soggetto 36×62 px nel canvas 64×64, rispetto ai 40×56 px originali. Rimossi solo i margini trasparenti e sostituito `sink.png`. Posizione (272, 138) e hotspot 36×62 mantengono la base a y=200. Originale e nativo in `../output/spritefusion/sink/same-set-64/`; eliminate le altre otto varianti locali. |
-
-Le deroghe dimensionali del calamaio e del lavabo riguardano soltanto i rispettivi asset e non modificano la tolleranza predefinita per i successivi. I file delle prime prove e i metadati sono in `../output/spritefusion/como/same-style-48/` e `../output/spritefusion/feather/same-style-32/`.
-
-`edit_sprite` non è il metodo principale per questo redesign: nelle prove ha variato sensibilmente le dimensioni, anche con un input ingrandito preventivamente ×2. Non applicare compensazioni automatiche basate su un presunto rapporto fisso fra input e output.
-
-Conservare i risultati nativi. Per la variante scelta è consentito eliminare soltanto i margini completamente trasparenti, senza ridimensionare o modificare i pixel visibili. Conservare il file nativo tra i materiali della prova e verificare che il ritaglio lasci intatti soggetto e contorno. Il ritaglio non corregge un soggetto troppo grande o troppo piccolo. Non ridimensionare, tagliare pixel visibili, aggiungere margini o rigenerare automaticamente per forzare il rispetto delle dimensioni.
+`edit_sprite` non è il metodo principale per questo redesign. Non applicare compensazioni automatiche basate su un presunto rapporto fisso fra dimensioni di input e output.
 
 ## Applicare il metodo alle categorie
 
@@ -142,9 +124,11 @@ Non inviare uno spritesheet come se fosse un singolo soggetto da ridisegnare. Pe
 
 ## Integrare e riutilizzare
 
-Integrare un risultato dopo l'approvazione visiva e il controllo del bordo, verificando scala, offset, regioni degli atlas e riferimenti delle scene. Conservare una copia dell'originale e l'output nativo nei materiali della prova. Quando l'utente chiede di sostituire l'asset, rimuovere i soli margini trasparenti della variante scelta e salvarla al percorso originale, così le scene esistenti la utilizzano. Mantenere le coordinate di gioco e gli hotspot coerenti con l'ingombro approvato. Conservare la scala esistente salvo un adattamento motivato e verificato.
+Attendere la scelta dell'utente prima di sostituire il file originale o aggiornare i riferimenti nelle scene. Dopo l'approvazione visiva e i controlli di bordo e dimensioni, verificare scala, offset e regioni degli atlas. Conservare una copia dell'originale e l'output nativo nei materiali della prova. Rimuovere soltanto i margini completamente trasparenti della variante scelta e salvarla al percorso originale, mantenendo intatti i pixel visibili e il contorno. Mantenere coordinate di gioco e hotspot coerenti con l'ingombro approvato; conservare la scala esistente salvo un adattamento motivato e verificato.
 
-Per le icone inventario, dopo il ritaglio dei margini nativi, collocare il soggetto al centro di un canvas trasparente di 50×50 px. Distribuire i margini in modo uguale; quando la differenza è dispari, lasciare il pixel aggiuntivo a destra o in basso. Questo canvas comune mantiene uniforme lo spazio occupato dalle icone e non modifica le dimensioni del soggetto.
+Il ritaglio non corregge un soggetto troppo grande o troppo piccolo. Non ridimensionare, tagliare pixel visibili, aggiungere margini o rigenerare automaticamente per forzare il rispetto delle dimensioni. Fa eccezione il canvas comune per le icone inventario descritto di seguito, che lascia invariato il soggetto.
+
+Per le icone inventario, dopo il ritaglio dei margini nativi, collocare il soggetto al centro di un canvas trasparente di 50×50 px. Distribuire i margini in modo uguale; quando la differenza è dispari, lasciare il pixel aggiuntivo a destra o in basso.
 
 Applicare questa regola quando l'utente specifica nel prompt che si tratta di un oggetto dell'inventario. Il canvas finale di 50×50 px riguarda il PNG integrato nel gioco; conservare invariati i risultati nativi della generazione e continuare a misurare separatamente l'ingombro visibile del soggetto.
 
@@ -160,7 +144,7 @@ Ogni nuovo asset approvato amplia i riferimenti disponibili: Churchill resta il 
 Fai il redesign di [percorso asset originale] seguendo godot/ASSET-REDESIGN.md.
 ```
 
-Questa richiesta comporta una chiamata `generate_sprites_in_style`, con `size` esplicito, costo comunicato prima della generazione e richiesta del contorno scuro di un pixel. Salvare le varianti native nella stessa cartella con il suffisso `-redesign` e la numerazione progressiva. Mostrare il confronto con l'originale, indicando separatamente dimensioni del canvas, ingombro del soggetto e rispetto del bordo. Attendere la scelta dell'utente prima di sostituire il file originale o aggiornare riferimenti nelle scene. Eventuali vincoli specifici o riferimenti alternativi possono essere aggiunti alla richiesta.
+Eventuali vincoli specifici o riferimenti alternativi possono essere aggiunti alla richiesta.
 
 ## Documentazione Sprite Fusion
 

@@ -1,0 +1,206 @@
+﻿[
+    {
+        "file":  "inventory_feather.png",
+        "canvas":  [
+                       50,
+                       50
+                   ],
+        "bounds":  [
+                       4,
+                       3,
+                       42,
+                       44
+                   ],
+        "alphaValues":  [
+                            0,
+                            255
+                        ]
+    },
+    {
+        "file":  "inventory_magnet.png",
+        "canvas":  [
+                       50,
+                       50
+                   ],
+        "bounds":  [
+                       17,
+                       16,
+                       15,
+                       17
+                   ],
+        "alphaValues":  [
+                            0,
+                            255
+                        ]
+    },
+    {
+        "file":  "inventory_magnet_feather.png",
+        "canvas":  [
+                       50,
+                       50
+                   ],
+        "bounds":  [
+                       9,
+                       9,
+                       32,
+                       32
+                   ],
+        "alphaValues":  [
+                            0,
+                            255
+                        ]
+    },
+    {
+        "file":  "inventory_magnet_feather-redesign.png",
+        "canvas":  [
+                       48,
+                       48
+                   ],
+        "bounds":  [
+                       2,
+                       1,
+                       44,
+                       45
+                   ],
+        "alphaValues":  [
+                            0,
+                            255
+                        ]
+    },
+    {
+        "file":  "inventory_magnet_feather-redesign-2.png",
+        "canvas":  [
+                       48,
+                       48
+                   ],
+        "bounds":  [
+                       3,
+                       3,
+                       42,
+                       41
+                   ],
+        "alphaValues":  [
+                            0,
+                            255
+                        ]
+    },
+    {
+        "file":  "inventory_magnet_feather-redesign-3.png",
+        "canvas":  [
+                       48,
+                       48
+                   ],
+        "bounds":  [
+                       4,
+                       2,
+                       40,
+                       43
+                   ],
+        "alphaValues":  [
+                            0,
+                            255
+                        ]
+    },
+    {
+        "file":  "inventory_magnet_feather-redesign-4.png",
+        "canvas":  [
+                       48,
+                       48
+                   ],
+        "bounds":  [
+                       3,
+                       3,
+                       41,
+                       41
+                   ],
+        "alphaValues":  [
+                            0,
+                            255
+                        ]
+    },
+    {
+        "file":  "inventory_magnet_feather-redesign-5.png",
+        "canvas":  [
+                       48,
+                       48
+                   ],
+        "bounds":  [
+                       3,
+                       3,
+                       42,
+                       42
+                   ],
+        "alphaValues":  [
+                            0,
+                            255
+                        ]
+    },
+    {
+        "file":  "inventory_magnet_feather-redesign-6.png",
+        "canvas":  [
+                       48,
+                       48
+                   ],
+        "bounds":  [
+                       3,
+                       3,
+                       42,
+                       42
+                   ],
+        "alphaValues":  [
+                            0,
+                            255
+                        ]
+    },
+    {
+        "file":  "inventory_magnet_feather-redesign-7.png",
+        "canvas":  [
+                       48,
+                       48
+                   ],
+        "bounds":  [
+                       2,
+                       2,
+                       43,
+                       44
+                   ],
+        "alphaValues":  [
+                            0,
+                            255
+                        ]
+    },
+    {
+        "file":  "inventory_magnet_feather-redesign-8.png",
+        "canvas":  [
+                       48,
+                       48
+                   ],
+        "bounds":  [
+                       3,
+                       2,
+                       41,
+                       43
+                   ],
+        "alphaValues":  [
+                            0,
+                            255
+                        ]
+    },
+    {
+        "file":  "inventory_magnet_feather-redesign-9.png",
+        "canvas":  [
+                       48,
+                       48
+                   ],
+        "bounds":  [
+                       4,
+                       2,
+                       40,
+                       43
+                   ],
+        "alphaValues":  [
+                            0,
+                            255
+                        ]
+    }
+]

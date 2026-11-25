@@ -96,8 +96,8 @@ func _button(key: String, rect: Rect2, callback: Callable, parent: Node = self) 
 	parent.add_child(button)
 	return button
 
-## Condivide scala e stile delle icone, con sfondo configurabile per la bussola.
-func _inventory_button(texture: Texture2D, background: Color = Color.BLACK) -> Button:
+## Condivide scala e stile delle icone, con sfondo #120f0e configurabile per la bussola.
+func _inventory_button(texture: Texture2D, background: Color = Color("120f0e")) -> Button:
 	var button := Button.new()
 	button.focus_mode = Control.FOCUS_NONE
 	var icon_image: Image = texture.get_image().duplicate()

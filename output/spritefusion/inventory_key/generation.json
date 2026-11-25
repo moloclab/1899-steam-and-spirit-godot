@@ -1,0 +1,189 @@
+{
+  "request_id": "req_2db73a5e-bdc7-4747-87bd-999f1a6d546d",
+  "status": "succeeded",
+  "output_count": 9,
+  "outputs": [
+    {
+      "id": "9112ca5c-44a1-4ae3-951f-c629a486c556",
+      "type": "image",
+      "createdAt": "2026-11-24T17:17:35.490Z",
+      "updatedAt": "2026-11-24T17:17:35.490Z",
+      "prompt": "Redesign the cabin door key shown in the first reference for an 1899 adventure game inventory. The first reference defines the subject, recognizable silhouette, proportions, orientation and dominant muted brass colors: a slender antique skeleton key standing vertically, small circular hollow bow at the top, long thin straight shaft descending below it, and small functional teeth projecting to the right at the bottom. Preserve this simple readable structure and the circular opening. The subject should occupy about two fifths of the square composition's width and its full height. Add restrained antique brass material shading and purposeful small highlights, keeping the key slender. Use the second reference (Churchill) ONLY for deliberate pixel clusters, amount of detail, restrained shading and very dark uniform single-pixel external outline, never for character anatomy, clothing or colors. The third reference (approved quill and inkwell) is an additional object outline and shading reference only; do not add a feather or inkwell. Follow the silhouette with a continuous very dark single-pixel outline, stepped diagonals, no doubled border, blur, antialiasing or halo. Keep internal lines subordinate to the outer outline. Preserve the source background treatment and binary alpha. The fourth reference is only the shared base color swatches: use them as a flexible guide, with harmonious additional brass shades allowed. Keep the recognizable source design without decorative additions, extra keys, labels, rings or other objects.",
+      "width": 32,
+      "height": 32,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/9112ca5c-44a1-4ae3-951f-c629a486c556/image.png?v=1795540655490",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "54b65bdf-05e0-4f85-b882-6d1cb68b95b6",
+      "batchIndex": 0,
+      "batchSize": 9,
+      "action": {
+        "kind": "same-style"
+      }
+    },
+    {
+      "id": "559402ed-ae7e-4e3f-ad49-2c81d7bcd7cd",
+      "type": "image",
+      "createdAt": "2026-11-24T17:17:35.946Z",
+      "updatedAt": "2026-11-24T17:17:35.946Z",
+      "prompt": "Redesign the cabin door key shown in the first reference for an 1899 adventure game inventory. The first reference defines the subject, recognizable silhouette, proportions, orientation and dominant muted brass colors: a slender antique skeleton key standing vertically, small circular hollow bow at the top, long thin straight shaft descending below it, and small functional teeth projecting to the right at the bottom. Preserve this simple readable structure and the circular opening. The subject should occupy about two fifths of the square composition's width and its full height. Add restrained antique brass material shading and purposeful small highlights, keeping the key slender. Use the second reference (Churchill) ONLY for deliberate pixel clusters, amount of detail, restrained shading and very dark uniform single-pixel external outline, never for character anatomy, clothing or colors. The third reference (approved quill and inkwell) is an additional object outline and shading reference only; do not add a feather or inkwell. Follow the silhouette with a continuous very dark single-pixel outline, stepped diagonals, no doubled border, blur, antialiasing or halo. Keep internal lines subordinate to the outer outline. Preserve the source background treatment and binary alpha. The fourth reference is only the shared base color swatches: use them as a flexible guide, with harmonious additional brass shades allowed. Keep the recognizable source design without decorative additions, extra keys, labels, rings or other objects.",
+      "width": 32,
+      "height": 32,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/559402ed-ae7e-4e3f-ad49-2c81d7bcd7cd/image.png?v=1795540655946",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "54b65bdf-05e0-4f85-b882-6d1cb68b95b6",
+      "batchIndex": 1,
+      "batchSize": 9,
+      "action": {
+        "kind": "same-style"
+      }
+    },
+    {
+      "id": "b372c6f4-52c6-4bd8-8dfa-e4822f8014ca",
+      "type": "image",
+      "createdAt": "2026-11-24T17:17:36.398Z",
+      "updatedAt": "2026-11-24T17:17:36.398Z",
+      "prompt": "Redesign the cabin door key shown in the first reference for an 1899 adventure game inventory. The first reference defines the subject, recognizable silhouette, proportions, orientation and dominant muted brass colors: a slender antique skeleton key standing vertically, small circular hollow bow at the top, long thin straight shaft descending below it, and small functional teeth projecting to the right at the bottom. Preserve this simple readable structure and the circular opening. The subject should occupy about two fifths of the square composition's width and its full height. Add restrained antique brass material shading and purposeful small highlights, keeping the key slender. Use the second reference (Churchill) ONLY for deliberate pixel clusters, amount of detail, restrained shading and very dark uniform single-pixel external outline, never for character anatomy, clothing or colors. The third reference (approved quill and inkwell) is an additional object outline and shading reference only; do not add a feather or inkwell. Follow the silhouette with a continuous very dark single-pixel outline, stepped diagonals, no doubled border, blur, antialiasing or halo. Keep internal lines subordinate to the outer outline. Preserve the source background treatment and binary alpha. The fourth reference is only the shared base color swatches: use them as a flexible guide, with harmonious additional brass shades allowed. Keep the recognizable source design without decorative additions, extra keys, labels, rings or other objects.",
+      "width": 32,
+      "height": 32,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/b372c6f4-52c6-4bd8-8dfa-e4822f8014ca/image.png?v=1795540656398",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "54b65bdf-05e0-4f85-b882-6d1cb68b95b6",
+      "batchIndex": 2,
+      "batchSize": 9,
+      "action": {
+        "kind": "same-style"
+      }
+    },
+    {
+      "id": "cf647e76-6f8f-4cae-a2a2-8852ca90902e",
+      "type": "image",
+      "createdAt": "2026-11-24T17:17:36.874Z",
+      "updatedAt": "2026-11-24T17:17:36.874Z",
+      "prompt": "Redesign the cabin door key shown in the first reference for an 1899 adventure game inventory. The first reference defines the subject, recognizable silhouette, proportions, orientation and dominant muted brass colors: a slender antique skeleton key standing vertically, small circular hollow bow at the top, long thin straight shaft descending below it, and small functional teeth projecting to the right at the bottom. Preserve this simple readable structure and the circular opening. The subject should occupy about two fifths of the square composition's width and its full height. Add restrained antique brass material shading and purposeful small highlights, keeping the key slender. Use the second reference (Churchill) ONLY for deliberate pixel clusters, amount of detail, restrained shading and very dark uniform single-pixel external outline, never for character anatomy, clothing or colors. The third reference (approved quill and inkwell) is an additional object outline and shading reference only; do not add a feather or inkwell. Follow the silhouette with a continuous very dark single-pixel outline, stepped diagonals, no doubled border, blur, antialiasing or halo. Keep internal lines subordinate to the outer outline. Preserve the source background treatment and binary alpha. The fourth reference is only the shared base color swatches: use them as a flexible guide, with harmonious additional brass shades allowed. Keep the recognizable source design without decorative additions, extra keys, labels, rings or other objects.",
+      "width": 32,
+      "height": 32,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/cf647e76-6f8f-4cae-a2a2-8852ca90902e/image.png?v=1795540656874",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "54b65bdf-05e0-4f85-b882-6d1cb68b95b6",
+      "batchIndex": 3,
+      "batchSize": 9,
+      "action": {
+        "kind": "same-style"
+      }
+    },
+    {
+      "id": "4eda881c-ff33-43a5-b04e-76fc1cbc0a8e",
+      "type": "image",
+      "createdAt": "2026-11-24T17:17:37.318Z",
+      "updatedAt": "2026-11-24T17:17:37.318Z",
+      "prompt": "Redesign the cabin door key shown in the first reference for an 1899 adventure game inventory. The first reference defines the subject, recognizable silhouette, proportions, orientation and dominant muted brass colors: a slender antique skeleton key standing vertically, small circular hollow bow at the top, long thin straight shaft descending below it, and small functional teeth projecting to the right at the bottom. Preserve this simple readable structure and the circular opening. The subject should occupy about two fifths of the square composition's width and its full height. Add restrained antique brass material shading and purposeful small highlights, keeping the key slender. Use the second reference (Churchill) ONLY for deliberate pixel clusters, amount of detail, restrained shading and very dark uniform single-pixel external outline, never for character anatomy, clothing or colors. The third reference (approved quill and inkwell) is an additional object outline and shading reference only; do not add a feather or inkwell. Follow the silhouette with a continuous very dark single-pixel outline, stepped diagonals, no doubled border, blur, antialiasing or halo. Keep internal lines subordinate to the outer outline. Preserve the source background treatment and binary alpha. The fourth reference is only the shared base color swatches: use them as a flexible guide, with harmonious additional brass shades allowed. Keep the recognizable source design without decorative additions, extra keys, labels, rings or other objects.",
+      "width": 32,
+      "height": 32,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/4eda881c-ff33-43a5-b04e-76fc1cbc0a8e/image.png?v=1795540657318",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "54b65bdf-05e0-4f85-b882-6d1cb68b95b6",
+      "batchIndex": 4,
+      "batchSize": 9,
+      "action": {
+        "kind": "same-style"
+      }
+    },
+    {
+      "id": "42772501-0d65-49e0-b17f-c3ae121ed35d",
+      "type": "image",
+      "createdAt": "2026-11-24T17:17:37.694Z",
+      "updatedAt": "2026-11-24T17:17:37.694Z",
+      "prompt": "Redesign the cabin door key shown in the first reference for an 1899 adventure game inventory. The first reference defines the subject, recognizable silhouette, proportions, orientation and dominant muted brass colors: a slender antique skeleton key standing vertically, small circular hollow bow at the top, long thin straight shaft descending below it, and small functional teeth projecting to the right at the bottom. Preserve this simple readable structure and the circular opening. The subject should occupy about two fifths of the square composition's width and its full height. Add restrained antique brass material shading and purposeful small highlights, keeping the key slender. Use the second reference (Churchill) ONLY for deliberate pixel clusters, amount of detail, restrained shading and very dark uniform single-pixel external outline, never for character anatomy, clothing or colors. The third reference (approved quill and inkwell) is an additional object outline and shading reference only; do not add a feather or inkwell. Follow the silhouette with a continuous very dark single-pixel outline, stepped diagonals, no doubled border, blur, antialiasing or halo. Keep internal lines subordinate to the outer outline. Preserve the source background treatment and binary alpha. The fourth reference is only the shared base color swatches: use them as a flexible guide, with harmonious additional brass shades allowed. Keep the recognizable source design without decorative additions, extra keys, labels, rings or other objects.",
+      "width": 32,
+      "height": 32,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/42772501-0d65-49e0-b17f-c3ae121ed35d/image.png?v=1795540657694",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "54b65bdf-05e0-4f85-b882-6d1cb68b95b6",
+      "batchIndex": 5,
+      "batchSize": 9,
+      "action": {
+        "kind": "same-style"
+      }
+    },
+    {
+      "id": "a34effb6-a3a1-4071-a48f-b26c0ccdf17e",
+      "type": "image",
+      "createdAt": "2026-11-24T17:17:38.140Z",
+      "updatedAt": "2026-11-24T17:17:38.140Z",
+      "prompt": "Redesign the cabin door key shown in the first reference for an 1899 adventure game inventory. The first reference defines the subject, recognizable silhouette, proportions, orientation and dominant muted brass colors: a slender antique skeleton key standing vertically, small circular hollow bow at the top, long thin straight shaft descending below it, and small functional teeth projecting to the right at the bottom. Preserve this simple readable structure and the circular opening. The subject should occupy about two fifths of the square composition's width and its full height. Add restrained antique brass material shading and purposeful small highlights, keeping the key slender. Use the second reference (Churchill) ONLY for deliberate pixel clusters, amount of detail, restrained shading and very dark uniform single-pixel external outline, never for character anatomy, clothing or colors. The third reference (approved quill and inkwell) is an additional object outline and shading reference only; do not add a feather or inkwell. Follow the silhouette with a continuous very dark single-pixel outline, stepped diagonals, no doubled border, blur, antialiasing or halo. Keep internal lines subordinate to the outer outline. Preserve the source background treatment and binary alpha. The fourth reference is only the shared base color swatches: use them as a flexible guide, with harmonious additional brass shades allowed. Keep the recognizable source design without decorative additions, extra keys, labels, rings or other objects.",
+      "width": 32,
+      "height": 32,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/a34effb6-a3a1-4071-a48f-b26c0ccdf17e/image.png?v=1795540658140",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "54b65bdf-05e0-4f85-b882-6d1cb68b95b6",
+      "batchIndex": 6,
+      "batchSize": 9,
+      "action": {
+        "kind": "same-style"
+      }
+    },
+    {
+      "id": "237b77ec-a15b-46bc-b558-8eead6c4ea62",
+      "type": "image",
+      "createdAt": "2026-11-24T17:17:38.491Z",
+      "updatedAt": "2026-11-24T17:17:38.491Z",
+      "prompt": "Redesign the cabin door key shown in the first reference for an 1899 adventure game inventory. The first reference defines the subject, recognizable silhouette, proportions, orientation and dominant muted brass colors: a slender antique skeleton key standing vertically, small circular hollow bow at the top, long thin straight shaft descending below it, and small functional teeth projecting to the right at the bottom. Preserve this simple readable structure and the circular opening. The subject should occupy about two fifths of the square composition's width and its full height. Add restrained antique brass material shading and purposeful small highlights, keeping the key slender. Use the second reference (Churchill) ONLY for deliberate pixel clusters, amount of detail, restrained shading and very dark uniform single-pixel external outline, never for character anatomy, clothing or colors. The third reference (approved quill and inkwell) is an additional object outline and shading reference only; do not add a feather or inkwell. Follow the silhouette with a continuous very dark single-pixel outline, stepped diagonals, no doubled border, blur, antialiasing or halo. Keep internal lines subordinate to the outer outline. Preserve the source background treatment and binary alpha. The fourth reference is only the shared base color swatches: use them as a flexible guide, with harmonious additional brass shades allowed. Keep the recognizable source design without decorative additions, extra keys, labels, rings or other objects.",
+      "width": 32,
+      "height": 32,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/237b77ec-a15b-46bc-b558-8eead6c4ea62/image.png?v=1795540658491",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "54b65bdf-05e0-4f85-b882-6d1cb68b95b6",
+      "batchIndex": 7,
+      "batchSize": 9,
+      "action": {
+        "kind": "same-style"
+      }
+    },
+    {
+      "id": "f3842442-a399-4f5c-adf6-33d2794a613e",
+      "type": "image",
+      "createdAt": "2026-11-24T17:17:38.942Z",
+      "updatedAt": "2026-11-24T17:17:38.942Z",
+      "prompt": "Redesign the cabin door key shown in the first reference for an 1899 adventure game inventory. The first reference defines the subject, recognizable silhouette, proportions, orientation and dominant muted brass colors: a slender antique skeleton key standing vertically, small circular hollow bow at the top, long thin straight shaft descending below it, and small functional teeth projecting to the right at the bottom. Preserve this simple readable structure and the circular opening. The subject should occupy about two fifths of the square composition's width and its full height. Add restrained antique brass material shading and purposeful small highlights, keeping the key slender. Use the second reference (Churchill) ONLY for deliberate pixel clusters, amount of detail, restrained shading and very dark uniform single-pixel external outline, never for character anatomy, clothing or colors. The third reference (approved quill and inkwell) is an additional object outline and shading reference only; do not add a feather or inkwell. Follow the silhouette with a continuous very dark single-pixel outline, stepped diagonals, no doubled border, blur, antialiasing or halo. Keep internal lines subordinate to the outer outline. Preserve the source background treatment and binary alpha. The fourth reference is only the shared base color swatches: use them as a flexible guide, with harmonious additional brass shades allowed. Keep the recognizable source design without decorative additions, extra keys, labels, rings or other objects.",
+      "width": 32,
+      "height": 32,
+      "assetUrl": "https://media.spritefusion.com/pixel-art-assets/4807a414-0b28-4878-ae9e-6deb2c4164e3/f3842442-a399-4f5c-adf6-33d2794a613e/image.png?v=1795540658942",
+      "style": "default",
+      "tags": [],
+      "contentType": "image/png",
+      "batchId": "54b65bdf-05e0-4f85-b882-6d1cb68b95b6",
+      "batchIndex": 8,
+      "batchSize": 9,
+      "action": {
+        "kind": "same-style"
+      }
+    }
+  ],
+  "credits": {
+    "used": 15,
+    "remaining": 160
+  },
+  "inputs": [
+    "godot/assets/graphics/ep01_cabin/inventory_key.png",
+    "godot/assets/graphics/characters/churchill/churchill-stand.png",
+    "godot/assets/graphics/ep01_cabin/feather.png",
+    "godot/palette/1899-base-128-swatches.png"
+  ],
+  "size": 32
+}

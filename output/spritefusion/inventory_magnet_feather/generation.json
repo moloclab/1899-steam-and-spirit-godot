@@ -1,0 +1,24 @@
+﻿{
+    "prompt":  "Create an inventory item for the adventure game 1899: a cream goose writing quill with a small cylindrical magnet firmly wedged onto the bare WRITING TIP of its shaft at the LOWER LEFT. Reference 1 is the old combined item, only to explain its function; replace its old reversed orientation. Reference 2 is the approved quill and is the PRIMARY visual reference: reproduce its recognizable shape, cream and pale ochre feather barbs, subtle brown shaft, fine restrained shading and diagonal orientation with full feather vane at UPPER RIGHT and bare writing shaft extending toward LOWER LEFT. Keep this feather extremely similar to reference 2. Reference 3 is the magnet: a compact dark grey metal cylinder with a red circular cap and muted metal highlights. Attach a SMALL recognizable version of this cylinder over the lower-left writing tip so the shaft enters its upper-right side; the magnet is physically attached to the quill, no floating or detached object. Keep the feather\u0027s broad vane completely unchanged and unobstructed. One combined item only. The quill fills about seven eighths of the composition\u0027s width and height, with only a small magnet extending its lower-left tip. Give the outer silhouette a continuous very dark brown single-pixel outline with stepped diagonals, subtle subordinate internal lines, deliberate fine pixel clusters and restrained material shading. No doubled contours, halo or blur. Preserve reference transparency. No inkwell, horseshoe magnet, string, text, hands, scenery or extra items. The palette is warm ivory and muted ochre for the feather, dark brown for the shaft and outline, dark grey metal with a restrained red magnet cap.",
+    "inputs":  [
+                   "inventory_magnet_feather.png",
+                   "inventory_feather.png",
+                   "inventory_magnet.png"
+               ],
+    "size":  48,
+    "method":  "same-style",
+    "request_id":  "req_4a1f1473-e816-4cfa-ab0a-70257ae17fe0",
+    "ids":  [
+                "6b4097bd-d1e3-4d63-93a3-1f6ac9c19c8c",
+                "b46f538b-43e1-47ad-8f91-ce3314e5eb0c",
+                "6cc583fb-aaad-4e6c-9686-0d66fccd803a",
+                "02e93bfd-4513-4d6c-98b8-3408f8bf52c0",
+                "d4c4bf0b-2261-4572-b78c-052a5ef14372",
+                "cffbe5cd-42ff-4b5a-8590-08bb0d3f8bbc",
+                "7c5762fd-93fc-4831-96cb-344ad0c8704e",
+                "b260050b-e42a-4084-a43c-5d1f753b7ec1",
+                "9646224b-ed19-4d0c-848b-515cc61b1abf"
+            ],
+    "credits_used":  15,
+    "decision":  "User replaced V1 selection with V5; V5 integrated, visible subject 42x42 centered on transparent 50x50 canvas, pixels unchanged. Size exception approved for this selection."
+}
