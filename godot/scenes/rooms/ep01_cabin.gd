@@ -13,6 +13,11 @@ func introduction(keys: Array[String]) -> Array[Row]:
 		rows.append(Row.of([Step.animate("idle")]))
 	return rows
 
+## Il Bourbon richiede un solo cammino fino al centro; esame e altri usi mantengono il bordo.
+func center_on_interaction(state: State, hotspot_id: String, item_id: String = "", examining: bool = false) -> bool:
+	return not examining and hotspot_id == "sink" and item_id == "ep01_cabin_bottle" \
+		and state.has_item(item_id) and state.get_progress("ep01_cabin", "sink_stage") == 0
+
 ## Pianifica senza effetti: possesso e condizioni vengono rivalutati durante l'esecuzione.
 func actions(state: State, hotspot_id: String, item_id: String = "", examining: bool = false) -> Array[Row]:
 	var hotspot := find_hotspot(hotspot_id)

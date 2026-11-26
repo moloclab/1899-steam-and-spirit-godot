@@ -140,7 +140,7 @@ func _next() -> void:
 					if not step.target_hotspot_id.is_empty():
 						var target := _rooms.find_hotspot(step.target_hotspot_id)
 						var position_in_room := _rooms.current_room.to_local(actor.to_global(Vector2(actor.half_width, 0)))
-						target_x = target.approach_position(position_in_room.x, actor.half_width)
+						target_x = target.approach_position(position_in_room.x, actor.half_width, step.center_on_hotspot)
 					var room_x: float = _rooms.current_room.definition.clamp_x(target_x)
 					var global_target: Vector2 = _rooms.current_room.to_global(Vector2(room_x, 0))
 					actor.target_x = actor.get_parent().to_local(global_target).x

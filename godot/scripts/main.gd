@@ -143,7 +143,9 @@ func _request(hotspot: Hotspot, examine: bool) -> void:
 	if sequences.busy:
 		return
 	_close_action_menu()
-	interactions.request(hotspot, selected_item, examine, rooms)
+	# La stanza decide la destinazione prima del cammino, senza avviare gli effetti narrativi.
+	var center: bool = rooms.current_room.center_on_interaction(state, hotspot.hotspot_id, selected_item, examine)
+	interactions.request(hotspot, selected_item, examine, rooms, center)
 
 ## I testi dell'inventario provengono dalla stessa definizione usata per nomi, icone e validazione.
 func _item_description(item: String) -> String:

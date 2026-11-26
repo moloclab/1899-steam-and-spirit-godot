@@ -39,7 +39,8 @@ func actions(state: State, item_id: String = "", examining: bool = false) -> Arr
 
 ## Si ferma all'esterno del bordo dal lato del giocatore, usando l'area interattiva.
 ## Se il giocatore è già sopra l'oggetto, sceglie il bordo più vicino (sinistro a parità).
-func approach_position(player_x: float, player_half_width: float) -> float:
+## Con center attivo allinea invece il centro del personaggio a quello dell'hotspot.
+func approach_position(player_x: float, player_half_width: float, center: bool = false) -> float:
 	var room := get_parent()
 	while room != null and not room.has_method("hotspots"):
 		room = room.get_parent()
@@ -50,6 +51,8 @@ func approach_position(player_x: float, player_half_width: float) -> float:
 		var x: float = room.to_local(point).x if room != null else point.x
 		left = minf(left, x)
 		right = maxf(right, x)
+	if center:
+		return (left + right) / 2.0
 	return left - player_half_width if player_x <= (left + right) / 2.0 else right + player_half_width
 
 ## Punto d'ingresso comune alle azioni: la lente ha precedenza sull'oggetto selezionato.

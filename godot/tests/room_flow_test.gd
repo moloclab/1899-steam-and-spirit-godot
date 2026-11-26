@@ -29,13 +29,16 @@ func act(target: String, item: String = "", examining: bool = false) -> void:
 	if target != "interphone":
 		finish_sequence()
 
-## Avanza solo passi immediati; un'attesa inattesa produce un errore senza bloccare il test.
+## Completa cammini e battute con un limite per evitare sequenze bloccate.
 func finish_sequence() -> void:
 	for index in range(20):
 		if not game.sequences.busy:
 			return
-		game.sequences.advance_dialogue()
-	check(false, "Sequenza immediata conclusa entro venti conferme")
+		if game.sequences.waiting_for_confirmation:
+			game.sequences.advance_dialogue()
+		else:
+			game._process(10)
+	check(false, "Sequenza conclusa entro venti avanzamenti")
 
 ## L'apertura riproduce quattro battute sedute, blocca le azioni e termina in piedi.
 func test_introduction() -> void:
@@ -107,8 +110,19 @@ func _run() -> void:
 	finish_sequence()
 	check(game.state.get_progress("ep01_cabin", "sink_stage") == 0, "I passi successivi di un versamento invalido non rivelano la chiave")
 	game.state.add_item("ep01_cabin_bottle")
-	# Le mutazioni devono avvenire sui clic originali, non alla pianificazione o alla prima battuta.
-	game._start_actions(cabin.actions(game.state, "sink", "ep01_cabin_bottle"))
+	# La richiesta reale sceglie direttamente il centro, prima di avviare le battute.
+	var sink: Hotspot = game.rooms.find_hotspot("sink")
+	check(not cabin.center_on_interaction(game.state, "sink", "ep01_cabin_bottle", true)
+		and not cabin.center_on_interaction(game.state, "sink"), "Esame e interazione senza Bourbon mantengono il bordo")
+	game.rooms.actor.place(100, cabin.definition.floor_y)
+	game.selected_item = "ep01_cabin_bottle"
+	game._request(sink, false)
+	check(is_equal_approx(game.rooms.actor.target_x, sink.position.x + sink.hit_size.x / 2.0), "La richiesta punta direttamente al centro del lavandino")
+	game._process(0.1)
+	check(not game.sequences.busy and game.rooms.actor.animation == &"walk"
+		and game.state.has_item("ep01_cabin_bottle"), "Il solo avvicinamento precede la sequenza del Bourbon")
+	game._process(10)
+	check(is_equal_approx(game.rooms.actor.current_x, sink.position.x + sink.hit_size.x / 2.0), "Churchill raggiunge il centro del lavandino")
 	check(game.sequences.busy and game.rooms.actor.animation == &"back"
 		and game.ui.speech_label.text == game._text("ep01.cabin.sink.pour_bourbon")
 		and game.state.has_item("ep01_cabin_bottle"), "Prima battuta di spalle senza consumare il Bourbon")

@@ -19,6 +19,10 @@ func introduction(keys: Array[String]) -> Array[Row]:
 		rows.append(Row.of([Step.say(key)]))
 	return rows
 
+## Le stanze scelgono il centraggio per le interazioni che lo richiedono; il bordo resta predefinito.
+func center_on_interaction(_state: State, _hotspot_id: String, _item_id: String = "", _examining: bool = false) -> bool:
+	return false
+
 ## Le stanze specializzano questo ingresso per azioni narrative e conversazioni.
 func actions(state: State, hotspot_id: String, item_id: String = "", examining: bool = false) -> Array[Row]:
 	# Il percorso predefinito lascia all’hotspot le sole regole condivise; le stanze possono specializzarlo.

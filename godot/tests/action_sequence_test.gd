@@ -77,6 +77,16 @@ func _run() -> void:
 	click()
 	check(not game.sequences.busy and not game.ui.speech_label.visible and not game.ui.save_buttons[0].disabled, "Ultimo clic chiude e sblocca la UI")
 	check(matrix[0].actions.size() == 2 and matrix[0].actions[1].animation_name == "back", "La matrice configurata non viene modificata")
+	# Il centraggio deve funzionare da entrambi i lati e avviare la posa solo all'arrivo.
+	for origin in [100.0, 400.0]:
+		game.rooms.actor.place(origin, game.rooms.current_room.definition.floor_y)
+		start([Row.of([Step.walk_to("sink", true)]), Row.of([Step.animate("back"), first])])
+		var sink: Hotspot = game.rooms.find_hotspot("sink")
+		check(is_equal_approx(game.rooms.actor.target_x, sink.position.x + sink.hit_size.x / 2.0), "Cammino centrato indipendente dal lato di partenza")
+		check(game.rooms.actor.animation == &"walk" and not game.sequences.waiting_for_confirmation, "Il centraggio attende il cammino prima della posa")
+		game._process(10)
+		check(game.rooms.actor.has_arrived() and game.rooms.actor.animation == &"back" and game.sequences.waiting_for_confirmation, "Arrivo al centro avvia automaticamente posa e battuta")
+		click()
 	var effects := {"count": 0}
 	var effect := Step.effect(func(): effects.count += 1)
 	var hide := Step.new()
@@ -106,7 +116,7 @@ func _run() -> void:
 	game.rooms.actor.place(200, game.rooms.current_room.definition.floor_y)
 	start([Row.of([walk("player", 210), walk("partner", 330), wait(0.5), effect]), Row.of([effect])])
 	game._process(0.25)
-	check(game.rooms.actor.current_x == 210 and partner.current_x > 100 and partner.current_x < 300, "Entrambi i personaggi avanzano nello stesso aggiornamento")
+	check(is_equal_approx(game.rooms.actor.current_x, 210) and partner.current_x > 100 and partner.current_x < 300, "Entrambi i personaggi avanzano nello stesso aggiornamento")
 	check(effects.count == 6, "L'arrivo del primo personaggio non anticipa il secondo")
 	game.ui._toggle_help()
 	var before: float = partner.current_x

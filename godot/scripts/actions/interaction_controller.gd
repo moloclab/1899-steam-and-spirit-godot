@@ -4,10 +4,10 @@ const Row = preload("res://scripts/actions/action_row.gd")
 var _pending: Dictionary = {}
 
 ## Il bersaglio viene identificato per ID nella stanza corrente, mai conservato come nodo differito.
-func request(hotspot: Hotspot, item_id: String, examining: bool, rooms) -> void:
+func request(hotspot: Hotspot, item_id: String, examining: bool, rooms, center: bool = false) -> void:
 	_pending = {"target": hotspot.hotspot_id, "item": item_id, "examining": examining}
 	rooms.actor.target_x = rooms.current_room.definition.clamp_x(
-		hotspot.approach_position(rooms.actor.current_x, rooms.actor.half_width))
+		hotspot.approach_position(rooms.actor.current_x, rooms.actor.half_width, center))
 
 ## Cancella la richiesta e ferma il movimento senza alterare inventario e progressi.
 func cancel(rooms) -> void:

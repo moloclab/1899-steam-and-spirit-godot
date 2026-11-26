@@ -170,7 +170,7 @@ Per aggiungere una stanza:
    margine percorribile, quota dei piedi, scala e ingressi nominati.
 3. Registra il percorso della scena in `RoomCatalog.SCENES`.
 4. Aggiungi i nodi degli oggetti con ID univoci, area e risposte nell'Inspector.
-   Churchill si avvicina al bordo dell'area dal proprio lato.
+   Churchill si avvicina al bordo dell'area dal proprio lato. La stanza può restituire `true` da `center_on_interaction(state, hotspot_id, item_id, examining)` per raggiungere direttamente il centro: il Bourbon sul lavandino usa questo percorso, prima della posa di spalle e senza un secondo cammino.
 5. Inserisci le definizioni inventario nell'elenco della radice e le eventuali
    ricette nella scena combo dell'episodio.
 6. Dichiara i progressi in `ProgressSchema.SCOPES` e usa
@@ -205,7 +205,7 @@ di colonne variabile per riga. Negli script si costruisce una riga con `Row.of([
 - Ogni passo indica `subject_id`: `player` per Churchill, oppure il `character_id`
   di un altro personaggio o l'`hotspot_id` di un oggetto.
 - `SAY`: il soggetto dice `text_key`; voce e posizione della battuta vengono dal suo `speaker_key`.
-- `WALK`: il soggetto cammina fino al bordo di `target_hotspot_id`; se vuoto usa `target_x`.
+- `WALK`: il soggetto cammina fino al bordo di `target_hotspot_id`; con `center_on_hotspot = true` raggiunge invece il centro orizzontale. Se l'ID è vuoto usa `target_x`. Da codice: `Step.walk_to("sink", true)` centra il personaggio sul lavandino, mentre `Step.walk_to("sink")` lo porta al bordo.
 - `ANIMATE`: personaggio, animazione e attesa facoltativa della sua conclusione.
 - `WAIT`: durata in secondi.
 - `EFFECT`: Callable creato dallo script, per applicare una regola al momento corretto.
