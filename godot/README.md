@@ -170,7 +170,7 @@ Per aggiungere una stanza:
    margine percorribile, quota dei piedi, scala e ingressi nominati.
 3. Registra il percorso della scena in `RoomCatalog.SCENES`.
 4. Aggiungi i nodi degli oggetti con ID univoci, area e risposte nell'Inspector.
-   Churchill si avvicina al bordo dell'area dal proprio lato. La stanza può restituire `true` da `center_on_interaction(state, hotspot_id, item_id, examining)` per raggiungere direttamente il centro: il Bourbon sul lavandino usa questo percorso, prima della posa di spalle e senza un secondo cammino.
+   Churchill si avvicina al bordo dell'area dal proprio lato. Le azioni specifiche possono poi raggiungere il centro con una riga `row([walkTo("player", "sink", true)])`: il Bourbon sul lavandino usa questo movimento prima della posa di spalle e delle battute, senza clic intermedi.
 5. Inserisci le definizioni inventario nell'elenco della radice e le eventuali
    ricette nella scena combo dell'episodio.
 6. Dichiara i progressi in `ProgressSchema.SCOPES` e usa
@@ -191,11 +191,11 @@ Tutte le stanze ereditano i comandi `row(azioni, condition, confirm)`,
 Costruiscono risorse, senza eseguire subito azioni né modificare la partita:
 
 ```gdscript
-## Parla di spalle, poi raggiunge il centro del lavandino.
+## Raggiunge il centro del lavandino, poi parla di spalle.
 func act_approach_sink() -> Array[Row]:
     return [
-        row([spriteTo("player", "back"), say("player", "ep01.cabin.sink.pour_bourbon")]),
-        row([walkTo("player", "sink", true)])
+        row([walkTo("player", "sink", true)]),
+        row([spriteTo("player", "back"), say("player", "ep01.cabin.sink.pour_bourbon")])
     ]
 ```
 

@@ -115,23 +115,40 @@ func _run() -> void:
 	check(game.state.has_item("ep01_cabin_bottle") and game.state.get_progress("ep01_cabin", "sink_stage") == 0,
 		"Costruire direttamente l'azione narrativa non anticipa consumo o progresso")
 	game._start_actions(pending)
+	# Il cammino iniziale termina automaticamente sulla prima battuta.
+	game._process(10)
 	game.state.remove_item("ep01_cabin_bottle")
 	game.sequences.advance_dialogue()
 	check(not game.sequences.busy and game.state.get_progress("ep01_cabin", "sink_stage") == 0
 		and game.ui.speech_label.text == game._text("common.cannot_use"),
 		"Requisito scaduto dopo la prima battuta impedisce consumo e rivelazione della chiave")
 	game.state.add_item("ep01_cabin_bottle")
-	# La richiesta reale sceglie direttamente il centro, prima di avviare le battute.
+	# Esame e interazione generica conservano l'avvicinamento al bordo.
 	var sink: Hotspot = game.rooms.find_hotspot("sink")
-	check(not cabin.center_on_interaction(game.state, "sink", "ep01_cabin_bottle", true)
-		and not cabin.center_on_interaction(game.state, "sink"), "Esame e interazione senza Bourbon mantengono il bordo")
+	for examining in [true, false]:
+		game.rooms.actor.place(100, cabin.definition.floor_y)
+		game.selected_item = "ep01_cabin_bottle" if examining else ""
+		game._request(sink, examining)
+		check(is_equal_approx(game.rooms.actor.target_x, sink.approach_position(100, game.rooms.actor.half_width)),
+			"Esame e interazione senza Bourbon mantengono il bordo")
+	# Anche il Bourbon raggiunge prima il bordo; il centraggio appartiene alla sua azione.
 	game.rooms.actor.place(100, cabin.definition.floor_y)
 	game.selected_item = "ep01_cabin_bottle"
 	game._request(sink, false)
-	check(is_equal_approx(game.rooms.actor.target_x, sink.position.x + sink.hit_size.x / 2.0), "La richiesta punta direttamente al centro del lavandino")
+	check(is_equal_approx(game.rooms.actor.target_x, sink.approach_position(100, game.rooms.actor.half_width)), "La richiesta del Bourbon punta al bordo del lavandino")
 	game._process(0.1)
 	check(not game.sequences.busy and game.rooms.actor.animation == &"walk"
 		and game.state.has_item("ep01_cabin_bottle"), "Il solo avvicinamento precede la sequenza del Bourbon")
+	game._process(10)
+	check(game.sequences.busy and game.rooms.actor.animation == &"walk"
+		and not game.sequences.waiting_for_confirmation
+		and is_equal_approx(game.rooms.actor.current_x, sink.approach_position(100, game.rooms.actor.half_width))
+		and is_equal_approx(game.rooms.actor.target_x, sink.position.x + sink.hit_size.x / 2.0)
+		and game.state.has_item("ep01_cabin_bottle"), "La prima riga avvia il centraggio dal bordo senza consumare il Bourbon")
+	# I clic durante il cammino non anticipano la battuta né gli effetti.
+	game.sequences.advance_dialogue()
+	check(not game.sequences.waiting_for_confirmation and game.rooms.actor.animation == &"walk"
+		and game.state.get_progress("ep01_cabin", "sink_stage") == 0, "Il centraggio resta bloccante durante i clic")
 	game._process(10)
 	check(is_equal_approx(game.rooms.actor.current_x, sink.position.x + sink.hit_size.x / 2.0), "Churchill raggiunge il centro del lavandino")
 	check(game.sequences.busy and game.rooms.actor.animation == &"back"

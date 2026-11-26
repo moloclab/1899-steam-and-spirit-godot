@@ -15,10 +15,6 @@ func introduction(keys: Array[String]) -> Array[Row]:
 	rows.append(row([spriteTo("player", "idle")]))
 	return rows
 
-## Il Bourbon richiede un solo cammino fino al centro; esame e altri usi mantengono il bordo.
-func center_on_interaction(state: State, hotspot_id: String, item_id: String = "", examining: bool = false) -> bool:
-	return not examining and hotspot_id == "sink" and item_id == "ep01_cabin_bottle" and _can_pour(state)
-
 ## Sceglie l'azione narrativa; tutti gli effetti restano differiti fino all'esecuzione.
 func actions(state: State, hotspot_id: String, item_id: String = "", examining: bool = false) -> Array[Row]:
 	if find_hotspot(hotspot_id) == null:
@@ -46,9 +42,10 @@ func actions(state: State, hotspot_id: String, item_id: String = "", examining: 
 	# Letto, oblò, raccoglibili e usi generici restano configurati nella scena.
 	return super.actions(state, hotspot_id, item_id, examining)
 
-## Tre passaggi: parla, consuma il Bourbon, poi rivela la chiave nello scarico.
+## Raggiunge il centro del lavandino, parla, consuma il Bourbon e rivela la chiave nello scarico.
 func act_drop_bottle(state: State) -> Array[Row]:
 	return [
+		row([walkTo("player", "sink", true)], _can_pour.bind(state)),
 		row([spriteTo("player", "back"), say("player", "ep01.cabin.sink.pour_bourbon")], _can_pour.bind(state)),
 		row([
 			leaveObj("ep01_cabin_bottle"),
