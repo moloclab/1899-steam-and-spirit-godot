@@ -29,10 +29,6 @@ func spriteTo(subject: String, animation: String, wait: bool = false) -> Step:
 func walkTo(subject: String, hotspot: String, center: bool = false) -> Step:
 	return Step.walkTo(subject, hotspot, center)
 
-## Rinvia una modifica dello stato fino all'esecuzione della riga.
-func effect(callback: Callable) -> Step:
-	return Step.effect(callback)
-
 ## Rimuove un oggetto dall'inventario soltanto quando viene eseguita la riga.
 func leaveObj(item: String) -> Step:
 	return Step.leaveObj(item)
@@ -40,6 +36,10 @@ func leaveObj(item: String) -> Step:
 ## Aggiunge un oggetto all'inventario soltanto quando viene eseguita la riga.
 func addObj(item: String) -> Step:
 	return Step.addObj(item)
+
+## Cambia stanza durante l'esecuzione; il passaggio deve occupare una riga propria.
+func changeRoom(room_id: String, entry_id: String = "default") -> Step:
+	return Step.changeRoom(room_id, entry_id)
 
 ## Cambia un progresso soltanto quando viene eseguita la riga, usando lo schema dello stato.
 func changeStatus(scope: String, key: String, value: Variant) -> Step:

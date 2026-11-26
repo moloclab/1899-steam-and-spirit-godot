@@ -4,10 +4,17 @@ extends "res://scripts/hotspot.gd"
 ## Chiave della battuta mostrata soltanto quando la raccolta viene registrata con successo.
 @export var pickup_response := "common.nothing_interesting"
 
-## La raccolta è registrata nello stato prima di nascondere l'oggetto nella successiva sincronizzazione.
-## pick_up restituisce false se era già stato raccolto: nessuna copia viene aggiunta due volte.
-func interact(state: State) -> String:
-	return pickup_response if state.pick_up(item_id) else "common.nothing_interesting"
+## Prepara la raccolta senza modificare lo stato; esame, usi e conversazioni seguono le regole comuni.
+func actions(state: State, used_item_id: String = "", examining: bool = false) -> Array[Row]:
+	if examining or not used_item_id.is_empty() or (conversation != null and not conversation.rows.is_empty()):
+		return super.actions(state, used_item_id, examining)
+	# Un oggetto sconosciuto, già posseduto o raccolto non viene aggiunto nuovamente.
+	if not State.Items.has_item(item_id) or state.has_item(item_id) or item_id in state.collected:
+		return [Row.of([Step.say("player", "common.nothing_interesting")], Callable(), false)]
+	var steps: Array[Step] = [Step.addObj(item_id)]
+	if not pickup_response.is_empty():
+		steps.append(Step.say("player", pickup_response))
+	return [Row.of(steps, Callable(), false)]
 
 ## Si usa collected, non inventory: un componente combinato o consumato non deve riapparire.
 func sync_from_state(state: State) -> void:

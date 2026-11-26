@@ -59,8 +59,8 @@ func _test_combinations() -> void:
 		for reverse in [false, true]:
 			var state := State.new()
 			state.enter_room(room_id, "default" if room_id == "ep01_cabin" else "from_cabin")
-			state.pick_up("ep01_cabin_feather")
-			state.pick_up("ep01_cabin_magnet")
+			state.add_item("ep01_cabin_feather")
+			state.add_item("ep01_cabin_magnet")
 			var first := "ep01_cabin_magnet" if reverse else "ep01_cabin_feather"
 			var second := "ep01_cabin_feather" if reverse else "ep01_cabin_magnet"
 			check(state.combine(first, second) == "ep01.inventory.magnet_feather.combine", "Combinazione simmetrica in " + room_id)
@@ -68,9 +68,9 @@ func _test_combinations() -> void:
 			check(state.combine(first, second) == "common.cannot_use" and state.inventory.size() == 1, "Ripetere la combinazione non duplica il risultato")
 	# Possesso incompleto e coppie senza ricetta non devono modificare l'inventario.
 	var state := State.new()
-	state.pick_up("ep01_cabin_feather")
+	state.add_item("ep01_cabin_feather")
 	check(state.combine("ep01_cabin_feather", "ep01_cabin_magnet") == "common.cannot_use" and state.inventory == ["ep01_cabin_feather"], "Ingrediente mancante rifiutato senza consumi")
-	state.pick_up("ep01_cabin_bottle")
+	state.add_item("ep01_cabin_bottle")
 	check(state.combine("ep01_cabin_feather", "ep01_cabin_bottle") == "common.cannot_combine" and state.inventory.size() == 2, "Coppia sconosciuta rifiutata senza consumi")
 
 ## Il test usa soltanto un salvataggio dedicato; non tocca la partita del giocatore.
@@ -90,6 +90,7 @@ func _run() -> void:
 	check(game.state.inventory.is_empty(), "Pianificare la raccolta non modifica lo stato")
 	game._start_actions(pending)
 	check(game.state.has_item("ep01_cabin_magnet") and map_visual.texture != complete_texture, "Raccolta dalla mappa e aggiornamento della texture")
+	check(not game.sequences.busy, "La raccolta della calamita non richiede un clic di chiusura")
 	act("map")
 	check(game.state.inventory.size() == 1, "La mappa non duplica la calamita")
 	act("map", "", true)
@@ -102,27 +103,15 @@ func _run() -> void:
 	act("feather")
 	act("sink", "ep01_cabin_bottle", true)
 	check(game.state.has_item("ep01_cabin_bottle") and game.state.get_progress("ep01_cabin", "sink_stage") == 0, "La lente precede l'uso dell'oggetto selezionato")
-	# Simula una selezione diventata non valida fra richiesta ed esecuzione dell’effetto.
-	pending = cabin.actions(game.state, "sink", "ep01_cabin_bottle")
-	game.state.remove_item("ep01_cabin_bottle")
-	game._start_actions(pending)
-	check(game.state.get_progress("ep01_cabin", "sink_stage") == 0, "Il possesso viene rivalutato quando l'effetto viene eseguito")
-	finish_sequence()
-	check(game.state.get_progress("ep01_cabin", "sink_stage") == 0, "I passi successivi di un versamento invalido non rivelano la chiave")
-	game.state.add_item("ep01_cabin_bottle")
-	# Anche una perdita del Bourbon dopo la prima battuta interrompe l'intera azione.
-	pending = cabin.act_drop_bottle(game.state)
+	# Costruire la sequenza non anticipa consumo o progresso.
+	pending = cabin.act_drop_bottle()
 	check(game.state.has_item("ep01_cabin_bottle") and game.state.get_progress("ep01_cabin", "sink_stage") == 0,
 		"Costruire direttamente l'azione narrativa non anticipa consumo o progresso")
-	game._start_actions(pending)
-	# Il cammino iniziale termina automaticamente sulla prima battuta.
-	game._process(10)
-	game.state.remove_item("ep01_cabin_bottle")
-	game.sequences.advance_dialogue()
-	check(not game.sequences.busy and game.state.get_progress("ep01_cabin", "sink_stage") == 0
-		and game.ui.speech_label.text == game._text("common.cannot_use"),
-		"Requisito scaduto dopo la prima battuta impedisce consumo e rivelazione della chiave")
-	game.state.add_item("ep01_cabin_bottle")
+	# I requisiti vengono verificati all'ingresso dell'azione.
+	act("sink", "ep01_cabin_magnet_feather")
+	act("door", "ep01_cabin_key")
+	check(not game.state.has_item("ep01_cabin_key") and not game.state.get_progress("ep01_cabin", "door_unlocked"),
+		"Attrezzo e chiave non posseduti non avviano recupero o sblocco")
 	# Esame e interazione generica conservano l'avvicinamento al bordo.
 	var sink: Hotspot = game.rooms.find_hotspot("sink")
 	for examining in [true, false]:
@@ -168,10 +157,9 @@ func _run() -> void:
 	# Conserva lo stadio intermedio prima della combinazione e del recupero della chiave.
 	check(Saves.save_game(game.state, TEST_SAVE) == OK, "Salvataggio dello stadio intermedio")
 	game.state.combine("ep01_cabin_feather", "ep01_cabin_magnet")
-	# I requisiti della raccolta e dello sblocco vengono verificati anche dopo la pianificazione.
-	pending = cabin.act_collect_key(game.state)
+	# I requisiti della raccolta e dello sblocco vengono verificati all'ingresso.
 	game.state.remove_item("ep01_cabin_magnet_feather")
-	game._start_actions(pending)
+	act("sink", "ep01_cabin_magnet_feather")
 	check(not game.state.has_item("ep01_cabin_key") and game.state.get_progress("ep01_cabin", "sink_stage") == 1
 		and not game.sequences.busy, "Attrezzo perso prima del recupero non crea la chiave né modifica il lavandino")
 	game.state.add_item("ep01_cabin_magnet_feather")
@@ -180,9 +168,8 @@ func _run() -> void:
 		and game.ui.speech_label.text == game._text("ep01.cabin.sink.key_pickup"), "Recupero della chiave immediato con battuta esplicita")
 	act("sink", "ep01_cabin_magnet_feather")
 	check(game.state.inventory.count("ep01_cabin_key") == 1, "Recupero della chiave senza duplicazione")
-	pending = cabin.act_use_key(game.state)
 	game.state.remove_item("ep01_cabin_key")
-	game._start_actions(pending)
+	act("door", "ep01_cabin_key")
 	check(game.state.room == "ep01_cabin" and not game.state.get_progress("ep01_cabin", "door_unlocked")
 		and not game.sequences.busy, "Chiave persa prima dello sblocco non apre la porta né cambia stanza")
 	game.state.add_item("ep01_cabin_key")

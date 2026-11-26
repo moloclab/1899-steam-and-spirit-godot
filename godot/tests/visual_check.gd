@@ -35,9 +35,9 @@ func _run() -> void:
 	# Verifica anche la posa seduta iniziale prima di preparare l'inventario.
 	while game.sequences.busy:
 		game.sequences.advance_dialogue()
-	game.state.pick_up("ep01_cabin_bottle")
-	game.state.pick_up("ep01_cabin_feather")
-	game.state.pick_up("ep01_cabin_magnet")
+	game.state.add_item("ep01_cabin_bottle")
+	game.state.add_item("ep01_cabin_feather")
+	game.state.add_item("ep01_cabin_magnet")
 	game._refresh()
 	await _capture("inventory")
 	# Il versamento usa la posa originale di spalle insieme alla prima battuta.

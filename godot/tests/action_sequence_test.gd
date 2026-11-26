@@ -87,23 +87,25 @@ func _run() -> void:
 		game._process(10)
 		check(game.rooms.actor.has_arrived() and game.rooms.actor.animation == &"back" and game.sequences.waiting_for_confirmation, "Arrivo al centro avvia automaticamente posa e battuta")
 		click()
-	var effects := {"count": 0}
-	var effect := Step.effect(func(): effects.count += 1)
+	var updates := {"count": 0}
+	# Conta le sincronizzazioni prodotte da modifiche esplicite dello stato.
+	game.sequences.state_changed.connect(func(): updates.count += 1)
+	var status_step := Step.changeStatus("ep01_cabin", "door_unlocked", false)
 	var hide := Step.new()
 	hide.kind = Step.Kind.HIDE
 	hide.subject_id = "interphone"
-	start([Row.of([first]), Row.of([hide, effect, effect]), Row.of([effect])])
+	start([Row.of([first]), Row.of([hide, status_step, Step.changeStatus("ep01_cabin", "sink_stage", 1)]), Row.of([status_step])])
 	click()
-	check(game.rooms.find_hotspot("interphone") == null and effects.count == 2, "Un clic avvia insieme scomparsa e due effetti")
+	check(game.rooms.find_hotspot("interphone") == null and updates.count == 1, "Un clic nasconde il soggetto e aggiorna due progressi con una sincronizzazione")
 	click()
-	check(effects.count == 3 and not game.sequences.busy, "La riga seguente richiede un altro clic")
-	start([Row.of([wait(0.25), wait(0.5), effect]), Row.of([effect])])
-	check(effects.count == 4, "L'effetto parte insieme ai due timer")
+	check(updates.count == 2 and not game.sequences.busy, "La riga seguente richiede un altro clic")
+	start([Row.of([wait(0.25), wait(0.5), status_step]), Row.of([status_step])])
+	check(updates.count == 3, "L'effetto parte insieme ai due timer")
 	game._process(0.25)
-	check(effects.count == 4 and game.sequences.busy, "Il primo timer non anticipa la riga successiva")
+	check(updates.count == 3 and game.sequences.busy, "Il primo timer non anticipa la riga successiva")
 	click()
 	game._process(0.25)
-	check(effects.count == 5 and not game.sequences.busy, "L'ultimo timer avvia automaticamente la riga successiva")
+	check(updates.count == 4 and not game.sequences.busy, "L'ultimo timer avvia automaticamente la riga successiva")
 	# Due personaggi, anche annidati, devono muoversi nello stesso frame e attendere il più lento.
 	var container := Node2D.new()
 	container.position.x = 30
@@ -114,17 +116,17 @@ func _run() -> void:
 	partner.place(100, game.rooms.current_room.definition.floor_y)
 	partner.speed = 50
 	game.rooms.actor.place(200, game.rooms.current_room.definition.floor_y)
-	start([Row.of([walk("player", 210), walk("partner", 330), wait(0.5), effect]), Row.of([effect])])
+	start([Row.of([walk("player", 210), walk("partner", 330), wait(0.5), status_step]), Row.of([status_step])])
 	game._process(0.25)
 	check(is_equal_approx(game.rooms.actor.current_x, 210) and partner.current_x > 100 and partner.current_x < 300, "Entrambi i personaggi avanzano nello stesso aggiornamento")
-	check(effects.count == 6, "L'arrivo del primo personaggio non anticipa il secondo")
+	check(updates.count == 5, "L'arrivo del primo personaggio non anticipa il secondo")
 	game.ui._toggle_help()
 	var before: float = partner.current_x
 	game._process(10)
-	check(partner.current_x == before and effects.count == 6, "Il menu sospende tutte le colonne")
+	check(partner.current_x == before and updates.count == 5, "Il menu sospende tutte le colonne")
 	game.ui._toggle_help()
 	game._process(10)
-	check(partner.current_x == 300 and effects.count == 7 and not game.sequences.busy, "Destinazione annidata corretta e avanzamento dopo tutti gli arrivi")
+	check(partner.current_x == 300 and updates.count == 6 and not game.sequences.busy, "Destinazione annidata corretta e avanzamento dopo tutti gli arrivi")
 	# Animazione e timer partono insieme; la conclusione dell'animazione non richiede un clic.
 	var frames: SpriteFrames = game.rooms.actor.sprite_frames.duplicate()
 	frames.add_animation("sequence_test")
@@ -132,68 +134,73 @@ func _run() -> void:
 	frames.set_animation_loop("sequence_test", false)
 	frames.set_animation_speed("sequence_test", 20)
 	game.rooms.actor.sprite_frames = frames
-	start([Row.of([Step.animate("player", "sequence_test", true), wait(0.5)]), Row.of([effect])])
+	start([Row.of([Step.animate("player", "sequence_test", true), wait(0.5)]), Row.of([status_step])])
 	await create_timer(0.15).timeout
 	game._process(0.25)
-	check(effects.count == 7 and game.sequences.busy, "Animazione finita attende anche il timer della stessa riga")
+	check(updates.count == 6 and game.sequences.busy, "Animazione finita attende anche il timer della stessa riga")
 	game._process(0.25)
-	check(effects.count == 8 and not game.sequences.busy, "Fine di tutte le colonne bloccanti avanza automaticamente")
-	start([Row.of([walk("player", 500), walk("partner", 400)]), Row.of([effect])])
+	check(updates.count == 7 and not game.sequences.busy, "Fine di tutte le colonne bloccanti avanza automaticamente")
+	start([Row.of([walk("player", 500), walk("partner", 400)]), Row.of([status_step])])
 	game._process(0.1)
 	game.sequences.cancel()
 	check(game.rooms.actor.has_arrived() and partner.has_arrived(), "Annullamento ferma tutti i personaggi")
 	game._process(10)
-	check(effects.count == 8, "Annullamento scarta tutte le righe future")
+	check(updates.count == 7, "Annullamento scarta tutte le righe future")
 	# La validazione dell'intera riga precede effetti e movimenti.
-	start([Row.of([effect, walk("missing", 200)])])
-	check(effects.count == 8 and not game.sequences.busy, "Soggetto mancante invalida la riga prima degli effetti")
-	start([Row.of([effect, walk("player", 300), Step.animate("player", "idle")])])
-	check(effects.count == 8 and not game.sequences.busy, "Azioni di movimento incompatibili non sovrascrivono lo stesso attore")
-	start([Row.of([effect, Step.animate("player", "idle", true)])])
-	check(effects.count == 8 and not game.sequences.busy, "Animazione ciclica bloccante rifiutata senza effetti parziali")
-	start([Row.of([]), Row.of([wait(0)]), Row.of([effect])])
-	check(effects.count == 9 and not game.sequences.busy, "Righe vuote e attese nulle non richiedono clic inutili")
+	start([Row.of([status_step, walk("missing", 200)])])
+	check(updates.count == 7 and not game.sequences.busy, "Soggetto mancante invalida la riga prima degli effetti")
+	start([Row.of([status_step, walk("player", 300), Step.animate("player", "idle")])])
+	check(updates.count == 7 and not game.sequences.busy, "Azioni di movimento incompatibili non sovrascrivono lo stesso attore")
+	start([Row.of([status_step, Step.animate("player", "idle", true)])])
+	check(updates.count == 7 and not game.sequences.busy, "Animazione ciclica bloccante rifiutata senza effetti parziali")
+	start([Row.of([]), Row.of([wait(0)]), Row.of([status_step])])
+	check(updates.count == 8 and not game.sequences.busy, "Righe vuote e attese nulle non richiedono clic inutili")
 	var observed: Array[int] = []
-	var observer := func(): observed.append(effects.count)
+	var observer := func():
+		observed.append(updates.count)
+		check(game.state.get_progress("ep01_cabin", "sink_stage") == 2 and not game.state.get_progress("ep01_cabin", "door_unlocked"),
+			"La sincronizzazione osserva entrambi i progressi aggiornati nella stessa riga")
 	game.sequences.state_changed.connect(observer)
-	start([Row.of([effect, effect])])
-	check(observed == [11], "La scena osserva tutti gli effetti della riga insieme, con una sola sincronizzazione")
+	start([Row.of([status_step, Step.changeStatus("ep01_cabin", "sink_stage", 2)])])
+	check(observed == [9], "La scena osserva tutti gli effetti della riga insieme, con una sola sincronizzazione")
 	game.sequences.state_changed.disconnect(observer)
-	var reusable: Array[Row] = [Row.of([wait(0.25), wait(0.25)]), Row.of([effect])]
+	var reusable: Array[Row] = [Row.of([wait(0.25), wait(0.25)]), Row.of([status_step])]
 	for repetition in range(2):
 		start(reusable)
 		game._process(0.125)
-		check(effects.count == 11 + repetition, "I timer ripartono da zero riutilizzando la stessa matrice")
+		check(updates.count == 9 + repetition, "I timer ripartono da zero riutilizzando la stessa matrice")
 		game._process(0.125)
-	check(effects.count == 13 and reusable[0].actions[0].seconds == 0.25, "Timer uguali completati senza modificare le risorse")
-	start([Row.of([walk("player", 500), walk("partner", 400)]), Row.of([effect])])
+	check(updates.count == 11 and reusable[0].actions[0].seconds == 0.25, "Timer uguali completati senza modificare le risorse")
+	start([Row.of([walk("player", 500), walk("partner", 400)]), Row.of([status_step])])
 	partner.free()
 	game._process(0.1)
-	check(not game.sequences.busy and game.rooms.actor.has_arrived() and effects.count == 13, "Attore rimosso annulla la riga e ferma anche gli altri cammini")
+	check(not game.sequences.busy and game.rooms.actor.has_arrived() and updates.count == 11, "Attore rimosso annulla la riga e ferma anche gli altri cammini")
 	var transition := Step.new()
 	transition.kind = Step.Kind.CHANGE_ROOM
 	transition.destination_room = "ep01_corridor"
 	transition.destination_entry = "from_cabin"
-	start([Row.of([transition]), Row.of([effect])])
+	start([Row.of([transition]), Row.of([status_step])])
 	check(game.state.room == "ep01_corridor" and game.sequences.waiting_for_confirmation, "Cambio stanza completato senza avviare la riga seguente")
 	click()
-	check(effects.count == 14 and not game.sequences.busy, "La matrice prosegue nella nuova stanza al clic successivo")
+	check(updates.count == 13 and not game.sequences.busy, "La matrice prosegue nella nuova stanza al clic successivo")
 	# La pianificazione non legge i requisiti; il runner li conserva e li rivaluta a ogni riga.
-	var gate := {"allowed": true, "checks": 0, "effects": 0}
+	var gate := {"allowed": true, "checks": 0, "updates": 0}
 	var requirement := func() -> bool:
 		gate.checks += 1
 		return gate.allowed
-	var guarded_effect := Step.effect(func(): gate.effects += 1)
-	var guarded := Row.of([guarded_effect, first], requirement)
-	var guarded_rows: Array[Row] = [Row.of([first], requirement), guarded, Row.of([guarded_effect])]
-	check(gate.checks == 0 and gate.effects == 0, "Costruire righe condizionate non esegue requisiti né effetti")
+	# Anche le righe condizionate usano un cambio di progresso esplicito.
+	game.sequences.state_changed.connect(func(): gate.updates += 1)
+	var guarded_status := Step.changeStatus("ep01_cabin", "door_unlocked", true)
+	var guarded := Row.of([guarded_status, first], requirement)
+	var guarded_rows: Array[Row] = [Row.of([first], requirement), guarded, Row.of([guarded_status])]
+	check(gate.checks == 0 and gate.updates == 0, "Costruire righe condizionate non esegue requisiti né effetti")
 	start(guarded_rows)
 	check(gate.checks == 1 and game.sequences.waiting_for_confirmation, "Requisito valido eseguito all'avvio della prima riga")
 	gate.allowed = false
 	# Modificare la risorsa originale non cambia la condizione già copiata dal runner.
 	guarded.condition = func() -> bool: return true
 	click()
-	check(gate.checks == 2 and gate.effects == 0 and not game.sequences.busy,
+	check(gate.checks == 2 and gate.updates == 0 and not game.sequences.busy,
 		"Requisito scaduto ferma effetti della riga e righe future, usando la condizione copiata")
 	check(game.ui.speech_label.text == game._text("common.cannot_use") and game.ui.speech_label.visible
 		and not game.ui.save_buttons[0].disabled, "Requisito fallito mostra il rifiuto e sblocca la UI")
@@ -202,10 +209,10 @@ func _run() -> void:
 	gate.allowed = true
 	start(guarded_rows)
 	click()
-	check(gate.effects == 1 and game.ui.speech_label.text == game._text(first.text_key),
+	check(gate.updates == 1 and game.ui.speech_label.text == game._text(first.text_key),
 		"Sequenza riutilizzata rivaluta il requisito e avvia effetto e battuta insieme")
 	click()
-	check(gate.effects == 2 and not game.sequences.busy, "Requisiti validi consentono le righe successive")
+	check(gate.updates == 2 and not game.sequences.busy, "Requisiti validi consentono le righe successive")
 	# Una risposta immediata resta visibile; la copia conserva la scelta di non attendere clic.
 	var immediate := Row.of([first], Callable(), false)
 	start([Row.of([second]), immediate])
@@ -214,16 +221,16 @@ func _run() -> void:
 	check(not game.sequences.busy and game.ui.speech_label.visible
 		and game.ui.speech_label.text == game._text(first.text_key), "Risposta immediata conserva testo e politica di conferma copiata")
 	# Anche senza conferma i cammini e i timer devono completarsi prima della riga seguente.
-	start([Row.of([wait(0.25)], Callable(), false), Row.of([guarded_effect])])
-	check(game.sequences.busy and gate.effects == 2, "Riga senza conferma attende comunque le operazioni bloccanti")
+	start([Row.of([wait(0.25)], Callable(), false), Row.of([guarded_status])])
+	check(game.sequences.busy and gate.updates == 2, "Riga senza conferma attende comunque le operazioni bloccanti")
 	game._process(0.25)
-	check(gate.effects == 3 and not game.sequences.busy, "Fine dell'attesa avvia automaticamente la riga seguente")
+	check(gate.updates == 3 and not game.sequences.busy, "Fine dell'attesa avvia automaticamente la riga seguente")
 	# Un requisito legato a un nodo rimosso annulla la sequenza senza effetti parziali.
 	var owner := Node.new()
 	var expired := Callable(owner, "is_inside_tree")
 	owner.free()
-	start([Row.of([guarded_effect], expired)])
-	check(gate.effects == 3 and not game.sequences.busy, "Callable di un requisito rimosso annulla la riga senza effetti")
+	start([Row.of([guarded_status], expired)])
+	check(gate.updates == 3 and not game.sequences.busy, "Callable di un requisito rimosso annulla la riga senza effetti")
 	start([])
 	check(not game.sequences.busy, "Matrice vuota conclusa")
 	game.queue_free()

@@ -4,6 +4,12 @@ extends "res://scripts/hotspot.gd"
 @export var destination_room := ""
 @export var destination_entry := "default"
 
-## Non istanzia scene: modifica solo i dati che il coordinatore controlla dopo l'azione.
-func interact(state: State) -> String:
-	return interaction_response if state.enter_room(destination_room, destination_entry) else "common.cannot_use"
+## Accoda il passaggio; esame, usi e conversazioni seguono le regole comuni.
+func actions(state: State, item_id: String = "", examining: bool = false) -> Array[Row]:
+	if examining or not item_id.is_empty() or (conversation != null and not conversation.rows.is_empty()):
+		return super.actions(state, item_id, examining)
+	# La transizione occupa una riga propria; la risposta viene mostrata nella destinazione.
+	var rows: Array[Row] = [Row.of([Step.changeRoom(destination_room, destination_entry)], Callable(), false)]
+	if not interaction_response.is_empty():
+		rows.append(Row.of([Step.say("player", interaction_response)], Callable(), false))
+	return rows

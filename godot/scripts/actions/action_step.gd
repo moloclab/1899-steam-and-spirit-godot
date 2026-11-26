@@ -1,7 +1,7 @@
 extends Resource
 class_name ActionStep
 ## Un passo di sequenza esplicito, configurabile nell'Inspector e privo di codice testuale da eseguire.
-enum Kind { SAY, WALK, ANIMATE, WAIT, EFFECT, CHANGE_ROOM, HIDE, LEAVE, ADD, CHANGE_STATUS }
+enum Kind { SAY = 0, WALK = 1, ANIMATE = 2, WAIT = 3, CHANGE_ROOM = 5, HIDE = 6, LEAVE = 7, ADD = 8, CHANGE_STATUS = 9 }
 @export var kind: Kind = Kind.SAY
 ## Soggetto: character_id di un personaggio oppure hotspot_id di un oggetto.
 @export var subject_id := "player"
@@ -19,8 +19,6 @@ enum Kind { SAY, WALK, ANIMATE, WAIT, EFFECT, CHANGE_ROOM, HIDE, LEAVE, ADD, CHA
 @export var seconds := 0.0
 @export var destination_room := ""
 @export var destination_entry := "default"
-## Gli effetti personalizzati sono Callable creati a runtime; non vengono serializzati nei dati.
-var callback: Callable
 ## CHANGE_STATUS: progresso costruito da script; il valore conserva il proprio tipo.
 var progress_scope := ""
 var progress_key := ""
@@ -51,13 +49,6 @@ static func animate(subject: String, animation: String, wait: bool = false) -> A
 	step.wait_for_completion = wait
 	return step
 
-## Adatta le regole degli hotspot esistenti alla coda, rimandando la mutazione fino all'esecuzione.
-static func effect(action: Callable) -> ActionStep:
-	var step := ActionStep.new()
-	step.kind = Kind.EFFECT
-	step.callback = action
-	return step
-
 ## Accoda la rimozione dall'inventario senza richiedere lo stato allo script della stanza.
 static func leaveObj(item: String) -> ActionStep:
 	var step := ActionStep.new()
@@ -70,6 +61,14 @@ static func addObj(item: String) -> ActionStep:
 	var step := ActionStep.new()
 	step.kind = Kind.ADD
 	step.item_id = item
+	return step
+
+## Accoda il passaggio a una stanza e al suo ingresso nominato, senza ripetere battute.
+static func changeRoom(room_id: String, entry_id: String = "default") -> ActionStep:
+	var step := ActionStep.new()
+	step.kind = Kind.CHANGE_ROOM
+	step.destination_room = room_id
+	step.destination_entry = entry_id
 	return step
 
 ## Accoda un cambio di progresso senza modificare subito la partita.

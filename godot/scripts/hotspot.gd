@@ -35,7 +35,14 @@ var highlighted := false:
 func actions(state: State, item_id: String = "", examining: bool = false) -> Array[Row]:
 	if not examining and item_id.is_empty() and conversation != null and not conversation.rows.is_empty():
 		return conversation.rows.duplicate()
-	return [Row.of([Step.effect(execute.bind(state, item_id, examining))])]
+	# La lente precede l'oggetto selezionato; gli usi generici non previsti vengono rifiutati.
+	var response := examine(state) if examining else interaction_response
+	if not examining and not item_id.is_empty():
+		response = "common.cannot_use"
+	# Una risposta vuota conclude l'interazione senza mostrare una battuta.
+	if response.is_empty():
+		return []
+	return [Row.of([Step.say("player", response)], Callable(), false)]
 
 ## Si ferma all'esterno del bordo dal lato del giocatore, usando l'area interattiva.
 ## Se il giocatore è già sopra l'oggetto, sceglie il bordo più vicino (sinistro a parità).
@@ -55,29 +62,9 @@ func approach_position(player_x: float, player_half_width: float, center: bool =
 		return (left + right) / 2.0
 	return left - player_half_width if player_x <= (left + right) / 2.0 else right + player_half_width
 
-## Punto d'ingresso comune alle azioni: la lente ha precedenza sull'oggetto selezionato.
-## Validare il possesso qui impedisce di usare una selezione consumata durante l'avvicinamento.
-## Le sottoclassi specializzano i tre metodi sottostanti, non il coordinatore della stanza.
-func execute(state: State, item_id: String = "", examining: bool = false) -> String:
-	if examining:
-		return examine(state)
-	if not item_id.is_empty():
-		if item_id not in state.inventory:
-			return "common.cannot_use"
-		return use_item(state, item_id)
-	return interact(state)
-
 ## Descrizione statica predefinita. Gli oggetti con descrizioni dipendenti dal progresso la ridefiniscono.
 func examine(_state: State) -> String:
 	return examine_response
-
-## Azione a mani libere: adatta anche a battute di persone e segnaposto del corridoio.
-func interact(_state: State) -> String:
-	return interaction_response
-
-## Gli usi non previsti restituiscono la stessa risposta generica del prototipo precedente.
-func use_item(_state: State, _item_id: String) -> String:
-	return "common.cannot_use"
 
 ## Aggiorna la rappresentazione leggendo lo stato, senza modificarlo.
 ## Anche gli hotspot nascosti ricevono questa chiamata dopo caricamento o nuova partita.

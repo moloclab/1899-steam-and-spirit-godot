@@ -41,9 +41,14 @@ func set_progress(scope: String, key: String, value: Variant) -> bool:
 	return true
 
 ## Tutte le aggiunte passano dal catalogo: nessun ID sconosciuto entra nell'inventario.
+## Per i raccoglibili registra anche la raccolta definitiva e ne impedisce la ripetizione.
 func add_item(item: String) -> bool:
 	if not Items.has_item(item) or has_item(item):
 		return false
+	if Items.ITEMS[item].collectible:
+		if item in collected:
+			return false
+		collected.append(item)
 	inventory.append(item)
 	return true
 
@@ -54,15 +59,6 @@ func remove_item(item: String) -> void:
 ## Espone il controllo del possesso senza richiedere l'accesso diretto alla lista.
 func has_item(item: String) -> bool:
 	return item in inventory
-
-## Gli oggetti creati da un enigma o da una ricetta non sono raccolte dalla scena.
-func pick_up(item: String) -> bool:
-	if not Items.has_item(item) or not Items.ITEMS[item].collectible or item in collected:
-		return false
-	if not add_item(item):
-		return false
-	collected.append(item)
-	return true
 
 ## La ricetta decide consumi, risultati e risposta; gli ingredienti devono essere posseduti.
 func combine(first: String, second: String) -> String:

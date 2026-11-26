@@ -99,9 +99,6 @@ func _validate(row: Row) -> bool:
 			Step.Kind.HIDE:
 				if _rooms.subject(step.subject_id) == null:
 					return false
-			Step.Kind.EFFECT:
-				if not step.callback.is_valid():
-					return false
 			Step.Kind.CHANGE_ROOM:
 				# Una transizione sostituisce i nodi: deve occupare una riga propria.
 				if row.actions.size() != 1:
@@ -173,11 +170,6 @@ func _next() -> void:
 				Step.Kind.CHANGE_STATUS:
 					_state.set_progress(step.progress_scope, step.progress_key, step.progress_value)
 					changed = true
-				Step.Kind.EFFECT:
-					var response: Variant = step.callback.call()
-					changed = true
-					if response is String and not response.is_empty():
-						lines.append({"key": response, "speaker": "common.speaker.churchill"})
 				Step.Kind.CHANGE_ROOM:
 					if not _state.enter_room(step.destination_room, step.destination_entry):
 						cancel()

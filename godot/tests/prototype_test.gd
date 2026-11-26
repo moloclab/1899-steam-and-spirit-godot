@@ -193,11 +193,19 @@ func _test_episode_configuration() -> void:
 ## Copre ripresa intermedia, sovrascrittura atomica e rifiuto dei dati senza mutazioni parziali.
 func _test_saves() -> void:
 	var state := State.new()
-	check(not state.pick_up("unknown") and not state.pick_up("ep01_cabin_key"), "Raccolta limitata agli oggetti registrati come raccoglibili")
-	state.pick_up("ep01_cabin_feather")
-	state.pick_up("ep01_cabin_magnet")
+	check(not state.add_item("unknown"), "Gli oggetti sconosciuti non entrano nell'inventario")
+	# Un oggetto ottenuto dall'enigma entra nell'inventario senza registrare una raccolta dalla scena.
+	check(state.add_item("ep01_cabin_key") and "ep01_cabin_key" not in state.collected,
+		"La chiave viene aggiunta senza registrarla fra i raccoglibili")
+	state.remove_item("ep01_cabin_key")
+	check(state.add_item("ep01_cabin_key"), "Gli oggetti non raccoglibili possono essere assegnati nuovamente")
+	state.remove_item("ep01_cabin_key")
+	state.add_item("ep01_cabin_feather")
+	state.add_item("ep01_cabin_magnet")
+	check("ep01_cabin_feather" in state.collected and "ep01_cabin_magnet" in state.collected,
+		"L'aggiunta dei raccoglibili registra anche la raccolta persistente")
 	check(state.combine("ep01_cabin_magnet", "ep01_cabin_feather") == "ep01.inventory.magnet_feather.combine", "Ricetta simmetrica")
-	check(not state.pick_up("ep01_cabin_magnet"), "Un componente consumato non è raccoglibile due volte")
+	check(not state.add_item("ep01_cabin_magnet"), "Un componente consumato non è raccoglibile due volte")
 	state.set_progress("ep01_cabin", "sink_stage", 1)
 	check(Saves.save_game(state, TEST_SAVE) == OK, "Scrittura versione 3")
 	check(Saves.save_game(state, TEST_SAVE) == OK, "Sovrascrittura del salvataggio esistente")
@@ -365,7 +373,7 @@ func _test_nested_hotspots() -> void:
 ## Prova ordine, attese, movimento, animazioni non cicliche e cancellazione senza effetti tardivi.
 func _test_sequence_steps() -> void:
 	var runner := Runner.new()
-	var effects := {"count": 0}
+	var updates := {"count": 0}
 	var wait := Step.new()
 	wait.kind = Step.Kind.WAIT
 	wait.seconds = 0.5
@@ -376,24 +384,26 @@ func _test_sequence_steps() -> void:
 	animation.kind = Step.Kind.ANIMATE
 	animation.animation_name = "idle"
 	animation.wait_for_completion = false
-	var effect := Step.effect(func(): effects.count += 1)
-	var steps: Array[Row] = [Row.of([wait]), Row.of([walk]), Row.of([animation]), Row.of([effect])]
+	# Conta i cambi di stato per verificare ordine e cancellazione delle azioni esplicite.
+	runner.state_changed.connect(func(): updates.count += 1)
+	var status_step := Step.changeStatus("ep01_cabin", "door_unlocked", true)
+	var steps: Array[Row] = [Row.of([wait]), Row.of([walk]), Row.of([animation]), Row.of([status_step])]
 	runner.start(steps, game.state, game.rooms)
 	runner.advance_dialogue()
 	runner.tick(0.25)
-	check(effects.count == 0, "Conferma e attesa non anticipano gli effetti")
+	check(updates.count == 0, "Conferma e attesa non anticipano gli effetti")
 	runner.tick(0.25)
 	check(not runner.waiting_for_confirmation and game.rooms.actor.target_x == 320, "Fine attesa avvia automaticamente il movimento")
 	runner.advance_dialogue()
 	for i in 300:
 		runner.tick(1.0 / 60.0)
-	check(runner.waiting_for_confirmation and effects.count == 0, "Fine movimento avvia la posa senza anticipare l'effetto")
+	check(runner.waiting_for_confirmation and updates.count == 0, "Fine movimento avvia la posa senza anticipare l'effetto")
 	runner.advance_dialogue()
-	check(not runner.busy and effects.count == 1 and game.rooms.actor.current_x == 320, "Sequenza attesa-movimento-animazione-effetto")
+	check(not runner.busy and updates.count == 1 and game.rooms.actor.current_x == 320, "Sequenza attesa-movimento-animazione-effetto")
 	runner.start(steps, game.state, game.rooms)
 	runner.cancel()
 	runner.tick(10)
-	check(effects.count == 1 and not runner.busy, "Cancellazione senza effetti tardivi")
+	check(updates.count == 1 and not runner.busy, "Cancellazione senza effetti tardivi")
 	var frames: SpriteFrames = game.rooms.actor.sprite_frames.duplicate()
 	frames.add_animation("test_once")
 	frames.add_frame("test_once", frames.get_frame_texture("idle", 0))
@@ -403,14 +413,14 @@ func _test_sequence_steps() -> void:
 	animation = Step.new()
 	animation.kind = Step.Kind.ANIMATE
 	animation.animation_name = "test_once"
-	var animated_steps: Array[Row] = [Row.of([animation]), Row.of([effect])]
+	var animated_steps: Array[Row] = [Row.of([animation]), Row.of([status_step])]
 	runner.start(animated_steps, game.state, game.rooms)
 	runner.tick(0)
-	check(runner.busy and effects.count == 1, "Attesa del completamento reale dell'animazione")
+	check(runner.busy and updates.count == 1, "Attesa del completamento reale dell'animazione")
 	await create_timer(0.15).timeout
 	runner.tick(0)
-	check(not runner.busy and effects.count == 2, "Fine animazione avvia automaticamente l'effetto")
-	check(not runner.busy and effects.count == 2, "Animazione conclusa prima dell'effetto")
+	check(not runner.busy and updates.count == 2, "Fine animazione avvia automaticamente l'effetto")
+	check(not runner.busy and updates.count == 2, "Animazione conclusa prima dell'effetto")
 	var transition := Step.new()
 	transition.kind = Step.Kind.CHANGE_ROOM
 	transition.destination_room = "ep01_corridor"
