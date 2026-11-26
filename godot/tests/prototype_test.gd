@@ -557,12 +557,20 @@ func _test_room_scenes() -> void:
 		check(not sink.contains(sink.to_global(point)), "Punto esterno escluso senza margine ingrandito")
 	var actor = game.rooms.actor
 	var original_player_x: float = actor.current_x
-	for x in [180.0, 500.0]:
+	# Include partenze sopra l'oggetto e dal bordo: lo sguardo finale non segue l'ultimo passo.
+	for x in [180.0, 500.0, 230.0, 244.0, 197.0, 277.0]:
 		actor.place(x, game.rooms.current_room.definition.floor_y)
+		actor.flip_h = x <= 237
 		game.interactions.request(sink, "", true, game.rooms)
-		check(actor.target_x == (197 if x == 180 else 277), "La richiesta sceglie il bordo dal lato di arrivo")
+		check(is_equal_approx(actor.target_x, 197 if x <= 237 else 277), "La richiesta sceglie il bordo dal lato di arrivo")
 		_step()
 		check(actor.has_arrived(), "Churchill raggiunge il bordo e completa l'avvicinamento")
+		check(actor.flip_h == (x > 237), "Dopo l'esame Churchill guarda l'oggetto anche senza camminare")
+		# Anche l'interazione corregge una posa iniziale rivolta dalla parte opposta.
+		actor.flip_h = not actor.flip_h
+		game.interactions.request(sink, "", false, game.rooms)
+		_step()
+		check(actor.flip_h == (x > 237), "Dopo l'interazione Churchill guarda l'oggetto")
 	actor.place(24, game.rooms.current_room.definition.floor_y)
 	sink.position.x = 20
 	game.interactions.request(sink, "", true, game.rooms)
