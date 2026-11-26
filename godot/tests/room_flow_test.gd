@@ -110,6 +110,17 @@ func _run() -> void:
 	finish_sequence()
 	check(game.state.get_progress("ep01_cabin", "sink_stage") == 0, "I passi successivi di un versamento invalido non rivelano la chiave")
 	game.state.add_item("ep01_cabin_bottle")
+	# Anche una perdita del Bourbon dopo la prima battuta interrompe l'intera azione.
+	pending = cabin.act_drop_bottle(game.state)
+	check(game.state.has_item("ep01_cabin_bottle") and game.state.get_progress("ep01_cabin", "sink_stage") == 0,
+		"Costruire direttamente l'azione narrativa non anticipa consumo o progresso")
+	game._start_actions(pending)
+	game.state.remove_item("ep01_cabin_bottle")
+	game.sequences.advance_dialogue()
+	check(not game.sequences.busy and game.state.get_progress("ep01_cabin", "sink_stage") == 0
+		and game.ui.speech_label.text == game._text("common.cannot_use"),
+		"Requisito scaduto dopo la prima battuta impedisce consumo e rivelazione della chiave")
+	game.state.add_item("ep01_cabin_bottle")
 	# La richiesta reale sceglie direttamente il centro, prima di avviare le battute.
 	var sink: Hotspot = game.rooms.find_hotspot("sink")
 	check(not cabin.center_on_interaction(game.state, "sink", "ep01_cabin_bottle", true)
@@ -134,14 +145,30 @@ func _run() -> void:
 	game.sequences.advance_dialogue()
 	check(game.ui.speech_label.text == game._text("ep01.cabin.sink.key_found"), "Terza battuta rivela la chiave")
 	check(game.state.get_progress("ep01_cabin", "sink_stage") == 1 and not game.state.has_item("ep01_cabin_bottle"), "Bottiglia consumata e chiave nello scarico")
+	check(not game.sequences.busy and game.ui.speech_label.visible, "Ultima battuta del Bourbon visibile senza clic aggiuntivo")
 	act("sink", "ep01_cabin_feather")
 	check(not game.state.has_item("ep01_cabin_key") and game.state.has_item("ep01_cabin_feather"), "La penna semplice non recupera la chiave e non viene consumata")
 	# Conserva lo stadio intermedio prima della combinazione e del recupero della chiave.
 	check(Saves.save_game(game.state, TEST_SAVE) == OK, "Salvataggio dello stadio intermedio")
 	game.state.combine("ep01_cabin_feather", "ep01_cabin_magnet")
-	act("sink", "ep01_cabin_magnet_feather")
+	# I requisiti della raccolta e dello sblocco vengono verificati anche dopo la pianificazione.
+	pending = cabin.act_collect_key(game.state)
+	game.state.remove_item("ep01_cabin_magnet_feather")
+	game._start_actions(pending)
+	check(not game.state.has_item("ep01_cabin_key") and game.state.get_progress("ep01_cabin", "sink_stage") == 1
+		and not game.sequences.busy, "Attrezzo perso prima del recupero non crea la chiave né modifica il lavandino")
+	game.state.add_item("ep01_cabin_magnet_feather")
+	game._start_actions(cabin.actions(game.state, "sink", "ep01_cabin_magnet_feather"))
+	check(not game.sequences.busy and game.state.has_item("ep01_cabin_key")
+		and game.ui.speech_label.text == game._text("ep01.cabin.sink.key_pickup"), "Recupero della chiave immediato con battuta esplicita")
 	act("sink", "ep01_cabin_magnet_feather")
 	check(game.state.inventory.count("ep01_cabin_key") == 1, "Recupero della chiave senza duplicazione")
+	pending = cabin.act_use_key(game.state)
+	game.state.remove_item("ep01_cabin_key")
+	game._start_actions(pending)
+	check(game.state.room == "ep01_cabin" and not game.state.get_progress("ep01_cabin", "door_unlocked")
+		and not game.sequences.busy, "Chiave persa prima dello sblocco non apre la porta né cambia stanza")
+	game.state.add_item("ep01_cabin_key")
 	game._start_actions(cabin.actions(game.state, "door", "ep01_cabin_key"))
 	check(game.sequences.busy and game.state.room == "ep01_cabin" and game.rooms.actor.animation == &"back"
 		and not game.state.has_item("ep01_cabin_key") and game.state.get_progress("ep01_cabin", "door_unlocked")
@@ -164,7 +191,7 @@ func _run() -> void:
 	check(not game.sequences.busy, "Usare un oggetto sull'interfono non avvia la conversazione")
 	act("interphone", "", true)
 	check(not game.sequences.busy and game.ui.speech_label.text == game._text("ep01.cabin.interphone.examine"), "Esame dell'interfono senza conversazione")
-	# Ripetere il dialogo deve conservare ordine e interlocutori della risorsa condivisa.
+	# Ripetere il dialogo costruito dalla stanza deve conservare ordine e interlocutori.
 	for repetition in range(2):
 		act("interphone")
 		for line in ["greeting", "summons", "urgency", "reply"]:

@@ -24,7 +24,7 @@ func start(rows: Array[Row], state: State, rooms: Rooms) -> void:
 	cancel()
 	_rows.clear()
 	for row in rows:
-		_rows.append(Row.of(row.actions) if row != null else null)
+		_rows.append(Row.of(row.actions, row.condition, row.wait_for_confirmation) if row != null else null)
 	_state = state
 	_rooms = rooms
 	_index = 0
@@ -120,6 +120,15 @@ func _next() -> void:
 			cancel()
 			return
 		row_started.emit()
+		# Una condizione scaduta esclude tutta la riga, comprese posa e battuta di successo.
+		if not row.condition.is_null():
+			if not row.condition.is_valid():
+				cancel()
+				return
+			if not row.condition.call():
+				line_requested.emit("common.cannot_use", "common.speaker.churchill")
+				_finish(false)
+				return
 		var blocking := false
 		var has_speech := false
 		var changed := false
@@ -155,6 +164,15 @@ func _next() -> void:
 						blocking = true
 				Step.Kind.HIDE:
 					_rooms.subject(step.subject_id).hide()
+				Step.Kind.LEAVE:
+					_state.remove_item(step.item_id)
+					changed = true
+				Step.Kind.ADD:
+					_state.add_item(step.item_id)
+					changed = true
+				Step.Kind.CHANGE_STATUS:
+					_state.set_progress(step.progress_scope, step.progress_key, step.progress_value)
+					changed = true
 				Step.Kind.EFFECT:
 					var response: Variant = step.callback.call()
 					changed = true
@@ -175,7 +193,7 @@ func _next() -> void:
 			line_requested.emit(line.key, line.speaker)
 		if not _pending.is_empty():
 			return
-		if blocking or row.actions.is_empty():
+		if blocking or row.actions.is_empty() or not row.wait_for_confirmation:
 			continue
 		if _index < _rows.size() or has_speech:
 			waiting_for_confirmation = true

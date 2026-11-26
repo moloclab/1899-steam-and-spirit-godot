@@ -53,12 +53,12 @@ func _run() -> void:
 	root.add_child(game)
 	game.set_process(false)
 	await process_frame
-	var first := Step.say("ep01.cabin.interphone.greeting")
-	var second := Step.say("ep01.cabin.interphone.reply")
-	var third := Step.say("ep01.cabin.interphone.summons", "interphone")
+	var first := Step.say("player", "ep01.cabin.interphone.greeting")
+	var second := Step.say("player", "ep01.cabin.interphone.reply")
+	var third := Step.say("interphone", "ep01.cabin.interphone.summons")
 	var walking := walk("player", 250)
 	walking.target_hotspot_id = "como"
-	var matrix: Array[Row] = [Row.of([first, Step.animate("back")]), Row.of([walking]), Row.of([second]), Row.of([third])]
+	var matrix: Array[Row] = [Row.of([first, Step.animate("player", "back")]), Row.of([walking]), Row.of([second]), Row.of([third])]
 	start(matrix)
 	check(game.ui.speech_label.text == game._text(first.text_key) and game.rooms.actor.animation == &"back", "Riga 1 avvia insieme frase e posa")
 	check(game.sequences.waiting_for_confirmation and game.ui.save_buttons[0].disabled, "Riga immediata attende il clic e protegge il salvataggio")
@@ -80,7 +80,7 @@ func _run() -> void:
 	# Il centraggio deve funzionare da entrambi i lati e avviare la posa solo all'arrivo.
 	for origin in [100.0, 400.0]:
 		game.rooms.actor.place(origin, game.rooms.current_room.definition.floor_y)
-		start([Row.of([Step.walk_to("sink", true)]), Row.of([Step.animate("back"), first])])
+		start([Row.of([Step.walkTo("player", "sink", true)]), Row.of([Step.animate("player", "back"), first])])
 		var sink: Hotspot = game.rooms.find_hotspot("sink")
 		check(is_equal_approx(game.rooms.actor.target_x, sink.position.x + sink.hit_size.x / 2.0), "Cammino centrato indipendente dal lato di partenza")
 		check(game.rooms.actor.animation == &"walk" and not game.sequences.waiting_for_confirmation, "Il centraggio attende il cammino prima della posa")
@@ -132,7 +132,7 @@ func _run() -> void:
 	frames.set_animation_loop("sequence_test", false)
 	frames.set_animation_speed("sequence_test", 20)
 	game.rooms.actor.sprite_frames = frames
-	start([Row.of([Step.animate("sequence_test", "player", true), wait(0.5)]), Row.of([effect])])
+	start([Row.of([Step.animate("player", "sequence_test", true), wait(0.5)]), Row.of([effect])])
 	await create_timer(0.15).timeout
 	game._process(0.25)
 	check(effects.count == 7 and game.sequences.busy, "Animazione finita attende anche il timer della stessa riga")
@@ -147,9 +147,9 @@ func _run() -> void:
 	# La validazione dell'intera riga precede effetti e movimenti.
 	start([Row.of([effect, walk("missing", 200)])])
 	check(effects.count == 8 and not game.sequences.busy, "Soggetto mancante invalida la riga prima degli effetti")
-	start([Row.of([effect, walk("player", 300), Step.animate("idle")])])
+	start([Row.of([effect, walk("player", 300), Step.animate("player", "idle")])])
 	check(effects.count == 8 and not game.sequences.busy, "Azioni di movimento incompatibili non sovrascrivono lo stesso attore")
-	start([Row.of([effect, Step.animate("idle", "player", true)])])
+	start([Row.of([effect, Step.animate("player", "idle", true)])])
 	check(effects.count == 8 and not game.sequences.busy, "Animazione ciclica bloccante rifiutata senza effetti parziali")
 	start([Row.of([]), Row.of([wait(0)]), Row.of([effect])])
 	check(effects.count == 9 and not game.sequences.busy, "Righe vuote e attese nulle non richiedono clic inutili")
@@ -178,6 +178,52 @@ func _run() -> void:
 	check(game.state.room == "ep01_corridor" and game.sequences.waiting_for_confirmation, "Cambio stanza completato senza avviare la riga seguente")
 	click()
 	check(effects.count == 14 and not game.sequences.busy, "La matrice prosegue nella nuova stanza al clic successivo")
+	# La pianificazione non legge i requisiti; il runner li conserva e li rivaluta a ogni riga.
+	var gate := {"allowed": true, "checks": 0, "effects": 0}
+	var requirement := func() -> bool:
+		gate.checks += 1
+		return gate.allowed
+	var guarded_effect := Step.effect(func(): gate.effects += 1)
+	var guarded := Row.of([guarded_effect, first], requirement)
+	var guarded_rows: Array[Row] = [Row.of([first], requirement), guarded, Row.of([guarded_effect])]
+	check(gate.checks == 0 and gate.effects == 0, "Costruire righe condizionate non esegue requisiti né effetti")
+	start(guarded_rows)
+	check(gate.checks == 1 and game.sequences.waiting_for_confirmation, "Requisito valido eseguito all'avvio della prima riga")
+	gate.allowed = false
+	# Modificare la risorsa originale non cambia la condizione già copiata dal runner.
+	guarded.condition = func() -> bool: return true
+	click()
+	check(gate.checks == 2 and gate.effects == 0 and not game.sequences.busy,
+		"Requisito scaduto ferma effetti della riga e righe future, usando la condizione copiata")
+	check(game.ui.speech_label.text == game._text("common.cannot_use") and game.ui.speech_label.visible
+		and not game.ui.save_buttons[0].disabled, "Requisito fallito mostra il rifiuto e sblocca la UI")
+	# Riutilizzare le stesse righe non conserva l'esito precedente della condizione.
+	guarded.condition = requirement
+	gate.allowed = true
+	start(guarded_rows)
+	click()
+	check(gate.effects == 1 and game.ui.speech_label.text == game._text(first.text_key),
+		"Sequenza riutilizzata rivaluta il requisito e avvia effetto e battuta insieme")
+	click()
+	check(gate.effects == 2 and not game.sequences.busy, "Requisiti validi consentono le righe successive")
+	# Una risposta immediata resta visibile; la copia conserva la scelta di non attendere clic.
+	var immediate := Row.of([first], Callable(), false)
+	start([Row.of([second]), immediate])
+	immediate.wait_for_confirmation = true
+	click()
+	check(not game.sequences.busy and game.ui.speech_label.visible
+		and game.ui.speech_label.text == game._text(first.text_key), "Risposta immediata conserva testo e politica di conferma copiata")
+	# Anche senza conferma i cammini e i timer devono completarsi prima della riga seguente.
+	start([Row.of([wait(0.25)], Callable(), false), Row.of([guarded_effect])])
+	check(game.sequences.busy and gate.effects == 2, "Riga senza conferma attende comunque le operazioni bloccanti")
+	game._process(0.25)
+	check(gate.effects == 3 and not game.sequences.busy, "Fine dell'attesa avvia automaticamente la riga seguente")
+	# Un requisito legato a un nodo rimosso annulla la sequenza senza effetti parziali.
+	var owner := Node.new()
+	var expired := Callable(owner, "is_inside_tree")
+	owner.free()
+	start([Row.of([guarded_effect], expired)])
+	check(gate.effects == 3 and not game.sequences.busy, "Callable di un requisito rimosso annulla la riga senza effetti")
 	start([])
 	check(not game.sequences.busy, "Matrice vuota conclusa")
 	game.queue_free()

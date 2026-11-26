@@ -255,8 +255,8 @@ func _toggle_help() -> void:
 	else:
 		menu_toggled.emit(false)
 
-## Aggiorna la battuta mantenendo lo speaker distinto dal testo traducibile.
-func say(value: String, speaker_key: String = "common.speaker.churchill") -> void:
+## Aggiorna la battuta con speaker esplicito come primo parametro e testo traducibile come secondo.
+func say(speaker_key: String, value: String) -> void:
 	speech_label.text = value
 	_speaker_key = speaker_key
 	speaker_label.text = texts.text(_speaker_key).to_upper()

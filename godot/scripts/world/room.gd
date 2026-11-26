@@ -12,11 +12,44 @@ const ItemDefinition = preload("res://scripts/data/item_definition.gd")
 ## Gli hotspot sono definiti nella scena e raccolti al caricamento; cambia soltanto la visibilità.
 var _cached_hotspots: Array[Node2D] = []
 
+## Raggruppa azioni simultanee; il requisito viene letto soltanto quando la riga parte.
+## Con confirm false la riga avanza da sola, conservando comunque le attese bloccanti.
+func row(steps: Array[Step], condition: Callable = Callable(), confirm: bool = true) -> Row:
+	return Row.of(steps, condition, confirm)
+
+## Accoda una battuta con il soggetto esplicito prima della chiave del testo.
+func say(subject: String, key: String) -> Step:
+	return Step.say(subject, key)
+
+## Accoda una posa con soggetto esplicito; soltanto le animazioni finite possono richiedere l'attesa.
+func spriteTo(subject: String, animation: String, wait: bool = false) -> Step:
+	return Step.animate(subject, animation, wait)
+
+## Accoda il cammino del soggetto esplicito fino al bordo o al centro di un hotspot.
+func walkTo(subject: String, hotspot: String, center: bool = false) -> Step:
+	return Step.walkTo(subject, hotspot, center)
+
+## Rinvia una modifica dello stato fino all'esecuzione della riga.
+func effect(callback: Callable) -> Step:
+	return Step.effect(callback)
+
+## Rimuove un oggetto dall'inventario soltanto quando viene eseguita la riga.
+func leaveObj(item: String) -> Step:
+	return Step.leaveObj(item)
+
+## Aggiunge un oggetto all'inventario soltanto quando viene eseguita la riga.
+func addObj(item: String) -> Step:
+	return Step.addObj(item)
+
+## Cambia un progresso soltanto quando viene eseguita la riga, usando lo schema dello stato.
+func changeStatus(scope: String, key: String, value: Variant) -> Step:
+	return Step.changeStatus(scope, key, value)
+
 ## Le battute iniziali usano lo stesso motore delle interazioni; la stanza può aggiungere pose.
 func introduction(keys: Array[String]) -> Array[Row]:
 	var rows: Array[Row] = []
 	for key in keys:
-		rows.append(Row.of([Step.say(key)]))
+		rows.append(row([say("player", key)]))
 	return rows
 
 ## Le stanze scelgono il centraggio per le interazioni che lo richiedono; il bordo resta predefinito.

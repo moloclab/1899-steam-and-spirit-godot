@@ -157,7 +157,7 @@ func _text(key: String) -> String:
 
 ## Ogni nuova battuta appare sopra chi parla e resta ferma fino alla prossima interazione.
 func _say(value: String, speaker: String = "common.speaker.churchill") -> void:
-	ui.say(value, speaker)
+	ui.say(speaker, value)
 	# Una sequenza può emettere la battuta nello stesso frame dell'arrivo: aggiorna prima lo scorrimento.
 	rooms.position_world(ui.world_panel.size.x)
 	_position_speech()

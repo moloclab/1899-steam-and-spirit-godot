@@ -5,128 +5,154 @@ extends "res://scripts/world/room.gd"
 ## Mappa dopo la raccolta: cambia la grafica, ma rimane disponibile lo stesso hotspot.
 @export var map_collected_texture: Texture2D
 
-## Churchill resta seduto durante le quattro battute iniziali e si rialza alla chiusura.
+## Churchill resta seduto durante le battute iniziali e si rialza alla chiusura.
 func introduction(keys: Array[String]) -> Array[Row]:
-	var rows := super.introduction(keys)
-	if not rows.is_empty():
-		rows[0].actions.append(Step.animate("sit"))
-		rows.append(Row.of([Step.animate("idle")]))
+	if keys.is_empty():
+		return []
+	var rows: Array[Row] = [row([spriteTo("player", "sit"), say("player", keys[0])])]
+	for key in keys.slice(1):
+		rows.append(row([say("player", key)]))
+	rows.append(row([spriteTo("player", "idle")]))
 	return rows
 
 ## Il Bourbon richiede un solo cammino fino al centro; esame e altri usi mantengono il bordo.
 func center_on_interaction(state: State, hotspot_id: String, item_id: String = "", examining: bool = false) -> bool:
-	return not examining and hotspot_id == "sink" and item_id == "ep01_cabin_bottle" \
-		and state.has_item(item_id) and state.get_progress("ep01_cabin", "sink_stage") == 0
+	return not examining and hotspot_id == "sink" and item_id == "ep01_cabin_bottle" and _can_pour(state)
 
-## Pianifica senza effetti: possesso e condizioni vengono rivalutati durante l'esecuzione.
+## Sceglie l'azione narrativa; tutti gli effetti restano differiti fino all'esecuzione.
 func actions(state: State, hotspot_id: String, item_id: String = "", examining: bool = false) -> Array[Row]:
-	var hotspot := find_hotspot(hotspot_id)
-	if hotspot == null:
+	if find_hotspot(hotspot_id) == null:
 		return []
-	# Le scene narrative mantengono battute ed effetti separati, senza anticipare i consumi.
-	if not examining and state.has_item(item_id):
-		if hotspot_id == "sink" and item_id == "ep01_cabin_bottle" and state.get_progress("ep01_cabin", "sink_stage") == 0:
-			var context := {"started": false, "poured": false}
-			return [
-				Row.of([Step.effect(_begin_pouring.bind(state, context)), Step.animate("back")]),
-				Row.of([Step.effect(drop_bottle.bind(state, context))]),
-				Row.of([Step.effect(_reveal_key.bind(state, context))])
-			]
-		if hotspot_id == "door" and item_id == "ep01_cabin_key" and state.get_progress("ep01_cabin", "sink_stage") == 2:
-			return [Row.of([Step.effect(use_key.bind(state)), Step.animate("back")]), Row.of([Step.effect(_leave_after_unlock.bind(state))])]
-	# Il Callable rinvia le mutazioni al motore delle sequenze, dopo la scelta e l’avvicinamento.
-	if hotspot_id in ["map", "sink", "door"]:
-		return [Row.of([Step.effect(_execute.bind(state, hotspot_id, item_id, examining))])]
-	# Letto, oblò e raccoglibili mantengono i comportamenti comuni configurati nella scena.
-	return hotspot.actions(state, item_id, examining)
-
-## La lente ha precedenza sull'oggetto selezionato; gli usi richiedono il possesso corrente.
-func _execute(state: State, hotspot_id: String, item_id: String, examining: bool) -> String:
-	var hotspot := find_hotspot(hotspot_id)
-	if hotspot == null:
-		return "common.cannot_use"
-	# Le descrizioni variabili dipendono dal progresso; le altre usano il testo statico del nodo.
 	if examining:
-		if hotspot_id == "map":
-			return "ep01.cabin.map.examine_without_magnet" if "ep01_cabin_magnet" in state.collected else hotspot.examine_response
-		if hotspot_id == "sink" and state.get_progress("ep01_cabin", "sink_stage") == 1:
-			return "ep01.cabin.sink.key_unreachable"
-		return hotspot.examine(state)
-	if not item_id.is_empty() and not state.has_item(item_id):
-		return "common.cannot_use"
-	# Gli ID identificano gli oggetti logici anche quando il nome del nodo è diverso, come sinkNormal.
+		if hotspot_id in ["map", "sink", "door"]:
+			return [row([effect(_examine.bind(state, hotspot_id))])]
+		return super.actions(state, hotspot_id, item_id, true)
 	match hotspot_id:
-		"map":
-			if item_id.is_empty():
-				return "ep01.cabin.magnet.pickup" if state.pick_up("ep01_cabin_magnet") else "ep01.cabin.map.examine_without_magnet"
 		"sink":
-			if item_id.is_empty():
-				return "ep01.cabin.sink.key_unreachable" if state.get_progress("ep01_cabin", "sink_stage") == 1 else hotspot.interaction_response
+			if item_id == "ep01_cabin_bottle" and _can_pour(state):
+				return act_drop_bottle(state)
 			if item_id == "ep01_cabin_magnet_feather":
-				return collect_key(state)
-			if item_id == "ep01_cabin_feather" and state.get_progress("ep01_cabin", "sink_stage") == 1:
-				return "ep01.cabin.sink.feather_failed"
+				return act_collect_key(state)
+			return [row([effect(_sink_response.bind(state, item_id))])]
 		"door":
 			if item_id == "ep01_cabin_key":
-				return use_key(state)
+				return act_use_key(state)
+			return [row([effect(_door_response.bind(state, item_id))])]
+		"map":
+			return [row([effect(_map_response.bind(state, item_id))])]
+		"interphone":
 			if item_id.is_empty():
-				return _open_door(state)
+				return talk_interphone()
+	# Letto, oblò, raccoglibili e usi generici restano configurati nella scena.
+	return super.actions(state, hotspot_id, item_id, examining)
+
+## Tre passaggi: parla, consuma il Bourbon, poi rivela la chiave nello scarico.
+func act_drop_bottle(state: State) -> Array[Row]:
+	return [
+		row([spriteTo("player", "back"), say("player", "ep01.cabin.sink.pour_bourbon")], _can_pour.bind(state)),
+		row([
+			leaveObj("ep01_cabin_bottle"),
+			say("player", "ep01.cabin.sink.surprise")
+		], _can_pour.bind(state)),
+		row([
+			changeStatus("ep01_cabin", "sink_stage", 1),
+			say("player", "ep01.cabin.sink.key_found")
+		], _sink_at_stage.bind(state, 0), false)
+	]
+
+## La penna magnetica recupera la chiave; la risposta finale non aggiunge clic di chiusura.
+func act_collect_key(state: State) -> Array[Row]:
+	return [row([
+		addObj("ep01_cabin_key"),
+		changeStatus("ep01_cabin", "sink_stage", 2),
+		say("player", "ep01.cabin.sink.key_pickup")
+	], _can_collect_key.bind(state), false)]
+
+## «Finalmente...» resta nella cabina; soltanto il clic seguente attraversa la porta.
+func act_use_key(state: State) -> Array[Row]:
+	return [
+		row([
+			leaveObj("ep01_cabin_key"),
+			changeStatus("ep01_cabin", "door_unlocked", true),
+			spriteTo("player", "back"),
+			say("player", "ep01.cabin.door.exit")
+		], _can_unlock.bind(state)),
+		row([effect(_leave_after_unlock.bind(state))], _door_is_unlocked.bind(state))
+	]
+
+## Le quattro battute conservano ordine e interlocutori a ogni conversazione.
+func talk_interphone() -> Array[Row]:
+	return [
+		row([say("player", "ep01.cabin.interphone.greeting")]),
+		row([say("interphone", "ep01.cabin.interphone.summons")]),
+		row([say("interphone", "ep01.cabin.interphone.urgency")]),
+		row([say("player", "ep01.cabin.interphone.reply")])
+	]
+
+## I requisiti leggono lo stato corrente, senza consumare oggetti durante la pianificazione.
+func _can_pour(state: State) -> bool:
+	return state.has_item("ep01_cabin_bottle") and _sink_at_stage(state, 0)
+
+## Stadi del lavandino: 0 iniziale, 1 chiave nello scarico, 2 chiave recuperata.
+func _sink_at_stage(state: State, stage: int) -> bool:
+	return state.get_progress("ep01_cabin", "sink_stage") == stage
+
+## Il recupero è disponibile soltanto con l'attrezzo completo e la chiave nello scarico.
+func _can_collect_key(state: State) -> bool:
+	return state.has_item("ep01_cabin_magnet_feather") and _sink_at_stage(state, 1)
+
+## Lo sblocco richiede ancora la chiave quando la riga viene eseguita.
+func _can_unlock(state: State) -> bool:
+	return state.has_item("ep01_cabin_key") and _sink_at_stage(state, 2)
+
+## Il flag persistente permette il passaggio anche dopo il consumo della chiave.
+func _door_is_unlocked(state: State) -> bool:
+	return state.get_progress("ep01_cabin", "door_unlocked")
+
+## Rivaluta il bersaglio; mappa e lavandino hanno descrizioni dipendenti dal progresso.
+func _examine(state: State, hotspot_id: String) -> String:
+	var hotspot := find_hotspot(hotspot_id)
+	if hotspot == null:
+		return "common.cannot_use"
+	if hotspot_id == "map" and "ep01_cabin_magnet" in state.collected:
+		return "ep01.cabin.map.examine_without_magnet"
+	if hotspot_id == "sink" and _sink_at_stage(state, 1):
+		return "ep01.cabin.sink.key_unreachable"
+	return hotspot.examine(state)
+
+## La calamita viene raccolta una volta sola; la mappa rimane esaminabile.
+func _map_response(state: State, item_id: String) -> String:
+	if find_hotspot("map") == null or not item_id.is_empty():
+		return "common.cannot_use"
+	return "ep01.cabin.magnet.pickup" if state.pick_up("ep01_cabin_magnet") else "ep01.cabin.map.examine_without_magnet"
+
+## Risposte del lavandino che non avviano una sequenza narrativa.
+func _sink_response(state: State, item_id: String) -> String:
+	var hotspot := find_hotspot("sink")
+	if hotspot == null:
+		return "common.cannot_use"
+	if item_id.is_empty():
+		return "ep01.cabin.sink.key_unreachable" if _sink_at_stage(state, 1) else hotspot.interaction_response
+	if item_id == "ep01_cabin_feather" and state.has_item(item_id) and _sink_at_stage(state, 1):
+		return "ep01.cabin.sink.feather_failed"
 	return "common.cannot_use"
 
-## La prima battuta precede il consumo; il contesto vale soltanto per questa sequenza.
-func _begin_pouring(state: State, context: Dictionary) -> String:
-	context.started = state.has_item("ep01_cabin_bottle") and state.get_progress("ep01_cabin", "sink_stage") == 0
-	return "ep01.cabin.sink.pour_bourbon" if context.started else "common.cannot_use"
-
-## La seconda battuta consuma il Bourbon; una richiesta divenuta invalida non produce effetti.
-func drop_bottle(state: State, context: Dictionary) -> String:
-	if not context.started or not state.has_item("ep01_cabin_bottle") or state.get_progress("ep01_cabin", "sink_stage") != 0:
-		return "common.cannot_use"
-	state.remove_item("ep01_cabin_bottle")
-	context.poured = true
-	return "ep01.cabin.sink.surprise"
-
-## La chiave diventa recuperabile solo insieme alla terza battuta, come nell'originale.
-func _reveal_key(state: State, context: Dictionary) -> String:
-	if not context.poured or state.get_progress("ep01_cabin", "sink_stage") != 0:
-		return "common.cannot_use"
-	# Stadi del lavandino: 0 iniziale, 1 chiave nello scarico, 2 chiave recuperata.
-	state.set_progress("ep01_cabin", "sink_stage", 1)
-	return "ep01.cabin.sink.key_found"
-
-## La penna magnetica recupera la chiave senza poterla duplicare.
-func collect_key(state: State) -> String:
-	if not state.has_item("ep01_cabin_magnet_feather") or state.get_progress("ep01_cabin", "sink_stage") != 1:
-		return "common.cannot_use"
-	state.add_item("ep01_cabin_key")
-	state.set_progress("ep01_cabin", "sink_stage", 2)
-	return "ep01.cabin.sink.key_pickup"
-
-## Lo sblocco persistente consente di attraversare la porta anche dopo il consumo della chiave.
-func use_key(state: State) -> String:
-	if not state.has_item("ep01_cabin_key") or state.get_progress("ep01_cabin", "sink_stage") != 2:
-		return "common.cannot_use"
-	state.remove_item("ep01_cabin_key")
-	# Il flag sopravvive al cambio stanza e al salvataggio, indipendentemente dal possesso della chiave.
-	state.set_progress("ep01_cabin", "door_unlocked", true)
-	# Il passaggio al corridoio è il passo successivo: «Finalmente...» resta nella cabina.
-	return "ep01.cabin.door.exit"
-
-## Il secondo passo attraversa la porta senza ripetere la battuta nel corridoio.
-func _leave_after_unlock(state: State) -> String:
-	if not state.get_progress("ep01_cabin", "door_unlocked"):
-		return "common.cannot_use"
-	var response: String = $door.interact(state)
-	return "" if state.room != definition.room_id else response
-
 ## L'uscita generica risolve la destinazione; la stanza aggiunge il vincolo dell'enigma.
-func _open_door(state: State) -> String:
-	if state.get_progress("ep01_cabin", "door_unlocked"):
-		return $door.interact(state)
+func _door_response(state: State, item_id: String) -> String:
+	var hotspot := find_hotspot("door")
+	if hotspot == null or not item_id.is_empty():
+		return "common.cannot_use"
+	if _door_is_unlocked(state):
+		return hotspot.interact(state)
 	match state.get_progress("ep01_cabin", "sink_stage"):
 		1: return "ep01.cabin.door.key_needed"
 		2: return "ep01.cabin.door.ready_to_leave"
 	return "ep01.cabin.door.locked"
+
+## Il passaggio non ripete la battuta della chiave nella nuova stanza.
+func _leave_after_unlock(state: State) -> String:
+	var response: String = $door.interact(state)
+	return "" if state.room != definition.room_id else response
 
 ## Ricostruisce la mappa dal progresso, anche al rientro o caricando una partita precedente.
 func sync_from_state(state: State) -> void:

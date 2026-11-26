@@ -180,7 +180,37 @@ Lo script della stanza riceve `actions(state, hotspot_id, item_id, examining)`.
 Delega le interazioni semplici a `super.actions(...)` e restituisce righe
 `ActionRow`, ciascuna con azioni `ActionStep`, per quelle specifiche. Gli effetti applicano le mutazioni soltanto
 durante l'esecuzione, rivalutando il possesso degli oggetti.
-La cabina mostra il modello con `drop_bottle`, `collect_key` e `use_key`.
+`actions()` smista le richieste verso una funzione per ogni azione narrativa:
+la cabina usa `act_drop_bottle()`, `act_collect_key()`, `act_use_key()` e
+`talk_interphone()`. Battute, pose ed effetti si leggono insieme nella sequenza.
+
+Tutte le stanze ereditano i comandi `row(azioni, condition, confirm)`,
+`say(subject, chiave)`, `spriteTo(subject, animazione, wait = false)`,
+`walkTo(subject, hotspot, center = false)`, `leaveObj(oggetto)`,
+`addObj(oggetto)`, `changeStatus(ambito, chiave, valore)` ed `effect(callback)`.
+Costruiscono risorse, senza eseguire subito azioni né modificare la partita:
+
+```gdscript
+## Parla di spalle, poi raggiunge il centro del lavandino.
+func act_approach_sink() -> Array[Row]:
+    return [
+        row([spriteTo("player", "back"), say("player", "ep01.cabin.sink.pour_bourbon")]),
+        row([walkTo("player", "sink", true)])
+    ]
+```
+
+Il requisito opzionale `condition` è un `Callable` senza effetti che restituisce
+un booleano; il motore lo controlla prima di eseguire qualsiasi azione della riga.
+Se fallisce, mostra `common.cannot_use` e conclude la sequenza senza eseguire
+le righe successive. I requisiti vanno rivalutati al passaggio che ne dipende.
+Per esempio, `leaveObj("ep01_cabin_bottle")` consuma il
+Bourbon soltanto quando parte la riga; chiamare direttamente `remove_item()`
+mentre si costruisce la sequenza anticiperebbe il consumo.
+
+`confirm` vale normalmente `true`. Con `row([...], Callable(), false)` la riga
+prosegue automaticamente anche se contiene una battuta, che resta visibile fino
+alla prossima interazione. La cabina usa questa opzione per mantenere le risposte
+immediate del recupero della chiave e della conclusione del versamento.
 
 `sync_from_state(state)` richiama prima la versione comune, che aggiorna anche
 gli hotspot nascosti, poi ricostruisce le varianti della stanza.
@@ -200,15 +230,19 @@ Ogni personaggio ha un `character_id` usato dai passi della sequenza.
 Una risorsa `action_sequence.gd` contiene `rows`, una lista di `ActionRow`.
 Ogni riga contiene `actions`, una lista di `ActionStep` avviate insieme nello stesso frame.
 Nell'Inspector si aggiunge prima la riga, poi le sue azioni: è una matrice con un numero
-di colonne variabile per riga. Negli script si costruisce una riga con `Row.of([...])`.
+di colonne variabile per riga. Nelle room si usa `row([...])`; l'API
+`Row.of([...])` / `Step.say(...)` rimane disponibile agli altri componenti.
 
 - Ogni passo indica `subject_id`: `player` per Churchill, oppure il `character_id`
   di un altro personaggio o l'`hotspot_id` di un oggetto.
 - `SAY`: il soggetto dice `text_key`; voce e posizione della battuta vengono dal suo `speaker_key`.
-- `WALK`: il soggetto cammina fino al bordo di `target_hotspot_id`; con `center_on_hotspot = true` raggiunge invece il centro orizzontale. Se l'ID è vuoto usa `target_x`. Da codice: `Step.walk_to("sink", true)` centra il personaggio sul lavandino, mentre `Step.walk_to("sink")` lo porta al bordo.
+- `WALK`: il soggetto cammina fino al bordo di `target_hotspot_id`; con `center_on_hotspot = true` raggiunge invece il centro orizzontale. Se l'ID è vuoto usa `target_x`. Da codice: `Step.walkTo("player", "sink", true)` centra il personaggio sul lavandino, mentre `Step.walkTo("player", "sink")` lo porta al bordo.
 - `ANIMATE`: personaggio, animazione e attesa facoltativa della sua conclusione.
 - `WAIT`: durata in secondi.
 - `EFFECT`: Callable creato dallo script, per applicare una regola al momento corretto.
+- `LEAVE`: rimuove `item_id` dall'inventario, conservando la memoria della raccolta.
+- `ADD`: aggiunge `item_id` all'inventario, usando i controlli sul catalogo e sui duplicati di `GameState`.
+- `CHANGE_STATUS`: applica un progresso costruito da script con `changeStatus()`, usando la validazione di `GameState.set_progress()`.
 - `CHANGE_ROOM`: stanza e ingresso nominato.
 - `HIDE`: nasconde il soggetto nella stanza corrente. Per una scomparsa salvata nei progressi
   usa invece `EFFECT` e la sincronizzazione della stanza in `sync_from_state()`.
@@ -222,7 +256,8 @@ Come nel vecchio EP01, se una riga contiene `WALK`, `WAIT` o `ANIMATE` con attes
 il motore attende tutte le sue azioni bloccanti e poi avvia automaticamente la riga successiva.
 Ogni colonna conserva il proprio timer o personaggio: due cammini possono procedere insieme.
 I clic durante l'attesa vengono ignorati, senza essere accodati; il menu sospende tutta la riga.
-L'ultima riga con `SAY` richiede un clic per chiuderla; le altre righe finali terminano da sole.
+Per impostazione predefinita l'ultima riga con `SAY` richiede un clic per chiuderla;
+con `confirm = false` termina da sola, come le righe finali senza battute.
 `cancel()` ferma tutti i cammini attivi ed elimina le righe future, preservando gli effetti già applicati.
 Le righe vuote e le attese nulle avanzano automaticamente. Le risorse restano immutate.
 Due azioni di cammino/animazione sullo stesso personaggio sono incompatibili nella stessa riga;
@@ -239,10 +274,10 @@ Per esempio, nell'Inspector configura tre righe:
 La prima riga avvia insieme frase e posa. Un clic avvia il cammino della seconda riga;
 all'arrivo parte automaticamente la frase della terza. Un ultimo clic chiude la conversazione.
 
-Le conversazioni senza condizioni sono risorse `conversation` degli hotspot,
-configurabili nell'Inspector: `ep01_cabin.tscn` incorpora le quattro righe dell'interfono.
-Le conversazioni con regole narrative possono essere costruite nello script della
-stanza. Il motore delle sequenze rimane condiviso.
+Le conversazioni narrative si scrivono nello script della stanza: `talk_interphone()`
+mostra le quattro battute e indica `"interphone"` come soggetto delle risposte di Kelvin.
+Le risorse `conversation` degli hotspot restano supportate per le conversazioni
+configurate nell'Inspector. Il motore delle sequenze rimane condiviso.
 
 ## Salvataggi
 

@@ -1,8 +1,5 @@
 [gd_scene format=3 uid="uid://bahxas0nyxs3e"]
 
-[ext_resource type="Script" uid="uid://ijxhyx1f3soh" path="res://scripts/actions/action_row.gd" id="action_row"]
-[ext_resource type="Script" uid="uid://dhwghtvndfnw4" path="res://scripts/actions/action_sequence.gd" id="action_sequence"]
-[ext_resource type="Script" uid="uid://cd16yclgw3qqd" path="res://scripts/actions/action_step.gd" id="action_step"]
 [ext_resource type="Texture2D" uid="uid://dkllr3263gajg" path="res://assets/graphics/ep01_cabin/background-room-wall.png" id="background"]
 [ext_resource type="Texture2D" uid="uid://dpqfforgflm8g" path="res://assets/graphics/ep01_cabin/bed.png" id="bed_bed"]
 [ext_resource type="Texture2D" uid="uid://dbv1yvgispe0d" path="res://assets/graphics/ep01_cabin/bottle.png" id="bottle_bottle"]
@@ -169,44 +166,6 @@ animations = [{
 "speed": 13.0
 }]
 
-[sub_resource type="Resource" id="interphone_greeting"]
-script = ExtResource("action_step")
-text_key = "ep01.cabin.interphone.greeting"
-
-[sub_resource type="Resource" id="interphone_row_1"]
-script = ExtResource("action_row")
-actions = Array[ExtResource("action_step")]([SubResource("interphone_greeting")])
-
-[sub_resource type="Resource" id="interphone_summons"]
-script = ExtResource("action_step")
-subject_id = "interphone"
-text_key = "ep01.cabin.interphone.summons"
-
-[sub_resource type="Resource" id="interphone_row_2"]
-script = ExtResource("action_row")
-actions = Array[ExtResource("action_step")]([SubResource("interphone_summons")])
-
-[sub_resource type="Resource" id="interphone_urgency"]
-script = ExtResource("action_step")
-subject_id = "interphone"
-text_key = "ep01.cabin.interphone.urgency"
-
-[sub_resource type="Resource" id="interphone_row_3"]
-script = ExtResource("action_row")
-actions = Array[ExtResource("action_step")]([SubResource("interphone_urgency")])
-
-[sub_resource type="Resource" id="interphone_reply"]
-script = ExtResource("action_step")
-text_key = "ep01.cabin.interphone.reply"
-
-[sub_resource type="Resource" id="interphone_row_4"]
-script = ExtResource("action_row")
-actions = Array[ExtResource("action_step")]([SubResource("interphone_reply")])
-
-[sub_resource type="Resource" id="interphone_conversation"]
-script = ExtResource("action_sequence")
-rows = Array[ExtResource("action_row")]([SubResource("interphone_row_1"), SubResource("interphone_row_2"), SubResource("interphone_row_3"), SubResource("interphone_row_4")])
-
 [node name="CABIN" type="Node2D" unique_id=124935942]
 script = ExtResource("room_script")
 map_complete_texture = ExtResource("mapMagnet_mapMagnet")
@@ -304,7 +263,6 @@ hit_size = Vector2(24, 20)
 interaction_kind = "mouth"
 examine_response = "ep01.cabin.interphone.examine"
 interaction_response = "ep01.cabin.interphone.conversation"
-conversation = SubResource("interphone_conversation")
 
 [node name="Visual" type="Sprite2D" parent="interphone" unique_id=1516863676]
 texture = ExtResource("interphone_interphone")
