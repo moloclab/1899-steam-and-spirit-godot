@@ -12,7 +12,7 @@ const Row = preload("res://scripts/actions/action_row.gd")
 const Saves = preload("res://scripts/save_store.gd")
 const Episodes = preload("res://scripts/data/episode_catalog.gd")
 const CURSOR_NORMAL = preload("res://assets/graphics/ui/cursors/cursor_normal.png")
-const CURSOR_MAGNIFIER = preload("res://assets/graphics/ui/cursors/cursor_magnifier.png")
+const CURSOR_HAND = preload("res://assets/graphics/ui/cursors/cursor_hand.png")
 var state: State
 var texts: Texts
 var rooms = Rooms.new()
@@ -33,7 +33,7 @@ func _ready() -> void:
 	# Il punto attivo coincide con la punta disegnata, spostata a destra nel PNG trasparente.
 	Input.set_custom_mouse_cursor(CURSOR_NORMAL, Input.CURSOR_ARROW, Vector2(10, 0))
 	Input.set_custom_mouse_cursor(CURSOR_NORMAL, Input.CURSOR_POINTING_HAND, Vector2(10, 0))
-	Input.set_custom_mouse_cursor(CURSOR_MAGNIFIER, Input.CURSOR_CROSS, Vector2(10, 0))
+	Input.set_custom_mouse_cursor(CURSOR_HAND, Input.CURSOR_CROSS, Vector2(10, 0))
 	ui = UI.new()
 	ui.texts = texts
 	add_child(ui)
@@ -302,7 +302,7 @@ func _input(event: InputEvent) -> void:
 		get_viewport().set_input_as_handled()
 		return
 
-## Il cursore mostra la lente sugli oggetti; la selezione resta visibile nell'inventario.
+## Il cursore mostra la mano sugli oggetti; la selezione resta visibile nell'inventario.
 func _update_highlight() -> void:
 	var hotspots := _hotspots()
 	var mouse_target: Node2D = null

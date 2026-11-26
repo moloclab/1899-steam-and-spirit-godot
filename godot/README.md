@@ -61,7 +61,7 @@ L'azione parte dopo la scelta e dopo l'avvicinamento di Churchill.
 Un clic nell'inventario mostra subito la descrizione e seleziona l'oggetto per l'uso. Per usarlo nella stanza, clicca poi sul bersaglio.
 Per combinare: clicca sul primo oggetto e poi sul secondo nell'inventario.
 Con tastiera e controller, conferma seleziona direttamente l'oggetto o esegue l'azione.
-La cornice dorata identifica il focus da tastiera/controller; il mouse usa il cursore a lente.
+La cornice dorata identifica il focus da tastiera/controller; il mouse usa il cursore a mano.
 
 Durante una sequenza, movimento e interazioni liberi sono sospesi.
 Un clic sinistro avvia la riga successiva, con tutte le sue azioni insieme.

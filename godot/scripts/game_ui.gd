@@ -115,7 +115,8 @@ func _inventory_button(texture: Texture2D, background: Color = Color.TRANSPARENT
 		button.add_theme_stylebox_override(style, icon_background)
 	button.add_theme_font_size_override("font_size", 32)
 	button.custom_minimum_size = Vector2(100, 100)
-	button.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+	# Oggetti e bussola usano la stessa mano personalizzata degli hotspot nella stanza.
+	button.mouse_default_cursor_shape = Control.CURSOR_CROSS
 	return button
 
 ## Costruisce l'interfaccia nella risoluzione di riferimento del progetto.
