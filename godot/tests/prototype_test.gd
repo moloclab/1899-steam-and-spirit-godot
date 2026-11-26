@@ -309,7 +309,7 @@ func _test_interphone() -> void:
 	check(game.ui.speech_label.text == game._text("ep01.cabin.interphone.greeting"), "Prima battuta dell'interfono")
 	check(game.ui.save_buttons[0].disabled and game.ui.reset_button.disabled, "Salvataggio e reset bloccati durante la sequenza")
 	# Sostituire una sequenza annulla le azioni future senza sbloccare l'interfaccia della successiva.
-	game._start_actions(game.rooms.current_room.actions(game.state, "interphone"))
+	game._start_actions(game.rooms.current_room.interact(game.state, "interphone"))
 	check(game.ui.save_buttons[0].disabled and game.sequences.busy, "Blocco UI conservato dopo la sostituzione della sequenza")
 	var before_x: float = game.state.player_x
 	# Mantiene premuto il movimento durante l'aggiornamento, anziché rilasciarlo prima della verifica.

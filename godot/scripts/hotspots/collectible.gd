@@ -4,10 +4,10 @@ extends "res://scripts/hotspot.gd"
 ## Chiave della battuta mostrata soltanto quando la raccolta viene registrata con successo.
 @export var pickup_response := "common.nothing_interesting"
 
-## Prepara la raccolta senza modificare lo stato; esame, usi e conversazioni seguono le regole comuni.
-func actions(state: State, used_item_id: String = "", examining: bool = false) -> Array[Row]:
-	if examining or not used_item_id.is_empty() or (conversation != null and not conversation.rows.is_empty()):
-		return super.actions(state, used_item_id, examining)
+## Prepara la raccolta senza modificare lo stato; usi e conversazioni seguono le regole comuni.
+func interact(state: State, used_item_id: String = "") -> Array[Row]:
+	if not used_item_id.is_empty() or (conversation != null and not conversation.rows.is_empty()):
+		return super.interact(state, used_item_id)
 	# Un oggetto sconosciuto, già posseduto o raccolto non viene aggiunto nuovamente.
 	if not State.Items.has_item(item_id) or state.has_item(item_id) or item_id in state.collected:
 		return [Row.of([Step.say("player", "common.nothing_interesting")], Callable(), false)]

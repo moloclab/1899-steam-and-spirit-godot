@@ -4,10 +4,10 @@ extends "res://scripts/hotspot.gd"
 @export var destination_room := ""
 @export var destination_entry := "default"
 
-## Accoda il passaggio; esame, usi e conversazioni seguono le regole comuni.
-func actions(state: State, item_id: String = "", examining: bool = false) -> Array[Row]:
-	if examining or not item_id.is_empty() or (conversation != null and not conversation.rows.is_empty()):
-		return super.actions(state, item_id, examining)
+## Accoda il passaggio; usi e conversazioni seguono le regole comuni.
+func interact(state: State, item_id: String = "") -> Array[Row]:
+	if not item_id.is_empty() or (conversation != null and not conversation.rows.is_empty()):
+		return super.interact(state, item_id)
 	# La transizione occupa una riga propria; la risposta viene mostrata nella destinazione.
 	var rows: Array[Row] = [Row.of([Step.changeRoom(destination_room, destination_entry)], Callable(), false)]
 	if not interaction_response.is_empty():

@@ -176,11 +176,12 @@ Per aggiungere una stanza:
 6. Dichiara i progressi in `ProgressSchema.SCOPES` e usa
    `get_progress(ambito, chiave)` / `set_progress(ambito, chiave, valore)`.
 
-Lo script della stanza riceve `actions(state, hotspot_id, item_id, examining)`.
-Delega le interazioni semplici a `super.actions(...)` e restituisce righe
+Lo script della stanza riceve `examine(state, hotspot_id)` per la lente e
+`interact(state, hotspot_id, item_id)` per mano, bocca e porta, dopo l'avvicinamento.
+Delega i casi semplici a `super.examine(...)` e `super.interact(...)` e restituisce righe
 `ActionRow`, ciascuna con azioni `ActionStep`, per quelle specifiche. Gli effetti applicano le mutazioni soltanto
 durante l'esecuzione, rivalutando il possesso degli oggetti.
-`actions()` smista le richieste verso una funzione per ogni azione narrativa:
+`interact()` smista le richieste verso una funzione per ogni azione narrativa:
 la cabina usa `act_drop_bottle()`, `act_collect_key()`, `act_use_key()` e
 `talk_interphone()`. Battute, pose ed effetti si leggono insieme nella sequenza.
 

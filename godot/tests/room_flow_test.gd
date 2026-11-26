@@ -24,7 +24,10 @@ func check(condition: bool, message: String) -> void:
 
 ## Usa lo stesso ingresso del coordinatore dopo l'avvicinamento del personaggio.
 func act(target: String, item: String = "", examining: bool = false) -> void:
-	game._start_actions(game.rooms.current_room.actions(game.state, target, item, examining))
+	if examining:
+		game._start_actions(game.rooms.current_room.examine(game.state, target))
+	else:
+		game._start_actions(game.rooms.current_room.interact(game.state, target, item))
 	# I controlli del percorso verificano lo stato al termine delle nuove sequenze narrative.
 	if target != "interphone":
 		finish_sequence()
@@ -86,7 +89,7 @@ func _run() -> void:
 	var map_visual = cabin.get_node("mapMagnet/Visual")
 	var complete_texture = map_visual.texture
 	# Separa pianificazione ed esecuzione per accertare che la sola richiesta non raccolga la calamita.
-	var pending = cabin.actions(game.state, "map")
+	var pending = cabin.interact(game.state, "map")
 	check(game.state.inventory.is_empty(), "Pianificare la raccolta non modifica lo stato")
 	game._start_actions(pending)
 	check(game.state.has_item("ep01_cabin_magnet") and map_visual.texture != complete_texture, "Raccolta dalla mappa e aggiornamento della texture")
@@ -163,7 +166,7 @@ func _run() -> void:
 	check(not game.state.has_item("ep01_cabin_key") and game.state.get_progress("ep01_cabin", "sink_stage") == 1
 		and not game.sequences.busy, "Attrezzo perso prima del recupero non crea la chiave né modifica il lavandino")
 	game.state.add_item("ep01_cabin_magnet_feather")
-	game._start_actions(cabin.actions(game.state, "sink", "ep01_cabin_magnet_feather"))
+	game._start_actions(cabin.interact(game.state, "sink", "ep01_cabin_magnet_feather"))
 	check(not game.sequences.busy and game.state.has_item("ep01_cabin_key")
 		and game.ui.speech_label.text == game._text("ep01.cabin.sink.key_pickup"), "Recupero della chiave immediato con battuta esplicita")
 	act("sink", "ep01_cabin_magnet_feather")
@@ -173,7 +176,7 @@ func _run() -> void:
 	check(game.state.room == "ep01_cabin" and not game.state.get_progress("ep01_cabin", "door_unlocked")
 		and not game.sequences.busy, "Chiave persa prima dello sblocco non apre la porta né cambia stanza")
 	game.state.add_item("ep01_cabin_key")
-	game._start_actions(cabin.actions(game.state, "door", "ep01_cabin_key"))
+	game._start_actions(cabin.interact(game.state, "door", "ep01_cabin_key"))
 	check(game.sequences.busy and game.state.room == "ep01_cabin" and game.rooms.actor.animation == &"back"
 		and not game.state.has_item("ep01_cabin_key") and game.state.get_progress("ep01_cabin", "door_unlocked")
 		and game.ui.speech_label.text == game._text("ep01.cabin.door.exit"), "Finalmente viene pronunciato nella cabina prima del passaggio")

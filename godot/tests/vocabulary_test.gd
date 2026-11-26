@@ -63,7 +63,7 @@ func _run() -> void:
 	check(game.ui.music_button.text == "Musica: OFF", "Stato musicale ritradotto")
 	game.texts.language = "en"
 	# I passi prodotti dalla stanza mantengono le chiavi traducibili e i soggetti delle battute.
-	game._start_actions(game.rooms.current_room.actions(game.state, "interphone"))
+	game._start_actions(game.rooms.current_room.interact(game.state, "interphone"))
 	check(game.ui.speaker_label.text == "WINSTON CHURCHILL", "Nome Churchill dal vocabolario")
 	game.sequences.advance_dialogue()
 	check(game.ui.speaker_label.text == "INTERPHONE", "Nome interfono dal vocabolario")

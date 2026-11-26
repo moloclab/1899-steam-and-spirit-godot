@@ -228,9 +228,10 @@ func _build_help() -> void:
 	_label("common.ui.help_title", Rect2(30, 20, 760, 40), 32, content)
 	_label("common.ui.help_commands", Rect2(30, 65, 755, 390), 32, content)
 	# La musica eredita la visibilità del pannello, con una riga dedicata sopra gli altri comandi.
-	music_button = _button("common.ui.music_on", Rect2(30, 480, 200, 42), _toggle_music, content)
+	# Il sottofondo parte disattivato; il giocatore può abilitarlo dagli aiuti.
+	music_button = _button("common.ui.music_off", Rect2(30, 480, 200, 42), _toggle_music, content)
 	music_button.toggle_mode = true
-	music_button.button_pressed = true
+	music_button.button_pressed = false
 	# La lingua corrente resta visibile accanto alla musica e cambia senza chiudere gli aiuti.
 	language_button = _button("common.ui.language", Rect2(250, 480, 300, 42), _toggle_language, content)
 	var save := _button("common.ui.save", Rect2(30, 540, 145, 42), func():

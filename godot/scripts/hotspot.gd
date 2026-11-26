@@ -29,16 +29,18 @@ var highlighted := false:
 		# Il disegno personalizzato viene invalidato solo quando il coordinatore assegna il valore.
 		queue_redraw()
 
-## Crea una sequenza senza applicare effetti durante la pianificazione.
-## Le sottoclassi possono comporre passi diversi leggendo lo stato corrente.
-## La stanza delega qui esami statici, raccolte semplici e altre interazioni generiche.
-func actions(state: State, item_id: String = "", examining: bool = false) -> Array[Row]:
-	if not examining and item_id.is_empty() and conversation != null and not conversation.rows.is_empty():
+## Prepara la descrizione senza applicare effetti; la lente ignora l'oggetto selezionato.
+func examine(_state: State) -> Array[Row]:
+	if examine_response.is_empty():
+		return []
+	return [Row.of([Step.say("player", examine_response)], Callable(), false)]
+
+## Prepara interazioni e conversazioni senza applicare effetti durante la pianificazione.
+func interact(_state: State, item_id: String = "") -> Array[Row]:
+	if item_id.is_empty() and conversation != null and not conversation.rows.is_empty():
 		return conversation.rows.duplicate()
-	# La lente precede l'oggetto selezionato; gli usi generici non previsti vengono rifiutati.
-	var response := examine(state) if examining else interaction_response
-	if not examining and not item_id.is_empty():
-		response = "common.cannot_use"
+	# Gli usi generici non previsti vengono rifiutati.
+	var response := interaction_response if item_id.is_empty() else "common.cannot_use"
 	# Una risposta vuota conclude l'interazione senza mostrare una battuta.
 	if response.is_empty():
 		return []
@@ -61,10 +63,6 @@ func approach_position(player_x: float, player_half_width: float, center: bool =
 	if center:
 		return (left + right) / 2.0
 	return left - player_half_width if player_x <= (left + right) / 2.0 else right + player_half_width
-
-## Descrizione statica predefinita. Gli oggetti con descrizioni dipendenti dal progresso la ridefiniscono.
-func examine(_state: State) -> String:
-	return examine_response
 
 ## Aggiorna la rappresentazione leggendo lo stato, senza modificarlo.
 ## Anche gli hotspot nascosti ricevono questa chiamata dopo caricamento o nuova partita.

@@ -52,11 +52,15 @@ func introduction(keys: Array[String]) -> Array[Row]:
 		rows.append(row([say("player", key)]))
 	return rows
 
-## Le stanze specializzano questo ingresso per azioni narrative e conversazioni.
-func actions(state: State, hotspot_id: String, item_id: String = "", examining: bool = false) -> Array[Row]:
-	# Il percorso predefinito lascia all’hotspot le sole regole condivise; le stanze possono specializzarlo.
+## Delega l'esame all'hotspot; le stanze possono specializzare le descrizioni narrative.
+func examine(state: State, hotspot_id: String) -> Array[Row]:
 	var hotspot := find_hotspot(hotspot_id)
-	return hotspot.actions(state, item_id, examining) if hotspot != null else []
+	return hotspot.examine(state) if hotspot != null else []
+
+## Delega le interazioni comuni all'hotspot, compreso l'eventuale uso di un oggetto.
+func interact(state: State, hotspot_id: String, item_id: String = "") -> Array[Row]:
+	var hotspot := find_hotspot(hotspot_id)
+	return hotspot.interact(state, item_id) if hotspot != null else []
 
 ## La ricerca esclude anche gli oggetti nascosti da un antenato o già rimossi.
 func find_hotspot(hotspot_id: String) -> Hotspot:

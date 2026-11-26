@@ -29,4 +29,6 @@ func take_ready_actions(state, rooms) -> Array[Row]:
 		if not is_equal_approx(target_center.x, rooms.actor.half_width):
 			rooms.actor.flip_h = target_center.x < rooms.actor.half_width
 	# La stanza verifica il bersaglio e decide le regole narrative dopo l'avvicinamento.
-	return rooms.current_room.actions(state, request_data.target, request_data.item, request_data.examining)
+	if request_data.examining:
+		return rooms.current_room.examine(state, request_data.target)
+	return rooms.current_room.interact(state, request_data.target, request_data.item)

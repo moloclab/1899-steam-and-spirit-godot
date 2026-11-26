@@ -41,12 +41,12 @@ func _run() -> void:
 	game._refresh()
 	await _capture("inventory")
 	# Il versamento usa la posa originale di spalle insieme alla prima battuta.
-	game._start_actions(game.rooms.current_room.actions(game.state, "sink", "ep01_cabin_bottle"))
+	game._start_actions(game.rooms.current_room.interact(game.state, "sink", "ep01_cabin_bottle"))
 	await _capture("pouring-bourbon")
 	while game.sequences.busy:
 		game.sequences.advance_dialogue()
 	# La stanza compone il dialogo; le catture mostrano il cambio speaker e la pausa della UI.
-	game._start_actions(game.rooms.current_room.actions(game.state, "interphone"))
+	game._start_actions(game.rooms.current_room.interact(game.state, "interphone"))
 	game.sequences.advance_dialogue()
 	await _capture("interphone")
 	game.ui._toggle_help()

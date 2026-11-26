@@ -15,22 +15,24 @@ func introduction(keys: Array[String]) -> Array[Row]:
 	rows.append(row([spriteTo("player", "idle")]))
 	return rows
 
-## Sceglie l'azione narrativa; tutti gli effetti restano differiti fino all'esecuzione.
-func actions(state: State, hotspot_id: String, item_id: String = "", examining: bool = false) -> Array[Row]:
+## Prepara le descrizioni della cabina in base al progresso degli enigmi.
+func examine(state: State, hotspot_id: String) -> Array[Row]:
 	var hotspot := find_hotspot(hotspot_id)
 	if hotspot == null:
 		return []
-	if examining:
-		# La mappa descrive l'assenza della calamita dopo la raccolta.
-		if hotspot_id == "map" and "ep01_cabin_magnet" in state.collected:
-			return [row([say("player", "ep01.cabin.map.examine_without_magnet")], Callable(), false)]
-		# Allo stadio 1 la chiave è visibile nello scarico, ma non ancora raggiungibile.
-		if hotspot_id == "sink" and state.get_progress("ep01_cabin", "sink_stage") == 1:
-			return [row([say("player", "ep01.cabin.sink.key_unreachable")], Callable(), false)]
-		# Negli altri casi usa la descrizione dell'hotspot senza un clic aggiuntivo di chiusura.
-		if hotspot_id in ["map", "sink", "door"]:
-			return [row([say("player", hotspot.examine(state))], Callable(), false)]
-		return super.actions(state, hotspot_id, item_id, true)
+	# La mappa descrive l'assenza della calamita dopo la raccolta.
+	if hotspot_id == "map" and "ep01_cabin_magnet" in state.collected:
+		return [row([say("player", "ep01.cabin.map.examine_without_magnet")], Callable(), false)]
+	# Allo stadio 1 la chiave è visibile nello scarico, ma non ancora raggiungibile.
+	if hotspot_id == "sink" and state.get_progress("ep01_cabin", "sink_stage") == 1:
+		return [row([say("player", "ep01.cabin.sink.key_unreachable")], Callable(), false)]
+	return super.examine(state, hotspot_id)
+
+## Sceglie l'interazione narrativa; tutti gli effetti restano differiti fino all'esecuzione.
+func interact(state: State, hotspot_id: String, item_id: String = "") -> Array[Row]:
+	var hotspot := find_hotspot(hotspot_id)
+	if hotspot == null:
+		return []
 	match hotspot_id:
 		"sink":
 			# Il versamento richiede il Bourbon nell'inventario e il lavandino allo stadio iniziale.
@@ -57,7 +59,7 @@ func actions(state: State, hotspot_id: String, item_id: String = "", examining: 
 				return [row([say("player", "common.cannot_use")], Callable(), false)]
 			# Dopo lo sblocco il passaggio usa la destinazione configurata nell'hotspot.
 			if state.get_progress("ep01_cabin", "door_unlocked"):
-				return super.actions(state, hotspot_id)
+				return super.interact(state, hotspot_id)
 			# Prima dello sblocco la risposta segue il progresso dell'enigma.
 			match state.get_progress("ep01_cabin", "sink_stage"):
 				1: return [row([say("player", "ep01.cabin.door.key_needed")], Callable(), false)]
@@ -79,7 +81,7 @@ func actions(state: State, hotspot_id: String, item_id: String = "", examining: 
 			if item_id.is_empty():
 				return talk_interphone()
 	# Letto, oblò, raccoglibili e usi generici restano configurati nella scena.
-	return super.actions(state, hotspot_id, item_id, examining)
+	return super.interact(state, hotspot_id, item_id)
 
 ## Raggiunge il centro del lavandino, parla, consuma il Bourbon e rivela la chiave nello scarico.
 func act_drop_bottle() -> Array[Row]:
