@@ -11,8 +11,8 @@ const Sequences = preload("res://scripts/actions/sequence_runner.gd")
 const Row = preload("res://scripts/actions/action_row.gd")
 const Saves = preload("res://scripts/save_store.gd")
 const Episodes = preload("res://scripts/data/episode_catalog.gd")
-const CURSOR_NORMAL = preload("res://assets/graphics/ui/cursors/cursor_normal.png")
-const CURSOR_HAND = preload("res://assets/graphics/ui/cursors/cursor_hand.png")
+const CURSOR_NORMAL = preload("res://assets/graphics/ui/cursors/cursor_normal_o.png")
+const CURSOR_MAGNIFIER = preload("res://assets/graphics/ui/cursors/cursor_magnifier_o.png")
 var state: State
 var texts: Texts
 var rooms = Rooms.new()
@@ -30,10 +30,11 @@ var menu_hotspot: Hotspot
 func _ready() -> void:
 	state = State.new(starting_episode)
 	texts = Texts.new(starting_episode)
-	# Il punto attivo coincide con la punta disegnata, spostata a destra nel PNG trasparente.
-	Input.set_custom_mouse_cursor(CURSOR_NORMAL, Input.CURSOR_ARROW, Vector2(10, 0))
-	Input.set_custom_mouse_cursor(CURSOR_NORMAL, Input.CURSOR_POINTING_HAND, Vector2(10, 0))
-	Input.set_custom_mouse_cursor(CURSOR_HAND, Input.CURSOR_CROSS, Vector2(10, 0))
+	var normal_cursor := _double_cursor_size(CURSOR_NORMAL)
+	var magnifier_cursor := _double_cursor_size(CURSOR_MAGNIFIER)
+	Input.set_custom_mouse_cursor(normal_cursor, Input.CURSOR_ARROW, Vector2.ZERO)
+	Input.set_custom_mouse_cursor(normal_cursor, Input.CURSOR_POINTING_HAND, Vector2.ZERO)
+	Input.set_custom_mouse_cursor(magnifier_cursor, Input.CURSOR_CROSS, Vector2.ZERO)
 	ui = UI.new()
 	ui.texts = texts
 	add_child(ui)
@@ -56,6 +57,12 @@ func _ready() -> void:
 	sequences.finished.connect(func(_cancelled: bool): ui.lock_interactions(false))
 	_load_room()
 	_show_intro()
+
+## Raddoppia i cursori senza sfumare i pixel.
+func _double_cursor_size(texture: Texture2D) -> ImageTexture:
+	var cursor_image := texture.get_image()
+	cursor_image.resize(cursor_image.get_width() * 2, cursor_image.get_height() * 2, Image.INTERPOLATE_NEAREST)
+	return ImageTexture.create_from_image(cursor_image)
 
 ## I cursori appartengono a Input: rilasciarli alla chiusura evita texture trattenute oltre il renderer.
 func _exit_tree() -> void:
@@ -303,7 +310,7 @@ func _input(event: InputEvent) -> void:
 		get_viewport().set_input_as_handled()
 		return
 
-## Il cursore mostra la mano sugli oggetti; la selezione resta visibile nell'inventario.
+## Il cursore mostra la lente sugli oggetti; la selezione resta visibile nell'inventario.
 func _update_highlight() -> void:
 	var hotspots := _hotspots()
 	var mouse_target: Node2D = null

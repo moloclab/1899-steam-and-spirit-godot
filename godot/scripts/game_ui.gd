@@ -25,9 +25,11 @@ var _localized_controls: Dictionary = {}
 var _speaker_key := "common.speaker.churchill"
 const SPEECH_SIZE := Vector2(200, 100)
 const SPEECH_FONT_SIZE := 40
+const SPEECH_OUTLINE_WIDTH := 3
 var world_panel: Control
 var speaker_label: Label
 var speech_label: Label
+var _speech_outline: Array[Label] = []
 var inventory_row: HBoxContainer
 var inventory_scroll: ScrollContainer
 var action_menu: Control
@@ -81,7 +83,7 @@ func _label(key: String, rect: Rect2, font_size: int = 32, parent: Node = self) 
 	label.position = rect.position
 	label.size = rect.size
 	label.add_theme_font_size_override("font_size", font_size)
-	label.add_theme_color_override("font_color", Color("eee4d0"))
+	label.add_theme_color_override("font_color", Color("ffffff"))
 	label.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	parent.add_child(label)
 	return label
@@ -153,13 +155,26 @@ func _ready() -> void:
 	speech_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	speech_label.vertical_alignment = VERTICAL_ALIGNMENT_BOTTOM
 	speech_label.clip_text = true
-	speech_label.z_index = 2
-	# L'ombra ripete il testo in nero, spostato di un pixel a destra e in basso.
-	speech_label.add_theme_constant_override("outline_size", 0)
-	speech_label.add_theme_color_override("font_shadow_color", Color.BLACK)
-	speech_label.add_theme_constant_override("shadow_offset_x", 3)
-	speech_label.add_theme_constant_override("shadow_offset_y", 3)
+	# Disegna la battuta e il suo contorno sopra la patina della stanza e dell'inventario.
+	speech_label.z_index = 5
 	speech_label.add_theme_constant_override("line_spacing", 0)
+	# Le copie nere riempiono anche gli angoli del bordo, un pixel alla volta.
+	for y in range(-SPEECH_OUTLINE_WIDTH, SPEECH_OUTLINE_WIDTH + 1):
+		for x in range(-SPEECH_OUTLINE_WIDTH, SPEECH_OUTLINE_WIDTH + 1):
+			if x == 0 and y == 0:
+				continue
+			var outline := speech_label.duplicate(0) as Label
+			outline.add_theme_color_override("font_color", Color("0a0601"))
+			outline.z_index = 0
+			outline.show_behind_parent = true
+			outline.position = Vector2(x, y)
+			_speech_outline.append(outline)
+	# Collega le copie dopo averle create, così ogni duplicato contiene solo il testo.
+	for outline in _speech_outline:
+		var offset := outline.position
+		speech_label.add_child(outline)
+		outline.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+		outline.position = offset
 	# La fascia opaca usa il marrone scuro #120F0E della palette e resta separata dalla stanza.
 	var view_height := float(ProjectSettings.get_setting("display/window/size/viewport_height"))
 	var inventory_background := _panel(Rect2(0, world_height, view_width, view_height - world_height), Color("0B0908"))
@@ -259,6 +274,8 @@ func _toggle_help() -> void:
 ## Aggiorna la battuta con speaker esplicito come primo parametro e testo traducibile come secondo.
 func say(speaker_key: String, value: String) -> void:
 	speech_label.text = value
+	for outline in _speech_outline:
+		outline.text = value
 	_speaker_key = speaker_key
 	speaker_label.text = texts.text(_speaker_key).to_upper()
 	# Allarga il riquadro mantenendo il carattere fisso; al limite del viewport cresce anche in altezza.
