@@ -14,7 +14,7 @@ var _cached_hotspots: Array[Node2D] = []
 
 ## Raggruppa azioni simultanee; il requisito viene letto soltanto quando la riga parte.
 ## Con confirm false la riga avanza da sola, conservando comunque le attese bloccanti.
-func row(steps: Array[Step], condition: Callable = Callable(), confirm: bool = true) -> Row:
+func row(steps: Array[Step], confirm: bool = true, condition: Callable = Callable()) -> Row:
 	return Row.of(steps, condition, confirm)
 
 ## Accoda una battuta con il soggetto esplicito prima della chiave del testo.

@@ -185,7 +185,7 @@ durante l'esecuzione, rivalutando il possesso degli oggetti.
 la cabina usa `act_drop_bottle()`, `act_collect_key()`, `act_use_key()` e
 `talk_interphone()`. Battute, pose ed effetti si leggono insieme nella sequenza.
 
-Tutte le stanze ereditano i comandi `row(azioni, condition, confirm)`,
+Tutte le stanze ereditano i comandi `row(azioni, confirm, condition)`,
 `say(subject, chiave)`, `spriteTo(subject, animazione, wait = false)`,
 `walkTo(subject, hotspot, center = false)`, `leaveObj(oggetto)`,
 `addObj(oggetto)`, `changeStatus(ambito, chiave, valore)` ed `effect(callback)`.
@@ -208,7 +208,7 @@ Per esempio, `leaveObj("ep01_cabin_bottle")` consuma il
 Bourbon soltanto quando parte la riga; chiamare direttamente `remove_item()`
 mentre si costruisce la sequenza anticiperebbe il consumo.
 
-`confirm` vale normalmente `true`. Con `row([...], Callable(), false)` la riga
+`confirm` vale normalmente `true`. Con `row([...], false)` la riga
 prosegue automaticamente anche se contiene una battuta, che resta visibile fino
 alla prossima interazione. La cabina usa questa opzione per mantenere le risposte
 immediate del recupero della chiave e della conclusione del versamento.

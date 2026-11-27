@@ -20,68 +20,86 @@ func examine(state: State, hotspot_id: String) -> Array[Row]:
 	var hotspot := find_hotspot(hotspot_id)
 	if hotspot == null:
 		return []
+
 	# La mappa descrive l'assenza della calamita dopo la raccolta.
 	if hotspot_id == "map" and "ep01_cabin_magnet" in state.collected:
-		return [row([say("player", "ep01.cabin.map.examine_without_magnet")], Callable(), false)]
+		return [row([say("player", "ep01.cabin.map.examine_without_magnet")], false)]
+
 	# Allo stadio 1 la chiave è visibile nello scarico, ma non ancora raggiungibile.
 	if hotspot_id == "sink" and state.get_progress("ep01_cabin", "sink_stage") == 1:
-		return [row([say("player", "ep01.cabin.sink.key_unreachable")], Callable(), false)]
+		return [row([say("player", "ep01.cabin.sink.key_unreachable")], false)]
+
+	# Azione standard
 	return super.examine(state, hotspot_id)
 
 ## Sceglie l'interazione narrativa; tutti gli effetti restano differiti fino all'esecuzione.
-func interact(state: State, hotspot_id: String, item_id: String = "") -> Array[Row]:
+func interact(state: State, hotspot_id: String, inventory_item_id_selected: String = "") -> Array[Row]:
 	var hotspot := find_hotspot(hotspot_id)
 	if hotspot == null:
 		return []
 	match hotspot_id:
 		"sink":
 			# Il versamento richiede il Bourbon nell'inventario e il lavandino allo stadio iniziale.
-			if item_id == "ep01_cabin_bottle" and state.has_item(item_id) and state.get_progress("ep01_cabin", "sink_stage") == 0:
+			if inventory_item_id_selected == "ep01_cabin_bottle" and state.has_item(inventory_item_id_selected) and state.get_progress("ep01_cabin", "sink_stage") == 0:
 				return act_drop_bottle()
+
 			# Il recupero richiede l'attrezzo completo nell'inventario e la chiave nello scarico.
-			if item_id == "ep01_cabin_magnet_feather" and state.has_item(item_id) and state.get_progress("ep01_cabin", "sink_stage") == 1:
+			if inventory_item_id_selected == "ep01_cabin_magnet_feather" and state.has_item(inventory_item_id_selected) and state.get_progress("ep01_cabin", "sink_stage") == 1:
 				return act_collect_key()
+
 			# A mani libere descrive la chiave nello scarico oppure usa la risposta della scena.
-			if item_id.is_empty():
+			if inventory_item_id_selected.is_empty():
 				if state.get_progress("ep01_cabin", "sink_stage") == 1:
-					return [row([say("player", "ep01.cabin.sink.key_unreachable")], Callable(), false)]
-				return [row([say("player", hotspot.interaction_response)], Callable(), false)]
+					return [row([say("player", "ep01.cabin.sink.key_unreachable")], false)]
+				return [row([say("player", hotspot.interaction_response)], false)]
+
 			# La penna semplice non riesce a recuperare la chiave e non viene consumata.
-			if item_id == "ep01_cabin_feather" and state.has_item(item_id) and state.get_progress("ep01_cabin", "sink_stage") == 1:
-				return [row([say("player", "ep01.cabin.sink.feather_failed")], Callable(), false)]
-			return [row([say("player", "common.cannot_use")], Callable(), false)]
+			if inventory_item_id_selected == "ep01_cabin_feather" and state.has_item(inventory_item_id_selected) and state.get_progress("ep01_cabin", "sink_stage") == 1:
+				return [
+					row([walkTo("player", "sink", true)]),
+					row([spriteTo("player", "back"), say("player", "ep01.cabin.sink.feather_failed")]),
+					]
+
+			return [row([say("player", "common.cannot_use")], false)]
 		"door":
 			# Lo sblocco richiede la chiave nell'inventario e il recupero completato.
-			if item_id == "ep01_cabin_key" and state.has_item(item_id) and state.get_progress("ep01_cabin", "sink_stage") == 2:
+			if inventory_item_id_selected == "ep01_cabin_key" and state.has_item(inventory_item_id_selected) and state.get_progress("ep01_cabin", "sink_stage") == 2:
 				return act_use_key()
+
 			# Gli altri usi di oggetti non aprono la porta.
-			if not item_id.is_empty():
-				return [row([say("player", "common.cannot_use")], Callable(), false)]
+			if not inventory_item_id_selected.is_empty():
+				return [row([say("player", "common.cannot_use")], false)]
+
 			# Dopo lo sblocco il passaggio usa la destinazione configurata nell'hotspot.
 			if state.get_progress("ep01_cabin", "door_unlocked"):
 				return super.interact(state, hotspot_id)
+
 			# Prima dello sblocco la risposta segue il progresso dell'enigma.
 			match state.get_progress("ep01_cabin", "sink_stage"):
-				1: return [row([say("player", "ep01.cabin.door.key_needed")], Callable(), false)]
-				2: return [row([say("player", "ep01.cabin.door.ready_to_leave")], Callable(), false)]
-			return [row([say("player", "ep01.cabin.door.locked")], Callable(), false)]
+				1: return [row([say("player", "ep01.cabin.door.key_needed")], false)]
+				2: return [row([say("player", "ep01.cabin.door.ready_to_leave")], false)]
+
+			return [row([say("player", "ep01.cabin.door.locked")], false)]
 		"map":
 			# Le risposte restano visibili senza richiedere un clic di chiusura.
 			# Gli oggetti usati sulla mappa non hanno effetto.
-			if not item_id.is_empty():
-				return [row([say("player", "common.cannot_use")], Callable(), false)]
+			if not inventory_item_id_selected.is_empty():
+				return [row([say("player", "common.cannot_use")], false)]
+
 			# La calamita viene raccolta una volta sola; la mappa rimane esaminabile.
 			if "ep01_cabin_magnet" in state.collected or state.has_item("ep01_cabin_magnet"):
-				return [row([say("player", "ep01.cabin.map.examine_without_magnet")], Callable(), false)]
+				return [row([say("player", "ep01.cabin.map.examine_without_magnet")], false)]
 			return [row([
 				addObj("ep01_cabin_magnet"),
 				say("player", "ep01.cabin.magnet.pickup")
-			], Callable(), false)]
+			], false)]
+
 		"interphone":
-			if item_id.is_empty():
+			if inventory_item_id_selected.is_empty():
 				return talk_interphone()
+				
 	# Letto, oblò, raccoglibili e usi generici restano configurati nella scena.
-	return super.interact(state, hotspot_id, item_id)
+	return super.interact(state, hotspot_id, inventory_item_id_selected)
 
 ## Raggiunge il centro del lavandino, parla, consuma il Bourbon e rivela la chiave nello scarico.
 func act_drop_bottle() -> Array[Row]:
@@ -95,7 +113,7 @@ func act_drop_bottle() -> Array[Row]:
 		row([
 			changeStatus("ep01_cabin", "sink_stage", 1),
 			say("player", "ep01.cabin.sink.key_found")
-		], Callable(), false)
+		], false)
 	]
 
 ## La penna magnetica recupera la chiave; la risposta finale non aggiunge clic di chiusura.
@@ -104,7 +122,7 @@ func act_collect_key() -> Array[Row]:
 		addObj("ep01_cabin_key"),
 		changeStatus("ep01_cabin", "sink_stage", 2),
 		say("player", "ep01.cabin.sink.key_pickup")
-	], Callable(), false)]
+	], false)]
 
 ## «Finalmente...» resta nella cabina; soltanto il clic seguente attraversa la porta.
 func act_use_key() -> Array[Row]:
