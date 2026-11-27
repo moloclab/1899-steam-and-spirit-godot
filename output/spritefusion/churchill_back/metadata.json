@@ -1,0 +1,129 @@
+﻿{
+    "method":  "generate_sprites_in_style",
+    "size":  112,
+    "prompt":  "Redesign the full-body standing rear-view sprite of Churchill from the first reference. Keep the camera directly behind him, with his head facing away, shoulders square, and both boots planted in the same stance and on the same baseline as the first reference. His elbows are bent close to his sides and his forearms reach forward in front of his torso, as if he is fiddling with something out of sight. His hands stay hidden by his body. Small hints of the bent arms at the sides make the gesture readable. Preserve the upright, slender silhouette, the little swept-up hair tuft, and the dark blue rolled sleeves, dark trousers, and boots. Keep the rear garment construction believable, with restrained seam and fold detail. Use the second reference for clothing textures, restrained shading, deliberate color clusters, and the thin, single-step dark outer contour. The front of the outfit and the hip-resting arm belong to the style reference only. Keep the figure centered horizontally, a little under a third of the square\u0027s width and around nine tenths of its height.",
+    "references":  [
+                       "churchill_back.png",
+                       "churchill-stand.png"
+                   ],
+    "visible_size_min":  [
+                             35,
+                             95
+                         ],
+    "visible_size_max":  [
+                             37,
+                             105
+                         ],
+    "sprites":  [
+                    {
+                        "label":  "Originale",
+                        "file":  "churchill_back.png",
+                        "asset_id":  null,
+                        "canvas":  [
+                                       44,
+                                       100
+                                   ],
+                        "bounds":  [
+                                       4,
+                                       0,
+                                       36,
+                                       100
+                                   ],
+                        "translucent_pixels":  0,
+                        "within_size_tolerance":  true
+                    },
+                    {
+                        "label":  "Stile approvato",
+                        "file":  "churchill-stand.png",
+                        "asset_id":  null,
+                        "canvas":  [
+                                       46,
+                                       100
+                                   ],
+                        "bounds":  [
+                                       0,
+                                       0,
+                                       46,
+                                       100
+                                   ],
+                        "translucent_pixels":  0,
+                        "within_size_tolerance":  false
+                    },
+                    {
+                        "label":  "V1",
+                        "file":  "churchill_back-redesign.png",
+                        "asset_id":  "13571de8-4aae-4a23-bc8a-a7792e0e151d",
+                        "canvas":  [
+                                       112,
+                                       112
+                                   ],
+                        "bounds":  [
+                                       36,
+                                       6,
+                                       40,
+                                       100
+                                   ],
+                        "translucent_pixels":  0,
+                        "within_size_tolerance":  false
+                    },
+                    {
+                        "label":  "V2",
+                        "file":  "churchill_back-redesign-2.png",
+                        "asset_id":  "12a38a84-ba2f-43de-b40e-c6ebf0fa95b4",
+                        "canvas":  [
+                                       112,
+                                       112
+                                   ],
+                        "bounds":  [
+                                       32,
+                                       6,
+                                       48,
+                                       100
+                                   ],
+                        "translucent_pixels":  0,
+                        "within_size_tolerance":  false
+                    },
+                    {
+                        "label":  "V3",
+                        "file":  "churchill_back-redesign-3.png",
+                        "asset_id":  "1003b612-220e-4995-bb03-a82951804d9e",
+                        "canvas":  [
+                                       112,
+                                       112
+                                   ],
+                        "bounds":  [
+                                       34,
+                                       6,
+                                       44,
+                                       100
+                                   ],
+                        "translucent_pixels":  0,
+                        "within_size_tolerance":  false
+                    },
+                    {
+                        "label":  "V4",
+                        "file":  "churchill_back-redesign-4.png",
+                        "asset_id":  "c4e32bb6-0f79-4850-a728-6d7e765501e3",
+                        "canvas":  [
+                                       112,
+                                       112
+                                   ],
+                        "bounds":  [
+                                       35,
+                                       6,
+                                       41,
+                                       100
+                                   ],
+                        "translucent_pixels":  0,
+                        "within_size_tolerance":  false
+                    }
+                ],
+    "decision":  "pending",
+    "request_id":  "req_829173dc-b2ae-4189-a112-bc3965c9c418",
+    "review":  {
+                   "preferred_variant":  "V1",
+                   "pose":  "Only V1 preserves the bent-arm gesture. V2, V3 and V4 show hands by the sides.",
+                   "outline":  "V1 has a dark single-pixel outline along various parts of the upper body. The outline is harder to distinguish from the fill on the legs and boots.",
+                   "integration":  "All four variants exceed the allowed visible width. Await user selection and any asset-specific size exception."
+               }
+}

@@ -1,0 +1,104 @@
+﻿{
+    "method":  "edit_sprite",
+    "request_id":  "req_93323d27-7a39-4c19-91d8-d81206a80786",
+    "prompt":  "Localized pixel sprite edit below the belt. Show exactly this character, Churchill, straight from behind, in a one-knee kneel, doing something low in front of him. Put his left knee on the ground slightly to the left of his body center, with the left shin and boot trailing back toward the viewer. The right knee stays lifted and bent in front of him, with the right boot planted flat on the same ground line beside the left knee. Make the two legs clearly asymmetrical: one lowered knee bears weight on the ground while the other side is supported by its boot. Preserve the same dark slim trousers, olive-dark boots, colors and thin dark outline. Keep the complete upper body including the belt, back of the vest, shoulders, rolled sleeves, original arm pose, neck, head and hair tuft intact at the original size. Move that whole upper section only vertically down, by about a quarter of the sprite\u0027s standing height. Churchill faces directly away with hands hidden in front of his torso. Keep the original horizontal axis, full canvas, and original ground line. Leave empty space above the lowered head.",
+    "references":  [
+                       "churchill-back.png"
+                   ],
+    "sprites":  [
+                    {
+                        "label":  "In piedi approvato",
+                        "file":  "godot\\assets\\graphics\\characters\\churchill\\churchill-back.png",
+                        "asset_id":  null,
+                        "canvas":  [
+                                       38,
+                                       100
+                                   ],
+                        "visible_bounds":  [
+                                               0,
+                                               0,
+                                               38,
+                                               100
+                                           ],
+                        "baseline":  99,
+                        "translucent_pixels":  0
+                    },
+                    {
+                        "label":  "Posa bassa in gioco",
+                        "file":  "godot\\assets\\graphics\\characters\\churchill\\churchill_down.png",
+                        "asset_id":  null,
+                        "canvas":  [
+                                       44,
+                                       100
+                                   ],
+                        "visible_bounds":  [
+                                               4,
+                                               28,
+                                               36,
+                                               72
+                                           ],
+                        "baseline":  99,
+                        "translucent_pixels":  0
+                    },
+                    {
+                        "label":  "Edit 1",
+                        "file":  "output/spritefusion/churchill_down/kneeling/churchill_down-kneeling-edit-1.png",
+                        "asset_id":  "46e2ffc8-0798-4c4c-8dda-901702cb7e25",
+                        "canvas":  [
+                                       49,
+                                       92
+                                   ],
+                        "visible_bounds":  [
+                                               0,
+                                               0,
+                                               49,
+                                               92
+                                           ],
+                        "baseline":  91,
+                        "translucent_pixels":  0
+                    },
+                    {
+                        "label":  "Edit 2",
+                        "file":  "output/spritefusion/churchill_down/kneeling/churchill_down-kneeling-edit-2.png",
+                        "asset_id":  "8b43f42b-b9cf-4dea-8e47-7e8f60339e2e",
+                        "canvas":  [
+                                       71,
+                                       100
+                                   ],
+                        "visible_bounds":  [
+                                               0,
+                                               0,
+                                               71,
+                                               100
+                                           ],
+                        "baseline":  99,
+                        "translucent_pixels":  0
+                    },
+                    {
+                        "label":  "Proposta allineata",
+                        "file":  "output/spritefusion/churchill_down/kneeling/churchill_down.png",
+                        "asset_id":  null,
+                        "canvas":  [
+                                       44,
+                                       100
+                                   ],
+                        "visible_bounds":  [
+                                               1,
+                                               24,
+                                               40,
+                                               76
+                                           ],
+                        "baseline":  99,
+                        "translucent_pixels":  0
+                    }
+                ],
+    "decision":  "pending",
+    "proposed_variant":  "churchill_down.png",
+    "placement":  {
+                      "y":  24,
+                      "legs_from":  "Edit 1",
+                      "sampling":  "nearest neighbor",
+                      "original_upper_body_rows":  52,
+                      "x":  3
+                  }
+}

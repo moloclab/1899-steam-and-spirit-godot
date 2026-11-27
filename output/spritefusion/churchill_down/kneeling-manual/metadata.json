@@ -1,0 +1,63 @@
+﻿{
+    "method":  "manual_pixel_art",
+    "reference":  "churchill-back.png",
+    "sprites":  [
+                    {
+                        "label":  "In piedi approvato",
+                        "file":  "godot\\assets\\graphics\\characters\\churchill\\churchill-back.png",
+                        "asset_id":  null,
+                        "canvas":  [
+                                       38,
+                                       100
+                                   ],
+                        "visible_bounds":  [
+                                               0,
+                                               0,
+                                               38,
+                                               100
+                                           ],
+                        "baseline":  99,
+                        "translucent_pixels":  0
+                    },
+                    {
+                        "label":  "Posa bassa in gioco",
+                        "file":  "godot\\assets\\graphics\\characters\\churchill\\churchill_down.png",
+                        "asset_id":  null,
+                        "canvas":  [
+                                       44,
+                                       100
+                                   ],
+                        "visible_bounds":  [
+                                               4,
+                                               28,
+                                               36,
+                                               72
+                                           ],
+                        "baseline":  99,
+                        "translucent_pixels":  0
+                    },
+                    {
+                        "label":  "Disegno manuale",
+                        "file":  "C:\\htdocs\\_OLD\\_GAMES\\1899\\output\\spritefusion\\churchill_down\\kneeling-manual\\churchill_down.png",
+                        "asset_id":  null,
+                        "canvas":  [
+                                       44,
+                                       100
+                                   ],
+                        "visible_bounds":  [
+                                               3,
+                                               24,
+                                               38,
+                                               76
+                                           ],
+                        "baseline":  99,
+                        "translucent_pixels":  0
+                    }
+                ],
+    "upper_body_offset":  [
+                              3,
+                              24
+                          ],
+    "verified_original_upper_body_rows":  52,
+    "decision":  "pending"
+}

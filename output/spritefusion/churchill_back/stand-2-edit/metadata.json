@@ -1,0 +1,87 @@
+﻿{
+    "method":  "edit_sprite",
+    "request_id":  "req_a51a350e-3dbd-4013-b9c8-5ead6f1f0317",
+    "prompt":  "Turn this exact full-body Churchill sprite around 180 degrees in place so he is seen straight from behind. His head points directly away and both shoulders face squarely away. Keep his relaxed standing pose, bare forearms hanging straight alongside his body, hands at his sides, both feet planted, and the same head size, shoulder width, slender torso, long narrow legs, boot size, and stance. Keep the little upturned hair tuft and the same haircut, showing the back of his head and nape. Show the back of the same outfit: dark blue rolled sleeves, the brown vest seen from behind with restrained rear seams, the same dark fitted trousers and olive-dark boots. Retain the same colors, shading treatment, sparse details and thin dark outline. Show only back-facing garment details. This is the rear view of exactly the same character at the same scale, with the same framing and foot baseline.",
+    "references":  [
+                       "churchill-stand-2.png"
+                   ],
+    "visible_size_min":  [
+                             35,
+                             95
+                         ],
+    "visible_size_max":  [
+                             37,
+                             105
+                         ],
+    "sprites":  [
+                    {
+                        "label":  "Schiena in gioco",
+                        "file":  "churchill_back.png",
+                        "asset_id":  null,
+                        "canvas":  [
+                                       44,
+                                       100
+                                   ],
+                        "bounds":  [
+                                       4,
+                                       0,
+                                       36,
+                                       100
+                                   ],
+                        "translucent_pixels":  0,
+                        "within_original_back_size_tolerance":  true
+                    },
+                    {
+                        "label":  "Sorgente edit",
+                        "file":  "churchill-stand-2.png",
+                        "asset_id":  null,
+                        "canvas":  [
+                                       38,
+                                       100
+                                   ],
+                        "bounds":  [
+                                       0,
+                                       0,
+                                       38,
+                                       100
+                                   ],
+                        "translucent_pixels":  0,
+                        "within_original_back_size_tolerance":  false
+                    },
+                    {
+                        "label":  "Edit 1",
+                        "file":  "churchill-stand-2-back-edit.png",
+                        "asset_id":  "8bddef7e-8d9d-4b7a-8466-9047111ffb5e",
+                        "canvas":  [
+                                       38,
+                                       100
+                                   ],
+                        "bounds":  [
+                                       0,
+                                       0,
+                                       38,
+                                       100
+                                   ],
+                        "translucent_pixels":  0,
+                        "within_original_back_size_tolerance":  false
+                    },
+                    {
+                        "label":  "Edit 2",
+                        "file":  "churchill-stand-2-back-edit-2.png",
+                        "asset_id":  "a64832ee-56d0-4467-8b84-82e2aca5218f",
+                        "canvas":  [
+                                       37,
+                                       99
+                                   ],
+                        "bounds":  [
+                                       0,
+                                       0,
+                                       37,
+                                       99
+                                   ],
+                        "translucent_pixels":  0,
+                        "within_original_back_size_tolerance":  true
+                    }
+                ],
+    "decision":  "pending"
+}

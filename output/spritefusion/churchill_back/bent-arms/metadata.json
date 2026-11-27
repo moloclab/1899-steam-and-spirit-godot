@@ -1,0 +1,92 @@
+﻿{
+    "method":  "edit_sprite",
+    "request_id":  "req_4ad9d153-24fc-46f9-acbe-71af11d3a359",
+    "prompt":  "Make a localized arm pose edit to this exact rear-view Churchill sprite. He is still seen straight from behind. Keep both upper arms close against his sides and angled slightly forward. Bend both elbows so his forearms point straight forward, away from the viewer, in front of his waist as if he is quietly fiddling with something. From this rear view the torso completely hides both forearms and hands. Replace the two long hanging bare forearms with only very small elbow hints at the lower edges of the existing rolled sleeves. Keep the gesture compact and the elbows tucked in. Preserve the same head, tuft, neck, dark blue rolled sleeves, brown vest and its back details, belt, trousers, boots, upright stance, foot baseline, proportions, colors and thin dark outline. Keep the view and placement of the body exactly as in the input. The visible sprite is just Churchill in this pose, with empty space along both sides of the waist where the hanging forearms were.",
+    "references":  [
+                       "churchill-back-2.png"
+                   ],
+    "visible_size_min":  [
+                             35,
+                             95
+                         ],
+    "visible_size_max":  [
+                             37,
+                             105
+                         ],
+    "sprites":  [
+                    {
+                        "label":  "Schiena approvata",
+                        "file":  "churchill-back-2.png",
+                        "asset_id":  null,
+                        "canvas":  [
+                                       38,
+                                       100
+                                   ],
+                        "bounds":  [
+                                       0,
+                                       0,
+                                       38,
+                                       100
+                                   ],
+                        "translucent_pixels":  0,
+                        "within_original_back_size_tolerance":  false
+                    },
+                    {
+                        "label":  "Posa in gioco",
+                        "file":  "churchill_back.png",
+                        "asset_id":  null,
+                        "canvas":  [
+                                       44,
+                                       100
+                                   ],
+                        "bounds":  [
+                                       4,
+                                       0,
+                                       36,
+                                       100
+                                   ],
+                        "translucent_pixels":  0,
+                        "within_original_back_size_tolerance":  true
+                    },
+                    {
+                        "label":  "Edit 1",
+                        "file":  "churchill-back-bent-arms-edit-1.png",
+                        "asset_id":  "ab3f0002-2ae4-4911-8495-93c2590bea73",
+                        "canvas":  [
+                                       38,
+                                       100
+                                   ],
+                        "bounds":  [
+                                       0,
+                                       0,
+                                       38,
+                                       100
+                                   ],
+                        "translucent_pixels":  0,
+                        "within_original_back_size_tolerance":  false
+                    },
+                    {
+                        "label":  "Edit 2",
+                        "file":  "churchill-back-bent-arms-edit-2.png",
+                        "asset_id":  "6c39930e-7b21-421c-827f-9ec1a3410481",
+                        "canvas":  [
+                                       36,
+                                       99
+                                   ],
+                        "bounds":  [
+                                       0,
+                                       0,
+                                       36,
+                                       99
+                                   ],
+                        "translucent_pixels":  0,
+                        "within_original_back_size_tolerance":  true
+                    }
+                ],
+    "decision":  "pending",
+    "review":  {
+                   "preferred_variant":  "Edit 2",
+                   "pose":  "Edit 2 leaves only small elbow hints under the sleeves. Edit 1 shows more skin under the sleeves.",
+                   "integration":  "Edit 2 fits the original back-pose visible size tolerance and is ready for visual approval. No game asset was replaced."
+               }
+}

@@ -4,11 +4,11 @@
 [ext_resource type="Texture2D" path="res://assets/graphics/characters/churchill/churchill-walk.png" id="walk_sheet"]
 [ext_resource type="Script" path="res://scripts/world/character.gd" id="character"]
 [ext_resource type="Texture2D" path="res://assets/graphics/characters/churchill/churchill-stand.png" id="idle"]
-; Pose originali convertite da GIF, mantenendo dimensioni e trasparenza.
+; Pose statiche di Churchill.
 [ext_resource type="Texture2D" path="res://assets/graphics/characters/churchill/churchill-sit.png" id="sit"]
-[ext_resource type="Texture2D" path="res://assets/graphics/characters/churchill/churchill_back.png" id="back"]
-[ext_resource type="Texture2D" path="res://assets/graphics/characters/churchill/churchill_up.png" id="up"]
-[ext_resource type="Texture2D" path="res://assets/graphics/characters/churchill/churchill_down.png" id="down"]
+[ext_resource type="Texture2D" path="res://assets/graphics/characters/churchill/churchill-back.png" id="back"]
+[ext_resource type="Texture2D" path="res://assets/graphics/characters/churchill/churchill-up.png" id="up"]
+[ext_resource type="Texture2D" path="res://assets/graphics/characters/churchill/churchill-down.png" id="down"]
 
 [sub_resource type="AtlasTexture" id="walk_0"]
 atlas = ExtResource("walk_sheet")
@@ -57,7 +57,9 @@ script = ExtResource("character")
 speaker_key = "common.speaker.churchill"
 speed = 80.0
 ; Abbassa la posa seduta di 6 pixel logici (18 pixel alla scala 3 della stanza).
-animation_offsets = Dictionary[String, Vector2]({"sit": Vector2(0, 14)})
+; Centra la posa di schiena da 38 pixel sullo stesso asse della posa precedente.
+; Abbassa la posa down da 78 pixel fino alla quota dei piedi a 100 pixel.
+animation_offsets = Dictionary[String, Vector2]({"back": Vector2(3, 0), "down": Vector2(0, 22), "sit": Vector2(0, 14)})
 centered = false
 z_index = 1
 sprite_frames = SubResource("frames")

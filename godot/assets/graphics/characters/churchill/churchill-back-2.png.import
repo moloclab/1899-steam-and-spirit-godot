@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3buhtx7as7wd"
-path="res://.godot/imported/churchill_down.png-5be90251f567f86f7aff925daa20a8b6.ctex"
+uid="uid://crlp6ei6i6c1c"
+path="res://.godot/imported/churchill-back-2.png-04047aa2ea9fcee4117733bf83217c45.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/graphics/characters/churchill/churchill_down.png"
-dest_files=["res://.godot/imported/churchill_down.png-5be90251f567f86f7aff925daa20a8b6.ctex"]
+source_file="res://assets/graphics/characters/churchill/churchill-back-2.png"
+dest_files=["res://.godot/imported/churchill-back-2.png-04047aa2ea9fcee4117733bf83217c45.ctex"]
 
 [params]
 
