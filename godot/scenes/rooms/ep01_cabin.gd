@@ -41,17 +41,42 @@ func interact(state: State, hotspot_id: String, inventory_item_id_selected: Stri
 		"sink":
 			# Il versamento richiede il Bourbon nell'inventario e il lavandino allo stadio iniziale.
 			if inventory_item_id_selected == "ep01_cabin_bottle" and state.has_item(inventory_item_id_selected) and state.get_progress("ep01_cabin", "sink_stage") == 0:
-				return act_drop_bottle()
+				# Raggiunge il centro del lavandino, parla, consuma il Bourbon e rivela la chiave nello scarico.
+				return [
+					row([walkTo("player", "sink", true)]),
+					row([spriteTo("player", "back"), say("player", "ep01.cabin.sink.pour_bourbon")]),
+					row([
+						leaveObj("ep01_cabin_bottle"),
+						say("player", "ep01.cabin.sink.surprise")
+					]),
+					row([
+						changeStatus("ep01_cabin", "sink_stage", 1),
+						say("player", "ep01.cabin.sink.key_found")
+					], false)
+				]
 
 			# Il recupero richiede l'attrezzo completo nell'inventario e la chiave nello scarico.
 			if inventory_item_id_selected == "ep01_cabin_magnet_feather" and state.has_item(inventory_item_id_selected) and state.get_progress("ep01_cabin", "sink_stage") == 1:
-				return act_collect_key()
+				# Churchill recupera la chiave di spalle, al centro del lavandino.
+				return [
+					row([walkTo("player", "sink", true)]),
+					row([
+						spriteTo("player", "back"),
+						addObj("ep01_cabin_key"),
+						changeStatus("ep01_cabin", "sink_stage", 2),
+						say("player", "ep01.cabin.sink.key_pickup")
+					], false)
+				]
 
 			# A mani libere descrive la chiave nello scarico oppure usa la risposta della scena.
 			if inventory_item_id_selected.is_empty():
+				var response := hotspot.interaction_response
 				if state.get_progress("ep01_cabin", "sink_stage") == 1:
-					return [row([say("player", "ep01.cabin.sink.key_unreachable")], false)]
-				return [row([say("player", hotspot.interaction_response)], false)]
+					response = "ep01.cabin.sink.key_unreachable"
+				return [
+					row([walkTo("player", "sink", true)]),
+					row([spriteTo("player", "back"), say("player", response)], false)
+				]
 
 			# La penna semplice non riesce a recuperare la chiave e non viene consumata.
 			if inventory_item_id_selected == "ep01_cabin_feather" and state.has_item(inventory_item_id_selected) and state.get_progress("ep01_cabin", "sink_stage") == 1:
@@ -64,7 +89,19 @@ func interact(state: State, hotspot_id: String, inventory_item_id_selected: Stri
 		"door":
 			# Lo sblocco richiede la chiave nell'inventario e il recupero completato.
 			if inventory_item_id_selected == "ep01_cabin_key" and state.has_item(inventory_item_id_selected) and state.get_progress("ep01_cabin", "sink_stage") == 2:
-				return act_use_key()
+				# «Finalmente...» resta nella cabina; soltanto il clic seguente attraversa la porta.
+				return [
+					# La chiave si usa al centro della porta, come le altre combinazioni riuscite.
+					row([walkTo("player", "door", true)]),
+					row([
+						leaveObj("ep01_cabin_key"),
+						changeStatus("ep01_cabin", "door_unlocked", true),
+						spriteTo("player", "back"),
+						say("player", "ep01.cabin.door.exit")
+					]),
+					# Il passaggio usa la destinazione della porta senza ripetere la battuta nella nuova stanza.
+					row([changeRoom($door.destination_room, $door.destination_entry)])
+				]
 
 			# Gli altri usi di oggetti non aprono la porta.
 			if not inventory_item_id_selected.is_empty():
@@ -89,62 +126,46 @@ func interact(state: State, hotspot_id: String, inventory_item_id_selected: Stri
 			# La calamita viene raccolta una volta sola; la mappa rimane esaminabile.
 			if "ep01_cabin_magnet" in state.collected or state.has_item("ep01_cabin_magnet"):
 				return [row([say("player", "ep01.cabin.map.examine_without_magnet")], false)]
-			return [row([
-				addObj("ep01_cabin_magnet"),
-				say("player", "ep01.cabin.magnet.pickup")
-			], false)]
+			return [
+				row([walkTo("player", "map", true)]),
+				row([
+					spriteTo("player", "up"),
+					addObj("ep01_cabin_magnet"),
+					say("player", "ep01.cabin.magnet.pickup")
+				], false)
+			]
 
+		"como":
+			if inventory_item_id_selected.is_empty():
+				return [
+					row([walkTo("player", hotspot_id, true)]),
+					row([spriteTo("player", "down"), say("player", hotspot.interaction_response)], false)
+				]
+		"oblo1", "oblo2":
+			if inventory_item_id_selected.is_empty():
+				return [
+					row([walkTo("player", hotspot_id, true)]),
+					row([spriteTo("player", "back"), say("player", hotspot.interaction_response)], false)
+				]
+		"bottle":
+			# La raccolta standard decide se aggiungere il Bourbon; solo la riuscita richiede la posa.
+			var pickup := super.interact(state, hotspot_id, inventory_item_id_selected)
+			if pickup[0].actions[0].kind == Step.Kind.ADD:
+				pickup[0].actions.push_front(spriteTo("player", "down"))
+				pickup.push_front(row([walkTo("player", hotspot_id, true)]))
+			return pickup
 		"interphone":
 			if inventory_item_id_selected.is_empty():
-				return talk_interphone()
-				
-	# Letto, oblò, raccoglibili e usi generici restano configurati nella scena.
+				# Le quattro battute conservano ordine e interlocutori a ogni conversazione.
+				return [
+					row([say("player", "ep01.cabin.interphone.greeting")]),
+					row([say("interphone", "ep01.cabin.interphone.summons")]),
+					row([say("interphone", "ep01.cabin.interphone.urgency")]),
+					row([say("player", "ep01.cabin.interphone.reply")])
+				]
+
+	# Letto, penna e usi generici restano configurati nella scena.
 	return super.interact(state, hotspot_id, inventory_item_id_selected)
-
-## Raggiunge il centro del lavandino, parla, consuma il Bourbon e rivela la chiave nello scarico.
-func act_drop_bottle() -> Array[Row]:
-	return [
-		row([walkTo("player", "sink", true)]),
-		row([spriteTo("player", "back"), say("player", "ep01.cabin.sink.pour_bourbon")]),
-		row([
-			leaveObj("ep01_cabin_bottle"),
-			say("player", "ep01.cabin.sink.surprise")
-		]),
-		row([
-			changeStatus("ep01_cabin", "sink_stage", 1),
-			say("player", "ep01.cabin.sink.key_found")
-		], false)
-	]
-
-## La penna magnetica recupera la chiave; la risposta finale non aggiunge clic di chiusura.
-func act_collect_key() -> Array[Row]:
-	return [row([
-		addObj("ep01_cabin_key"),
-		changeStatus("ep01_cabin", "sink_stage", 2),
-		say("player", "ep01.cabin.sink.key_pickup")
-	], false)]
-
-## «Finalmente...» resta nella cabina; soltanto il clic seguente attraversa la porta.
-func act_use_key() -> Array[Row]:
-	return [
-		row([
-			leaveObj("ep01_cabin_key"),
-			changeStatus("ep01_cabin", "door_unlocked", true),
-			spriteTo("player", "back"),
-			say("player", "ep01.cabin.door.exit")
-		]),
-		# Il passaggio usa la destinazione della porta senza ripetere la battuta nella nuova stanza.
-		row([changeRoom($door.destination_room, $door.destination_entry)])
-	]
-
-## Le quattro battute conservano ordine e interlocutori a ogni conversazione.
-func talk_interphone() -> Array[Row]:
-	return [
-		row([say("player", "ep01.cabin.interphone.greeting")]),
-		row([say("interphone", "ep01.cabin.interphone.summons")]),
-		row([say("interphone", "ep01.cabin.interphone.urgency")]),
-		row([say("player", "ep01.cabin.interphone.reply")])
-	]
 
 ## Ricostruisce la mappa dal progresso, anche al rientro o caricando una partita precedente.
 func sync_from_state(state: State) -> void:

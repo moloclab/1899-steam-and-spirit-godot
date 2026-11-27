@@ -181,9 +181,8 @@ Lo script della stanza riceve `examine(state, hotspot_id)` per la lente e
 Delega i casi semplici a `super.examine(...)` e `super.interact(...)` e restituisce righe
 `ActionRow`, ciascuna con azioni `ActionStep`, per quelle specifiche. Gli effetti applicano le mutazioni soltanto
 durante l'esecuzione, rivalutando il possesso degli oggetti.
-`interact()` smista le richieste verso una funzione per ogni azione narrativa:
-la cabina usa `act_drop_bottle()`, `act_collect_key()`, `act_use_key()` e
-`talk_interphone()`. Battute, pose ed effetti si leggono insieme nella sequenza.
+Nella cabina, `interact()` restituisce la sequenza di ogni azione direttamente
+nel ramo dell'oggetto. Battute, pose ed effetti si leggono insieme nella sequenza.
 
 Tutte le stanze ereditano i comandi `row(azioni, confirm, condition)`,
 `say(subject, chiave)`, `spriteTo(subject, animazione, wait = false)`,
@@ -275,8 +274,9 @@ Per esempio, nell'Inspector configura tre righe:
 La prima riga avvia insieme frase e posa. Un clic avvia il cammino della seconda riga;
 all'arrivo parte automaticamente la frase della terza. Un ultimo clic chiude la conversazione.
 
-Le conversazioni narrative si scrivono nello script della stanza: `talk_interphone()`
-mostra le quattro battute e indica `"interphone"` come soggetto delle risposte di Kelvin.
+Le conversazioni narrative si scrivono nello script della stanza. Il ramo
+`"interphone"` di `interact()` mostra le quattro battute e indica
+`"interphone"` come soggetto delle risposte di Kelvin.
 Le risorse `conversation` degli hotspot restano supportate per le conversazioni
 configurate nell'Inspector. Il motore delle sequenze rimane condiviso.
 

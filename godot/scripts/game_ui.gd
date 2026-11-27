@@ -182,7 +182,7 @@ func _ready() -> void:
 	# La bussola resta nel primo spazio anche con inventario vuoto o scorrimento degli oggetti.
 	# Lo sfondo trasparente lascia visibile la fascia inventario sotto la bussola.
 	help_button = _inventory_button(preload("res://assets/graphics/ui/option.png"), Color.TRANSPARENT)
-	help_button.position = Vector2(30, world_height + 19)
+	help_button.position = Vector2(20, world_height + 19)
 	help_button.z_index = 3
 	help_button.pressed.connect(_toggle_help)
 	add_child(help_button)

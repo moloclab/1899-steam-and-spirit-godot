@@ -36,8 +36,8 @@
     "en": "Hey, gorgeous! What are you doing there all on your own?"
   },
   "ep01.cabin.bottle.pickup": {
-    "it": "Vieni qui, bellezza.",
-    "en": "Come here, gorgeous."
+    "it": "Vieni da paparino.",
+    "en": "Come to Daddy."
   },
   "ep01.cabin.bottle.reconsider": {
     "it": "Devo riordinare le idee.",
@@ -296,8 +296,8 @@
     "en": "An electric wire attached to the wall."
   },
   "ep01.inventory.bottle.examine": {
-    "it": "Una bottiglia di ottimo Bourbon. Devo farla sparire.",
-    "en": "A bottle of excellent Bourbon. I have to make it disappear."
+    "it": "Una bottiglia di ottimo Bourbon. Devo farla sparire o passerò dei guai.",
+    "en": "A bottle of excellent Bourbon. I have to make it disappear or I'll be in trouble."
   },
   "ep01.inventory.cigarette.examine": {
     "it": "Una semplice sigaretta.",

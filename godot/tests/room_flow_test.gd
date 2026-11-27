@@ -43,6 +43,17 @@ func finish_sequence() -> void:
 			game._process(10)
 	check(false, "Sequenza conclusa entro venti avanzamenti")
 
+## Passa dal coordinatore per verificare centro e posa anche nei fotogrammi dopo la battuta.
+func check_centered_touch(target: String, pose: String, response: String) -> void:
+	var hotspot: Hotspot = game.rooms.find_hotspot(target)
+	var center := hotspot.approach_position(game.rooms.actor.current_x, game.rooms.actor.half_width, true)
+	game._request(hotspot, false)
+	game._process(10)
+	finish_sequence()
+	game._process(0.1)
+	check(is_equal_approx(game.rooms.actor.current_x, center) and game.rooms.actor.animation == pose
+		and game.ui.speech_label.text == game._text(response), target + ": posa centrata e mantenuta durante la battuta")
+
 ## L'apertura riproduce quattro battute sedute, blocca le azioni e termina in piedi.
 func test_introduction() -> void:
 	check(game.ui.save_buttons[0].disabled and game.ui.reset_button.disabled, "Introduzione protegge salvataggio e nuova partita")
@@ -91,7 +102,7 @@ func _run() -> void:
 	# Separa pianificazione ed esecuzione per accertare che la sola richiesta non raccolga la calamita.
 	var pending = cabin.interact(game.state, "map")
 	check(game.state.inventory.is_empty(), "Pianificare la raccolta non modifica lo stato")
-	game._start_actions(pending)
+	check_centered_touch("map", "up", "ep01.cabin.magnet.pickup")
 	check(game.state.has_item("ep01_cabin_magnet") and map_visual.texture != complete_texture, "Raccolta dalla mappa e aggiornamento della texture")
 	check(not game.sequences.busy, "La raccolta della calamita non richiede un clic di chiusura")
 	act("map")
@@ -102,27 +113,32 @@ func _run() -> void:
 	check(game.state.room == "ep01_cabin", "La porta chiusa impedisce il passaggio")
 	act("sink", "ep01_cabin_bottle")
 	check(game.state.get_progress("ep01_cabin", "sink_stage") == 0, "Uso di una bottiglia non posseduta rifiutato")
-	act("bottle")
+	check_centered_touch("como", "down", "ep01.cabin.nightstand.interact")
+	check_centered_touch("oblo1", "back", "ep01.cabin.porthole.interact")
+	check_centered_touch("oblo2", "back", "ep01.cabin.porthole.interact")
+	check_centered_touch("sink", "back", "ep01.cabin.sink.wash")
+	check_centered_touch("bottle", "down", "ep01.cabin.bottle.pickup")
 	act("feather")
 	act("sink", "ep01_cabin_bottle", true)
 	check(game.state.has_item("ep01_cabin_bottle") and game.state.get_progress("ep01_cabin", "sink_stage") == 0, "La lente precede l'uso dell'oggetto selezionato")
 	# Costruire la sequenza non anticipa consumo o progresso.
-	pending = cabin.act_drop_bottle()
-	check(game.state.has_item("ep01_cabin_bottle") and game.state.get_progress("ep01_cabin", "sink_stage") == 0,
-		"Costruire direttamente l'azione narrativa non anticipa consumo o progresso")
+	pending = cabin.interact(game.state, "sink", "ep01_cabin_bottle")
+	check(not pending.is_empty() and game.state.has_item("ep01_cabin_bottle")
+		and game.state.get_progress("ep01_cabin", "sink_stage") == 0,
+		"Preparare la sequenza del Bourbon non anticipa consumo o progresso")
 	# I requisiti vengono verificati all'ingresso dell'azione.
 	act("sink", "ep01_cabin_magnet_feather")
 	act("door", "ep01_cabin_key")
 	check(not game.state.has_item("ep01_cabin_key") and not game.state.get_progress("ep01_cabin", "door_unlocked"),
 		"Attrezzo e chiave non posseduti non avviano recupero o sblocco")
-	# Esame e interazione generica conservano l'avvicinamento al bordo.
+	# L'avvicinamento iniziale raggiunge il bordo; la mano aggiunge il centraggio nella sua azione.
 	var sink: Hotspot = game.rooms.find_hotspot("sink")
 	for examining in [true, false]:
 		game.rooms.actor.place(100, cabin.definition.floor_y)
 		game.selected_item = "ep01_cabin_bottle" if examining else ""
 		game._request(sink, examining)
 		check(is_equal_approx(game.rooms.actor.target_x, sink.approach_position(100, game.rooms.actor.half_width)),
-			"Esame e interazione senza Bourbon mantengono il bordo")
+			"Esame e mano iniziano al bordo")
 	# Anche il Bourbon raggiunge prima il bordo; il centraggio appartiene alla sua azione.
 	game.rooms.actor.place(100, cabin.definition.floor_y)
 	game.selected_item = "ep01_cabin_bottle"
@@ -155,6 +171,7 @@ func _run() -> void:
 	check(game.ui.speech_label.text == game._text("ep01.cabin.sink.key_found"), "Terza battuta rivela la chiave")
 	check(game.state.get_progress("ep01_cabin", "sink_stage") == 1 and not game.state.has_item("ep01_cabin_bottle"), "Bottiglia consumata e chiave nello scarico")
 	check(not game.sequences.busy and game.ui.speech_label.visible, "Ultima battuta del Bourbon visibile senza clic aggiuntivo")
+	check_centered_touch("sink", "back", "ep01.cabin.sink.key_unreachable")
 	act("sink", "ep01_cabin_feather")
 	check(not game.state.has_item("ep01_cabin_key") and game.state.has_item("ep01_cabin_feather"), "La penna semplice non recupera la chiave e non viene consumata")
 	# Conserva lo stadio intermedio prima della combinazione e del recupero della chiave.
@@ -167,8 +184,11 @@ func _run() -> void:
 		and not game.sequences.busy, "Attrezzo perso prima del recupero non crea la chiave né modifica il lavandino")
 	game.state.add_item("ep01_cabin_magnet_feather")
 	game._start_actions(cabin.interact(game.state, "sink", "ep01_cabin_magnet_feather"))
-	check(not game.sequences.busy and game.state.has_item("ep01_cabin_key")
-		and game.ui.speech_label.text == game._text("ep01.cabin.sink.key_pickup"), "Recupero della chiave immediato con battuta esplicita")
+	finish_sequence()
+	check(not game.sequences.busy and game.state.has_item("ep01_cabin_key") and game.rooms.actor.animation == &"back"
+		and is_equal_approx(game.rooms.actor.current_x, sink.position.x + sink.hit_size.x / 2.0)
+		and game.ui.speech_label.text == game._text("ep01.cabin.sink.key_pickup"), "Recupero della chiave di spalle al centro")
+	check_centered_touch("sink", "back", "ep01.cabin.sink.wash")
 	act("sink", "ep01_cabin_magnet_feather")
 	check(game.state.inventory.count("ep01_cabin_key") == 1, "Recupero della chiave senza duplicazione")
 	game.state.remove_item("ep01_cabin_key")
@@ -177,7 +197,10 @@ func _run() -> void:
 		and not game.sequences.busy, "Chiave persa prima dello sblocco non apre la porta né cambia stanza")
 	game.state.add_item("ep01_cabin_key")
 	game._start_actions(cabin.interact(game.state, "door", "ep01_cabin_key"))
+	game._process(10)
+	var door: Hotspot = game.rooms.find_hotspot("door")
 	check(game.sequences.busy and game.state.room == "ep01_cabin" and game.rooms.actor.animation == &"back"
+		and is_equal_approx(game.rooms.actor.current_x, door.position.x + door.hit_size.x / 2.0)
 		and not game.state.has_item("ep01_cabin_key") and game.state.get_progress("ep01_cabin", "door_unlocked")
 		and game.ui.speech_label.text == game._text("ep01.cabin.door.exit"), "Finalmente viene pronunciato nella cabina prima del passaggio")
 	game.sequences.advance_dialogue()

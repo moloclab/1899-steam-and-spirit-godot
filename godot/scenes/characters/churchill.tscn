@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3]
+[gd_scene load_steps=17 format=3]
 
 ; Camminata: 8 fotogrammi da 50x100 pixel a 12 fps, per seguire meglio lo spostamento.
 [ext_resource type="Texture2D" path="res://assets/graphics/characters/churchill/churchill-walk.png" id="walk_sheet"]
@@ -7,6 +7,8 @@
 ; Pose originali convertite da GIF, mantenendo dimensioni e trasparenza.
 [ext_resource type="Texture2D" path="res://assets/graphics/characters/churchill/churchill-sit.png" id="sit"]
 [ext_resource type="Texture2D" path="res://assets/graphics/characters/churchill/churchill_back.png" id="back"]
+[ext_resource type="Texture2D" path="res://assets/graphics/characters/churchill/churchill_up.png" id="up"]
+[ext_resource type="Texture2D" path="res://assets/graphics/characters/churchill/churchill_down.png" id="down"]
 
 [sub_resource type="AtlasTexture" id="walk_0"]
 atlas = ExtResource("walk_sheet")
@@ -41,7 +43,14 @@ atlas = ExtResource("walk_sheet")
 region = Rect2(350, 0, 50, 100)
 
 [sub_resource type="SpriteFrames" id="frames"]
-animations = [{"frames": [{"duration": 1.0, "texture": SubResource("walk_0")}, {"duration": 1.0, "texture": SubResource("walk_1")}, {"duration": 1.0, "texture": SubResource("walk_2")}, {"duration": 1.0, "texture": SubResource("walk_3")}, {"duration": 1.0, "texture": SubResource("walk_4")}, {"duration": 1.0, "texture": SubResource("walk_5")}, {"duration": 1.0, "texture": SubResource("walk_6")}, {"duration": 1.0, "texture": SubResource("walk_7")}], "loop": true, "name": &"walk", "speed": 16}, {"frames": [{"duration": 1.0, "texture": ExtResource("idle")}], "loop": true, "name": &"idle", "speed": 1.0}, {"frames": [{"duration": 1.0, "texture": ExtResource("sit")}], "loop": true, "name": &"sit", "speed": 1.0}, {"frames": [{"duration": 1.0, "texture": ExtResource("back")}], "loop": true, "name": &"back", "speed": 1.0}]
+animations = [
+{"frames": [{"duration": 1.0, "texture": SubResource("walk_0")}, {"duration": 1.0, "texture": SubResource("walk_1")}, {"duration": 1.0, "texture": SubResource("walk_2")}, {"duration": 1.0, "texture": SubResource("walk_3")}, {"duration": 1.0, "texture": SubResource("walk_4")}, {"duration": 1.0, "texture": SubResource("walk_5")}, {"duration": 1.0, "texture": SubResource("walk_6")}, {"duration": 1.0, "texture": SubResource("walk_7")}], "loop": true, "name": &"walk", "speed": 16},
+{"frames": [{"duration": 1.0, "texture": ExtResource("idle")}], "loop": true, "name": &"idle", "speed": 1.0},
+{"frames": [{"duration": 1.0, "texture": ExtResource("sit")}], "loop": true, "name": &"sit", "speed": 1.0},
+{"frames": [{"duration": 1.0, "texture": ExtResource("back")}], "loop": true, "name": &"back", "speed": 1.0},
+{"frames": [{"duration": 1.0, "texture": ExtResource("up")}], "loop": true, "name": &"up", "speed": 1.0},
+{"frames": [{"duration": 1.0, "texture": ExtResource("down")}], "loop": true, "name": &"down", "speed": 1.0}
+]
 
 [node name="Churchill" type="AnimatedSprite2D"]
 script = ExtResource("character")

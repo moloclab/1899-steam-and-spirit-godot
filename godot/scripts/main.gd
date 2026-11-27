@@ -327,7 +327,9 @@ func _process(delta: float) -> void:
 		if sequences.busy:
 			sequences.tick(delta)
 		else:
-			rooms.actor.advance(delta)
+			# Da fermo conserva la posa dell'azione finché riprende a camminare o viene annullata.
+			if not rooms.actor.has_arrived():
+				rooms.actor.advance(delta)
 			state.player_x = rooms.actor.current_x
 			var actions: Array[Row] = interactions.take_ready_actions(state, rooms)
 			if not actions.is_empty():
